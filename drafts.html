@@ -1,1 +1,848 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>Drafts | Kevin Durant League</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #0b0f14;
+            color: #f5f5f5;
+            line-height: 1.5;
+        }
+
+        header {
+            background: #111820;
+            border-bottom: 1px solid #27313b;
+            padding: 20px 30px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-inner {
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            display: block;
+            font-size: 11px;
+            color: #9aa5af;
+            letter-spacing: 2px;
+            margin-top: 2px;
+        }
+
+        nav {
+            display: flex;
+            gap: 24px;
+        }
+
+        nav a {
+            color: #cbd2d8;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        nav a:hover {
+            color: white;
+        }
+
+        .hero {
+            max-width: 1200px;
+            margin: auto;
+            padding: 70px 30px 45px;
+        }
+
+        .eyebrow {
+            color: #9aa5af;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 12px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        h1 {
+            font-size: clamp(42px, 7vw, 72px);
+            line-height: .95;
+            letter-spacing: -3px;
+            margin-bottom: 18px;
+        }
+
+        .hero p {
+            color: #aeb8c1;
+            max-width: 700px;
+            font-size: 17px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 30px 70px;
+        }
+
+        .section-title {
+            font-size: 24px;
+            margin: 45px 0 20px;
+        }
+
+        /* STAT CARDS */
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+
+        .stat-card {
+            background: #151c24;
+            border: 1px solid #27313b;
+            border-radius: 12px;
+            padding: 24px;
+        }
+
+        .stat-label {
+            color: #8f9aa4;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 700;
+        }
+
+        .stat-number {
+            font-size: 32px;
+            font-weight: 800;
+            margin-top: 8px;
+        }
+
+        .stat-description {
+            color: #8f9aa4;
+            font-size: 13px;
+            margin-top: 4px;
+        }
+
+        /* PANELS */
+
+        .panel {
+            background: #151c24;
+            border: 1px solid #27313b;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .panel-header {
+            padding: 20px 22px;
+            border-bottom: 1px solid #27313b;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .panel-header h3 {
+            font-size: 17px;
+        }
+
+        .panel-header span {
+            color: #7f8a94;
+            font-size: 12px;
+        }
+
+        /* DRAFT SELECTOR */
+
+        .draft-selector {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            padding: 20px 22px;
+            border-bottom: 1px solid #27313b;
+        }
+
+        .draft-selector label {
+            color: #8f9aa4;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 700;
+        }
+
+        select {
+            background: #111820;
+            border: 1px solid #27313b;
+            border-radius: 8px;
+            color: white;
+            padding: 11px 14px;
+            font-size: 14px;
+        }
+
+        /* DRAFT BOARD */
+
+        .draft-board {
+            overflow-x: auto;
+        }
+
+        .draft-table {
+            width: 100%;
+            min-width: 700px;
+            border-collapse: collapse;
+        }
+
+        .draft-table th {
+            background: #111820;
+            color: #8f9aa4;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 14px 16px;
+            text-align: left;
+            border-bottom: 1px solid #27313b;
+        }
+
+        .draft-table td {
+            padding: 15px 16px;
+            border-bottom: 1px solid #222b34;
+            font-size: 14px;
+        }
+
+        .draft-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .pick {
+            font-weight: 800;
+            color: #cbd2d8;
+            width: 70px;
+        }
+
+        .round {
+            color: #68747e;
+            width: 80px;
+        }
+
+        .manager {
+            font-weight: 700;
+        }
+
+        .player-placeholder {
+            color: #68747e;
+            font-style: italic;
+        }
+
+        .position {
+            color: #8f9aa4;
+        }
+
+        /* DRAFT ROUNDS */
+
+        .round-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+
+        .round-card {
+            background: #151c24;
+            border: 1px solid #27313b;
+            border-radius: 12px;
+            padding: 20px;
+        }
+
+        .round-number {
+            color: #8f9aa4;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .round-card strong {
+            font-size: 18px;
+        }
+
+        .round-card p {
+            color: #68747e;
+            font-size: 13px;
+            margin-top: 5px;
+        }
+
+        /* RECORDS */
+
+        .record-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        .record-card {
+            background: #151c24;
+            border: 1px solid #27313b;
+            border-radius: 12px;
+            padding: 22px;
+        }
+
+        .record-card h3 {
+            font-size: 12px;
+            color: #8f9aa4;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .record-card strong {
+            font-size: 18px;
+        }
+
+        .record-card p {
+            color: #8f9aa4;
+            font-size: 13px;
+            margin-top: 5px;
+        }
+
+        /* MANAGER DRAFT HISTORY */
+
+        .manager-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        .manager-card {
+            background: #151c24;
+            border: 1px solid #27313b;
+            border-radius: 12px;
+            padding: 20px;
+        }
+
+        .manager-card h3 {
+            font-size: 16px;
+            margin-bottom: 12px;
+        }
+
+        .manager-stat {
+            display: flex;
+            justify-content: space-between;
+            padding: 6px 0;
+            border-bottom: 1px solid #222b34;
+            font-size: 13px;
+        }
+
+        .manager-stat:last-child {
+            border-bottom: none;
+        }
+
+        .manager-stat span:first-child {
+            color: #8f9aa4;
+        }
+
+        /* DATA NOTE */
+
+        .data-note {
+            padding: 24px;
+            color: #8f9aa4;
+            font-size: 14px;
+        }
+
+        .data-note strong {
+            color: #cbd2d8;
+        }
+
+        /* FOOTER */
+
+        footer {
+            border-top: 1px solid #27313b;
+            padding: 30px;
+            text-align: center;
+            color: #68747e;
+            font-size: 12px;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 800px) {
+
+            header {
+                padding: 18px 20px;
+            }
+
+            .header-inner {
+                flex-direction: column;
+                gap: 15px;
+                align-items: flex-start;
+            }
+
+            nav {
+                width: 100%;
+                overflow-x: auto;
+                gap: 18px;
+            }
+
+            nav a {
+                white-space: nowrap;
+            }
+
+            .hero {
+                padding: 50px 20px 40px;
+            }
+
+            .container {
+                padding: 0 20px 50px;
+            }
+
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .round-grid,
+            .record-grid,
+            .manager-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .draft-selector {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+<header>
+
+    <div class="header-inner">
+
+        <div class="logo">
+            KEVIN DURANT LEAGUE
+            <span>FANTASY FOOTBALL · EST. 2013</span>
+        </div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="history.html">History</a>
+            <a href="teams.html">Teams</a>
+            <a href="records.html">Records</a>
+            <a href="matchups.html">Matchups</a>
+            <a href="drafts.html">Drafts</a>
+            <a href="seasons.html">Seasons</a>
+        </nav>
+
+    </div>
+
+</header>
+
+
+<section class="hero">
+
+    <div class="eyebrow">League Draft Archive · 2013–2026</div>
+
+    <h1>Drafts.</h1>
+
+    <p>
+        Every draft pick, every manager and eventually every great
+        selection and devastating miss in Kevin Durant League history.
+    </p>
+
+</section>
+
+
+<main class="container">
+
+
+    <!-- DRAFT OVERVIEW -->
+
+    <h2 class="section-title">Draft Overview</h2>
+
+    <div class="stats">
+
+        <div class="stat-card">
+            <div class="stat-label">Drafts</div>
+            <div class="stat-number">14</div>
+            <div class="stat-description">2013–2026</div>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-label">Draft Picks</div>
+            <div class="stat-number">—</div>
+            <div class="stat-description">Yahoo data pending</div>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-label">First Pick</div>
+            <div class="stat-number">—</div>
+            <div class="stat-description">All-time</div>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-label">Draft Steal</div>
+            <div class="stat-number">—</div>
+            <div class="stat-description">To be calculated</div>
+        </div>
+
+    </div>
+
+
+    <!-- DRAFT HISTORY -->
+
+    <h2 class="section-title">Draft History</h2>
+
+    <div class="panel">
+
+        <div class="panel-header">
+            <h3>Historical Draft Board</h3>
+            <span>Yahoo data pending</span>
+        </div>
+
+        <div class="draft-selector">
+
+            <label for="season">Season</label>
+
+            <select id="season">
+
+                <option>2026</option>
+                <option>2025</option>
+                <option>2024</option>
+                <option>2023</option>
+                <option>2022</option>
+                <option>2021</option>
+                <option>2020</option>
+                <option>2019</option>
+                <option>2018</option>
+                <option>2017</option>
+                <option>2016</option>
+                <option>2015</option>
+                <option>2014</option>
+                <option>2013</option>
+
+            </select>
+
+        </div>
+
+
+        <div class="draft-board">
+
+            <table class="draft-table">
+
+                <thead>
+
+                    <tr>
+                        <th>Pick</th>
+                        <th>Round</th>
+                        <th>Manager</th>
+                        <th>Player</th>
+                        <th>Position</th>
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td class="pick">01</td>
+                        <td class="round">Round 1</td>
+                        <td class="manager">—</td>
+                        <td class="player-placeholder">Awaiting Yahoo data</td>
+                        <td class="position">—</td>
+                    </tr>
+
+                    <tr>
+                        <td class="pick">02</td>
+                        <td class="round">Round 1</td>
+                        <td class="manager">—</td>
+                        <td class="player-placeholder">Awaiting Yahoo data</td>
+                        <td class="position">—</td>
+                    </tr>
+
+                    <tr>
+                        <td class="pick">03</td>
+                        <td class="round">Round 1</td>
+                        <td class="manager">—</td>
+                        <td class="player-placeholder">Awaiting Yahoo data</td>
+                        <td class="position">—</td>
+                    </tr>
+
+                    <tr>
+                        <td class="pick">04</td>
+                        <td class="round">Round 1</td>
+                        <td class="manager">—</td>
+                        <td class="player-placeholder">Awaiting Yahoo data</td>
+                        <td class="position">—</td>
+                    </tr>
+
+                    <tr>
+                        <td class="pick">05</td>
+                        <td class="round">Round 1</td>
+                        <td class="manager">—</td>
+                        <td class="player-placeholder">Awaiting Yahoo data</td>
+                        <td class="position">—</td>
+                    </tr>
+
+                    <tr>
+                        <td class="pick">06</td>
+                        <td class="round">Round 1</td>
+                        <td class="manager">—</td>
+                        <td class="player-placeholder">Awaiting Yahoo data</td>
+                        <td class="position">—</td>
+                    </tr>
+
+                    <tr>
+                        <td class="pick">07</td>
+                        <td class="round">Round 1</td>
+                        <td class="manager">—</td>
+                        <td class="player-placeholder">Awaiting Yahoo data</td>
+                        <td class="position">—</td>
+                    </tr>
+
+                    <tr>
+                        <td class="pick">08</td>
+                        <td class="round">Round 1</td>
+                        <td class="manager">—</td>
+                        <td class="player-placeholder">Awaiting Yahoo data</td>
+                        <td class="position">—</td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+
+    <!-- DRAFT ROUNDS -->
+
+    <h2 class="section-title">Draft Structure</h2>
+
+    <div class="round-grid">
+
+        <div class="round-card">
+            <div class="round-number">Round 1</div>
+            <strong>First Round</strong>
+            <p>Highest-value selections</p>
+        </div>
+
+        <div class="round-card">
+            <div class="round-number">Rounds 2–4</div>
+            <strong>Early Rounds</strong>
+            <p>Core roster construction</p>
+        </div>
+
+        <div class="round-card">
+            <div class="round-number">Rounds 5–10</div>
+            <strong>Middle Rounds</strong>
+            <p>Depth and upside</p>
+        </div>
+
+        <div class="round-card">
+            <div class="round-number">Final Rounds</div>
+            <strong>Late Picks</strong>
+            <p>Sleepers and lottery tickets</p>
+        </div>
+
+    </div>
+
+
+    <!-- DRAFT RECORDS -->
+
+    <h2 class="section-title">Draft Records</h2>
+
+    <div class="record-grid">
+
+        <div class="record-card">
+            <h3>Most First-Round Picks</h3>
+            <strong>—</strong>
+            <p>Career</p>
+        </div>
+
+        <div class="record-card">
+            <h3>Best Draft Pick</h3>
+            <strong>—</strong>
+            <p>Value to be calculated</p>
+        </div>
+
+        <div class="record-card">
+            <h3>Biggest Draft Steal</h3>
+            <strong>—</strong>
+            <p>Late-round value</p>
+        </div>
+
+        <div class="record-card">
+            <h3>Biggest Draft Bust</h3>
+            <strong>—</strong>
+            <p>Draft position vs. production</p>
+        </div>
+
+        <div class="record-card">
+            <h3>Best Draft Class</h3>
+            <strong>—</strong>
+            <p>Overall roster value</p>
+        </div>
+
+        <div class="record-card">
+            <h3>Most Players Drafted</h3>
+            <strong>—</strong>
+            <p>Career</p>
+        </div>
+
+    </div>
+
+
+    <!-- MANAGER DRAFT HISTORY -->
+
+    <h2 class="section-title">Manager Draft History</h2>
+
+    <div class="manager-grid">
+
+        <div class="manager-card">
+            <h3>Jonah Wheeler</h3>
+
+            <div class="manager-stat">
+                <span>Total Picks</span>
+                <span>—</span>
+            </div>
+
+            <div class="manager-stat">
+                <span>1st Round Picks</span>
+                <span>—</span>
+            </div>
+
+            <div class="manager-stat">
+                <span>Avg. Draft Position</span>
+                <span>—</span>
+            </div>
+
+        </div>
+
+
+        <div class="manager-card">
+            <h3>Ryan Herbst</h3>
+
+            <div class="manager-stat">
+                <span>Total Picks</span>
+                <span>—</span>
+            </div>
+
+            <div class="manager-stat">
+                <span>1st Round Picks</span>
+                <span>—</span>
+            </div>
+
+            <div class="manager-stat">
+                <span>Avg. Draft Position</span>
+                <span>—</span>
+            </div>
+
+        </div>
+
+
+        <div class="manager-card">
+            <h3>Christian Abert</h3>
+
+            <div class="manager-stat">
+                <span>Total Picks</span>
+                <span>—</span>
+            </div>
+
+            <div class="manager-stat">
+                <span>1st Round Picks</span>
+                <span>—</span>
+            </div>
+
+            <div class="manager-stat">
+                <span>Avg. Draft Position</span>
+                <span>—</span>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- FUTURE ANALYSIS -->
+
+    <h2 class="section-title">Draft Analysis</h2>
+
+    <div class="panel">
+
+        <div class="panel-header">
+            <h3>Draft Value</h3>
+            <span>Coming with Yahoo data</span>
+        </div>
+
+        <div class="data-note">
+
+            Once the historical draft data is imported, this section can
+            compare <strong>where a player was drafted</strong> against
+            <strong>how that player actually performed</strong> during the
+            season.
+
+            <br><br>
+
+            That will allow the league to identify things like the
+            biggest draft steals, biggest busts, best managers at drafting,
+            best individual draft classes and the most valuable picks in
+            league history.
+
+        </div>
+
+    </div>
+
+
+    <!-- DATA SOURCE -->
+
+    <h2 class="section-title">Historical Data</h2>
+
+    <div class="panel">
+
+        <div class="panel-header">
+            <h3>Yahoo Draft Database</h3>
+            <span>Not yet connected</span>
+        </div>
+
+        <div class="data-note">
+
+            The draft page is designed to receive historical Yahoo draft
+            results for every league season from <strong>2013 through
+            2026</strong>.
+
+            <br><br>
+
+            Once the Yahoo API connection is established, the draft results
+            can be imported into the league's permanent historical database
+            and used throughout the website.
+
+        </div>
+
+    </div>
+
+
+</main>
+
+
+<footer>
+    Kevin Durant League · Fantasy Football History · Est. 2013
+</footer>
+
+</body>
+</html>
