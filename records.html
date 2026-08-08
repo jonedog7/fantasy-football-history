@@ -3,33 +3,722 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>All-Time Records | Kevin Durant League</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #0b0f14;
+            color: #f5f5f5;
+            line-height: 1.5;
+        }
+
+        /* HEADER */
+
+        header {
+            background: #111820;
+            border-bottom: 1px solid #27313b;
+            padding: 20px 30px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-inner {
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            display: block;
+            font-size: 11px;
+            color: #9aa5af;
+            letter-spacing: 2px;
+            margin-top: 2px;
+        }
+
+        nav {
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: #cbd2d8;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        nav a:hover {
+            color: white;
+        }
+
+        /* PAGE HERO */
+
+        .page-hero {
+            max-width: 1200px;
+            margin: auto;
+            padding: 70px 30px 45px;
+        }
+
+        .eyebrow {
+            color: #9aa5af;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 12px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .page-hero h1 {
+            font-size: clamp(42px, 7vw, 72px);
+            line-height: .95;
+            letter-spacing: -3px;
+            margin-bottom: 18px;
+        }
+
+        .page-hero p {
+            color: #aeb8c1;
+            max-width: 680px;
+            font-size: 17px;
+        }
+
+        /* CONTENT */
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 30px 80px;
+        }
+
+        .section-title {
+            font-size: 24px;
+            margin: 45px 0 18px;
+        }
+
+        .section-description {
+            color: #8f9aa4;
+            font-size: 14px;
+            margin-top: -8px;
+            margin-bottom: 20px;
+        }
+
+        /* RECORD GRID */
+
+        .record-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+        }
+
+        .record-card {
+            background: #151c24;
+            border: 1px solid #27313b;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .record-card-header {
+            padding: 18px 22px;
+            border-bottom: 1px solid #27313b;
+        }
+
+        .record-card-header h3 {
+            font-size: 16px;
+        }
+
+        .record-card-header p {
+            color: #7f8a94;
+            font-size: 12px;
+            margin-top: 3px;
+        }
+
+        .record-main {
+            padding: 25px 22px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .record-holder {
+            font-size: 21px;
+            font-weight: 800;
+        }
+
+        .record-season {
+            color: #7f8a94;
+            font-size: 12px;
+            margin-top: 4px;
+        }
+
+        .record-value {
+            font-size: 30px;
+            font-weight: 800;
+            text-align: right;
+            white-space: nowrap;
+        }
+
+        .record-unit {
+            color: #8f9aa4;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* LEADERBOARD */
+
+        .panel {
+            background: #151c24;
+            border: 1px solid #27313b;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .panel-header {
+            padding: 20px 22px;
+            border-bottom: 1px solid #27313b;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .panel-header h3 {
+            font-size: 17px;
+        }
+
+        .panel-header span {
+            color: #7f8a94;
+            font-size: 12px;
+        }
+
+        .leaderboard-row {
+            display: grid;
+            grid-template-columns: 50px 1fr 110px;
+            align-items: center;
+            padding: 17px 22px;
+            border-bottom: 1px solid #222b34;
+        }
+
+        .leaderboard-row:last-child {
+            border-bottom: none;
+        }
+
+        .rank {
+            color: #68747e;
+            font-weight: 800;
+        }
+
+        .leader-name {
+            font-weight: 700;
+        }
+
+        .leader-detail {
+            color: #7f8a94;
+            font-size: 12px;
+            margin-top: 2px;
+        }
+
+        .leader-value {
+            text-align: right;
+            font-weight: 800;
+        }
+
+        /* SEASON RECORDS */
+
+        .season-record {
+            display: grid;
+            grid-template-columns: 80px 1fr 120px;
+            align-items: center;
+            padding: 16px 22px;
+            border-bottom: 1px solid #222b34;
+        }
+
+        .season-record:last-child {
+            border-bottom: none;
+        }
+
+        .season-year {
+            color: #8f9aa4;
+            font-weight: 700;
+        }
+
+        .season-record-name {
+            font-weight: 700;
+        }
+
+        .season-record-value {
+            text-align: right;
+            font-weight: 800;
+        }
+
+        /* FOOTNOTE */
+
+        .data-note {
+            margin-top: 30px;
+            padding: 18px 20px;
+            border: 1px solid #27313b;
+            border-radius: 10px;
+            color: #7f8a94;
+            font-size: 12px;
+            background: #111820;
+        }
+
+        /* FOOTER */
+
+        footer {
+            border-top: 1px solid #27313b;
+            padding: 30px;
+            text-align: center;
+            color: #68747e;
+            font-size: 12px;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 800px) {
+
+            header {
+                padding: 18px 20px;
+            }
+
+            .header-inner {
+                flex-direction: column;
+                gap: 15px;
+                align-items: flex-start;
+            }
+
+            nav {
+                width: 100%;
+                overflow-x: auto;
+                flex-wrap: nowrap;
+                gap: 18px;
+                padding-bottom: 3px;
+            }
+
+            nav a {
+                white-space: nowrap;
+            }
+
+            .page-hero {
+                padding: 50px 20px 35px;
+            }
+
+            .container {
+                padding: 0 20px 60px;
+            }
+
+            .record-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .leaderboard-row {
+                grid-template-columns: 40px 1fr 90px;
+            }
+
+            .season-record {
+                grid-template-columns: 65px 1fr 90px;
+            }
+        }
+
+        @media (max-width: 450px) {
+
+            .page-hero h1 {
+                letter-spacing: -2px;
+            }
+
+            .record-main {
+                padding: 22px 18px;
+            }
+
+            .record-holder {
+                font-size: 18px;
+            }
+
+            .record-value {
+                font-size: 25px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-    <h1>Kevin Durant League</h1>
+<header>
+    <div class="header-inner">
 
-    <nav>
-        <a href="index.html">Home</a> |
-        <a href="records.html">All-Time Records</a>
-    </nav>
+        <div class="logo">
+            KEVIN DURANT LEAGUE
+            <span>FANTASY FOOTBALL · EST. 2013</span>
+        </div>
 
-    <hr>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="history.html">History</a>
+            <a href="teams.html">Teams</a>
+            <a href="records.html">Records</a>
+            <a href="matchups.html">Matchups</a>
+            <a href="drafts.html">Drafts</a>
+            <a href="seasons.html">Seasons</a>
+        </nav>
 
-    <h2>All-Time Records</h2>
+    </div>
+</header>
 
-    <h3>Most Championships</h3>
-    <p>Coming soon...</p>
 
-    <h3>Most Career Wins</h3>
-    <p>Coming soon...</p>
+<section class="page-hero">
 
-    <h3>Most Career Points</h3>
-    <p>Coming soon...</p>
+    <div class="eyebrow">League Record Book · 2013–2026</div>
 
-    <h3>Best Winning Percentage</h3>
-    <p>Coming soon...</p>
+    <h1>All-Time<br>Records.</h1>
+
+    <p>
+        The greatest performances, longest careers, biggest wins and most
+        impressive accomplishments in Kevin Durant League history.
+    </p>
+
+</section>
+
+
+<main class="container">
+
+
+    <!-- CAREER RECORDS -->
+
+    <h2 class="section-title">Career Records</h2>
+
+    <p class="section-description">
+        The marks that define a manager's career across multiple seasons.
+    </p>
+
+    <div class="record-grid">
+
+        <div class="record-card">
+
+            <div class="record-card-header">
+                <h3>Most Championships</h3>
+                <p>Career titles</p>
+            </div>
+
+            <div class="record-main">
+                <div>
+                    <div class="record-holder">TBD</div>
+                    <div class="record-season">Yahoo data pending</div>
+                </div>
+
+                <div>
+                    <div class="record-value">—</div>
+                    <div class="record-unit">Titles</div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="record-card">
+
+            <div class="record-card-header">
+                <h3>Most Career Wins</h3>
+                <p>Regular season + playoffs</p>
+            </div>
+
+            <div class="record-main">
+                <div>
+                    <div class="record-holder">TBD</div>
+                    <div class="record-season">Yahoo data pending</div>
+                </div>
+
+                <div>
+                    <div class="record-value">—</div>
+                    <div class="record-unit">Wins</div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="record-card">
+
+            <div class="record-card-header">
+                <h3>Most Career Points</h3>
+                <p>Total fantasy points</p>
+            </div>
+
+            <div class="record-main">
+                <div>
+                    <div class="record-holder">TBD</div>
+                    <div class="record-season">Yahoo data pending</div>
+                </div>
+
+                <div>
+                    <div class="record-value">—</div>
+                    <div class="record-unit">Points</div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="record-card">
+
+            <div class="record-card-header">
+                <h3>Best Career Win %</h3>
+                <p>Minimum qualifying seasons</p>
+            </div>
+
+            <div class="record-main">
+                <div>
+                    <div class="record-holder">TBD</div>
+                    <div class="record-season">Yahoo data pending</div>
+                </div>
+
+                <div>
+                    <div class="record-value">—</div>
+                    <div class="record-unit">Win %</div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- SINGLE SEASON RECORDS -->
+
+    <h2 class="section-title">Single-Season Records</h2>
+
+    <p class="section-description">
+        The best individual seasons in league history.
+    </p>
+
+    <div class="panel">
+
+        <div class="panel-header">
+            <h3>Season Records</h3>
+            <span>All Seasons</span>
+        </div>
+
+        <div class="season-record">
+            <div class="season-year">TBD</div>
+            <div class="season-record-name">Most Wins in a Season</div>
+            <div class="season-record-value">—</div>
+        </div>
+
+        <div class="season-record">
+            <div class="season-year">TBD</div>
+            <div class="season-record-name">Highest Season Point Total</div>
+            <div class="season-record-value">—</div>
+        </div>
+
+        <div class="season-record">
+            <div class="season-year">TBD</div>
+            <div class="season-record-name">Best Win Percentage</div>
+            <div class="season-record-value">—</div>
+        </div>
+
+        <div class="season-record">
+            <div class="season-year">TBD</div>
+            <div class="season-record-name">Longest Winning Streak</div>
+            <div class="season-record-value">—</div>
+        </div>
+
+    </div>
+
+
+    <!-- SINGLE WEEK RECORDS -->
+
+    <h2 class="section-title">Single-Week Records</h2>
+
+    <p class="section-description">
+        The biggest individual performances from a single fantasy matchup.
+    </p>
+
+    <div class="record-grid">
+
+        <div class="record-card">
+
+            <div class="record-card-header">
+                <h3>Highest Weekly Score</h3>
+                <p>Single matchup</p>
+            </div>
+
+            <div class="record-main">
+                <div>
+                    <div class="record-holder">TBD</div>
+                    <div class="record-season">Week · Season TBD</div>
+                </div>
+
+                <div>
+                    <div class="record-value">—</div>
+                    <div class="record-unit">Points</div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="record-card">
+
+            <div class="record-card-header">
+                <h3>Biggest Blowout</h3>
+                <p>Largest margin of victory</p>
+            </div>
+
+            <div class="record-main">
+                <div>
+                    <div class="record-holder">TBD</div>
+                    <div class="record-season">Week · Season TBD</div>
+                </div>
+
+                <div>
+                    <div class="record-value">—</div>
+                    <div class="record-unit">Margin</div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ALL-TIME WINS -->
+
+    <h2 class="section-title">All-Time Wins Leaders</h2>
+
+    <p class="section-description">
+        The managers with the most victories throughout league history.
+    </p>
+
+    <div class="panel">
+
+        <div class="panel-header">
+            <h3>Career Wins</h3>
+            <span>Top 10</span>
+        </div>
+
+        <div class="leaderboard-row">
+            <div class="rank">01</div>
+            <div>
+                <div class="leader-name">TBD</div>
+                <div class="leader-detail">Manager</div>
+            </div>
+            <div class="leader-value">—</div>
+        </div>
+
+        <div class="leaderboard-row">
+            <div class="rank">02</div>
+            <div>
+                <div class="leader-name">TBD</div>
+                <div class="leader-detail">Manager</div>
+            </div>
+            <div class="leader-value">—</div>
+        </div>
+
+        <div class="leaderboard-row">
+            <div class="rank">03</div>
+            <div>
+                <div class="leader-name">TBD</div>
+                <div class="leader-detail">Manager</div>
+            </div>
+            <div class="leader-value">—</div>
+        </div>
+
+        <div class="leaderboard-row">
+            <div class="rank">04</div>
+            <div>
+                <div class="leader-name">TBD</div>
+                <div class="leader-detail">Manager</div>
+            </div>
+            <div class="leader-value">—</div>
+        </div>
+
+        <div class="leaderboard-row">
+            <div class="rank">05</div>
+            <div>
+                <div class="leader-name">TBD</div>
+                <div class="leader-detail">Manager</div>
+            </div>
+            <div class="leader-value">—</div>
+        </div>
+
+        <div class="leaderboard-row">
+            <div class="rank">06</div>
+            <div>
+                <div class="leader-name">TBD</div>
+                <div class="leader-detail">Manager</div>
+            </div>
+            <div class="leader-value">—</div>
+        </div>
+
+        <div class="leaderboard-row">
+            <div class="rank">07</div>
+            <div>
+                <div class="leader-name">TBD</div>
+                <div class="leader-detail">Manager</div>
+            </div>
+            <div class="leader-value">—</div>
+        </div>
+
+        <div class="leaderboard-row">
+            <div class="rank">08</div>
+            <div>
+                <div class="leader-name">TBD</div>
+                <div class="leader-detail">Manager</div>
+            </div>
+            <div class="leader-value">—</div>
+        </div>
+
+        <div class="leaderboard-row">
+            <div class="rank">09</div>
+            <div>
+                <div class="leader-name">TBD</div>
+                <div class="leader-detail">Manager</div>
+            </div>
+            <div class="leader-value">—</div>
+        </div>
+
+        <div class="leaderboard-row">
+            <div class="rank">10</div>
+            <div>
+                <div class="leader-name">TBD</div>
+                <div class="leader-detail">Manager</div>
+            </div>
+            <div class="leader-value">—</div>
+        </div>
+
+    </div>
+
+
+    <div class="data-note">
+        Record book data will be populated from the league's historical Yahoo
+        Fantasy Football records. Career totals will account for changes in
+        league size and manager participation throughout the 2013–2026 archive.
+    </div>
+
+</main>
+
+
+<footer>
+    Kevin Durant League · Fantasy Football History · Est. 2013
+</footer>
 
 </body>
 </html>
