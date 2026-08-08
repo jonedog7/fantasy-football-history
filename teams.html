@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Teams & Managers | Kevin Durant League</title>
+    <title>Managers & Franchises | Kevin Durant League</title>
 
     <style>
         * {
@@ -54,7 +54,6 @@
         nav {
             display: flex;
             gap: 24px;
-            flex-wrap: wrap;
         }
 
         nav a {
@@ -68,10 +67,10 @@
             color: white;
         }
 
-        .page-hero {
+        .hero {
             max-width: 1200px;
             margin: auto;
-            padding: 70px 30px 45px;
+            padding: 70px 30px 50px;
         }
 
         .eyebrow {
@@ -83,14 +82,14 @@
             margin-bottom: 12px;
         }
 
-        .page-hero h1 {
+        .hero h1 {
             font-size: clamp(42px, 7vw, 72px);
             line-height: .95;
             letter-spacing: -3px;
-            margin-bottom: 18px;
+            margin-bottom: 20px;
         }
 
-        .page-hero p {
+        .hero p {
             color: #aeb8c1;
             max-width: 700px;
             font-size: 17px;
@@ -102,34 +101,21 @@
             padding: 0 30px 80px;
         }
 
-        .section-title {
-            font-size: 24px;
-            margin: 45px 0 18px;
-        }
-
-        .section-description {
-            color: #8f9aa4;
-            font-size: 14px;
-            margin-top: -8px;
-            margin-bottom: 20px;
-        }
-
-        /* SUMMARY */
-
-        .stats {
+        .summary {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 15px;
+            margin-bottom: 60px;
         }
 
-        .stat-card {
+        .summary-card {
             background: #151c24;
             border: 1px solid #27313b;
             border-radius: 12px;
             padding: 22px;
         }
 
-        .stat-label {
+        .summary-label {
             color: #8f9aa4;
             font-size: 11px;
             text-transform: uppercase;
@@ -137,191 +123,164 @@
             font-weight: 700;
         }
 
-        .stat-number {
+        .summary-number {
             font-size: 32px;
             font-weight: 800;
             margin-top: 7px;
         }
 
-        .stat-description {
-            color: #68747e;
-            font-size: 12px;
+        .summary-description {
+            color: #8f9aa4;
+            font-size: 13px;
             margin-top: 3px;
         }
 
-        /* MANAGER CARDS */
+        .section-title {
+            font-size: 28px;
+            margin-bottom: 25px;
+        }
 
         .manager-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(2, 1fr);
             gap: 18px;
         }
 
         .manager-card {
             background: #151c24;
             border: 1px solid #27313b;
-            border-radius: 12px;
+            border-radius: 14px;
             overflow: hidden;
         }
 
-        .manager-top {
-            padding: 22px;
-            border-bottom: 1px solid #27313b;
-        }
-
-        .manager-name {
-            font-size: 21px;
-            font-weight: 800;
-        }
-
-        .manager-meta {
-            color: #8f9aa4;
-            font-size: 12px;
-            margin-top: 5px;
-        }
-
-        .championship-badge {
-            display: inline-block;
-            margin-top: 13px;
-            padding: 5px 9px;
-            border: 1px solid #3a4651;
-            border-radius: 5px;
-            color: #cbd2d8;
-            font-size: 10px;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .manager-record {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            padding: 17px 22px;
-            border-bottom: 1px solid #27313b;
-        }
-
-        .record-label {
-            color: #68747e;
-            font-size: 10px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .record-value {
-            font-size: 17px;
-            font-weight: 800;
-            margin-top: 3px;
-        }
-
-        .manager-details {
-            padding: 16px 22px;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 12px;
-        }
-
-        .detail-label {
-            color: #68747e;
-            font-size: 10px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .detail-value {
-            color: #cbd2d8;
-            font-size: 13px;
-            font-weight: 700;
-            margin-top: 2px;
-        }
-
-        /* LEADERBOARD */
-
-        .panel {
-            background: #151c24;
-            border: 1px solid #27313b;
-            border-radius: 12px;
-            overflow: hidden;
-        }
-
-        .panel-header {
-            padding: 20px 22px;
+        .manager-header {
+            padding: 22px 24px;
             border-bottom: 1px solid #27313b;
             display: flex;
             justify-content: space-between;
-            align-items: center;
+            align-items: flex-start;
         }
 
-        .panel-header h3 {
-            font-size: 17px;
-        }
-
-        .panel-header span {
-            color: #7f8a94;
-            font-size: 12px;
-        }
-
-        .leaderboard-row {
-            display: grid;
-            grid-template-columns: 50px 1.5fr 100px 100px 100px;
-            align-items: center;
-            padding: 16px 22px;
-            border-bottom: 1px solid #222b34;
-        }
-
-        .leaderboard-row:last-child {
-            border-bottom: none;
-        }
-
-        .rank {
-            color: #68747e;
+        .manager-name {
+            font-size: 22px;
             font-weight: 800;
         }
 
-        .leader-name {
-            font-weight: 700;
+        .manager-tenure {
+            color: #8f9aa4;
+            font-size: 12px;
+            margin-top: 4px;
         }
 
-        .leader-stat {
-            text-align: right;
-            color: #aeb8c1;
-            font-size: 13px;
+        .titles {
+            font-size: 22px;
+            font-weight: 800;
         }
 
-        .table-label {
-            color: #68747e;
-            font-size: 10px;
+        .titles-label {
+            color: #7f8a94;
+            font-size: 9px;
             text-transform: uppercase;
             letter-spacing: 1px;
             text-align: right;
         }
 
-        /* FORMER MANAGERS */
-
-        .former-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 14px;
+        .manager-body {
+            padding: 22px 24px;
         }
 
-        .former-card {
-            background: #111820;
-            border: 1px solid #27313b;
-            border-radius: 10px;
-            padding: 20px;
-        }
-
-        .former-name {
-            font-size: 17px;
+        .record-large {
+            font-size: 27px;
             font-weight: 800;
         }
 
-        .former-label {
-            color: #68747e;
+        .record-label {
+            color: #8f9aa4;
             font-size: 11px;
-            margin-top: 5px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
-        /* FOOTER */
+        .manager-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin-top: 22px;
+        }
+
+        .mini-stat {
+            background: #111820;
+            border: 1px solid #222b34;
+            border-radius: 8px;
+            padding: 12px;
+        }
+
+        .mini-stat-label {
+            color: #68747e;
+            font-size: 9px;
+            text-transform: uppercase;
+            letter-spacing: .8px;
+        }
+
+        .mini-stat-value {
+            font-size: 16px;
+            font-weight: 700;
+            margin-top: 3px;
+        }
+
+        .accomplishments {
+            margin-top: 20px;
+            padding-top: 18px;
+            border-top: 1px solid #27313b;
+        }
+
+        .accomplishments-title {
+            color: #7f8a94;
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 700;
+            margin-bottom: 9px;
+        }
+
+        .accomplishment {
+            color: #aeb8c1;
+            font-size: 13px;
+            margin-bottom: 5px;
+        }
+
+        .former {
+            margin-top: 60px;
+        }
+
+        .former-panel {
+            background: #151c24;
+            border: 1px solid #27313b;
+            border-radius: 14px;
+            padding: 25px;
+        }
+
+        .former-panel p {
+            color: #8f9aa4;
+            font-size: 14px;
+            margin-bottom: 18px;
+        }
+
+        .former-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .former-name {
+            background: #111820;
+            border: 1px solid #27313b;
+            border-radius: 8px;
+            padding: 10px 16px;
+            color: #cbd2d8;
+            font-size: 13px;
+            font-weight: 700;
+        }
 
         footer {
             border-top: 1px solid #27313b;
@@ -331,28 +290,7 @@
             font-size: 12px;
         }
 
-        /* MOBILE */
-
-        @media (max-width: 950px) {
-
-            .manager-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .stats {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .former-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .leaderboard-row {
-                grid-template-columns: 40px 1fr 80px 80px 80px;
-            }
-        }
-
-        @media (max-width: 800px) {
+        @media (max-width: 850px) {
 
             header {
                 padding: 18px 20px;
@@ -360,14 +298,13 @@
 
             .header-inner {
                 flex-direction: column;
-                gap: 15px;
                 align-items: flex-start;
+                gap: 15px;
             }
 
             nav {
                 width: 100%;
                 overflow-x: auto;
-                flex-wrap: nowrap;
                 gap: 18px;
                 padding-bottom: 3px;
             }
@@ -376,44 +313,35 @@
                 white-space: nowrap;
             }
 
-            .page-hero {
-                padding: 50px 20px 35px;
+            .hero {
+                padding: 50px 20px 40px;
             }
 
             .container {
                 padding: 0 20px 60px;
             }
 
+            .summary {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
             .manager-grid {
                 grid-template-columns: 1fr;
-            }
-
-            .leaderboard-row {
-                grid-template-columns: 40px 1fr 70px;
-            }
-
-            .leaderboard-row .leader-stat:nth-last-child(-n+2),
-            .leaderboard-row .table-label:nth-last-child(-n+2) {
-                display: none;
             }
         }
 
         @media (max-width: 450px) {
 
-            .stats {
-                grid-template-columns: 1fr 1fr;
+            .summary-card {
+                padding: 17px;
             }
 
-            .stat-card {
-                padding: 18px;
-            }
-
-            .stat-number {
+            .summary-number {
                 font-size: 26px;
             }
 
-            .former-grid {
-                grid-template-columns: 1fr 1fr;
+            .manager-stats {
+                grid-template-columns: repeat(2, 1fr);
             }
         }
     </style>
@@ -435,23 +363,21 @@
             <a href="teams.html">Teams</a>
             <a href="records.html">Records</a>
             <a href="matchups.html">Matchups</a>
-            <a href="drafts.html">Drafts</a>
-            <a href="seasons.html">Seasons</a>
         </nav>
 
     </div>
 </header>
 
 
-<section class="page-hero">
+<section class="hero">
 
-    <div class="eyebrow">Managers · 2013–2026</div>
+    <div class="eyebrow">Managers & Franchises · 2013–2026</div>
 
-    <h1>The<br>Managers.</h1>
+    <h1>The Managers<br>of the League.</h1>
 
     <p>
-        Every manager who has shaped the Kevin Durant League, with career
-        records, championships, playoff history and regular-season success.
+        The careers, records and championships of every manager
+        who has helped shape the Kevin Durant League.
     </p>
 
 </section>
@@ -460,165 +386,171 @@
 <main class="container">
 
 
-    <!-- SUMMARY -->
+    <div class="summary">
 
-    <h2 class="section-title">League Directory</h2>
-
-    <div class="stats">
-
-        <div class="stat-card">
-            <div class="stat-label">Current Managers</div>
-            <div class="stat-number">12</div>
-            <div class="stat-description">2026 league</div>
+        <div class="summary-card">
+            <div class="summary-label">Current Managers</div>
+            <div class="summary-number">12</div>
+            <div class="summary-description">2026 league</div>
         </div>
 
-        <div class="stat-card">
-            <div class="stat-label">Managers Ever</div>
-            <div class="stat-number">16</div>
-            <div class="stat-description">Current + former</div>
+        <div class="summary-card">
+            <div class="summary-label">Championships</div>
+            <div class="summary-number">13</div>
+            <div class="summary-description">14 seasons · 2022 tie</div>
         </div>
 
-        <div class="stat-card">
-            <div class="stat-label">Championships</div>
-            <div class="stat-number">14</div>
-            <div class="stat-description">2013–2025</div>
+        <div class="summary-card">
+            <div class="summary-label">Most Titles</div>
+            <div class="summary-number">5</div>
+            <div class="summary-description">Ryan Herbst</div>
         </div>
 
-        <div class="stat-card">
-            <div class="stat-label">League Seasons</div>
-            <div class="stat-number">14</div>
-            <div class="stat-description">2013–2026</div>
+        <div class="summary-card">
+            <div class="summary-label">Original Manager</div>
+            <div class="summary-number">2013</div>
+            <div class="summary-description">Six current managers began here</div>
         </div>
 
     </div>
 
 
-    <!-- CURRENT MANAGERS -->
-
     <h2 class="section-title">Current Managers</h2>
 
-    <p class="section-description">
-        The 12 managers making up the 2026 Kevin Durant League.
-    </p>
 
     <div class="manager-grid">
-
-
-        <!-- CHRISTIAN -->
-
-        <div class="manager-card">
-
-            <div class="manager-top">
-                <div class="manager-name">Christian Abert</div>
-                <div class="manager-meta">Member since 2013</div>
-                <div class="championship-badge">2 Championships</div>
-            </div>
-
-            <div class="manager-record">
-                <div>
-                    <div class="record-label">Career Record</div>
-                    <div class="record-value">81-95-1</div>
-                </div>
-
-                <div>
-                    <div class="record-label">Win %</div>
-                    <div class="record-value">46%</div>
-                </div>
-            </div>
-
-            <div class="manager-details">
-
-                <div>
-                    <div class="detail-label">Winning Seasons</div>
-                    <div class="detail-value">4</div>
-                </div>
-
-                <div>
-                    <div class="detail-label">Losing Seasons</div>
-                    <div class="detail-value">6</div>
-                </div>
-
-                <div>
-                    <div class="detail-label">Best Finish</div>
-                    <div class="detail-value">9-4</div>
-                </div>
-
-                <div>
-                    <div class="detail-label">Worst Finish</div>
-                    <div class="detail-value">3-9-1</div>
-                </div>
-
-                <div>
-                    <div class="detail-label">Regular Season Titles</div>
-                    <div class="detail-value">2</div>
-                </div>
-
-                <div>
-                    <div class="detail-label">Playoff Record</div>
-                    <div class="detail-value">4-6 (40%)</div>
-                </div>
-
-            </div>
-
-        </div>
 
 
         <!-- RYAN -->
 
         <div class="manager-card">
 
-            <div class="manager-top">
-                <div class="manager-name">Ryan Herbst</div>
-                <div class="manager-meta">Member since 2013</div>
-                <div class="championship-badge">5 Championships</div>
-            </div>
-
-            <div class="manager-record">
+            <div class="manager-header">
                 <div>
-                    <div class="record-label">Career Record</div>
-                    <div class="record-value">88-89</div>
+                    <div class="manager-name">Ryan Herbst</div>
+                    <div class="manager-tenure">Member since 2013</div>
                 </div>
 
                 <div>
-                    <div class="record-label">Win %</div>
-                    <div class="record-value">49%</div>
+                    <div class="titles">5</div>
+                    <div class="titles-label">Titles</div>
                 </div>
             </div>
 
-            <div class="manager-details">
+            <div class="manager-body">
 
-                <div>
-                    <div class="detail-label">Winning Seasons</div>
-                    <div class="detail-value">6</div>
+                <div class="record-large">88–89</div>
+                <div class="record-label">Career Record · 49% Win Rate</div>
+
+                <div class="manager-stats">
+
+                    <div class="mini-stat">
+                        <div class="mini-stat-label">Winning Seasons</div>
+                        <div class="mini-stat-value">6</div>
+                    </div>
+
+                    <div class="mini-stat">
+                        <div class="mini-stat-label">Playoff Wins</div>
+                        <div class="mini-stat-value">15</div>
+                    </div>
+
+                    <div class="mini-stat">
+                        <div class="mini-stat-label">Playoff Win %</div>
+                        <div class="mini-stat-value">73%</div>
+                    </div>
+
+                    <div class="mini-stat">
+                        <div class="mini-stat-label">Reg. Titles</div>
+                        <div class="mini-stat-value">1</div>
+                    </div>
+
+                    <div class="mini-stat">
+                        <div class="mini-stat-label">Playoff Record</div>
+                        <div class="mini-stat-value">15–5–1</div>
+                    </div>
+
+                    <div class="mini-stat">
+                        <div class="mini-stat-label">Champ. Apps</div>
+                        <div class="mini-stat-value">7</div>
+                    </div>
+
                 </div>
 
-                <div>
-                    <div class="detail-label">Losing Seasons</div>
-                    <div class="detail-value">6</div>
-                </div>
-
-                <div>
-                    <div class="detail-label">Best Finish</div>
-                    <div class="detail-value">9-4</div>
-                </div>
-
-                <div>
-                    <div class="detail-label">Worst Finish</div>
-                    <div class="detail-value">3-10</div>
-                </div>
-
-                <div>
-                    <div class="detail-label">Regular Season Titles</div>
-                    <div class="detail-value">1</div>
-                </div>
-
-                <div>
-                    <div class="detail-label">Playoff Record</div>
-                    <div class="detail-value">15-5-1 (73%)</div>
+                <div class="accomplishments">
+                    <div class="accomplishments-title">Career Highlights</div>
+                    <div class="accomplishment">• League-record 5 championships</div>
+                    <div class="accomplishment">• 7 championship appearances</div>
+                    <div class="accomplishment">• 15 career playoff wins</div>
+                    <div class="accomplishment">• 2013, 2014, 2016, 2019 championships</div>
                 </div>
 
             </div>
+        </div>
 
+
+        <!-- CHRISTIAN -->
+
+        <div class="manager-card">
+
+            <div class="manager-header">
+                <div>
+                    <div class="manager-name">Christian Abert</div>
+                    <div class="manager-tenure">Member since 2013</div>
+                </div>
+
+                <div>
+                    <div class="titles">2</div>
+                    <div class="titles-label">Titles</div>
+                </div>
+            </div>
+
+            <div class="manager-body">
+
+                <div class="record-large">81–95–1</div>
+                <div class="record-label">Career Record · 46% Win Rate</div>
+
+                <div class="manager-stats">
+
+                    <div class="mini-stat">
+                        <div class="mini-stat-label">Winning Seasons</div>
+                        <div class="mini-stat-value">4</div>
+                    </div>
+
+                    <div class="mini-stat">
+                        <div class="mini-stat-label">Playoff Wins</div>
+                        <div class="mini-stat-value">4</div>
+                    </div>
+
+                    <div class="mini-stat">
+                        <div class="mini-stat-label">Playoff Win %</div>
+                        <div class="mini-stat-value">40%</div>
+                    </div>
+
+                    <div class="mini-stat">
+                        <div class="mini-stat-label">Reg. Titles</div>
+                        <div class="mini-stat-value">2</div>
+                    </div>
+
+                    <div class="mini-stat">
+                        <div class="mini-stat-label">Playoff Record</div>
+                        <div class="mini-stat-value">4–6</div>
+                    </div>
+
+                    <div class="mini-stat">
+                        <div class="mini-stat-label">Champ. Apps</div>
+                        <div class="mini-stat-value">2</div>
+                    </div>
+
+                </div>
+
+                <div class="accomplishments">
+                    <div class="accomplishments-title">Career Highlights</div>
+                    <div class="accomplishment">• 2 championships</div>
+                    <div class="accomplishment">• 2 regular-season titles</div>
+                    <div class="accomplishment">• Championships in 2017 and 2018</div>
+                </div>
+
+            </div>
         </div>
 
 
@@ -626,58 +558,66 @@
 
         <div class="manager-card">
 
-            <div class="manager-top">
-                <div class="manager-name">Nic Maiorano</div>
-                <div class="manager-meta">Member since 2013</div>
-                <div class="championship-badge">1 Championship</div>
-            </div>
-
-            <div class="manager-record">
+            <div class="manager-header">
                 <div>
-                    <div class="record-label">Career Record</div>
-                    <div class="record-value">91-83-3</div>
+                    <div class="manager-name">Nic Maiorano</div>
+                    <div class="manager-tenure">Member since 2013</div>
                 </div>
 
                 <div>
-                    <div class="record-label">Win %</div>
-                    <div class="record-value">52%</div>
+                    <div class="titles">1</div>
+                    <div class="titles-label">Title</div>
                 </div>
             </div>
 
-            <div class="manager-details">
+            <div class="manager-body">
 
-                <div>
-                    <div class="detail-label">Winning Seasons</div>
-                    <div class="detail-value">5</div>
+                <div class="record-large">91–83–3</div>
+                <div class="record-label">Career Record · 52% Win Rate</div>
+
+                <div class="manager-stats">
+
+                    <div class="mini-stat">
+                        <div class="mini-stat-label">Winning Seasons</div>
+                        <div class="mini-stat-value">5</div>
+                    </div>
+
+                    <div class="mini-stat">
+                        <div class="mini-stat-label">Playoff Wins</div>
+                        <div class="mini-stat-value">5</div>
+                    </div>
+
+                    <div class="mini-stat">
+                        <div class="mini-stat-label">Playoff Win %</div>
+                        <div class="mini-stat-value">33%</div>
+                    </div>
+
+                    <div class="mini-stat">
+                        <div class="mini-stat-label">Reg. Titles</div>
+                        <div class="mini-stat-value">1</div>
+                    </div>
+
+                    <div class="mini-stat">
+                        <div class="mini-stat-label">Playoff Record</div>
+                        <div class="mini-stat-value">5–10</div>
+                    </div>
+
+                    <div class="mini-stat">
+                        <div class="mini-stat-label">Champ. Apps</div>
+                        <div class="mini-stat-value">2</div>
+                    </div>
+
                 </div>
 
-                <div>
-                    <div class="detail-label">Losing Seasons</div>
-                    <div class="detail-value">5</div>
-                </div>
-
-                <div>
-                    <div class="detail-label">Best Finish</div>
-                    <div class="detail-value">10-3</div>
-                </div>
-
-                <div>
-                    <div class="detail-label">Worst Finish</div>
-                    <div class="detail-value">5-9</div>
-                </div>
-
-                <div>
-                    <div class="detail-label">Regular Season Titles</div>
-                    <div class="detail-value">1</div>
-                </div>
-
-                <div>
-                    <div class="detail-label">Playoff Record</div>
-                    <div class="detail-value">5-10 (33%)</div>
+                <div class="accomplishments">
+                    <div class="accomplishments-title">Career Highlights</div>
+                    <div class="accomplishment">• 91 career wins — league record</div>
+                    <div class="accomplishment">• 1 championship</div>
+                    <div class="accomplishment">• 2014 regular-season title</div>
+                    <div class="accomplishment">• 2020 championship</div>
                 </div>
 
             </div>
-
         </div>
 
 
@@ -685,58 +625,65 @@
 
         <div class="manager-card">
 
-            <div class="manager-top">
-                <div class="manager-name">Bailey Martin</div>
-                <div class="manager-meta">2013–2018 · Returns 2026</div>
-                <div class="championship-badge">1 Championship</div>
-            </div>
-
-            <div class="manager-record">
+            <div class="manager-header">
                 <div>
-                    <div class="record-label">Career Record</div>
-                    <div class="record-value">39-42</div>
+                    <div class="manager-name">Bailey Martin</div>
+                    <div class="manager-tenure">2013–2018 · Rejoined 2026</div>
                 </div>
 
                 <div>
-                    <div class="record-label">Win %</div>
-                    <div class="record-value">48%</div>
+                    <div class="titles">1</div>
+                    <div class="titles-label">Title</div>
                 </div>
             </div>
 
-            <div class="manager-details">
+            <div class="manager-body">
 
-                <div>
-                    <div class="detail-label">Winning Seasons</div>
-                    <div class="detail-value">3</div>
+                <div class="record-large">39–42</div>
+                <div class="record-label">Career Record · 48% Win Rate</div>
+
+                <div class="manager-stats">
+
+                    <div class="mini-stat">
+                        <div class="mini-stat-label">Winning Seasons</div>
+                        <div class="mini-stat-value">3</div>
+                    </div>
+
+                    <div class="mini-stat">
+                        <div class="mini-stat-label">Playoff Wins</div>
+                        <div class="mini-stat-value">4</div>
+                    </div>
+
+                    <div class="mini-stat">
+                        <div class="mini-stat-label">Playoff Win %</div>
+                        <div class="mini-stat-value">50%</div>
+                    </div>
+
+                    <div class="mini-stat">
+                        <div class="mini-stat-label">Reg. Titles</div>
+                        <div class="mini-stat-value">0</div>
+                    </div>
+
+                    <div class="mini-stat">
+                        <div class="mini-stat-label">Playoff Record</div>
+                        <div class="mini-stat-value">4–4</div>
+                    </div>
+
+                    <div class="mini-stat">
+                        <div class="mini-stat-label">Champ. Apps</div>
+                        <div class="mini-stat-value">3</div>
+                    </div>
+
                 </div>
 
-                <div>
-                    <div class="detail-label">Losing Seasons</div>
-                    <div class="detail-value">2</div>
-                </div>
-
-                <div>
-                    <div class="detail-label">Best Finish</div>
-                    <div class="detail-value">9-4</div>
-                </div>
-
-                <div>
-                    <div class="detail-label">Worst Finish</div>
-                    <div class="detail-value">3-10</div>
-                </div>
-
-                <div>
-                    <div class="detail-label">Regular Season Titles</div>
-                    <div class="detail-value">0</div>
-                </div>
-
-                <div>
-                    <div class="detail-label">Playoff Record</div>
-                    <div class="detail-value">4-4 (50%)</div>
+                <div class="accomplishments">
+                    <div class="accomplishments-title">Career Highlights</div>
+                    <div class="accomplishment">• 2015 league champion</div>
+                    <div class="accomplishment">• 3 championship appearances</div>
+                    <div class="accomplishment">• Returns to the league in 2026</div>
                 </div>
 
             </div>
-
         </div>
 
 
@@ -744,58 +691,66 @@
 
         <div class="manager-card">
 
-            <div class="manager-top">
-                <div class="manager-name">Jonah Wheeler</div>
-                <div class="manager-meta">Member since 2014</div>
-                <div class="championship-badge">1 Championship</div>
-            </div>
-
-            <div class="manager-record">
+            <div class="manager-header">
                 <div>
-                    <div class="record-label">Career Record</div>
-                    <div class="record-value">90-73-1</div>
+                    <div class="manager-name">Jonah Wheeler</div>
+                    <div class="manager-tenure">Member since 2014</div>
                 </div>
 
                 <div>
-                    <div class="record-label">Win %</div>
-                    <div class="record-value">55%</div>
+                    <div class="titles">1</div>
+                    <div class="titles-label">Title</div>
                 </div>
             </div>
 
-            <div class="manager-details">
+            <div class="manager-body">
 
-                <div>
-                    <div class="detail-label">Winning Seasons</div>
-                    <div class="detail-value">7</div>
+                <div class="record-large">90–73–1</div>
+                <div class="record-label">Career Record · 55% Win Rate</div>
+
+                <div class="manager-stats">
+
+                    <div class="mini-stat">
+                        <div class="mini-stat-label">Winning Seasons</div>
+                        <div class="mini-stat-value">7</div>
+                    </div>
+
+                    <div class="mini-stat">
+                        <div class="mini-stat-label">Playoff Wins</div>
+                        <div class="mini-stat-value">9</div>
+                    </div>
+
+                    <div class="mini-stat">
+                        <div class="mini-stat-label">Playoff Win %</div>
+                        <div class="mini-stat-value">56%</div>
+                    </div>
+
+                    <div class="mini-stat">
+                        <div class="mini-stat-label">Reg. Titles</div>
+                        <div class="mini-stat-value">3</div>
+                    </div>
+
+                    <div class="mini-stat">
+                        <div class="mini-stat-label">Playoff Record</div>
+                        <div class="mini-stat-value">9–7</div>
+                    </div>
+
+                    <div class="mini-stat">
+                        <div class="mini-stat-label">Champ. Apps</div>
+                        <div class="mini-stat-value">4</div>
+                    </div>
+
                 </div>
 
-                <div>
-                    <div class="detail-label">Losing Seasons</div>
-                    <div class="detail-value">4</div>
-                </div>
-
-                <div>
-                    <div class="detail-label">Best Finish</div>
-                    <div class="detail-value">12-2</div>
-                </div>
-
-                <div>
-                    <div class="detail-label">Worst Finish</div>
-                    <div class="detail-value">3-9-1</div>
-                </div>
-
-                <div>
-                    <div class="detail-label">Regular Season Titles</div>
-                    <div class="detail-value">3</div>
-                </div>
-
-                <div>
-                    <div class="detail-label">Playoff Record</div>
-                    <div class="detail-value">9-7 (56%)</div>
+                <div class="accomplishments">
+                    <div class="accomplishments-title">Career Highlights</div>
+                    <div class="accomplishment">• 7 winning seasons — league record</div>
+                    <div class="accomplishment">• 3 regular-season titles</div>
+                    <div class="accomplishment">• 2024 league champion</div>
+                    <div class="accomplishment">• 12–2 in 2025</div>
                 </div>
 
             </div>
-
         </div>
 
 
@@ -803,58 +758,65 @@
 
         <div class="manager-card">
 
-            <div class="manager-top">
-                <div class="manager-name">Tommy Herbst</div>
-                <div class="manager-meta">Member since 2014</div>
-                <div class="championship-badge">1 Championship</div>
-            </div>
-
-            <div class="manager-record">
+            <div class="manager-header">
                 <div>
-                    <div class="record-label">Career Record</div>
-                    <div class="record-value">78-84-2</div>
+                    <div class="manager-name">Tommy Herbst</div>
+                    <div class="manager-tenure">Member since 2014</div>
                 </div>
 
                 <div>
-                    <div class="record-label">Win %</div>
-                    <div class="record-value">48%</div>
+                    <div class="titles">1</div>
+                    <div class="titles-label">Title</div>
                 </div>
             </div>
 
-            <div class="manager-details">
+            <div class="manager-body">
 
-                <div>
-                    <div class="detail-label">Winning Seasons</div>
-                    <div class="detail-value">4</div>
+                <div class="record-large">78–84–2</div>
+                <div class="record-label">Career Record · 48% Win Rate</div>
+
+                <div class="manager-stats">
+
+                    <div class="mini-stat">
+                        <div class="mini-stat-label">Winning Seasons</div>
+                        <div class="mini-stat-value">4</div>
+                    </div>
+
+                    <div class="mini-stat">
+                        <div class="mini-stat-label">Playoff Wins</div>
+                        <div class="mini-stat-value">4</div>
+                    </div>
+
+                    <div class="mini-stat">
+                        <div class="mini-stat-label">Playoff Win %</div>
+                        <div class="mini-stat-value">50%</div>
+                    </div>
+
+                    <div class="mini-stat">
+                        <div class="mini-stat-label">Reg. Titles</div>
+                        <div class="mini-stat-value">3</div>
+                    </div>
+
+                    <div class="mini-stat">
+                        <div class="mini-stat-label">Playoff Record</div>
+                        <div class="mini-stat-value">4–4</div>
+                    </div>
+
+                    <div class="mini-stat">
+                        <div class="mini-stat-label">Champ. Apps</div>
+                        <div class="mini-stat-value">2</div>
+                    </div>
+
                 </div>
 
-                <div>
-                    <div class="detail-label">Losing Seasons</div>
-                    <div class="detail-value">8</div>
-                </div>
-
-                <div>
-                    <div class="detail-label">Best Finish</div>
-                    <div class="detail-value">12-2</div>
-                </div>
-
-                <div>
-                    <div class="detail-label">Worst Finish</div>
-                    <div class="detail-value">2-10-1</div>
-                </div>
-
-                <div>
-                    <div class="detail-label">Regular Season Titles</div>
-                    <div class="detail-value">3</div>
-                </div>
-
-                <div>
-                    <div class="detail-label">Playoff Record</div>
-                    <div class="detail-value">4-4 (50%)</div>
+                <div class="accomplishments">
+                    <div class="accomplishments-title">Career Highlights</div>
+                    <div class="accomplishment">• 3 regular-season titles</div>
+                    <div class="accomplishment">• 2023 league champion</div>
+                    <div class="accomplishment">• Tied league record with 12 wins in 2023</div>
                 </div>
 
             </div>
-
         </div>
 
 
@@ -862,58 +824,64 @@
 
         <div class="manager-card">
 
-            <div class="manager-top">
-                <div class="manager-name">Michael Gravante</div>
-                <div class="manager-meta">Member since 2016</div>
-                <div class="championship-badge">1 Championship</div>
-            </div>
-
-            <div class="manager-record">
+            <div class="manager-header">
                 <div>
-                    <div class="record-label">Career Record</div>
-                    <div class="record-value">67-68-1</div>
+                    <div class="manager-name">Michael Gravante</div>
+                    <div class="manager-tenure">Member since 2016</div>
                 </div>
 
                 <div>
-                    <div class="record-label">Win %</div>
-                    <div class="record-value">49%</div>
+                    <div class="titles">1</div>
+                    <div class="titles-label">Title</div>
                 </div>
             </div>
 
-            <div class="manager-details">
+            <div class="manager-body">
 
-                <div>
-                    <div class="detail-label">Winning Seasons</div>
-                    <div class="detail-value">4</div>
+                <div class="record-large">67–68–1</div>
+                <div class="record-label">Career Record · 49% Win Rate</div>
+
+                <div class="manager-stats">
+
+                    <div class="mini-stat">
+                        <div class="mini-stat-label">Winning Seasons</div>
+                        <div class="mini-stat-value">4</div>
+                    </div>
+
+                    <div class="mini-stat">
+                        <div class="mini-stat-label">Playoff Wins</div>
+                        <div class="mini-stat-value">5</div>
+                    </div>
+
+                    <div class="mini-stat">
+                        <div class="mini-stat-label">Playoff Win %</div>
+                        <div class="mini-stat-value">55%</div>
+                    </div>
+
+                    <div class="mini-stat">
+                        <div class="mini-stat-label">Reg. Titles</div>
+                        <div class="mini-stat-value">0</div>
+                    </div>
+
+                    <div class="mini-stat">
+                        <div class="mini-stat-label">Playoff Record</div>
+                        <div class="mini-stat-value">5–4</div>
+                    </div>
+
+                    <div class="mini-stat">
+                        <div class="mini-stat-label">Champ. Apps</div>
+                        <div class="mini-stat-value">1</div>
+                    </div>
+
                 </div>
 
-                <div>
-                    <div class="detail-label">Losing Seasons</div>
-                    <div class="detail-value">4</div>
-                </div>
-
-                <div>
-                    <div class="detail-label">Best Finish</div>
-                    <div class="detail-value">9-5</div>
-                </div>
-
-                <div>
-                    <div class="detail-label">Worst Finish</div>
-                    <div class="detail-value">4-9</div>
-                </div>
-
-                <div>
-                    <div class="detail-label">Regular Season Titles</div>
-                    <div class="detail-value">0</div>
-                </div>
-
-                <div>
-                    <div class="detail-label">Playoff Record</div>
-                    <div class="detail-value">5-4 (55%)</div>
+                <div class="accomplishments">
+                    <div class="accomplishments-title">Career Highlights</div>
+                    <div class="accomplishment">• 2021 league champion</div>
+                    <div class="accomplishment">• 5 career playoff wins</div>
                 </div>
 
             </div>
-
         </div>
 
 
@@ -921,58 +889,65 @@
 
         <div class="manager-card">
 
-            <div class="manager-top">
-                <div class="manager-name">Mike Herbst</div>
-                <div class="manager-meta">Member since 2019</div>
-                <div class="championship-badge">0 Championships</div>
-            </div>
-
-            <div class="manager-record">
+            <div class="manager-header">
                 <div>
-                    <div class="record-label">Career Record</div>
-                    <div class="record-value">81-95-1</div>
+                    <div class="manager-name">Mike Herbst</div>
+                    <div class="manager-tenure">Member since 2019</div>
                 </div>
 
                 <div>
-                    <div class="record-label">Win %</div>
-                    <div class="record-value">50%</div>
+                    <div class="titles">0</div>
+                    <div class="titles-label">Titles</div>
                 </div>
             </div>
 
-            <div class="manager-details">
+            <div class="manager-body">
 
-                <div>
-                    <div class="detail-label">Winning Seasons</div>
-                    <div class="detail-value">3</div>
+                <div class="record-large">81–95–1</div>
+                <div class="record-label">Career Record · 50% Win Rate</div>
+
+                <div class="manager-stats">
+
+                    <div class="mini-stat">
+                        <div class="mini-stat-label">Winning Seasons</div>
+                        <div class="mini-stat-value">3</div>
+                    </div>
+
+                    <div class="mini-stat">
+                        <div class="mini-stat-label">Playoff Wins</div>
+                        <div class="mini-stat-value">1</div>
+                    </div>
+
+                    <div class="mini-stat">
+                        <div class="mini-stat-label">Playoff Win %</div>
+                        <div class="mini-stat-value">20%</div>
+                    </div>
+
+                    <div class="mini-stat">
+                        <div class="mini-stat-label">Reg. Titles</div>
+                        <div class="mini-stat-value">1</div>
+                    </div>
+
+                    <div class="mini-stat">
+                        <div class="mini-stat-label">Playoff Record</div>
+                        <div class="mini-stat-value">1–4</div>
+                    </div>
+
+                    <div class="mini-stat">
+                        <div class="mini-stat-label">Champ. Apps</div>
+                        <div class="mini-stat-value">0</div>
+                    </div>
+
                 </div>
 
-                <div>
-                    <div class="detail-label">Losing Seasons</div>
-                    <div class="detail-value">4</div>
-                </div>
-
-                <div>
-                    <div class="detail-label">Best Finish</div>
-                    <div class="detail-value">10-3</div>
-                </div>
-
-                <div>
-                    <div class="detail-label">Worst Finish</div>
-                    <div class="detail-value">5-9</div>
-                </div>
-
-                <div>
-                    <div class="detail-label">Regular Season Titles</div>
-                    <div class="detail-value">1</div>
-                </div>
-
-                <div>
-                    <div class="detail-label">Playoff Record</div>
-                    <div class="detail-value">1-4 (20%)</div>
+                <div class="accomplishments">
+                    <div class="accomplishments-title">Career Highlights</div>
+                    <div class="accomplishment">• 2020 regular-season title</div>
+                    <div class="accomplishment">• League record: 236 points in one game</div>
+                    <div class="accomplishment">• League record: 16 TDs in one matchup</div>
                 </div>
 
             </div>
-
         </div>
 
 
@@ -980,58 +955,65 @@
 
         <div class="manager-card">
 
-            <div class="manager-top">
-                <div class="manager-name">William Darrow</div>
-                <div class="manager-meta">Member since 2021</div>
-                <div class="championship-badge">1 Championship</div>
-            </div>
-
-            <div class="manager-record">
+            <div class="manager-header">
                 <div>
-                    <div class="record-label">Career Record</div>
-                    <div class="record-value">34-36</div>
+                    <div class="manager-name">William Darrow</div>
+                    <div class="manager-tenure">Member since 2021</div>
                 </div>
 
                 <div>
-                    <div class="record-label">Win %</div>
-                    <div class="record-value">48%</div>
+                    <div class="titles">1</div>
+                    <div class="titles-label">Title</div>
                 </div>
             </div>
 
-            <div class="manager-details">
+            <div class="manager-body">
 
-                <div>
-                    <div class="detail-label">Winning Seasons</div>
-                    <div class="detail-value">2</div>
+                <div class="record-large">34–36</div>
+                <div class="record-label">Career Record · 48% Win Rate</div>
+
+                <div class="manager-stats">
+
+                    <div class="mini-stat">
+                        <div class="mini-stat-label">Winning Seasons</div>
+                        <div class="mini-stat-value">2</div>
+                    </div>
+
+                    <div class="mini-stat">
+                        <div class="mini-stat-label">Playoff Wins</div>
+                        <div class="mini-stat-value">3</div>
+                    </div>
+
+                    <div class="mini-stat">
+                        <div class="mini-stat-label">Playoff Win %</div>
+                        <div class="mini-stat-value">75%</div>
+                    </div>
+
+                    <div class="mini-stat">
+                        <div class="mini-stat-label">Reg. Titles</div>
+                        <div class="mini-stat-value">0</div>
+                    </div>
+
+                    <div class="mini-stat">
+                        <div class="mini-stat-label">Playoff Record</div>
+                        <div class="mini-stat-value">3–1</div>
+                    </div>
+
+                    <div class="mini-stat">
+                        <div class="mini-stat-label">Champ. Apps</div>
+                        <div class="mini-stat-value">2</div>
+                    </div>
+
                 </div>
 
-                <div>
-                    <div class="detail-label">Losing Seasons</div>
-                    <div class="detail-value">3</div>
-                </div>
-
-                <div>
-                    <div class="detail-label">Best Finish</div>
-                    <div class="detail-value">10-4</div>
-                </div>
-
-                <div>
-                    <div class="detail-label">Worst Finish</div>
-                    <div class="detail-value">2-12</div>
-                </div>
-
-                <div>
-                    <div class="detail-label">Regular Season Titles</div>
-                    <div class="detail-value">0</div>
-                </div>
-
-                <div>
-                    <div class="detail-label">Playoff Record</div>
-                    <div class="detail-value">3-1 (75%)</div>
+                <div class="accomplishments">
+                    <div class="accomplishments-title">Career Highlights</div>
+                    <div class="accomplishment">• 2025 league champion</div>
+                    <div class="accomplishment">• 75% career playoff win rate</div>
+                    <div class="accomplishment">• 2021 and 2025 championship appearances</div>
                 </div>
 
             </div>
-
         </div>
 
 
@@ -1039,58 +1021,66 @@
 
         <div class="manager-card">
 
-            <div class="manager-top">
-                <div class="manager-name">Julia Wheeler</div>
-                <div class="manager-meta">Member since 2022</div>
-                <div class="championship-badge">1 Championship · Tie</div>
-            </div>
-
-            <div class="manager-record">
+            <div class="manager-header">
                 <div>
-                    <div class="record-label">Career Record</div>
-                    <div class="record-value">33-23</div>
+                    <div class="manager-name">Julia Wheeler</div>
+                    <div class="manager-tenure">Member since 2022</div>
                 </div>
 
                 <div>
-                    <div class="record-label">Win %</div>
-                    <div class="record-value">58%</div>
+                    <div class="titles">1</div>
+                    <div class="titles-label">Title*</div>
                 </div>
             </div>
 
-            <div class="manager-details">
+            <div class="manager-body">
 
-                <div>
-                    <div class="detail-label">Winning Seasons</div>
-                    <div class="detail-value">2</div>
+                <div class="record-large">33–23</div>
+                <div class="record-label">Career Record · 58% Win Rate</div>
+
+                <div class="manager-stats">
+
+                    <div class="mini-stat">
+                        <div class="mini-stat-label">Winning Seasons</div>
+                        <div class="mini-stat-value">2</div>
+                    </div>
+
+                    <div class="mini-stat">
+                        <div class="mini-stat-label">Playoff Wins</div>
+                        <div class="mini-stat-value">5</div>
+                    </div>
+
+                    <div class="mini-stat">
+                        <div class="mini-stat-label">Playoff Win %</div>
+                        <div class="mini-stat-value">61%</div>
+                    </div>
+
+                    <div class="mini-stat">
+                        <div class="mini-stat-label">Reg. Titles</div>
+                        <div class="mini-stat-value">1</div>
+                    </div>
+
+                    <div class="mini-stat">
+                        <div class="mini-stat-label">Playoff Record</div>
+                        <div class="mini-stat-value">5–3–1</div>
+                    </div>
+
+                    <div class="mini-stat">
+                        <div class="mini-stat-label">Champ. Apps</div>
+                        <div class="mini-stat-value">3</div>
+                    </div>
+
                 </div>
 
-                <div>
-                    <div class="detail-label">Losing Seasons</div>
-                    <div class="detail-value">0</div>
-                </div>
-
-                <div>
-                    <div class="detail-label">Best Finish</div>
-                    <div class="detail-value">10-4</div>
-                </div>
-
-                <div>
-                    <div class="detail-label">Worst Finish</div>
-                    <div class="detail-value">7-7</div>
-                </div>
-
-                <div>
-                    <div class="detail-label">Regular Season Titles</div>
-                    <div class="detail-value">1</div>
-                </div>
-
-                <div>
-                    <div class="detail-label">Playoff Record</div>
-                    <div class="detail-value">5-3-1 (61%)</div>
+                <div class="accomplishments">
+                    <div class="accomplishments-title">Career Highlights</div>
+                    <div class="accomplishment">• Highest career regular-season win rate: 58%</div>
+                    <div class="accomplishment">• 2022 regular-season title</div>
+                    <div class="accomplishment">• 2022 co-champion</div>
+                    <div class="accomplishment">• 3 championship appearances</div>
                 </div>
 
             </div>
-
         </div>
 
 
@@ -1098,58 +1088,58 @@
 
         <div class="manager-card">
 
-            <div class="manager-top">
-                <div class="manager-name">Mike Darrow</div>
-                <div class="manager-meta">Member since 2023</div>
-                <div class="championship-badge">0 Championships</div>
-            </div>
-
-            <div class="manager-record">
+            <div class="manager-header">
                 <div>
-                    <div class="record-label">Career Record</div>
-                    <div class="record-value">19-22-1</div>
+                    <div class="manager-name">Mike Darrow</div>
+                    <div class="manager-tenure">Member since 2023</div>
                 </div>
 
                 <div>
-                    <div class="record-label">Win %</div>
-                    <div class="record-value">46%</div>
+                    <div class="titles">0</div>
+                    <div class="titles-label">Titles</div>
                 </div>
             </div>
 
-            <div class="manager-details">
+            <div class="manager-body">
 
-                <div>
-                    <div class="detail-label">Winning Seasons</div>
-                    <div class="detail-value">1</div>
-                </div>
+                <div class="record-large">19–22–1</div>
+                <div class="record-label">Career Record · 46% Win Rate</div>
 
-                <div>
-                    <div class="detail-label">Losing Seasons</div>
-                    <div class="detail-value">2</div>
-                </div>
+                <div class="manager-stats">
 
-                <div>
-                    <div class="detail-label">Best Finish</div>
-                    <div class="detail-value">9-5</div>
-                </div>
+                    <div class="mini-stat">
+                        <div class="mini-stat-label">Winning Seasons</div>
+                        <div class="mini-stat-value">1</div>
+                    </div>
 
-                <div>
-                    <div class="detail-label">Worst Finish</div>
-                    <div class="detail-value">4-9</div>
-                </div>
+                    <div class="mini-stat">
+                        <div class="mini-stat-label">Playoff Wins</div>
+                        <div class="mini-stat-value">0</div>
+                    </div>
 
-                <div>
-                    <div class="detail-label">Regular Season Titles</div>
-                    <div class="detail-value">0</div>
-                </div>
+                    <div class="mini-stat">
+                        <div class="mini-stat-label">Playoff Win %</div>
+                        <div class="mini-stat-value">0%</div>
+                    </div>
 
-                <div>
-                    <div class="detail-label">Playoff Record</div>
-                    <div class="detail-value">0-1 (0%)</div>
+                    <div class="mini-stat">
+                        <div class="mini-stat-label">Reg. Titles</div>
+                        <div class="mini-stat-value">0</div>
+                    </div>
+
+                    <div class="mini-stat">
+                        <div class="mini-stat-label">Playoff Record</div>
+                        <div class="mini-stat-value">0–1</div>
+                    </div>
+
+                    <div class="mini-stat">
+                        <div class="mini-stat-label">Champ. Apps</div>
+                        <div class="mini-stat-value">0</div>
+                    </div>
+
                 </div>
 
             </div>
-
         </div>
 
 
@@ -1157,167 +1147,90 @@
 
         <div class="manager-card">
 
-            <div class="manager-top">
-                <div class="manager-name">Nick Femano</div>
-                <div class="manager-meta">Member since 2024</div>
-                <div class="championship-badge">0 Championships</div>
-            </div>
-
-            <div class="manager-record">
+            <div class="manager-header">
                 <div>
-                    <div class="record-label">Career Record</div>
-                    <div class="record-value">11-17</div>
+                    <div class="manager-name">Nick Femano</div>
+                    <div class="manager-tenure">Member since 2024</div>
                 </div>
 
                 <div>
-                    <div class="record-label">Win %</div>
-                    <div class="record-value">39%</div>
+                    <div class="titles">0</div>
+                    <div class="titles-label">Titles</div>
                 </div>
             </div>
 
-            <div class="manager-details">
+            <div class="manager-body">
 
-                <div>
-                    <div class="detail-label">Winning Seasons</div>
-                    <div class="detail-value">0</div>
-                </div>
+                <div class="record-large">11–17</div>
+                <div class="record-label">Career Record · 39% Win Rate</div>
 
-                <div>
-                    <div class="detail-label">Losing Seasons</div>
-                    <div class="detail-value">2</div>
-                </div>
+                <div class="manager-stats">
 
-                <div>
-                    <div class="detail-label">Best Finish</div>
-                    <div class="detail-value">6-8</div>
-                </div>
+                    <div class="mini-stat">
+                        <div class="mini-stat-label">Winning Seasons</div>
+                        <div class="mini-stat-value">0</div>
+                    </div>
 
-                <div>
-                    <div class="detail-label">Worst Finish</div>
-                    <div class="detail-value">5-9</div>
-                </div>
+                    <div class="mini-stat">
+                        <div class="mini-stat-label">Playoff Wins</div>
+                        <div class="mini-stat-value">0</div>
+                    </div>
 
-                <div>
-                    <div class="detail-label">Regular Season Titles</div>
-                    <div class="detail-value">0</div>
-                </div>
+                    <div class="mini-stat">
+                        <div class="mini-stat-label">Playoff Win %</div>
+                        <div class="mini-stat-value">0%</div>
+                    </div>
 
-                <div>
-                    <div class="detail-label">Playoff Record</div>
-                    <div class="detail-value">0-0</div>
+                    <div class="mini-stat">
+                        <div class="mini-stat-label">Reg. Titles</div>
+                        <div class="mini-stat-value">0</div>
+                    </div>
+
+                    <div class="mini-stat">
+                        <div class="mini-stat-label">Playoff Record</div>
+                        <div class="mini-stat-value">0–0</div>
+                    </div>
+
+                    <div class="mini-stat">
+                        <div class="mini-stat-label">Champ. Apps</div>
+                        <div class="mini-stat-value">0</div>
+                    </div>
+
                 </div>
 
             </div>
-
         </div>
 
-    </div>
-
-
-    <!-- CAREER LEADERBOARD -->
-
-    <h2 class="section-title">Career Leaders</h2>
-
-    <p class="section-description">
-        The all-time leaders across the categories that define league history.
-    </p>
-
-    <div class="panel">
-
-        <div class="panel-header">
-            <h3>All-Time Records</h3>
-            <span>Career</span>
-        </div>
-
-        <div class="leaderboard-row">
-            <div class="rank">01</div>
-            <div class="leader-name">Nic Maiorano</div>
-            <div class="leader-stat">91 wins</div>
-            <div class="leader-stat">52%</div>
-            <div class="leader-stat">1 title</div>
-        </div>
-
-        <div class="leaderboard-row">
-            <div class="rank">02</div>
-            <div class="leader-name">Jonah Wheeler</div>
-            <div class="leader-stat">90 wins</div>
-            <div class="leader-stat">55%</div>
-            <div class="leader-stat">1 title</div>
-        </div>
-
-        <div class="leaderboard-row">
-            <div class="rank">03</div>
-            <div class="leader-name">Ryan Herbst</div>
-            <div class="leader-stat">88 wins</div>
-            <div class="leader-stat">49%</div>
-            <div class="leader-stat">5 titles</div>
-        </div>
-
-        <div class="leaderboard-row">
-            <div class="rank">04</div>
-            <div class="leader-name">Christian Abert</div>
-            <div class="leader-stat">81 wins</div>
-            <div class="leader-stat">46%</div>
-            <div class="leader-stat">2 titles</div>
-        </div>
-
-        <div class="leaderboard-row">
-            <div class="rank">05</div>
-            <div class="leader-name">Mike Herbst</div>
-            <div class="leader-stat">81 wins</div>
-            <div class="leader-stat">50%</div>
-            <div class="leader-stat">0 titles</div>
-        </div>
 
     </div>
 
 
     <!-- FORMER MANAGERS -->
 
-    <h2 class="section-title">Former Managers</h2>
+    <section class="former">
 
-    <p class="section-description">
-        Managers who are part of the league's historical record but are not
-        currently in the 2026 league.
-    </p>
+        <h2 class="section-title">Former Managers</h2>
 
-    <div class="former-grid">
+        <div class="former-panel">
 
-        <div class="former-card">
-            <div class="former-name">Taz</div>
-            <div class="former-label">Former manager · Historical member</div>
+            <p>
+                These managers were part of the Kevin Durant League during
+                earlier seasons and remain part of the league's historical record.
+            </p>
+
+            <div class="former-list">
+
+                <div class="former-name">Taz</div>
+                <div class="former-name">Dylan</div>
+                <div class="former-name">Joey</div>
+                <div class="former-name">Logan</div>
+
+            </div>
+
         </div>
 
-        <div class="former-card">
-            <div class="former-name">Dylan</div>
-            <div class="former-label">Former manager · Historical member</div>
-        </div>
+    </section>
 
-        <div class="former-card">
-            <div class="former-name">Joey</div>
-            <div class="former-label">Former manager · Historical member</div>
-        </div>
-
-        <div class="former-card">
-            <div class="former-name">Logan</div>
-            <div class="former-label">Former manager · Historical member</div>
-        </div>
-
-    </div>
-
-
-    <h2 class="section-title">Coming Together</h2>
-
-    <div class="panel">
-
-        <div style="padding: 25px; color: #8f9aa4; font-size: 14px;">
-            Manager profiles will eventually connect directly to season
-            histories, championships, playoff appearances, drafts and
-            head-to-head records. This will allow each manager to have a
-            complete career page within the league archive.
-        </div>
-
-    </div>
 
 </main>
 
