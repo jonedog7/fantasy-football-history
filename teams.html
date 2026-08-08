@@ -1,1 +1,843 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>Teams & Managers | Kevin Durant League</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #0b0f14;
+            color: #f5f5f5;
+            line-height: 1.5;
+        }
+
+        /* HEADER */
+
+        header {
+            background: #111820;
+            border-bottom: 1px solid #27313b;
+            padding: 20px 30px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-inner {
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            display: block;
+            font-size: 11px;
+            color: #9aa5af;
+            letter-spacing: 2px;
+            margin-top: 2px;
+        }
+
+        nav {
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: #cbd2d8;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        nav a:hover {
+            color: white;
+        }
+
+        /* HERO */
+
+        .page-hero {
+            max-width: 1200px;
+            margin: auto;
+            padding: 70px 30px 45px;
+        }
+
+        .eyebrow {
+            color: #9aa5af;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 12px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .page-hero h1 {
+            font-size: clamp(42px, 7vw, 72px);
+            line-height: .95;
+            letter-spacing: -3px;
+            margin-bottom: 18px;
+        }
+
+        .page-hero p {
+            color: #aeb8c1;
+            max-width: 680px;
+            font-size: 17px;
+        }
+
+        /* CONTENT */
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 30px 80px;
+        }
+
+        .section-title {
+            font-size: 24px;
+            margin: 45px 0 18px;
+        }
+
+        .section-description {
+            color: #8f9aa4;
+            font-size: 14px;
+            margin-top: -8px;
+            margin-bottom: 20px;
+        }
+
+        /* SUMMARY STATS */
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+
+        .stat-card {
+            background: #151c24;
+            border: 1px solid #27313b;
+            border-radius: 12px;
+            padding: 22px;
+        }
+
+        .stat-label {
+            color: #8f9aa4;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 700;
+        }
+
+        .stat-number {
+            font-size: 32px;
+            font-weight: 800;
+            margin-top: 7px;
+        }
+
+        .stat-description {
+            color: #68747e;
+            font-size: 12px;
+            margin-top: 3px;
+        }
+
+        /* TEAM GRID */
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .team-card {
+            background: #151c24;
+            border: 1px solid #27313b;
+            border-radius: 12px;
+            padding: 24px;
+            transition: transform .15s ease, border-color .15s ease;
+        }
+
+        .team-card:hover {
+            transform: translateY(-2px);
+            border-color: #3a4651;
+        }
+
+        .team-number {
+            color: #68747e;
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            margin-bottom: 10px;
+        }
+
+        .team-name {
+            font-size: 21px;
+            font-weight: 800;
+            margin-bottom: 5px;
+        }
+
+        .team-status {
+            color: #8f9aa4;
+            font-size: 12px;
+            margin-bottom: 20px;
+        }
+
+        .team-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            border-top: 1px solid #27313b;
+            padding-top: 17px;
+            gap: 8px;
+        }
+
+        .team-stat-label {
+            color: #68747e;
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .team-stat-value {
+            font-weight: 800;
+            font-size: 17px;
+            margin-top: 3px;
+        }
+
+        /* CAREER TABLE */
+
+        .panel {
+            background: #151c24;
+            border: 1px solid #27313b;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .panel-header {
+            padding: 20px 22px;
+            border-bottom: 1px solid #27313b;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .panel-header h3 {
+            font-size: 17px;
+        }
+
+        .panel-header span {
+            color: #7f8a94;
+            font-size: 12px;
+        }
+
+        .career-row {
+            display: grid;
+            grid-template-columns: 50px 1.5fr 90px 90px 90px;
+            align-items: center;
+            padding: 16px 22px;
+            border-bottom: 1px solid #222b34;
+        }
+
+        .career-row:last-child {
+            border-bottom: none;
+        }
+
+        .rank {
+            color: #68747e;
+            font-weight: 800;
+        }
+
+        .career-name {
+            font-weight: 700;
+        }
+
+        .career-stat {
+            text-align: right;
+            color: #aeb8c1;
+            font-size: 13px;
+        }
+
+        .table-label {
+            color: #68747e;
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-align: right;
+        }
+
+        /* NOTE */
+
+        .data-note {
+            margin-top: 30px;
+            padding: 18px 20px;
+            border: 1px solid #27313b;
+            border-radius: 10px;
+            color: #7f8a94;
+            font-size: 12px;
+            background: #111820;
+        }
+
+        /* FOOTER */
+
+        footer {
+            border-top: 1px solid #27313b;
+            padding: 30px;
+            text-align: center;
+            color: #68747e;
+            font-size: 12px;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 900px) {
+
+            .team-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .career-row {
+                grid-template-columns: 40px 1fr 70px 70px 70px;
+            }
+        }
+
+        @media (max-width: 800px) {
+
+            header {
+                padding: 18px 20px;
+            }
+
+            .header-inner {
+                flex-direction: column;
+                gap: 15px;
+                align-items: flex-start;
+            }
+
+            nav {
+                width: 100%;
+                overflow-x: auto;
+                flex-wrap: nowrap;
+                gap: 18px;
+                padding-bottom: 3px;
+            }
+
+            nav a {
+                white-space: nowrap;
+            }
+
+            .page-hero {
+                padding: 50px 20px 35px;
+            }
+
+            .container {
+                padding: 0 20px 60px;
+            }
+
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .career-row {
+                grid-template-columns: 40px 1fr 65px;
+            }
+
+            .career-row .career-stat:nth-last-child(-n+2),
+            .career-row .table-label:nth-last-child(-n+2) {
+                display: none;
+            }
+        }
+
+        @media (max-width: 450px) {
+
+            .stats {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .stat-card {
+                padding: 18px;
+            }
+
+            .stat-number {
+                font-size: 26px;
+            }
+
+            .team-card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="header-inner">
+
+        <div class="logo">
+            KEVIN DURANT LEAGUE
+            <span>FANTASY FOOTBALL · EST. 2013</span>
+        </div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="history.html">History</a>
+            <a href="teams.html">Teams</a>
+            <a href="records.html">Records</a>
+            <a href="matchups.html">Matchups</a>
+            <a href="drafts.html">Drafts</a>
+            <a href="seasons.html">Seasons</a>
+        </nav>
+
+    </div>
+</header>
+
+
+<section class="page-hero">
+
+    <div class="eyebrow">Managers & Teams · 2013–2026</div>
+
+    <h1>The<br>Managers.</h1>
+
+    <p>
+        Every manager who has helped shape the Kevin Durant League, from its
+        original four-team season to the current 12-team era.
+    </p>
+
+</section>
+
+
+<main class="container">
+
+
+    <!-- SUMMARY -->
+
+    <h2 class="section-title">League Directory</h2>
+
+    <div class="stats">
+
+        <div class="stat-card">
+            <div class="stat-label">Current Managers</div>
+            <div class="stat-number">12</div>
+            <div class="stat-description">2026 league</div>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-label">Managers Ever</div>
+            <div class="stat-number">—</div>
+            <div class="stat-description">Historical data pending</div>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-label">Champions</div>
+            <div class="stat-number">—</div>
+            <div class="stat-description">Unique managers</div>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-label">Seasons</div>
+            <div class="stat-number">14</div>
+            <div class="stat-description">2013–2026</div>
+        </div>
+
+    </div>
+
+
+    <!-- CURRENT MANAGERS -->
+
+    <h2 class="section-title">Current League</h2>
+
+    <p class="section-description">
+        The 12 managers competing in the 2026 season.
+    </p>
+
+    <div class="team-grid">
+
+        <div class="team-card">
+            <div class="team-number">01</div>
+            <div class="team-name">Manager TBD</div>
+            <div class="team-status">2026 Roster</div>
+
+            <div class="team-stats">
+                <div>
+                    <div class="team-stat-label">Titles</div>
+                    <div class="team-stat-value">—</div>
+                </div>
+
+                <div>
+                    <div class="team-stat-label">Wins</div>
+                    <div class="team-stat-value">—</div>
+                </div>
+
+                <div>
+                    <div class="team-stat-label">Seasons</div>
+                    <div class="team-stat-value">—</div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="team-card">
+            <div class="team-number">02</div>
+            <div class="team-name">Manager TBD</div>
+            <div class="team-status">2026 Roster</div>
+
+            <div class="team-stats">
+                <div>
+                    <div class="team-stat-label">Titles</div>
+                    <div class="team-stat-value">—</div>
+                </div>
+
+                <div>
+                    <div class="team-stat-label">Wins</div>
+                    <div class="team-stat-value">—</div>
+                </div>
+
+                <div>
+                    <div class="team-stat-label">Seasons</div>
+                    <div class="team-stat-value">—</div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="team-card">
+            <div class="team-number">03</div>
+            <div class="team-name">Manager TBD</div>
+            <div class="team-status">2026 Roster</div>
+
+            <div class="team-stats">
+                <div>
+                    <div class="team-stat-label">Titles</div>
+                    <div class="team-stat-value">—</div>
+                </div>
+
+                <div>
+                    <div class="team-stat-label">Wins</div>
+                    <div class="team-stat-value">—</div>
+                </div>
+
+                <div>
+                    <div class="team-stat-label">Seasons</div>
+                    <div class="team-stat-value">—</div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="team-card">
+            <div class="team-number">04</div>
+            <div class="team-name">Manager TBD</div>
+            <div class="team-status">2026 Roster</div>
+
+            <div class="team-stats">
+                <div>
+                    <div class="team-stat-label">Titles</div>
+                    <div class="team-stat-value">—</div>
+                </div>
+
+                <div>
+                    <div class="team-stat-label">Wins</div>
+                    <div class="team-stat-value">—</div>
+                </div>
+
+                <div>
+                    <div class="team-stat-label">Seasons</div>
+                    <div class="team-stat-value">—</div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="team-card">
+            <div class="team-number">05</div>
+            <div class="team-name">Manager TBD</div>
+            <div class="team-status">2026 Roster</div>
+
+            <div class="team-stats">
+                <div>
+                    <div class="team-stat-label">Titles</div>
+                    <div class="team-stat-value">—</div>
+                </div>
+
+                <div>
+                    <div class="team-stat-label">Wins</div>
+                    <div class="team-stat-value">—</div>
+                </div>
+
+                <div>
+                    <div class="team-stat-label">Seasons</div>
+                    <div class="team-stat-value">—</div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="team-card">
+            <div class="team-number">06</div>
+            <div class="team-name">Manager TBD</div>
+            <div class="team-status">2026 Roster</div>
+
+            <div class="team-stats">
+                <div>
+                    <div class="team-stat-label">Titles</div>
+                    <div class="team-stat-value">—</div>
+                </div>
+
+                <div>
+                    <div class="team-stat-label">Wins</div>
+                    <div class="team-stat-value">—</div>
+                </div>
+
+                <div>
+                    <div class="team-stat-label">Seasons</div>
+                    <div class="team-stat-value">—</div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="team-card">
+            <div class="team-number">07</div>
+            <div class="team-name">Manager TBD</div>
+            <div class="team-status">2026 Roster</div>
+
+            <div class="team-stats">
+                <div>
+                    <div class="team-stat-label">Titles</div>
+                    <div class="team-stat-value">—</div>
+                </div>
+
+                <div>
+                    <div class="team-stat-label">Wins</div>
+                    <div class="team-stat-value">—</div>
+                </div>
+
+                <div>
+                    <div class="team-stat-label">Seasons</div>
+                    <div class="team-stat-value">—</div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="team-card">
+            <div class="team-number">08</div>
+            <div class="team-name">Manager TBD</div>
+            <div class="team-status">2026 Roster</div>
+
+            <div class="team-stats">
+                <div>
+                    <div class="team-stat-label">Titles</div>
+                    <div class="team-stat-value">—</div>
+                </div>
+
+                <div>
+                    <div class="team-stat-label">Wins</div>
+                    <div class="team-stat-value">—</div>
+                </div>
+
+                <div>
+                    <div class="team-stat-label">Seasons</div>
+                    <div class="team-stat-value">—</div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="team-card">
+            <div class="team-number">09</div>
+            <div class="team-name">Manager TBD</div>
+            <div class="team-status">2026 Roster</div>
+
+            <div class="team-stats">
+                <div>
+                    <div class="team-stat-label">Titles</div>
+                    <div class="team-stat-value">—</div>
+                </div>
+
+                <div>
+                    <div class="team-stat-label">Wins</div>
+                    <div class="team-stat-value">—</div>
+                </div>
+
+                <div>
+                    <div class="team-stat-label">Seasons</div>
+                    <div class="team-stat-value">—</div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="team-card">
+            <div class="team-number">10</div>
+            <div class="team-name">Manager TBD</div>
+            <div class="team-status">2026 Roster</div>
+
+            <div class="team-stats">
+                <div>
+                    <div class="team-stat-label">Titles</div>
+                    <div class="team-stat-value">—</div>
+                </div>
+
+                <div>
+                    <div class="team-stat-label">Wins</div>
+                    <div class="team-stat-value">—</div>
+                </div>
+
+                <div>
+                    <div class="team-stat-label">Seasons</div>
+                    <div class="team-stat-value">—</div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="team-card">
+            <div class="team-number">11</div>
+            <div class="team-name">Manager TBD</div>
+            <div class="team-status">2026 Roster</div>
+
+            <div class="team-stats">
+                <div>
+                    <div class="team-stat-label">Titles</div>
+                    <div class="team-stat-value">—</div>
+                </div>
+
+                <div>
+                    <div class="team-stat-label">Wins</div>
+                    <div class="team-stat-value">—</div>
+                </div>
+
+                <div>
+                    <div class="team-stat-label">Seasons</div>
+                    <div class="team-stat-value">—</div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="team-card">
+            <div class="team-number">12</div>
+            <div class="team-name">Bailey Martin</div>
+            <div class="team-status">Returns in 2026</div>
+
+            <div class="team-stats">
+                <div>
+                    <div class="team-stat-label">Titles</div>
+                    <div class="team-stat-value">—</div>
+                </div>
+
+                <div>
+                    <div class="team-stat-label">Wins</div>
+                    <div class="team-stat-value">—</div>
+                </div>
+
+                <div>
+                    <div class="team-stat-label">Seasons</div>
+                    <div class="team-stat-value">—</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- CAREER LEADERBOARD -->
+
+    <h2 class="section-title">Career Leaderboard</h2>
+
+    <p class="section-description">
+        Once the historical data is connected, managers will be ranked by
+        career performance.
+    </p>
+
+    <div class="panel">
+
+        <div class="panel-header">
+            <h3>All-Time Managers</h3>
+            <span>By Wins</span>
+        </div>
+
+        <div class="career-row">
+            <div class="table-label">Rank</div>
+            <div class="table-label" style="text-align:left;">Manager</div>
+            <div class="table-label">Wins</div>
+            <div class="table-label">Titles</div>
+            <div class="table-label">Win %</div>
+        </div>
+
+        <div class="career-row">
+            <div class="rank">01</div>
+            <div class="career-name">TBD</div>
+            <div class="career-stat">—</div>
+            <div class="career-stat">—</div>
+            <div class="career-stat">—</div>
+        </div>
+
+        <div class="career-row">
+            <div class="rank">02</div>
+            <div class="career-name">TBD</div>
+            <div class="career-stat">—</div>
+            <div class="career-stat">—</div>
+            <div class="career-stat">—</div>
+        </div>
+
+        <div class="career-row">
+            <div class="rank">03</div>
+            <div class="career-name">TBD</div>
+            <div class="career-stat">—</div>
+            <div class="career-stat">—</div>
+            <div class="career-stat">—</div>
+        </div>
+
+        <div class="career-row">
+            <div class="rank">04</div>
+            <div class="career-name">TBD</div>
+            <div class="career-stat">—</div>
+            <div class="career-stat">—</div>
+            <div class="career-stat">—</div>
+        </div>
+
+        <div class="career-row">
+            <div class="rank">05</div>
+            <div class="career-name">TBD</div>
+            <div class="career-stat">—</div>
+            <div class="career-stat">—</div>
+            <div class="career-stat">—</div>
+        </div>
+
+    </div>
+
+
+    <div class="data-note">
+        Manager names, career records, championships, seasons played and
+        historical team identities will be populated from the league archive.
+        Manager continuity will be tracked across Yahoo team-name changes
+        where the underlying manager can be identified.
+    </div>
+
+</main>
+
+
+<footer>
+    Kevin Durant League · Fantasy Football History · Est. 2013
+</footer>
+
+</body>
+</html>
