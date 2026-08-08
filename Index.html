@@ -3,26 +3,692 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fantasy Football League History</title>
-</head>
-<body>
-    <h1>Fantasy Football League History</h1>
 
-    <h2>2013–2026</h2>
+    <title>Kevin Durant League | Fantasy Football History</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #0b0f14;
+            color: #f5f5f5;
+            line-height: 1.5;
+        }
+
+        /* HEADER */
+
+        header {
+            background: #111820;
+            border-bottom: 1px solid #27313b;
+            padding: 20px 30px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-inner {
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            display: block;
+            font-size: 11px;
+            color: #9aa5af;
+            letter-spacing: 2px;
+            margin-top: 2px;
+        }
+
+        nav {
+            display: flex;
+            gap: 24px;
+        }
+
+        nav a {
+            color: #cbd2d8;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        nav a:hover {
+            color: white;
+        }
+
+        /* HERO */
+
+        .hero {
+            max-width: 1200px;
+            margin: auto;
+            padding: 75px 30px 55px;
+        }
+
+        .eyebrow {
+            color: #9aa5af;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 12px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .hero h1 {
+            font-size: clamp(42px, 7vw, 76px);
+            line-height: .95;
+            letter-spacing: -3px;
+            margin-bottom: 18px;
+        }
+
+        .hero p {
+            color: #aeb8c1;
+            max-width: 650px;
+            font-size: 17px;
+        }
+
+        /* CONTENT */
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 30px 70px;
+        }
+
+        .section-title {
+            font-size: 24px;
+            margin: 50px 0 20px;
+        }
+
+        /* STAT CARDS */
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+
+        .stat-card {
+            background: #151c24;
+            border: 1px solid #27313b;
+            border-radius: 12px;
+            padding: 25px;
+        }
+
+        .stat-label {
+            color: #8f9aa4;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 700;
+        }
+
+        .stat-number {
+            font-size: 34px;
+            font-weight: 800;
+            margin-top: 8px;
+        }
+
+        .stat-description {
+            color: #8f9aa4;
+            font-size: 13px;
+            margin-top: 4px;
+        }
+
+        /* FEATURE GRID */
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: 1.4fr 1fr;
+            gap: 20px;
+        }
+
+        .panel {
+            background: #151c24;
+            border: 1px solid #27313b;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .panel-header {
+            padding: 20px 22px;
+            border-bottom: 1px solid #27313b;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .panel-header h3 {
+            font-size: 17px;
+        }
+
+        .panel-header span {
+            color: #7f8a94;
+            font-size: 12px;
+        }
+
+        /* CHAMPIONS */
+
+        .champion {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 22px;
+            border-bottom: 1px solid #222b34;
+        }
+
+        .champion:last-child {
+            border-bottom: none;
+        }
+
+        .champion-year {
+            width: 55px;
+            color: #8f9aa4;
+            font-weight: 700;
+        }
+
+        .champion-team {
+            flex: 1;
+            font-weight: 700;
+        }
+
+        .champion-placeholder {
+            color: #68747e;
+            font-style: italic;
+        }
+
+        /* LEADERBOARD */
+
+        .leaderboard-row {
+            display: grid;
+            grid-template-columns: 45px 1fr 80px;
+            align-items: center;
+            padding: 16px 22px;
+            border-bottom: 1px solid #222b34;
+        }
+
+        .leaderboard-row:last-child {
+            border-bottom: none;
+        }
+
+        .rank {
+            color: #68747e;
+            font-weight: 700;
+        }
+
+        .team-name {
+            font-weight: 700;
+        }
+
+        .record {
+            text-align: right;
+            color: #aeb8c1;
+            font-size: 13px;
+        }
+
+        /* TIMELINE */
+
+        .timeline {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 10px;
+        }
+
+        .season {
+            background: #151c24;
+            border: 1px solid #27313b;
+            border-radius: 10px;
+            padding: 18px 12px;
+            text-align: center;
+        }
+
+        .season-year {
+            color: #8f9aa4;
+            font-size: 12px;
+            margin-bottom: 8px;
+        }
+
+        .season-team {
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        .season-status {
+            color: #68747e;
+            font-size: 11px;
+            margin-top: 5px;
+        }
+
+        /* FOOTER */
+
+        footer {
+            border-top: 1px solid #27313b;
+            padding: 30px;
+            text-align: center;
+            color: #68747e;
+            font-size: 12px;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 800px) {
+
+            header {
+                padding: 18px 20px;
+            }
+
+            .header-inner {
+                flex-direction: column;
+                gap: 15px;
+                align-items: flex-start;
+            }
+
+            nav {
+                width: 100%;
+                overflow-x: auto;
+                gap: 18px;
+                padding-bottom: 3px;
+            }
+
+            nav a {
+                white-space: nowrap;
+            }
+
+            .hero {
+                padding: 50px 20px 40px;
+            }
+
+            .container {
+                padding: 0 20px 50px;
+            }
+
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 450px) {
+
+            .stats {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .stat-card {
+                padding: 18px;
+            }
+
+            .stat-number {
+                font-size: 27px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="header-inner">
+
+        <div class="logo">
+            KEVIN DURANT LEAGUE
+            <span>FANTASY FOOTBALL · EST. 2013</span>
+        </div>
+
+        <nav>
+            <a href="#">Home</a>
+            <a href="#history">History</a>
+            <a href="#teams">Teams</a>
+            <a href="#records">Records</a>
+            <a href="#matchups">Matchups</a>
+            <a href="#hall">Hall of Fame</a>
+        </nav>
+
+    </div>
+</header>
+
+
+<section class="hero">
+
+    <div class="eyebrow">League Archive · 2013–2026</div>
+
+    <h1>Kevin Durant<br>League.</h1>
 
     <p>
-        Historical statistics, records, championships, and
-        head-to-head history for our Yahoo Fantasy Football league.
+        The complete history of our Yahoo Fantasy Football league.
+        Championships, rivalries, records, heartbreaks and everything
+        in between.
     </p>
 
-    <h3>League Overview</h3>
-    <ul>
-        <li>12 Teams</li>
-        <li>League established: 2013</li>
-        <li>Platform: Yahoo Fantasy Football</li>
-        <li>History through: 2026</li>
-    </ul>
+</section>
 
-    <p>League history database coming soon.</p>
+
+<main class="container">
+
+    <!-- ALL-TIME STATS -->
+
+    <h2 class="section-title">All-Time League</h2>
+
+    <div class="stats">
+
+        <div class="stat-card">
+            <div class="stat-label">Seasons</div>
+            <div class="stat-number">14</div>
+            <div class="stat-description">2013–2026</div>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-label">Teams</div>
+            <div class="stat-number">12</div>
+            <div class="stat-description">Current league size</div>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-label">Champions</div>
+            <div class="stat-number">—</div>
+            <div class="stat-description">Yahoo data pending</div>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-label">Matchups</div>
+            <div class="stat-number">—</div>
+            <div class="stat-description">Yahoo data pending</div>
+        </div>
+
+    </div>
+
+
+    <!-- HISTORY / LEADERBOARD -->
+
+    <div class="feature-grid">
+
+        <section id="history">
+
+            <h2 class="section-title">Championship History</h2>
+
+            <div class="panel">
+
+                <div class="panel-header">
+                    <h3>League Champions</h3>
+                    <span>2013–2026</span>
+                </div>
+
+                <div class="champion">
+                    <div class="champion-year">2025</div>
+                    <div class="champion-team champion-placeholder">
+                        Awaiting Yahoo data
+                    </div>
+                </div>
+
+                <div class="champion">
+                    <div class="champion-year">2024</div>
+                    <div class="champion-team champion-placeholder">
+                        Awaiting Yahoo data
+                    </div>
+                </div>
+
+                <div class="champion">
+                    <div class="champion-year">2023</div>
+                    <div class="champion-team champion-placeholder">
+                        Awaiting Yahoo data
+                    </div>
+                </div>
+
+                <div class="champion">
+                    <div class="champion-year">2022</div>
+                    <div class="champion-team champion-placeholder">
+                        Awaiting Yahoo data
+                    </div>
+                </div>
+
+                <div class="champion">
+                    <div class="champion-year">2021</div>
+                    <div class="champion-team champion-placeholder">
+                        Awaiting Yahoo data
+                    </div>
+                </div>
+
+                <div class="champion">
+                    <div class="champion-year">2020</div>
+                    <div class="champion-team champion-placeholder">
+                        Awaiting Yahoo data
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section id="records">
+
+            <h2 class="section-title">All-Time Wins</h2>
+
+            <div class="panel">
+
+                <div class="panel-header">
+                    <h3>Career Wins</h3>
+                    <span>Top 5</span>
+                </div>
+
+                <div class="leaderboard-row">
+                    <div class="rank">01</div>
+                    <div class="team-name">Team #1</div>
+                    <div class="record">— wins</div>
+                </div>
+
+                <div class="leaderboard-row">
+                    <div class="rank">02</div>
+                    <div class="team-name">Team #2</div>
+                    <div class="record">— wins</div>
+                </div>
+
+                <div class="leaderboard-row">
+                    <div class="rank">03</div>
+                    <div class="team-name">Team #3</div>
+                    <div class="record">— wins</div>
+                </div>
+
+                <div class="leaderboard-row">
+                    <div class="rank">04</div>
+                    <div class="team-name">Team #4</div>
+                    <div class="record">— wins</div>
+                </div>
+
+                <div class="leaderboard-row">
+                    <div class="rank">05</div>
+                    <div class="team-name">Team #5</div>
+                    <div class="record">— wins</div>
+                </div>
+
+            </div>
+
+        </section>
+
+    </div>
+
+
+    <!-- SEASON TIMELINE -->
+
+    <section>
+
+        <h2 class="section-title">League Timeline</h2>
+
+        <div class="timeline">
+
+            <div class="season">
+                <div class="season-year">2013</div>
+                <div class="season-team">Champion TBD</div>
+                <div class="season-status">In archive</div>
+            </div>
+
+            <div class="season">
+                <div class="season-year">2014</div>
+                <div class="season-team">Champion TBD</div>
+                <div class="season-status">In archive</div>
+            </div>
+
+            <div class="season">
+                <div class="season-year">2015</div>
+                <div class="season-team">Champion TBD</div>
+                <div class="season-status">In archive</div>
+            </div>
+
+            <div class="season">
+                <div class="season-year">2016</div>
+                <div class="season-team">Champion TBD</div>
+                <div class="season-status">In archive</div>
+            </div>
+
+            <div class="season">
+                <div class="season-year">2017</div>
+                <div class="season-team">Champion TBD</div>
+                <div class="season-status">In archive</div>
+            </div>
+
+            <div class="season">
+                <div class="season-year">2018</div>
+                <div class="season-team">Champion TBD</div>
+                <div class="season-status">In archive</div>
+            </div>
+
+            <div class="season">
+                <div class="season-year">2019</div>
+                <div class="season-team">Champion TBD</div>
+                <div class="season-status">In archive</div>
+            </div>
+
+            <div class="season">
+                <div class="season-year">2020</div>
+                <div class="season-team">Champion TBD</div>
+                <div class="season-status">In archive</div>
+            </div>
+
+            <div class="season">
+                <div class="season-year">2021</div>
+                <div class="season-team">Champion TBD</div>
+                <div class="season-status">In archive</div>
+            </div>
+
+            <div class="season">
+                <div class="season-year">2022</div>
+                <div class="season-team">Champion TBD</div>
+                <div class="season-status">In archive</div>
+            </div>
+
+            <div class="season">
+                <div class="season-year">2023</div>
+                <div class="season-team">Champion TBD</div>
+                <div class="season-status">In archive</div>
+            </div>
+
+            <div class="season">
+                <div class="season-year">2024</div>
+                <div class="season-team">Champion TBD</div>
+                <div class="season-status">In archive</div>
+            </div>
+
+            <div class="season">
+                <div class="season-year">2025</div>
+                <div class="season-team">Champion TBD</div>
+                <div class="season-status">In archive</div>
+            </div>
+
+            <div class="season">
+                <div class="season-year">2026</div>
+                <div class="season-team">In Progress</div>
+                <div class="season-status">Current season</div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- RECORDS -->
+
+    <section id="matchups">
+
+        <h2 class="section-title">Records We're Tracking</h2>
+
+        <div class="stats">
+
+            <div class="stat-card">
+                <div class="stat-label">Most Championships</div>
+                <div class="stat-number">—</div>
+                <div class="stat-description">Career</div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-label">Most Points</div>
+                <div class="stat-number">—</div>
+                <div class="stat-description">Career</div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-label">Highest Week</div>
+                <div class="stat-number">—</div>
+                <div class="stat-description">Single matchup</div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-label">Biggest Blowout</div>
+                <div class="stat-number">—</div>
+                <div class="stat-description">Margin of victory</div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- HALL OF FAME -->
+
+    <section id="hall">
+
+        <h2 class="section-title">Hall of Fame</h2>
+
+        <div class="panel">
+
+            <div class="panel-header">
+                <h3>League Legends</h3>
+                <span>Coming soon</span>
+            </div>
+
+            <div style="padding: 30px; color: #8f9aa4;">
+                Once Yahoo data is connected, this section will automatically
+                identify the most successful teams and seasons in league history.
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer>
+    Kevin Durant League · Fantasy Football History · Est. 2013
+</footer>
+
 </body>
 </html>
