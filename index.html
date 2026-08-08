@@ -56,6 +56,7 @@
         nav {
             display: flex;
             gap: 24px;
+            flex-wrap: wrap;
         }
 
         nav a {
@@ -298,6 +299,7 @@
             nav {
                 width: 100%;
                 overflow-x: auto;
+                flex-wrap: nowrap;
                 gap: 18px;
                 padding-bottom: 3px;
             }
@@ -355,12 +357,13 @@
         </div>
 
         <nav>
-            <a href="#">Home</a>
-            <a href="#history">History</a>
-            <a href="#teams">Teams</a>
-            <a href="#records">Records</a>
-            <a href="#matchups">Matchups</a>
-            <a href="#hall">Hall of Fame</a>
+            <a href="index.html">Home</a>
+            <a href="history.html">History</a>
+            <a href="teams.html">Teams</a>
+            <a href="records.html">Records</a>
+            <a href="matchups.html">Matchups</a>
+            <a href="drafts.html">Drafts</a>
+            <a href="seasons.html">Seasons</a>
         </nav>
 
     </div>
@@ -421,7 +424,7 @@
 
     <div class="feature-grid">
 
-        <section id="history">
+        <section>
 
             <h2 class="section-title">Championship History</h2>
 
@@ -479,7 +482,7 @@
         </section>
 
 
-        <section id="records">
+        <section>
 
             <h2 class="section-title">All-Time Wins</h2>
 
@@ -624,9 +627,9 @@
     </section>
 
 
-    <!-- RECORDS -->
+    <!-- RECORDS WE ARE TRACKING -->
 
-    <section id="matchups">
+    <section>
 
         <h2 class="section-title">Records We're Tracking</h2>
 
@@ -654,29 +657,6 @@
                 <div class="stat-label">Biggest Blowout</div>
                 <div class="stat-number">—</div>
                 <div class="stat-description">Margin of victory</div>
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- HALL OF FAME -->
-
-    <section id="hall">
-
-        <h2 class="section-title">Hall of Fame</h2>
-
-        <div class="panel">
-
-            <div class="panel-header">
-                <h3>League Legends</h3>
-                <span>Coming soon</span>
-            </div>
-
-            <div style="padding: 30px; color: #8f9aa4;">
-                Once Yahoo data is connected, this section will automatically
-                identify the most successful teams and seasons in league history.
             </div>
 
         </div>
