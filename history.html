@@ -1,1 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>League History | Kevin Durant League</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #0b0f14;
+            color: #f5f5f5;
+            line-height: 1.5;
+        }
+
+        /* HEADER */
+
+        header {
+            background: #111820;
+            border-bottom: 1px solid #27313b;
+            padding: 20px 30px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-inner {
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            display: block;
+            font-size: 11px;
+            color: #9aa5af;
+            letter-spacing: 2px;
+            margin-top: 2px;
+        }
+
+        nav {
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: #cbd2d8;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        nav a:hover {
+            color: white;
+        }
+
+        /* HERO */
+
+        .page-hero {
+            max-width: 1200px;
+            margin: auto;
+            padding: 70px 30px 45px;
+        }
+
+        .eyebrow {
+            color: #9aa5af;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 12px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .page-hero h1 {
+            font-size: clamp(42px, 7vw, 72px);
+            line-height: .95;
+            letter-spacing: -3px;
+            margin-bottom: 18px;
+        }
+
+        .page-hero p {
+            color: #aeb8c1;
+            max-width: 680px;
+            font-size: 17px;
+        }
+
+        /* CONTENT */
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 30px 80px;
+        }
+
+        .section-title {
+            font-size: 24px;
+            margin: 45px 0 18px;
+        }
+
+        .section-description {
+            color: #8f9aa4;
+            font-size: 14px;
+            margin-top: -8px;
+            margin-bottom: 20px;
+        }
+
+        /* LEAGUE ERAS */
+
+        .eras {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 12px;
+        }
+
+        .era {
+            background: #151c24;
+            border: 1px solid #27313b;
+            border-radius: 12px;
+            padding: 22px 16px;
+            text-align: center;
+        }
+
+        .era-years {
+            color: #8f9aa4;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .era-size {
+            font-size: 28px;
+            font-weight: 800;
+            margin-top: 8px;
+        }
+
+        .era-label {
+            color: #68747e;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 3px;
+        }
+
+        /* CHAMPIONSHIP HISTORY */
+
+        .panel {
+            background: #151c24;
+            border: 1px solid #27313b;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .panel-header {
+            padding: 20px 22px;
+            border-bottom: 1px solid #27313b;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .panel-header h3 {
+            font-size: 17px;
+        }
+
+        .panel-header span {
+            color: #7f8a94;
+            font-size: 12px;
+        }
+
+        .champion-row {
+            display: grid;
+            grid-template-columns: 80px 1fr 180px;
+            align-items: center;
+            padding: 16px 22px;
+            border-bottom: 1px solid #222b34;
+        }
+
+        .champion-row:last-child {
+            border-bottom: none;
+        }
+
+        .champion-year {
+            color: #8f9aa4;
+            font-weight: 800;
+        }
+
+        .champion-name {
+            font-weight: 700;
+        }
+
+        .champion-status {
+            text-align: right;
+            color: #68747e;
+            font-size: 12px;
+        }
+
+        /* TIMELINE */
+
+        .timeline {
+            position: relative;
+            margin-top: 30px;
+        }
+
+        .timeline::before {
+            content: "";
+            position: absolute;
+            left: 76px;
+            top: 0;
+            bottom: 0;
+            width: 1px;
+            background: #27313b;
+        }
+
+        .timeline-item {
+            display: grid;
+            grid-template-columns: 110px 1fr;
+            position: relative;
+            padding-bottom: 28px;
+        }
+
+        .timeline-year {
+            color: #9aa5af;
+            font-weight: 800;
+            font-size: 14px;
+            padding-top: 4px;
+        }
+
+        .timeline-content {
+            background: #151c24;
+            border: 1px solid #27313b;
+            border-radius: 10px;
+            padding: 18px 20px;
+            position: relative;
+        }
+
+        .timeline-content::before {
+            content: "";
+            position: absolute;
+            left: -39px;
+            top: 18px;
+            width: 9px;
+            height: 9px;
+            background: #0b0f14;
+            border: 2px solid #68747e;
+            border-radius: 50%;
+        }
+
+        .timeline-content h3 {
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+
+        .timeline-content p {
+            color: #8f9aa4;
+            font-size: 13px;
+        }
+
+        /* NOTE */
+
+        .data-note {
+            margin-top: 30px;
+            padding: 18px 20px;
+            border: 1px solid #27313b;
+            border-radius: 10px;
+            color: #7f8a94;
+            font-size: 12px;
+            background: #111820;
+        }
+
+        /* FOOTER */
+
+        footer {
+            border-top: 1px solid #27313b;
+            padding: 30px;
+            text-align: center;
+            color: #68747e;
+            font-size: 12px;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 800px) {
+
+            header {
+                padding: 18px 20px;
+            }
+
+            .header-inner {
+                flex-direction: column;
+                gap: 15px;
+                align-items: flex-start;
+            }
+
+            nav {
+                width: 100%;
+                overflow-x: auto;
+                flex-wrap: nowrap;
+                gap: 18px;
+                padding-bottom: 3px;
+            }
+
+            nav a {
+                white-space: nowrap;
+            }
+
+            .page-hero {
+                padding: 50px 20px 35px;
+            }
+
+            .container {
+                padding: 0 20px 60px;
+            }
+
+            .eras {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .champion-row {
+                grid-template-columns: 65px 1fr;
+            }
+
+            .champion-status {
+                display: none;
+            }
+
+            .timeline::before {
+                left: 63px;
+            }
+
+            .timeline-item {
+                grid-template-columns: 85px 1fr;
+            }
+
+            .timeline-content::before {
+                left: -27px;
+            }
+        }
+
+        @media (max-width: 450px) {
+
+            .eras {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .era {
+                padding: 18px 10px;
+            }
+
+            .era-size {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="header-inner">
+
+        <div class="logo">
+            KEVIN DURANT LEAGUE
+            <span>FANTASY FOOTBALL · EST. 2013</span>
+        </div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="history.html">History</a>
+            <a href="teams.html">Teams</a>
+            <a href="records.html">Records</a>
+            <a href="matchups.html">Matchups</a>
+            <a href="drafts.html">Drafts</a>
+            <a href="seasons.html">Seasons</a>
+        </nav>
+
+    </div>
+</header>
+
+
+<section class="page-hero">
+
+    <div class="eyebrow">League Archive · 2013–2026</div>
+
+    <h1>League<br>History.</h1>
+
+    <p>
+        From a four-team league in 2013 to the twelve-manager league we have
+        today. Fourteen seasons of championships, expansion, rivalries and
+        fantasy football history.
+    </p>
+
+</section>
+
+
+<main class="container">
+
+
+    <!-- LEAGUE ERAS -->
+
+    <h2 class="section-title">The League Through the Years</h2>
+
+    <p class="section-description">
+        The Kevin Durant League has grown from its original four-team format
+        into a 12-team league.
+    </p>
+
+    <div class="eras">
+
+        <div class="era">
+            <div class="era-years">2013</div>
+            <div class="era-size">4</div>
+            <div class="era-label">Teams</div>
+        </div>
+
+        <div class="era">
+            <div class="era-years">2014–2015</div>
+            <div class="era-size">6</div>
+            <div class="era-label">Teams</div>
+        </div>
+
+        <div class="era">
+            <div class="era-years">2016–2020</div>
+            <div class="era-size">8</div>
+            <div class="era-label">Teams</div>
+        </div>
+
+        <div class="era">
+            <div class="era-years">2021–2022</div>
+            <div class="era-size">10</div>
+            <div class="era-label">Teams</div>
+        </div>
+
+        <div class="era">
+            <div class="era-years">2023–2026</div>
+            <div class="era-size">12</div>
+            <div class="era-label">Teams</div>
+        </div>
+
+    </div>
+
+
+    <!-- CHAMPIONSHIP HISTORY -->
+
+    <h2 class="section-title">Championship History</h2>
+
+    <p class="section-description">
+        Every league champion since the league's founding season.
+    </p>
+
+    <div class="panel">
+
+        <div class="panel-header">
+            <h3>League Champions</h3>
+            <span>2013–2026</span>
+        </div>
+
+        <div class="champion-row">
+            <div class="champion-year">2026</div>
+            <div class="champion-name">Season in progress</div>
+            <div class="champion-status">Current Season</div>
+        </div>
+
+        <div class="champion-row">
+            <div class="champion-year">2025</div>
+            <div class="champion-name">TBD</div>
+            <div class="champion-status">Yahoo data pending</div>
+        </div>
+
+        <div class="champion-row">
+            <div class="champion-year">2024</div>
+            <div class="champion-name">TBD</div>
+            <div class="champion-status">Yahoo data pending</div>
+        </div>
+
+        <div class="champion-row">
+            <div class="champion-year">2023</div>
+            <div class="champion-name">TBD</div>
+            <div class="champion-status">Yahoo data pending</div>
+        </div>
+
+        <div class="champion-row">
+            <div class="champion-year">2022</div>
+            <div class="champion-name">TBD</div>
+            <div class="champion-status">Yahoo data pending</div>
+        </div>
+
+        <div class="champion-row">
+            <div class="champion-year">2021</div>
+            <div class="champion-name">TBD</div>
+            <div class="champion-status">Yahoo data pending</div>
+        </div>
+
+        <div class="champion-row">
+            <div class="champion-year">2020</div>
+            <div class="champion-name">TBD</div>
+            <div class="champion-status">Yahoo data pending</div>
+        </div>
+
+        <div class="champion-row">
+            <div class="champion-year">2019</div>
+            <div class="champion-name">TBD</div>
+            <div class="champion-status">Yahoo data pending</div>
+        </div>
+
+        <div class="champion-row">
+            <div class="champion-year">2018</div>
+            <div class="champion-name">TBD</div>
+            <div class="champion-status">Yahoo data pending</div>
+        </div>
+
+        <div class="champion-row">
+            <div class="champion-year">2017</div>
+            <div class="champion-name">TBD</div>
+            <div class="champion-status">Yahoo data pending</div>
+        </div>
+
+        <div class="champion-row">
+            <div class="champion-year">2016</div>
+            <div class="champion-name">TBD</div>
+            <div class="champion-status">Yahoo data pending</div>
+        </div>
+
+        <div class="champion-row">
+            <div class="champion-year">2015</div>
+            <div class="champion-name">TBD</div>
+            <div class="champion-status">Yahoo data pending</div>
+        </div>
+
+        <div class="champion-row">
+            <div class="champion-year">2014</div>
+            <div class="champion-name">TBD</div>
+            <div class="champion-status">Yahoo data pending</div>
+        </div>
+
+        <div class="champion-row">
+            <div class="champion-year">2013</div>
+            <div class="champion-name">TBD</div>
+            <div class="champion-status">Yahoo data pending</div>
+        </div>
+
+    </div>
+
+
+    <!-- LEAGUE TIMELINE -->
+
+    <h2 class="section-title">League Timeline</h2>
+
+    <p class="section-description">
+        Major milestones in the history of the league.
+    </p>
+
+    <div class="timeline">
+
+        <div class="timeline-item">
+
+            <div class="timeline-year">2013</div>
+
+            <div class="timeline-content">
+                <h3>The League Begins</h3>
+                <p>
+                    The Kevin Durant League is established as a four-team
+                    fantasy football league.
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+            <div class="timeline-year">2014</div>
+
+            <div class="timeline-content">
+                <h3>First Expansion</h3>
+                <p>
+                    The league expands from four teams to six managers.
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+            <div class="timeline-year">2016</div>
+
+            <div class="timeline-content">
+                <h3>Eight-Team Era</h3>
+                <p>
+                    The league expands again, reaching eight teams for the
+                    first time.
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+            <div class="timeline-year">2021</div>
+
+            <div class="timeline-content">
+                <h3>Ten-Team League</h3>
+                <p>
+                    The league grows to ten teams and begins a new era of
+                    competition.
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+            <div class="timeline-year">2023</div>
+
+            <div class="timeline-content">
+                <h3>The 12-Team Era</h3>
+                <p>
+                    The league expands to its current 12-team format.
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+            <div class="timeline-year">2026</div>
+
+            <div class="timeline-content">
+                <h3>Fourteen Seasons</h3>
+                <p>
+                    The league enters its 14th season with a 12-team field.
+                    Bailey Martin rejoins the league.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="data-note">
+        Historical championship results and season details will be populated
+        from the league archive. League-size history reflects the known
+        2013–2026 structure.
+    </div>
+
+</main>
+
+
+<footer>
+    Kevin Durant League · Fantasy Football History · Est. 2013
+</footer>
+
+</body>
+</html>
