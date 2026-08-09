@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,6 +20,8 @@
             color: #f5f5f5;
             line-height: 1.5;
         }
+
+        /* HEADER */
 
         header {
             background: #111820;
@@ -67,10 +70,12 @@
             color: white;
         }
 
+        /* HERO */
+
         .hero {
             max-width: 1200px;
             margin: auto;
-            padding: 70px 30px 50px;
+            padding: 75px 30px 55px;
         }
 
         .eyebrow {
@@ -83,10 +88,10 @@
         }
 
         .hero h1 {
-            font-size: clamp(42px, 7vw, 72px);
+            font-size: clamp(42px, 7vw, 76px);
             line-height: .95;
             letter-spacing: -3px;
-            margin-bottom: 20px;
+            margin-bottom: 18px;
         }
 
         .hero p {
@@ -95,176 +100,144 @@
             font-size: 17px;
         }
 
+        /* CONTENT */
+
         .container {
             max-width: 1200px;
             margin: auto;
-            padding: 0 30px 80px;
+            padding: 0 30px 70px;
         }
 
-        .intro-grid {
+        .section-title {
+            font-size: 24px;
+            margin: 50px 0 20px;
+        }
+
+        /* LEAGUE ERAS */
+
+        .era-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(5, 1fr);
             gap: 15px;
-            margin-bottom: 60px;
         }
 
-        .stat-card {
+        .era-card {
             background: #151c24;
             border: 1px solid #27313b;
             border-radius: 12px;
             padding: 22px;
         }
 
-        .stat-label {
+        .era-years {
             color: #8f9aa4;
-            font-size: 11px;
+            font-size: 12px;
             text-transform: uppercase;
             letter-spacing: 1.5px;
             font-weight: 700;
         }
 
-        .stat-number {
+        .era-number {
             font-size: 32px;
             font-weight: 800;
             margin-top: 7px;
         }
 
-        .stat-description {
-            color: #8f9aa4;
+        .era-label {
+            color: #aeb8c1;
             font-size: 13px;
             margin-top: 3px;
         }
 
-        .section-title {
-            font-size: 28px;
-            margin-bottom: 25px;
+        /* HISTORY GRID */
+
+        .history-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
         }
 
-        .season {
+        .history-card {
             background: #151c24;
             border: 1px solid #27313b;
-            border-radius: 14px;
-            margin-bottom: 20px;
+            border-radius: 12px;
             overflow: hidden;
         }
 
-        .season-header {
-            padding: 22px 25px;
+        .history-card-header {
+            padding: 20px 22px;
             border-bottom: 1px solid #27313b;
             display: flex;
             justify-content: space-between;
-            align-items: center;
+            align-items: flex-start;
         }
 
-        .season-year {
+        .history-year {
             font-size: 25px;
             font-weight: 800;
         }
 
-        .season-size {
-            color: #8f9aa4;
-            font-size: 12px;
+        .history-meta {
+            color: #7f8a94;
+            font-size: 11px;
             text-transform: uppercase;
             letter-spacing: 1px;
+            text-align: right;
         }
 
-        .season-content {
-            padding: 25px;
+        .history-body {
+            padding: 20px 22px;
         }
 
-        .season-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 25px;
+        .history-result {
+            margin-bottom: 15px;
         }
 
-        .label {
+        .history-result:last-child {
+            margin-bottom: 0;
+        }
+
+        .history-label {
+            display: block;
             color: #7f8a94;
-            text-transform: uppercase;
-            letter-spacing: 1.2px;
             font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
             font-weight: 700;
-            margin-bottom: 5px;
+            margin-bottom: 3px;
         }
 
-        .value {
+        .history-team {
             font-size: 17px;
             font-weight: 700;
         }
 
-        .champion {
-            color: #f5f5f5;
-        }
-
-        .score {
+        .history-score {
+            margin-top: 18px;
+            padding-top: 15px;
+            border-top: 1px solid #222b34;
             color: #aeb8c1;
-            font-size: 14px;
-            margin-top: 2px;
+            font-size: 13px;
+            font-weight: 600;
         }
 
-        .standings {
-            margin-top: 25px;
-            border-top: 1px solid #27313b;
-            padding-top: 20px;
-        }
-
-        .standings-title {
-            color: #7f8a94;
-            text-transform: uppercase;
-            letter-spacing: 1.2px;
+        .history-note {
+            display: inline-block;
+            margin-top: 5px;
+            padding: 3px 8px;
+            border: 1px solid #39444f;
+            border-radius: 5px;
+            color: #8f9aa4;
             font-size: 10px;
-            font-weight: 700;
-            margin-bottom: 12px;
-        }
-
-        .standings-list {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 8px;
-        }
-
-        .team-row {
-            background: #111820;
-            border: 1px solid #222b34;
-            border-radius: 7px;
-            padding: 9px 11px;
-            font-size: 13px;
-            display: flex;
-            justify-content: space-between;
-        }
-
-        .team-rank {
-            color: #68747e;
-            margin-right: 8px;
-        }
-
-        .playoffs {
-            margin-top: 25px;
-            border-top: 1px solid #27313b;
-            padding-top: 20px;
-        }
-
-        .playoff-line {
-            color: #aeb8c1;
-            font-size: 13px;
-            margin-bottom: 7px;
-        }
-
-        .current {
-            border-color: #4a5968;
-        }
-
-        .current .season-header {
-            background: #111820;
-        }
-
-        .current-badge {
-            color: #aeb8c1;
-            font-size: 11px;
             text-transform: uppercase;
             letter-spacing: 1px;
-            font-weight: 700;
         }
+
+        .tbd {
+            color: #68747e;
+            font-style: italic;
+        }
+
+        /* FOOTER */
 
         footer {
             border-top: 1px solid #27313b;
@@ -274,15 +247,31 @@
             font-size: 12px;
         }
 
-        @media (max-width: 850px) {
+        /* TABLET */
+
+        @media (max-width: 950px) {
+
+            .era-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .history-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 800px) {
+
             header {
                 padding: 18px 20px;
             }
 
             .header-inner {
                 flex-direction: column;
-                align-items: flex-start;
                 gap: 15px;
+                align-items: flex-start;
             }
 
             nav {
@@ -301,42 +290,30 @@
             }
 
             .container {
-                padding: 0 20px 60px;
+                padding: 0 20px 50px;
             }
 
-            .intro-grid {
+            .era-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
 
-            .season-grid {
+            .history-grid {
                 grid-template-columns: 1fr;
-                gap: 18px;
-            }
-
-            .standings-list {
-                grid-template-columns: repeat(2, 1fr);
             }
         }
 
         @media (max-width: 450px) {
-            .intro-grid {
+
+            .era-grid {
                 grid-template-columns: 1fr 1fr;
             }
 
-            .stat-card {
-                padding: 17px;
+            .era-card {
+                padding: 18px;
             }
 
-            .stat-number {
-                font-size: 26px;
-            }
-
-            .season-content {
-                padding: 20px;
-            }
-
-            .standings-list {
-                grid-template-columns: 1fr;
+            .era-number {
+                font-size: 27px;
             }
         }
     </style>
@@ -345,6 +322,7 @@
 <body>
 
 <header>
+
     <div class="header-inner">
 
         <div class="logo">
@@ -363,19 +341,21 @@
         </nav>
 
     </div>
+
 </header>
 
 
+<!-- HERO -->
+
 <section class="hero">
 
-    <div class="eyebrow">The League Archive · 2013–2026</div>
+    <div class="eyebrow">League Archive · 2013–2026</div>
 
-    <h1>The History<br>of the League.</h1>
+    <h1>League<br>History.</h1>
 
     <p>
-        From four managers in 2013 to a twelve-team league today.
-        Every season, champion, playoff run and defining moment
-        of the Kevin Durant League.
+        Fourteen seasons of championships, expansion and league history.
+        From four original managers in 2013 to a 12-team league today.
     </p>
 
 </section>
@@ -383,591 +363,486 @@
 
 <main class="container">
 
-    <div class="intro-grid">
 
-        <div class="stat-card">
-            <div class="stat-label">Established</div>
-            <div class="stat-number">2013</div>
-            <div class="stat-description">First season</div>
+    <!-- LEAGUE ERAS -->
+
+    <h2 class="section-title">League Eras</h2>
+
+    <div class="era-grid">
+
+        <div class="era-card">
+            <div class="era-years">2013</div>
+            <div class="era-number">4</div>
+            <div class="era-label">Managers</div>
         </div>
 
-        <div class="stat-card">
-            <div class="stat-label">Seasons</div>
-            <div class="stat-number">14</div>
-            <div class="stat-description">2013–2026</div>
+        <div class="era-card">
+            <div class="era-years">2014–2015</div>
+            <div class="era-number">6</div>
+            <div class="era-label">Managers</div>
         </div>
 
-        <div class="stat-card">
-            <div class="stat-label">Original Size</div>
-            <div class="stat-number">4</div>
-            <div class="stat-description">Managers in 2013</div>
+        <div class="era-card">
+            <div class="era-years">2016–2020</div>
+            <div class="era-number">8</div>
+            <div class="era-label">Managers</div>
         </div>
 
-        <div class="stat-card">
-            <div class="stat-label">Current Size</div>
-            <div class="stat-number">12</div>
-            <div class="stat-description">Managers in 2026</div>
+        <div class="era-card">
+            <div class="era-years">2021–2022</div>
+            <div class="era-number">10</div>
+            <div class="era-label">Managers</div>
+        </div>
+
+        <div class="era-card">
+            <div class="era-years">2023–2026</div>
+            <div class="era-number">12</div>
+            <div class="era-label">Managers</div>
         </div>
 
     </div>
 
 
-    <h2 class="section-title">Season by Season</h2>
+    <!-- CHAMPIONSHIP HISTORY -->
+
+    <h2 class="section-title">Championship History</h2>
+
+    <div class="history-grid">
 
 
-    <!-- 2013 -->
+        <!-- 2013 -->
 
-    <div class="season">
+        <div class="history-card">
 
-        <div class="season-header">
-            <div class="season-year">2013</div>
-            <div class="season-size">4 Teams · Inaugural Season</div>
-        </div>
-
-        <div class="season-content">
-
-            <div class="season-grid">
-
-                <div>
-                    <div class="label">Regular Season</div>
-                    <div class="value">Ryan Herbst</div>
-                    <div class="score">9–4</div>
-                </div>
-
-                <div>
-                    <div class="label">Champion</div>
-                    <div class="value champion">Ryan Herbst</div>
-                    <div class="score">Defeated Nic Maiorano</div>
-                </div>
-
-                <div>
-                    <div class="label">Championship</div>
-                    <div class="value">144–124</div>
-                    <div class="score">Ryan over Nic</div>
-                </div>
-
+            <div class="history-card-header">
+                <div class="history-year">2013</div>
+                <div class="history-meta">4 Teams</div>
             </div>
 
-            <div class="standings">
+            <div class="history-body">
 
-                <div class="standings-title">Final Standings</div>
+                <div class="history-result">
+                    <span class="history-label">Champion</span>
+                    <div class="history-team">Ryan Herbst</div>
+                </div>
 
-                <div class="standings-list">
-                    <div class="team-row"><span>1. Ryan</span><span>9–4</span></div>
-                    <div class="team-row"><span>2. Christian</span><span>7–6</span></div>
-                    <div class="team-row"><span>3. Nic</span><span>6–7</span></div>
-                    <div class="team-row"><span>4. Bailey</span><span>4–9</span></div>
+                <div class="history-result">
+                    <span class="history-label">Runner-Up</span>
+                    <div class="history-team">Nic Maiorano</div>
+                </div>
+
+                <div class="history-score">
+                    Ryan 144 — Nic 124
                 </div>
 
             </div>
 
         </div>
+
+
+        <!-- 2014 -->
+
+        <div class="history-card">
+
+            <div class="history-card-header">
+                <div class="history-year">2014</div>
+                <div class="history-meta">
+                    6 Teams<br>
+                    <span class="history-note">League expansion</span>
+                </div>
+            </div>
+
+            <div class="history-body">
+
+                <div class="history-result">
+                    <span class="history-label">Champion</span>
+                    <div class="history-team">Ryan Herbst</div>
+                </div>
+
+                <div class="history-result">
+                    <span class="history-label">Runner-Up</span>
+                    <div class="history-team">Bailey Martin</div>
+                </div>
+
+                <div class="history-score">
+                    Ryan 177 — Bailey 125
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- 2015 -->
+
+        <div class="history-card">
+
+            <div class="history-card-header">
+                <div class="history-year">2015</div>
+                <div class="history-meta">6 Teams</div>
+            </div>
+
+            <div class="history-body">
+
+                <div class="history-result">
+                    <span class="history-label">Champion</span>
+                    <div class="history-team">Bailey Martin</div>
+                </div>
+
+                <div class="history-result">
+                    <span class="history-label">Runner-Up</span>
+                    <div class="history-team">Ryan Herbst</div>
+                </div>
+
+                <div class="history-score">
+                    Bailey 105 — Ryan 104
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- 2016 -->
+
+        <div class="history-card">
+
+            <div class="history-card-header">
+                <div class="history-year">2016</div>
+                <div class="history-meta">
+                    8 Teams<br>
+                    <span class="history-note">League expansion</span>
+                </div>
+            </div>
+
+            <div class="history-body">
+
+                <div class="history-result">
+                    <span class="history-label">Champion</span>
+                    <div class="history-team">Ryan Herbst</div>
+                </div>
+
+                <div class="history-result">
+                    <span class="history-label">Runner-Up</span>
+                    <div class="history-team">Jonah Wheeler</div>
+                </div>
+
+                <div class="history-score">
+                    Ryan 141 — Jonah 138
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- 2017 -->
+
+        <div class="history-card">
+
+            <div class="history-card-header">
+                <div class="history-year">2017</div>
+                <div class="history-meta">8 Teams</div>
+            </div>
+
+            <div class="history-body">
+
+                <div class="history-result">
+                    <span class="history-label">Champion</span>
+                    <div class="history-team">Christian Abert</div>
+                </div>
+
+                <div class="history-result">
+                    <span class="history-label">Runner-Up</span>
+                    <div class="history-team">Bailey Martin</div>
+                </div>
+
+                <div class="history-score">
+                    Christian 101 — Bailey 94
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- 2018 -->
+
+        <div class="history-card">
+
+            <div class="history-card-header">
+                <div class="history-year">2018</div>
+                <div class="history-meta">8 Teams</div>
+            </div>
+
+            <div class="history-body">
+
+                <div class="history-result">
+                    <span class="history-label">Champion</span>
+                    <div class="history-team">Christian Abert</div>
+                </div>
+
+                <div class="history-result">
+                    <span class="history-label">Runner-Up</span>
+                    <div class="history-team">Ryan Herbst</div>
+                </div>
+
+                <div class="history-score">
+                    Christian 163 — Ryan 156
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- 2019 -->
+
+        <div class="history-card">
+
+            <div class="history-card-header">
+                <div class="history-year">2019</div>
+                <div class="history-meta">8 Teams</div>
+            </div>
+
+            <div class="history-body">
+
+                <div class="history-result">
+                    <span class="history-label">Champion</span>
+                    <div class="history-team">Ryan Herbst</div>
+                </div>
+
+                <div class="history-result">
+                    <span class="history-label">Runner-Up</span>
+                    <div class="history-team">Tommy Herbst</div>
+                </div>
+
+                <div class="history-score">
+                    Ryan 163 — Tommy 149
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- 2020 -->
+
+        <div class="history-card">
+
+            <div class="history-card-header">
+                <div class="history-year">2020</div>
+                <div class="history-meta">8 Teams</div>
+            </div>
+
+            <div class="history-body">
+
+                <div class="history-result">
+                    <span class="history-label">Champion</span>
+                    <div class="history-team">Nic Maiorano</div>
+                </div>
+
+                <div class="history-result">
+                    <span class="history-label">Runner-Up</span>
+                    <div class="history-team">Jonah Wheeler</div>
+                </div>
+
+                <div class="history-score">
+                    Nic 173 — Jonah 129
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- 2021 -->
+
+        <div class="history-card">
+
+            <div class="history-card-header">
+                <div class="history-year">2021</div>
+                <div class="history-meta">
+                    10 Teams<br>
+                    <span class="history-note">League expansion</span>
+                </div>
+            </div>
+
+            <div class="history-body">
+
+                <div class="history-result">
+                    <span class="history-label">Champion</span>
+                    <div class="history-team">Michael Gravante</div>
+                </div>
+
+                <div class="history-result">
+                    <span class="history-label">Runner-Up</span>
+                    <div class="history-team">Jonah Wheeler</div>
+                </div>
+
+                <div class="history-score">
+                    Michael 121 — Jonah 102
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- 2022 -->
+
+        <div class="history-card">
+
+            <div class="history-card-header">
+                <div class="history-year">2022</div>
+                <div class="history-meta">10 Teams</div>
+            </div>
+
+            <div class="history-body">
+
+                <div class="history-result">
+                    <span class="history-label">Champion</span>
+                    <div class="history-team">Ryan Herbst & Julia Wheeler</div>
+                </div>
+
+                <div class="history-result">
+                    <span class="history-label">Runner-Up</span>
+                    <div class="history-team">Co-Champions</div>
+                </div>
+
+                <div class="history-score">
+                    116 — 97
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- 2023 -->
+
+        <div class="history-card">
+
+            <div class="history-card-header">
+                <div class="history-year">2023</div>
+                <div class="history-meta">
+                    12 Teams<br>
+                    <span class="history-note">League expansion</span>
+                </div>
+            </div>
+
+            <div class="history-body">
+
+                <div class="history-result">
+                    <span class="history-label">Champion</span>
+                    <div class="history-team">Tommy Herbst</div>
+                </div>
+
+                <div class="history-result">
+                    <span class="history-label">Runner-Up</span>
+                    <div class="history-team">William Darrow</div>
+                </div>
+
+                <div class="history-score">
+                    Tommy 134 — William 97
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- 2024 -->
+
+        <div class="history-card">
+
+            <div class="history-card-header">
+                <div class="history-year">2024</div>
+                <div class="history-meta">12 Teams</div>
+            </div>
+
+            <div class="history-body">
+
+                <div class="history-result">
+                    <span class="history-label">Champion</span>
+                    <div class="history-team">Jonah Wheeler</div>
+                </div>
+
+                <div class="history-result">
+                    <span class="history-label">Runner-Up</span>
+                    <div class="history-team">Julia Wheeler</div>
+                </div>
+
+                <div class="history-score">
+                    Jonah 176 — Julia 136
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- 2025 -->
+
+        <div class="history-card">
+
+            <div class="history-card-header">
+                <div class="history-year">2025</div>
+                <div class="history-meta">12 Teams</div>
+            </div>
+
+            <div class="history-body">
+
+                <div class="history-result">
+                    <span class="history-label">Champion</span>
+                    <div class="history-team">William Darrow</div>
+                </div>
+
+                <div class="history-result">
+                    <span class="history-label">Runner-Up</span>
+                    <div class="history-team">Julia Wheeler</div>
+                </div>
+
+                <div class="history-score">
+                    William 151 — Julia 114
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- 2026 -->
+
+        <div class="history-card">
+
+            <div class="history-card-header">
+                <div class="history-year">2026</div>
+                <div class="history-meta">12 Teams</div>
+            </div>
+
+            <div class="history-body">
+
+                <div class="history-result">
+                    <span class="history-label">Champion</span>
+                    <div class="history-team tbd">TBD</div>
+                </div>
+
+                <div class="history-result">
+                    <span class="history-label">Runner-Up</span>
+                    <div class="history-team tbd">TBD</div>
+                </div>
+
+                <div class="history-score tbd">
+                    TBD
+                </div>
+
+            </div>
+
+        </div>
+
+
     </div>
-
-
-    <!-- 2014 -->
-
-    <div class="season">
-
-        <div class="season-header">
-            <div class="season-year">2014</div>
-            <div class="season-size">6 Teams · League Expansion</div>
-        </div>
-
-        <div class="season-content">
-
-            <div class="season-grid">
-
-                <div>
-                    <div class="label">Regular Season</div>
-                    <div class="value">Nic Maiorano</div>
-                    <div class="score">10–3</div>
-                </div>
-
-                <div>
-                    <div class="label">Champion</div>
-                    <div class="value champion">Ryan Herbst</div>
-                    <div class="score">Defeated Bailey Martin</div>
-                </div>
-
-                <div>
-                    <div class="label">Championship</div>
-                    <div class="value">177–125</div>
-                    <div class="score">Ryan over Bailey</div>
-                </div>
-
-            </div>
-
-        </div>
-    </div>
-
-
-    <!-- 2015 -->
-
-    <div class="season">
-
-        <div class="season-header">
-            <div class="season-year">2015</div>
-            <div class="season-size">6 Teams</div>
-        </div>
-
-        <div class="season-content">
-
-            <div class="season-grid">
-
-                <div>
-                    <div class="label">Regular Season</div>
-                    <div class="value">Christian Abert</div>
-                    <div class="score">9–6</div>
-                </div>
-
-                <div>
-                    <div class="label">Champion</div>
-                    <div class="value champion">Bailey Martin</div>
-                    <div class="score">Defeated Ryan Herbst</div>
-                </div>
-
-                <div>
-                    <div class="label">Championship</div>
-                    <div class="value">105–104</div>
-                    <div class="score">Bailey over Ryan</div>
-                </div>
-
-            </div>
-
-        </div>
-    </div>
-
-
-    <!-- 2016 -->
-
-    <div class="season">
-
-        <div class="season-header">
-            <div class="season-year">2016</div>
-            <div class="season-size">8 Teams · Expansion</div>
-        </div>
-
-        <div class="season-content">
-
-            <div class="season-grid">
-
-                <div>
-                    <div class="label">Regular Season</div>
-                    <div class="value">Jonah Wheeler</div>
-                    <div class="score">9–5</div>
-                </div>
-
-                <div>
-                    <div class="label">Champion</div>
-                    <div class="value champion">Ryan Herbst</div>
-                    <div class="score">Defeated Jonah Wheeler</div>
-                </div>
-
-                <div>
-                    <div class="label">Championship</div>
-                    <div class="value">141–138</div>
-                    <div class="score">Ryan over Jonah</div>
-                </div>
-
-            </div>
-
-        </div>
-    </div>
-
-
-    <!-- 2017 -->
-
-    <div class="season">
-
-        <div class="season-header">
-            <div class="season-year">2017</div>
-            <div class="season-size">8 Teams</div>
-        </div>
-
-        <div class="season-content">
-
-            <div class="season-grid">
-
-                <div>
-                    <div class="label">Regular Season</div>
-                    <div class="value">Christian Abert</div>
-                    <div class="score">9–4</div>
-                </div>
-
-                <div>
-                    <div class="label">Champion</div>
-                    <div class="value champion">Christian Abert</div>
-                    <div class="score">Defeated Bailey Martin</div>
-                </div>
-
-                <div>
-                    <div class="label">Championship</div>
-                    <div class="value">101–94</div>
-                    <div class="score">Christian over Bailey</div>
-                </div>
-
-            </div>
-
-        </div>
-    </div>
-
-
-    <!-- 2018 -->
-
-    <div class="season">
-
-        <div class="season-header">
-            <div class="season-year">2018</div>
-            <div class="season-size">8 Teams</div>
-        </div>
-
-        <div class="season-content">
-
-            <div class="season-grid">
-
-                <div>
-                    <div class="label">Regular Season</div>
-                    <div class="value">Tommy Herbst</div>
-                    <div class="score">11–2</div>
-                </div>
-
-                <div>
-                    <div class="label">Champion</div>
-                    <div class="value champion">Christian Abert</div>
-                    <div class="score">Defeated Ryan Herbst</div>
-                </div>
-
-                <div>
-                    <div class="label">Championship</div>
-                    <div class="value">163–156</div>
-                    <div class="score">Christian over Ryan</div>
-                </div>
-
-            </div>
-
-        </div>
-    </div>
-
-
-    <!-- 2019 -->
-
-    <div class="season">
-
-        <div class="season-header">
-            <div class="season-year">2019</div>
-            <div class="season-size">8 Teams</div>
-        </div>
-
-        <div class="season-content">
-
-            <div class="season-grid">
-
-                <div>
-                    <div class="label">Regular Season</div>
-                    <div class="value">Tommy Herbst</div>
-                    <div class="score">9–4</div>
-                </div>
-
-                <div>
-                    <div class="label">Champion</div>
-                    <div class="value champion">Ryan Herbst</div>
-                    <div class="score">Defeated Tommy Herbst</div>
-                </div>
-
-                <div>
-                    <div class="label">Championship</div>
-                    <div class="value">163–149</div>
-                    <div class="score">Ryan over Tommy</div>
-                </div>
-
-            </div>
-
-        </div>
-    </div>
-
-
-    <!-- 2020 -->
-
-    <div class="season">
-
-        <div class="season-header">
-            <div class="season-year">2020</div>
-            <div class="season-size">8 Teams</div>
-        </div>
-
-        <div class="season-content">
-
-            <div class="season-grid">
-
-                <div>
-                    <div class="label">Regular Season</div>
-                    <div class="value">Mike Herbst</div>
-                    <div class="score">10–3</div>
-                </div>
-
-                <div>
-                    <div class="label">Champion</div>
-                    <div class="value champion">Nic Maiorano</div>
-                    <div class="score">Defeated Jonah Wheeler</div>
-                </div>
-
-                <div>
-                    <div class="label">Championship</div>
-                    <div class="value">173–129</div>
-                    <div class="score">Nic over Jonah</div>
-                </div>
-
-            </div>
-
-        </div>
-    </div>
-
-
-    <!-- 2021 -->
-
-    <div class="season">
-
-        <div class="season-header">
-            <div class="season-year">2021</div>
-            <div class="season-size">10 Teams · Expansion</div>
-        </div>
-
-        <div class="season-content">
-
-            <div class="season-grid">
-
-                <div>
-                    <div class="label">Regular Season</div>
-                    <div class="value">Joey / Nic / Michael G.</div>
-                    <div class="score">All finished 9–5</div>
-                </div>
-
-                <div>
-                    <div class="label">Champion</div>
-                    <div class="value champion">Michael Gravante</div>
-                    <div class="score">Defeated Jonah Wheeler</div>
-                </div>
-
-                <div>
-                    <div class="label">Championship</div>
-                    <div class="value">121–102</div>
-                    <div class="score">Michael over Jonah</div>
-                </div>
-
-            </div>
-
-        </div>
-    </div>
-
-
-    <!-- 2022 -->
-
-    <div class="season">
-
-        <div class="season-header">
-            <div class="season-year">2022</div>
-            <div class="season-size">10 Teams · Historic Tie</div>
-        </div>
-
-        <div class="season-content">
-
-            <div class="season-grid">
-
-                <div>
-                    <div class="label">Regular Season</div>
-                    <div class="value">Julia Wheeler</div>
-                    <div class="score">10–4</div>
-                </div>
-
-                <div>
-                    <div class="label">Champion</div>
-                    <div class="value champion">Ryan Herbst & Julia Wheeler</div>
-                    <div class="score">Co-champions</div>
-                </div>
-
-                <div>
-                    <div class="label">Championship</div>
-                    <div class="value">116–97*</div>
-                    <div class="score">Title split after cancellation</div>
-                </div>
-
-            </div>
-
-            <div class="playoffs">
-
-                <div class="playoff-line">
-                    *The championship was declared a tie following the cancellation
-                    of the Bills vs. Bengals game on January 2, 2023.
-                </div>
-
-            </div>
-
-        </div>
-    </div>
-
-
-    <!-- 2023 -->
-
-    <div class="season">
-
-        <div class="season-header">
-            <div class="season-year">2023</div>
-            <div class="season-size">12 Teams · Expansion to Current Format</div>
-        </div>
-
-        <div class="season-content">
-
-            <div class="season-grid">
-
-                <div>
-                    <div class="label">Regular Season</div>
-                    <div class="value">Tommy Herbst</div>
-                    <div class="score">12–2</div>
-                </div>
-
-                <div>
-                    <div class="label">Champion</div>
-                    <div class="value champion">Tommy Herbst</div>
-                    <div class="score">Defeated William Darrow</div>
-                </div>
-
-                <div>
-                    <div class="label">Championship</div>
-                    <div class="value">134–97</div>
-                    <div class="score">Tommy over William</div>
-                </div>
-
-            </div>
-
-        </div>
-    </div>
-
-
-    <!-- 2024 -->
-
-    <div class="season">
-
-        <div class="season-header">
-            <div class="season-year">2024</div>
-            <div class="season-size">12 Teams</div>
-        </div>
-
-        <div class="season-content">
-
-            <div class="season-grid">
-
-                <div>
-                    <div class="label">Regular Season</div>
-                    <div class="value">Jonah Wheeler</div>
-                    <div class="score">10–4</div>
-                </div>
-
-                <div>
-                    <div class="label">Champion</div>
-                    <div class="value champion">Jonah Wheeler</div>
-                    <div class="score">Defeated Julia Wheeler</div>
-                </div>
-
-                <div>
-                    <div class="label">Championship</div>
-                    <div class="value">176–136</div>
-                    <div class="score">Jonah over Julia</div>
-                </div>
-
-            </div>
-
-        </div>
-    </div>
-
-
-    <!-- 2025 -->
-
-    <div class="season">
-
-        <div class="season-header">
-            <div class="season-year">2025</div>
-            <div class="season-size">12 Teams · Most Wins in League History</div>
-        </div>
-
-        <div class="season-content">
-
-            <div class="season-grid">
-
-                <div>
-                    <div class="label">Regular Season</div>
-                    <div class="value">Jonah Wheeler</div>
-                    <div class="score">12–2</div>
-                </div>
-
-                <div>
-                    <div class="label">Champion</div>
-                    <div class="value champion">William Darrow</div>
-                    <div class="score">Defeated Julia Wheeler</div>
-                </div>
-
-                <div>
-                    <div class="label">Championship</div>
-                    <div class="value">151–114</div>
-                    <div class="score">William over Julia</div>
-                </div>
-
-            </div>
-
-            <div class="playoffs">
-
-                <div class="playoff-line">
-                    Jonah's 12–2 regular season tied Tommy Herbst's 2023 record
-                    for the most wins in a season.
-                </div>
-
-                <div class="playoff-line">
-                    Jonah also recorded the longest winning streak in league history
-                    with 9 consecutive wins.
-                </div>
-
-            </div>
-
-        </div>
-    </div>
-
-
-    <!-- 2026 -->
-
-    <div class="season current">
-
-        <div class="season-header">
-            <div class="season-year">2026</div>
-            <div class="current-badge">Current Season</div>
-        </div>
-
-        <div class="season-content">
-
-            <div class="season-grid">
-
-                <div>
-                    <div class="label">League Size</div>
-                    <div class="value">12 Teams</div>
-                    <div class="score">Current format</div>
-                </div>
-
-                <div>
-                    <div class="label">Notable Change</div>
-                    <div class="value">Bailey Martin Returns</div>
-                    <div class="score">Rejoining after 2018</div>
-                </div>
-
-                <div>
-                    <div class="label">Status</div>
-                    <div class="value">In Progress</div>
-                    <div class="score">Results to come</div>
-                </div>
-
-            </div>
-
-        </div>
-    </div>
-
 
 </main>
 
@@ -978,3 +853,4 @@
 
 </body>
 </html>
+```
