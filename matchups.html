@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -106,7 +107,7 @@
             margin: 45px 0 20px;
         }
 
-        /* STAT CARDS */
+        /* MATCHUP FACT CARDS */
 
         .stats {
             display: grid;
@@ -130,69 +131,16 @@
         }
 
         .stat-number {
-            font-size: 32px;
+            font-size: 27px;
             font-weight: 800;
             margin-top: 8px;
+            line-height: 1.15;
         }
 
         .stat-description {
             color: #8f9aa4;
             font-size: 13px;
-            margin-top: 4px;
-        }
-
-        /* MATCHUP FACTS */
-
-        .matchup-facts {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
-        }
-
-        .matchup-fact {
-            background: #151c24;
-            border: 1px solid #27313b;
-            border-radius: 12px;
-            padding: 26px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .matchup-fact::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 4px;
-            height: 100%;
-            background: #68747e;
-        }
-
-        .matchup-fact-label {
-            color: #8f9aa4;
-            font-size: 11px;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            font-weight: 700;
-            margin-bottom: 10px;
-        }
-
-        .matchup-fact-title {
-            font-size: 24px;
-            font-weight: 800;
-            margin-bottom: 6px;
-        }
-
-        .matchup-fact-record {
-            color: #f5f5f5;
-            font-size: 16px;
-            font-weight: 700;
-        }
-
-        .matchup-fact-description {
-            color: #8f9aa4;
-            font-size: 13px;
-            margin-top: 5px;
+            margin-top: 6px;
         }
 
         /* PANELS */
@@ -404,6 +352,13 @@
 
         /* MOBILE */
 
+        @media (max-width: 900px) {
+
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
         @media (max-width: 800px) {
 
             header {
@@ -435,10 +390,6 @@
             }
 
             .stats {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .matchup-facts {
                 grid-template-columns: 1fr;
             }
 
@@ -500,86 +451,42 @@
 <main class="container">
 
 
-    <!-- MATCHUP RECORDS -->
-
-    <h2 class="section-title">Matchup Records</h2>
-
-    <div class="stats">
-
-        <div class="stat-card">
-            <div class="stat-label">Highest Scoring Game</div>
-            <div class="stat-number">236</div>
-            <div class="stat-description">Mike H. · 2020</div>
-        </div>
-
-        <div class="stat-card">
-            <div class="stat-label">Most TDs in a Game</div>
-            <div class="stat-number">16</div>
-            <div class="stat-description">Mike H. · 2020</div>
-        </div>
-
-        <div class="stat-card">
-            <div class="stat-label">Closest Championship</div>
-            <div class="stat-number">105–104</div>
-            <div class="stat-description">Bailey over Ryan · 2015</div>
-        </div>
-
-        <div class="stat-card">
-            <div class="stat-label">Highest Championship Score</div>
-            <div class="stat-number">177</div>
-            <div class="stat-description">Ryan Herbst · 2014</div>
-        </div>
-
-    </div>
-
-
     <!-- MATCHUP FACTS -->
 
     <h2 class="section-title">Matchup Facts</h2>
 
-    <div class="matchup-facts">
+    <div class="stats">
 
-        <div class="matchup-fact">
-
-            <div class="matchup-fact-label">
-                Most Even Matchup
+        <div class="stat-card">
+            <div class="stat-label">Most Even Matchup</div>
+            <div class="stat-number">TBD</div>
+            <div class="stat-description">
+                Closest head-to-head winning percentage
             </div>
-
-            <div class="matchup-fact-title">
-                Historical Data Pending
-            </div>
-
-            <div class="matchup-fact-record">
-                —
-            </div>
-
-            <div class="matchup-fact-description">
-                Will identify the two managers with the closest
-                head-to-head winning percentages.
-            </div>
-
         </div>
 
-
-        <div class="matchup-fact">
-
-            <div class="matchup-fact-label">
-                Most Lopsided Matchup
+        <div class="stat-card">
+            <div class="stat-label">Most Lopsided Matchup</div>
+            <div class="stat-number">TBD</div>
+            <div class="stat-description">
+                Largest head-to-head win percentage gap
             </div>
+        </div>
 
-            <div class="matchup-fact-title">
-                Historical Data Pending
+        <div class="stat-card">
+            <div class="stat-label">Most Head-to-Head Wins</div>
+            <div class="stat-number">TBD</div>
+            <div class="stat-description">
+                Most wins by one manager against another
             </div>
+        </div>
 
-            <div class="matchup-fact-record">
-                —
+        <div class="stat-card">
+            <div class="stat-label">Longest Head-to-Head Streak</div>
+            <div class="stat-number">TBD</div>
+            <div class="stat-description">
+                Longest consecutive winning streak against one opponent
             </div>
-
-            <div class="matchup-fact-description">
-                Will identify the manager pair with the largest
-                head-to-head winning percentage gap.
-            </div>
-
         </div>
 
     </div>
@@ -1145,3 +1052,4 @@
 
 </body>
 </html>
+```
