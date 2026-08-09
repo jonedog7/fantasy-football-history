@@ -198,35 +198,40 @@
         font-style: italic;
     }
     /* MVP */
+    /*
+     * The MVP section is intentionally shorter.
+     * The bottom of the headshot is anchored directly
+     * to the bottom of this section.
+     */
     .mvp {
         border-top: 1px solid #27313b;
-        height: 150px;
+        margin-top: 0;
         padding: 14px 22px 0;
         position: relative;
+        height: 125px;
         overflow: hidden;
     }
     .mvp-label {
-        position: relative;
-        z-index: 5;
         color: #7f8a94;
         font-size: 10px;
         text-transform: uppercase;
         letter-spacing: 1.5px;
         font-weight: 700;
+        margin-bottom: 0;
+        position: relative;
+        z-index: 3;
     }
     .mvp-content {
-        position: absolute;
-        left: 22px;
-        right: 22px;
-        top: 36px;
-        bottom: 0;
+        position: relative;
+        height: 110px;
+        margin-top: 0;
     }
     .mvp-info {
         position: absolute;
         left: 0;
-        top: 10px;
-        max-width: 55%;
-        z-index: 4;
+        top: 24px;
+        z-index: 3;
+        max-width: 58%;
     }
     .mvp-name {
         font-size: 16px;
@@ -240,27 +245,27 @@
         font-weight: 600;
     }
     /*
-     * PLAYER HEADSHOTS
+     * IMPORTANT:
+     * bottom: 0 makes the bottom of the image align
+     * exactly with the bottom of the MVP section.
      *
-     * The image is anchored to the bottom-right of the MVP
-     * area. It is contained inside the card and cannot
-     * overflow into the section above it.
+     * The image is no longer hanging below the box.
      */
     .mvp-image {
         position: absolute;
-        right: 0;
-        bottom: -2px;
         width: 125px;
-        height: 112px;
+        height: 125px;
         object-fit: contain;
         object-position: bottom center;
-        z-index: 2;
+        right: -5px;
+        bottom: 0;
+        z-index: 1;
     }
     .mvp-placeholder {
         color: #68747e;
         font-size: 12px;
         font-style: italic;
-        margin-top: 12px;
+        margin-top: 8px;
     }
     /* FOOTER */
     footer {
@@ -321,24 +326,25 @@
         .era-number {
             font-size: 27px;
         }
+        /*
+         * Mobile version keeps the exact same bottom
+         * alignment while making the headshot smaller.
+         */
         .mvp {
-            height: 145px;
-            padding-left: 18px;
-            padding-right: 18px;
+            height: 115px;
         }
         .mvp-content {
-            left: 18px;
-            right: 18px;
-        }
-        .mvp-info {
-            max-width: 55%;
-            top: 9px;
+            height: 100px;
         }
         .mvp-image {
             width: 110px;
-            height: 105px;
-            right: 0;
-            bottom: -2px;
+            height: 110px;
+            right: -3px;
+            bottom: 0;
+        }
+        .mvp-info {
+            max-width: 55%;
+            top: 22px;
         }
     }
 </style>
@@ -361,11 +367,12 @@
     </nav>
 </div>
 </header>
+<!-- HERO -->
 <section class="hero">
-<div class="eyebrow">League Archive · 2013–2025</div>
+<div class="eyebrow">League Archive · 2013–2026</div>
 <h1>League<br>History.</h1>
 <p>
-    Thirteen completed seasons of championships, expansion and league history.
+    Fourteen seasons of championships, expansion and league history.
     From four original managers in 2013 to a 12-team league today.
 </p>
 </section>
@@ -394,7 +401,7 @@
         <div class="era-label">Managers</div>
     </div>
     <div class="era-card">
-        <div class="era-years">2023–2025</div>
+        <div class="era-years">2023–2026</div>
         <div class="era-number">12</div>
         <div class="era-label">Managers</div>
     </div>
