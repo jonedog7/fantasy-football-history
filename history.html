@@ -3,1236 +3,889 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>League History | Kevin Durant League</title>
-
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: #0b0f14;
-            color: #f5f5f5;
-            line-height: 1.5;
-        }
-
-        /* HEADER */
-
-        header {
-            background: #111820;
-            border-bottom: 1px solid #27313b;
-            padding: 20px 30px;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        .header-inner {
-            max-width: 1200px;
-            margin: auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 22px;
-            font-weight: 800;
-            letter-spacing: 1px;
-        }
-
-        .logo span {
-            display: block;
-            font-size: 11px;
-            color: #9aa5af;
-            letter-spacing: 2px;
-            margin-top: 2px;
-        }
-
-        nav {
-            display: flex;
-            gap: 24px;
-        }
-
-        nav a {
-            color: #cbd2d8;
-            text-decoration: none;
-            font-size: 14px;
-            font-weight: 600;
-        }
-
-        nav a:hover {
-            color: white;
-        }
-
-        /* HERO */
-
-        .hero {
-            max-width: 1200px;
-            margin: auto;
-            padding: 75px 30px 55px;
-        }
-
-        .eyebrow {
-            color: #9aa5af;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            font-size: 12px;
-            font-weight: 700;
-            margin-bottom: 12px;
-        }
-
-        .hero h1 {
-            font-size: clamp(42px, 7vw, 76px);
-            line-height: .95;
-            letter-spacing: -3px;
-            margin-bottom: 18px;
-        }
-
-        .hero p {
-            color: #aeb8c1;
-            max-width: 700px;
-            font-size: 17px;
-        }
-
-        /* CONTENT */
-
-        .container {
-            max-width: 1200px;
-            margin: auto;
-            padding: 0 30px 70px;
-        }
-
-        .section-title {
-            font-size: 24px;
-            margin: 50px 0 20px;
-        }
-
-        /* LEAGUE ERAS */
-
+<title>League History | Kevin Durant League</title>
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        background: #0b0f14;
+        color: #f5f5f5;
+        line-height: 1.5;
+    }
+    /* HEADER */
+    header {
+        background: #111820;
+        border-bottom: 1px solid #27313b;
+        padding: 20px 30px;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+    }
+    .header-inner {
+        max-width: 1200px;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .logo {
+        font-size: 22px;
+        font-weight: 800;
+        letter-spacing: 1px;
+    }
+    .logo span {
+        display: block;
+        font-size: 11px;
+        color: #9aa5af;
+        letter-spacing: 2px;
+        margin-top: 2px;
+    }
+    nav {
+        display: flex;
+        gap: 24px;
+    }
+    nav a {
+        color: #cbd2d8;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 600;
+    }
+    nav a:hover {
+        color: white;
+    }
+    /* HERO */
+    .hero {
+        max-width: 1200px;
+        margin: auto;
+        padding: 75px 30px 55px;
+    }
+    .eyebrow {
+        color: #9aa5af;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        font-size: 12px;
+        font-weight: 700;
+        margin-bottom: 12px;
+    }
+    .hero h1 {
+        font-size: clamp(42px, 7vw, 76px);
+        line-height: .95;
+        letter-spacing: -3px;
+        margin-bottom: 18px;
+    }
+    .hero p {
+        color: #aeb8c1;
+        max-width: 700px;
+        font-size: 17px;
+    }
+    /* CONTENT */
+    .container {
+        max-width: 1200px;
+        margin: auto;
+        padding: 0 30px 70px;
+    }
+    .section-title {
+        font-size: 24px;
+        margin: 50px 0 20px;
+    }
+    /* LEAGUE ERAS */
+    .era-grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 15px;
+    }
+    .era-card {
+        background: #151c24;
+        border: 1px solid #27313b;
+        border-radius: 12px;
+        padding: 22px;
+    }
+    .era-years {
+        color: #8f9aa4;
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        font-weight: 700;
+    }
+    .era-number {
+        font-size: 32px;
+        font-weight: 800;
+        margin-top: 7px;
+    }
+    .era-label {
+        color: #aeb8c1;
+        font-size: 13px;
+        margin-top: 3px;
+    }
+    /* HISTORY GRID */
+    .history-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+    }
+    .history-card {
+        background: #151c24;
+        border: 1px solid #27313b;
+        border-radius: 12px;
+        overflow: hidden;
+    }
+    .history-card-header {
+        padding: 20px 22px;
+        border-bottom: 1px solid #27313b;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+    .history-year {
+        font-size: 25px;
+        font-weight: 800;
+    }
+    .history-meta {
+        color: #7f8a94;
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        text-align: right;
+    }
+    .history-body {
+        padding: 20px 22px 0;
+    }
+    .history-result {
+        margin-bottom: 15px;
+    }
+    .history-result:last-child {
+        margin-bottom: 0;
+    }
+    .history-label {
+        display: block;
+        color: #7f8a94;
+        font-size: 10px;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        font-weight: 700;
+        margin-bottom: 3px;
+    }
+    .history-team {
+        font-size: 17px;
+        font-weight: 700;
+    }
+    .history-score {
+        margin-top: 18px;
+        padding-top: 15px;
+        padding-bottom: 18px;
+        border-top: 1px solid #222b34;
+        color: #aeb8c1;
+        font-size: 13px;
+        font-weight: 600;
+    }
+    .history-note {
+        display: inline-block;
+        margin-top: 5px;
+        padding: 3px 8px;
+        border: 1px solid #39444f;
+        border-radius: 5px;
+        color: #8f9aa4;
+        font-size: 10px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+    .tbd {
+        color: #68747e;
+        font-style: italic;
+    }
+    /* MVP */
+    .mvp {
+        border-top: 1px solid #27313b;
+        height: 150px;
+        padding: 14px 22px 0;
+        position: relative;
+        overflow: hidden;
+    }
+    .mvp-label {
+        position: relative;
+        z-index: 5;
+        color: #7f8a94;
+        font-size: 10px;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        font-weight: 700;
+    }
+    .mvp-content {
+        position: absolute;
+        left: 22px;
+        right: 22px;
+        top: 36px;
+        bottom: 0;
+    }
+    .mvp-info {
+        position: absolute;
+        left: 0;
+        top: 10px;
+        max-width: 55%;
+        z-index: 4;
+    }
+    .mvp-name {
+        font-size: 16px;
+        font-weight: 800;
+        line-height: 1.2;
+    }
+    .mvp-points {
+        margin-top: 5px;
+        color: #aeb8c1;
+        font-size: 12px;
+        font-weight: 600;
+    }
+    /*
+     * PLAYER HEADSHOTS
+     *
+     * The image is anchored to the bottom-right of the MVP
+     * area. It is contained inside the card and cannot
+     * overflow into the section above it.
+     */
+    .mvp-image {
+        position: absolute;
+        right: 0;
+        bottom: -2px;
+        width: 125px;
+        height: 112px;
+        object-fit: contain;
+        object-position: bottom center;
+        z-index: 2;
+    }
+    .mvp-placeholder {
+        color: #68747e;
+        font-size: 12px;
+        font-style: italic;
+        margin-top: 12px;
+    }
+    /* FOOTER */
+    footer {
+        border-top: 1px solid #27313b;
+        padding: 30px;
+        text-align: center;
+        color: #68747e;
+        font-size: 12px;
+    }
+    /* TABLET */
+    @media (max-width: 950px) {
         .era-grid {
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 15px;
-        }
-
-        .era-card {
-            background: #151c24;
-            border: 1px solid #27313b;
-            border-radius: 12px;
-            padding: 22px;
-        }
-
-        .era-years {
-            color: #8f9aa4;
-            font-size: 12px;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            font-weight: 700;
-        }
-
-        .era-number {
-            font-size: 32px;
-            font-weight: 800;
-            margin-top: 7px;
-        }
-
-        .era-label {
-            color: #aeb8c1;
-            font-size: 13px;
-            margin-top: 3px;
-        }
-
-        /* HISTORY GRID */
-
-        .history-grid {
-            display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 18px;
         }
-
-        .history-card {
-            background: #151c24;
-            border: 1px solid #27313b;
-            border-radius: 12px;
-            overflow: hidden;
+        .history-grid {
+            grid-template-columns: repeat(2, 1fr);
         }
-
-        .history-card-header {
-            padding: 20px 22px;
-            border-bottom: 1px solid #27313b;
-            display: flex;
-            justify-content: space-between;
+    }
+    /* MOBILE */
+    @media (max-width: 800px) {
+        header {
+            padding: 18px 20px;
+        }
+        .header-inner {
+            flex-direction: column;
+            gap: 15px;
             align-items: flex-start;
         }
-
-        .history-year {
-            font-size: 25px;
-            font-weight: 800;
+        nav {
+            width: 100%;
+            overflow-x: auto;
+            gap: 18px;
+            padding-bottom: 3px;
         }
-
-        .history-meta {
-            color: #7f8a94;
-            font-size: 11px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            text-align: right;
+        nav a {
+            white-space: nowrap;
         }
-
-        .history-body {
-            padding: 20px 22px 0;
+        .hero {
+            padding: 50px 20px 40px;
         }
-
-        .history-result {
-            margin-bottom: 15px;
+        .container {
+            padding: 0 20px 50px;
         }
-
-        .history-result:last-child {
-            margin-bottom: 0;
+        .era-grid {
+            grid-template-columns: repeat(2, 1fr);
         }
-
-        .history-label {
-            display: block;
-            color: #7f8a94;
-            font-size: 10px;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            font-weight: 700;
-            margin-bottom: 3px;
+        .history-grid {
+            grid-template-columns: 1fr;
         }
-
-        .history-team {
-            font-size: 17px;
-            font-weight: 700;
+    }
+    @media (max-width: 450px) {
+        .era-grid {
+            grid-template-columns: 1fr 1fr;
         }
-
-        .history-score {
-            margin-top: 18px;
-            padding-top: 15px;
-            padding-bottom: 18px;
-            border-top: 1px solid #222b34;
-            color: #aeb8c1;
-            font-size: 13px;
-            font-weight: 600;
+        .era-card {
+            padding: 18px;
         }
-
-        .history-note {
-            display: inline-block;
-            margin-top: 5px;
-            padding: 3px 8px;
-            border: 1px solid #39444f;
-            border-radius: 5px;
-            color: #8f9aa4;
-            font-size: 10px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+        .era-number {
+            font-size: 27px;
         }
-
-        .tbd {
-            color: #68747e;
-            font-style: italic;
-        }
-
-        /* MVP */
-
         .mvp {
-            border-top: 1px solid #27313b;
-            margin-top: 0;
-            padding: 14px 22px 18px;
-            position: relative;
             height: 145px;
-            overflow: hidden;
+            padding-left: 18px;
+            padding-right: 18px;
         }
-
-        .mvp-label {
-            color: #7f8a94;
-            font-size: 10px;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            font-weight: 700;
-            margin-bottom: 0;
-            position: relative;
-            z-index: 3;
-        }
-
-        /*
-         * MVP CONTENT
-         *
-         * The player image remains anchored to the bottom of
-         * the card and can extend slightly below the section.
-         *
-         * The name/points are positioned higher so they sit
-         * naturally underneath the MVP heading.
-         */
-
         .mvp-content {
-            position: relative;
-            height: 120px;
-            margin-top: 0;
+            left: 18px;
+            right: 18px;
         }
-
         .mvp-info {
-            position: absolute;
-            left: 0;
-            top: 28px;
-            z-index: 3;
-            max-width: 58%;
+            max-width: 55%;
+            top: 9px;
         }
-
-        .mvp-name {
-            font-size: 16px;
-            font-weight: 800;
-            line-height: 1.2;
-        }
-
-        .mvp-points {
-            margin-top: 5px;
-            color: #aeb8c1;
-            font-size: 12px;
-            font-weight: 600;
-        }
-
-        /*
-         * Image stays tied to the bottom of the MVP outline.
-         * It is NOT vertically centered, which prevents the
-         * lower half of a player cutout from appearing to float.
-         */
-
         .mvp-image {
-            position: absolute;
-            width: 125px;
-            height: 125px;
-            object-fit: contain;
-            object-position: bottom center;
-            right: -5px;
-            bottom: -18px;
-            z-index: 1;
+            width: 110px;
+            height: 105px;
+            right: 0;
+            bottom: -2px;
         }
-
-        .mvp-placeholder {
-            color: #68747e;
-            font-size: 12px;
-            font-style: italic;
-            margin-top: 8px;
-        }
-
-        /* FOOTER */
-
-        footer {
-            border-top: 1px solid #27313b;
-            padding: 30px;
-            text-align: center;
-            color: #68747e;
-            font-size: 12px;
-        }
-
-        /* TABLET */
-
-        @media (max-width: 950px) {
-
-            .era-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-
-            .history-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        /* MOBILE */
-
-        @media (max-width: 800px) {
-
-            header {
-                padding: 18px 20px;
-            }
-
-            .header-inner {
-                flex-direction: column;
-                gap: 15px;
-                align-items: flex-start;
-            }
-
-            nav {
-                width: 100%;
-                overflow-x: auto;
-                gap: 18px;
-                padding-bottom: 3px;
-            }
-
-            nav a {
-                white-space: nowrap;
-            }
-
-            .hero {
-                padding: 50px 20px 40px;
-            }
-
-            .container {
-                padding: 0 20px 50px;
-            }
-
-            .era-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .history-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media (max-width: 450px) {
-
-            .era-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .era-card {
-                padding: 18px;
-            }
-
-            .era-number {
-                font-size: 27px;
-            }
-
-            /*
-             * Slightly smaller mobile headshot, while keeping
-             * the bottom anchoring identical.
-             */
-
-            .mvp-image {
-                width: 110px;
-                height: 110px;
-                right: -3px;
-                bottom: -15px;
-            }
-
-            .mvp-info {
-                max-width: 55%;
-                top: 26px;
-            }
-        }
-    </style>
+    }
+</style>
 </head>
-
 <body>
-
 <header>
-
-    <div class="header-inner">
-
-        <div class="logo">
-            KEVIN DURANT LEAGUE
-            <span>FANTASY FOOTBALL · EST. 2013</span>
-        </div>
-
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="history.html">History</a>
-            <a href="teams.html">Teams</a>
-            <a href="records.html">Records</a>
-            <a href="matchups.html">Matchups</a>
-            <a href="drafts.html">Drafts</a>
-            <a href="seasons.html">Seasons</a>
-        </nav>
-
+<div class="header-inner">
+    <div class="logo">
+        KEVIN DURANT LEAGUE
+        <span>FANTASY FOOTBALL · EST. 2013</span>
     </div>
-
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="history.html">History</a>
+        <a href="teams.html">Teams</a>
+        <a href="records.html">Records</a>
+        <a href="matchups.html">Matchups</a>
+        <a href="drafts.html">Drafts</a>
+        <a href="seasons.html">Seasons</a>
+    </nav>
+</div>
 </header>
-
-
-<!-- HERO -->
-
 <section class="hero">
-
-    <div class="eyebrow">League Archive · 2013–2026</div>
-
-    <h1>League<br>History.</h1>
-
-    <p>
-        Fourteen seasons of championships, expansion and league history.
-        From four original managers in 2013 to a 12-team league today.
-    </p>
-
+<div class="eyebrow">League Archive · 2013–2025</div>
+<h1>League<br>History.</h1>
+<p>
+    Thirteen completed seasons of championships, expansion and league history.
+    From four original managers in 2013 to a 12-team league today.
+</p>
 </section>
-
-
 <main class="container">
-
-
-    <!-- LEAGUE ERAS -->
-
-    <h2 class="section-title">League Eras</h2>
-
-    <div class="era-grid">
-
-        <div class="era-card">
-            <div class="era-years">2013</div>
-            <div class="era-number">4</div>
-            <div class="era-label">Managers</div>
-        </div>
-
-        <div class="era-card">
-            <div class="era-years">2014–2015</div>
-            <div class="era-number">6</div>
-            <div class="era-label">Managers</div>
-        </div>
-
-        <div class="era-card">
-            <div class="era-years">2016–2020</div>
-            <div class="era-number">8</div>
-            <div class="era-label">Managers</div>
-        </div>
-
-        <div class="era-card">
-            <div class="era-years">2021–2022</div>
-            <div class="era-number">10</div>
-            <div class="era-label">Managers</div>
-        </div>
-
-        <div class="era-card">
-            <div class="era-years">2023–2026</div>
-            <div class="era-number">12</div>
-            <div class="era-label">Managers</div>
-        </div>
-
+<!-- LEAGUE ERAS -->
+<h2 class="section-title">League Eras</h2>
+<div class="era-grid">
+    <div class="era-card">
+        <div class="era-years">2013</div>
+        <div class="era-number">4</div>
+        <div class="era-label">Managers</div>
     </div>
-
-
-    <!-- CHAMPIONSHIP HISTORY -->
-
-    <h2 class="section-title">Championship History</h2>
-
-    <div class="history-grid">
-
-
-        <!-- 2013 -->
-
-        <div class="history-card">
-
-            <div class="history-card-header">
-                <div class="history-year">2013</div>
-                <div class="history-meta">4 Teams</div>
-            </div>
-
-            <div class="history-body">
-
-                <div class="history-result">
-                    <span class="history-label">Champion</span>
-                    <div class="history-team">Ryan Herbst</div>
-                </div>
-
-                <div class="history-result">
-                    <span class="history-label">Runner-Up</span>
-                    <div class="history-team">Nic Maiorano</div>
-                </div>
-
-                <div class="history-score">
-                    Ryan 144 — Nic 124
-                </div>
-
-            </div>
-
-            <div class="mvp">
-
-                <div class="mvp-label">Championship MVP</div>
-
-                <div class="mvp-content">
-
-                    <div class="mvp-info">
-                        <div class="mvp-name">LeSean McCoy</div>
-                        <div class="mvp-points">35 PPR Points</div>
-                    </div>
-
-                    <img
-                        class="mvp-image"
-                        src="lesean-mccoy-2013.png"
-                        alt="LeSean McCoy 2013"
-                    >
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <!-- 2014 -->
-
-        <div class="history-card">
-
-            <div class="history-card-header">
-                <div class="history-year">2014</div>
-                <div class="history-meta">
-                    6 Teams<br>
-                    <span class="history-note">League expansion</span>
-                </div>
-            </div>
-
-            <div class="history-body">
-
-                <div class="history-result">
-                    <span class="history-label">Champion</span>
-                    <div class="history-team">Ryan Herbst</div>
-                </div>
-
-                <div class="history-result">
-                    <span class="history-label">Runner-Up</span>
-                    <div class="history-team">Bailey Martin</div>
-                </div>
-
-                <div class="history-score">
-                    Ryan 177 — Bailey 125
-                </div>
-
-            </div>
-
-            <div class="mvp">
-
-                <div class="mvp-label">Championship MVP</div>
-
-                <div class="mvp-content">
-
-                    <div class="mvp-info">
-                        <div class="mvp-name">Odell Beckham Jr.</div>
-                        <div class="mvp-points">32 PPR Points</div>
-                    </div>
-
-                    <img
-                        class="mvp-image"
-                        src="odell-beckham-jr-2014.png"
-                        alt="Odell Beckham Jr. 2014"
-                    >
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <!-- 2015 -->
-
-        <div class="history-card">
-
-            <div class="history-card-header">
-                <div class="history-year">2015</div>
-                <div class="history-meta">6 Teams</div>
-            </div>
-
-            <div class="history-body">
-
-                <div class="history-result">
-                    <span class="history-label">Champion</span>
-                    <div class="history-team">Bailey Martin</div>
-                </div>
-
-                <div class="history-result">
-                    <span class="history-label">Runner-Up</span>
-                    <div class="history-team">Ryan Herbst</div>
-                </div>
-
-                <div class="history-score">
-                    Bailey 105 — Ryan 104
-                </div>
-
-            </div>
-
-            <div class="mvp">
-
-                <div class="mvp-label">Championship MVP</div>
-
-                <div class="mvp-content">
-
-                    <div class="mvp-info">
-                        <div class="mvp-name">Drew Brees</div>
-                        <div class="mvp-points">21 PPR Points</div>
-                    </div>
-
-                    <img
-                        class="mvp-image"
-                        src="drew-brees-2015.png"
-                        alt="Drew Brees 2015"
-                    >
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <!-- 2016 -->
-
-        <div class="history-card">
-
-            <div class="history-card-header">
-                <div class="history-year">2016</div>
-                <div class="history-meta">
-                    8 Teams<br>
-                    <span class="history-note">League expansion</span>
-                </div>
-            </div>
-
-            <div class="history-body">
-
-                <div class="history-result">
-                    <span class="history-label">Champion</span>
-                    <div class="history-team">Ryan Herbst</div>
-                </div>
-
-                <div class="history-result">
-                    <span class="history-label">Runner-Up</span>
-                    <div class="history-team">Jonah Wheeler</div>
-                </div>
-
-                <div class="history-score">
-                    Ryan 141 — Jonah 138
-                </div>
-
-            </div>
-
-            <div class="mvp">
-
-                <div class="mvp-label">Championship MVP</div>
-
-                <div class="mvp-content">
-
-                    <div class="mvp-info">
-                        <div class="mvp-name">Odell Beckham Jr.</div>
-                        <div class="mvp-points">24 PPR Points</div>
-                    </div>
-
-                    <img
-                        class="mvp-image"
-                        src="odell-beckham-jr-2016.png"
-                        alt="Odell Beckham Jr. 2016"
-                    >
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <!-- 2017 -->
-
-        <div class="history-card">
-
-            <div class="history-card-header">
-                <div class="history-year">2017</div>
-                <div class="history-meta">8 Teams</div>
-            </div>
-
-            <div class="history-body">
-
-                <div class="history-result">
-                    <span class="history-label">Champion</span>
-                    <div class="history-team">Christian Abert</div>
-                </div>
-
-                <div class="history-result">
-                    <span class="history-label">Runner-Up</span>
-                    <div class="history-team">Bailey Martin</div>
-                </div>
-
-                <div class="history-score">
-                    Christian 101 — Bailey 94
-                </div>
-
-            </div>
-
-            <div class="mvp">
-
-                <div class="mvp-label">Championship MVP</div>
-
-                <div class="mvp-content">
-
-                    <div class="mvp-info">
-                        <div class="mvp-name">JuJu Smith-Schuster</div>
-                        <div class="mvp-points">17 PPR Points</div>
-                    </div>
-
-                    <img
-                        class="mvp-image"
-                        src="juju-smith-schuster-2017.png"
-                        alt="JuJu Smith-Schuster 2017"
-                    >
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <!-- 2018 -->
-
-        <div class="history-card">
-
-            <div class="history-card-header">
-                <div class="history-year">2018</div>
-                <div class="history-meta">8 Teams</div>
-            </div>
-
-            <div class="history-body">
-
-                <div class="history-result">
-                    <span class="history-label">Champion</span>
-                    <div class="history-team">Christian Abert</div>
-                </div>
-
-                <div class="history-result">
-                    <span class="history-label">Runner-Up</span>
-                    <div class="history-team">Ryan Herbst</div>
-                </div>
-
-                <div class="history-score">
-                    Christian 163 — Ryan 156
-                </div>
-
-            </div>
-
-            <div class="mvp">
-
-                <div class="mvp-label">Championship MVP</div>
-
-                <div class="mvp-content">
-
-                    <div class="mvp-info">
-                        <div class="mvp-name">Aaron Rodgers</div>
-                        <div class="mvp-points">53 PPR Points</div>
-                    </div>
-
-                    <img
-                        class="mvp-image"
-                        src="aaron-rodgers-2018.png"
-                        alt="Aaron Rodgers 2018"
-                    >
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <!-- 2019 -->
-
-        <div class="history-card">
-
-            <div class="history-card-header">
-                <div class="history-year">2019</div>
-                <div class="history-meta">8 Teams</div>
-            </div>
-
-            <div class="history-body">
-
-                <div class="history-result">
-                    <span class="history-label">Champion</span>
-                    <div class="history-team">Ryan Herbst</div>
-                </div>
-
-                <div class="history-result">
-                    <span class="history-label">Runner-Up</span>
-                    <div class="history-team">Tommy Herbst</div>
-                </div>
-
-                <div class="history-score">
-                    Ryan 163 — Tommy 149
-                </div>
-
-            </div>
-
-            <div class="mvp">
-
-                <div class="mvp-label">Championship MVP</div>
-
-                <div class="mvp-content">
-
-                    <div class="mvp-info">
-                        <div class="mvp-name">Saquon Barkley</div>
-                        <div class="mvp-points">46 PPR Points</div>
-                    </div>
-
-                    <img
-                        class="mvp-image"
-                        src="saquon-barkley-2019.png"
-                        alt="Saquon Barkley 2019"
-                    >
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <!-- 2020 -->
-
-        <div class="history-card">
-
-            <div class="history-card-header">
-                <div class="history-year">2020</div>
-                <div class="history-meta">8 Teams</div>
-            </div>
-
-            <div class="history-body">
-
-                <div class="history-result">
-                    <span class="history-label">Champion</span>
-                    <div class="history-team">Nic Maiorano</div>
-                </div>
-
-                <div class="history-result">
-                    <span class="history-label">Runner-Up</span>
-                    <div class="history-team">Jonah Wheeler</div>
-                </div>
-
-                <div class="history-score">
-                    Nic 173 — Jonah 129
-                </div>
-
-            </div>
-
-            <div class="mvp">
-
-                <div class="mvp-label">Championship MVP</div>
-
-                <div class="mvp-content">
-
-                    <div class="mvp-info">
-                        <div class="mvp-name">Davante Adams</div>
-                        <div class="mvp-points">44 PPR Points</div>
-                    </div>
-
-                    <img
-                        class="mvp-image"
-                        src="davante-adams-2020.png"
-                        alt="Davante Adams 2020"
-                    >
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <!-- 2021 -->
-
-        <div class="history-card">
-
-            <div class="history-card-header">
-                <div class="history-year">2021</div>
-                <div class="history-meta">
-                    10 Teams<br>
-                    <span class="history-note">League expansion</span>
-                </div>
-            </div>
-
-            <div class="history-body">
-
-                <div class="history-result">
-                    <span class="history-label">Champion</span>
-                    <div class="history-team">Michael Gravante</div>
-                </div>
-
-                <div class="history-result">
-                    <span class="history-label">Runner-Up</span>
-                    <div class="history-team">Jonah Wheeler</div>
-                </div>
-
-                <div class="history-score">
-                    Michael 121 — Jonah 102
-                </div>
-
-            </div>
-
-            <div class="mvp">
-
-                <div class="mvp-label">Championship MVP</div>
-
-                <div class="mvp-content">
-
-                    <div class="mvp-info">
-                        <div class="mvp-name">Kyler Murray</div>
-                        <div class="mvp-points">26 PPR Points</div>
-                    </div>
-
-                    <img
-                        class="mvp-image"
-                        src="kyler-murray-2021.png"
-                        alt="Kyler Murray 2021"
-                    >
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <!-- 2022 -->
-
-        <div class="history-card">
-
-            <div class="history-card-header">
-                <div class="history-year">2022</div>
-                <div class="history-meta">10 Teams</div>
-            </div>
-
-            <div class="history-body">
-
-                <div class="history-result">
-                    <span class="history-label">Champion</span>
-                    <div class="history-team">Ryan Herbst &amp; Julia Wheeler</div>
-                </div>
-
-                <div class="history-result">
-                    <span class="history-label">Runner-Up</span>
-                    <div class="history-team">Co-Champions</div>
-                </div>
-
-                <div class="history-score">
-                    116 — 97
-                </div>
-
-            </div>
-
-            <div class="mvp">
-
-                <div class="mvp-label">Championship MVP</div>
-
-                <div class="mvp-content">
-
-                    <div class="mvp-info">
-                        <div class="mvp-name">Brandon Aiyuk</div>
-                        <div class="mvp-points">27 PPR Points</div>
-                    </div>
-
-                    <img
-                        class="mvp-image"
-                        src="brandon-aiyuk-2022.png"
-                        alt="Brandon Aiyuk 2022"
-                    >
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <!-- 2023 -->
-
-        <div class="history-card">
-
-            <div class="history-card-header">
-                <div class="history-year">2023</div>
-                <div class="history-meta">
-                    12 Teams<br>
-                    <span class="history-note">League expansion</span>
-                </div>
-            </div>
-
-            <div class="history-body">
-
-                <div class="history-result">
-                    <span class="history-label">Champion</span>
-                    <div class="history-team">Tommy Herbst</div>
-                </div>
-
-                <div class="history-result">
-                    <span class="history-label">Runner-Up</span>
-                    <div class="history-team">William Darrow</div>
-                </div>
-
-                <div class="history-score">
-                    Tommy 134 — William 97
-                </div>
-
-            </div>
-
-            <div class="mvp">
-
-                <div class="mvp-label">Championship MVP</div>
-
-                <div class="mvp-content">
-
-                    <div class="mvp-info">
-                        <div class="mvp-name">Kyren Williams</div>
-                        <div class="mvp-points">29 PPR Points</div>
-                    </div>
-
-                    <img
-                        class="mvp-image"
-                        src="kyren-williams-2023.png"
-                        alt="Kyren Williams 2023"
-                    >
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <!-- 2024 -->
-
-        <div class="history-card">
-
-            <div class="history-card-header">
-                <div class="history-year">2024</div>
-                <div class="history-meta">12 Teams</div>
-            </div>
-
-            <div class="history-body">
-
-                <div class="history-result">
-                    <span class="history-label">Champion</span>
-                    <div class="history-team">Jonah Wheeler</div>
-                </div>
-
-                <div class="history-result">
-                    <span class="history-label">Runner-Up</span>
-                    <div class="history-team">Julia Wheeler</div>
-                </div>
-
-                <div class="history-score">
-                    Jonah 176 — Julia 136
-                </div>
-
-            </div>
-
-            <div class="mvp">
-
-                <div class="mvp-label">Championship MVP</div>
-
-                <div class="mvp-content">
-
-                    <div class="mvp-info">
-                        <div class="mvp-name">Joe Burrow</div>
-                        <div class="mvp-points">49 PPR Points</div>
-                    </div>
-
-                    <img
-                        class="mvp-image"
-                        src="joe-burrow-2024.png"
-                        alt="Joe Burrow 2024"
-                    >
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <!-- 2025 -->
-
-        <div class="history-card">
-
-            <div class="history-card-header">
-                <div class="history-year">2025</div>
-                <div class="history-meta">12 Teams</div>
-            </div>
-
-            <div class="history-body">
-
-                <div class="history-result">
-                    <span class="history-label">Champion</span>
-                    <div class="history-team">William Darrow</div>
-                </div>
-
-                <div class="history-result">
-                    <span class="history-label">Runner-Up</span>
-                    <div class="history-team">Julia Wheeler</div>
-                </div>
-
-                <div class="history-score">
-                    William 151 — Julia 114
-                </div>
-
-            </div>
-
-            <div class="mvp">
-
-                <div class="mvp-label">Championship MVP</div>
-
-                <div class="mvp-content">
-
-                    <div class="mvp-info">
-                        <div class="mvp-name">Christian McCaffrey</div>
-                        <div class="mvp-points">29 PPR Points</div>
-                    </div>
-
-                    <img
-                        class="mvp-image"
-                        src="christian-mccaffrey-2025.png"
-                        alt="Christian McCaffrey 2025"
-                    >
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <!-- 2026 -->
-
-        <div class="history-card">
-
-            <div class="history-card-header">
-                <div class="history-year">2026</div>
-                <div class="history-meta">12 Teams</div>
-            </div>
-
-            <div class="history-body">
-
-                <div class="history-result">
-                    <span class="history-label">Champion</span>
-                    <div class="history-team tbd">TBD</div>
-                </div>
-
-                <div class="history-result">
-                    <span class="history-label">Runner-Up</span>
-                    <div class="history-team tbd">TBD</div>
-                </div>
-
-                <div class="history-score tbd">
-                    TBD
-                </div>
-
-            </div>
-
-            <div class="mvp">
-
-                <div class="mvp-label">Championship MVP</div>
-
-                <div class="mvp-placeholder">
-                    TBD
-                </div>
-
-            </div>
-
-        </div>
-
-
+    <div class="era-card">
+        <div class="era-years">2014–2015</div>
+        <div class="era-number">6</div>
+        <div class="era-label">Managers</div>
     </div>
-
+    <div class="era-card">
+        <div class="era-years">2016–2020</div>
+        <div class="era-number">8</div>
+        <div class="era-label">Managers</div>
+    </div>
+    <div class="era-card">
+        <div class="era-years">2021–2022</div>
+        <div class="era-number">10</div>
+        <div class="era-label">Managers</div>
+    </div>
+    <div class="era-card">
+        <div class="era-years">2023–2025</div>
+        <div class="era-number">12</div>
+        <div class="era-label">Managers</div>
+    </div>
+</div>
+<!-- CHAMPIONSHIP HISTORY -->
+<h2 class="section-title">Championship History</h2>
+<div class="history-grid">
+    <!-- 2013 -->
+    <div class="history-card">
+        <div class="history-card-header">
+            <div class="history-year">2013</div>
+            <div class="history-meta">4 Teams</div>
+        </div>
+        <div class="history-body">
+            <div class="history-result">
+                <span class="history-label">Champion</span>
+                <div class="history-team">Ryan Herbst</div>
+            </div>
+            <div class="history-result">
+                <span class="history-label">Runner-Up</span>
+                <div class="history-team">Nic Maiorano</div>
+            </div>
+            <div class="history-score">
+                Ryan 144 — Nic 124
+            </div>
+        </div>
+        <div class="mvp">
+            <div class="mvp-label">Championship MVP</div>
+            <div class="mvp-content">
+                <div class="mvp-info">
+                    <div class="mvp-name">LeSean McCoy</div>
+                    <div class="mvp-points">35 PPR Points</div>
+                </div>
+                <img
+                    class="mvp-image"
+                    src="lesean-mccoy-2013.png"
+                    alt="LeSean McCoy 2013"
+                >
+            </div>
+        </div>
+    </div>
+    <!-- 2014 -->
+    <div class="history-card">
+        <div class="history-card-header">
+            <div class="history-year">2014</div>
+            <div class="history-meta">
+                6 Teams<br>
+                <span class="history-note">League expansion</span>
+            </div>
+        </div>
+        <div class="history-body">
+            <div class="history-result">
+                <span class="history-label">Champion</span>
+                <div class="history-team">Ryan Herbst</div>
+            </div>
+            <div class="history-result">
+                <span class="history-label">Runner-Up</span>
+                <div class="history-team">Bailey Martin</div>
+            </div>
+            <div class="history-score">
+                Ryan 177 — Bailey 125
+            </div>
+        </div>
+        <div class="mvp">
+            <div class="mvp-label">Championship MVP</div>
+            <div class="mvp-content">
+                <div class="mvp-info">
+                    <div class="mvp-name">Odell Beckham Jr.</div>
+                    <div class="mvp-points">32 PPR Points</div>
+                </div>
+                <img
+                    class="mvp-image"
+                    src="odell-beckham-jr-2014.png"
+                    alt="Odell Beckham Jr. 2014"
+                >
+            </div>
+        </div>
+    </div>
+    <!-- 2015 -->
+    <div class="history-card">
+        <div class="history-card-header">
+            <div class="history-year">2015</div>
+            <div class="history-meta">6 Teams</div>
+        </div>
+        <div class="history-body">
+            <div class="history-result">
+                <span class="history-label">Champion</span>
+                <div class="history-team">Bailey Martin</div>
+            </div>
+            <div class="history-result">
+                <span class="history-label">Runner-Up</span>
+                <div class="history-team">Ryan Herbst</div>
+            </div>
+            <div class="history-score">
+                Bailey 105 — Ryan 104
+            </div>
+        </div>
+        <div class="mvp">
+            <div class="mvp-label">Championship MVP</div>
+            <div class="mvp-content">
+                <div class="mvp-info">
+                    <div class="mvp-name">Drew Brees</div>
+                    <div class="mvp-points">21 PPR Points</div>
+                </div>
+                <img
+                    class="mvp-image"
+                    src="drew-brees-2015.png"
+                    alt="Drew Brees 2015"
+                >
+            </div>
+        </div>
+    </div>
+    <!-- 2016 -->
+    <div class="history-card">
+        <div class="history-card-header">
+            <div class="history-year">2016</div>
+            <div class="history-meta">
+                8 Teams<br>
+                <span class="history-note">League expansion</span>
+            </div>
+        </div>
+        <div class="history-body">
+            <div class="history-result">
+                <span class="history-label">Champion</span>
+                <div class="history-team">Ryan Herbst</div>
+            </div>
+            <div class="history-result">
+                <span class="history-label">Runner-Up</span>
+                <div class="history-team">Jonah Wheeler</div>
+            </div>
+            <div class="history-score">
+                Ryan 141 — Jonah 138
+            </div>
+        </div>
+        <div class="mvp">
+            <div class="mvp-label">Championship MVP</div>
+            <div class="mvp-content">
+                <div class="mvp-info">
+                    <div class="mvp-name">Odell Beckham Jr.</div>
+                    <div class="mvp-points">24 PPR Points</div>
+                </div>
+                <img
+                    class="mvp-image"
+                    src="odell-beckham-jr-2016.png"
+                    alt="Odell Beckham Jr. 2016"
+                >
+            </div>
+        </div>
+    </div>
+    <!-- 2017 -->
+    <div class="history-card">
+        <div class="history-card-header">
+            <div class="history-year">2017</div>
+            <div class="history-meta">8 Teams</div>
+        </div>
+        <div class="history-body">
+            <div class="history-result">
+                <span class="history-label">Champion</span>
+                <div class="history-team">Christian Abert</div>
+            </div>
+            <div class="history-result">
+                <span class="history-label">Runner-Up</span>
+                <div class="history-team">Bailey Martin</div>
+            </div>
+            <div class="history-score">
+                Christian 101 — Bailey 94
+            </div>
+        </div>
+        <div class="mvp">
+            <div class="mvp-label">Championship MVP</div>
+            <div class="mvp-content">
+                <div class="mvp-info">
+                    <div class="mvp-name">JuJu Smith-Schuster</div>
+                    <div class="mvp-points">17 PPR Points</div>
+                </div>
+                <img
+                    class="mvp-image"
+                    src="juju-smith-schuster-2017.png"
+                    alt="JuJu Smith-Schuster 2017"
+                >
+            </div>
+        </div>
+    </div>
+    <!-- 2018 -->
+    <div class="history-card">
+        <div class="history-card-header">
+            <div class="history-year">2018</div>
+            <div class="history-meta">8 Teams</div>
+        </div>
+        <div class="history-body">
+            <div class="history-result">
+                <span class="history-label">Champion</span>
+                <div class="history-team">Christian Abert</div>
+            </div>
+            <div class="history-result">
+                <span class="history-label">Runner-Up</span>
+                <div class="history-team">Ryan Herbst</div>
+            </div>
+            <div class="history-score">
+                Christian 163 — Ryan 156
+            </div>
+        </div>
+        <div class="mvp">
+            <div class="mvp-label">Championship MVP</div>
+            <div class="mvp-content">
+                <div class="mvp-info">
+                    <div class="mvp-name">Aaron Rodgers</div>
+                    <div class="mvp-points">53 PPR Points</div>
+                </div>
+                <img
+                    class="mvp-image"
+                    src="aaron-rodgers-2018.png"
+                    alt="Aaron Rodgers 2018"
+                >
+            </div>
+        </div>
+    </div>
+    <!-- 2019 -->
+    <div class="history-card">
+        <div class="history-card-header">
+            <div class="history-year">2019</div>
+            <div class="history-meta">8 Teams</div>
+        </div>
+        <div class="history-body">
+            <div class="history-result">
+                <span class="history-label">Champion</span>
+                <div class="history-team">Ryan Herbst</div>
+            </div>
+            <div class="history-result">
+                <span class="history-label">Runner-Up</span>
+                <div class="history-team">Tommy Herbst</div>
+            </div>
+            <div class="history-score">
+                Ryan 163 — Tommy 149
+            </div>
+        </div>
+        <div class="mvp">
+            <div class="mvp-label">Championship MVP</div>
+            <div class="mvp-content">
+                <div class="mvp-info">
+                    <div class="mvp-name">Saquon Barkley</div>
+                    <div class="mvp-points">46 PPR Points</div>
+                </div>
+                <img
+                    class="mvp-image"
+                    src="saquon-barkley-2019.png"
+                    alt="Saquon Barkley 2019"
+                >
+            </div>
+        </div>
+    </div>
+    <!-- 2020 -->
+    <div class="history-card">
+        <div class="history-card-header">
+            <div class="history-year">2020</div>
+            <div class="history-meta">8 Teams</div>
+        </div>
+        <div class="history-body">
+            <div class="history-result">
+                <span class="history-label">Champion</span>
+                <div class="history-team">Nic Maiorano</div>
+            </div>
+            <div class="history-result">
+                <span class="history-label">Runner-Up</span>
+                <div class="history-team">Jonah Wheeler</div>
+            </div>
+            <div class="history-score">
+                Nic 173 — Jonah 129
+            </div>
+        </div>
+        <div class="mvp">
+            <div class="mvp-label">Championship MVP</div>
+            <div class="mvp-content">
+                <div class="mvp-info">
+                    <div class="mvp-name">Davante Adams</div>
+                    <div class="mvp-points">44 PPR Points</div>
+                </div>
+                <img
+                    class="mvp-image"
+                    src="davante-adams-2020.png"
+                    alt="Davante Adams 2020"
+                >
+            </div>
+        </div>
+    </div>
+    <!-- 2021 -->
+    <div class="history-card">
+        <div class="history-card-header">
+            <div class="history-year">2021</div>
+            <div class="history-meta">
+                10 Teams<br>
+                <span class="history-note">League expansion</span>
+            </div>
+        </div>
+        <div class="history-body">
+            <div class="history-result">
+                <span class="history-label">Champion</span>
+                <div class="history-team">Michael Gravante</div>
+            </div>
+            <div class="history-result">
+                <span class="history-label">Runner-Up</span>
+                <div class="history-team">Jonah Wheeler</div>
+            </div>
+            <div class="history-score">
+                Michael 121 — Jonah 102
+            </div>
+        </div>
+        <div class="mvp">
+            <div class="mvp-label">Championship MVP</div>
+            <div class="mvp-content">
+                <div class="mvp-info">
+                    <div class="mvp-name">Kyler Murray</div>
+                    <div class="mvp-points">26 PPR Points</div>
+                </div>
+                <img
+                    class="mvp-image"
+                    src="kyler-murray-2021.png"
+                    alt="Kyler Murray 2021"
+                >
+            </div>
+        </div>
+    </div>
+    <!-- 2022 -->
+    <div class="history-card">
+        <div class="history-card-header">
+            <div class="history-year">2022</div>
+            <div class="history-meta">10 Teams</div>
+        </div>
+        <div class="history-body">
+            <div class="history-result">
+                <span class="history-label">Champion</span>
+                <div class="history-team">Ryan Herbst &amp; Julia Wheeler</div>
+            </div>
+            <div class="history-result">
+                <span class="history-label">Runner-Up</span>
+                <div class="history-team">Co-Champions</div>
+            </div>
+            <div class="history-score">
+                116 — 97
+            </div>
+        </div>
+        <div class="mvp">
+            <div class="mvp-label">Championship MVP</div>
+            <div class="mvp-content">
+                <div class="mvp-info">
+                    <div class="mvp-name">Brandon Aiyuk</div>
+                    <div class="mvp-points">27 PPR Points</div>
+                </div>
+                <img
+                    class="mvp-image"
+                    src="brandon-aiyuk-2022.png"
+                    alt="Brandon Aiyuk 2022"
+                >
+            </div>
+        </div>
+    </div>
+    <!-- 2023 -->
+    <div class="history-card">
+        <div class="history-card-header">
+            <div class="history-year">2023</div>
+            <div class="history-meta">
+                12 Teams<br>
+                <span class="history-note">League expansion</span>
+            </div>
+        </div>
+        <div class="history-body">
+            <div class="history-result">
+                <span class="history-label">Champion</span>
+                <div class="history-team">Tommy Herbst</div>
+            </div>
+            <div class="history-result">
+                <span class="history-label">Runner-Up</span>
+                <div class="history-team">William Darrow</div>
+            </div>
+            <div class="history-score">
+                Tommy 134 — William 97
+            </div>
+        </div>
+        <div class="mvp">
+            <div class="mvp-label">Championship MVP</div>
+            <div class="mvp-content">
+                <div class="mvp-info">
+                    <div class="mvp-name">Kyren Williams</div>
+                    <div class="mvp-points">29 PPR Points</div>
+                </div>
+                <img
+                    class="mvp-image"
+                    src="kyren-williams-2023.png"
+                    alt="Kyren Williams 2023"
+                >
+            </div>
+        </div>
+    </div>
+    <!-- 2024 -->
+    <div class="history-card">
+        <div class="history-card-header">
+            <div class="history-year">2024</div>
+            <div class="history-meta">12 Teams</div>
+        </div>
+        <div class="history-body">
+            <div class="history-result">
+                <span class="history-label">Champion</span>
+                <div class="history-team">Jonah Wheeler</div>
+            </div>
+            <div class="history-result">
+                <span class="history-label">Runner-Up</span>
+                <div class="history-team">Julia Wheeler</div>
+            </div>
+            <div class="history-score">
+                Jonah 176 — Julia 136
+            </div>
+        </div>
+        <div class="mvp">
+            <div class="mvp-label">Championship MVP</div>
+            <div class="mvp-content">
+                <div class="mvp-info">
+                    <div class="mvp-name">Joe Burrow</div>
+                    <div class="mvp-points">49 PPR Points</div>
+                </div>
+                <img
+                    class="mvp-image"
+                    src="joe-burrow-2024.png"
+                    alt="Joe Burrow 2024"
+                >
+            </div>
+        </div>
+    </div>
+    <!-- 2025 -->
+    <div class="history-card">
+        <div class="history-card-header">
+            <div class="history-year">2025</div>
+            <div class="history-meta">12 Teams</div>
+        </div>
+        <div class="history-body">
+            <div class="history-result">
+                <span class="history-label">Champion</span>
+                <div class="history-team">William Darrow</div>
+            </div>
+            <div class="history-result">
+                <span class="history-label">Runner-Up</span>
+                <div class="history-team">Julia Wheeler</div>
+            </div>
+            <div class="history-score">
+                William 151 — Julia 114
+            </div>
+        </div>
+        <div class="mvp">
+            <div class="mvp-label">Championship MVP</div>
+            <div class="mvp-content">
+                <div class="mvp-info">
+                    <div class="mvp-name">Christian McCaffrey</div>
+                    <div class="mvp-points">29 PPR Points</div>
+                </div>
+                <img
+                    class="mvp-image"
+                    src="christian-mccaffrey-2025.png"
+                    alt="Christian McCaffrey 2025"
+                >
+            </div>
+        </div>
+    </div>
+    <!-- 2026 -->
+    <div class="history-card">
+        <div class="history-card-header">
+            <div class="history-year">2026</div>
+            <div class="history-meta">12 Teams</div>
+        </div>
+        <div class="history-body">
+            <div class="history-result">
+                <span class="history-label">Champion</span>
+                <div class="history-team tbd">TBD</div>
+            </div>
+            <div class="history-result">
+                <span class="history-label">Runner-Up</span>
+                <div class="history-team tbd">TBD</div>
+            </div>
+            <div class="history-score tbd">
+                TBD
+            </div>
+        </div>
+        <div class="mvp">
+            <div class="mvp-label">Championship MVP</div>
+            <div class="mvp-placeholder">
+                TBD
+            </div>
+        </div>
+    </div>
+</div>
 </main>
-
-
 <footer>
     Kevin Durant League · Fantasy Football History · Est. 2013
 </footer>
-
 </body>
 </html>
