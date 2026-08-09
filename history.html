@@ -185,7 +185,7 @@
         }
 
         .history-body {
-            padding: 20px 22px;
+            padding: 20px 22px 0;
         }
 
         .history-result {
@@ -211,6 +211,12 @@
             font-weight: 700;
         }
 
+        .history-team-name {
+            color: #8f9aa4;
+            font-size: 12px;
+            margin-top: 2px;
+        }
+
         .history-score {
             margin-top: 18px;
             padding-top: 15px;
@@ -218,6 +224,7 @@
             color: #aeb8c1;
             font-size: 13px;
             font-weight: 600;
+            padding-bottom: 18px;
         }
 
         .history-note {
@@ -234,6 +241,65 @@
 
         .tbd {
             color: #68747e;
+            font-style: italic;
+        }
+
+        /* MVP */
+
+        .mvp-bar {
+            border-top: 1px solid #27313b;
+            background: #111820;
+            min-height: 100px;
+            padding: 13px 17px;
+            display: flex;
+            align-items: center;
+            gap: 13px;
+        }
+
+        .mvp-photo {
+            width: 76px;
+            height: 76px;
+            flex-shrink: 0;
+            object-fit: contain;
+            object-position: bottom center;
+            align-self: flex-end;
+        }
+
+        .mvp-info {
+            min-width: 0;
+        }
+
+        .mvp-label {
+            color: #68747e;
+            font-size: 9px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 800;
+            margin-bottom: 2px;
+        }
+
+        .mvp-name {
+            font-size: 15px;
+            font-weight: 800;
+            line-height: 1.2;
+        }
+
+        .mvp-points {
+            color: #aeb8c1;
+            font-size: 12px;
+            margin-top: 3px;
+        }
+
+        .mvp-points strong {
+            color: #f5f5f5;
+            font-size: 14px;
+        }
+
+        /* 2026 PLACEHOLDER MVP */
+
+        .mvp-placeholder {
+            color: #68747e;
+            font-size: 12px;
             font-style: italic;
         }
 
@@ -314,6 +380,11 @@
 
             .era-number {
                 font-size: 27px;
+            }
+
+            .mvp-photo {
+                width: 68px;
+                height: 68px;
             }
         }
     </style>
@@ -424,6 +495,7 @@
                 <div class="history-result">
                     <span class="history-label">Champion</span>
                     <div class="history-team">Ryan Herbst</div>
+                    <div class="history-team-name">Pimpin' Ain't Breesy</div>
                 </div>
 
                 <div class="history-result">
@@ -435,6 +507,20 @@
                     Ryan 144 — Nic 124
                 </div>
 
+            </div>
+
+            <div class="mvp-bar">
+                <img
+                    class="mvp-photo"
+                    src="https://a.espncdn.com/i/headshots/nfl/players/full/12514.png"
+                    alt="LeSean McCoy"
+                    onerror="this.style.display='none';"
+                >
+                <div class="mvp-info">
+                    <div class="mvp-label">Championship MVP</div>
+                    <div class="mvp-name">LeSean McCoy</div>
+                    <div class="mvp-points"><strong>35</strong> PPR points</div>
+                </div>
             </div>
 
         </div>
@@ -457,6 +543,7 @@
                 <div class="history-result">
                     <span class="history-label">Champion</span>
                     <div class="history-team">Ryan Herbst</div>
+                    <div class="history-team-name">Beast Mode</div>
                 </div>
 
                 <div class="history-result">
@@ -468,6 +555,20 @@
                     Ryan 177 — Bailey 125
                 </div>
 
+            </div>
+
+            <div class="mvp-bar">
+                <img
+                    class="mvp-photo"
+                    src="https://a.espncdn.com/i/headshots/nfl/players/full/16733.png"
+                    alt="Odell Beckham Jr."
+                    onerror="this.style.display='none';"
+                >
+                <div class="mvp-info">
+                    <div class="mvp-label">Championship MVP</div>
+                    <div class="mvp-name">Odell Beckham Jr.</div>
+                    <div class="mvp-points"><strong>32</strong> PPR points</div>
+                </div>
             </div>
 
         </div>
@@ -487,6 +588,7 @@
                 <div class="history-result">
                     <span class="history-label">Champion</span>
                     <div class="history-team">Bailey Martin</div>
+                    <div class="history-team-name">Odelled of Luck</div>
                 </div>
 
                 <div class="history-result">
@@ -498,6 +600,20 @@
                     Bailey 105 — Ryan 104
                 </div>
 
+            </div>
+
+            <div class="mvp-bar">
+                <img
+                    class="mvp-photo"
+                    src="https://a.espncdn.com/i/headshots/nfl/players/full/16733.png"
+                    alt="Odell Beckham Jr."
+                    onerror="this.style.display='none';"
+                >
+                <div class="mvp-info">
+                    <div class="mvp-label">Championship MVP</div>
+                    <div class="mvp-name">Odell Beckham Jr.</div>
+                    <div class="mvp-points"><strong>21</strong> PPR points</div>
+                </div>
             </div>
 
         </div>
@@ -520,6 +636,7 @@
                 <div class="history-result">
                     <span class="history-label">Champion</span>
                     <div class="history-team">Ryan Herbst</div>
+                    <div class="history-team-name">3-Time Champ</div>
                 </div>
 
                 <div class="history-result">
@@ -531,6 +648,20 @@
                     Ryan 141 — Jonah 138
                 </div>
 
+            </div>
+
+            <div class="mvp-bar">
+                <img
+                    class="mvp-photo"
+                    src="https://a.espncdn.com/i/headshots/nfl/players/full/16733.png"
+                    alt="Odell Beckham Jr."
+                    onerror="this.style.display='none';"
+                >
+                <div class="mvp-info">
+                    <div class="mvp-label">Championship MVP</div>
+                    <div class="mvp-name">Odell Beckham Jr.</div>
+                    <div class="mvp-points"><strong>24</strong> PPR points</div>
+                </div>
             </div>
 
         </div>
@@ -550,6 +681,7 @@
                 <div class="history-result">
                     <span class="history-label">Champion</span>
                     <div class="history-team">Christian Abert</div>
+                    <div class="history-team-name">5 Feet of Football</div>
                 </div>
 
                 <div class="history-result">
@@ -561,6 +693,20 @@
                     Christian 101 — Bailey 94
                 </div>
 
+            </div>
+
+            <div class="mvp-bar">
+                <img
+                    class="mvp-photo"
+                    src="https://a.espncdn.com/i/headshots/nfl/players/full/3120348.png"
+                    alt="JuJu Smith-Schuster"
+                    onerror="this.style.display='none';"
+                >
+                <div class="mvp-info">
+                    <div class="mvp-label">Championship MVP</div>
+                    <div class="mvp-name">JuJu Smith-Schuster</div>
+                    <div class="mvp-points"><strong>17</strong> PPR points</div>
+                </div>
             </div>
 
         </div>
@@ -580,6 +726,7 @@
                 <div class="history-result">
                     <span class="history-label">Champion</span>
                     <div class="history-team">Christian Abert</div>
+                    <div class="history-team-name">Ezekiel Rodgers</div>
                 </div>
 
                 <div class="history-result">
@@ -591,6 +738,20 @@
                     Christian 163 — Ryan 156
                 </div>
 
+            </div>
+
+            <div class="mvp-bar">
+                <img
+                    class="mvp-photo"
+                    src="https://a.espncdn.com/i/headshots/nfl/players/full/8439.png"
+                    alt="Aaron Rodgers"
+                    onerror="this.style.display='none';"
+                >
+                <div class="mvp-info">
+                    <div class="mvp-label">Championship MVP</div>
+                    <div class="mvp-name">Aaron Rodgers</div>
+                    <div class="mvp-points"><strong>53</strong> PPR points</div>
+                </div>
             </div>
 
         </div>
@@ -610,6 +771,7 @@
                 <div class="history-result">
                     <span class="history-label">Champion</span>
                     <div class="history-team">Ryan Herbst</div>
+                    <div class="history-team-name">Eli Manning Ballers</div>
                 </div>
 
                 <div class="history-result">
@@ -621,6 +783,20 @@
                     Ryan 163 — Tommy 149
                 </div>
 
+            </div>
+
+            <div class="mvp-bar">
+                <img
+                    class="mvp-photo"
+                    src="https://a.espncdn.com/i/headshots/nfl/players/full/3929630.png"
+                    alt="Saquon Barkley"
+                    onerror="this.style.display='none';"
+                >
+                <div class="mvp-info">
+                    <div class="mvp-label">Championship MVP</div>
+                    <div class="mvp-name">Saquon Barkley</div>
+                    <div class="mvp-points"><strong>46</strong> PPR points</div>
+                </div>
             </div>
 
         </div>
@@ -640,6 +816,7 @@
                 <div class="history-result">
                     <span class="history-label">Champion</span>
                     <div class="history-team">Nic Maiorano</div>
+                    <div class="history-team-name">2 Gurley's 1 Cup</div>
                 </div>
 
                 <div class="history-result">
@@ -651,6 +828,20 @@
                     Nic 173 — Jonah 129
                 </div>
 
+            </div>
+
+            <div class="mvp-bar">
+                <img
+                    class="mvp-photo"
+                    src="https://a.espncdn.com/i/headshots/nfl/players/full/16800.png"
+                    alt="Davante Adams"
+                    onerror="this.style.display='none';"
+                >
+                <div class="mvp-info">
+                    <div class="mvp-label">Championship MVP</div>
+                    <div class="mvp-name">Davante Adams</div>
+                    <div class="mvp-points"><strong>44</strong> PPR points</div>
+                </div>
             </div>
 
         </div>
@@ -673,6 +864,7 @@
                 <div class="history-result">
                     <span class="history-label">Champion</span>
                     <div class="history-team">Michael Gravante</div>
+                    <div class="history-team-name">Chubbs Chubb</div>
                 </div>
 
                 <div class="history-result">
@@ -684,6 +876,20 @@
                     Michael 121 — Jonah 102
                 </div>
 
+            </div>
+
+            <div class="mvp-bar">
+                <img
+                    class="mvp-photo"
+                    src="https://a.espncdn.com/i/headshots/nfl/players/full/3917315.png"
+                    alt="Kyler Murray"
+                    onerror="this.style.display='none';"
+                >
+                <div class="mvp-info">
+                    <div class="mvp-label">Championship MVP</div>
+                    <div class="mvp-name">Kyler Murray</div>
+                    <div class="mvp-points"><strong>26</strong> PPR points</div>
+                </div>
             </div>
 
         </div>
@@ -703,10 +909,13 @@
                 <div class="history-result">
                     <span class="history-label">Champion</span>
                     <div class="history-team">Ryan Herbst & Julia Wheeler</div>
+                    <div class="history-team-name">
+                        Saquon Deez Nuts & Don't You Fournette About Me
+                    </div>
                 </div>
 
                 <div class="history-result">
-                    <span class="history-label">Runner-Up</span>
+                    <span class="history-label">Result</span>
                     <div class="history-team">Co-Champions</div>
                 </div>
 
@@ -714,6 +923,20 @@
                     116 — 97
                 </div>
 
+            </div>
+
+            <div class="mvp-bar">
+                <img
+                    class="mvp-photo"
+                    src="https://a.espncdn.com/i/headshots/nfl/players/full/4360438.png"
+                    alt="Brandon Aiyuk"
+                    onerror="this.style.display='none';"
+                >
+                <div class="mvp-info">
+                    <div class="mvp-label">Championship MVP</div>
+                    <div class="mvp-name">Brandon Aiyuk</div>
+                    <div class="mvp-points"><strong>27</strong> PPR points</div>
+                </div>
             </div>
 
         </div>
@@ -736,6 +959,7 @@
                 <div class="history-result">
                     <span class="history-label">Champion</span>
                     <div class="history-team">Tommy Herbst</div>
+                    <div class="history-team-name">Deuce's Uce's</div>
                 </div>
 
                 <div class="history-result">
@@ -747,6 +971,20 @@
                     Tommy 134 — William 97
                 </div>
 
+            </div>
+
+            <div class="mvp-bar">
+                <img
+                    class="mvp-photo"
+                    src="https://a.espncdn.com/i/headshots/nfl/players/full/4430737.png"
+                    alt="Kyren Williams"
+                    onerror="this.style.display='none';"
+                >
+                <div class="mvp-info">
+                    <div class="mvp-label">Championship MVP</div>
+                    <div class="mvp-name">Kyren Williams</div>
+                    <div class="mvp-points"><strong>29</strong> PPR points</div>
+                </div>
             </div>
 
         </div>
@@ -766,6 +1004,7 @@
                 <div class="history-result">
                     <span class="history-label">Champion</span>
                     <div class="history-team">Jonah Wheeler</div>
+                    <div class="history-team-name">Nico Suave</div>
                 </div>
 
                 <div class="history-result">
@@ -777,6 +1016,20 @@
                     Jonah 176 — Julia 136
                 </div>
 
+            </div>
+
+            <div class="mvp-bar">
+                <img
+                    class="mvp-photo"
+                    src="https://a.espncdn.com/i/headshots/nfl/players/full/3915511.png"
+                    alt="Joe Burrow"
+                    onerror="this.style.display='none';"
+                >
+                <div class="mvp-info">
+                    <div class="mvp-label">Championship MVP</div>
+                    <div class="mvp-name">Joe Burrow</div>
+                    <div class="mvp-points"><strong>49</strong> PPR points</div>
+                </div>
             </div>
 
         </div>
@@ -796,6 +1049,7 @@
                 <div class="history-result">
                     <span class="history-label">Champion</span>
                     <div class="history-team">William Darrow</div>
+                    <div class="history-team-name">Olave Garden</div>
                 </div>
 
                 <div class="history-result">
@@ -807,6 +1061,20 @@
                     William 151 — Julia 114
                 </div>
 
+            </div>
+
+            <div class="mvp-bar">
+                <img
+                    class="mvp-photo"
+                    src="https://a.espncdn.com/i/headshots/nfl/players/full/3117251.png"
+                    alt="Christian McCaffrey"
+                    onerror="this.style.display='none';"
+                >
+                <div class="mvp-info">
+                    <div class="mvp-label">Championship MVP</div>
+                    <div class="mvp-name">Christian McCaffrey</div>
+                    <div class="mvp-points"><strong>29</strong> PPR points</div>
+                </div>
             </div>
 
         </div>
@@ -837,6 +1105,15 @@
                     TBD
                 </div>
 
+            </div>
+
+            <div class="mvp-bar">
+                <div class="mvp-info">
+                    <div class="mvp-label">Championship MVP</div>
+                    <div class="mvp-placeholder">
+                        To be determined
+                    </div>
+                </div>
             </div>
 
         </div>
