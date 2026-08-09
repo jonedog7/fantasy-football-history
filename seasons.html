@@ -101,6 +101,66 @@
             padding: 0 30px 70px;
         }
 
+        /* SEASON NAVIGATION */
+
+        .season-selector {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 30px;
+        }
+
+        .season-nav-button {
+            width: 46px;
+            height: 46px;
+            border: 1px solid #36434f;
+            border-radius: 10px;
+            background: #151c24;
+            color: #f5f5f5;
+            font-size: 22px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .season-nav-button:hover:not(:disabled) {
+            background: #202a34;
+            border-color: #4a5865;
+        }
+
+        .season-nav-button:disabled {
+            opacity: 0.25;
+            cursor: default;
+        }
+
+        .season-select {
+            min-width: 190px;
+            height: 46px;
+            padding: 0 42px 0 16px;
+            border: 1px solid #36434f;
+            border-radius: 10px;
+            background: #151c24;
+            color: #f5f5f5;
+            font-size: 15px;
+            font-weight: 700;
+            cursor: pointer;
+            outline: none;
+        }
+
+        .season-select:focus {
+            border-color: #566573;
+        }
+
+        .season-select option {
+            background: #151c24;
+            color: #f5f5f5;
+        }
+
+        .season-view {
+            min-height: 300px;
+        }
+
         .season-card {
             background: #151c24;
             border: 1px solid #27313b;
@@ -291,6 +351,21 @@
                 padding: 0 20px 50px;
             }
 
+            .season-selector {
+                width: 100%;
+                gap: 8px;
+            }
+
+            .season-nav-button {
+                width: 44px;
+                height: 44px;
+            }
+
+            .season-select {
+                flex: 1;
+                min-width: 0;
+            }
+
             .season-header {
                 flex-direction: column;
                 align-items: flex-start;
@@ -348,652 +423,682 @@
 
 <main class="container">
 
+    <div class="season-selector">
 
-    <!-- 2025 -->
+        <button
+            class="season-nav-button"
+            id="previousSeason"
+            aria-label="Previous season"
+            type="button">
+            ←
+        </button>
 
-    <div class="season-card">
+        <select
+            class="season-select"
+            id="seasonSelect"
+            aria-label="Select season">
+        </select>
 
-        <div class="season-header">
+        <button
+            class="season-nav-button"
+            id="nextSeason"
+            aria-label="Next season"
+            type="button">
+            →
+        </button>
 
-            <div class="season-title">
-                <div class="season-year">2025</div>
-                <div class="season-size">12 Teams</div>
-            </div>
-
-            <div class="champion-badge">Champion · William Darrow</div>
-
-        </div>
-
-        <div class="season-content">
-
-            <div class="section-label">Final Standings</div>
-
-            <table class="standings">
-                <tr><th>Rank</th><th>Manager</th><th>Record</th></tr>
-                <tr><td class="place">1</td><td class="manager">Jonah</td><td class="record">12-2</td></tr>
-                <tr><td class="place">2</td><td class="manager">William</td><td class="record">10-4</td></tr>
-                <tr><td class="place">3</td><td class="manager">Mike H.</td><td class="record">7-6-1</td></tr>
-                <tr><td class="place">4</td><td class="manager">Logan</td><td class="record">7-7</td></tr>
-                <tr><td class="place">5</td><td class="manager">Julia</td><td class="record">7-7</td></tr>
-                <tr><td class="place">6</td><td class="manager">Nic</td><td class="record">7-7</td></tr>
-                <tr><td class="place">7</td><td class="manager">Christian</td><td class="record">7-7</td></tr>
-                <tr><td class="place">8</td><td class="manager">Michael G.</td><td class="record">7-7</td></tr>
-                <tr><td class="place">9</td><td class="manager">Mike D.</td><td class="record">5-8-1</td></tr>
-                <tr><td class="place">10</td><td class="manager">Ryan</td><td class="record">5-9</td></tr>
-                <tr><td class="place">11</td><td class="manager">Nick</td><td class="record">5-9</td></tr>
-                <tr><td class="place">12</td><td class="manager">Tommy</td><td class="record">4-8</td></tr>
-            </table>
-
-            <div class="section-label">Playoffs</div>
-
-            <div class="playoffs">
-                <div class="playoff-game"><span class="playoff-round">Quarterfinal</span> Mike H. defeats Nic</div>
-                <div class="playoff-game"><span class="playoff-round">Quarterfinal</span> Julia defeats Logan</div>
-                <div class="playoff-game"><span class="playoff-round">Semifinal</span> Julia defeats Jonah</div>
-                <div class="playoff-game"><span class="playoff-round">Semifinal</span> William defeats Mike H.</div>
-                <div class="playoff-game"><span class="playoff-round">Championship</span> William defeats Julia 151-114</div>
-            </div>
-
-            <div class="championship">
-                <div class="championship-label">League Champion</div>
-                <div class="championship-result">William Darrow · 151–114 over Julia Wheeler</div>
-            </div>
-
-        </div>
     </div>
 
 
-    <!-- 2024 -->
+    <div class="season-view" id="seasonView">
 
-    <div class="season-card">
 
-        <div class="season-header">
-            <div class="season-title">
-                <div class="season-year">2024</div>
-                <div class="season-size">12 Teams</div>
-            </div>
-            <div class="champion-badge">Champion · Jonah Wheeler</div>
-        </div>
+        <!-- 2026 -->
 
-        <div class="season-content">
+        <div class="season-card current">
 
-            <div class="section-label">Final Standings</div>
+            <div class="season-header">
 
-            <table class="standings">
-                <tr><th>Rank</th><th>Manager</th><th>Record</th></tr>
-                <tr><td class="place">1</td><td class="manager">Jonah</td><td class="record">10-4</td></tr>
-                <tr><td class="place">2</td><td class="manager">Julia</td><td class="record">9-5</td></tr>
-                <tr><td class="place">3</td><td class="manager">Ryan</td><td class="record">9-5</td></tr>
-                <tr><td class="place">4</td><td class="manager">Tommy</td><td class="record">8-6</td></tr>
-                <tr><td class="place">5</td><td class="manager">Mike D.</td><td class="record">8-6</td></tr>
-                <tr><td class="place">6</td><td class="manager">Christian</td><td class="record">7-7</td></tr>
-                <tr><td class="place">7</td><td class="manager">Logan</td><td class="record">7-7</td></tr>
-                <tr><td class="place">8</td><td class="manager">Mike H.</td><td class="record">6-8</td></tr>
-                <tr><td class="place">9</td><td class="manager">Michael G.</td><td class="record">6-8</td></tr>
-                <tr><td class="place">10</td><td class="manager">Nick</td><td class="record">6-8</td></tr>
-                <tr><td class="place">11</td><td class="manager">Nic</td><td class="record">6-8</td></tr>
-                <tr><td class="place">12</td><td class="manager">William</td><td class="record">2-12</td></tr>
-            </table>
+                <div class="season-title">
+                    <div class="season-year">2026</div>
+                    <div class="season-size">12 Teams · Current Season</div>
+                </div>
 
-            <div class="section-label">Playoffs</div>
+                <div class="champion-badge">In Progress</div>
 
-            <div class="playoffs">
-                <div class="playoff-game"><span class="playoff-round">Quarterfinal</span> Ryan defeats Christian</div>
-                <div class="playoff-game"><span class="playoff-round">Quarterfinal</span> Tommy defeats Mike D.</div>
-                <div class="playoff-game"><span class="playoff-round">Semifinal</span> Jonah defeats Tommy</div>
-                <div class="playoff-game"><span class="playoff-round">Semifinal</span> Julia defeats Ryan</div>
-                <div class="playoff-game"><span class="playoff-round">Championship</span> Jonah defeats Julia 176-136</div>
             </div>
 
-            <div class="championship">
-                <div class="championship-label">League Champion</div>
-                <div class="championship-result">Jonah Wheeler · 176–136 over Julia Wheeler</div>
+            <div class="season-content">
+
+                <div class="section-label">Current Season</div>
+
+                <p style="color:#aeb8c1; max-width:700px;">
+                    The 2026 season is currently in progress. Historical standings,
+                    playoff results and the league champion will be added when the
+                    season is complete.
+                </p>
+
             </div>
 
         </div>
+
+
+        <!-- 2025 -->
+
+        <div class="season-card">
+
+            <div class="season-header">
+
+                <div class="season-title">
+                    <div class="season-year">2025</div>
+                    <div class="season-size">12 Teams</div>
+                </div>
+
+                <div class="champion-badge">Champion · William Darrow</div>
+
+            </div>
+
+            <div class="season-content">
+
+                <div class="section-label">Final Standings</div>
+
+                <table class="standings">
+                    <tr><th>Rank</th><th>Manager</th><th>Record</th></tr>
+                    <tr><td class="place">1</td><td class="manager">Jonah</td><td class="record">12-2</td></tr>
+                    <tr><td class="place">2</td><td class="manager">William</td><td class="record">10-4</td></tr>
+                    <tr><td class="place">3</td><td class="manager">Mike H.</td><td class="record">7-6-1</td></tr>
+                    <tr><td class="place">4</td><td class="manager">Logan</td><td class="record">7-7</td></tr>
+                    <tr><td class="place">5</td><td class="manager">Julia</td><td class="record">7-7</td></tr>
+                    <tr><td class="place">6</td><td class="manager">Nic</td><td class="record">7-7</td></tr>
+                    <tr><td class="place">7</td><td class="manager">Christian</td><td class="record">7-7</td></tr>
+                    <tr><td class="place">8</td><td class="manager">Michael G.</td><td class="record">7-7</td></tr>
+                    <tr><td class="place">9</td><td class="manager">Mike D.</td><td class="record">5-8-1</td></tr>
+                    <tr><td class="place">10</td><td class="manager">Ryan</td><td class="record">5-9</td></tr>
+                    <tr><td class="place">11</td><td class="manager">Nick</td><td class="record">5-9</td></tr>
+                    <tr><td class="place">12</td><td class="manager">Tommy</td><td class="record">4-8</td></tr>
+                </table>
+
+                <div class="section-label">Playoffs</div>
+
+                <div class="playoffs">
+                    <div class="playoff-game"><span class="playoff-round">Quarterfinal</span> Mike H. defeats Nic</div>
+                    <div class="playoff-game"><span class="playoff-round">Quarterfinal</span> Julia defeats Logan</div>
+                    <div class="playoff-game"><span class="playoff-round">Semifinal</span> Julia defeats Jonah</div>
+                    <div class="playoff-game"><span class="playoff-round">Semifinal</span> William defeats Mike H.</div>
+                    <div class="playoff-game"><span class="playoff-round">Championship</span> William defeats Julia 151-114</div>
+                </div>
+
+                <div class="championship">
+                    <div class="championship-label">League Champion</div>
+                    <div class="championship-result">William Darrow · 151–114 over Julia Wheeler</div>
+                </div>
+
+            </div>
+        </div>
+
+
+        <!-- 2024 -->
+
+        <div class="season-card">
+
+            <div class="season-header">
+                <div class="season-title">
+                    <div class="season-year">2024</div>
+                    <div class="season-size">12 Teams</div>
+                </div>
+                <div class="champion-badge">Champion · Jonah Wheeler</div>
+            </div>
+
+            <div class="season-content">
+
+                <div class="section-label">Final Standings</div>
+
+                <table class="standings">
+                    <tr><th>Rank</th><th>Manager</th><th>Record</th></tr>
+                    <tr><td class="place">1</td><td class="manager">Jonah</td><td class="record">10-4</td></tr>
+                    <tr><td class="place">2</td><td class="manager">Julia</td><td class="record">9-5</td></tr>
+                    <tr><td class="place">3</td><td class="manager">Ryan</td><td class="record">9-5</td></tr>
+                    <tr><td class="place">4</td><td class="manager">Tommy</td><td class="record">8-6</td></tr>
+                    <tr><td class="place">5</td><td class="manager">Mike D.</td><td class="record">8-6</td></tr>
+                    <tr><td class="place">6</td><td class="manager">Christian</td><td class="record">7-7</td></tr>
+                    <tr><td class="place">7</td><td class="manager">Logan</td><td class="record">7-7</td></tr>
+                    <tr><td class="place">8</td><td class="manager">Mike H.</td><td class="record">6-8</td></tr>
+                    <tr><td class="place">9</td><td class="manager">Michael G.</td><td class="record">6-8</td></tr>
+                    <tr><td class="place">10</td><td class="manager">Nick</td><td class="record">6-8</td></tr>
+                    <tr><td class="place">11</td><td class="manager">Nic</td><td class="record">6-8</td></tr>
+                    <tr><td class="place">12</td><td class="manager">William</td><td class="record">2-12</td></tr>
+                </table>
+
+                <div class="section-label">Playoffs</div>
+
+                <div class="playoffs">
+                    <div class="playoff-game"><span class="playoff-round">Quarterfinal</span> Ryan defeats Christian</div>
+                    <div class="playoff-game"><span class="playoff-round">Quarterfinal</span> Tommy defeats Mike D.</div>
+                    <div class="playoff-game"><span class="playoff-round">Semifinal</span> Jonah defeats Tommy</div>
+                    <div class="playoff-game"><span class="playoff-round">Semifinal</span> Julia defeats Ryan</div>
+                    <div class="playoff-game"><span class="playoff-round">Championship</span> Jonah defeats Julia 176-136</div>
+                </div>
+
+                <div class="championship">
+                    <div class="championship-label">League Champion</div>
+                    <div class="championship-result">Jonah Wheeler · 176–136 over Julia Wheeler</div>
+                </div>
+
+            </div>
+        </div>
+
+
+        <!-- 2023 -->
+
+        <div class="season-card">
+
+            <div class="season-header">
+                <div class="season-title">
+                    <div class="season-year">2023</div>
+                    <div class="season-size">12 Teams</div>
+                </div>
+                <div class="champion-badge">Champion · Tommy Herbst</div>
+            </div>
+
+            <div class="season-content">
+
+                <div class="section-label">Final Standings</div>
+
+                <table class="standings">
+                    <tr><th>Rank</th><th>Manager</th><th>Record</th></tr>
+                    <tr><td class="place">1</td><td class="manager">Tommy</td><td class="record">12-2</td></tr>
+                    <tr><td class="place">2</td><td class="manager">William</td><td class="record">10-4</td></tr>
+                    <tr><td class="place">3</td><td class="manager">Logan</td><td class="record">8-6</td></tr>
+                    <tr><td class="place">4</td><td class="manager">Nic</td><td class="record">8-6</td></tr>
+                    <tr><td class="place">5</td><td class="manager">Julia</td><td class="record">7-7</td></tr>
+                    <tr><td class="place">6</td><td class="manager">Ryan</td><td class="record">7-7</td></tr>
+                    <tr><td class="place">7</td><td class="manager">Mike D.</td><td class="record">6-8</td></tr>
+                    <tr><td class="place">8</td><td class="manager">Mike H.</td><td class="record">6-8</td></tr>
+                    <tr><td class="place">9</td><td class="manager">Christian</td><td class="record">6-8</td></tr>
+                    <tr><td class="place">10</td><td class="manager">Michael G.</td><td class="record">5-9</td></tr>
+                    <tr><td class="place">11</td><td class="manager">Jonah</td><td class="record">5-9</td></tr>
+                    <tr><td class="place">12</td><td class="manager">Taz</td><td class="record">4-10</td></tr>
+                </table>
+
+                <div class="section-label">Playoffs</div>
+
+                <div class="playoffs">
+                    <div class="playoff-game"><span class="playoff-round">Quarterfinal</span> Logan defeats Ryan</div>
+                    <div class="playoff-game"><span class="playoff-round">Quarterfinal</span> Julia defeats Nic</div>
+                    <div class="playoff-game"><span class="playoff-round">Semifinal</span> Tommy defeats Julia</div>
+                    <div class="playoff-game"><span class="playoff-round">Semifinal</span> William defeats Logan</div>
+                    <div class="playoff-game"><span class="playoff-round">Championship</span> Tommy defeats William 134-97</div>
+                </div>
+
+                <div class="championship">
+                    <div class="championship-label">League Champion</div>
+                    <div class="championship-result">Tommy Herbst · 134–97 over William Darrow</div>
+                </div>
+
+            </div>
+        </div>
+
+
+        <!-- 2022 -->
+
+        <div class="season-card">
+
+            <div class="season-header">
+                <div class="season-title">
+                    <div class="season-year">2022</div>
+                    <div class="season-size">10 Teams</div>
+                </div>
+                <div class="champion-badge">Co-Champions · Ryan & Julia</div>
+            </div>
+
+            <div class="season-content">
+
+                <div class="section-label">Final Standings</div>
+
+                <table class="standings">
+                    <tr><th>Rank</th><th>Manager</th><th>Record</th></tr>
+                    <tr><td class="place">1</td><td class="manager">Julia</td><td class="record">10-4</td></tr>
+                    <tr><td class="place">2</td><td class="manager">Ryan</td><td class="record">9-5</td></tr>
+                    <tr><td class="place">3</td><td class="manager">Jonah</td><td class="record">9-5</td></tr>
+                    <tr><td class="place">4</td><td class="manager">Michael G.</td><td class="record">8-6</td></tr>
+                    <tr><td class="place">5</td><td class="manager">Nic</td><td class="record">7-7</td></tr>
+                    <tr><td class="place">6</td><td class="manager">Mike H.</td><td class="record">6-8</td></tr>
+                    <tr><td class="place">7</td><td class="manager">William</td><td class="record">6-8</td></tr>
+                    <tr><td class="place">8</td><td class="manager">Christian</td><td class="record">6-8</td></tr>
+                    <tr><td class="place">9</td><td class="manager">Tommy</td><td class="record">5-9</td></tr>
+                    <tr><td class="place">10</td><td class="manager">Joey</td><td class="record">4-10</td></tr>
+                </table>
+
+                <div class="section-label">Playoffs</div>
+
+                <div class="playoffs">
+                    <div class="playoff-game"><span class="playoff-round">Quarterfinal</span> Jonah defeats Mike H.</div>
+                    <div class="playoff-game"><span class="playoff-round">Quarterfinal</span> Nic defeats Michael G.</div>
+                    <div class="playoff-game"><span class="playoff-round">Semifinal</span> Ryan defeats Jonah</div>
+                    <div class="playoff-game"><span class="playoff-round">Semifinal</span> Julia defeats Nic</div>
+                    <div class="playoff-game"><span class="playoff-round">Championship</span> Julia ties Ryan 116-97</div>
+                </div>
+
+                <div class="championship">
+                    <div class="championship-label">Co-Champions</div>
+                    <div class="championship-result">Julia Wheeler & Ryan Herbst · Tie declared after Bills–Bengals cancellation</div>
+                </div>
+
+            </div>
+        </div>
+
+
+        <!-- 2021 -->
+
+        <div class="season-card">
+
+            <div class="season-header">
+                <div class="season-title">
+                    <div class="season-year">2021</div>
+                    <div class="season-size">10 Teams</div>
+                </div>
+                <div class="champion-badge">Champion · Michael Gravante</div>
+            </div>
+
+            <div class="season-content">
+
+                <div class="section-label">Final Standings</div>
+
+                <table class="standings">
+                    <tr><th>Rank</th><th>Manager</th><th>Record</th></tr>
+                    <tr><td class="place">1</td><td class="manager">Joey</td><td class="record">9-5</td></tr>
+                    <tr><td class="place">2</td><td class="manager">Nic</td><td class="record">9-5</td></tr>
+                    <tr><td class="place">3</td><td class="manager">Michael G.</td><td class="record">9-5</td></tr>
+                    <tr><td class="place">4</td><td class="manager">Jonah</td><td class="record">7-7</td></tr>
+                    <tr><td class="place">5</td><td class="manager">Christian</td><td class="record">7-7</td></tr>
+                    <tr><td class="place">6</td><td class="manager">Dylan</td><td class="record">7-7</td></tr>
+                    <tr><td class="place">7</td><td class="manager">William</td><td class="record">6-8</td></tr>
+                    <tr><td class="place">8</td><td class="manager">Ryan</td><td class="record">6-8</td></tr>
+                    <tr><td class="place">9</td><td class="manager">Tommy</td><td class="record">5-9</td></tr>
+                    <tr><td class="place">10</td><td class="manager">Mike H.</td><td class="record">5-9</td></tr>
+                </table>
+
+                <div class="section-label">Playoffs</div>
+
+                <div class="playoffs">
+                    <div class="playoff-game"><span class="playoff-round">Quarterfinal</span> Michael defeats Dylan</div>
+                    <div class="playoff-game"><span class="playoff-round">Quarterfinal</span> Jonah defeats Christian</div>
+                    <div class="playoff-game"><span class="playoff-round">Semifinal</span> Jonah defeats Joey</div>
+                    <div class="playoff-game"><span class="playoff-round">Semifinal</span> Michael defeats Nic</div>
+                    <div class="playoff-game"><span class="playoff-round">Championship</span> Michael defeats Jonah 121-102</div>
+                </div>
+
+                <div class="championship">
+                    <div class="championship-label">League Champion</div>
+                    <div class="championship-result">Michael Gravante · 121–102 over Jonah Wheeler</div>
+                </div>
+
+            </div>
+        </div>
+
+
+        <!-- 2020 -->
+
+        <div class="season-card">
+
+            <div class="season-header">
+                <div class="season-title">
+                    <div class="season-year">2020</div>
+                    <div class="season-size">8 Teams</div>
+                </div>
+                <div class="champion-badge">Champion · Nic Maiorano</div>
+            </div>
+
+            <div class="season-content">
+
+                <div class="section-label">Final Standings</div>
+
+                <table class="standings">
+                    <tr><th>Rank</th><th>Manager</th><th>Record</th></tr>
+                    <tr><td class="place">1</td><td class="manager">Mike H.</td><td class="record">10-3</td></tr>
+                    <tr><td class="place">2</td><td class="manager">Jonah</td><td class="record">9-4</td></tr>
+                    <tr><td class="place">3</td><td class="manager">Michael G.</td><td class="record">8-5</td></tr>
+                    <tr><td class="place">4</td><td class="manager">Taz</td><td class="record">6-6-1</td></tr>
+                    <tr><td class="place">5</td><td class="manager">Nic</td><td class="record">6-6-1</td></tr>
+                    <tr><td class="place">6</td><td class="manager">Christian</td><td class="record">5-8</td></tr>
+                    <tr><td class="place">7</td><td class="manager">Tommy</td><td class="record">4-9</td></tr>
+                    <tr><td class="place">8</td><td class="manager">Ryan</td><td class="record">3-10</td></tr>
+                </table>
+
+                <div class="section-label">Playoffs</div>
+
+                <div class="playoffs">
+                    <div class="playoff-game"><span class="playoff-round">Quarterfinal</span> Michael defeats Christian</div>
+                    <div class="playoff-game"><span class="playoff-round">Quarterfinal</span> Nic defeats Taz</div>
+                    <div class="playoff-game"><span class="playoff-round">Semifinal</span> Nic defeats Mike H.</div>
+                    <div class="playoff-game"><span class="playoff-round">Semifinal</span> Jonah defeats Michael</div>
+                    <div class="playoff-game"><span class="playoff-round">Championship</span> Nic defeats Jonah 173-129</div>
+                </div>
+
+                <div class="championship">
+                    <div class="championship-label">League Champion</div>
+                    <div class="championship-result">Nic Maiorano · 173–129 over Jonah Wheeler</div>
+                </div>
+
+            </div>
+        </div>
+
+
+        <!-- 2019 -->
+
+        <div class="season-card">
+
+            <div class="season-header">
+                <div class="season-title">
+                    <div class="season-year">2019</div>
+                    <div class="season-size">8 Teams</div>
+                </div>
+                <div class="champion-badge">Champion · Ryan Herbst</div>
+            </div>
+
+            <div class="season-content">
+
+                <div class="section-label">Final Standings</div>
+
+                <table class="standings">
+                    <tr><th>Rank</th><th>Manager</th><th>Record</th></tr>
+                    <tr><td class="place">1</td><td class="manager">Tommy</td><td class="record">9-4</td></tr>
+                    <tr><td class="place">2</td><td class="manager">Mike H.</td><td class="record">8-5</td></tr>
+                    <tr><td class="place">3</td><td class="manager">Michael G.</td><td class="record">8-5</td></tr>
+                    <tr><td class="place">4</td><td class="manager">Ryan</td><td class="record">7-6</td></tr>
+                    <tr><td class="place">5</td><td class="manager">Nic</td><td class="record">6-7</td></tr>
+                    <tr><td class="place">6</td><td class="manager">Taz</td><td class="record">5-7-1</td></tr>
+                    <tr><td class="place">7</td><td class="manager">Jonah</td><td class="record">5-8</td></tr>
+                    <tr><td class="place">8</td><td class="manager">Christian</td><td class="record">3-9-1</td></tr>
+                </table>
+
+                <div class="section-label">Playoffs</div>
+
+                <div class="playoffs">
+                    <div class="playoff-game"><span class="playoff-round">Quarterfinal</span> Taz defeats Michael</div>
+                    <div class="playoff-game"><span class="playoff-round">Quarterfinal</span> Ryan defeats Nic</div>
+                    <div class="playoff-game"><span class="playoff-round">Semifinal</span> Tommy defeats Taz</div>
+                    <div class="playoff-game"><span class="playoff-round">Semifinal</span> Ryan defeats Mike H.</div>
+                    <div class="playoff-game"><span class="playoff-round">Championship</span> Ryan defeats Tommy 163-149</div>
+                </div>
+
+                <div class="championship">
+                    <div class="championship-label">League Champion</div>
+                    <div class="championship-result">Ryan Herbst · 163–149 over Tommy Herbst</div>
+                </div>
+
+            </div>
+        </div>
+
+
+        <!-- 2018 -->
+
+        <div class="season-card">
+
+            <div class="season-header">
+                <div class="season-title">
+                    <div class="season-year">2018</div>
+                    <div class="season-size">8 Teams</div>
+                </div>
+                <div class="champion-badge">Champion · Christian Abert</div>
+            </div>
+
+            <div class="season-content">
+
+                <div class="section-label">Final Standings</div>
+
+                <table class="standings">
+                    <tr><th>Rank</th><th>Manager</th><th>Record</th></tr>
+                    <tr><td class="place">1</td><td class="manager">Tommy</td><td class="record">11-2</td></tr>
+                    <tr><td class="place">2</td><td class="manager">Christian</td><td class="record">8-5</td></tr>
+                    <tr><td class="place">3</td><td class="manager">Taz</td><td class="record">8-5</td></tr>
+                    <tr><td class="place">4</td><td class="manager">Nic</td><td class="record">7-6</td></tr>
+                    <tr><td class="place">5</td><td class="manager">Ryan</td><td class="record">6-7</td></tr>
+                    <tr><td class="place">6</td><td class="manager">Michael G.</td><td class="record">5-7-1</td></tr>
+                    <tr><td class="place">7</td><td class="manager">Jonah</td><td class="record">3-9-1</td></tr>
+                    <tr><td class="place">8</td><td class="manager">Bailey</td><td class="record">3-10</td></tr>
+                </table>
+
+                <div class="section-label">Playoffs</div>
+
+                <div class="playoffs">
+                    <div class="playoff-game"><span class="playoff-round">Quarterfinal</span> Michael G. defeats Taz</div>
+                    <div class="playoff-game"><span class="playoff-round">Quarterfinal</span> Ryan defeats Nic</div>
+                    <div class="playoff-game"><span class="playoff-round">Semifinal</span> Ryan defeats Tommy</div>
+                    <div class="playoff-game"><span class="playoff-round">Semifinal</span> Christian defeats Michael G.</div>
+                    <div class="playoff-game"><span class="playoff-round">Championship</span> Christian defeats Ryan 163-156</div>
+                </div>
+
+                <div class="championship">
+                    <div class="championship-label">League Champion</div>
+                    <div class="championship-result">Christian Abert · 163–156 over Ryan Herbst</div>
+                </div>
+
+            </div>
+        </div>
+
+
+        <!-- 2017 -->
+
+        <div class="season-card">
+
+            <div class="season-header">
+                <div class="season-title">
+                    <div class="season-year">2017</div>
+                    <div class="season-size">8 Teams</div>
+                </div>
+                <div class="champion-badge">Champion · Christian Abert</div>
+            </div>
+
+            <div class="season-content">
+
+                <div class="section-label">Final Standings</div>
+
+                <table class="standings">
+                    <tr><th>Rank</th><th>Manager</th><th>Record</th></tr>
+                    <tr><td class="place">1</td><td class="manager">Christian</td><td class="record">9-4</td></tr>
+                    <tr><td class="place">2</td><td class="manager">Bailey</td><td class="record">9-4</td></tr>
+                    <tr><td class="place">3</td><td class="manager">Jonah</td><td class="record">7-6</td></tr>
+                    <tr><td class="place">4</td><td class="manager">Taz</td><td class="record">7-6</td></tr>
+                    <tr><td class="place">5</td><td class="manager">Ryan</td><td class="record">7-6</td></tr>
+                    <tr><td class="place">6</td><td class="manager">Nic</td><td class="record">6-8-1</td></tr>
+                    <tr><td class="place">7</td><td class="manager">Michael G.</td><td class="record">4-9</td></tr>
+                    <tr><td class="place">8</td><td class="manager">Tommy</td><td class="record">2-10-1</td></tr>
+                </table>
+
+                <div class="section-label">Playoffs</div>
+
+                <div class="playoffs">
+                    <div class="playoff-game"><span class="playoff-round">Quarterfinal</span> Jonah defeats Nic</div>
+                    <div class="playoff-game"><span class="playoff-round">Quarterfinal</span> Taz defeats Ryan</div>
+                    <div class="playoff-game"><span class="playoff-round">Semifinal</span> Christian defeats Taz</div>
+                    <div class="playoff-game"><span class="playoff-round">Semifinal</span> Bailey defeats Jonah</div>
+                    <div class="playoff-game"><span class="playoff-round">Championship</span> Christian defeats Bailey 101-94</div>
+                </div>
+
+                <div class="championship">
+                    <div class="championship-label">League Champion</div>
+                    <div class="championship-result">Christian Abert · 101–94 over Bailey Martin</div>
+                </div>
+
+            </div>
+        </div>
+
+
+        <!-- 2016 -->
+
+        <div class="season-card">
+
+            <div class="season-header">
+                <div class="season-title">
+                    <div class="season-year">2016</div>
+                    <div class="season-size">8 Teams</div>
+                </div>
+                <div class="champion-badge">Champion · Ryan Herbst</div>
+            </div>
+
+            <div class="season-content">
+
+                <div class="section-label">Final Standings</div>
+
+                <table class="standings">
+                    <tr><th>Rank</th><th>Manager</th><th>Record</th></tr>
+                    <tr><td class="place">1</td><td class="manager">Jonah</td><td class="record">9-5</td></tr>
+                    <tr><td class="place">2</td><td class="manager">Taz</td><td class="record">9-5</td></tr>
+                    <tr><td class="place">3</td><td class="manager">Ryan</td><td class="record">9-5</td></tr>
+                    <tr><td class="place">4</td><td class="manager">Bailey</td><td class="record">7-7</td></tr>
+                    <tr><td class="place">5</td><td class="manager">Michael G.</td><td class="record">7-7</td></tr>
+                    <tr><td class="place">6</td><td class="manager">Tommy</td><td class="record">6-8</td></tr>
+                    <tr><td class="place">7</td><td class="manager">Nic</td><td class="record">5-9</td></tr>
+                    <tr><td class="place">8</td><td class="manager">Christian</td><td class="record">4-10</td></tr>
+                </table>
+
+                <div class="section-label">Playoffs</div>
+
+                <div class="playoffs">
+                    <div class="playoff-game"><span class="playoff-round">Semifinal</span> Jonah defeats Bailey</div>
+                    <div class="playoff-game"><span class="playoff-round">Semifinal</span> Ryan defeats Taz</div>
+                    <div class="playoff-game"><span class="playoff-round">Championship</span> Ryan defeats Jonah 141-138</div>
+                </div>
+
+                <div class="championship">
+                    <div class="championship-label">League Champion</div>
+                    <div class="championship-result">Ryan Herbst · 141–138 over Jonah Wheeler</div>
+                </div>
+
+            </div>
+        </div>
+
+
+        <!-- 2015 -->
+
+        <div class="season-card">
+
+            <div class="season-header">
+                <div class="season-title">
+                    <div class="season-year">2015</div>
+                    <div class="season-size">6 Teams</div>
+                </div>
+                <div class="champion-badge">Champion · Bailey Martin</div>
+            </div>
+
+            <div class="season-content">
+
+                <div class="section-label">Final Standings</div>
+
+                <table class="standings">
+                    <tr><th>Rank</th><th>Manager</th><th>Record</th></tr>
+                    <tr><td class="place">1</td><td class="manager">Christian</td><td class="record">9-6</td></tr>
+                    <tr><td class="place">2</td><td class="manager">Nic</td><td class="record">8-6-1</td></tr>
+                    <tr><td class="place">3</td><td class="manager">Bailey</td><td class="record">8-7</td></tr>
+                    <tr><td class="place">4</td><td class="manager">Ryan</td><td class="record">7-8</td></tr>
+                    <tr><td class="place">5</td><td class="manager">Tommy</td><td class="record">6-8-1</td></tr>
+                    <tr><td class="place">6</td><td class="manager">Jonah</td><td class="record">6-9</td></tr>
+                </table>
+
+                <div class="section-label">Playoffs</div>
+
+                <div class="playoffs">
+                    <div class="playoff-game"><span class="playoff-round">Semifinal</span> Ryan defeats Christian</div>
+                    <div class="playoff-game"><span class="playoff-round">Semifinal</span> Bailey defeats Nic</div>
+                    <div class="playoff-game"><span class="playoff-round">Championship</span> Bailey defeats Ryan 105-104</div>
+                </div>
+
+                <div class="championship">
+                    <div class="championship-label">League Champion</div>
+                    <div class="championship-result">Bailey Martin · 105–104 over Ryan Herbst</div>
+                </div>
+
+            </div>
+        </div>
+
+
+        <!-- 2014 -->
+
+        <div class="season-card">
+
+            <div class="season-header">
+                <div class="season-title">
+                    <div class="season-year">2014</div>
+                    <div class="season-size">6 Teams</div>
+                </div>
+                <div class="champion-badge">Champion · Ryan Herbst</div>
+            </div>
+
+            <div class="season-content">
+
+                <div class="section-label">Final Standings</div>
+
+                <table class="standings">
+                    <tr><th>Rank</th><th>Manager</th><th>Record</th></tr>
+                    <tr><td class="place">1</td><td class="manager">Nic</td><td class="record">10-3</td></tr>
+                    <tr><td class="place">2</td><td class="manager">Bailey</td><td class="record">8-5</td></tr>
+                    <tr><td class="place">3</td><td class="manager">Jonah</td><td class="record">8-5</td></tr>
+                    <tr><td class="place">4</td><td class="manager">Tommy</td><td class="record">6-7</td></tr>
+                    <tr><td class="place">5</td><td class="manager">Ryan</td><td class="record">4-9</td></tr>
+                    <tr><td class="place">6</td><td class="manager">Christian</td><td class="record">4-10</td></tr>
+                </table>
+
+                <div class="section-label">Playoffs</div>
+
+                <div class="playoffs">
+                    <div class="playoff-game"><span class="playoff-round">Quarterfinal</span> Jonah defeats Christian</div>
+                    <div class="playoff-game"><span class="playoff-round">Quarterfinal</span> Ryan defeats Tommy</div>
+                    <div class="playoff-game"><span class="playoff-round">Semifinal</span> Ryan defeats Nic</div>
+                    <div class="playoff-game"><span class="playoff-round">Semifinal</span> Bailey defeats Jonah</div>
+                    <div class="playoff-game"><span class="playoff-round">Championship</span> Ryan defeats Bailey 177-125</div>
+                </div>
+
+                <div class="championship">
+                    <div class="championship-label">League Champion</div>
+                    <div class="championship-result">Ryan Herbst · 177–125 over Bailey Martin</div>
+                </div>
+
+            </div>
+        </div>
+
+
+        <!-- 2013 -->
+
+        <div class="season-card">
+
+            <div class="season-header">
+                <div class="season-title">
+                    <div class="season-year">2013</div>
+                    <div class="season-size">4 Teams · Inaugural Season</div>
+                </div>
+                <div class="champion-badge">Champion · Ryan Herbst</div>
+            </div>
+
+            <div class="season-content">
+
+                <div class="section-label">Final Standings</div>
+
+                <table class="standings">
+                    <tr><th>Rank</th><th>Manager</th><th>Record</th></tr>
+                    <tr><td class="place">1</td><td class="manager">Ryan</td><td class="record">9-4</td></tr>
+                    <tr><td class="place">2</td><td class="manager">Christian</td><td class="record">7-6</td></tr>
+                    <tr><td class="place">3</td><td class="manager">Nic</td><td class="record">6-7</td></tr>
+                    <tr><td class="place">4</td><td class="manager">Bailey</td><td class="record">4-9</td></tr>
+                </table>
+
+                <div class="section-label">Playoffs</div>
+
+                <div class="playoffs">
+                    <div class="playoff-game"><span class="playoff-round">Semifinal</span> Ryan defeats Bailey</div>
+                    <div class="playoff-game"><span class="playoff-round">Semifinal</span> Nic defeats Christian</div>
+                    <div class="playoff-game"><span class="playoff-round">Championship</span> Ryan defeats Nic 144-124</div>
+                </div>
+
+                <div class="championship">
+                    <div class="championship-label">Inaugural League Champion</div>
+                    <div class="championship-result">Ryan Herbst · 144–124 over Nic Maiorano</div>
+                </div>
+
+            </div>
+        </div>
+
     </div>
-
-
-    <!-- 2023 -->
-
-    <div class="season-card">
-
-        <div class="season-header">
-            <div class="season-title">
-                <div class="season-year">2023</div>
-                <div class="season-size">12 Teams</div>
-            </div>
-            <div class="champion-badge">Champion · Tommy Herbst</div>
-        </div>
-
-        <div class="season-content">
-
-            <div class="section-label">Final Standings</div>
-
-            <table class="standings">
-                <tr><th>Rank</th><th>Manager</th><th>Record</th></tr>
-                <tr><td class="place">1</td><td class="manager">Tommy</td><td class="record">12-2</td></tr>
-                <tr><td class="place">2</td><td class="manager">William</td><td class="record">10-4</td></tr>
-                <tr><td class="place">3</td><td class="manager">Logan</td><td class="record">8-6</td></tr>
-                <tr><td class="place">4</td><td class="manager">Nic</td><td class="record">8-6</td></tr>
-                <tr><td class="place">5</td><td class="manager">Julia</td><td class="record">7-7</td></tr>
-                <tr><td class="place">6</td><td class="manager">Ryan</td><td class="record">7-7</td></tr>
-                <tr><td class="place">7</td><td class="manager">Mike D.</td><td class="record">6-8</td></tr>
-                <tr><td class="place">8</td><td class="manager">Mike H.</td><td class="record">6-8</td></tr>
-                <tr><td class="place">9</td><td class="manager">Christian</td><td class="record">6-8</td></tr>
-                <tr><td class="place">10</td><td class="manager">Michael G.</td><td class="record">5-9</td></tr>
-                <tr><td class="place">11</td><td class="manager">Jonah</td><td class="record">5-9</td></tr>
-                <tr><td class="place">12</td><td class="manager">Taz</td><td class="record">4-10</td></tr>
-            </table>
-
-            <div class="section-label">Playoffs</div>
-
-            <div class="playoffs">
-                <div class="playoff-game"><span class="playoff-round">Quarterfinal</span> Logan defeats Ryan</div>
-                <div class="playoff-game"><span class="playoff-round">Quarterfinal</span> Julia defeats Nic</div>
-                <div class="playoff-game"><span class="playoff-round">Semifinal</span> Tommy defeats Julia</div>
-                <div class="playoff-game"><span class="playoff-round">Semifinal</span> William defeats Logan</div>
-                <div class="playoff-game"><span class="playoff-round">Championship</span> Tommy defeats William 134-97</div>
-            </div>
-
-            <div class="championship">
-                <div class="championship-label">League Champion</div>
-                <div class="championship-result">Tommy Herbst · 134–97 over William Darrow</div>
-            </div>
-
-        </div>
-    </div>
-
-
-    <!-- 2022 -->
-
-    <div class="season-card">
-
-        <div class="season-header">
-            <div class="season-title">
-                <div class="season-year">2022</div>
-                <div class="season-size">10 Teams</div>
-            </div>
-            <div class="champion-badge">Co-Champions · Ryan & Julia</div>
-        </div>
-
-        <div class="season-content">
-
-            <div class="section-label">Final Standings</div>
-
-            <table class="standings">
-                <tr><th>Rank</th><th>Manager</th><th>Record</th></tr>
-                <tr><td class="place">1</td><td class="manager">Julia</td><td class="record">10-4</td></tr>
-                <tr><td class="place">2</td><td class="manager">Ryan</td><td class="record">9-5</td></tr>
-                <tr><td class="place">3</td><td class="manager">Jonah</td><td class="record">9-5</td></tr>
-                <tr><td class="place">4</td><td class="manager">Michael G.</td><td class="record">8-6</td></tr>
-                <tr><td class="place">5</td><td class="manager">Nic</td><td class="record">7-7</td></tr>
-                <tr><td class="place">6</td><td class="manager">Mike H.</td><td class="record">6-8</td></tr>
-                <tr><td class="place">7</td><td class="manager">William</td><td class="record">6-8</td></tr>
-                <tr><td class="place">8</td><td class="manager">Christian</td><td class="record">6-8</td></tr>
-                <tr><td class="place">9</td><td class="manager">Tommy</td><td class="record">5-9</td></tr>
-                <tr><td class="place">10</td><td class="manager">Joey</td><td class="record">4-10</td></tr>
-            </table>
-
-            <div class="section-label">Playoffs</div>
-
-            <div class="playoffs">
-                <div class="playoff-game"><span class="playoff-round">Quarterfinal</span> Jonah defeats Mike H.</div>
-                <div class="playoff-game"><span class="playoff-round">Quarterfinal</span> Nic defeats Michael G.</div>
-                <div class="playoff-game"><span class="playoff-round">Semifinal</span> Ryan defeats Jonah</div>
-                <div class="playoff-game"><span class="playoff-round">Semifinal</span> Julia defeats Nic</div>
-                <div class="playoff-game"><span class="playoff-round">Championship</span> Julia ties Ryan 116-97</div>
-            </div>
-
-            <div class="championship">
-                <div class="championship-label">Co-Champions</div>
-                <div class="championship-result">Julia Wheeler & Ryan Herbst · Tie declared after Bills–Bengals cancellation</div>
-            </div>
-
-        </div>
-    </div>
-
-
-    <!-- 2021 -->
-
-    <div class="season-card">
-
-        <div class="season-header">
-            <div class="season-title">
-                <div class="season-year">2021</div>
-                <div class="season-size">10 Teams</div>
-            </div>
-            <div class="champion-badge">Champion · Michael Gravante</div>
-        </div>
-
-        <div class="season-content">
-
-            <div class="section-label">Final Standings</div>
-
-            <table class="standings">
-                <tr><th>Rank</th><th>Manager</th><th>Record</th></tr>
-                <tr><td class="place">1</td><td class="manager">Joey</td><td class="record">9-5</td></tr>
-                <tr><td class="place">2</td><td class="manager">Nic</td><td class="record">9-5</td></tr>
-                <tr><td class="place">3</td><td class="manager">Michael G.</td><td class="record">9-5</td></tr>
-                <tr><td class="place">4</td><td class="manager">Jonah</td><td class="record">7-7</td></tr>
-                <tr><td class="place">5</td><td class="manager">Christian</td><td class="record">7-7</td></tr>
-                <tr><td class="place">6</td><td class="manager">Dylan</td><td class="record">7-7</td></tr>
-                <tr><td class="place">7</td><td class="manager">William</td><td class="record">6-8</td></tr>
-                <tr><td class="place">8</td><td class="manager">Ryan</td><td class="record">6-8</td></tr>
-                <tr><td class="place">9</td><td class="manager">Tommy</td><td class="record">5-9</td></tr>
-                <tr><td class="place">10</td><td class="manager">Mike H.</td><td class="record">5-9</td></tr>
-            </table>
-
-            <div class="section-label">Playoffs</div>
-
-            <div class="playoffs">
-                <div class="playoff-game"><span class="playoff-round">Quarterfinal</span> Michael defeats Dylan</div>
-                <div class="playoff-game"><span class="playoff-round">Quarterfinal</span> Jonah defeats Christian</div>
-                <div class="playoff-game"><span class="playoff-round">Semifinal</span> Jonah defeats Joey</div>
-                <div class="playoff-game"><span class="playoff-round">Semifinal</span> Michael defeats Nic</div>
-                <div class="playoff-game"><span class="playoff-round">Championship</span> Michael defeats Jonah 121-102</div>
-            </div>
-
-            <div class="championship">
-                <div class="championship-label">League Champion</div>
-                <div class="championship-result">Michael Gravante · 121–102 over Jonah Wheeler</div>
-            </div>
-
-        </div>
-    </div>
-
-
-    <!-- 2020 -->
-
-    <div class="season-card">
-
-        <div class="season-header">
-            <div class="season-title">
-                <div class="season-year">2020</div>
-                <div class="season-size">8 Teams</div>
-            </div>
-            <div class="champion-badge">Champion · Nic Maiorano</div>
-        </div>
-
-        <div class="season-content">
-
-            <div class="section-label">Final Standings</div>
-
-            <table class="standings">
-                <tr><th>Rank</th><th>Manager</th><th>Record</th></tr>
-                <tr><td class="place">1</td><td class="manager">Mike H.</td><td class="record">10-3</td></tr>
-                <tr><td class="place">2</td><td class="manager">Jonah</td><td class="record">9-4</td></tr>
-                <tr><td class="place">3</td><td class="manager">Michael G.</td><td class="record">8-5</td></tr>
-                <tr><td class="place">4</td><td class="manager">Taz</td><td class="record">6-6-1</td></tr>
-                <tr><td class="place">5</td><td class="manager">Nic</td><td class="record">6-6-1</td></tr>
-                <tr><td class="place">6</td><td class="manager">Christian</td><td class="record">5-8</td></tr>
-                <tr><td class="place">7</td><td class="manager">Tommy</td><td class="record">4-9</td></tr>
-                <tr><td class="place">8</td><td class="manager">Ryan</td><td class="record">3-10</td></tr>
-            </table>
-
-            <div class="section-label">Playoffs</div>
-
-            <div class="playoffs">
-                <div class="playoff-game"><span class="playoff-round">Quarterfinal</span> Michael defeats Christian</div>
-                <div class="playoff-game"><span class="playoff-round">Quarterfinal</span> Nic defeats Taz</div>
-                <div class="playoff-game"><span class="playoff-round">Semifinal</span> Nic defeats Mike H.</div>
-                <div class="playoff-game"><span class="playoff-round">Semifinal</span> Jonah defeats Michael</div>
-                <div class="playoff-game"><span class="playoff-round">Championship</span> Nic defeats Jonah 173-129</div>
-            </div>
-
-            <div class="championship">
-                <div class="championship-label">League Champion</div>
-                <div class="championship-result">Nic Maiorano · 173–129 over Jonah Wheeler</div>
-            </div>
-
-        </div>
-    </div>
-
-
-    <!-- 2019 -->
-
-    <div class="season-card">
-
-        <div class="season-header">
-            <div class="season-title">
-                <div class="season-year">2019</div>
-                <div class="season-size">8 Teams</div>
-            </div>
-            <div class="champion-badge">Champion · Ryan Herbst</div>
-        </div>
-
-        <div class="season-content">
-
-            <div class="section-label">Final Standings</div>
-
-            <table class="standings">
-                <tr><th>Rank</th><th>Manager</th><th>Record</th></tr>
-                <tr><td class="place">1</td><td class="manager">Tommy</td><td class="record">9-4</td></tr>
-                <tr><td class="place">2</td><td class="manager">Mike H.</td><td class="record">8-5</td></tr>
-                <tr><td class="place">3</td><td class="manager">Michael G.</td><td class="record">8-5</td></tr>
-                <tr><td class="place">4</td><td class="manager">Ryan</td><td class="record">7-6</td></tr>
-                <tr><td class="place">5</td><td class="manager">Nic</td><td class="record">6-7</td></tr>
-                <tr><td class="place">6</td><td class="manager">Taz</td><td class="record">5-7-1</td></tr>
-                <tr><td class="place">7</td><td class="manager">Jonah</td><td class="record">5-8</td></tr>
-                <tr><td class="place">8</td><td class="manager">Christian</td><td class="record">3-9-1</td></tr>
-            </table>
-
-            <div class="section-label">Playoffs</div>
-
-            <div class="playoffs">
-                <div class="playoff-game"><span class="playoff-round">Quarterfinal</span> Taz defeats Michael</div>
-                <div class="playoff-game"><span class="playoff-round">Quarterfinal</span> Ryan defeats Nic</div>
-                <div class="playoff-game"><span class="playoff-round">Semifinal</span> Tommy defeats Taz</div>
-                <div class="playoff-game"><span class="playoff-round">Semifinal</span> Ryan defeats Mike H.</div>
-                <div class="playoff-game"><span class="playoff-round">Championship</span> Ryan defeats Tommy 163-149</div>
-            </div>
-
-            <div class="championship">
-                <div class="championship-label">League Champion</div>
-                <div class="championship-result">Ryan Herbst · 163–149 over Tommy Herbst</div>
-            </div>
-
-        </div>
-    </div>
-
-
-    <!-- 2018 -->
-
-    <div class="season-card">
-
-        <div class="season-header">
-            <div class="season-title">
-                <div class="season-year">2018</div>
-                <div class="season-size">8 Teams</div>
-            </div>
-            <div class="champion-badge">Champion · Christian Abert</div>
-        </div>
-
-        <div class="season-content">
-
-            <div class="section-label">Final Standings</div>
-
-            <table class="standings">
-                <tr><th>Rank</th><th>Manager</th><th>Record</th></tr>
-                <tr><td class="place">1</td><td class="manager">Tommy</td><td class="record">11-2</td></tr>
-                <tr><td class="place">2</td><td class="manager">Christian</td><td class="record">8-5</td></tr>
-                <tr><td class="place">3</td><td class="manager">Taz</td><td class="record">8-5</td></tr>
-                <tr><td class="place">4</td><td class="manager">Nic</td><td class="record">7-6</td></tr>
-                <tr><td class="place">5</td><td class="manager">Ryan</td><td class="record">6-7</td></tr>
-                <tr><td class="place">6</td><td class="manager">Michael G.</td><td class="record">5-7-1</td></tr>
-                <tr><td class="place">7</td><td class="manager">Jonah</td><td class="record">3-9-1</td></tr>
-                <tr><td class="place">8</td><td class="manager">Bailey</td><td class="record">3-10</td></tr>
-            </table>
-
-            <div class="section-label">Playoffs</div>
-
-            <div class="playoffs">
-                <div class="playoff-game"><span class="playoff-round">Quarterfinal</span> Michael G. defeats Taz</div>
-                <div class="playoff-game"><span class="playoff-round">Quarterfinal</span> Ryan defeats Nic</div>
-                <div class="playoff-game"><span class="playoff-round">Semifinal</span> Ryan defeats Tommy</div>
-                <div class="playoff-game"><span class="playoff-round">Semifinal</span> Christian defeats Michael G.</div>
-                <div class="playoff-game"><span class="playoff-round">Championship</span> Christian defeats Ryan 163-156</div>
-            </div>
-
-            <div class="championship">
-                <div class="championship-label">League Champion</div>
-                <div class="championship-result">Christian Abert · 163–156 over Ryan Herbst</div>
-            </div>
-
-        </div>
-    </div>
-
-
-    <!-- 2017 -->
-
-    <div class="season-card">
-
-        <div class="season-header">
-            <div class="season-title">
-                <div class="season-year">2017</div>
-                <div class="season-size">8 Teams</div>
-            </div>
-            <div class="champion-badge">Champion · Christian Abert</div>
-        </div>
-
-        <div class="season-content">
-
-            <div class="section-label">Final Standings</div>
-
-            <table class="standings">
-                <tr><th>Rank</th><th>Manager</th><th>Record</th></tr>
-                <tr><td class="place">1</td><td class="manager">Christian</td><td class="record">9-4</td></tr>
-                <tr><td class="place">2</td><td class="manager">Bailey</td><td class="record">9-4</td></tr>
-                <tr><td class="place">3</td><td class="manager">Jonah</td><td class="record">7-6</td></tr>
-                <tr><td class="place">4</td><td class="manager">Taz</td><td class="record">7-6</td></tr>
-                <tr><td class="place">5</td><td class="manager">Ryan</td><td class="record">7-6</td></tr>
-                <tr><td class="place">6</td><td class="manager">Nic</td><td class="record">6-8-1</td></tr>
-                <tr><td class="place">7</td><td class="manager">Michael G.</td><td class="record">4-9</td></tr>
-                <tr><td class="place">8</td><td class="manager">Tommy</td><td class="record">2-10-1</td></tr>
-            </table>
-
-            <div class="section-label">Playoffs</div>
-
-            <div class="playoffs">
-                <div class="playoff-game"><span class="playoff-round">Quarterfinal</span> Jonah defeats Nic</div>
-                <div class="playoff-game"><span class="playoff-round">Quarterfinal</span> Taz defeats Ryan</div>
-                <div class="playoff-game"><span class="playoff-round">Semifinal</span> Christian defeats Taz</div>
-                <div class="playoff-game"><span class="playoff-round">Semifinal</span> Bailey defeats Jonah</div>
-                <div class="playoff-game"><span class="playoff-round">Championship</span> Christian defeats Bailey 101-94</div>
-            </div>
-
-            <div class="championship">
-                <div class="championship-label">League Champion</div>
-                <div class="championship-result">Christian Abert · 101–94 over Bailey Martin</div>
-            </div>
-
-        </div>
-    </div>
-
-
-    <!-- 2016 -->
-
-    <div class="season-card">
-
-        <div class="season-header">
-            <div class="season-title">
-                <div class="season-year">2016</div>
-                <div class="season-size">8 Teams</div>
-            </div>
-            <div class="champion-badge">Champion · Ryan Herbst</div>
-        </div>
-
-        <div class="season-content">
-
-            <div class="section-label">Final Standings</div>
-
-            <table class="standings">
-                <tr><th>Rank</th><th>Manager</th><th>Record</th></tr>
-                <tr><td class="place">1</td><td class="manager">Jonah</td><td class="record">9-5</td></tr>
-                <tr><td class="place">2</td><td class="manager">Taz</td><td class="record">9-5</td></tr>
-                <tr><td class="place">3</td><td class="manager">Ryan</td><td class="record">9-5</td></tr>
-                <tr><td class="place">4</td><td class="manager">Bailey</td><td class="record">7-7</td></tr>
-                <tr><td class="place">5</td><td class="manager">Michael G.</td><td class="record">7-7</td></tr>
-                <tr><td class="place">6</td><td class="manager">Tommy</td><td class="record">6-8</td></tr>
-                <tr><td class="place">7</td><td class="manager">Nic</td><td class="record">5-9</td></tr>
-                <tr><td class="place">8</td><td class="manager">Christian</td><td class="record">4-10</td></tr>
-            </table>
-
-            <div class="section-label">Playoffs</div>
-
-            <div class="playoffs">
-                <div class="playoff-game"><span class="playoff-round">Semifinal</span> Jonah defeats Bailey</div>
-                <div class="playoff-game"><span class="playoff-round">Semifinal</span> Ryan defeats Taz</div>
-                <div class="playoff-game"><span class="playoff-round">Championship</span> Ryan defeats Jonah 141-138</div>
-            </div>
-
-            <div class="championship">
-                <div class="championship-label">League Champion</div>
-                <div class="championship-result">Ryan Herbst · 141–138 over Jonah Wheeler</div>
-            </div>
-
-        </div>
-    </div>
-
-
-    <!-- 2015 -->
-
-    <div class="season-card">
-
-        <div class="season-header">
-            <div class="season-title">
-                <div class="season-year">2015</div>
-                <div class="season-size">6 Teams</div>
-            </div>
-            <div class="champion-badge">Champion · Bailey Martin</div>
-        </div>
-
-        <div class="season-content">
-
-            <div class="section-label">Final Standings</div>
-
-            <table class="standings">
-                <tr><th>Rank</th><th>Manager</th><th>Record</th></tr>
-                <tr><td class="place">1</td><td class="manager">Christian</td><td class="record">9-6</td></tr>
-                <tr><td class="place">2</td><td class="manager">Nic</td><td class="record">8-6-1</td></tr>
-                <tr><td class="place">3</td><td class="manager">Bailey</td><td class="record">8-7</td></tr>
-                <tr><td class="place">4</td><td class="manager">Ryan</td><td class="record">7-8</td></tr>
-                <tr><td class="place">5</td><td class="manager">Tommy</td><td class="record">6-8-1</td></tr>
-                <tr><td class="place">6</td><td class="manager">Jonah</td><td class="record">6-9</td></tr>
-            </table>
-
-            <div class="section-label">Playoffs</div>
-
-            <div class="playoffs">
-                <div class="playoff-game"><span class="playoff-round">Semifinal</span> Ryan defeats Christian</div>
-                <div class="playoff-game"><span class="playoff-round">Semifinal</span> Bailey defeats Nic</div>
-                <div class="playoff-game"><span class="playoff-round">Championship</span> Bailey defeats Ryan 105-104</div>
-            </div>
-
-            <div class="championship">
-                <div class="championship-label">League Champion</div>
-                <div class="championship-result">Bailey Martin · 105–104 over Ryan Herbst</div>
-            </div>
-
-        </div>
-    </div>
-
-
-    <!-- 2014 -->
-
-    <div class="season-card">
-
-        <div class="season-header">
-            <div class="season-title">
-                <div class="season-year">2014</div>
-                <div class="season-size">6 Teams</div>
-            </div>
-            <div class="champion-badge">Champion · Ryan Herbst</div>
-        </div>
-
-        <div class="season-content">
-
-            <div class="section-label">Final Standings</div>
-
-            <table class="standings">
-                <tr><th>Rank</th><th>Manager</th><th>Record</th></tr>
-                <tr><td class="place">1</td><td class="manager">Nic</td><td class="record">10-3</td></tr>
-                <tr><td class="place">2</td><td class="manager">Bailey</td><td class="record">8-5</td></tr>
-                <tr><td class="place">3</td><td class="manager">Jonah</td><td class="record">8-5</td></tr>
-                <tr><td class="place">4</td><td class="manager">Tommy</td><td class="record">6-7</td></tr>
-                <tr><td class="place">5</td><td class="manager">Ryan</td><td class="record">4-9</td></tr>
-                <tr><td class="place">6</td><td class="manager">Christian</td><td class="record">4-10</td></tr>
-            </table>
-
-            <div class="section-label">Playoffs</div>
-
-            <div class="playoffs">
-                <div class="playoff-game"><span class="playoff-round">Quarterfinal</span> Jonah defeats Christian</div>
-                <div class="playoff-game"><span class="playoff-round">Quarterfinal</span> Ryan defeats Tommy</div>
-                <div class="playoff-game"><span class="playoff-round">Semifinal</span> Ryan defeats Nic</div>
-                <div class="playoff-game"><span class="playoff-round">Semifinal</span> Bailey defeats Jonah</div>
-                <div class="playoff-game"><span class="playoff-round">Championship</span> Ryan defeats Bailey 177-125</div>
-            </div>
-
-            <div class="championship">
-                <div class="championship-label">League Champion</div>
-                <div class="championship-result">Ryan Herbst · 177–125 over Bailey Martin</div>
-            </div>
-
-        </div>
-    </div>
-
-
-    <!-- 2013 -->
-
-    <div class="season-card">
-
-        <div class="season-header">
-            <div class="season-title">
-                <div class="season-year">2013</div>
-                <div class="season-size">4 Teams · Inaugural Season</div>
-            </div>
-            <div class="champion-badge">Champion · Ryan Herbst</div>
-        </div>
-
-        <div class="season-content">
-
-            <div class="section-label">Final Standings</div>
-
-            <table class="standings">
-                <tr><th>Rank</th><th>Manager</th><th>Record</th></tr>
-                <tr><td class="place">1</td><td class="manager">Ryan</td><td class="record">9-4</td></tr>
-                <tr><td class="place">2</td><td class="manager">Christian</td><td class="record">7-6</td></tr>
-                <tr><td class="place">3</td><td class="manager">Nic</td><td class="record">6-7</td></tr>
-                <tr><td class="place">4</td><td class="manager">Bailey</td><td class="record">4-9</td></tr>
-            </table>
-
-            <div class="section-label">Playoffs</div>
-
-            <div class="playoffs">
-                <div class="playoff-game"><span class="playoff-round">Semifinal</span> Ryan defeats Bailey</div>
-                <div class="playoff-game"><span class="playoff-round">Semifinal</span> Nic defeats Christian</div>
-                <div class="playoff-game"><span class="playoff-round">Championship</span> Ryan defeats Nic 144-124</div>
-            </div>
-
-            <div class="championship">
-                <div class="championship-label">Inaugural League Champion</div>
-                <div class="championship-result">Ryan Herbst · 144–124 over Nic Maiorano</div>
-            </div>
-
-        </div>
-    </div>
-
-
-    <!-- 2026 -->
-
-    <div class="season-card current">
-
-        <div class="season-header">
-
-            <div class="season-title">
-                <div class="season-year">2026</div>
-                <div class="season-size">12 Teams · Current Season</div>
-            </div>
-
-            <div class="champion-badge">In Progress</div>
-
-        </div>
-
-        <div class="season-content">
-
-            <div class="section-label">Current Season</div>
-
-            <p style="color:#aeb8c1; max-width:700px;">
-                The 2026 season is currently in progress. Historical standings,
-                playoff results and the league champion will be added when the
-                season is complete.
-            </p>
-
-        </div>
-
-    </div>
-
 
 </main>
 
@@ -1001,6 +1106,125 @@
 <footer>
     Kevin Durant League · Fantasy Football History · Est. 2013
 </footer>
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+        const seasonView = document.getElementById("seasonView");
+        const seasonSelect = document.getElementById("seasonSelect");
+        const previousButton = document.getElementById("previousSeason");
+        const nextButton = document.getElementById("nextSeason");
+
+        const seasonCards = Array.from(
+            seasonView.querySelectorAll(".season-card")
+        );
+
+        const seasons = seasonCards
+            .map(card => {
+                const yearElement = card.querySelector(".season-year");
+
+                return {
+                    year: parseInt(yearElement.textContent.trim(), 10),
+                    card: card
+                };
+            })
+            .sort((a, b) => b.year - a.year);
+
+        /*
+         * Populate the dropdown from the seasons already
+         * present in the HTML.
+         */
+        seasons.forEach(season => {
+
+            const option = document.createElement("option");
+
+            option.value = season.year;
+            option.textContent = season.year;
+
+            seasonSelect.appendChild(option);
+
+        });
+
+        /*
+         * 2025 is the default because 2026 is still in progress.
+         */
+        let currentSeason = 2025;
+
+        function showSeason(year) {
+
+            currentSeason = parseInt(year, 10);
+
+            seasons.forEach(season => {
+
+                season.card.style.display =
+                    season.year === currentSeason ? "block" : "none";
+
+            });
+
+            seasonSelect.value = currentSeason;
+
+            updateNavigation();
+
+        }
+
+        function updateNavigation() {
+
+            const oldestSeason = Math.min(
+                ...seasons.map(season => season.year)
+            );
+
+            const newestSeason = Math.max(
+                ...seasons.map(season => season.year)
+            );
+
+            /*
+             * The arrows move chronologically:
+             *
+             * ← 2025 = 2024
+             * → 2025 = 2026
+             */
+            previousButton.disabled =
+                currentSeason <= oldestSeason;
+
+            nextButton.disabled =
+                currentSeason >= newestSeason;
+
+        }
+
+        previousButton.addEventListener("click", function () {
+
+            const previousSeason = currentSeason - 1;
+
+            if (previousSeason >= 2013) {
+                showSeason(previousSeason);
+            }
+
+        });
+
+        nextButton.addEventListener("click", function () {
+
+            const nextSeason = currentSeason + 1;
+
+            if (nextSeason <= 2026) {
+                showSeason(nextSeason);
+            }
+
+        });
+
+        seasonSelect.addEventListener("change", function () {
+
+            showSeason(this.value);
+
+        });
+
+        /*
+         * Initialize on 2025.
+         */
+        showSeason(currentSeason);
+
+    });
+</script>
 
 </body>
 </html>
