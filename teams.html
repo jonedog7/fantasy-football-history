@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -187,7 +186,6 @@
         }
 
         .record-main {
-            grid-column: 1 / -1;
             padding-bottom: 16px;
             border-bottom: 1px solid #27313b;
         }
@@ -221,36 +219,12 @@
         }
 
         .manager-details {
-            border-top: 1px solid #27313b;
-            padding: 20px 22px;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-        }
-
-        .detail-label {
-            color: #7f8a94;
-            font-size: 10px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-weight: 700;
-        }
-
-        .detail-value {
-            color: #cbd2d8;
-            font-size: 13px;
-            margin-top: 3px;
+            display: none;
         }
 
         .championships {
             border-top: 1px solid #27313b;
             padding: 20px 22px;
-        }
-
-        .championships-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
         }
 
         .championships-label {
@@ -465,9 +439,9 @@
                     <div class="record-main-number">81-95-1</div>
                 </div>
 
-                <div>
-                    <div class="manager-stat-label">Win Percentage</div>
-                    <div class="manager-stat-value">46%</div>
+                <div class="record-main">
+                    <div class="record-main-label">Win Percentage</div>
+                    <div class="record-main-number">46%</div>
                 </div>
 
                 <div>
@@ -503,21 +477,10 @@
             </div>
 
             <div class="championships">
-
-                <div class="championships-grid">
-
-                    <div>
-                        <div class="championships-label">Championship Years</div>
-                        <div class="championship-list">2017 · 2018</div>
-                    </div>
-
-                    <div>
-                        <div class="championships-label">Championship Appearances</div>
-                        <div class="championship-list">2</div>
-                    </div>
-
+                <div class="championships-label">Championships</div>
+                <div class="championship-list">
+                    2017 · 2018
                 </div>
-
             </div>
 
         </div>
@@ -539,9 +502,9 @@
                     <div class="record-main-number">88-89</div>
                 </div>
 
-                <div>
-                    <div class="manager-stat-label">Win Percentage</div>
-                    <div class="manager-stat-value">49%</div>
+                <div class="record-main">
+                    <div class="record-main-label">Win Percentage</div>
+                    <div class="record-main-number">49%</div>
                 </div>
 
                 <div>
@@ -577,21 +540,10 @@
             </div>
 
             <div class="championships">
-
-                <div class="championships-grid">
-
-                    <div>
-                        <div class="championships-label">Championship Years</div>
-                        <div class="championship-list">2013 · 2014 · 2016 · 2019 · 2022</div>
-                    </div>
-
-                    <div>
-                        <div class="championships-label">Championship Appearances</div>
-                        <div class="championship-list">7</div>
-                    </div>
-
+                <div class="championships-label">Championships</div>
+                <div class="championship-list">
+                    2013 · 2014 · 2016 · 2019 · 2022
                 </div>
-
             </div>
 
         </div>
@@ -613,9 +565,9 @@
                     <div class="record-main-number">91-83-3</div>
                 </div>
 
-                <div>
-                    <div class="manager-stat-label">Win Percentage</div>
-                    <div class="manager-stat-value">52%</div>
+                <div class="record-main">
+                    <div class="record-main-label">Win Percentage</div>
+                    <div class="record-main-number">52%</div>
                 </div>
 
                 <div>
@@ -651,21 +603,10 @@
             </div>
 
             <div class="championships">
-
-                <div class="championships-grid">
-
-                    <div>
-                        <div class="championships-label">Championship Years</div>
-                        <div class="championship-list">2020</div>
-                    </div>
-
-                    <div>
-                        <div class="championships-label">Championship Appearances</div>
-                        <div class="championship-list">2</div>
-                    </div>
-
+                <div class="championships-label">Championships</div>
+                <div class="championship-list">
+                    2020
                 </div>
-
             </div>
 
         </div>
@@ -687,9 +628,9 @@
                     <div class="record-main-number">39-42</div>
                 </div>
 
-                <div>
-                    <div class="manager-stat-label">Win Percentage</div>
-                    <div class="manager-stat-value">48%</div>
+                <div class="record-main">
+                    <div class="record-main-label">Win Percentage</div>
+                    <div class="record-main-number">48%</div>
                 </div>
 
                 <div>
@@ -725,21 +666,10 @@
             </div>
 
             <div class="championships">
-
-                <div class="championships-grid">
-
-                    <div>
-                        <div class="championships-label">Championship Years</div>
-                        <div class="championship-list">2015</div>
-                    </div>
-
-                    <div>
-                        <div class="championships-label">Championship Appearances</div>
-                        <div class="championship-list">3</div>
-                    </div>
-
+                <div class="championships-label">Championships</div>
+                <div class="championship-list">
+                    2015
                 </div>
-
             </div>
 
         </div>
@@ -761,9 +691,9 @@
                     <div class="record-main-number">90-73-1</div>
                 </div>
 
-                <div>
-                    <div class="manager-stat-label">Win Percentage</div>
-                    <div class="manager-stat-value">55%</div>
+                <div class="record-main">
+                    <div class="record-main-label">Win Percentage</div>
+                    <div class="record-main-number">55%</div>
                 </div>
 
                 <div>
@@ -799,21 +729,10 @@
             </div>
 
             <div class="championships">
-
-                <div class="championships-grid">
-
-                    <div>
-                        <div class="championships-label">Championship Years</div>
-                        <div class="championship-list">2024</div>
-                    </div>
-
-                    <div>
-                        <div class="championships-label">Championship Appearances</div>
-                        <div class="championship-list">4</div>
-                    </div>
-
+                <div class="championships-label">Championships</div>
+                <div class="championship-list">
+                    2024
                 </div>
-
             </div>
 
         </div>
@@ -835,9 +754,9 @@
                     <div class="record-main-number">78-84-2</div>
                 </div>
 
-                <div>
-                    <div class="manager-stat-label">Win Percentage</div>
-                    <div class="manager-stat-value">48%</div>
+                <div class="record-main">
+                    <div class="record-main-label">Win Percentage</div>
+                    <div class="record-main-number">48%</div>
                 </div>
 
                 <div>
@@ -873,21 +792,10 @@
             </div>
 
             <div class="championships">
-
-                <div class="championships-grid">
-
-                    <div>
-                        <div class="championships-label">Championship Years</div>
-                        <div class="championship-list">2023</div>
-                    </div>
-
-                    <div>
-                        <div class="championships-label">Championship Appearances</div>
-                        <div class="championship-list">2</div>
-                    </div>
-
+                <div class="championships-label">Championships</div>
+                <div class="championship-list">
+                    2023
                 </div>
-
             </div>
 
         </div>
@@ -909,9 +817,9 @@
                     <div class="record-main-number">67-68-1</div>
                 </div>
 
-                <div>
-                    <div class="manager-stat-label">Win Percentage</div>
-                    <div class="manager-stat-value">49%</div>
+                <div class="record-main">
+                    <div class="record-main-label">Win Percentage</div>
+                    <div class="record-main-number">49%</div>
                 </div>
 
                 <div>
@@ -947,21 +855,10 @@
             </div>
 
             <div class="championships">
-
-                <div class="championships-grid">
-
-                    <div>
-                        <div class="championships-label">Championship Years</div>
-                        <div class="championship-list">2021</div>
-                    </div>
-
-                    <div>
-                        <div class="championships-label">Championship Appearances</div>
-                        <div class="championship-list">1</div>
-                    </div>
-
+                <div class="championships-label">Championships</div>
+                <div class="championship-list">
+                    2021
                 </div>
-
             </div>
 
         </div>
@@ -983,9 +880,9 @@
                     <div class="record-main-number">81-95-1</div>
                 </div>
 
-                <div>
-                    <div class="manager-stat-label">Win Percentage</div>
-                    <div class="manager-stat-value">50%</div>
+                <div class="record-main">
+                    <div class="record-main-label">Win Percentage</div>
+                    <div class="record-main-number">50%</div>
                 </div>
 
                 <div>
@@ -1021,21 +918,10 @@
             </div>
 
             <div class="championships">
-
-                <div class="championships-grid">
-
-                    <div>
-                        <div class="championships-label">Championship Years</div>
-                        <div class="championship-list">None</div>
-                    </div>
-
-                    <div>
-                        <div class="championships-label">Championship Appearances</div>
-                        <div class="championship-list">0</div>
-                    </div>
-
+                <div class="championships-label">Championships</div>
+                <div class="championship-list">
+                    None
                 </div>
-
             </div>
 
         </div>
@@ -1057,9 +943,9 @@
                     <div class="record-main-number">34-36</div>
                 </div>
 
-                <div>
-                    <div class="manager-stat-label">Win Percentage</div>
-                    <div class="manager-stat-value">48%</div>
+                <div class="record-main">
+                    <div class="record-main-label">Win Percentage</div>
+                    <div class="record-main-number">48%</div>
                 </div>
 
                 <div>
@@ -1095,21 +981,10 @@
             </div>
 
             <div class="championships">
-
-                <div class="championships-grid">
-
-                    <div>
-                        <div class="championships-label">Championship Years</div>
-                        <div class="championship-list">2025</div>
-                    </div>
-
-                    <div>
-                        <div class="championships-label">Championship Appearances</div>
-                        <div class="championship-list">2</div>
-                    </div>
-
+                <div class="championships-label">Championships</div>
+                <div class="championship-list">
+                    2025
                 </div>
-
             </div>
 
         </div>
@@ -1131,9 +1006,9 @@
                     <div class="record-main-number">33-23</div>
                 </div>
 
-                <div>
-                    <div class="manager-stat-label">Win Percentage</div>
-                    <div class="manager-stat-value">58%</div>
+                <div class="record-main">
+                    <div class="record-main-label">Win Percentage</div>
+                    <div class="record-main-number">58%</div>
                 </div>
 
                 <div>
@@ -1169,21 +1044,10 @@
             </div>
 
             <div class="championships">
-
-                <div class="championships-grid">
-
-                    <div>
-                        <div class="championships-label">Championship Years</div>
-                        <div class="championship-list">2022 · Co-Champion</div>
-                    </div>
-
-                    <div>
-                        <div class="championships-label">Championship Appearances</div>
-                        <div class="championship-list">3</div>
-                    </div>
-
+                <div class="championships-label">Championships</div>
+                <div class="championship-list">
+                    2022 · Co-Champion
                 </div>
-
             </div>
 
         </div>
@@ -1205,9 +1069,9 @@
                     <div class="record-main-number">19-22-1</div>
                 </div>
 
-                <div>
-                    <div class="manager-stat-label">Win Percentage</div>
-                    <div class="manager-stat-value">46%</div>
+                <div class="record-main">
+                    <div class="record-main-label">Win Percentage</div>
+                    <div class="record-main-number">46%</div>
                 </div>
 
                 <div>
@@ -1243,21 +1107,10 @@
             </div>
 
             <div class="championships">
-
-                <div class="championships-grid">
-
-                    <div>
-                        <div class="championships-label">Championship Years</div>
-                        <div class="championship-list">None</div>
-                    </div>
-
-                    <div>
-                        <div class="championships-label">Championship Appearances</div>
-                        <div class="championship-list">0</div>
-                    </div>
-
+                <div class="championships-label">Championships</div>
+                <div class="championship-list">
+                    None
                 </div>
-
             </div>
 
         </div>
@@ -1279,9 +1132,9 @@
                     <div class="record-main-number">11-17</div>
                 </div>
 
-                <div>
-                    <div class="manager-stat-label">Win Percentage</div>
-                    <div class="manager-stat-value">39%</div>
+                <div class="record-main">
+                    <div class="record-main-label">Win Percentage</div>
+                    <div class="record-main-number">39%</div>
                 </div>
 
                 <div>
@@ -1317,21 +1170,10 @@
             </div>
 
             <div class="championships">
-
-                <div class="championships-grid">
-
-                    <div>
-                        <div class="championships-label">Championship Years</div>
-                        <div class="championship-list">None</div>
-                    </div>
-
-                    <div>
-                        <div class="championships-label">Championship Appearances</div>
-                        <div class="championship-list">0</div>
-                    </div>
-
+                <div class="championships-label">Championships</div>
+                <div class="championship-list">
+                    None
                 </div>
-
             </div>
 
         </div>
@@ -1347,4 +1189,3 @@
 
 </body>
 </html>
-```
