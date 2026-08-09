@@ -141,6 +141,60 @@
             margin-top: 4px;
         }
 
+        /* MATCHUP FACTS */
+
+        .matchup-facts {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .matchup-fact {
+            background: #151c24;
+            border: 1px solid #27313b;
+            border-radius: 12px;
+            padding: 26px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .matchup-fact::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: #68747e;
+        }
+
+        .matchup-fact-label {
+            color: #8f9aa4;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .matchup-fact-title {
+            font-size: 24px;
+            font-weight: 800;
+            margin-bottom: 6px;
+        }
+
+        .matchup-fact-record {
+            color: #f5f5f5;
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        .matchup-fact-description {
+            color: #8f9aa4;
+            font-size: 13px;
+            margin-top: 5px;
+        }
+
         /* PANELS */
 
         .panel {
@@ -384,6 +438,10 @@
                 grid-template-columns: repeat(2, 1fr);
             }
 
+            .matchup-facts {
+                grid-template-columns: 1fr;
+            }
+
             .record-grid {
                 grid-template-columns: 1fr;
             }
@@ -470,6 +528,58 @@
             <div class="stat-label">Highest Championship Score</div>
             <div class="stat-number">177</div>
             <div class="stat-description">Ryan Herbst · 2014</div>
+        </div>
+
+    </div>
+
+
+    <!-- MATCHUP FACTS -->
+
+    <h2 class="section-title">Matchup Facts</h2>
+
+    <div class="matchup-facts">
+
+        <div class="matchup-fact">
+
+            <div class="matchup-fact-label">
+                Most Even Matchup
+            </div>
+
+            <div class="matchup-fact-title">
+                Historical Data Pending
+            </div>
+
+            <div class="matchup-fact-record">
+                —
+            </div>
+
+            <div class="matchup-fact-description">
+                Will identify the two managers with the closest
+                head-to-head winning percentages.
+            </div>
+
+        </div>
+
+
+        <div class="matchup-fact">
+
+            <div class="matchup-fact-label">
+                Most Lopsided Matchup
+            </div>
+
+            <div class="matchup-fact-title">
+                Historical Data Pending
+            </div>
+
+            <div class="matchup-fact-record">
+                —
+            </div>
+
+            <div class="matchup-fact-description">
+                Will identify the manager pair with the largest
+                head-to-head winning percentage gap.
+            </div>
+
         </div>
 
     </div>
