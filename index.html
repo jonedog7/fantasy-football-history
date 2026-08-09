@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -67,10 +68,12 @@
             color: white;
         }
 
+        /* HERO */
+
         .hero {
             max-width: 1200px;
             margin: auto;
-            padding: 80px 30px 60px;
+            padding: 75px 30px 55px;
         }
 
         .eyebrow {
@@ -83,22 +86,24 @@
         }
 
         .hero h1 {
-            font-size: clamp(44px, 7vw, 78px);
+            font-size: clamp(42px, 7vw, 76px);
             line-height: .95;
             letter-spacing: -3px;
-            margin-bottom: 20px;
+            margin-bottom: 18px;
         }
 
         .hero p {
             color: #aeb8c1;
-            max-width: 700px;
+            max-width: 650px;
             font-size: 17px;
         }
+
+        /* CONTENT */
 
         .container {
             max-width: 1200px;
             margin: auto;
-            padding: 0 30px 80px;
+            padding: 0 30px 70px;
         }
 
         .section-title {
@@ -106,15 +111,7 @@
             margin: 50px 0 20px;
         }
 
-        .section-intro {
-            color: #8f9aa4;
-            max-width: 750px;
-            margin-top: -10px;
-            margin-bottom: 22px;
-            font-size: 14px;
-        }
-
-        /* OVERVIEW */
+        /* STAT CARDS */
 
         .stats {
             display: grid;
@@ -154,28 +151,34 @@
         .manager-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 12px;
+            gap: 15px;
         }
 
         .manager-card {
             background: #151c24;
             border: 1px solid #27313b;
-            border-radius: 10px;
-            padding: 18px;
+            border-radius: 12px;
+            padding: 20px;
         }
 
         .manager-name {
             font-weight: 700;
-            font-size: 15px;
+            font-size: 16px;
         }
 
         .manager-meta {
-            color: #7f8a94;
+            color: #8f9aa4;
             font-size: 12px;
             margin-top: 5px;
         }
 
-        /* CHAMPIONSHIP HISTORY */
+        /* FEATURE GRID */
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
 
         .panel {
             background: #151c24;
@@ -201,9 +204,11 @@
             font-size: 12px;
         }
 
+        /* CHAMPIONS */
+
         .champion {
-            display: grid;
-            grid-template-columns: 80px 1fr 150px;
+            display: flex;
+            justify-content: space-between;
             align-items: center;
             padding: 15px 22px;
             border-bottom: 1px solid #222b34;
@@ -214,31 +219,21 @@
         }
 
         .champion-year {
+            width: 55px;
             color: #8f9aa4;
             font-weight: 700;
         }
 
         .champion-team {
+            flex: 1;
             font-weight: 700;
         }
 
-        .champion-score {
-            color: #8f9aa4;
-            font-size: 12px;
-            text-align: right;
-        }
-
-        /* LEADERS */
-
-        .leaders {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
+        /* LEADERBOARD */
 
         .leaderboard-row {
             display: grid;
-            grid-template-columns: 45px 1fr 100px;
+            grid-template-columns: 45px 1fr 80px;
             align-items: center;
             padding: 16px 22px;
             border-bottom: 1px solid #222b34;
@@ -253,15 +248,17 @@
             font-weight: 700;
         }
 
-        .leader-name {
+        .team-name {
             font-weight: 700;
         }
 
-        .leader-stat {
+        .record {
             text-align: right;
             color: #aeb8c1;
             font-size: 13px;
         }
+
+        /* FOOTER */
 
         footer {
             border-top: 1px solid #27313b;
@@ -271,13 +268,15 @@
             font-size: 12px;
         }
 
+        /* MOBILE */
+
         @media (max-width: 900px) {
 
             .manager-grid {
-                grid-template-columns: repeat(3, 1fr);
+                grid-template-columns: repeat(2, 1fr);
             }
 
-            .leaders {
+            .feature-grid {
                 grid-template-columns: 1fr;
             }
         }
@@ -306,25 +305,21 @@
             }
 
             .hero {
-                padding: 55px 20px 45px;
+                padding: 50px 20px 40px;
             }
 
             .container {
-                padding: 0 20px 60px;
+                padding: 0 20px 50px;
             }
 
             .stats {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .manager-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
         }
 
         @media (max-width: 500px) {
 
-            .stats {
+            .manager-grid {
                 grid-template-columns: 1fr 1fr;
             }
 
@@ -334,29 +329,6 @@
 
             .stat-number {
                 font-size: 27px;
-            }
-
-            .manager-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .manager-card {
-                padding: 15px;
-            }
-
-            .manager-name {
-                font-size: 14px;
-            }
-
-            .champion {
-                grid-template-columns: 55px 1fr;
-                gap: 5px;
-            }
-
-            .champion-score {
-                grid-column: 2;
-                text-align: left;
-                font-size: 11px;
             }
         }
     </style>
@@ -395,9 +367,9 @@
     <h1>Kevin Durant<br>League.</h1>
 
     <p>
-        The complete history of our fantasy football league.
-        Four managers started it in 2013. Twelve compete today.
-        This is the archive of everything in between.
+        The complete history of our Yahoo Fantasy Football league.
+        Championships, rivalries, records, heartbreaks and everything
+        in between.
     </p>
 
 </section>
@@ -406,14 +378,20 @@
 <main class="container">
 
 
-    <!-- LEAGUE OVERVIEW -->
+    <!-- THE LEAGUE -->
 
     <h2 class="section-title">The League</h2>
 
     <div class="stats">
 
         <div class="stat-card">
-            <div class="stat-label">Years Running</div>
+            <div class="stat-label">Founded</div>
+            <div class="stat-number">2013</div>
+            <div class="stat-description">League established</div>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-label">14 Years Running</div>
             <div class="stat-number">14</div>
             <div class="stat-description">2013–2026</div>
         </div>
@@ -421,19 +399,13 @@
         <div class="stat-card">
             <div class="stat-label">Current Managers</div>
             <div class="stat-number">12</div>
-            <div class="stat-description">2026 league</div>
-        </div>
-
-        <div class="stat-card">
-            <div class="stat-label">Founded</div>
-            <div class="stat-number">2013</div>
-            <div class="stat-description">First season</div>
+            <div class="stat-description">Current league size</div>
         </div>
 
         <div class="stat-card">
             <div class="stat-label">Current Season</div>
             <div class="stat-number">2026</div>
-            <div class="stat-description">In progress</div>
+            <div class="stat-description">Season in progress</div>
         </div>
 
     </div>
@@ -441,311 +413,280 @@
 
     <!-- CURRENT MANAGERS -->
 
-    <section>
+    <h2 class="section-title">Current Managers</h2>
 
-        <h2 class="section-title">Current Managers</h2>
+    <div class="manager-grid">
 
-        <p class="section-intro">
-            The 12 managers competing in the Kevin Durant League in 2026.
-        </p>
-
-        <div class="manager-grid">
-
-            <div class="manager-card">
-                <div class="manager-name">Christian Abert</div>
-                <div class="manager-meta">Member since 2013</div>
-            </div>
-
-            <div class="manager-card">
-                <div class="manager-name">Ryan Herbst</div>
-                <div class="manager-meta">Member since 2013</div>
-            </div>
-
-            <div class="manager-card">
-                <div class="manager-name">Nic Maiorano</div>
-                <div class="manager-meta">Member since 2013</div>
-            </div>
-
-            <div class="manager-card">
-                <div class="manager-name">Bailey Martin</div>
-                <div class="manager-meta">2013–2018 · Rejoined 2026</div>
-            </div>
-
-            <div class="manager-card">
-                <div class="manager-name">Jonah Wheeler</div>
-                <div class="manager-meta">Member since 2014</div>
-            </div>
-
-            <div class="manager-card">
-                <div class="manager-name">Tommy Herbst</div>
-                <div class="manager-meta">Member since 2014</div>
-            </div>
-
-            <div class="manager-card">
-                <div class="manager-name">Michael Gravante</div>
-                <div class="manager-meta">Member since 2016</div>
-            </div>
-
-            <div class="manager-card">
-                <div class="manager-name">Mike Herbst</div>
-                <div class="manager-meta">Member since 2019</div>
-            </div>
-
-            <div class="manager-card">
-                <div class="manager-name">William Darrow</div>
-                <div class="manager-meta">Member since 2021</div>
-            </div>
-
-            <div class="manager-card">
-                <div class="manager-name">Julia Wheeler</div>
-                <div class="manager-meta">Member since 2022</div>
-            </div>
-
-            <div class="manager-card">
-                <div class="manager-name">Mike Darrow</div>
-                <div class="manager-meta">Member since 2023</div>
-            </div>
-
-            <div class="manager-card">
-                <div class="manager-name">Nick Femano</div>
-                <div class="manager-meta">Member since 2024</div>
-            </div>
-
+        <div class="manager-card">
+            <div class="manager-name">Christian Abert</div>
+            <div class="manager-meta">Member since 2013</div>
         </div>
 
-    </section>
-
-
-    <!-- CHAMPIONSHIP HISTORY -->
-
-    <section>
-
-        <h2 class="section-title">Championship History</h2>
-
-        <p class="section-intro">
-            Every championship in Kevin Durant League history.
-        </p>
-
-        <div class="panel">
-
-            <div class="panel-header">
-                <h3>League Champions</h3>
-                <span>2013–2025</span>
-            </div>
-
-            <div class="champion">
-                <div class="champion-year">2025</div>
-                <div class="champion-team">William Darrow</div>
-                <div class="champion-score">151–114 over Julia Wheeler</div>
-            </div>
-
-            <div class="champion">
-                <div class="champion-year">2024</div>
-                <div class="champion-team">Jonah Wheeler</div>
-                <div class="champion-score">176–136 over Julia Wheeler</div>
-            </div>
-
-            <div class="champion">
-                <div class="champion-year">2023</div>
-                <div class="champion-team">Tommy Herbst</div>
-                <div class="champion-score">134–97 over William Darrow</div>
-            </div>
-
-            <div class="champion">
-                <div class="champion-year">2022</div>
-                <div class="champion-team">Ryan Herbst & Julia Wheeler</div>
-                <div class="champion-score">116–97 · Co-champions</div>
-            </div>
-
-            <div class="champion">
-                <div class="champion-year">2021</div>
-                <div class="champion-team">Michael Gravante</div>
-                <div class="champion-score">121–102 over Jonah Wheeler</div>
-            </div>
-
-            <div class="champion">
-                <div class="champion-year">2020</div>
-                <div class="champion-team">Nic Maiorano</div>
-                <div class="champion-score">173–129 over Jonah Wheeler</div>
-            </div>
-
-            <div class="champion">
-                <div class="champion-year">2019</div>
-                <div class="champion-team">Ryan Herbst</div>
-                <div class="champion-score">163–149 over Tommy Herbst</div>
-            </div>
-
-            <div class="champion">
-                <div class="champion-year">2018</div>
-                <div class="champion-team">Christian Abert</div>
-                <div class="champion-score">163–156 over Ryan Herbst</div>
-            </div>
-
-            <div class="champion">
-                <div class="champion-year">2017</div>
-                <div class="champion-team">Christian Abert</div>
-                <div class="champion-score">101–94 over Bailey Martin</div>
-            </div>
-
-            <div class="champion">
-                <div class="champion-year">2016</div>
-                <div class="champion-team">Ryan Herbst</div>
-                <div class="champion-score">141–138 over Jonah Wheeler</div>
-            </div>
-
-            <div class="champion">
-                <div class="champion-year">2015</div>
-                <div class="champion-team">Bailey Martin</div>
-                <div class="champion-score">105–104 over Ryan Herbst</div>
-            </div>
-
-            <div class="champion">
-                <div class="champion-year">2014</div>
-                <div class="champion-team">Ryan Herbst</div>
-                <div class="champion-score">177–125 over Bailey Martin</div>
-            </div>
-
-            <div class="champion">
-                <div class="champion-year">2013</div>
-                <div class="champion-team">Ryan Herbst</div>
-                <div class="champion-score">144–124 over Nic Maiorano</div>
-            </div>
-
+        <div class="manager-card">
+            <div class="manager-name">Ryan Herbst</div>
+            <div class="manager-meta">Member since 2013</div>
         </div>
 
-    </section>
+        <div class="manager-card">
+            <div class="manager-name">Nic Maiorano</div>
+            <div class="manager-meta">Member since 2013</div>
+        </div>
+
+        <div class="manager-card">
+            <div class="manager-name">Bailey Martin</div>
+            <div class="manager-meta">Member since 2013–2018, 2026</div>
+        </div>
+
+        <div class="manager-card">
+            <div class="manager-name">Jonah Wheeler</div>
+            <div class="manager-meta">Member since 2014</div>
+        </div>
+
+        <div class="manager-card">
+            <div class="manager-name">Tommy Herbst</div>
+            <div class="manager-meta">Member since 2014</div>
+        </div>
+
+        <div class="manager-card">
+            <div class="manager-name">Michael Gravante</div>
+            <div class="manager-meta">Member since 2016</div>
+        </div>
+
+        <div class="manager-card">
+            <div class="manager-name">Mike Herbst</div>
+            <div class="manager-meta">Member since 2019</div>
+        </div>
+
+        <div class="manager-card">
+            <div class="manager-name">William Darrow</div>
+            <div class="manager-meta">Member since 2021</div>
+        </div>
+
+        <div class="manager-card">
+            <div class="manager-name">Julia Wheeler</div>
+            <div class="manager-meta">Member since 2022</div>
+        </div>
+
+        <div class="manager-card">
+            <div class="manager-name">Mike Darrow</div>
+            <div class="manager-meta">Member since 2023</div>
+        </div>
+
+        <div class="manager-card">
+            <div class="manager-name">Nick Femano</div>
+            <div class="manager-meta">Member since 2024</div>
+        </div>
+
+    </div>
 
 
-    <!-- CAREER LEADERS -->
+    <!-- CHAMPIONS & CAREER LEADERS -->
 
-    <section>
+    <div class="feature-grid">
 
-        <h2 class="section-title">Career Leaders</h2>
+        <section>
 
-        <p class="section-intro">
-            Regular-season and playoff success throughout league history.
-            Career regular-season records are through the 2025 season.
-        </p>
-
-        <div class="leaders">
-
-
-            <!-- REGULAR SEASON WINS -->
+            <h2 class="section-title">Championship History</h2>
 
             <div class="panel">
 
                 <div class="panel-header">
-                    <h3>Regular-Season Wins</h3>
-                    <span>All-Time</span>
+                    <h3>League Champions</h3>
+                    <span>2013–2025</span>
                 </div>
 
-                <div class="leaderboard-row">
-                    <div class="rank">01</div>
-                    <div class="leader-name">Nic Maiorano</div>
-                    <div class="leader-stat">91 wins</div>
+                <div class="champion">
+                    <div class="champion-year">2025</div>
+                    <div class="champion-team">William Darrow</div>
                 </div>
 
-                <div class="leaderboard-row">
-                    <div class="rank">02</div>
-                    <div class="leader-name">Jonah Wheeler</div>
-                    <div class="leader-stat">90 wins</div>
+                <div class="champion">
+                    <div class="champion-year">2024</div>
+                    <div class="champion-team">Jonah Wheeler</div>
                 </div>
 
-                <div class="leaderboard-row">
-                    <div class="rank">03</div>
-                    <div class="leader-name">Ryan Herbst</div>
-                    <div class="leader-stat">88 wins</div>
+                <div class="champion">
+                    <div class="champion-year">2023</div>
+                    <div class="champion-team">Tommy Herbst</div>
                 </div>
 
-                <div class="leaderboard-row">
-                    <div class="rank">04</div>
-                    <div class="leader-name">Christian Abert</div>
-                    <div class="leader-stat">81 wins</div>
+                <div class="champion">
+                    <div class="champion-year">2022</div>
+                    <div class="champion-team">Ryan Herbst & Julia Wheeler</div>
                 </div>
 
-                <div class="leaderboard-row">
-                    <div class="rank">05</div>
-                    <div class="leader-name">Mike Herbst</div>
-                    <div class="leader-stat">81 wins</div>
+                <div class="champion">
+                    <div class="champion-year">2021</div>
+                    <div class="champion-team">Michael Gravante</div>
                 </div>
 
-                <div class="leaderboard-row">
-                    <div class="rank">06</div>
-                    <div class="leader-name">Tommy Herbst</div>
-                    <div class="leader-stat">78 wins</div>
+                <div class="champion">
+                    <div class="champion-year">2020</div>
+                    <div class="champion-team">Nic Maiorano</div>
                 </div>
 
-                <div class="leaderboard-row">
-                    <div class="rank">07</div>
-                    <div class="leader-name">Michael Gravante</div>
-                    <div class="leader-stat">67 wins</div>
+                <div class="champion">
+                    <div class="champion-year">2019</div>
+                    <div class="champion-team">Ryan Herbst</div>
+                </div>
+
+                <div class="champion">
+                    <div class="champion-year">2018</div>
+                    <div class="champion-team">Christian Abert</div>
+                </div>
+
+                <div class="champion">
+                    <div class="champion-year">2017</div>
+                    <div class="champion-team">Christian Abert</div>
+                </div>
+
+                <div class="champion">
+                    <div class="champion-year">2016</div>
+                    <div class="champion-team">Ryan Herbst</div>
+                </div>
+
+                <div class="champion">
+                    <div class="champion-year">2015</div>
+                    <div class="champion-team">Bailey Martin</div>
+                </div>
+
+                <div class="champion">
+                    <div class="champion-year">2014</div>
+                    <div class="champion-team">Ryan Herbst</div>
+                </div>
+
+                <div class="champion">
+                    <div class="champion-year">2013</div>
+                    <div class="champion-team">Ryan Herbst</div>
                 </div>
 
             </div>
 
+        </section>
 
-            <!-- PLAYOFF WINS -->
+
+        <section>
+
+            <h2 class="section-title">Career Leaders</h2>
 
             <div class="panel">
 
                 <div class="panel-header">
-                    <h3>Playoff Wins</h3>
-                    <span>All-Time</span>
+                    <h3>Career Wins</h3>
+                    <span>Top 8</span>
                 </div>
 
                 <div class="leaderboard-row">
                     <div class="rank">01</div>
-                    <div class="leader-name">Ryan Herbst</div>
-                    <div class="leader-stat">15 wins</div>
+                    <div class="team-name">Nic Maiorano</div>
+                    <div class="record">91</div>
                 </div>
 
                 <div class="leaderboard-row">
                     <div class="rank">02</div>
-                    <div class="leader-name">Jonah Wheeler</div>
-                    <div class="leader-stat">9 wins</div>
+                    <div class="team-name">Jonah Wheeler</div>
+                    <div class="record">90</div>
                 </div>
 
                 <div class="leaderboard-row">
                     <div class="rank">03</div>
-                    <div class="leader-name">Nic Maiorano</div>
-                    <div class="leader-stat">5 wins</div>
+                    <div class="team-name">Ryan Herbst</div>
+                    <div class="record">88</div>
                 </div>
 
                 <div class="leaderboard-row">
                     <div class="rank">04</div>
-                    <div class="leader-name">Michael Gravante</div>
-                    <div class="leader-stat">5 wins</div>
+                    <div class="team-name">Christian Abert</div>
+                    <div class="record">81</div>
                 </div>
 
                 <div class="leaderboard-row">
                     <div class="rank">05</div>
-                    <div class="leader-name">Christian Abert</div>
-                    <div class="leader-stat">4 wins</div>
+                    <div class="team-name">Mike Herbst</div>
+                    <div class="record">81</div>
                 </div>
 
                 <div class="leaderboard-row">
                     <div class="rank">06</div>
-                    <div class="leader-name">Tommy Herbst</div>
-                    <div class="leader-stat">4 wins</div>
+                    <div class="team-name">Tommy Herbst</div>
+                    <div class="record">78</div>
                 </div>
 
                 <div class="leaderboard-row">
                     <div class="rank">07</div>
-                    <div class="leader-name">Bailey Martin</div>
-                    <div class="leader-stat">4 wins</div>
+                    <div class="team-name">Michael Gravante</div>
+                    <div class="record">67</div>
                 </div>
 
                 <div class="leaderboard-row">
                     <div class="rank">08</div>
-                    <div class="leader-name">William Darrow</div>
-                    <div class="leader-stat">3 wins</div>
+                    <div class="team-name">Bailey Martin</div>
+                    <div class="record">39</div>
                 </div>
 
             </div>
 
-        </div>
 
-    </section>
+            <div class="panel" style="margin-top: 20px;">
+
+                <div class="panel-header">
+                    <h3>Career Playoff Wins</h3>
+                    <span>Top 8</span>
+                </div>
+
+                <div class="leaderboard-row">
+                    <div class="rank">01</div>
+                    <div class="team-name">Ryan Herbst</div>
+                    <div class="record">15</div>
+                </div>
+
+                <div class="leaderboard-row">
+                    <div class="rank">02</div>
+                    <div class="team-name">Nic Maiorano</div>
+                    <div class="record">5</div>
+                </div>
+
+                <div class="leaderboard-row">
+                    <div class="rank">03</div>
+                    <div class="team-name">Michael Gravante</div>
+                    <div class="record">5</div>
+                </div>
+
+                <div class="leaderboard-row">
+                    <div class="rank">04</div>
+                    <div class="team-name">Jonah Wheeler</div>
+                    <div class="record">9</div>
+                </div>
+
+                <div class="leaderboard-row">
+                    <div class="rank">05</div>
+                    <div class="team-name">Christian Abert</div>
+                    <div class="record">4</div>
+                </div>
+
+                <div class="leaderboard-row">
+                    <div class="rank">06</div>
+                    <div class="team-name">Bailey Martin</div>
+                    <div class="record">4</div>
+                </div>
+
+                <div class="leaderboard-row">
+                    <div class="rank">07</div>
+                    <div class="team-name">Tommy Herbst</div>
+                    <div class="record">4</div>
+                </div>
+
+                <div class="leaderboard-row">
+                    <div class="rank">08</div>
+                    <div class="team-name">Julia Wheeler</div>
+                    <div class="record">5</div>
+                </div>
+
+            </div>
+
+        </section>
+
+    </div>
 
 
 </main>
@@ -757,3 +698,4 @@
 
 </body>
 </html>
+```
