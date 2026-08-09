@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -222,9 +223,19 @@
             display: none;
         }
 
+        /* CHAMPIONSHIPS */
+
         .championships {
             border-top: 1px solid #27313b;
-            padding: 20px 22px;
+            padding: 18px 22px 20px;
+        }
+
+        .championships-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 15px;
+            margin-bottom: 8px;
         }
 
         .championships-label {
@@ -233,13 +244,60 @@
             text-transform: uppercase;
             letter-spacing: 1px;
             font-weight: 700;
-            margin-bottom: 8px;
+        }
+
+        .championship-appearances {
+            color: #7f8a94;
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 700;
+            white-space: nowrap;
         }
 
         .championship-list {
             color: #cbd2d8;
             font-size: 13px;
             line-height: 1.7;
+        }
+
+        /* FORMER MANAGERS */
+
+        .former-manager-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+
+        .former-manager-card {
+            background: #151c24;
+            border: 1px solid #27313b;
+            border-radius: 10px;
+            padding: 17px 18px;
+        }
+
+        .former-manager-name {
+            font-size: 15px;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+
+        .former-manager-detail {
+            color: #8f9aa4;
+            font-size: 11px;
+            line-height: 1.7;
+        }
+
+        .former-manager-detail strong {
+            color: #cbd2d8;
+            font-weight: 600;
+        }
+
+        .former-manager-intro {
+            color: #8f9aa4;
+            font-size: 13px;
+            margin-top: -10px;
+            margin-bottom: 20px;
         }
 
         /* FOOTER */
@@ -262,6 +320,10 @@
 
             .manager-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .former-manager-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
         }
 
@@ -297,6 +359,10 @@
             .container {
                 padding: 0 20px 50px;
             }
+
+            .former-manager-grid {
+                grid-template-columns: 1fr 1fr;
+            }
         }
 
         @media (max-width: 450px) {
@@ -311,6 +377,16 @@
 
             .stat-number {
                 font-size: 25px;
+            }
+
+            .former-manager-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .championships-header {
+                align-items: flex-start;
+                flex-direction: column;
+                gap: 2px;
             }
         }
     </style>
@@ -398,7 +474,7 @@
         <div class="stat-card">
             <div class="stat-label">Most #1 Seeds</div>
             <div class="stat-number">3</div>
-            <div class="stat-description">Jonah & Tommy</div>
+            <div class="stat-description">Jonah &amp; Tommy</div>
         </div>
 
         <div class="stat-card">
@@ -471,10 +547,16 @@
             </div>
 
             <div class="championships">
-                <div class="championships-label">Championships</div>
+
+                <div class="championships-header">
+                    <div class="championships-label">Championships</div>
+                    <div class="championship-appearances">2 Appearances</div>
+                </div>
+
                 <div class="championship-list">
                     2017 · 2018
                 </div>
+
             </div>
 
         </div>
@@ -534,10 +616,16 @@
             </div>
 
             <div class="championships">
-                <div class="championships-label">Championships</div>
+
+                <div class="championships-header">
+                    <div class="championships-label">Championships</div>
+                    <div class="championship-appearances">7 Appearances</div>
+                </div>
+
                 <div class="championship-list">
                     2013 · 2014 · 2016 · 2019 · 2022
                 </div>
+
             </div>
 
         </div>
@@ -597,10 +685,16 @@
             </div>
 
             <div class="championships">
-                <div class="championships-label">Championships</div>
+
+                <div class="championships-header">
+                    <div class="championships-label">Championships</div>
+                    <div class="championship-appearances">2 Appearances</div>
+                </div>
+
                 <div class="championship-list">
                     2020
                 </div>
+
             </div>
 
         </div>
@@ -612,7 +706,7 @@
 
             <div class="manager-header">
                 <div class="manager-name">Bailey Martin</div>
-                <div class="manager-subtitle">Member since 2013-2018, 2026</div>
+                <div class="manager-subtitle">Member since 2013–2018, 2026</div>
             </div>
 
             <div class="manager-record">
@@ -660,10 +754,16 @@
             </div>
 
             <div class="championships">
-                <div class="championships-label">Championships</div>
+
+                <div class="championships-header">
+                    <div class="championships-label">Championships</div>
+                    <div class="championship-appearances">3 Appearances</div>
+                </div>
+
                 <div class="championship-list">
                     2015
                 </div>
+
             </div>
 
         </div>
@@ -723,10 +823,16 @@
             </div>
 
             <div class="championships">
-                <div class="championships-label">Championships</div>
+
+                <div class="championships-header">
+                    <div class="championships-label">Championships</div>
+                    <div class="championship-appearances">4 Appearances</div>
+                </div>
+
                 <div class="championship-list">
                     2024
                 </div>
+
             </div>
 
         </div>
@@ -786,10 +892,16 @@
             </div>
 
             <div class="championships">
-                <div class="championships-label">Championships</div>
+
+                <div class="championships-header">
+                    <div class="championships-label">Championships</div>
+                    <div class="championship-appearances">2 Appearances</div>
+                </div>
+
                 <div class="championship-list">
                     2023
                 </div>
+
             </div>
 
         </div>
@@ -849,10 +961,16 @@
             </div>
 
             <div class="championships">
-                <div class="championships-label">Championships</div>
+
+                <div class="championships-header">
+                    <div class="championships-label">Championships</div>
+                    <div class="championship-appearances">1 Appearance</div>
+                </div>
+
                 <div class="championship-list">
                     2021
                 </div>
+
             </div>
 
         </div>
@@ -912,10 +1030,16 @@
             </div>
 
             <div class="championships">
-                <div class="championships-label">Championships</div>
+
+                <div class="championships-header">
+                    <div class="championships-label">Championships</div>
+                    <div class="championship-appearances">0 Appearances</div>
+                </div>
+
                 <div class="championship-list">
                     None
                 </div>
+
             </div>
 
         </div>
@@ -975,10 +1099,16 @@
             </div>
 
             <div class="championships">
-                <div class="championships-label">Championships</div>
+
+                <div class="championships-header">
+                    <div class="championships-label">Championships</div>
+                    <div class="championship-appearances">2 Appearances</div>
+                </div>
+
                 <div class="championship-list">
                     2025
                 </div>
+
             </div>
 
         </div>
@@ -1038,10 +1168,16 @@
             </div>
 
             <div class="championships">
-                <div class="championships-label">Championships</div>
+
+                <div class="championships-header">
+                    <div class="championships-label">Championships</div>
+                    <div class="championship-appearances">3 Appearances</div>
+                </div>
+
                 <div class="championship-list">
                     2022 · Co-Champion
                 </div>
+
             </div>
 
         </div>
@@ -1101,10 +1237,16 @@
             </div>
 
             <div class="championships">
-                <div class="championships-label">Championships</div>
+
+                <div class="championships-header">
+                    <div class="championships-label">Championships</div>
+                    <div class="championship-appearances">0 Appearances</div>
+                </div>
+
                 <div class="championship-list">
                     None
                 </div>
+
             </div>
 
         </div>
@@ -1164,10 +1306,88 @@
             </div>
 
             <div class="championships">
-                <div class="championships-label">Championships</div>
+
+                <div class="championships-header">
+                    <div class="championships-label">Championships</div>
+                    <div class="championship-appearances">0 Appearances</div>
+                </div>
+
                 <div class="championship-list">
                     None
                 </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- FORMER MANAGERS -->
+
+    <h2 class="section-title">Former Managers</h2>
+
+    <p class="former-manager-intro">
+        Taz, Dylan, Joey and Logan are part of the history of the Kevin Durant League.
+    </p>
+
+    <div class="former-manager-grid">
+
+        <div class="former-manager-card">
+
+            <div class="former-manager-name">Taz Josh</div>
+
+            <div class="former-manager-detail">
+                <strong>Active:</strong> 2016–2020, 2023
+            </div>
+
+            <div class="former-manager-detail">
+                <strong>Record:</strong> 39-39-2
+            </div>
+
+        </div>
+
+
+        <div class="former-manager-card">
+
+            <div class="former-manager-name">Dylan Stellmack</div>
+
+            <div class="former-manager-detail">
+                <strong>Active:</strong> 2021
+            </div>
+
+            <div class="former-manager-detail">
+                <strong>Record:</strong> 7-7
+            </div>
+
+        </div>
+
+
+        <div class="former-manager-card">
+
+            <div class="former-manager-name">Joey Russo</div>
+
+            <div class="former-manager-detail">
+                <strong>Active:</strong> 2021–2022
+            </div>
+
+            <div class="former-manager-detail">
+                <strong>Record:</strong> 13-16
+            </div>
+
+        </div>
+
+
+        <div class="former-manager-card">
+
+            <div class="former-manager-name">Logan Gardner</div>
+
+            <div class="former-manager-detail">
+                <strong>Active:</strong> 2023–2025
+            </div>
+
+            <div class="former-manager-detail">
+                <strong>Record:</strong> 22-20
             </div>
 
         </div>
@@ -1183,3 +1403,4 @@
 
 </body>
 </html>
+```
