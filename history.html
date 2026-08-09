@@ -244,7 +244,7 @@
             margin-top: 0;
             padding: 14px 22px 18px;
             position: relative;
-            min-height: 145px;
+            height: 145px;
             overflow: hidden;
         }
 
@@ -255,20 +255,31 @@
             letter-spacing: 1.5px;
             font-weight: 700;
             margin-bottom: 0;
+            position: relative;
+            z-index: 3;
         }
 
+        /*
+         * MVP CONTENT
+         *
+         * The player image remains anchored to the bottom of
+         * the card and can extend slightly below the section.
+         *
+         * The name/points are positioned higher so they sit
+         * naturally underneath the MVP heading.
+         */
+
         .mvp-content {
-            display: flex;
-            align-items: flex-end;
-            justify-content: space-between;
-            min-height: 105px;
-            margin-top: -2px;
+            position: relative;
+            height: 120px;
+            margin-top: 0;
         }
 
         .mvp-info {
-            position: relative;
-            z-index: 2;
-            padding-bottom: 5px;
+            position: absolute;
+            left: 0;
+            top: 28px;
+            z-index: 3;
             max-width: 58%;
         }
 
@@ -285,15 +296,20 @@
             font-weight: 600;
         }
 
+        /*
+         * Image stays tied to the bottom of the MVP outline.
+         * It is NOT vertically centered, which prevents the
+         * lower half of a player cutout from appearing to float.
+         */
+
         .mvp-image {
+            position: absolute;
             width: 125px;
             height: 125px;
             object-fit: contain;
             object-position: bottom center;
-            align-self: flex-end;
-            margin-right: -5px;
-            margin-bottom: -18px;
-            position: relative;
+            right: -5px;
+            bottom: -18px;
             z-index: 1;
         }
 
@@ -301,7 +317,7 @@
             color: #68747e;
             font-size: 12px;
             font-style: italic;
-            margin-top: 5px;
+            margin-top: 8px;
         }
 
         /* FOOTER */
@@ -383,13 +399,21 @@
                 font-size: 27px;
             }
 
+            /*
+             * Slightly smaller mobile headshot, while keeping
+             * the bottom anchoring identical.
+             */
+
             .mvp-image {
                 width: 110px;
                 height: 110px;
+                right: -3px;
+                bottom: -15px;
             }
 
             .mvp-info {
                 max-width: 55%;
+                top: 26px;
             }
         }
     </style>
