@@ -21,6 +21,8 @@
             line-height: 1.5;
         }
 
+        /* HEADER */
+
         header {
             background: #111820;
             border-bottom: 1px solid #27313b;
@@ -54,7 +56,7 @@
 
         nav {
             display: flex;
-            gap: 20px;
+            gap: 24px;
         }
 
         nav a {
@@ -172,7 +174,7 @@
             margin-top: 5px;
         }
 
-        /* FEATURE GRID */
+        /* CHAMPIONSHIP + LEADERS */
 
         .feature-grid {
             display: grid;
@@ -229,13 +231,13 @@
             font-weight: 700;
         }
 
-        /* LEADERBOARD */
+        /* LEADERBOARDS */
 
         .leaderboard-row {
             display: grid;
             grid-template-columns: 45px 1fr 80px;
             align-items: center;
-            padding: 16px 22px;
+            padding: 14px 22px;
             border-bottom: 1px solid #222b34;
         }
 
@@ -256,6 +258,16 @@
             text-align: right;
             color: #aeb8c1;
             font-size: 13px;
+            font-weight: 600;
+        }
+
+        /* CAREER LEADERS */
+
+        .career-leaders {
+            margin-top: 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
         }
 
         /* FOOTER */
@@ -277,6 +289,10 @@
             }
 
             .feature-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .career-leaders {
                 grid-template-columns: 1fr;
             }
         }
@@ -359,6 +375,8 @@
 
 </header>
 
+
+<!-- HERO -->
 
 <section class="hero">
 
@@ -480,211 +498,210 @@
     </div>
 
 
-    <!-- CHAMPIONS & CAREER LEADERS -->
+    <!-- CHAMPIONSHIP HISTORY -->
 
-    <div class="feature-grid">
+    <h2 class="section-title">Championship History</h2>
 
-        <section>
+    <div class="panel">
 
-            <h2 class="section-title">Championship History</h2>
+        <div class="panel-header">
+            <h3>League Champions</h3>
+            <span>2013–2025</span>
+        </div>
 
-            <div class="panel">
+        <div class="champion">
+            <div class="champion-year">2025</div>
+            <div class="champion-team">William Darrow</div>
+        </div>
 
-                <div class="panel-header">
-                    <h3>League Champions</h3>
-                    <span>2013–2025</span>
-                </div>
+        <div class="champion">
+            <div class="champion-year">2024</div>
+            <div class="champion-team">Jonah Wheeler</div>
+        </div>
 
-                <div class="champion">
-                    <div class="champion-year">2025</div>
-                    <div class="champion-team">William Darrow</div>
-                </div>
+        <div class="champion">
+            <div class="champion-year">2023</div>
+            <div class="champion-team">Tommy Herbst</div>
+        </div>
 
-                <div class="champion">
-                    <div class="champion-year">2024</div>
-                    <div class="champion-team">Jonah Wheeler</div>
-                </div>
+        <div class="champion">
+            <div class="champion-year">2022</div>
+            <div class="champion-team">Ryan Herbst & Julia Wheeler</div>
+        </div>
 
-                <div class="champion">
-                    <div class="champion-year">2023</div>
-                    <div class="champion-team">Tommy Herbst</div>
-                </div>
+        <div class="champion">
+            <div class="champion-year">2021</div>
+            <div class="champion-team">Michael Gravante</div>
+        </div>
 
-                <div class="champion">
-                    <div class="champion-year">2022</div>
-                    <div class="champion-team">Ryan Herbst & Julia Wheeler</div>
-                </div>
+        <div class="champion">
+            <div class="champion-year">2020</div>
+            <div class="champion-team">Nic Maiorano</div>
+        </div>
 
-                <div class="champion">
-                    <div class="champion-year">2021</div>
-                    <div class="champion-team">Michael Gravante</div>
-                </div>
+        <div class="champion">
+            <div class="champion-year">2019</div>
+            <div class="champion-team">Ryan Herbst</div>
+        </div>
 
-                <div class="champion">
-                    <div class="champion-year">2020</div>
-                    <div class="champion-team">Nic Maiorano</div>
-                </div>
+        <div class="champion">
+            <div class="champion-year">2018</div>
+            <div class="champion-team">Christian Abert</div>
+        </div>
 
-                <div class="champion">
-                    <div class="champion-year">2019</div>
-                    <div class="champion-team">Ryan Herbst</div>
-                </div>
+        <div class="champion">
+            <div class="champion-year">2017</div>
+            <div class="champion-team">Christian Abert</div>
+        </div>
 
-                <div class="champion">
-                    <div class="champion-year">2018</div>
-                    <div class="champion-team">Christian Abert</div>
-                </div>
+        <div class="champion">
+            <div class="champion-year">2016</div>
+            <div class="champion-team">Ryan Herbst</div>
+        </div>
 
-                <div class="champion">
-                    <div class="champion-year">2017</div>
-                    <div class="champion-team">Christian Abert</div>
-                </div>
+        <div class="champion">
+            <div class="champion-year">2015</div>
+            <div class="champion-team">Bailey Martin</div>
+        </div>
 
-                <div class="champion">
-                    <div class="champion-year">2016</div>
-                    <div class="champion-team">Ryan Herbst</div>
-                </div>
+        <div class="champion">
+            <div class="champion-year">2014</div>
+            <div class="champion-team">Ryan Herbst</div>
+        </div>
 
-                <div class="champion">
-                    <div class="champion-year">2015</div>
-                    <div class="champion-team">Bailey Martin</div>
-                </div>
+        <div class="champion">
+            <div class="champion-year">2013</div>
+            <div class="champion-team">Ryan Herbst</div>
+        </div>
 
-                <div class="champion">
-                    <div class="champion-year">2014</div>
-                    <div class="champion-team">Ryan Herbst</div>
-                </div>
+    </div>
 
-                <div class="champion">
-                    <div class="champion-year">2013</div>
-                    <div class="champion-team">Ryan Herbst</div>
-                </div>
 
+    <!-- CAREER LEADERS -->
+
+    <h2 class="section-title">Career Leaders</h2>
+
+    <div class="career-leaders">
+
+
+        <!-- CAREER WINS -->
+
+        <div class="panel">
+
+            <div class="panel-header">
+                <h3>Career Wins</h3>
+                <span>Top 8</span>
             </div>
 
-        </section>
-
-
-        <section>
-
-            <h2 class="section-title">Career Leaders</h2>
-
-            <div class="panel">
-
-                <div class="panel-header">
-                    <h3>Career Wins</h3>
-                    <span>Top 8</span>
-                </div>
-
-                <div class="leaderboard-row">
-                    <div class="rank">01</div>
-                    <div class="team-name">Nic Maiorano</div>
-                    <div class="record">91</div>
-                </div>
-
-                <div class="leaderboard-row">
-                    <div class="rank">02</div>
-                    <div class="team-name">Jonah Wheeler</div>
-                    <div class="record">90</div>
-                </div>
-
-                <div class="leaderboard-row">
-                    <div class="rank">03</div>
-                    <div class="team-name">Ryan Herbst</div>
-                    <div class="record">88</div>
-                </div>
-
-                <div class="leaderboard-row">
-                    <div class="rank">04</div>
-                    <div class="team-name">Christian Abert</div>
-                    <div class="record">81</div>
-                </div>
-
-                <div class="leaderboard-row">
-                    <div class="rank">05</div>
-                    <div class="team-name">Mike Herbst</div>
-                    <div class="record">81</div>
-                </div>
-
-                <div class="leaderboard-row">
-                    <div class="rank">06</div>
-                    <div class="team-name">Tommy Herbst</div>
-                    <div class="record">78</div>
-                </div>
-
-                <div class="leaderboard-row">
-                    <div class="rank">07</div>
-                    <div class="team-name">Michael Gravante</div>
-                    <div class="record">67</div>
-                </div>
-
-                <div class="leaderboard-row">
-                    <div class="rank">08</div>
-                    <div class="team-name">Bailey Martin</div>
-                    <div class="record">39</div>
-                </div>
-
+            <div class="leaderboard-row">
+                <div class="rank">01</div>
+                <div class="team-name">Nic Maiorano</div>
+                <div class="record">91</div>
             </div>
 
-
-            <div class="panel" style="margin-top: 20px;">
-
-                <div class="panel-header">
-                    <h3>Career Playoff Wins</h3>
-                    <span>Top 8</span>
-                </div>
-
-                <div class="leaderboard-row">
-                    <div class="rank">01</div>
-                    <div class="team-name">Ryan Herbst</div>
-                    <div class="record">15</div>
-                </div>
-
-                <div class="leaderboard-row">
-                    <div class="rank">02</div>
-                    <div class="team-name">Nic Maiorano</div>
-                    <div class="record">5</div>
-                </div>
-
-                <div class="leaderboard-row">
-                    <div class="rank">03</div>
-                    <div class="team-name">Michael Gravante</div>
-                    <div class="record">5</div>
-                </div>
-
-                <div class="leaderboard-row">
-                    <div class="rank">04</div>
-                    <div class="team-name">Jonah Wheeler</div>
-                    <div class="record">9</div>
-                </div>
-
-                <div class="leaderboard-row">
-                    <div class="rank">05</div>
-                    <div class="team-name">Christian Abert</div>
-                    <div class="record">4</div>
-                </div>
-
-                <div class="leaderboard-row">
-                    <div class="rank">06</div>
-                    <div class="team-name">Bailey Martin</div>
-                    <div class="record">4</div>
-                </div>
-
-                <div class="leaderboard-row">
-                    <div class="rank">07</div>
-                    <div class="team-name">Tommy Herbst</div>
-                    <div class="record">4</div>
-                </div>
-
-                <div class="leaderboard-row">
-                    <div class="rank">08</div>
-                    <div class="team-name">Julia Wheeler</div>
-                    <div class="record">5</div>
-                </div>
-
+            <div class="leaderboard-row">
+                <div class="rank">02</div>
+                <div class="team-name">Jonah Wheeler</div>
+                <div class="record">90</div>
             </div>
 
-        </section>
+            <div class="leaderboard-row">
+                <div class="rank">03</div>
+                <div class="team-name">Ryan Herbst</div>
+                <div class="record">88</div>
+            </div>
+
+            <div class="leaderboard-row">
+                <div class="rank">04</div>
+                <div class="team-name">Christian Abert</div>
+                <div class="record">81</div>
+            </div>
+
+            <div class="leaderboard-row">
+                <div class="rank">05</div>
+                <div class="team-name">Mike Herbst</div>
+                <div class="record">81</div>
+            </div>
+
+            <div class="leaderboard-row">
+                <div class="rank">06</div>
+                <div class="team-name">Tommy Herbst</div>
+                <div class="record">78</div>
+            </div>
+
+            <div class="leaderboard-row">
+                <div class="rank">07</div>
+                <div class="team-name">Michael Gravante</div>
+                <div class="record">67</div>
+            </div>
+
+            <div class="leaderboard-row">
+                <div class="rank">08</div>
+                <div class="team-name">Bailey Martin</div>
+                <div class="record">39</div>
+            </div>
+
+        </div>
+
+
+        <!-- CAREER PLAYOFF WINS -->
+
+        <div class="panel">
+
+            <div class="panel-header">
+                <h3>Career Playoff Wins</h3>
+                <span>Top 8</span>
+            </div>
+
+            <div class="leaderboard-row">
+                <div class="rank">01</div>
+                <div class="team-name">Ryan Herbst</div>
+                <div class="record">15</div>
+            </div>
+
+            <div class="leaderboard-row">
+                <div class="rank">02</div>
+                <div class="team-name">Jonah Wheeler</div>
+                <div class="record">9</div>
+            </div>
+
+            <div class="leaderboard-row">
+                <div class="rank">03</div>
+                <div class="team-name">Nic Maiorano</div>
+                <div class="record">5</div>
+            </div>
+
+            <div class="leaderboard-row">
+                <div class="rank">03</div>
+                <div class="team-name">Michael Gravante</div>
+                <div class="record">5</div>
+            </div>
+
+            <div class="leaderboard-row">
+                <div class="rank">03</div>
+                <div class="team-name">Julia Wheeler</div>
+                <div class="record">5</div>
+            </div>
+
+            <div class="leaderboard-row">
+                <div class="rank">06</div>
+                <div class="team-name">Christian Abert</div>
+                <div class="record">4</div>
+            </div>
+
+            <div class="leaderboard-row">
+                <div class="rank">06</div>
+                <div class="team-name">Bailey Martin</div>
+                <div class="record">4</div>
+            </div>
+
+            <div class="leaderboard-row">
+                <div class="rank">06</div>
+                <div class="team-name">Tommy Herbst</div>
+                <div class="record">4</div>
+            </div>
+
+        </div>
 
     </div>
 
