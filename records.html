@@ -1,752 +1,749 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-```
-<title>Records | Kevin Durant League</title>
+    <title>Records | Kevin Durant League</title>
 
-<style>
-    * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-    }
-
-    body {
-        font-family: Arial, Helvetica, sans-serif;
-        background: #0b0f14;
-        color: #f5f5f5;
-        line-height: 1.5;
-    }
-
-    header {
-        background: #111820;
-        border-bottom: 1px solid #27313b;
-        padding: 20px 30px;
-        position: sticky;
-        top: 0;
-        z-index: 100;
-    }
-
-    .header-inner {
-        max-width: 1200px;
-        margin: auto;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    .logo {
-        font-size: 22px;
-        font-weight: 800;
-        letter-spacing: 1px;
-    }
-
-    .logo span {
-        display: block;
-        font-size: 11px;
-        color: #9aa5af;
-        letter-spacing: 2px;
-        margin-top: 2px;
-    }
-
-    nav {
-        display: flex;
-        gap: 20px;
-    }
-
-    nav a {
-        color: #cbd2d8;
-        text-decoration: none;
-        font-size: 14px;
-        font-weight: 600;
-    }
-
-    nav a:hover {
-        color: white;
-    }
-
-    .hero {
-        max-width: 1200px;
-        margin: auto;
-        padding: 70px 30px 50px;
-    }
-
-    .eyebrow {
-        color: #9aa5af;
-        text-transform: uppercase;
-        letter-spacing: 3px;
-        font-size: 12px;
-        font-weight: 700;
-        margin-bottom: 12px;
-    }
-
-    .hero h1 {
-        font-size: clamp(42px, 7vw, 72px);
-        line-height: .95;
-        letter-spacing: -3px;
-        margin-bottom: 18px;
-    }
-
-    .hero p {
-        color: #aeb8c1;
-        max-width: 700px;
-        font-size: 17px;
-    }
-
-    .container {
-        max-width: 1200px;
-        margin: auto;
-        padding: 0 30px 80px;
-    }
-
-    .section-title {
-        font-size: 24px;
-        margin: 50px 0 20px;
-    }
-
-    .section-intro {
-        color: #8f9aa4;
-        max-width: 750px;
-        margin-top: -10px;
-        margin-bottom: 22px;
-        font-size: 14px;
-    }
-
-    /* RECORD CARDS */
-
-    .record-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 15px;
-    }
-
-    .record-card {
-        background: #151c24;
-        border: 1px solid #27313b;
-        border-radius: 12px;
-        padding: 23px;
-    }
-
-    .record-label {
-        color: #8f9aa4;
-        text-transform: uppercase;
-        letter-spacing: 1.4px;
-        font-size: 10px;
-        font-weight: 700;
-    }
-
-    .record-value {
-        font-size: 25px;
-        font-weight: 800;
-        margin-top: 8px;
-    }
-
-    .record-holder {
-        color: #aeb8c1;
-        font-size: 13px;
-        margin-top: 4px;
-    }
-
-    .record-year {
-        color: #68747e;
-        font-size: 12px;
-        margin-top: 2px;
-    }
-
-    /* TABLES */
-
-    .panel {
-        background: #151c24;
-        border: 1px solid #27313b;
-        border-radius: 12px;
-        overflow: hidden;
-    }
-
-    .panel-header {
-        padding: 20px 22px;
-        border-bottom: 1px solid #27313b;
-    }
-
-    .panel-header h3 {
-        font-size: 17px;
-    }
-
-    .panel-header p {
-        color: #7f8a94;
-        font-size: 12px;
-        margin-top: 3px;
-    }
-
-    .table-wrap {
-        overflow-x: auto;
-    }
-
-    table {
-        width: 100%;
-        border-collapse: collapse;
-        min-width: 650px;
-    }
-
-    th {
-        color: #7f8a94;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        font-size: 10px;
-        text-align: left;
-        padding: 13px 18px;
-        border-bottom: 1px solid #27313b;
-    }
-
-    td {
-        padding: 14px 18px;
-        border-bottom: 1px solid #222b34;
-        font-size: 13px;
-    }
-
-    tr:last-child td {
-        border-bottom: none;
-    }
-
-    .manager-name {
-        font-weight: 700;
-    }
-
-    .muted {
-        color: #8f9aa4;
-    }
-
-    .number {
-        font-weight: 700;
-    }
-
-    /* TWO COLUMN */
-
-    .two-column {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 20px;
-    }
-
-    /* FOOTER */
-
-    footer {
-        border-top: 1px solid #27313b;
-        padding: 30px;
-        text-align: center;
-        color: #68747e;
-        font-size: 12px;
-    }
-
-    @media (max-width: 900px) {
-
-        .record-grid {
-            grid-template-columns: repeat(2, 1fr);
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
 
-        .two-column {
-            grid-template-columns: 1fr;
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #0b0f14;
+            color: #f5f5f5;
+            line-height: 1.5;
         }
-    }
-
-    @media (max-width: 800px) {
 
         header {
-            padding: 18px 20px;
+            background: #111820;
+            border-bottom: 1px solid #27313b;
+            padding: 20px 30px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
 
         .header-inner {
-            flex-direction: column;
-            gap: 15px;
-            align-items: flex-start;
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            display: block;
+            font-size: 11px;
+            color: #9aa5af;
+            letter-spacing: 2px;
+            margin-top: 2px;
         }
 
         nav {
-            width: 100%;
-            overflow-x: auto;
-            gap: 18px;
-            padding-bottom: 3px;
+            display: flex;
+            gap: 20px;
         }
 
         nav a {
-            white-space: nowrap;
+            color: #cbd2d8;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        nav a:hover {
+            color: white;
         }
 
         .hero {
-            padding: 50px 20px 40px;
+            max-width: 1200px;
+            margin: auto;
+            padding: 70px 30px 50px;
+        }
+
+        .eyebrow {
+            color: #9aa5af;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 12px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .hero h1 {
+            font-size: clamp(42px, 7vw, 72px);
+            line-height: .95;
+            letter-spacing: -3px;
+            margin-bottom: 18px;
+        }
+
+        .hero p {
+            color: #aeb8c1;
+            max-width: 700px;
+            font-size: 17px;
         }
 
         .container {
-            padding: 0 20px 60px;
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 30px 80px;
         }
+
+        .section-title {
+            font-size: 24px;
+            margin: 50px 0 20px;
+        }
+
+        .section-intro {
+            color: #8f9aa4;
+            max-width: 750px;
+            margin-top: -10px;
+            margin-bottom: 22px;
+            font-size: 14px;
+        }
+
+        /* RECORD CARDS */
 
         .record-grid {
-            grid-template-columns: 1fr;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
         }
-    }
-</style>
-```
 
+        .record-card {
+            background: #151c24;
+            border: 1px solid #27313b;
+            border-radius: 12px;
+            padding: 23px;
+        }
+
+        .record-label {
+            color: #8f9aa4;
+            text-transform: uppercase;
+            letter-spacing: 1.4px;
+            font-size: 10px;
+            font-weight: 700;
+        }
+
+        .record-value {
+            font-size: 25px;
+            font-weight: 800;
+            margin-top: 8px;
+        }
+
+        .record-holder {
+            color: #aeb8c1;
+            font-size: 13px;
+            margin-top: 4px;
+        }
+
+        .record-year {
+            color: #68747e;
+            font-size: 12px;
+            margin-top: 2px;
+        }
+
+        /* TABLES */
+
+        .panel {
+            background: #151c24;
+            border: 1px solid #27313b;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .panel-header {
+            padding: 20px 22px;
+            border-bottom: 1px solid #27313b;
+        }
+
+        .panel-header h3 {
+            font-size: 17px;
+        }
+
+        .panel-header p {
+            color: #7f8a94;
+            font-size: 12px;
+            margin-top: 3px;
+        }
+
+        .table-wrap {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 650px;
+        }
+
+        th {
+            color: #7f8a94;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 10px;
+            text-align: left;
+            padding: 13px 18px;
+            border-bottom: 1px solid #27313b;
+        }
+
+        td {
+            padding: 14px 18px;
+            border-bottom: 1px solid #222b34;
+            font-size: 13px;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        .manager-name {
+            font-weight: 700;
+        }
+
+        .muted {
+            color: #8f9aa4;
+        }
+
+        .number {
+            font-weight: 700;
+        }
+
+        /* TWO COLUMN */
+
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        /* FOOTER */
+
+        footer {
+            border-top: 1px solid #27313b;
+            padding: 30px;
+            text-align: center;
+            color: #68747e;
+            font-size: 12px;
+        }
+
+        @media (max-width: 900px) {
+
+            .record-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .two-column {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 800px) {
+
+            header {
+                padding: 18px 20px;
+            }
+
+            .header-inner {
+                flex-direction: column;
+                gap: 15px;
+                align-items: flex-start;
+            }
+
+            nav {
+                width: 100%;
+                overflow-x: auto;
+                gap: 18px;
+                padding-bottom: 3px;
+            }
+
+            nav a {
+                white-space: nowrap;
+            }
+
+            .hero {
+                padding: 50px 20px 40px;
+            }
+
+            .container {
+                padding: 0 20px 60px;
+            }
+
+            .record-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
 <header>
 
-```
-<div class="header-inner">
+    <div class="header-inner">
 
-    <div class="logo">
-        KEVIN DURANT LEAGUE
-        <span>FANTASY FOOTBALL · EST. 2013</span>
+        <div class="logo">
+            KEVIN DURANT LEAGUE
+            <span>FANTASY FOOTBALL · EST. 2013</span>
+        </div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="history.html">History</a>
+            <a href="teams.html">Teams</a>
+            <a href="records.html">Records</a>
+            <a href="matchups.html">Matchups</a>
+            <a href="drafts.html">Drafts</a>
+            <a href="seasons.html">Seasons</a>
+        </nav>
+
     </div>
-
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="history.html">History</a>
-        <a href="teams.html">Teams</a>
-        <a href="records.html">Records</a>
-        <a href="matchups.html">Matchups</a>
-        <a href="drafts.html">Drafts</a>
-        <a href="seasons.html">Seasons</a>
-    </nav>
-
-</div>
-```
 
 </header>
 
+
 <section class="hero">
 
-```
-<div class="eyebrow">League Record Book · 2013–2026</div>
+    <div class="eyebrow">League Record Book · 2013–2026</div>
 
-<h1>Records.</h1>
+    <h1>Records.</h1>
 
-<p>
-    The greatest seasons, performances, streaks and careers
-    in Kevin Durant League history.
-</p>
-```
+    <p>
+        The greatest seasons, performances, streaks and careers
+        in Kevin Durant League history.
+    </p>
 
 </section>
 
+
 <main class="container">
 
-```
-<!-- PLAYOFF RECORDS -->
 
-<h2 class="section-title">Playoff Records</h2>
+    <!-- CHAMPIONSHIP RECORDS -->
 
-<div class="record-grid">
+    <h2 class="section-title">Championship Records</h2>
 
-    <div class="record-card">
-        <div class="record-label">Most Championships</div>
-        <div class="record-value">5</div>
-        <div class="record-holder">Ryan Herbst</div>
-    </div>
+    <div class="record-grid">
 
-    <div class="record-card">
-        <div class="record-label">Most Championship Appearances</div>
-        <div class="record-value">7</div>
-        <div class="record-holder">Ryan Herbst</div>
-    </div>
+        <div class="record-card">
+            <div class="record-label">Most Championships</div>
+            <div class="record-value">5</div>
+            <div class="record-holder">Ryan Herbst</div>
+        </div>
 
-    <div class="record-card">
-        <div class="record-label">Most Career Playoff Wins</div>
-        <div class="record-value">15</div>
-        <div class="record-holder">Ryan Herbst</div>
-    </div>
-
-    <div class="record-card">
-        <div class="record-label">Highest Playoff Win % (min. 5 games)</div>
-        <div class="record-value">73%</div>
-        <div class="record-holder">Ryan Herbst</div>
-        <div class="record-year">15–5–1</div>
-    </div>
-
-</div>
-
-
-<!-- REGULAR SEASON RECORDS -->
-
-<h2 class="section-title">Regular Season Records</h2>
-
-<div class="record-grid">
-
-    <div class="record-card">
-        <div class="record-label">Most Career Wins</div>
-        <div class="record-value">91</div>
-        <div class="record-holder">Nic Maiorano</div>
-    </div>
-
-    <div class="record-card">
-        <div class="record-label">Highest Career Win %</div>
-        <div class="record-value">58%</div>
-        <div class="record-holder">Julia Wheeler</div>
-    </div>
-
-    <div class="record-card">
-        <div class="record-label">Most Winning Seasons</div>
-        <div class="record-value">7</div>
-        <div class="record-holder">Jonah Wheeler</div>
-        <div class="record-year">2014 · 2016 · 2017 · 2020 · 2022 · 2024 · 2025</div>
-    </div>
-
-    <div class="record-card">
-        <div class="record-label">Most Regular Season Titles</div>
-        <div class="record-value">3</div>
-        <div class="record-holder">Tommy Herbst</div>
-        <div class="record-year">2018 · 2019 · 2023</div>
-    </div>
-
-    <div class="record-card">
-        <div class="record-label">Most Regular Season Titles</div>
-        <div class="record-value">3</div>
-        <div class="record-holder">Jonah Wheeler</div>
-        <div class="record-year">2016 · 2024 · 2025</div>
-    </div>
-
-    <div class="record-card">
-        <div class="record-label">Most Wins in a Season</div>
-        <div class="record-value">12</div>
-        <div class="record-holder">Tommy Herbst · 2023</div>
-        <div class="record-year">Also: Jonah Wheeler · 2025</div>
-    </div>
-
-    <div class="record-card">
-        <div class="record-label">Longest Win Streak</div>
-        <div class="record-value">9 wins</div>
-        <div class="record-holder">Jonah Wheeler · 2025</div>
-    </div>
-
-</div>
-
-
-<!-- SCORING RECORDS -->
-
-<h2 class="section-title">Scoring Records</h2>
-
-<div class="record-grid">
-
-    <div class="record-card">
-        <div class="record-label">Most Points in a Game</div>
-        <div class="record-value">236</div>
-        <div class="record-holder">Mike Herbst · 2020</div>
-    </div>
-
-    <div class="record-card">
-        <div class="record-label">Most TDs in a Game</div>
-        <div class="record-value">16</div>
-        <div class="record-holder">Mike Herbst · 2020</div>
-    </div>
-
-    <div class="record-card">
-        <div class="record-label">Most Points in a Season</div>
-        <div class="record-value">2,241</div>
-        <div class="record-holder">Jonah Wheeler · 2025</div>
-    </div>
-
-</div>
-
-
-<!-- CAREER MANAGER TABLE -->
-
-<h2 class="section-title">Manager Career Records</h2>
-
-<p class="section-intro">
-    Career statistics for the managers represented in the current
-    league and historical league records.
-</p>
-
-<div class="panel">
-
-    <div class="panel-header">
-        <h3>Career Overview</h3>
-        <p>Regular season and playoff records through 2025</p>
-    </div>
-
-    <div class="table-wrap">
-
-        <table>
-
-            <thead>
-                <tr>
-                    <th>Manager</th>
-                    <th>Member Since</th>
-                    <th>Career Record</th>
-                    <th>Win %</th>
-                    <th>Winning Seasons</th>
-                    <th>Playoff Record</th>
-                    <th>Championships</th>
-                </tr>
-            </thead>
-
-            <tbody>
-
-                <tr>
-                    <td class="manager-name">Nic Maiorano</td>
-                    <td class="muted">2013</td>
-                    <td class="number">91–83–3</td>
-                    <td>52%</td>
-                    <td>5</td>
-                    <td>5–10</td>
-                    <td class="number">1</td>
-                </tr>
-
-                <tr>
-                    <td class="manager-name">Jonah Wheeler</td>
-                    <td class="muted">2014</td>
-                    <td class="number">90–73–1</td>
-                    <td>55%</td>
-                    <td>7</td>
-                    <td>9–7</td>
-                    <td class="number">1</td>
-                </tr>
-
-                <tr>
-                    <td class="manager-name">Ryan Herbst</td>
-                    <td class="muted">2013</td>
-                    <td class="number">88–89</td>
-                    <td>49%</td>
-                    <td>6</td>
-                    <td>15–5–1</td>
-                    <td class="number">5</td>
-                </tr>
-
-                <tr>
-                    <td class="manager-name">Christian Abert</td>
-                    <td class="muted">2013</td>
-                    <td class="number">81–95–1</td>
-                    <td>46%</td>
-                    <td>4</td>
-                    <td>4–6</td>
-                    <td class="number">2</td>
-                </tr>
-
-                <tr>
-                    <td class="manager-name">Mike Herbst</td>
-                    <td class="muted">2019</td>
-                    <td class="number">81–95–1</td>
-                    <td>50%</td>
-                    <td>3</td>
-                    <td>1–4</td>
-                    <td class="number">0</td>
-                </tr>
-
-                <tr>
-                    <td class="manager-name">Tommy Herbst</td>
-                    <td class="muted">2014</td>
-                    <td class="number">78–84–2</td>
-                    <td>48%</td>
-                    <td>4</td>
-                    <td>4–4</td>
-                    <td class="number">1</td>
-                </tr>
-
-                <tr>
-                    <td class="manager-name">Michael Gravante</td>
-                    <td class="muted">2016</td>
-                    <td class="number">67–68–1</td>
-                    <td>49%</td>
-                    <td>4</td>
-                    <td>5–4</td>
-                    <td class="number">1</td>
-                </tr>
-
-                <tr>
-                    <td class="manager-name">Bailey Martin</td>
-                    <td class="muted">2013</td>
-                    <td class="number">39–42</td>
-                    <td>48%</td>
-                    <td>3</td>
-                    <td>4–4</td>
-                    <td class="number">1</td>
-                </tr>
-
-                <tr>
-                    <td class="manager-name">William Darrow</td>
-                    <td class="muted">2021</td>
-                    <td class="number">34–36</td>
-                    <td>48%</td>
-                    <td>2</td>
-                    <td>3–1</td>
-                    <td class="number">1</td>
-                </tr>
-
-                <tr>
-                    <td class="manager-name">Julia Wheeler</td>
-                    <td class="muted">2022</td>
-                    <td class="number">33–23</td>
-                    <td>58%</td>
-                    <td>2</td>
-                    <td>5–3–1</td>
-                    <td class="number">1*</td>
-                </tr>
-
-                <tr>
-                    <td class="manager-name">Mike Darrow</td>
-                    <td class="muted">2023</td>
-                    <td class="number">19–22–1</td>
-                    <td>46%</td>
-                    <td>1</td>
-                    <td>0–1</td>
-                    <td class="number">0</td>
-                </tr>
-
-                <tr>
-                    <td class="manager-name">Nick Femano</td>
-                    <td class="muted">2024</td>
-                    <td class="number">11–17</td>
-                    <td>39%</td>
-                    <td>0</td>
-                    <td>0–0</td>
-                    <td class="number">0</td>
-                </tr>
-
-            </tbody>
-
-        </table>
+        <div class="record-card">
+            <div class="record-label">Most Championship Appearances</div>
+            <div class="record-value">7</div>
+            <div class="record-holder">Ryan Herbst</div>
+        </div>
 
     </div>
 
-</div>
+
+    <!-- REGULAR SEASON RECORDS -->
+
+    <h2 class="section-title">Regular Season Records</h2>
+
+    <div class="record-grid">
+
+        <div class="record-card">
+            <div class="record-label">Most Career Wins</div>
+            <div class="record-value">91</div>
+            <div class="record-holder">Nic Maiorano</div>
+        </div>
+
+        <div class="record-card">
+            <div class="record-label">Highest Career Win %</div>
+            <div class="record-value">58%</div>
+            <div class="record-holder">Julia Wheeler</div>
+        </div>
+
+        <div class="record-card">
+            <div class="record-label">Most Winning Seasons</div>
+            <div class="record-value">7</div>
+            <div class="record-holder">Jonah Wheeler</div>
+            <div class="record-year">2014 · 2016 · 2017 · 2020 · 2022 · 2024 · 2025</div>
+        </div>
+
+        <div class="record-card">
+            <div class="record-label">Most Regular Season Titles</div>
+            <div class="record-value">3</div>
+            <div class="record-holder">Tommy Herbst · 2018 · 2019 · 2023</div>
+            <div class="record-holder">Jonah Wheeler · 2016 · 2024 · 2025</div>
+        </div>
+
+        <div class="record-card">
+            <div class="record-label">Most Wins in a Season</div>
+            <div class="record-value">12</div>
+            <div class="record-holder">Tommy Herbst · 2023</div>
+            <div class="record-holder">Jonah Wheeler · 2025</div>
+        </div>
+
+        <div class="record-card">
+            <div class="record-label">Longest Winning Streak</div>
+            <div class="record-value">9 wins</div>
+            <div class="record-holder">Jonah Wheeler · 2025</div>
+        </div>
+
+    </div>
 
 
-<!-- BEST / WORST FINISHES -->
+    <!-- SCORING RECORDS -->
 
-<h2 class="section-title">Best & Worst Seasons</h2>
+    <h2 class="section-title">Scoring Records</h2>
 
-<div class="two-column">
+    <div class="record-grid">
+
+        <div class="record-card">
+            <div class="record-label">Most TDs in a Game</div>
+            <div class="record-value">16</div>
+            <div class="record-holder">Mike Herbst · 2020</div>
+        </div>
+
+        <div class="record-card">
+            <div class="record-label">Most Points in a Season</div>
+            <div class="record-value">2,241</div>
+            <div class="record-holder">Jonah Wheeler · 2025</div>
+        </div>
+
+        <div class="record-card">
+            <div class="record-label">Most Points in a Game</div>
+            <div class="record-value">236</div>
+            <div class="record-holder">Mike Herbst · 2020</div>
+        </div>
+
+    </div>
+
+
+    <!-- PLAYOFF RECORDS -->
+
+    <h2 class="section-title">Playoff Records</h2>
+
+    <div class="record-grid">
+
+        <div class="record-card">
+            <div class="record-label">Most Career Playoff Wins</div>
+            <div class="record-value">15</div>
+            <div class="record-holder">Ryan Herbst</div>
+        </div>
+
+        <div class="record-card">
+            <div class="record-label">Highest Playoff Win % (min. 5 games)</div>
+            <div class="record-value">73%</div>
+            <div class="record-holder">Ryan Herbst</div>
+            <div class="record-year">15–5–1</div>
+        </div>
+
+    </div>
+
+
+    <!-- CAREER MANAGER TABLE -->
+
+    <h2 class="section-title">Manager Career Records</h2>
+
+    <p class="section-intro">
+        Career statistics for the managers represented in the current
+        league and historical league records.
+    </p>
 
     <div class="panel">
 
         <div class="panel-header">
-            <h3>Best Regular Season Finish</h3>
-            <p>Highest win totals listed in manager records</p>
+            <h3>Career Overview</h3>
+            <p>Regular season and playoff records through 2025</p>
         </div>
 
-        <table>
+        <div class="table-wrap">
 
-            <thead>
-                <tr>
-                    <th>Manager</th>
-                    <th>Record</th>
-                </tr>
-            </thead>
+            <table>
 
-            <tbody>
+                <thead>
+                    <tr>
+                        <th>Manager</th>
+                        <th>Member Since</th>
+                        <th>Career Record</th>
+                        <th>Win %</th>
+                        <th>Winning Seasons</th>
+                        <th>Playoff Record</th>
+                        <th>Championships</th>
+                    </tr>
+                </thead>
 
-                <tr>
-                    <td class="manager-name">Jonah Wheeler</td>
-                    <td class="number">12–2</td>
-                </tr>
+                <tbody>
 
-                <tr>
-                    <td class="manager-name">Tommy Herbst</td>
-                    <td class="number">12–2</td>
-                </tr>
+                    <tr>
+                        <td class="manager-name">Nic Maiorano</td>
+                        <td class="muted">2013</td>
+                        <td class="number">91–83–3</td>
+                        <td>52%</td>
+                        <td>5</td>
+                        <td>5–10</td>
+                        <td class="number">1</td>
+                    </tr>
 
-                <tr>
-                    <td class="manager-name">Christian Abert</td>
-                    <td class="number">9–4</td>
-                </tr>
+                    <tr>
+                        <td class="manager-name">Jonah Wheeler</td>
+                        <td class="muted">2014</td>
+                        <td class="number">90–73–1</td>
+                        <td>55%</td>
+                        <td>7</td>
+                        <td>9–7</td>
+                        <td class="number">1</td>
+                    </tr>
 
-                <tr>
-                    <td class="manager-name">Ryan Herbst</td>
-                    <td class="number">9–4</td>
-                </tr>
+                    <tr>
+                        <td class="manager-name">Ryan Herbst</td>
+                        <td class="muted">2013</td>
+                        <td class="number">88–89</td>
+                        <td>49%</td>
+                        <td>6</td>
+                        <td>15–5–1</td>
+                        <td class="number">5</td>
+                    </tr>
 
-            </tbody>
+                    <tr>
+                        <td class="manager-name">Christian Abert</td>
+                        <td class="muted">2013</td>
+                        <td class="number">81–95–1</td>
+                        <td>46%</td>
+                        <td>4</td>
+                        <td>4–6</td>
+                        <td class="number">2</td>
+                    </tr>
 
-        </table>
+                    <tr>
+                        <td class="manager-name">Mike Herbst</td>
+                        <td class="muted">2019</td>
+                        <td class="number">81–95–1</td>
+                        <td>50%</td>
+                        <td>3</td>
+                        <td>1–4</td>
+                        <td class="number">0</td>
+                    </tr>
+
+                    <tr>
+                        <td class="manager-name">Tommy Herbst</td>
+                        <td class="muted">2014</td>
+                        <td class="number">78–84–2</td>
+                        <td>48%</td>
+                        <td>4</td>
+                        <td>4–4</td>
+                        <td class="number">1</td>
+                    </tr>
+
+                    <tr>
+                        <td class="manager-name">Michael Gravante</td>
+                        <td class="muted">2016</td>
+                        <td class="number">67–68–1</td>
+                        <td>49%</td>
+                        <td>4</td>
+                        <td>5–4</td>
+                        <td class="number">1</td>
+                    </tr>
+
+                    <tr>
+                        <td class="manager-name">Bailey Martin</td>
+                        <td class="muted">2013</td>
+                        <td class="number">39–42</td>
+                        <td>48%</td>
+                        <td>3</td>
+                        <td>4–4</td>
+                        <td class="number">1</td>
+                    </tr>
+
+                    <tr>
+                        <td class="manager-name">William Darrow</td>
+                        <td class="muted">2021</td>
+                        <td class="number">34–36</td>
+                        <td>48%</td>
+                        <td>2</td>
+                        <td>3–1</td>
+                        <td class="number">1</td>
+                    </tr>
+
+                    <tr>
+                        <td class="manager-name">Julia Wheeler</td>
+                        <td class="muted">2022</td>
+                        <td class="number">33–23</td>
+                        <td>58%</td>
+                        <td>2</td>
+                        <td>5–3–1</td>
+                        <td class="number">1*</td>
+                    </tr>
+
+                    <tr>
+                        <td class="manager-name">Mike Darrow</td>
+                        <td class="muted">2023</td>
+                        <td class="number">19–22–1</td>
+                        <td>46%</td>
+                        <td>1</td>
+                        <td>0–1</td>
+                        <td class="number">0</td>
+                    </tr>
+
+                    <tr>
+                        <td class="manager-name">Nick Femano</td>
+                        <td class="muted">2024</td>
+                        <td class="number">11–17</td>
+                        <td>39%</td>
+                        <td>0</td>
+                        <td>0–0</td>
+                        <td class="number">0</td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
 
     </div>
 
+
+    <!-- BEST / WORST FINISHES -->
+
+    <h2 class="section-title">Best & Worst Seasons</h2>
+
+    <div class="two-column">
+
+        <div class="panel">
+
+            <div class="panel-header">
+                <h3>Best Regular Season Finish</h3>
+                <p>Highest win totals listed in manager records</p>
+            </div>
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>Manager</th>
+                        <th>Record</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td class="manager-name">Jonah Wheeler</td>
+                        <td class="number">12–2</td>
+                    </tr>
+
+                    <tr>
+                        <td class="manager-name">Tommy Herbst</td>
+                        <td class="number">12–2</td>
+                    </tr>
+
+                    <tr>
+                        <td class="manager-name">Christian Abert</td>
+                        <td class="number">9–4</td>
+                    </tr>
+
+                    <tr>
+                        <td class="manager-name">Ryan Herbst</td>
+                        <td class="number">9–4</td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+
+        <div class="panel">
+
+            <div class="panel-header">
+                <h3>Lowest Recorded Finish</h3>
+                <p>Worst season records in manager history</p>
+            </div>
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>Manager</th>
+                        <th>Record</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td class="manager-name">William Darrow</td>
+                        <td class="number">2–12</td>
+                    </tr>
+
+                    <tr>
+                        <td class="manager-name">Tommy Herbst</td>
+                        <td class="number">2–10–1</td>
+                    </tr>
+
+                    <tr>
+                        <td class="manager-name">Ryan Herbst</td>
+                        <td class="number">3–10</td>
+                    </tr>
+
+                    <tr>
+                        <td class="manager-name">Christian Abert</td>
+                        <td class="number">3–9–1</td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+
+    <!-- NOTES -->
+
+    <h2 class="section-title">Record Book Notes</h2>
 
     <div class="panel">
 
-        <div class="panel-header">
-            <h3>Lowest Recorded Finish</h3>
-            <p>Worst season records in manager history</p>
+        <div style="padding: 25px; color: #8f9aa4; font-size: 13px;">
+
+            <p style="margin-bottom: 12px;">
+                All career statistics shown are based on the league records
+                currently available through the 2025 season.
+            </p>
+
+            <p style="margin-bottom: 12px;">
+                The 2022 championship is recorded as a co-championship between
+                Ryan Herbst and Julia Wheeler after the championship matchup
+                ended in a tie following the cancellation of the Bills–Bengals
+                game on January 2, 2023.
+            </p>
+
+            <p>
+                Additional records — including total career points,
+                highest and lowest individual matchup scores, largest margins
+                of victory, head-to-head records and draft records — can be
+                added as the historical Yahoo data is incorporated.
+            </p>
+
         </div>
 
-        <table>
-
-            <thead>
-                <tr>
-                    <th>Manager</th>
-                    <th>Record</th>
-                </tr>
-            </thead>
-
-            <tbody>
-
-                <tr>
-                    <td class="manager-name">William Darrow</td>
-                    <td class="number">2–12</td>
-                </tr>
-
-                <tr>
-                    <td class="manager-name">Tommy Herbst</td>
-                    <td class="number">2–10–1</td>
-                </tr>
-
-                <tr>
-                    <td class="manager-name">Ryan Herbst</td>
-                    <td class="number">3–10</td>
-                </tr>
-
-                <tr>
-                    <td class="manager-name">Christian Abert</td>
-                    <td class="number">3–9–1</td>
-                </tr>
-
-            </tbody>
-
-        </table>
-
     </div>
 
-</div>
-
-
-<!-- NOTES -->
-
-<h2 class="section-title">Record Book Notes</h2>
-
-<div class="panel">
-
-    <div style="padding: 25px; color: #8f9aa4; font-size: 13px;">
-
-        <p style="margin-bottom: 12px;">
-            All career statistics shown are based on the league records
-            currently available through the 2025 season.
-        </p>
-
-        <p style="margin-bottom: 12px;">
-            The 2022 championship is recorded as a co-championship between
-            Ryan Herbst and Julia Wheeler after the championship matchup
-            ended in a tie following the cancellation of the Bills–Bengals
-            game on January 2, 2023.
-        </p>
-
-        <p>
-            Additional records — including total career points,
-            highest and lowest individual matchup scores, largest margins
-            of victory, head-to-head records and draft records — can be
-            added as the historical Yahoo data is incorporated.
-        </p>
-
-    </div>
-
-</div>
-```
 
 </main>
+
 
 <footer>
     Kevin Durant League · Fantasy Football History · Est. 2013
