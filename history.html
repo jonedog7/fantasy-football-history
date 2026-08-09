@@ -242,7 +242,7 @@
         .mvp {
             border-top: 1px solid #27313b;
             margin-top: 0;
-            padding: 14px 22px 0;
+            padding: 14px 22px 18px;
             position: relative;
             height: 145px;
             overflow: hidden;
@@ -254,13 +254,14 @@
             text-transform: uppercase;
             letter-spacing: 1.5px;
             font-weight: 700;
+            margin-bottom: 0;
             position: relative;
             z-index: 3;
         }
 
         .mvp-content {
             position: relative;
-            height: 130px;
+            height: 120px;
             margin-top: 0;
         }
 
@@ -286,19 +287,21 @@
         }
 
         /*
-         * HEADSHOT POSITIONING
+         * HEADSHOT
          *
-         * The MVP section is 145px tall.
-         * The content area fills the remaining space.
-         * The image is anchored to the absolute bottom
-         * of that content area so the bottom of the
-         * headshot lines up with the bottom of the MVP box.
+         * The MVP box itself remains exactly 145px tall.
+         *
+         * The headshot bottom is locked to the bottom of the
+         * MVP box with bottom: 0.
+         *
+         * The image is slightly taller, which raises the top
+         * of the player without moving the bottom edge.
          */
 
         .mvp-image {
             position: absolute;
-            width: 125px;
-            height: 125px;
+            width: 145px;
+            height: 145px;
             object-fit: contain;
             object-position: bottom center;
             right: -5px;
@@ -392,9 +395,14 @@
                 font-size: 27px;
             }
 
+            /*
+             * Mobile headshot.
+             * Bottom remains tethered to the bottom of the box.
+             */
+
             .mvp-image {
-                width: 110px;
-                height: 110px;
+                width: 125px;
+                height: 125px;
                 right: -3px;
                 bottom: 0;
             }
@@ -432,6 +440,7 @@
 
 </header>
 
+
 <section class="hero">
 
     <div class="eyebrow">League Archive · 2013–2026</div>
@@ -445,7 +454,9 @@
 
 </section>
 
+
 <main class="container">
+
 
     <h2 class="section-title">League Eras</h2>
 
@@ -483,9 +494,11 @@
 
     </div>
 
+
     <h2 class="section-title">Championship History</h2>
 
     <div class="history-grid">
+
 
         <!-- 2013 -->
 
@@ -536,6 +549,7 @@
             </div>
 
         </div>
+
 
         <!-- 2014 -->
 
@@ -590,6 +604,7 @@
 
         </div>
 
+
         <!-- 2015 -->
 
         <div class="history-card">
@@ -639,6 +654,7 @@
             </div>
 
         </div>
+
 
         <!-- 2016 -->
 
@@ -693,6 +709,7 @@
 
         </div>
 
+
         <!-- 2017 -->
 
         <div class="history-card">
@@ -742,6 +759,7 @@
             </div>
 
         </div>
+
 
         <!-- 2018 -->
 
@@ -793,6 +811,7 @@
 
         </div>
 
+
         <!-- 2019 -->
 
         <div class="history-card">
@@ -843,6 +862,7 @@
 
         </div>
 
+
         <!-- 2020 -->
 
         <div class="history-card">
@@ -892,6 +912,7 @@
             </div>
 
         </div>
+
 
         <!-- 2021 -->
 
@@ -946,6 +967,7 @@
 
         </div>
 
+
         <!-- 2022 -->
 
         <div class="history-card">
@@ -995,6 +1017,7 @@
             </div>
 
         </div>
+
 
         <!-- 2023 -->
 
@@ -1049,6 +1072,7 @@
 
         </div>
 
+
         <!-- 2024 -->
 
         <div class="history-card">
@@ -1098,6 +1122,7 @@
             </div>
 
         </div>
+
 
         <!-- 2025 -->
 
@@ -1149,6 +1174,7 @@
 
         </div>
 
+
         <!-- 2026 -->
 
         <div class="history-card">
@@ -1188,9 +1214,11 @@
 
         </div>
 
+
     </div>
 
 </main>
+
 
 <footer>
     Kevin Durant League · Fantasy Football History · Est. 2013
