@@ -118,89 +118,581 @@ nav a:hover {
 
 
 /* =========================================
-   DRAFTING EXCELLENCE
-========================================= */
+   <!-- DRAFTING EXCELLENCE -->
 
-.season-selector {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 15px;
+<h2 class="section-title">Drafting Excellence</h2>
+
+<p class="section-intro">
+    Who found the best fantasy players, and where did they find them?
+    Each season's top fantasy performers can be matched against the
+    historical draft board to measure both player quality and draft value.
+</p>
+
+<div class="season-selector">
+
+    <div style="color:#8f9aa4; font-size:13px;">
+        Top 5 fantasy players by season
+    </div>
+
+    <select id="seasonSelect" onchange="updateDraftingExcellence()">
+        <option value="2025">2025 Season</option>
+        <option value="2024">2024 Season</option>
+        <option value="2023">2023 Season</option>
+        <option value="2022">2022 Season</option>
+        <option value="2021">2021 Season</option>
+        <option value="2020">2020 Season</option>
+        <option value="2019">2019 Season</option>
+        <option value="2018">2018 Season</option>
+        <option value="2017">2017 Season</option>
+        <option value="2016">2016 Season</option>
+        <option value="2015">2015 Season</option>
+        <option value="2014">2014 Season</option>
+        <option value="2013">2013 Season</option>
+    </select>
+
+</div>
+
+<div class="top-five" id="topFiveContainer">
+</div>
+
+<script>
+
+const draftingExcellence = {
+
+    2025: [
+        {
+            rank: 1,
+            player: "Christian McCaffrey",
+            manager: "William",
+            pick: "Round 2 · Pick 3",
+            image: ""
+        },
+        {
+            rank: 2,
+            player: "Puka Nacua",
+            manager: "Michael",
+            pick: "Round 2 · Pick 5",
+            image: ""
+        },
+        {
+            rank: 3,
+            player: "Bijan Robinson",
+            manager: "Nic",
+            pick: "Round 1 · Pick 2",
+            image: ""
+        },
+        {
+            rank: 4,
+            player: "Jahmyr Gibbs",
+            manager: "Julia",
+            pick: "Round 1 · Pick 3",
+            image: ""
+        },
+        {
+            rank: 5,
+            player: "Josh Allen",
+            manager: "Christian",
+            pick: "Round 3 · Pick 4",
+            image: ""
+        }
+    ],
+
+    2024: [
+        {
+            rank: 1,
+            player: "Lamar Jackson",
+            manager: "Julia",
+            pick: "Round 5 · Pick 1",
+            image: ""
+        },
+        {
+            rank: 2,
+            player: "Ja'Marr Chase",
+            manager: "Jonah",
+            pick: "Round 1 · Pick 8",
+            image: ""
+        },
+        {
+            rank: 3,
+            player: "Josh Allen",
+            manager: "Ryan",
+            pick: "Round 3 · Pick 10",
+            image: ""
+        },
+        {
+            rank: 4,
+            player: "Joe Burrow",
+            manager: "Jonah",
+            pick: "Round 5 · Pick 8",
+            image: ""
+        },
+        {
+            rank: 5,
+            player: "Baker Mayfield",
+            manager: "Mike D.",
+            pick: "Free Agency",
+            image: ""
+        }
+    ],
+
+    2023: [
+        {
+            rank: 1,
+            player: "CeeDee Lamb",
+            manager: "Mike D.",
+            pick: "Round 1 · Pick 7",
+            image: ""
+        },
+        {
+            rank: 2,
+            player: "Josh Allen",
+            manager: "Jonah",
+            pick: "Round 3 · Pick 10",
+            image: ""
+        },
+        {
+            rank: 3,
+            player: "Christian McCaffrey",
+            manager: "Tommy",
+            pick: "Round 1 · Pick 3",
+            image: ""
+        },
+        {
+            rank: 4,
+            player: "Tyreek Hill",
+            manager: "William",
+            pick: "Round 1 · Pick 4",
+            image: ""
+        },
+        {
+            rank: 5,
+            player: "Jalen Hurts",
+            manager: "Taz",
+            pick: "Round 3 · Pick 1",
+            image: ""
+        }
+    ],
+
+    2022: [
+        {
+            rank: 1,
+            player: "Patrick Mahomes",
+            manager: "Nic",
+            pick: "Round 4 · Pick 9",
+            image: ""
+        },
+        {
+            rank: 2,
+            player: "Josh Allen",
+            manager: "Christian",
+            pick: "Round 4 · Pick 3",
+            image: ""
+        },
+        {
+            rank: 3,
+            player: "Jalen Hurts",
+            manager: "Jonah",
+            pick: "Round 6 · Pick 5",
+            image: ""
+        },
+        {
+            rank: 4,
+            player: "Austin Ekeler",
+            manager: "Mike H.",
+            pick: "Round 1 · Pick 3",
+            image: ""
+        },
+        {
+            rank: 5,
+            player: "Justin Jefferson",
+            manager: "Michael",
+            pick: "Round 1 · Pick 4",
+            image: ""
+        }
+    ],
+
+    2021: [
+        {
+            rank: 1,
+            player: "Cooper Kupp",
+            manager: "Ryan",
+            pick: "Round 5 · Pick 3",
+            image: ""
+        },
+        {
+            rank: 2,
+            player: "Josh Allen",
+            manager: "Tommy",
+            pick: "Round 3 · Pick 7",
+            image: ""
+        },
+        {
+            rank: 3,
+            player: "Justin Herbert",
+            manager: "William",
+            pick: "Round 5 · Pick 4",
+            image: ""
+        },
+        {
+            rank: 4,
+            player: "Tom Brady",
+            manager: "Joey",
+            pick: "Round 6 · Pick 6",
+            image: ""
+        },
+        {
+            rank: 5,
+            player: "Jonathan Taylor",
+            manager: "Nic",
+            pick: "Round 2 · Pick 3",
+            image: ""
+        }
+    ],
+
+    2020: [
+        {
+            rank: 1,
+            player: "Josh Allen",
+            manager: "Mike H.",
+            pick: "Round 15 · Pick 4",
+            image: ""
+        },
+        {
+            rank: 2,
+            player: "Aaron Rodgers",
+            manager: "Michael",
+            pick: "Round 17 · Pick 7",
+            image: ""
+        },
+        {
+            rank: 3,
+            player: "Kyler Murray",
+            manager: "Christian",
+            pick: "Round 8 · Pick 1",
+            image: ""
+        },
+        {
+            rank: 4,
+            player: "Alvin Kamara",
+            manager: "Mike H.",
+            pick: "Round 1 · Pick 4",
+            image: ""
+        },
+        {
+            rank: 5,
+            player: "Patrick Mahomes",
+            manager: "Ryan",
+            pick: "Round 2 · Pick 7",
+            image: ""
+        }
+    ],
+
+    2019: [
+        {
+            rank: 1,
+            player: "Christian McCaffrey",
+            manager: "Tommy",
+            pick: "Round 1 · Pick 3",
+            image: ""
+        },
+        {
+            rank: 2,
+            player: "Lamar Jackson",
+            manager: "Tommy",
+            pick: "Free Agency",
+            image: ""
+        },
+        {
+            rank: 3,
+            player: "Michael Thomas",
+            manager: "Nic",
+            pick: "Round 2 · Pick 1",
+            image: ""
+        },
+        {
+            rank: 4,
+            player: "Dak Prescott",
+            manager: "Taz",
+            pick: "Free Agency",
+            image: ""
+        },
+        {
+            rank: 5,
+            player: "Russell Wilson",
+            manager: "Ryan",
+            pick: "Free Agency",
+            image: ""
+        }
+    ],
+
+    2018: [
+        {
+            rank: 1,
+            player: "Patrick Mahomes",
+            manager: "Christian",
+            pick: "Drafted"
+        },
+        {
+            rank: 2,
+            player: "Saquon Barkley",
+            manager: "Tommy",
+            pick: "Drafted"
+        },
+        {
+            rank: 3,
+            player: "Christian McCaffrey",
+            manager: "Taz",
+            pick: "Drafted"
+        },
+        {
+            rank: 4,
+            player: "Todd Gurley",
+            manager: "Nic",
+            pick: "Drafted"
+        },
+        {
+            rank: 5,
+            player: "Matt Ryan",
+            manager: "Taz",
+            pick: "Drafted"
+        }
+    ],
+
+    2017: [
+        {
+            rank: 1,
+            player: "Todd Gurley",
+            manager: "Nic",
+            pick: "Drafted"
+        },
+        {
+            rank: 2,
+            player: "Russell Wilson",
+            manager: "Michael",
+            pick: "Drafted"
+        },
+        {
+            rank: 3,
+            player: "Le'Veon Bell",
+            manager: "Bailey",
+            pick: "Drafted"
+        },
+        {
+            rank: 4,
+            player: "Alvin Kamara",
+            manager: "Christian",
+            pick: "Drafted"
+        },
+        {
+            rank: 5,
+            player: "Antonio Brown",
+            manager: "Taz",
+            pick: "Drafted"
+        }
+    ],
+
+    2016: [
+        {
+            rank: 1,
+            player: "David Johnson",
+            manager: "Nic",
+            pick: "Drafted"
+        },
+        {
+            rank: 2,
+            player: "Aaron Rodgers",
+            manager: "Taz",
+            pick: "Drafted"
+        },
+        {
+            rank: 3,
+            player: "Matt Ryan",
+            manager: "Ryan",
+            pick: "Drafted"
+        },
+        {
+            rank: 4,
+            player: "Drew Brees",
+            manager: "Nic",
+            pick: "Drafted"
+        },
+        {
+            rank: 5,
+            player: "Ezekiel Elliott",
+            manager: "Ryan",
+            pick: "Drafted"
+        }
+    ],
+
+    2015: [
+        {
+            rank: 1,
+            player: "Cam Newton",
+            manager: "Ryan",
+            pick: "Drafted"
+        },
+        {
+            rank: 2,
+            player: "Antonio Brown",
+            manager: "Christian",
+            pick: "Drafted"
+        },
+        {
+            rank: 3,
+            player: "Julio Jones",
+            manager: "Tommy",
+            pick: "Drafted"
+        },
+        {
+            rank: 4,
+            player: "Tom Brady",
+            manager: "Christian",
+            pick: "Drafted"
+        },
+        {
+            rank: 5,
+            player: "Brandon Marshall",
+            manager: "Nic",
+            pick: "Drafted"
+        }
+    ],
+
+    2014: [
+        {
+            rank: 1,
+            player: "Antonio Brown",
+            manager: "Nic",
+            pick: "Drafted"
+        },
+        {
+            rank: 2,
+            player: "Le'Veon Bell",
+            manager: "Bailey",
+            pick: "Drafted"
+        },
+        {
+            rank: 3,
+            player: "Aaron Rodgers",
+            manager: "Jonah",
+            pick: "Drafted"
+        },
+        {
+            rank: 4,
+            player: "DeMarco Murray",
+            manager: "Bailey",
+            pick: "Drafted"
+        },
+        {
+            rank: 5,
+            player: "Andrew Luck",
+            manager: "Nic",
+            pick: "Drafted"
+        }
+    ],
+
+    2013: [
+        {
+            rank: 1,
+            player: "Peyton Manning",
+            manager: "Bailey",
+            pick: "Drafted"
+        },
+        {
+            rank: 2,
+            player: "Jamaal Charles",
+            manager: "Ryan",
+            pick: "Drafted"
+        },
+        {
+            rank: 3,
+            player: "Drew Brees",
+            manager: "Ryan",
+            pick: "Drafted"
+        },
+        {
+            rank: 4,
+            player: "Matt Forte",
+            manager: "Nic",
+            pick: "Drafted"
+        },
+        {
+            rank: 5,
+            player: "LeSean McCoy",
+            manager: "Ryan",
+            pick: "Drafted"
+        }
+    ]
+
+};
+
+
+function updateDraftingExcellence() {
+
+    const season = document.getElementById("seasonSelect").value;
+    const players = draftingExcellence[season];
+    const container = document.getElementById("topFiveContainer");
+
+    container.innerHTML = "";
+
+    players.forEach(player => {
+
+        const card = document.createElement("div");
+        card.className = "player-card";
+
+        let headshotHTML = "";
+
+        if (player.image) {
+            headshotHTML = `
+                <img
+                    src="${player.image}"
+                    alt="${player.player}"
+                    style="
+                        width:72px;
+                        height:72px;
+                        object-fit:cover;
+                        border-radius:50%;
+                        display:block;
+                        margin:0 auto 12px;
+                    "
+                >
+            `;
+        }
+
+        card.innerHTML = `
+            <div>
+                ${headshotHTML}
+
+                <div class="player-rank">
+                    Fantasy Rank #${player.rank}
+                </div>
+
+                <div class="player-name">
+                    ${player.player}
+                </div>
+            </div>
+
+            <div class="draft-info">
+
+                <div class="draft-manager">
+                    ${player.manager}
+                </div>
+
+                <div class="draft-pick">
+                    ${player.pick}
+                </div>
+
+            </div>
+        `;
+
+        container.appendChild(card);
+
+    });
+
 }
 
-.season-selector select {
-    background: #111820;
-    color: white;
-    border: 1px solid #27313b;
-    border-radius: 8px;
-    padding: 10px 14px;
-    font-size: 13px;
-}
+updateDraftingExcellence();
 
-.top-five {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 12px;
-}
-
-.player-card {
-    background: #151c24;
-    border: 1px solid #27313b;
-    border-radius: 12px;
-    padding: 18px;
-    min-height: 225px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.player-rank {
-    color: #68747e;
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    font-weight: 700;
-    margin-bottom: 10px;
-}
-
-.player-heading {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    min-height: 72px;
-}
-
-.player-headshot {
-    width: 68px;
-    height: 68px;
-    object-fit: contain;
-    object-position: center bottom;
-    flex-shrink: 0;
-    display: block;
-}
-
-.player-name {
-    font-size: 18px;
-    font-weight: 800;
-    line-height: 1.1;
-}
-
-.draft-info {
-    border-top: 1px solid #27313b;
-    padding-top: 12px;
-    margin-top: 15px;
-}
-
-.draft-manager {
-    font-size: 13px;
-    font-weight: 700;
-}
-
-.draft-pick {
-    color: #8f9aa4;
-    font-size: 12px;
-    margin-top: 3px;
-}
+</script>
 
 
 /* =========================================
