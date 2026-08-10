@@ -1,60 +1,635 @@
 ```html
-/* DRAFTING EXCELLENCE — PLAYER HEADSHOTS */
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-.player-card {
-    min-height: 190px;
-}
+    <title>Drafts | Kevin Durant League</title>
 
-.player-top {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-}
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-.player-headshot {
-    width: 58px;
-    height: 58px;
-    object-fit: contain;
-    object-position: bottom center;
-    flex-shrink: 0;
-}
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #0b0f14;
+            color: #f5f5f5;
+            line-height: 1.5;
+        }
 
-.player-name-wrap {
-    min-width: 0;
-}
+        header {
+            background: #111820;
+            border-bottom: 1px solid #27313b;
+            padding: 20px 30px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
 
-.player-name {
-    font-size: 19px;
-    font-weight: 800;
-    line-height: 1.15;
-    margin-top: 5px;
-}
+        .header-inner {
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-.fantasy-finish {
-    color: #9aa5af;
-    font-size: 12px;
-    margin-top: 5px;
-}
+        .logo {
+            font-size: 22px;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
 
-.draft-info {
-    border-top: 1px solid #27313b;
-    padding-top: 12px;
-    margin-top: 15px;
-}
+        .logo span {
+            display: block;
+            font-size: 11px;
+            color: #9aa5af;
+            letter-spacing: 2px;
+            margin-top: 2px;
+        }
 
-.draft-manager {
-    font-size: 13px;
-    font-weight: 700;
-}
+        nav {
+            display: flex;
+            gap: 20px;
+        }
 
-.draft-pick {
-    color: #8f9aa4;
-    font-size: 12px;
-    margin-top: 3px;
-}
+        nav a {
+            color: #cbd2d8;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        nav a:hover {
+            color: white;
+        }
+
+        .hero {
+            max-width: 1200px;
+            margin: auto;
+            padding: 70px 30px 50px;
+        }
+
+        .eyebrow {
+            color: #9aa5af;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 12px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .hero h1 {
+            font-size: clamp(42px, 7vw, 72px);
+            line-height: .95;
+            letter-spacing: -3px;
+            margin-bottom: 18px;
+        }
+
+        .hero p {
+            color: #aeb8c1;
+            max-width: 720px;
+            font-size: 17px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 30px 80px;
+        }
+
+        .section-title {
+            font-size: 24px;
+            margin: 50px 0 20px;
+        }
+
+        .section-intro {
+            color: #8f9aa4;
+            max-width: 760px;
+            margin-top: -10px;
+            margin-bottom: 22px;
+            font-size: 14px;
+        }
+
+        /* FEATURED SEASON */
+
+        .season-selector {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .season-selector select {
+            background: #111820;
+            color: white;
+            border: 1px solid #27313b;
+            border-radius: 8px;
+            padding: 10px 14px;
+            font-size: 13px;
+        }
+
+        .top-five {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 12px;
+        }
+
+        .player-card {
+            background: #151c24;
+            border: 1px solid #27313b;
+            border-radius: 12px;
+            padding: 20px;
+            min-height: 190px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .player-rank {
+            color: #68747e;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 700;
+        }
+
+        .player-name {
+            font-size: 20px;
+            font-weight: 800;
+            margin-top: 8px;
+        }
+
+        .fantasy-finish {
+            color: #9aa5af;
+            font-size: 12px;
+            margin-top: 4px;
+        }
+
+        .draft-info {
+            border-top: 1px solid #27313b;
+            padding-top: 12px;
+            margin-top: 15px;
+        }
+
+        .draft-manager {
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        .draft-pick {
+            color: #8f9aa4;
+            font-size: 12px;
+            margin-top: 3px;
+        }
+
+        /* PLAYER HEADSHOTS */
+
+        .player-visual {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-top: 8px;
+            min-height: 72px;
+        }
+
+        .player-headshot {
+            width: 64px;
+            height: 72px;
+            object-fit: contain;
+            object-position: bottom center;
+            flex-shrink: 0;
+            display: block;
+        }
+
+        .player-text {
+            min-width: 0;
+        }
+
+        /* RECORD CARDS */
+
+        .record-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+
+        .record-card {
+            background: #151c24;
+            border: 1px solid #27313b;
+            border-radius: 12px;
+            padding: 23px;
+        }
+
+        .record-label {
+            color: #8f9aa4;
+            text-transform: uppercase;
+            letter-spacing: 1.4px;
+            font-size: 10px;
+            font-weight: 700;
+        }
+
+        .record-value {
+            font-size: 28px;
+            font-weight: 800;
+            margin-top: 8px;
+        }
+
+        .record-holder {
+            color: #aeb8c1;
+            font-size: 13px;
+            margin-top: 4px;
+        }
+
+        .record-detail {
+            color: #68747e;
+            font-size: 12px;
+            margin-top: 3px;
+        }
+
+        /* PANELS */
+
+        .panel {
+            background: #151c24;
+            border: 1px solid #27313b;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .panel-header {
+            padding: 20px 22px;
+            border-bottom: 1px solid #27313b;
+        }
+
+        .panel-header h3 {
+            font-size: 17px;
+        }
+
+        .panel-header p {
+            color: #7f8a94;
+            font-size: 12px;
+            margin-top: 3px;
+        }
+
+        /* VALUE CARDS */
+
+        .value-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        .value-card {
+            background: #151c24;
+            border: 1px solid #27313b;
+            border-radius: 12px;
+            padding: 24px;
+        }
+
+        .value-label {
+            color: #8f9aa4;
+            text-transform: uppercase;
+            letter-spacing: 1.4px;
+            font-size: 10px;
+            font-weight: 700;
+        }
+
+        .value-number {
+            font-size: 34px;
+            font-weight: 800;
+            margin-top: 8px;
+        }
+
+        .value-player {
+            font-size: 16px;
+            font-weight: 700;
+            margin-top: 8px;
+        }
+
+        .value-meta {
+            color: #8f9aa4;
+            font-size: 12px;
+            margin-top: 3px;
+        }
+
+        /* SLOT GRID */
+
+        .slot-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+
+        .slot-card {
+            background: #151c24;
+            border: 1px solid #27313b;
+            border-radius: 12px;
+            padding: 23px;
+        }
+
+        .slot-card h3 {
+            font-size: 13px;
+            color: #8f9aa4;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+
+        .slot-manager {
+            font-size: 18px;
+            font-weight: 800;
+        }
+
+        .slot-count {
+            font-size: 28px;
+            font-weight: 800;
+            margin-top: 4px;
+        }
+
+        .slot-detail {
+            color: #68747e;
+            font-size: 12px;
+            margin-top: 3px;
+        }
+
+        /* TWO COLUMN */
+
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        /* LIST */
+
+        .list-row {
+            display: grid;
+            grid-template-columns: 55px 1fr 110px 110px;
+            align-items: center;
+            padding: 16px 22px;
+            border-bottom: 1px solid #222b34;
+        }
+
+        .list-row:last-child {
+            border-bottom: none;
+        }
+
+        .list-rank {
+            color: #68747e;
+            font-weight: 800;
+            font-size: 13px;
+        }
+
+        .list-player {
+            font-weight: 700;
+        }
+
+        .list-manager {
+            color: #aeb8c1;
+            font-size: 13px;
+        }
+
+        .list-value {
+            text-align: right;
+            font-weight: 800;
+        }
+
+        .list-sub {
+            color: #68747e;
+            font-size: 11px;
+            margin-top: 2px;
+        }
+
+        /* BUST */
+
+        .bust {
+            color: #c5ccd2;
+        }
+
+        .negative {
+            color: #8f9aa4;
+        }
+
+        /* MANAGER PROFILE */
+
+        .manager-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        .manager-card {
+            background: #151c24;
+            border: 1px solid #27313b;
+            border-radius: 12px;
+            padding: 22px;
+        }
+
+        .manager-card h3 {
+            font-size: 17px;
+        }
+
+        .manager-card p {
+            color: #8f9aa4;
+            font-size: 12px;
+            margin-top: 3px;
+        }
+
+        .manager-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-top: 18px;
+        }
+
+        .mini-stat {
+            border-top: 1px solid #27313b;
+            padding-top: 10px;
+        }
+
+        .mini-stat strong {
+            display: block;
+            font-size: 19px;
+        }
+
+        .mini-stat span {
+            color: #68747e;
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: .8px;
+        }
+
+        /* DRAFT HISTORY */
+
+        .history-season {
+            border-bottom: 1px solid #27313b;
+        }
+
+        .history-season:last-child {
+            border-bottom: none;
+        }
+
+        .history-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 22px;
+        }
+
+        .history-header h3 {
+            font-size: 17px;
+        }
+
+        .history-header span {
+            color: #7f8a94;
+            font-size: 12px;
+        }
+
+        .history-note {
+            padding: 20px 22px;
+            color: #8f9aa4;
+            font-size: 13px;
+            border-top: 1px solid #27313b;
+        }
+
+        /* FOOTER */
+
+        footer {
+            border-top: 1px solid #27313b;
+            padding: 30px;
+            text-align: center;
+            color: #68747e;
+            font-size: 12px;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 1000px) {
+
+            .top-five {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .record-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .slot-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .manager-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 800px) {
+
+            header {
+                padding: 18px 20px;
+            }
+
+            .header-inner {
+                flex-direction: column;
+                gap: 15px;
+                align-items: flex-start;
+            }
+
+            nav {
+                width: 100%;
+                overflow-x: auto;
+                gap: 18px;
+                padding-bottom: 3px;
+            }
+
+            nav a {
+                white-space: nowrap;
+            }
+
+            .hero {
+                padding: 50px 20px 40px;
+            }
+
+            .container {
+                padding: 0 20px 60px;
+            }
+
+            .top-five {
+                grid-template-columns: 1fr;
+            }
+
+            .record-grid,
+            .value-grid,
+            .slot-grid,
+            .manager-grid,
+            .two-column {
+                grid-template-columns: 1fr;
+            }
+
+            .list-row {
+                grid-template-columns: 40px 1fr;
+                gap: 8px;
+            }
+
+            .list-manager,
+            .list-value {
+                grid-column: 2;
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+
+    <div class="header-inner">
+
+        <div class="logo">
+            KEVIN DURANT LEAGUE
+            <span>FANTASY FOOTBALL · EST. 2013</span>
+        </div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="history.html">History</a>
+            <a href="teams.html">Teams</a>
+            <a href="records.html">Records</a>
+            <a href="matchups.html">Matchups</a>
+            <a href="drafts.html">Drafts</a>
+            <a href="seasons.html">Seasons</a>
+        </nav>
+
+    </div>
+
+</header>
 
 
-/* DRAFTING EXCELLENCE */
+<section class="hero">
+
+    <div class="eyebrow">League Draft Book · 2013–2026</div>
+
+    <h1>Drafts.</h1>
+
+    <p>
+        The picks that built championships, the steals that changed seasons,
+        and the managers who consistently found value.
+    </p>
+
+</section>
+
+
+<div class="container">
+
+
+<!-- ========================================================= -->
+<!-- DRAFTING EXCELLENCE                                      -->
+<!-- ========================================================= -->
 
 <h2 class="section-title">Drafting Excellence</h2>
 
@@ -70,7 +645,7 @@
         Top 5 fantasy players by season
     </div>
 
-    <select id="draftSeasonSelect" onchange="updateDraftingExcellence()">
+    <select id="seasonSelect" onchange="showSeason(this.value)">
         <option value="2025">2025 Season</option>
         <option value="2024">2024 Season</option>
         <option value="2023">2023 Season</option>
@@ -88,40 +663,793 @@
 
 </div>
 
-<div class="top-five" id="topFivePlayers"></div>
+<div class="top-five" id="topFive"></div>
+
+
+<!-- ========================================================= -->
+<!-- ALL-TIME DRAFTING LEADERS                                -->
+<!-- ========================================================= -->
+
+<h2 class="section-title">All-Time Drafting Leaders</h2>
+
+<div class="record-grid">
+
+    <div class="record-card">
+        <div class="record-label">Most Top-10 Players Drafted</div>
+        <div class="record-value">TBD</div>
+        <div class="record-holder">Manager TBD</div>
+        <div class="record-detail">Historical draft data pending</div>
+    </div>
+
+    <div class="record-card">
+        <div class="record-label">Most Top-25 Players Drafted</div>
+        <div class="record-value">TBD</div>
+        <div class="record-holder">Manager TBD</div>
+        <div class="record-detail">Historical draft data pending</div>
+    </div>
+
+    <div class="record-card">
+        <div class="record-label">Most Elite Picks</div>
+        <div class="record-value">TBD</div>
+        <div class="record-holder">Manager TBD</div>
+        <div class="record-detail">Top fantasy finishes drafted</div>
+    </div>
+
+    <div class="record-card">
+        <div class="record-label">Most Draft Steals</div>
+        <div class="record-value">TBD</div>
+        <div class="record-holder">Manager TBD</div>
+        <div class="record-detail">Largest positive draft value</div>
+    </div>
+
+</div>
+
+
+<!-- ========================================================= -->
+<!-- DRAFT VALUE                                               -->
+<!-- ========================================================= -->
+
+<h2 class="section-title">Draft Value</h2>
+
+<p class="section-intro">
+    Great drafting isn't only about finding great players. It's about
+    finding them later than everyone else. Draft value compares a player's
+    fantasy finish against where they were selected.
+</p>
+
+<div class="value-grid">
+
+    <div class="value-card">
+        <div class="value-label">Biggest Draft Steal</div>
+        <div class="value-number">+TBD</div>
+        <div class="value-player">Player TBD</div>
+        <div class="value-meta">
+            Manager TBD · Drafted TBD · Finished TBD
+        </div>
+    </div>
+
+    <div class="value-card">
+        <div class="value-label">Best Late-Round Pick</div>
+        <div class="value-number">+TBD</div>
+        <div class="value-player">Player TBD</div>
+        <div class="value-meta">
+            Manager TBD · Round TBD
+        </div>
+    </div>
+
+    <div class="value-card">
+        <div class="value-label">Best Draft Value Season</div>
+        <div class="value-number">TBD</div>
+        <div class="value-player">Manager TBD</div>
+        <div class="value-meta">
+            Season TBD · Value score TBD
+        </div>
+    </div>
+
+</div>
+
+
+<!-- ========================================================= -->
+<!-- DRAFT SLOT KINGS                                          -->
+<!-- ========================================================= -->
+
+<h2 class="section-title">Draft Slot Kings</h2>
+
+<p class="section-intro">
+    Because the league has grown from four teams to twelve, draft position
+    is measured relative to the size of each season's draft.
+</p>
+
+<div class="slot-grid">
+
+    <div class="slot-card">
+        <h3>Most Top-3 Picks</h3>
+        <div class="slot-manager">Manager TBD</div>
+        <div class="slot-count">TBD</div>
+        <div class="slot-detail">Top-three draft positions</div>
+    </div>
+
+    <div class="slot-card">
+        <h3>Most Bottom-3 Picks</h3>
+        <div class="slot-manager">Manager TBD</div>
+        <div class="slot-count">TBD</div>
+        <div class="slot-detail">Bottom-three draft positions</div>
+    </div>
+
+    <div class="slot-card">
+        <h3>Most #1 Picks</h3>
+        <div class="slot-manager">Manager TBD</div>
+        <div class="slot-count">TBD</div>
+        <div class="slot-detail">First overall draft position</div>
+    </div>
+
+    <div class="slot-card">
+        <h3>Most Last Picks</h3>
+        <div class="slot-manager">Manager TBD</div>
+        <div class="slot-count">TBD</div>
+        <div class="slot-detail">Final draft position</div>
+    </div>
+
+</div>
+
+
+<!-- ========================================================= -->
+<!-- DRAFT SLOT PERFORMANCE                                   -->
+<!-- ========================================================= -->
+
+<h2 class="section-title">Draft Slot Performance</h2>
+
+<p class="section-intro">
+    Which managers have made the most of difficult draft positions?
+    This section measures results rather than simply counting appearances
+    at a particular spot.
+</p>
+
+<div class="two-column">
+
+    <div class="panel">
+
+        <div class="panel-header">
+            <h3>Best From the Top</h3>
+            <p>Performance when drafting in the top three</p>
+        </div>
+
+        <div class="list-row">
+            <div class="list-rank">01</div>
+            <div class="list-player">Manager TBD</div>
+            <div class="list-manager">Top 3</div>
+            <div class="list-value">TBD%</div>
+        </div>
+
+        <div class="list-row">
+            <div class="list-rank">02</div>
+            <div class="list-player">Manager TBD</div>
+            <div class="list-manager">Top 3</div>
+            <div class="list-value">TBD%</div>
+        </div>
+
+        <div class="list-row">
+            <div class="list-rank">03</div>
+            <div class="list-player">Manager TBD</div>
+            <div class="list-manager">Top 3</div>
+            <div class="list-value">TBD%</div>
+        </div>
+
+    </div>
+
+
+    <div class="panel">
+
+        <div class="panel-header">
+            <h3>Best From the Back</h3>
+            <p>Performance when drafting in the bottom three</p>
+        </div>
+
+        <div class="list-row">
+            <div class="list-rank">01</div>
+            <div class="list-player">Manager TBD</div>
+            <div class="list-manager">Bottom 3</div>
+            <div class="list-value">TBD%</div>
+        </div>
+
+        <div class="list-row">
+            <div class="list-rank">02</div>
+            <div class="list-player">Manager TBD</div>
+            <div class="list-manager">Bottom 3</div>
+            <div class="list-value">TBD%</div>
+        </div>
+
+        <div class="list-row">
+            <div class="list-rank">03</div>
+            <div class="list-player">Manager TBD</div>
+            <div class="list-manager">Bottom 3</div>
+            <div class="list-value">TBD%</div>
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ========================================================= -->
+<!-- LATE ROUND HEROES                                        -->
+<!-- ========================================================= -->
+
+<h2 class="section-title">Late-Round Heroes</h2>
+
+<p class="section-intro">
+    The players who turned late picks into massive fantasy value.
+</p>
+
+<div class="panel">
+
+    <div class="panel-header">
+        <h3>Greatest Draft Steals</h3>
+        <p>Players selected well after their eventual fantasy finish</p>
+    </div>
+
+    <div class="list-row">
+        <div class="list-rank">01</div>
+
+        <div>
+            <div class="list-player">Player TBD</div>
+            <div class="list-sub">Season TBD</div>
+        </div>
+
+        <div class="list-manager">
+            Manager TBD
+            <div class="list-sub">Round TBD</div>
+        </div>
+
+        <div class="list-value">
+            +TBD
+            <div class="list-sub">Draft value</div>
+        </div>
+    </div>
+
+    <div class="list-row">
+        <div class="list-rank">02</div>
+
+        <div>
+            <div class="list-player">Player TBD</div>
+            <div class="list-sub">Season TBD</div>
+        </div>
+
+        <div class="list-manager">
+            Manager TBD
+            <div class="list-sub">Round TBD</div>
+        </div>
+
+        <div class="list-value">
+            +TBD
+            <div class="list-sub">Draft value</div>
+        </div>
+    </div>
+
+    <div class="list-row">
+        <div class="list-rank">03</div>
+
+        <div>
+            <div class="list-player">Player TBD</div>
+            <div class="list-sub">Season TBD</div>
+        </div>
+
+        <div class="list-manager">
+            Manager TBD
+            <div class="list-sub">Round TBD</div>
+        </div>
+
+        <div class="list-value">
+            +TBD
+            <div class="list-sub">Draft value</div>
+        </div>
+    </div>
+
+    <div class="list-row">
+        <div class="list-rank">04</div>
+
+        <div>
+            <div class="list-player">Player TBD</div>
+            <div class="list-sub">Season TBD</div>
+        </div>
+
+        <div class="list-manager">
+            Manager TBD
+            <div class="list-sub">Round TBD</div>
+        </div>
+
+        <div class="list-value">
+            +TBD
+            <div class="list-sub">Draft value</div>
+        </div>
+    </div>
+
+    <div class="list-row">
+        <div class="list-rank">05</div>
+
+        <div>
+            <div class="list-player">Player TBD</div>
+            <div class="list-sub">Season TBD</div>
+        </div>
+
+        <div class="list-manager">
+            Manager TBD
+            <div class="list-sub">Round TBD</div>
+        </div>
+
+        <div class="list-value">
+            +TBD
+            <div class="list-sub">Draft value</div>
+        </div>
+    </div>
+
+</div>
+
+
+<!-- ========================================================= -->
+<!-- DRAFT BUSTS                                               -->
+<!-- ========================================================= -->
+
+<h2 class="section-title">Draft Busts</h2>
+
+<p class="section-intro">
+    Not every early pick becomes a star. These are the biggest gaps
+    between draft position and eventual fantasy production.
+</p>
+
+<div class="panel">
+
+    <div class="panel-header">
+        <h3>Biggest Draft Busts</h3>
+        <p>Largest negative difference between draft position and fantasy finish</p>
+    </div>
+
+    <div class="list-row">
+        <div class="list-rank">01</div>
+
+        <div>
+            <div class="list-player bust">Player TBD</div>
+            <div class="list-sub">Season TBD</div>
+        </div>
+
+        <div class="list-manager">
+            Manager TBD
+            <div class="list-sub">Drafted TBD</div>
+        </div>
+
+        <div class="list-value negative">
+            −TBD
+            <div class="list-sub">Draft value</div>
+        </div>
+    </div>
+
+    <div class="list-row">
+        <div class="list-rank">02</div>
+
+        <div>
+            <div class="list-player bust">Player TBD</div>
+            <div class="list-sub">Season TBD</div>
+        </div>
+
+        <div class="list-manager">
+            Manager TBD
+            <div class="list-sub">Drafted TBD</div>
+        </div>
+
+        <div class="list-value negative">
+            −TBD
+            <div class="list-sub">Draft value</div>
+        </div>
+    </div>
+
+    <div class="list-row">
+        <div class="list-rank">03</div>
+
+        <div>
+            <div class="list-player bust">Player TBD</div>
+            <div class="list-sub">Season TBD</div>
+        </div>
+
+        <div class="list-manager">
+            Manager TBD
+            <div class="list-sub">Drafted TBD</div>
+        </div>
+
+        <div class="list-value negative">
+            −TBD
+            <div class="list-sub">Draft value</div>
+        </div>
+    </div>
+
+</div>
+
+
+<!-- ========================================================= -->
+<!-- BEST DRAFTS                                               -->
+<!-- ========================================================= -->
+
+<h2 class="section-title">Best Drafts</h2>
+
+<p class="section-intro">
+    The strongest individual draft classes in league history, based on
+    player production, draft value and the ability to find impact players.
+</p>
+
+<div class="two-column">
+
+    <div class="panel">
+
+        <div class="panel-header">
+            <h3>Best Drafts by Season</h3>
+            <p>Top three draft classes for each season</p>
+        </div>
+
+        <div class="list-row">
+            <div class="list-rank">2025</div>
+            <div class="list-player">Manager TBD</div>
+            <div class="list-manager">Draft Grade</div>
+            <div class="list-value">TBD</div>
+        </div>
+
+        <div class="list-row">
+            <div class="list-rank">2024</div>
+            <div class="list-player">Manager TBD</div>
+            <div class="list-manager">Draft Grade</div>
+            <div class="list-value">TBD</div>
+        </div>
+
+        <div class="list-row">
+            <div class="list-rank">2023</div>
+            <div class="list-player">Manager TBD</div>
+            <div class="list-manager">Draft Grade</div>
+            <div class="list-value">TBD</div>
+        </div>
+
+        <div class="list-row">
+            <div class="list-rank">2022</div>
+            <div class="list-player">Manager TBD</div>
+            <div class="list-manager">Draft Grade</div>
+            <div class="list-value">TBD</div>
+        </div>
+
+        <div class="list-row">
+            <div class="list-rank">2021</div>
+            <div class="list-player">Manager TBD</div>
+            <div class="list-manager">Draft Grade</div>
+            <div class="list-value">TBD</div>
+        </div>
+
+    </div>
+
+
+    <div class="panel">
+
+        <div class="panel-header">
+            <h3>Best Draft Ever</h3>
+            <p>Highest-performing single draft class</p>
+        </div>
+
+        <div style="padding: 25px;">
+
+            <div style="color:#68747e; font-size:11px; text-transform:uppercase; letter-spacing:1.5px; font-weight:700;">
+                Manager
+            </div>
+
+            <div style="font-size:30px; font-weight:800; margin-top:6px;">
+                Manager TBD
+            </div>
+
+            <div style="color:#8f9aa4; font-size:13px; margin-top:3px;">
+                2025 Draft
+            </div>
+
+            <div class="manager-stats">
+
+                <div class="mini-stat">
+                    <strong>TBD</strong>
+                    <span>Top-10 Players</span>
+                </div>
+
+                <div class="mini-stat">
+                    <strong>TBD</strong>
+                    <span>Top-25 Players</span>
+                </div>
+
+                <div class="mini-stat">
+                    <strong>+TBD</strong>
+                    <span>Draft Value</span>
+                </div>
+
+                <div class="mini-stat">
+                    <strong>TBD</strong>
+                    <span>Late-Round Hits</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ========================================================= -->
+<!-- MANAGER DRAFTING PROFILES                                -->
+<!-- ========================================================= -->
+
+<h2 class="section-title">Manager Drafting Profiles</h2>
+
+<p class="section-intro">
+    An all-time look at which managers have consistently found value
+    on draft day.
+</p>
+
+<div class="manager-grid">
+
+    <div class="manager-card">
+        <h3>Jonah Wheeler</h3>
+        <p>Drafting profile</p>
+
+        <div class="manager-stats">
+
+            <div class="mini-stat">
+                <strong>TBD</strong>
+                <span>Top-10 Picks</span>
+            </div>
+
+            <div class="mini-stat">
+                <strong>TBD</strong>
+                <span>Top-25 Picks</span>
+            </div>
+
+            <div class="mini-stat">
+                <strong>TBD</strong>
+                <span>Draft Steals</span>
+            </div>
+
+            <div class="mini-stat">
+                <strong>TBD</strong>
+                <span>Best Draft</span>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="manager-card">
+        <h3>Tommy Herbst</h3>
+        <p>Drafting profile</p>
+
+        <div class="manager-stats">
+
+            <div class="mini-stat">
+                <strong>TBD</strong>
+                <span>Top-10 Picks</span>
+            </div>
+
+            <div class="mini-stat">
+                <strong>TBD</strong>
+                <span>Top-25 Picks</span>
+            </div>
+
+            <div class="mini-stat">
+                <strong>TBD</strong>
+                <span>Draft Steals</span>
+            </div>
+
+            <div class="mini-stat">
+                <strong>TBD</strong>
+                <span>Best Draft</span>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="manager-card">
+        <h3>Ryan Herbst</h3>
+        <p>Drafting profile</p>
+
+        <div class="manager-stats">
+
+            <div class="mini-stat">
+                <strong>TBD</strong>
+                <span>Top-10 Picks</span>
+            </div>
+
+            <div class="mini-stat">
+                <strong>TBD</strong>
+                <span>Top-25 Picks</span>
+            </div>
+
+            <div class="mini-stat">
+                <strong>TBD</strong>
+                <span>Draft Steals</span>
+            </div>
+
+            <div class="mini-stat">
+                <strong>TBD</strong>
+                <span>Best Draft</span>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+
+<!-- ========================================================= -->
+<!-- DRAFT HISTORY                                             -->
+<!-- ========================================================= -->
+
+<h2 class="section-title">Draft History</h2>
+
+<p class="section-intro">
+    The complete historical draft boards. As Yahoo data is imported,
+    each season can display every selection, manager, round and draft
+    position.
+</p>
+
+<div class="panel">
+
+    <div class="history-season">
+        <div class="history-header">
+            <h3>2026 Draft</h3>
+            <span>Historical draft data pending</span>
+        </div>
+    </div>
+
+    <div class="history-season">
+        <div class="history-header">
+            <h3>2025 Draft</h3>
+            <span>Historical draft data pending</span>
+        </div>
+    </div>
+
+    <div class="history-season">
+        <div class="history-header">
+            <h3>2024 Draft</h3>
+            <span>Historical draft data pending</span>
+        </div>
+    </div>
+
+    <div class="history-season">
+        <div class="history-header">
+            <h3>2023 Draft</h3>
+            <span>Historical draft data pending</span>
+        </div>
+    </div>
+
+    <div class="history-season">
+        <div class="history-header">
+            <h3>2022 Draft</h3>
+            <span>Historical draft data pending</span>
+        </div>
+    </div>
+
+    <div class="history-season">
+        <div class="history-header">
+            <h3>2021 Draft</h3>
+            <span>Historical draft data pending</span>
+        </div>
+    </div>
+
+    <div class="history-season">
+        <div class="history-header">
+            <h3>2020 Draft</h3>
+            <span>Historical draft data pending</span>
+        </div>
+    </div>
+
+    <div class="history-season">
+        <div class="history-header">
+            <h3>2019 Draft</h3>
+            <span>Historical draft data pending</span>
+        </div>
+    </div>
+
+    <div class="history-season">
+        <div class="history-header">
+            <h3>2018 Draft</h3>
+            <span>Historical draft data pending</span>
+        </div>
+    </div>
+
+    <div class="history-season">
+        <div class="history-header">
+            <h3>2017 Draft</h3>
+            <span>Historical draft data pending</span>
+        </div>
+    </div>
+
+    <div class="history-season">
+        <div class="history-header">
+            <h3>2016 Draft</h3>
+            <span>Historical draft data pending</span>
+        </div>
+    </div>
+
+    <div class="history-season">
+        <div class="history-header">
+            <h3>2015 Draft</h3>
+            <span>Historical draft data pending</span>
+        </div>
+    </div>
+
+    <div class="history-season">
+        <div class="history-header">
+            <h3>2014 Draft</h3>
+            <span>Historical draft data pending</span>
+        </div>
+    </div>
+
+    <div class="history-season">
+        <div class="history-header">
+            <h3>2013 Draft</h3>
+            <span>Historical draft data pending</span>
+        </div>
+    </div>
+
+    <div class="history-note">
+        Complete draft selections will be displayed here once the
+        historical Yahoo draft data has been imported and verified.
+    </div>
+
+</div>
+
+</div>
+
+
+<footer>
+    Kevin Durant League · Fantasy Football · Est. 2013
+</footer>
 
 
 <script>
 
-const draftingData = {
+/*
+=============================================================
+DRAFTING EXCELLENCE DATA
+=============================================================
+
+2019–2025:
+Manager + actual round/pick are shown.
+
+2013–2018:
+Only the manager is shown because historical offline
+draft records did not preserve reliable draft positions.
+*/
+
+const draftData = {
 
     2025: [
         {
-            name: "Christian McCaffrey",
+            player: "Christian McCaffrey",
             manager: "William",
             pick: "Round 2 · Pick 3",
-            image: "https://a.espncdn.com/i/headshots/nfl/players/full/3117251.png"
+            image: "https://a.espncdn.com/i/headshots/nfl/players/full/2976219.png"
         },
         {
-            name: "Puka Nacua",
+            player: "Puka Nacua",
             manager: "Michael",
             pick: "Round 2 · Pick 5",
-            image: "https://a.espncdn.com/i/headshots/nfl/players/full/4426515.png"
+            image: "https://a.espncdn.com/i/headshots/nfl/players/full/4361370.png"
         },
         {
-            name: "Bijan Robinson",
+            player: "Bijan Robinson",
             manager: "Nic",
             pick: "Round 1 · Pick 2",
             image: "https://a.espncdn.com/i/headshots/nfl/players/full/4430807.png"
         },
         {
-            name: "Jahmyr Gibbs",
+            player: "Jahmyr Gibbs",
             manager: "Julia",
             pick: "Round 1 · Pick 3",
-            image: "https://a.espncdn.com/i/headshots/nfl/players/full/4429795.png"
+            image: "https://a.espncdn.com/i/headshots/nfl/players/full/4431379.png"
         },
         {
-            name: "Josh Allen",
+            player: "Josh Allen",
             manager: "Christian",
             pick: "Round 3 · Pick 4",
             image: "https://a.espncdn.com/i/headshots/nfl/players/full/3918299.png"
@@ -130,31 +1458,31 @@ const draftingData = {
 
     2024: [
         {
-            name: "Lamar Jackson",
+            player: "Lamar Jackson",
             manager: "Julia",
             pick: "Round 5 · Pick 1",
             image: "https://a.espncdn.com/i/headshots/nfl/players/full/3916387.png"
         },
         {
-            name: "Ja'Marr Chase",
+            player: "Ja’Marr Chase",
             manager: "Jonah",
             pick: "Round 1 · Pick 8",
             image: "https://a.espncdn.com/i/headshots/nfl/players/full/4362628.png"
         },
         {
-            name: "Josh Allen",
+            player: "Josh Allen",
             manager: "Ryan",
             pick: "Round 3 · Pick 10",
             image: "https://a.espncdn.com/i/headshots/nfl/players/full/3918299.png"
         },
         {
-            name: "Joe Burrow",
+            player: "Joe Burrow",
             manager: "Jonah",
             pick: "Round 5 · Pick 8",
             image: "https://a.espncdn.com/i/headshots/nfl/players/full/3915511.png"
         },
         {
-            name: "Baker Mayfield",
+            player: "Baker Mayfield",
             manager: "Mike D.",
             pick: "Free Agency",
             image: "https://a.espncdn.com/i/headshots/nfl/players/full/3052587.png"
@@ -163,31 +1491,31 @@ const draftingData = {
 
     2023: [
         {
-            name: "CeeDee Lamb",
+            player: "CeeDee Lamb",
             manager: "Mike D.",
             pick: "Round 1 · Pick 7",
             image: "https://a.espncdn.com/i/headshots/nfl/players/full/4241389.png"
         },
         {
-            name: "Josh Allen",
+            player: "Josh Allen",
             manager: "Jonah",
             pick: "Round 3 · Pick 10",
             image: "https://a.espncdn.com/i/headshots/nfl/players/full/3918299.png"
         },
         {
-            name: "Christian McCaffrey",
+            player: "Christian McCaffrey",
             manager: "Tommy",
             pick: "Round 1 · Pick 3",
-            image: "https://a.espncdn.com/i/headshots/nfl/players/full/3117251.png"
+            image: "https://a.espncdn.com/i/headshots/nfl/players/full/2976219.png"
         },
         {
-            name: "Tyreek Hill",
+            player: "Tyreek Hill",
             manager: "William",
             pick: "Round 1 · Pick 4",
             image: "https://a.espncdn.com/i/headshots/nfl/players/full/3116406.png"
         },
         {
-            name: "Jalen Hurts",
+            player: "Jalen Hurts",
             manager: "Taz",
             pick: "Round 3 · Pick 1",
             image: "https://a.espncdn.com/i/headshots/nfl/players/full/4040715.png"
@@ -196,97 +1524,97 @@ const draftingData = {
 
     2022: [
         {
-            name: "Patrick Mahomes",
+            player: "Patrick Mahomes",
             manager: "Nic",
             pick: "Round 4 · Pick 9",
             image: "https://a.espncdn.com/i/headshots/nfl/players/full/3139477.png"
         },
         {
-            name: "Josh Allen",
+            player: "Josh Allen",
             manager: "Christian",
             pick: "Round 4 · Pick 3",
             image: "https://a.espncdn.com/i/headshots/nfl/players/full/3918299.png"
         },
         {
-            name: "Jalen Hurts",
+            player: "Jalen Hurts",
             manager: "Jonah",
             pick: "Round 6 · Pick 5",
             image: "https://a.espncdn.com/i/headshots/nfl/players/full/4040715.png"
         },
         {
-            name: "Austin Ekeler",
+            player: "Austin Ekeler",
             manager: "Mike H.",
             pick: "Round 1 · Pick 3",
             image: "https://a.espncdn.com/i/headshots/nfl/players/full/3068267.png"
         },
         {
-            name: "Justin Jefferson",
+            player: "Justin Jefferson",
             manager: "Michael",
             pick: "Round 1 · Pick 4",
-            image: "https://a.espncdn.com/i/headshots/nfl/players/full/4262921.png"
+            image: "https://a.espncdn.com/i/headshots/nfl/players/full/4047365.png"
         }
     ],
 
     2021: [
         {
-            name: "Cooper Kupp",
+            player: "Cooper Kupp",
             manager: "Ryan",
             pick: "Round 5 · Pick 3",
             image: "https://a.espncdn.com/i/headshots/nfl/players/full/2977187.png"
         },
         {
-            name: "Josh Allen",
+            player: "Josh Allen",
             manager: "Tommy",
             pick: "Round 3 · Pick 7",
             image: "https://a.espncdn.com/i/headshots/nfl/players/full/3918299.png"
         },
         {
-            name: "Justin Herbert",
+            player: "Justin Herbert",
             manager: "William",
             pick: "Round 5 · Pick 4",
             image: "https://a.espncdn.com/i/headshots/nfl/players/full/4038941.png"
         },
         {
-            name: "Tom Brady",
+            player: "Tom Brady",
             manager: "Joey",
             pick: "Round 6 · Pick 6",
             image: "https://a.espncdn.com/i/headshots/nfl/players/full/2330.png"
         },
         {
-            name: "Jonathan Taylor",
+            player: "Jonathan Taylor",
             manager: "Nic",
             pick: "Round 2 · Pick 3",
-            image: "https://a.espncdn.com/i/headshots/nfl/players/full/4241412.png"
+            image: "https://a.espncdn.com/i/headshots/nfl/players/full/4241417.png"
         }
     ],
 
     2020: [
         {
-            name: "Josh Allen",
+            player: "Josh Allen",
             manager: "Mike H.",
             pick: "Round 15 · Pick 4",
             image: "https://a.espncdn.com/i/headshots/nfl/players/full/3918299.png"
         },
         {
-            name: "Aaron Rodgers",
+            player: "Aaron Rodgers",
             manager: "Michael",
             pick: "Round 17 · Pick 7",
             image: "https://a.espncdn.com/i/headshots/nfl/players/full/8439.png"
         },
         {
-            name: "Kyler Murray",
+            player: "Kyler Murray",
             manager: "Christian",
             pick: "Round 8 · Pick 1",
             image: "https://a.espncdn.com/i/headshots/nfl/players/full/3917315.png"
         },
         {
-            name: "Alvin Kamara",
+            player: "Alvin Kamara",
             manager: "Mike H.",
             pick: "Round 1 · Pick 4",
-            image: "https://a.espncdn.com/i/headshots/nfl/players/full/3054850.png"
+            image: "https://a.espncdn.com/i/headshots/nfl/players/full/3068267.png"
         },
         {
-            name: "Patrick Mahomes",
+            player: "Patrick Mahomes",
             manager: "Ryan",
             pick: "Round 2 · Pick 7",
             image: "https://a.espncdn.com/i/headshots/nfl/players/full/3139477.png"
@@ -295,64 +1623,64 @@ const draftingData = {
 
     2019: [
         {
-            name: "Christian McCaffrey",
+            player: "Christian McCaffrey",
             manager: "Tommy",
             pick: "Round 1 · Pick 3",
-            image: "https://a.espncdn.com/i/headshots/nfl/players/full/3117251.png"
+            image: "https://a.espncdn.com/i/headshots/nfl/players/full/2976219.png"
         },
         {
-            name: "Lamar Jackson",
+            player: "Lamar Jackson",
             manager: "Tommy",
             pick: "Free Agency",
             image: "https://a.espncdn.com/i/headshots/nfl/players/full/3916387.png"
         },
         {
-            name: "Michael Thomas",
+            player: "Michael Thomas",
             manager: "Nic",
             pick: "Round 2 · Pick 1",
             image: "https://a.espncdn.com/i/headshots/nfl/players/full/2976316.png"
         },
         {
-            name: "Dak Prescott",
+            player: "Dak Prescott",
             manager: "Taz",
             pick: "Free Agency",
             image: "https://a.espncdn.com/i/headshots/nfl/players/full/2577417.png"
         },
         {
-            name: "Russell Wilson",
+            player: "Russell Wilson",
             manager: "Ryan",
             pick: "Free Agency",
-            image: "https://a.espncdn.com/i/headshots/nfl/players/full/2532970.png"
+            image: "https://a.espncdn.com/i/headshots/nfl/players/full/14881.png"
         }
     ],
 
     2018: [
         {
-            name: "Patrick Mahomes",
+            player: "Patrick Mahomes",
             manager: "Christian",
             pick: null,
             image: "https://a.espncdn.com/i/headshots/nfl/players/full/3139477.png"
         },
         {
-            name: "Saquon Barkley",
+            player: "Saquon Barkley",
             manager: "Tommy",
             pick: null,
-            image: "https://a.espncdn.com/i/headshots/nfl/players/full/3929630.png"
+            image: "https://a.espncdn.com/i/headshots/nfl/players/full/4047646.png"
         },
         {
-            name: "Christian McCaffrey",
+            player: "Christian McCaffrey",
             manager: "Taz",
             pick: null,
-            image: "https://a.espncdn.com/i/headshots/nfl/players/full/3117251.png"
+            image: "https://a.espncdn.com/i/headshots/nfl/players/full/2976219.png"
         },
         {
-            name: "Todd Gurley",
+            player: "Todd Gurley",
             manager: "Nic",
             pick: null,
-            image: "https://a.espncdn.com/i/headshots/nfl/players/full/2976316.png"
+            image: "https://a.espncdn.com/i/headshots/nfl/players/full/2976499.png"
         },
         {
-            name: "Matt Ryan",
+            player: "Matt Ryan",
             manager: "Taz",
             pick: null,
             image: "https://a.espncdn.com/i/headshots/nfl/players/full/11237.png"
@@ -361,31 +1689,31 @@ const draftingData = {
 
     2017: [
         {
-            name: "Todd Gurley",
+            player: "Todd Gurley",
             manager: "Nic",
             pick: null,
-            image: "https://a.espncdn.com/i/headshots/nfl/players/full/2976316.png"
+            image: "https://a.espncdn.com/i/headshots/nfl/players/full/2976499.png"
         },
         {
-            name: "Russell Wilson",
+            player: "Russell Wilson",
             manager: "Michael",
             pick: null,
-            image: "https://a.espncdn.com/i/headshots/nfl/players/full/2532970.png"
+            image: "https://a.espncdn.com/i/headshots/nfl/players/full/14881.png"
         },
         {
-            name: "Le'Veon Bell",
+            player: "Le’Veon Bell",
             manager: "Bailey",
             pick: null,
-            image: "https://a.espncdn.com/i/headshots/nfl/players/full/15813.png"
+            image: "https://a.espncdn.com/i/headshots/nfl/players/full/15847.png"
         },
         {
-            name: "Alvin Kamara",
+            player: "Alvin Kamara",
             manager: "Christian",
             pick: null,
-            image: "https://a.espncdn.com/i/headshots/nfl/players/full/3054850.png"
+            image: "https://a.espncdn.com/i/headshots/nfl/players/full/3068267.png"
         },
         {
-            name: "Antonio Brown",
+            player: "Antonio Brown",
             manager: "Taz",
             pick: null,
             image: "https://a.espncdn.com/i/headshots/nfl/players/full/13934.png"
@@ -394,97 +1722,97 @@ const draftingData = {
 
     2016: [
         {
-            name: "David Johnson",
+            player: "David Johnson",
             manager: "Nic",
             pick: null,
             image: "https://a.espncdn.com/i/headshots/nfl/players/full/2976212.png"
         },
         {
-            name: "Aaron Rodgers",
+            player: "Aaron Rodgers",
             manager: "Taz",
             pick: null,
             image: "https://a.espncdn.com/i/headshots/nfl/players/full/8439.png"
         },
         {
-            name: "Matt Ryan",
+            player: "Matt Ryan",
             manager: "Ryan",
             pick: null,
             image: "https://a.espncdn.com/i/headshots/nfl/players/full/11237.png"
         },
         {
-            name: "Drew Brees",
+            player: "Drew Brees",
             manager: "Nic",
             pick: null,
             image: "https://a.espncdn.com/i/headshots/nfl/players/full/2580.png"
         },
         {
-            name: "Ezekiel Elliott",
+            player: "Ezekiel Elliott",
             manager: "Ryan",
             pick: null,
-            image: "https://a.espncdn.com/i/headshots/nfl/players/full/3051399.png"
+            image: "https://a.espncdn.com/i/headshots/nfl/players/full/3051398.png"
         }
     ],
 
     2015: [
         {
-            name: "Cam Newton",
+            player: "Cam Newton",
             manager: "Ryan",
             pick: null,
             image: "https://a.espncdn.com/i/headshots/nfl/players/full/13994.png"
         },
         {
-            name: "Antonio Brown",
+            player: "Antonio Brown",
             manager: "Christian",
             pick: null,
             image: "https://a.espncdn.com/i/headshots/nfl/players/full/13934.png"
         },
         {
-            name: "Julio Jones",
+            player: "Julio Jones",
             manager: "Tommy",
             pick: null,
             image: "https://a.espncdn.com/i/headshots/nfl/players/full/13982.png"
         },
         {
-            name: "Tom Brady",
+            player: "Tom Brady",
             manager: "Christian",
             pick: null,
             image: "https://a.espncdn.com/i/headshots/nfl/players/full/2330.png"
         },
         {
-            name: "Brandon Marshall",
+            player: "Brandon Marshall",
             manager: "Nic",
             pick: null,
-            image: "https://a.espncdn.com/i/headshots/nfl/players/full/11343.png"
+            image: "https://a.espncdn.com/i/headshots/nfl/players/full/5549.png"
         }
     ],
 
     2014: [
         {
-            name: "Antonio Brown",
+            player: "Antonio Brown",
             manager: "Nic",
             pick: null,
             image: "https://a.espncdn.com/i/headshots/nfl/players/full/13934.png"
         },
         {
-            name: "Le'Veon Bell",
+            player: "Le’Veon Bell",
             manager: "Bailey",
             pick: null,
-            image: "https://a.espncdn.com/i/headshots/nfl/players/full/15813.png"
+            image: "https://a.espncdn.com/i/headshots/nfl/players/full/15847.png"
         },
         {
-            name: "Aaron Rodgers",
+            player: "Aaron Rodgers",
             manager: "Jonah",
             pick: null,
             image: "https://a.espncdn.com/i/headshots/nfl/players/full/8439.png"
         },
         {
-            name: "DeMarco Murray",
+            player: "DeMarco Murray",
             manager: "Bailey",
             pick: null,
-            image: "https://a.espncdn.com/i/headshots/nfl/players/full/13222.png"
+            image: "https://a.espncdn.com/i/headshots/nfl/players/full/14990.png"
         },
         {
-            name: "Andrew Luck",
+            player: "Andrew Luck",
             manager: "Nic",
             pick: null,
             image: "https://a.espncdn.com/i/headshots/nfl/players/full/14874.png"
@@ -493,91 +1821,104 @@ const draftingData = {
 
     2013: [
         {
-            name: "Peyton Manning",
+            player: "Peyton Manning",
             manager: "Bailey",
             pick: null,
             image: "https://a.espncdn.com/i/headshots/nfl/players/full/1428.png"
         },
         {
-            name: "Jamaal Charles",
+            player: "Jamaal Charles",
             manager: "Ryan",
             pick: null,
             image: "https://a.espncdn.com/i/headshots/nfl/players/full/11307.png"
         },
         {
-            name: "Drew Brees",
+            player: "Drew Brees",
             manager: "Ryan",
             pick: null,
             image: "https://a.espncdn.com/i/headshots/nfl/players/full/2580.png"
         },
         {
-            name: "Matt Forte",
+            player: "Matt Forte",
             manager: "Nic",
             pick: null,
-            image: "https://a.espncdn.com/i/headshots/nfl/players/full/12503.png"
+            image: "https://a.espncdn.com/i/headshots/nfl/players/full/11258.png"
         },
         {
-            name: "LeSean McCoy",
+            player: "LeSean McCoy",
             manager: "Ryan",
             pick: null,
-            image: "https://a.espncdn.com/i/headshots/nfl/players/full/2574832.png"
+            image: "https://a.espncdn.com/i/headshots/nfl/players/full/12514.png"
         }
     ]
 
 };
 
 
-function updateDraftingExcellence() {
+/*
+=============================================================
+RENDER DRAFTING EXCELLENCE
+=============================================================
+*/
 
-    const season = document.getElementById("draftSeasonSelect").value;
-    const players = draftingData[season];
-    const container = document.getElementById("topFivePlayers");
+function showSeason(season) {
 
-    container.innerHTML = "";
+    const players = draftData[season];
+    const container = document.getElementById("topFive");
 
-    players.forEach((player, index) => {
+    if (!players) {
+        container.innerHTML = "";
+        return;
+    }
+
+    container.innerHTML = players.map((player, index) => {
 
         const rank = index + 1;
 
-        const pickHTML = player.pick
-            ? `<div class="draft-pick">${player.pick}</div>`
-            : "";
+        const pickText = player.pick
+            ? player.pick
+            : "Historical pick unavailable";
 
-        container.innerHTML += `
-
+        return `
             <div class="player-card">
 
                 <div>
-                    <div class="player-top">
+
+                    <div class="player-rank">
+                        Fantasy Rank #${rank}
+                    </div>
+
+                    <div class="player-visual">
 
                         <img
                             class="player-headshot"
                             src="${player.image}"
-                            alt="${player.name}"
+                            alt="${player.player}"
                             onerror="this.style.display='none';"
                         >
 
-                        <div class="player-name-wrap">
-
-                            <div class="player-rank">
-                                Fantasy Rank #${rank}
-                            </div>
+                        <div class="player-text">
 
                             <div class="player-name">
-                                ${player.name}
+                                ${player.player}
                             </div>
 
                             <div class="fantasy-finish">
-                                ${rank === 1 ? "Top fantasy player" :
-                                  rank === 2 ? "Second-best fantasy player" :
-                                  rank === 3 ? "Third-best fantasy player" :
-                                  rank === 4 ? "Fourth-best fantasy player" :
-                                  "Fifth-best fantasy player"}
+                                ${rank === 1
+                                    ? "Top fantasy player"
+                                    : rank === 2
+                                        ? "Second-best fantasy player"
+                                        : rank === 3
+                                            ? "Third-best fantasy player"
+                                            : rank === 4
+                                                ? "Fourth-best fantasy player"
+                                                : "Fifth-best fantasy player"}
                             </div>
 
                         </div>
 
                     </div>
+
                 </div>
 
                 <div class="draft-info">
@@ -586,21 +1927,29 @@ function updateDraftingExcellence() {
                         ${player.manager}
                     </div>
 
-                    ${pickHTML}
+                    <div class="draft-pick">
+                        ${pickText}
+                    </div>
 
                 </div>
 
             </div>
-
         `;
 
-    });
-
+    }).join("");
 }
 
 
-/* Load 2025 automatically */
-updateDraftingExcellence();
+/*
+=============================================================
+INITIAL LOAD
+=============================================================
+*/
+
+showSeason("2025");
 
 </script>
+
+</body>
+</html>
 ```
