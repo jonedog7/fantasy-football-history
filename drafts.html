@@ -1,627 +1,611 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Drafts | Kevin Durant League</title>
 
 <style>
-    * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #0b0f14;
+    color: #f5f5f5;
+    line-height: 1.5;
+}
+
+header {
+    background: #111820;
+    border-bottom: 1px solid #27313b;
+    padding: 20px 30px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-inner {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.logo span {
+    display: block;
+    font-size: 11px;
+    color: #9aa5af;
+    letter-spacing: 2px;
+    margin-top: 2px;
+}
+
+nav {
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    color: #cbd2d8;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+nav a:hover {
+    color: white;
+}
+
+.hero {
+    max-width: 1200px;
+    margin: auto;
+    padding: 70px 30px 50px;
+}
+
+.eyebrow {
+    color: #9aa5af;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.hero h1 {
+    font-size: clamp(42px, 7vw, 72px);
+    line-height: .95;
+    letter-spacing: -3px;
+    margin-bottom: 18px;
+}
+
+.hero p {
+    color: #aeb8c1;
+    max-width: 720px;
+    font-size: 17px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 30px 80px;
+}
+
+.section-title {
+    font-size: 24px;
+    margin: 50px 0 20px;
+}
+
+.section-intro {
+    color: #8f9aa4;
+    max-width: 760px;
+    margin-top: -10px;
+    margin-bottom: 22px;
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   ALL-TIME DRAFTING LEADERS
+   ========================================================= */
+
+.leader-list {
+    background: #151c24;
+    border: 1px solid #27313b;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.leader-row {
+    display: grid;
+    grid-template-columns: 65px 1fr 180px;
+    align-items: center;
+    padding: 18px 22px;
+    border-bottom: 1px solid #27313b;
+}
+
+.leader-row:last-child {
+    border-bottom: none;
+}
+
+.leader-rank {
+    color: #68747e;
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.leader-name {
+    font-size: 16px;
+    font-weight: 800;
+}
+
+.leader-detail {
+    color: #7f8a94;
+    font-size: 11px;
+    margin-top: 2px;
+}
+
+.leader-number {
+    text-align: right;
+    font-size: 28px;
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   DRAFTING EXCELLENCE
+   ========================================================= */
+
+.season-selector {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.season-selector select {
+    background: #111820;
+    color: white;
+    border: 1px solid #27313b;
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 13px;
+}
+
+.top-five {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
+}
+
+.player-card {
+    background: #151c24;
+    border: 1px solid #27313b;
+    border-radius: 12px;
+    padding: 20px;
+    min-height: 190px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.player-rank {
+    color: #68747e;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 700;
+}
+
+.player-name {
+    font-size: 20px;
+    font-weight: 800;
+    margin-top: 8px;
+}
+
+.draft-info {
+    border-top: 1px solid #27313b;
+    padding-top: 12px;
+    margin-top: 15px;
+}
+
+.draft-manager {
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.draft-pick {
+    color: #8f9aa4;
+    font-size: 12px;
+    margin-top: 3px;
+}
+
+
+/* =========================================================
+   BEST DRAFTS
+   ========================================================= */
+
+.best-drafts {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.best-draft-card {
+    background: #151c24;
+    border: 1px solid #27313b;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.best-draft-header {
+    padding: 20px 22px;
+    border-bottom: 1px solid #27313b;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.best-draft-year {
+    font-size: 18px;
+    font-weight: 800;
+}
+
+.best-draft-manager {
+    color: #aeb8c1;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.best-draft-content {
+    padding: 20px 22px;
+}
+
+.top25-label {
+    color: #68747e;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    font-size: 10px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.top25-count {
+    font-size: 30px;
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+
+.best-player-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.best-player {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #27313b;
+    padding-top: 8px;
+}
+
+.best-player-name {
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.best-player-rank {
+    color: #68747e;
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   MANAGER DRAFTING PROFILES
+   ========================================================= */
+
+.manager-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.manager-card {
+    background: #151c24;
+    border: 1px solid #27313b;
+    border-radius: 12px;
+    padding: 22px;
+}
+
+.manager-card h3 {
+    font-size: 17px;
+}
+
+.manager-card p {
+    color: #8f9aa4;
+    font-size: 12px;
+    margin-top: 3px;
+}
+
+.manager-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-top: 18px;
+}
+
+.mini-stat {
+    border-top: 1px solid #27313b;
+    padding-top: 10px;
+}
+
+.mini-stat strong {
+    display: block;
+    font-size: 19px;
+}
+
+.mini-stat span {
+    color: #68747e;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: .8px;
+}
+
+
+/* =========================================================
+   DRAFT SLOT KINGS
+   ========================================================= */
+
+.slot-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.slot-card {
+    background: #151c24;
+    border: 1px solid #27313b;
+    border-radius: 12px;
+    padding: 23px;
+}
+
+.slot-card h3 {
+    font-size: 13px;
+    color: #8f9aa4;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.slot-manager {
+    font-size: 18px;
+    font-weight: 800;
+}
+
+.slot-count {
+    font-size: 28px;
+    font-weight: 800;
+    margin-top: 4px;
+}
+
+.slot-detail {
+    color: #68747e;
+    font-size: 12px;
+    margin-top: 3px;
+}
+
+
+/* =========================================================
+   DRAFT SLOT PERFORMANCE
+   ========================================================= */
+
+.two-column {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.panel {
+    background: #151c24;
+    border: 1px solid #27313b;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.panel-header {
+    padding: 20px 22px;
+    border-bottom: 1px solid #27313b;
+}
+
+.panel-header h3 {
+    font-size: 17px;
+}
+
+.panel-header p {
+    color: #7f8a94;
+    font-size: 12px;
+    margin-top: 3px;
+}
+
+.list-row {
+    display: grid;
+    grid-template-columns: 55px 1fr 110px 110px;
+    align-items: center;
+    padding: 16px 22px;
+    border-bottom: 1px solid #222b34;
+}
+
+.list-row:last-child {
+    border-bottom: none;
+}
+
+.list-rank {
+    color: #68747e;
+    font-weight: 800;
+    font-size: 13px;
+}
+
+.list-player {
+    font-weight: 700;
+}
+
+.list-manager {
+    color: #aeb8c1;
+    font-size: 13px;
+}
+
+.list-value {
+    text-align: right;
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   DRAFT HISTORY
+   ========================================================= */
+
+.history-selector {
+    background: #111820;
+    border: 1px solid #27313b;
+    border-radius: 12px;
+    padding: 20px 22px;
+}
+
+.history-selector label {
+    display: block;
+    color: #8f9aa4;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    font-size: 10px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.history-selector select {
+    width: 100%;
+    max-width: 300px;
+    background: #151c24;
+    color: white;
+    border: 1px solid #27313b;
+    border-radius: 8px;
+    padding: 11px 14px;
+    font-size: 14px;
+}
+
+.history-note {
+    margin-top: 15px;
+    color: #8f9aa4;
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+    .top-five {
+        grid-template-columns: repeat(3, 1fr);
     }
 
-    body {
-        font-family: Arial, Helvetica, sans-serif;
-        background: #0b0f14;
-        color: #f5f5f5;
-        line-height: 1.5;
+    .manager-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
+
+    .slot-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 800px) {
 
     header {
-        background: #111820;
-        border-bottom: 1px solid #27313b;
-        padding: 20px 30px;
-        position: sticky;
-        top: 0;
-        z-index: 100;
+        padding: 18px 20px;
     }
 
     .header-inner {
-        max-width: 1200px;
-        margin: auto;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    .logo {
-        font-size: 22px;
-        font-weight: 800;
-        letter-spacing: 1px;
-    }
-
-    .logo span {
-        display: block;
-        font-size: 11px;
-        color: #9aa5af;
-        letter-spacing: 2px;
-        margin-top: 2px;
+        flex-direction: column;
+        gap: 15px;
+        align-items: flex-start;
     }
 
     nav {
-        display: flex;
-        gap: 20px;
+        width: 100%;
+        overflow-x: auto;
+        gap: 18px;
+        padding-bottom: 3px;
     }
 
     nav a {
-        color: #cbd2d8;
-        text-decoration: none;
-        font-size: 14px;
-        font-weight: 600;
-    }
-
-    nav a:hover {
-        color: white;
+        white-space: nowrap;
     }
 
     .hero {
-        max-width: 1200px;
-        margin: auto;
-        padding: 70px 30px 50px;
-    }
-
-    .eyebrow {
-        color: #9aa5af;
-        text-transform: uppercase;
-        letter-spacing: 3px;
-        font-size: 12px;
-        font-weight: 700;
-        margin-bottom: 12px;
-    }
-
-    .hero h1 {
-        font-size: clamp(42px, 7vw, 72px);
-        line-height: .95;
-        letter-spacing: -3px;
-        margin-bottom: 18px;
-    }
-
-    .hero p {
-        color: #aeb8c1;
-        max-width: 720px;
-        font-size: 17px;
+        padding: 50px 20px 40px;
     }
 
     .container {
-        max-width: 1200px;
-        margin: auto;
-        padding: 0 30px 80px;
+        padding: 0 20px 60px;
     }
 
-    .section-title {
-        font-size: 24px;
-        margin: 50px 0 20px;
-    }
-
-    .section-intro {
-        color: #8f9aa4;
-        max-width: 760px;
-        margin-top: -10px;
-        margin-bottom: 22px;
-        font-size: 14px;
-    }
-
-    /* =========================
-       ALL-TIME LEADERS
-    ========================= */
-
-    .record-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 15px;
-    }
-
-    .record-card {
-        background: #151c24;
-        border: 1px solid #27313b;
-        border-radius: 12px;
-        padding: 23px;
-    }
-
-    .record-label {
-        color: #8f9aa4;
-        text-transform: uppercase;
-        letter-spacing: 1.4px;
-        font-size: 10px;
-        font-weight: 700;
-    }
-
-    .record-value {
-        font-size: 28px;
-        font-weight: 800;
-        margin-top: 8px;
-    }
-
-    .record-holder {
-        color: #aeb8c1;
-        font-size: 13px;
-        margin-top: 4px;
-    }
-
-    .record-detail {
-        color: #68747e;
-        font-size: 12px;
-        margin-top: 3px;
-    }
-
-    /* =========================
-       DRAFTING EXCELLENCE
-    ========================= */
-
-    .season-selector {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 15px;
-    }
-
-    .season-selector select {
-        background: #111820;
-        color: white;
-        border: 1px solid #27313b;
-        border-radius: 8px;
-        padding: 10px 14px;
-        font-size: 13px;
-    }
-
-    .top-five {
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
-        gap: 12px;
-    }
-
-    .player-card {
-        background: #151c24;
-        border: 1px solid #27313b;
-        border-radius: 12px;
-        padding: 18px;
-        min-height: 250px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        overflow: hidden;
-    }
-
-    .player-rank {
-        color: #68747e;
-        font-size: 11px;
-        text-transform: uppercase;
-        letter-spacing: 1.5px;
-        font-weight: 700;
-    }
-
-    .player-headshot-wrap {
-        height: 105px;
-        display: flex;
-        align-items: flex-end;
-        margin-top: 8px;
-        margin-bottom: 8px;
-    }
-
-    .player-headshot {
-        width: 105px;
-        height: 105px;
-        object-fit: contain;
-        object-position: bottom center;
-        display: block;
-    }
-
-    .player-headshot.placeholder {
-        width: 105px;
-        height: 105px;
-        border-radius: 50%;
-        background: #202a34;
-        border: 1px solid #33404c;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #68747e;
-        font-size: 10px;
-        text-transform: uppercase;
-        letter-spacing: .5px;
-        text-align: center;
-        padding: 10px;
-    }
-
-    .player-name {
-        font-size: 19px;
-        font-weight: 800;
-        margin-top: 2px;
-        line-height: 1.15;
-    }
-
-    .draft-info {
-        border-top: 1px solid #27313b;
-        padding-top: 12px;
-        margin-top: 15px;
-    }
-
-    .draft-manager {
-        font-size: 13px;
-        font-weight: 700;
-    }
-
-    .draft-pick {
-        color: #8f9aa4;
-        font-size: 12px;
-        margin-top: 3px;
-    }
-
-    /* =========================
-       BEST DRAFTS
-    ========================= */
-
-    .best-drafts-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 15px;
-    }
-
-    .best-draft-card {
-        background: #151c24;
-        border: 1px solid #27313b;
-        border-radius: 12px;
-        padding: 23px;
-    }
-
-    .best-draft-year {
-        color: #68747e;
-        text-transform: uppercase;
-        letter-spacing: 1.5px;
-        font-size: 11px;
-        font-weight: 700;
-    }
-
-    .best-draft-manager {
-        font-size: 24px;
-        font-weight: 800;
-        margin-top: 6px;
-    }
-
-    .top25-count {
-        margin-top: 4px;
-        color: #9aa5af;
-        font-size: 13px;
-    }
-
-    .top25-list {
-        margin-top: 18px;
-        border-top: 1px solid #27313b;
-        padding-top: 13px;
-    }
-
-    .top25-player {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 7px 0;
-        border-bottom: 1px solid #222b34;
-    }
-
-    .top25-player:last-child {
-        border-bottom: none;
-    }
-
-    .top25-name {
-        font-size: 13px;
-        font-weight: 700;
-    }
-
-    .top25-rank {
-        color: #68747e;
-        font-size: 11px;
-    }
-
-    /* =========================
-       MANAGER PROFILES
-    ========================= */
-
-    .manager-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 15px;
-    }
-
-    .manager-card {
-        background: #151c24;
-        border: 1px solid #27313b;
-        border-radius: 12px;
-        padding: 22px;
-    }
-
-    .manager-card h3 {
-        font-size: 17px;
-    }
-
-    .manager-card p {
-        color: #8f9aa4;
-        font-size: 12px;
-        margin-top: 3px;
-    }
-
-    .manager-stats {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 12px;
-        margin-top: 18px;
-    }
-
-    .mini-stat {
-        border-top: 1px solid #27313b;
-        padding-top: 10px;
-    }
-
-    .mini-stat strong {
-        display: block;
-        font-size: 19px;
-    }
-
-    .mini-stat span {
-        color: #68747e;
-        font-size: 10px;
-        text-transform: uppercase;
-        letter-spacing: .8px;
-    }
-
-    /* =========================
-       DRAFT SLOT KINGS
-    ========================= */
-
-    .slot-grid {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 15px;
-    }
-
-    .slot-card {
-        background: #151c24;
-        border: 1px solid #27313b;
-        border-radius: 12px;
-        padding: 23px;
-    }
-
-    .slot-card h3 {
-        font-size: 13px;
-        color: #8f9aa4;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        margin-bottom: 10px;
-    }
-
-    .slot-manager {
-        font-size: 18px;
-        font-weight: 800;
-    }
-
-    .slot-count {
-        font-size: 28px;
-        font-weight: 800;
-        margin-top: 4px;
-    }
-
-    .slot-detail {
-        color: #68747e;
-        font-size: 12px;
-        margin-top: 3px;
-    }
-
-    /* =========================
-       DRAFT SLOT PERFORMANCE
-    ========================= */
-
+    .top-five,
+    .best-drafts,
+    .manager-grid,
+    .slot-grid,
     .two-column {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 20px;
+        grid-template-columns: 1fr;
     }
 
-    .panel {
-        background: #151c24;
-        border: 1px solid #27313b;
-        border-radius: 12px;
-        overflow: hidden;
+    .leader-row {
+        grid-template-columns: 45px 1fr 80px;
     }
 
-    .panel-header {
-        padding: 20px 22px;
-        border-bottom: 1px solid #27313b;
-    }
-
-    .panel-header h3 {
-        font-size: 17px;
-    }
-
-    .panel-header p {
-        color: #7f8a94;
-        font-size: 12px;
-        margin-top: 3px;
+    .leader-number {
+        font-size: 22px;
     }
 
     .list-row {
-        display: grid;
-        grid-template-columns: 55px 1fr 110px 110px;
-        align-items: center;
-        padding: 16px 22px;
-        border-bottom: 1px solid #222b34;
+        grid-template-columns: 40px 1fr;
+        gap: 8px;
     }
 
-    .list-row:last-child {
-        border-bottom: none;
-    }
-
-    .list-rank {
-        color: #68747e;
-        font-weight: 800;
-        font-size: 13px;
-    }
-
-    .list-player {
-        font-weight: 700;
-    }
-
-    .list-manager {
-        color: #aeb8c1;
-        font-size: 13px;
-    }
-
+    .list-manager,
     .list-value {
-        text-align: right;
-        font-weight: 800;
+        grid-column: 2;
+        text-align: left;
     }
 
-    /* =========================
-       DRAFT HISTORY
-    ========================= */
+}
 
-    .history-selector {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 15px;
-    }
-
-    .history-selector select {
-        background: #111820;
-        color: white;
-        border: 1px solid #27313b;
-        border-radius: 8px;
-        padding: 10px 14px;
-        font-size: 13px;
-    }
-
-    .history-content {
-        background: #151c24;
-        border: 1px solid #27313b;
-        border-radius: 12px;
-        overflow: hidden;
-    }
-
-    .history-title {
-        padding: 22px;
-        border-bottom: 1px solid #27313b;
-    }
-
-    .history-title h3 {
-        font-size: 18px;
-    }
-
-    .history-title p {
-        color: #7f8a94;
-        font-size: 12px;
-        margin-top: 3px;
-    }
-
-    .history-message {
-        padding: 35px 22px;
-        color: #8f9aa4;
-        font-size: 13px;
-        text-align: center;
-    }
-
-    footer {
-        border-top: 1px solid #27313b;
-        padding: 30px;
-        text-align: center;
-        color: #68747e;
-        font-size: 12px;
-    }
-
-    /* =========================
-       MOBILE
-    ========================= */
-
-    @media (max-width: 1000px) {
-
-        .top-five {
-            grid-template-columns: repeat(3, 1fr);
-        }
-
-        .manager-grid {
-            grid-template-columns: repeat(2, 1fr);
-        }
-
-        .slot-grid {
-            grid-template-columns: repeat(2, 1fr);
-        }
-    }
-
-    @media (max-width: 800px) {
-
-        header {
-            padding: 18px 20px;
-        }
-
-        .header-inner {
-            flex-direction: column;
-            gap: 15px;
-            align-items: flex-start;
-        }
-
-        nav {
-            width: 100%;
-            overflow-x: auto;
-            gap: 18px;
-            padding-bottom: 3px;
-        }
-
-        nav a {
-            white-space: nowrap;
-        }
-
-        .hero {
-            padding: 50px 20px 40px;
-        }
-
-        .container {
-            padding: 0 20px 60px;
-        }
-
-        .top-five,
-        .record-grid,
-        .best-drafts-grid,
-        .manager-grid,
-        .slot-grid,
-        .two-column {
-            grid-template-columns: 1fr;
-        }
-
-        .season-selector,
-        .history-selector {
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 12px;
-        }
-
-        .list-row {
-            grid-template-columns: 40px 1fr;
-            gap: 8px;
-        }
-
-        .list-manager,
-        .list-value {
-            grid-column: 2;
-            text-align: left;
-        }
-    }
 </style>
+
 </head>
 
 <body>
 
+
+<!-- =========================================================
+     HEADER
+     ========================================================= -->
+
 <header>
+
     <div class="header-inner">
 
         <div class="logo">
@@ -640,1345 +624,1077 @@
         </nav>
 
     </div>
+
 </header>
 
 
-<main>
+<!-- =========================================================
+     HERO
+     ========================================================= -->
 
-    <!-- HERO -->
+<section class="hero">
 
-    <section class="hero">
+    <div class="eyebrow">
+        League Draft Book · 2013–2026
+    </div>
 
-        <div class="eyebrow">League Draft Book · 2013–2026</div>
+    <h1>Drafts.</h1>
 
-        <h1>Drafts.</h1>
+    <p>
+        The picks that built championships, the steals that changed seasons,
+        and the managers who consistently found value.
+    </p>
 
-        <p>
-            The picks that built championships, the steals that changed seasons,
-            and the managers who consistently found value.
-        </p>
-
-    </section>
-
-
-    <div class="container">
-
-
-        <!-- ==========================================================
-             1. ALL-TIME DRAFTING LEADERS
-        =========================================================== -->
-
-        <h2 class="section-title">All-Time Drafting Leaders</h2>
-
-        <div class="record-grid">
-
-            <div class="record-card">
-
-                <div class="record-label">
-                    Most Top-10 Players Drafted
-                </div>
-
-                <div class="record-value">
-                    TBD
-                </div>
-
-                <div class="record-holder">
-                    Manager TBD
-                </div>
-
-                <div class="record-detail">
-                    Players finishing among the top 10 fantasy players
-                </div>
-
-            </div>
+</section>
 
 
-            <div class="record-card">
+<main class="container">
 
-                <div class="record-label">
-                    Most Top-25 Players Drafted
-                </div>
 
-                <div class="record-value">
-                    TBD
-                </div>
+<!-- =========================================================
+     1. ALL-TIME DRAFTING LEADERS
+     ========================================================= -->
 
-                <div class="record-holder">
-                    Manager TBD
-                </div>
+<h2 class="section-title">All-Time Drafting Leaders</h2>
 
-                <div class="record-detail">
-                    Players finishing among the top 25 fantasy players
-                </div>
+<p class="section-intro">
+    The managers who have drafted the most players who finished among
+    the top 10 fantasy players in a season.
+</p>
 
-            </div>
+<div class="leader-list">
 
+    <div class="leader-row">
+        <div class="leader-rank">01</div>
+        <div>
+            <div class="leader-name">Manager TBD</div>
+            <div class="leader-detail">Career Top-10 players drafted</div>
+        </div>
+        <div class="leader-number">TBD</div>
+    </div>
+
+    <div class="leader-row">
+        <div class="leader-rank">02</div>
+        <div>
+            <div class="leader-name">Manager TBD</div>
+            <div class="leader-detail">Career Top-10 players drafted</div>
+        </div>
+        <div class="leader-number">TBD</div>
+    </div>
+
+    <div class="leader-row">
+        <div class="leader-rank">03</div>
+        <div>
+            <div class="leader-name">Manager TBD</div>
+            <div class="leader-detail">Career Top-10 players drafted</div>
+        </div>
+        <div class="leader-number">TBD</div>
+    </div>
+
+    <div class="leader-row">
+        <div class="leader-rank">04</div>
+        <div>
+            <div class="leader-name">Manager TBD</div>
+            <div class="leader-detail">Career Top-10 players drafted</div>
+        </div>
+        <div class="leader-number">TBD</div>
+    </div>
+
+    <div class="leader-row">
+        <div class="leader-rank">05</div>
+        <div>
+            <div class="leader-name">Manager TBD</div>
+            <div class="leader-detail">Career Top-10 players drafted</div>
+        </div>
+        <div class="leader-number">TBD</div>
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     2. DRAFTING EXCELLENCE
+     ========================================================= -->
+
+<h2 class="section-title">Drafting Excellence</h2>
+
+<p class="section-intro">
+    Who found the best fantasy players, and where did they find them?
+    Each season's top fantasy performers can be matched against the
+    historical draft board to measure both player quality and draft value.
+</p>
+
+<div class="season-selector">
+
+    <div style="color:#8f9aa4; font-size:13px;">
+        Top 5 fantasy players by season
+    </div>
+
+    <select>
+
+        <option>2025 Season</option>
+        <option>2024 Season</option>
+        <option>2023 Season</option>
+        <option>2022 Season</option>
+        <option>2021 Season</option>
+        <option>2020 Season</option>
+        <option>2019 Season</option>
+        <option>2018 Season</option>
+        <option>2017 Season</option>
+        <option>2016 Season</option>
+        <option>2015 Season</option>
+        <option>2014 Season</option>
+        <option>2013 Season</option>
+
+    </select>
+
+</div>
+
+
+<div class="top-five">
+
+
+    <div class="player-card">
+
+        <div>
+            <div class="player-rank">Fantasy Rank #1</div>
+            <div class="player-name">Player TBD</div>
         </div>
 
-
-        <!-- ==========================================================
-             2. DRAFTING EXCELLENCE
-        =========================================================== -->
-
-        <h2 class="section-title">Drafting Excellence</h2>
-
-        <p class="section-intro">
-            Who found the best fantasy players, and where did they find them?
-            Each season's top fantasy performers are matched against the
-            historical draft board.
-        </p>
-
-
-        <div class="season-selector">
-
-            <div style="color:#8f9aa4; font-size:13px;">
-                Top 5 fantasy players by season
-            </div>
-
-            <select id="excellenceSeason" onchange="updateExcellence()">
-                <option value="2025">2025 Season</option>
-                <option value="2024">2024 Season</option>
-                <option value="2023">2023 Season</option>
-                <option value="2022">2022 Season</option>
-                <option value="2021">2021 Season</option>
-                <option value="2020">2020 Season</option>
-                <option value="2019">2019 Season</option>
-                <option value="2018">2018 Season</option>
-                <option value="2017">2017 Season</option>
-                <option value="2016">2016 Season</option>
-                <option value="2015">2015 Season</option>
-                <option value="2014">2014 Season</option>
-                <option value="2013">2013 Season</option>
-            </select>
-
+        <div class="draft-info">
+            <div class="draft-manager">Manager TBD</div>
+            <div class="draft-pick">Round 1 · Pick TBD</div>
         </div>
-
-
-        <div class="top-five" id="topFive"></div>
-
-
-        <!-- ==========================================================
-             3. BEST DRAFTS
-        =========================================================== -->
-
-        <h2 class="section-title">Best Drafts</h2>
-
-        <p class="section-intro">
-            The strongest individual draft classes from the modern 10-plus
-            team era, measured by the number of top-25 fantasy players
-            selected by each manager.
-        </p>
-
-
-        <div class="best-drafts-grid">
-
-            <!-- 2025 -->
-            <div class="best-draft-card">
-                <div class="best-draft-year">2025 Draft</div>
-                <div class="best-draft-manager">TBD</div>
-                <div class="top25-count">TBD Top-25 players drafted</div>
-
-                <div class="top25-list">
-                    <div class="top25-player">
-                        <span class="top25-name">Player TBD</span>
-                        <span class="top25-rank">#TBD</span>
-                    </div>
-                </div>
-            </div>
-
-
-            <!-- 2024 -->
-            <div class="best-draft-card">
-                <div class="best-draft-year">2024 Draft</div>
-                <div class="best-draft-manager">TBD</div>
-                <div class="top25-count">TBD Top-25 players drafted</div>
-
-                <div class="top25-list">
-                    <div class="top25-player">
-                        <span class="top25-name">Player TBD</span>
-                        <span class="top25-rank">#TBD</span>
-                    </div>
-                </div>
-            </div>
-
-
-            <!-- 2023 -->
-            <div class="best-draft-card">
-                <div class="best-draft-year">2023 Draft</div>
-                <div class="best-draft-manager">TBD</div>
-                <div class="top25-count">TBD Top-25 players drafted</div>
-
-                <div class="top25-list">
-                    <div class="top25-player">
-                        <span class="top25-name">Player TBD</span>
-                        <span class="top25-rank">#TBD</span>
-                    </div>
-                </div>
-            </div>
-
-
-            <!-- 2022 -->
-            <div class="best-draft-card">
-                <div class="best-draft-year">2022 Draft</div>
-                <div class="best-draft-manager">TBD</div>
-                <div class="top25-count">TBD Top-25 players drafted</div>
-
-                <div class="top25-list">
-                    <div class="top25-player">
-                        <span class="top25-name">Player TBD</span>
-                        <span class="top25-rank">#TBD</span>
-                    </div>
-                </div>
-            </div>
-
-
-            <!-- 2021 -->
-            <div class="best-draft-card">
-                <div class="best-draft-year">2021 Draft</div>
-                <div class="best-draft-manager">TBD</div>
-                <div class="top25-count">TBD Top-25 players drafted</div>
-
-                <div class="top25-list">
-                    <div class="top25-player">
-                        <span class="top25-name">Player TBD</span>
-                        <span class="top25-rank">#TBD</span>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-
-        <!-- ==========================================================
-             4. MANAGER DRAFTING PROFILES
-        =========================================================== -->
-
-        <h2 class="section-title">Manager Drafting Profiles</h2>
-
-        <p class="section-intro">
-            An all-time look at which managers have consistently found value
-            on draft day.
-        </p>
-
-
-        <div class="manager-grid">
-
-            <!-- Jonah -->
-            <div class="manager-card">
-                <h3>Jonah Wheeler</h3>
-                <p>Drafting profile</p>
-
-                <div class="manager-stats">
-                    <div class="mini-stat">
-                        <strong>TBD</strong>
-                        <span>Top-10 Picks</span>
-                    </div>
-
-                    <div class="mini-stat">
-                        <strong>TBD</strong>
-                        <span>Top-25 Picks</span>
-                    </div>
-
-                    <div class="mini-stat">
-                        <strong>TBD</strong>
-                        <span>Draft Steals</span>
-                    </div>
-
-                    <div class="mini-stat">
-                        <strong>TBD</strong>
-                        <span>Best Draft</span>
-                    </div>
-                </div>
-            </div>
-
-
-            <!-- Tommy -->
-            <div class="manager-card">
-                <h3>Tommy Herbst</h3>
-                <p>Drafting profile</p>
-
-                <div class="manager-stats">
-                    <div class="mini-stat">
-                        <strong>TBD</strong>
-                        <span>Top-10 Picks</span>
-                    </div>
-
-                    <div class="mini-stat">
-                        <strong>TBD</strong>
-                        <span>Top-25 Picks</span>
-                    </div>
-
-                    <div class="mini-stat">
-                        <strong>TBD</strong>
-                        <span>Draft Steals</span>
-                    </div>
-
-                    <div class="mini-stat">
-                        <strong>TBD</strong>
-                        <span>Best Draft</span>
-                    </div>
-                </div>
-            </div>
-
-
-            <!-- Ryan -->
-            <div class="manager-card">
-                <h3>Ryan Herbst</h3>
-                <p>Drafting profile</p>
-
-                <div class="manager-stats">
-                    <div class="mini-stat">
-                        <strong>TBD</strong>
-                        <span>Top-10 Picks</span>
-                    </div>
-
-                    <div class="mini-stat">
-                        <strong>TBD</strong>
-                        <span>Top-25 Picks</span>
-                    </div>
-
-                    <div class="mini-stat">
-                        <strong>TBD</strong>
-                        <span>Draft Steals</span>
-                    </div>
-
-                    <div class="mini-stat">
-                        <strong>TBD</strong>
-                        <span>Best Draft</span>
-                    </div>
-                </div>
-            </div>
-
-
-            <!-- Julia -->
-            <div class="manager-card">
-                <h3>Julia Wheeler</h3>
-                <p>Drafting profile</p>
-
-                <div class="manager-stats">
-                    <div class="mini-stat">
-                        <strong>TBD</strong>
-                        <span>Top-10 Picks</span>
-                    </div>
-
-                    <div class="mini-stat">
-                        <strong>TBD</strong>
-                        <span>Top-25 Picks</span>
-                    </div>
-
-                    <div class="mini-stat">
-                        <strong>TBD</strong>
-                        <span>Draft Steals</span>
-                    </div>
-
-                    <div class="mini-stat">
-                        <strong>TBD</strong>
-                        <span>Best Draft</span>
-                    </div>
-                </div>
-            </div>
-
-
-            <!-- Bailey -->
-            <div class="manager-card">
-                <h3>Bailey Martin</h3>
-                <p>Drafting profile</p>
-
-                <div class="manager-stats">
-                    <div class="mini-stat">
-                        <strong>TBD</strong>
-                        <span>Top-10 Picks</span>
-                    </div>
-
-                    <div class="mini-stat">
-                        <strong>TBD</strong>
-                        <span>Top-25 Picks</span>
-                    </div>
-
-                    <div class="mini-stat">
-                        <strong>TBD</strong>
-                        <span>Draft Steals</span>
-                    </div>
-
-                    <div class="mini-stat">
-                        <strong>TBD</strong>
-                        <span>Best Draft</span>
-                    </div>
-                </div>
-            </div>
-
-
-            <!-- William -->
-            <div class="manager-card">
-                <h3>William</h3>
-                <p>Drafting profile</p>
-
-                <div class="manager-stats">
-                    <div class="mini-stat">
-                        <strong>TBD</strong>
-                        <span>Top-10 Picks</span>
-                    </div>
-
-                    <div class="mini-stat">
-                        <strong>TBD</strong>
-                        <span>Top-25 Picks</span>
-                    </div>
-
-                    <div class="mini-stat">
-                        <strong>TBD</strong>
-                        <span>Draft Steals</span>
-                    </div>
-
-                    <div class="mini-stat">
-                        <strong>TBD</strong>
-                        <span>Best Draft</span>
-                    </div>
-                </div>
-            </div>
-
-
-            <!-- Michael -->
-            <div class="manager-card">
-                <h3>Michael</h3>
-                <p>Drafting profile</p>
-
-                <div class="manager-stats">
-                    <div class="mini-stat">
-                        <strong>TBD</strong>
-                        <span>Top-10 Picks</span>
-                    </div>
-
-                    <div class="mini-stat">
-                        <strong>TBD</strong>
-                        <span>Top-25 Picks</span>
-                    </div>
-
-                    <div class="mini-stat">
-                        <strong>TBD</strong>
-                        <span>Draft Steals</span>
-                    </div>
-
-                    <div class="mini-stat">
-                        <strong>TBD</strong>
-                        <span>Best Draft</span>
-                    </div>
-                </div>
-            </div>
-
-
-            <!-- Nic -->
-            <div class="manager-card">
-                <h3>Nic</h3>
-                <p>Drafting profile</p>
-
-                <div class="manager-stats">
-                    <div class="mini-stat">
-                        <strong>TBD</strong>
-                        <span>Top-10 Picks</span>
-                    </div>
-
-                    <div class="mini-stat">
-                        <strong>TBD</strong>
-                        <span>Top-25 Picks</span>
-                    </div>
-
-                    <div class="mini-stat">
-                        <strong>TBD</strong>
-                        <span>Draft Steals</span>
-                    </div>
-
-                    <div class="mini-stat">
-                        <strong>TBD</strong>
-                        <span>Best Draft</span>
-                    </div>
-                </div>
-            </div>
-
-
-            <!-- Christian -->
-            <div class="manager-card">
-                <h3>Christian</h3>
-                <p>Drafting profile</p>
-
-                <div class="manager-stats">
-                    <div class="mini-stat">
-                        <strong>TBD</strong>
-                        <span>Top-10 Picks</span>
-                    </div>
-
-                    <div class="mini-stat">
-                        <strong>TBD</strong>
-                        <span>Top-25 Picks</span>
-                    </div>
-
-                    <div class="mini-stat">
-                        <strong>TBD</strong>
-                        <span>Draft Steals</span>
-                    </div>
-
-                    <div class="mini-stat">
-                        <strong>TBD</strong>
-                        <span>Best Draft</span>
-                    </div>
-                </div>
-            </div>
-
-
-            <!-- Mike D -->
-            <div class="manager-card">
-                <h3>Mike D.</h3>
-                <p>Drafting profile</p>
-
-                <div class="manager-stats">
-                    <div class="mini-stat">
-                        <strong>TBD</strong>
-                        <span>Top-10 Picks</span>
-                    </div>
-
-                    <div class="mini-stat">
-                        <strong>TBD</strong>
-                        <span>Top-25 Picks</span>
-                    </div>
-
-                    <div class="mini-stat">
-                        <strong>TBD</strong>
-                        <span>Draft Steals</span>
-                    </div>
-
-                    <div class="mini-stat">
-                        <strong>TBD</strong>
-                        <span>Best Draft</span>
-                    </div>
-                </div>
-            </div>
-
-
-            <!-- Taz -->
-            <div class="manager-card">
-                <h3>Taz</h3>
-                <p>Drafting profile</p>
-
-                <div class="manager-stats">
-                    <div class="mini-stat">
-                        <strong>TBD</strong>
-                        <span>Top-10 Picks</span>
-                    </div>
-
-                    <div class="mini-stat">
-                        <strong>TBD</strong>
-                        <span>Top-25 Picks</span>
-                    </div>
-
-                    <div class="mini-stat">
-                        <strong>TBD</strong>
-                        <span>Draft Steals</span>
-                    </div>
-
-                    <div class="mini-stat">
-                        <strong>TBD</strong>
-                        <span>Best Draft</span>
-                    </div>
-                </div>
-            </div>
-
-
-            <!-- Mike H -->
-            <div class="manager-card">
-                <h3>Mike H.</h3>
-                <p>Drafting profile</p>
-
-                <div class="manager-stats">
-                    <div class="mini-stat">
-                        <strong>TBD</strong>
-                        <span>Top-10 Picks</span>
-                    </div>
-
-                    <div class="mini-stat">
-                        <strong>TBD</strong>
-                        <span>Top-25 Picks</span>
-                    </div>
-
-                    <div class="mini-stat">
-                        <strong>TBD</strong>
-                        <span>Draft Steals</span>
-                    </div>
-
-                    <div class="mini-stat">
-                        <strong>TBD</strong>
-                        <span>Best Draft</span>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-
-        <!-- ==========================================================
-             5. DRAFT SLOT KINGS
-        =========================================================== -->
-
-        <h2 class="section-title">Draft Slot Kings</h2>
-
-        <p class="section-intro">
-            Because the league has grown from four teams to twelve, draft
-            position is measured relative to the size of each season's draft.
-        </p>
-
-
-        <div class="slot-grid">
-
-            <div class="slot-card">
-                <h3>Most Top-3 Picks</h3>
-                <div class="slot-manager">Manager TBD</div>
-                <div class="slot-count">TBD</div>
-                <div class="slot-detail">Top-three draft positions</div>
-            </div>
-
-            <div class="slot-card">
-                <h3>Most Bottom-3 Picks</h3>
-                <div class="slot-manager">Manager TBD</div>
-                <div class="slot-count">TBD</div>
-                <div class="slot-detail">Bottom-three draft positions</div>
-            </div>
-
-            <div class="slot-card">
-                <h3>Most #1 Picks</h3>
-                <div class="slot-manager">Manager TBD</div>
-                <div class="slot-count">TBD</div>
-                <div class="slot-detail">First overall draft position</div>
-            </div>
-
-            <div class="slot-card">
-                <h3>Most Last Picks</h3>
-                <div class="slot-manager">Manager TBD</div>
-                <div class="slot-count">TBD</div>
-                <div class="slot-detail">Final draft position</div>
-            </div>
-
-        </div>
-
-
-        <!-- ==========================================================
-             6. DRAFT SLOT PERFORMANCE
-        =========================================================== -->
-
-        <h2 class="section-title">Draft Slot Performance</h2>
-
-        <p class="section-intro">
-            Which managers have made the most of difficult draft positions?
-            This section measures results rather than simply counting
-            appearances at a particular spot.
-        </p>
-
-
-        <div class="two-column">
-
-            <div class="panel">
-
-                <div class="panel-header">
-                    <h3>Best From the Top</h3>
-                    <p>Performance when drafting in the top three</p>
-                </div>
-
-                <div class="list-row">
-                    <div class="list-rank">01</div>
-                    <div class="list-player">Manager TBD</div>
-                    <div class="list-manager">Top 3</div>
-                    <div class="list-value">TBD%</div>
-                </div>
-
-                <div class="list-row">
-                    <div class="list-rank">02</div>
-                    <div class="list-player">Manager TBD</div>
-                    <div class="list-manager">Top 3</div>
-                    <div class="list-value">TBD%</div>
-                </div>
-
-                <div class="list-row">
-                    <div class="list-rank">03</div>
-                    <div class="list-player">Manager TBD</div>
-                    <div class="list-manager">Top 3</div>
-                    <div class="list-value">TBD%</div>
-                </div>
-
-            </div>
-
-
-            <div class="panel">
-
-                <div class="panel-header">
-                    <h3>Best From the Back</h3>
-                    <p>Performance when drafting in the bottom three</p>
-                </div>
-
-                <div class="list-row">
-                    <div class="list-rank">01</div>
-                    <div class="list-player">Manager TBD</div>
-                    <div class="list-manager">Bottom 3</div>
-                    <div class="list-value">TBD%</div>
-                </div>
-
-                <div class="list-row">
-                    <div class="list-rank">02</div>
-                    <div class="list-player">Manager TBD</div>
-                    <div class="list-manager">Bottom 3</div>
-                    <div class="list-value">TBD%</div>
-                </div>
-
-                <div class="list-row">
-                    <div class="list-rank">03</div>
-                    <div class="list-player">Manager TBD</div>
-                    <div class="list-manager">Bottom 3</div>
-                    <div class="list-value">TBD%</div>
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <!-- ==========================================================
-             7. DRAFT HISTORY
-        =========================================================== -->
-
-        <h2 class="section-title">Draft History</h2>
-
-        <p class="section-intro">
-            Select a season to view its historical draft board.
-        </p>
-
-
-        <div class="history-selector">
-
-            <div style="color:#8f9aa4; font-size:13px;">
-                Historical draft board
-            </div>
-
-            <select id="historySeason" onchange="updateHistory()">
-                <option value="2026">2026 Draft</option>
-                <option value="2025">2025 Draft</option>
-                <option value="2024">2024 Draft</option>
-                <option value="2023">2023 Draft</option>
-                <option value="2022">2022 Draft</option>
-                <option value="2021">2021 Draft</option>
-                <option value="2020">2020 Draft</option>
-                <option value="2019">2019 Draft</option>
-                <option value="2018">2018 Draft</option>
-                <option value="2017">2017 Draft</option>
-                <option value="2016">2016 Draft</option>
-                <option value="2015">2015 Draft</option>
-                <option value="2014">2014 Draft</option>
-                <option value="2013">2013 Draft</option>
-            </select>
-
-        </div>
-
-
-        <div class="history-content">
-
-            <div class="history-title">
-                <h3 id="historyTitle">2026 Draft</h3>
-                <p>Complete historical draft board</p>
-            </div>
-
-            <div class="history-message" id="historyMessage">
-                Draft selections will appear here when the historical
-                draft data is entered.
-            </div>
-
-        </div>
-
 
     </div>
+
+
+    <div class="player-card">
+
+        <div>
+            <div class="player-rank">Fantasy Rank #2</div>
+            <div class="player-name">Player TBD</div>
+        </div>
+
+        <div class="draft-info">
+            <div class="draft-manager">Manager TBD</div>
+            <div class="draft-pick">Round TBD · Pick TBD</div>
+        </div>
+
+    </div>
+
+
+    <div class="player-card">
+
+        <div>
+            <div class="player-rank">Fantasy Rank #3</div>
+            <div class="player-name">Player TBD</div>
+        </div>
+
+        <div class="draft-info">
+            <div class="draft-manager">Manager TBD</div>
+            <div class="draft-pick">Round TBD · Pick TBD</div>
+        </div>
+
+    </div>
+
+
+    <div class="player-card">
+
+        <div>
+            <div class="player-rank">Fantasy Rank #4</div>
+            <div class="player-name">Player TBD</div>
+        </div>
+
+        <div class="draft-info">
+            <div class="draft-manager">Manager TBD</div>
+            <div class="draft-pick">Round TBD · Pick TBD</div>
+        </div>
+
+    </div>
+
+
+    <div class="player-card">
+
+        <div>
+            <div class="player-rank">Fantasy Rank #5</div>
+            <div class="player-name">Player TBD</div>
+        </div>
+
+        <div class="draft-info">
+            <div class="draft-manager">Manager TBD</div>
+            <div class="draft-pick">Round TBD · Pick TBD</div>
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     3. BEST DRAFTS
+     ========================================================= -->
+
+<h2 class="section-title">Best Drafts</h2>
+
+<p class="section-intro">
+    The strongest individual draft classes from the 10+ team era,
+    measured by the number of top-25 fantasy players selected.
+</p>
+
+<div class="best-drafts">
+
+
+    <div class="best-draft-card">
+
+        <div class="best-draft-header">
+            <div class="best-draft-year">2025</div>
+            <div class="best-draft-manager">Manager TBD</div>
+        </div>
+
+        <div class="best-draft-content">
+
+            <div class="top25-label">Top-25 Players Drafted</div>
+
+            <div class="top25-count">TBD</div>
+
+            <div class="best-player-list">
+
+                <div class="best-player">
+                    <div class="best-player-name">Player TBD</div>
+                    <div class="best-player-rank">#TBD</div>
+                </div>
+
+                <div class="best-player">
+                    <div class="best-player-name">Player TBD</div>
+                    <div class="best-player-rank">#TBD</div>
+                </div>
+
+                <div class="best-player">
+                    <div class="best-player-name">Player TBD</div>
+                    <div class="best-player-rank">#TBD</div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="best-draft-card">
+
+        <div class="best-draft-header">
+            <div class="best-draft-year">2024</div>
+            <div class="best-draft-manager">Manager TBD</div>
+        </div>
+
+        <div class="best-draft-content">
+
+            <div class="top25-label">Top-25 Players Drafted</div>
+
+            <div class="top25-count">TBD</div>
+
+            <div class="best-player-list">
+
+                <div class="best-player">
+                    <div class="best-player-name">Player TBD</div>
+                    <div class="best-player-rank">#TBD</div>
+                </div>
+
+                <div class="best-player">
+                    <div class="best-player-name">Player TBD</div>
+                    <div class="best-player-rank">#TBD</div>
+                </div>
+
+                <div class="best-player">
+                    <div class="best-player-name">Player TBD</div>
+                    <div class="best-player-rank">#TBD</div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="best-draft-card">
+
+        <div class="best-draft-header">
+            <div class="best-draft-year">2023</div>
+            <div class="best-draft-manager">Manager TBD</div>
+        </div>
+
+        <div class="best-draft-content">
+
+            <div class="top25-label">Top-25 Players Drafted</div>
+
+            <div class="top25-count">TBD</div>
+
+            <div class="best-player-list">
+
+                <div class="best-player">
+                    <div class="best-player-name">Player TBD</div>
+                    <div class="best-player-rank">#TBD</div>
+                </div>
+
+                <div class="best-player">
+                    <div class="best-player-name">Player TBD</div>
+                    <div class="best-player-rank">#TBD</div>
+                </div>
+
+                <div class="best-player">
+                    <div class="best-player-name">Player TBD</div>
+                    <div class="best-player-rank">#TBD</div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="best-draft-card">
+
+        <div class="best-draft-header">
+            <div class="best-draft-year">2022</div>
+            <div class="best-draft-manager">Manager TBD</div>
+        </div>
+
+        <div class="best-draft-content">
+
+            <div class="top25-label">Top-25 Players Drafted</div>
+
+            <div class="top25-count">TBD</div>
+
+            <div class="best-player-list">
+
+                <div class="best-player">
+                    <div class="best-player-name">Player TBD</div>
+                    <div class="best-player-rank">#TBD</div>
+                </div>
+
+                <div class="best-player">
+                    <div class="best-player-name">Player TBD</div>
+                    <div class="best-player-rank">#TBD</div>
+                </div>
+
+                <div class="best-player">
+                    <div class="best-player-name">Player TBD</div>
+                    <div class="best-player-rank">#TBD</div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="best-draft-card">
+
+        <div class="best-draft-header">
+            <div class="best-draft-year">2021</div>
+            <div class="best-draft-manager">Manager TBD</div>
+        </div>
+
+        <div class="best-draft-content">
+
+            <div class="top25-label">Top-25 Players Drafted</div>
+
+            <div class="top25-count">TBD</div>
+
+            <div class="best-player-list">
+
+                <div class="best-player">
+                    <div class="best-player-name">Player TBD</div>
+                    <div class="best-player-rank">#TBD</div>
+                </div>
+
+                <div class="best-player">
+                    <div class="best-player-name">Player TBD</div>
+                    <div class="best-player-rank">#TBD</div>
+                </div>
+
+                <div class="best-player">
+                    <div class="best-player-name">Player TBD</div>
+                    <div class="best-player-rank">#TBD</div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+</div>
+
+
+<!-- =========================================================
+     4. MANAGER DRAFTING PROFILES
+     ========================================================= -->
+
+<h2 class="section-title">Manager Drafting Profiles</h2>
+
+<p class="section-intro">
+    An all-time look at how each manager has approached draft day,
+    from average draft position to finding elite fantasy production.
+</p>
+
+<div class="manager-grid">
+
+
+    <!-- CHRISTIAN -->
+
+    <div class="manager-card">
+
+        <h3>Christian Abert</h3>
+        <p>Drafting profile</p>
+
+        <div class="manager-stats">
+
+            <div class="mini-stat">
+                <strong>TBD</strong>
+                <span>Average Pick</span>
+            </div>
+
+            <div class="mini-stat">
+                <strong>TBD</strong>
+                <span>Top 3 Picks</span>
+            </div>
+
+            <div class="mini-stat">
+                <strong>TBD</strong>
+                <span>Bottom 3 Picks</span>
+            </div>
+
+            <div class="mini-stat">
+                <strong>TBD</strong>
+                <span>Top 10 Players</span>
+            </div>
+
+            <div class="mini-stat">
+                <strong>TBD</strong>
+                <span>Top 25 Players</span>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- RYAN -->
+
+    <div class="manager-card">
+
+        <h3>Ryan Herbst</h3>
+        <p>Drafting profile</p>
+
+        <div class="manager-stats">
+
+            <div class="mini-stat">
+                <strong>TBD</strong>
+                <span>Average Pick</span>
+            </div>
+
+            <div class="mini-stat">
+                <strong>TBD</strong>
+                <span>Top 3 Picks</span>
+            </div>
+
+            <div class="mini-stat">
+                <strong>TBD</strong>
+                <span>Bottom 3 Picks</span>
+            </div>
+
+            <div class="mini-stat">
+                <strong>TBD</strong>
+                <span>Top 10 Players</span>
+            </div>
+
+            <div class="mini-stat">
+                <strong>TBD</strong>
+                <span>Top 25 Players</span>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- NIC -->
+
+    <div class="manager-card">
+
+        <h3>Nic Maiorano</h3>
+        <p>Drafting profile</p>
+
+        <div class="manager-stats">
+
+            <div class="mini-stat">
+                <strong>TBD</strong>
+                <span>Average Pick</span>
+            </div>
+
+            <div class="mini-stat">
+                <strong>TBD</strong>
+                <span>Top 3 Picks</span>
+            </div>
+
+            <div class="mini-stat">
+                <strong>TBD</strong>
+                <span>Bottom 3 Picks</span>
+            </div>
+
+            <div class="mini-stat">
+                <strong>TBD</strong>
+                <span>Top 10 Players</span>
+            </div>
+
+            <div class="mini-stat">
+                <strong>TBD</strong>
+                <span>Top 25 Players</span>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- BAILEY -->
+
+    <div class="manager-card">
+
+        <h3>Bailey Martin</h3>
+        <p>Drafting profile</p>
+
+        <div class="manager-stats">
+
+            <div class="mini-stat">
+                <strong>TBD</strong>
+                <span>Average Pick</span>
+            </div>
+
+            <div class="mini-stat">
+                <strong>TBD</strong>
+                <span>Top 3 Picks</span>
+            </div>
+
+            <div class="mini-stat">
+                <strong>TBD</strong>
+                <span>Bottom 3 Picks</span>
+            </div>
+
+            <div class="mini-stat">
+                <strong>TBD</strong>
+                <span>Top 10 Players</span>
+            </div>
+
+            <div class="mini-stat">
+                <strong>TBD</strong>
+                <span>Top 25 Players</span>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- JONAH -->
+
+    <div class="manager-card">
+
+        <h3>Jonah Wheeler</h3>
+        <p>Drafting profile</p>
+
+        <div class="manager-stats">
+
+            <div class="mini-stat">
+                <strong>TBD</strong>
+                <span>Average Pick</span>
+            </div>
+
+            <div class="mini-stat">
+                <strong>TBD</strong>
+                <span>Top 3 Picks</span>
+            </div>
+
+            <div class="mini-stat">
+                <strong>TBD</strong>
+                <span>Bottom 3 Picks</span>
+            </div>
+
+            <div class="mini-stat">
+                <strong>TBD</strong>
+                <span>Top 10 Players</span>
+            </div>
+
+            <div class="mini-stat">
+                <strong>TBD</strong>
+                <span>Top 25 Players</span>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- TOMMY -->
+
+    <div class="manager-card">
+
+        <h3>Tommy Herbst</h3>
+        <p>Drafting profile</p>
+
+        <div class="manager-stats">
+
+            <div class="mini-stat">
+                <strong>TBD</strong>
+                <span>Average Pick</span>
+            </div>
+
+            <div class="mini-stat">
+                <strong>TBD</strong>
+                <span>Top 3 Picks</span>
+            </div>
+
+            <div class="mini-stat">
+                <strong>TBD</strong>
+                <span>Bottom 3 Picks</span>
+            </div>
+
+            <div class="mini-stat">
+                <strong>TBD</strong>
+                <span>Top 10 Players</span>
+            </div>
+
+            <div class="mini-stat">
+                <strong>TBD</strong>
+                <span>Top 25 Players</span>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- MICHAEL -->
+
+    <div class="manager-card">
+
+        <h3>Michael Gravante</h3>
+        <p>Drafting profile</p>
+
+        <div class="manager-stats">
+
+            <div class="mini-stat">
+                <strong>TBD</strong>
+                <span>Average Pick</span>
+            </div>
+
+            <div class="mini-stat">
+                <strong>TBD</strong>
+                <span>Top 3 Picks</span>
+            </div>
+
+            <div class="mini-stat">
+                <strong>TBD</strong>
+                <span>Bottom 3 Picks</span>
+            </div>
+
+            <div class="mini-stat">
+                <strong>TBD</strong>
+                <span>Top 10 Players</span>
+            </div>
+
+            <div class="mini-stat">
+                <strong>TBD</strong>
+                <span>Top 25 Players</span>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- MIKE HERBST -->
+
+    <div class="manager-card">
+
+        <h3>Mike Herbst</h3>
+        <p>Drafting profile</p>
+
+        <div class="manager-stats">
+
+            <div class="mini-stat">
+                <strong>TBD</strong>
+                <span>Average Pick</span>
+            </div>
+
+            <div class="mini-stat">
+                <strong>TBD</strong>
+                <span>Top 3 Picks</span>
+            </div>
+
+            <div class="mini-stat">
+                <strong>TBD</strong>
+                <span>Bottom 3 Picks</span>
+            </div>
+
+            <div class="mini-stat">
+                <strong>TBD</strong>
+                <span>Top 10 Players</span>
+            </div>
+
+            <div class="mini-stat">
+                <strong>TBD</strong>
+                <span>Top 25 Players</span>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- WILLIAM -->
+
+    <div class="manager-card">
+
+        <h3>William Darrow</h3>
+        <p>Drafting profile</p>
+
+        <div class="manager-stats">
+
+            <div class="mini-stat">
+                <strong>TBD</strong>
+                <span>Average Pick</span>
+            </div>
+
+            <div class="mini-stat">
+                <strong>TBD</strong>
+                <span>Top 3 Picks</span>
+            </div>
+
+            <div class="mini-stat">
+                <strong>TBD</strong>
+                <span>Bottom 3 Picks</span>
+            </div>
+
+            <div class="mini-stat">
+                <strong>TBD</strong>
+                <span>Top 10 Players</span>
+            </div>
+
+            <div class="mini-stat">
+                <strong>TBD</strong>
+                <span>Top 25 Players</span>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- JULIA -->
+
+    <div class="manager-card">
+
+        <h3>Julia Wheeler</h3>
+        <p>Drafting profile</p>
+
+        <div class="manager-stats">
+
+            <div class="mini-stat">
+                <strong>TBD</strong>
+                <span>Average Pick</span>
+            </div>
+
+            <div class="mini-stat">
+                <strong>TBD</strong>
+                <span>Top 3 Picks</span>
+            </div>
+
+            <div class="mini-stat">
+                <strong>TBD</strong>
+                <span>Bottom 3 Picks</span>
+            </div>
+
+            <div class="mini-stat">
+                <strong>TBD</strong>
+                <span>Top 10 Players</span>
+            </div>
+
+            <div class="mini-stat">
+                <strong>TBD</strong>
+                <span>Top 25 Players</span>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- MIKE DARROW -->
+
+    <div class="manager-card">
+
+        <h3>Mike Darrow</h3>
+        <p>Drafting profile</p>
+
+        <div class="manager-stats">
+
+            <div class="mini-stat">
+                <strong>TBD</strong>
+                <span>Average Pick</span>
+            </div>
+
+            <div class="mini-stat">
+                <strong>TBD</strong>
+                <span>Top 3 Picks</span>
+            </div>
+
+            <div class="mini-stat">
+                <strong>TBD</strong>
+                <span>Bottom 3 Picks</span>
+            </div>
+
+            <div class="mini-stat">
+                <strong>TBD</strong>
+                <span>Top 10 Players</span>
+            </div>
+
+            <div class="mini-stat">
+                <strong>TBD</strong>
+                <span>Top 25 Players</span>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- NICK FEMANO -->
+
+    <div class="manager-card">
+
+        <h3>Nick Femano</h3>
+        <p>Drafting profile</p>
+
+        <div class="manager-stats">
+
+            <div class="mini-stat">
+                <strong>TBD</strong>
+                <span>Average Pick</span>
+            </div>
+
+            <div class="mini-stat">
+                <strong>TBD</strong>
+                <span>Top 3 Picks</span>
+            </div>
+
+            <div class="mini-stat">
+                <strong>TBD</strong>
+                <span>Bottom 3 Picks</span>
+            </div>
+
+            <div class="mini-stat">
+                <strong>TBD</strong>
+                <span>Top 10 Players</span>
+            </div>
+
+            <div class="mini-stat">
+                <strong>TBD</strong>
+                <span>Top 25 Players</span>
+            </div>
+
+        </div>
+
+    </div>
+
+
+</div>
+
+
+<!-- =========================================================
+     5. DRAFT SLOT KINGS
+     ========================================================= -->
+
+<h2 class="section-title">Draft Slot Kings</h2>
+
+<p class="section-intro">
+    Because the league has grown from four teams to twelve, draft position
+    is measured relative to the size of each season's draft.
+</p>
+
+<div class="slot-grid">
+
+    <div class="slot-card">
+        <h3>Most Top-3 Picks</h3>
+        <div class="slot-manager">Manager TBD</div>
+        <div class="slot-count">TBD</div>
+        <div class="slot-detail">Top-three draft positions</div>
+    </div>
+
+    <div class="slot-card">
+        <h3>Most Bottom-3 Picks</h3>
+        <div class="slot-manager">Manager TBD</div>
+        <div class="slot-count">TBD</div>
+        <div class="slot-detail">Bottom-three draft positions</div>
+    </div>
+
+    <div class="slot-card">
+        <h3>Most #1 Picks</h3>
+        <div class="slot-manager">Manager TBD</div>
+        <div class="slot-count">TBD</div>
+        <div class="slot-detail">First overall draft position</div>
+    </div>
+
+    <div class="slot-card">
+        <h3>Most Last Picks</h3>
+        <div class="slot-manager">Manager TBD</div>
+        <div class="slot-count">TBD</div>
+        <div class="slot-detail">Final draft position</div>
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     6. DRAFT SLOT PERFORMANCE
+     ========================================================= -->
+
+<h2 class="section-title">Draft Slot Performance</h2>
+
+<p class="section-intro">
+    Which managers have made the most of difficult draft positions?
+    This section measures results rather than simply counting appearances
+    at a particular spot.
+</p>
+
+<div class="two-column">
+
+
+    <div class="panel">
+
+        <div class="panel-header">
+            <h3>Best From the Top</h3>
+            <p>Performance when drafting in the top three</p>
+        </div>
+
+        <div class="list-row">
+            <div class="list-rank">01</div>
+            <div class="list-player">Manager TBD</div>
+            <div class="list-manager">Top 3</div>
+            <div class="list-value">TBD%</div>
+        </div>
+
+        <div class="list-row">
+            <div class="list-rank">02</div>
+            <div class="list-player">Manager TBD</div>
+            <div class="list-manager">Top 3</div>
+            <div class="list-value">TBD%</div>
+        </div>
+
+        <div class="list-row">
+            <div class="list-rank">03</div>
+            <div class="list-player">Manager TBD</div>
+            <div class="list-manager">Top 3</div>
+            <div class="list-value">TBD%</div>
+        </div>
+
+    </div>
+
+
+    <div class="panel">
+
+        <div class="panel-header">
+            <h3>Best From the Back</h3>
+            <p>Performance when drafting in the bottom three</p>
+        </div>
+
+        <div class="list-row">
+            <div class="list-rank">01</div>
+            <div class="list-player">Manager TBD</div>
+            <div class="list-manager">Bottom 3</div>
+            <div class="list-value">TBD%</div>
+        </div>
+
+        <div class="list-row">
+            <div class="list-rank">02</div>
+            <div class="list-player">Manager TBD</div>
+            <div class="list-manager">Bottom 3</div>
+            <div class="list-value">TBD%</div>
+        </div>
+
+        <div class="list-row">
+            <div class="list-rank">03</div>
+            <div class="list-player">Manager TBD</div>
+            <div class="list-manager">Bottom 3</div>
+            <div class="list-value">TBD%</div>
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     7. DRAFT HISTORY
+     ========================================================= -->
+
+<h2 class="section-title">Draft History</h2>
+
+<p class="section-intro">
+    Select a season to view its historical draft board.
+</p>
+
+<div class="history-selector">
+
+    <label for="draft-year">Draft Season</label>
+
+    <select id="draft-year">
+
+        <option>2026 Draft</option>
+        <option>2025 Draft</option>
+        <option>2024 Draft</option>
+        <option>2023 Draft</option>
+        <option>2022 Draft</option>
+        <option>2021 Draft</option>
+        <option>2020 Draft</option>
+        <option>2019 Draft</option>
+        <option>2018 Draft</option>
+        <option>2017 Draft</option>
+        <option>2016 Draft</option>
+        <option>2015 Draft</option>
+        <option>2014 Draft</option>
+        <option>2013 Draft</option>
+
+    </select>
+
+    <div class="history-note">
+        Select a season to view the draft board.
+    </div>
+
+</div>
+
 
 </main>
 
 
+<!-- =========================================================
+     FOOTER
+     ========================================================= -->
+
 <footer>
-    Kevin Durant League · Fantasy Football · Est. 2013
+
+    Kevin Durant League · Fantasy Football · Established 2013
+
 </footer>
 
 
-<script>
-
-/* ==========================================================
-   DRAFTING EXCELLENCE DATA
-========================================================== */
-
-const excellenceData = {
-
-    2025: [
-        {
-            rank: 1,
-            player: "Christian McCaffrey",
-            manager: "William",
-            pick: "Round 2 · Pick 3"
-        },
-        {
-            rank: 2,
-            player: "Puka Nacua",
-            manager: "Michael",
-            pick: "Round 2 · Pick 5"
-        },
-        {
-            rank: 3,
-            player: "Bijan Robinson",
-            manager: "Nic",
-            pick: "Round 1 · Pick 2"
-        },
-        {
-            rank: 4,
-            player: "Jahmyr Gibbs",
-            manager: "Julia",
-            pick: "Round 1 · Pick 3"
-        },
-        {
-            rank: 5,
-            player: "Josh Allen",
-            manager: "Christian",
-            pick: "Round 3 · Pick 4"
-        }
-    ],
-
-    2024: [
-        {
-            rank: 1,
-            player: "Lamar Jackson",
-            manager: "Julia",
-            pick: "Round 5 · Pick 1"
-        },
-        {
-            rank: 2,
-            player: "Ja'Marr Chase",
-            manager: "Jonah",
-            pick: "Round 1 · Pick 8"
-        },
-        {
-            rank: 3,
-            player: "Josh Allen",
-            manager: "Ryan",
-            pick: "Round 3 · Pick 10"
-        },
-        {
-            rank: 4,
-            player: "Joe Burrow",
-            manager: "Jonah",
-            pick: "Round 5 · Pick 8"
-        },
-        {
-            rank: 5,
-            player: "Baker Mayfield",
-            manager: "Mike D.",
-            pick: "Free Agency"
-        }
-    ],
-
-    2023: [
-        {
-            rank: 1,
-            player: "CeeDee Lamb",
-            manager: "Mike D.",
-            pick: "Round 1 · Pick 7"
-        },
-        {
-            rank: 2,
-            player: "Josh Allen",
-            manager: "Jonah",
-            pick: "Round 3 · Pick 10"
-        },
-        {
-            rank: 3,
-            player: "Christian McCaffrey",
-            manager: "Tommy",
-            pick: "Round 1 · Pick 3"
-        },
-        {
-            rank: 4,
-            player: "Tyreek Hill",
-            manager: "William",
-            pick: "Round 1 · Pick 4"
-        },
-        {
-            rank: 5,
-            player: "Jalen Hurts",
-            manager: "Taz",
-            pick: "Round 3 · Pick 1"
-        }
-    ],
-
-    2022: [
-        {
-            rank: 1,
-            player: "Patrick Mahomes",
-            manager: "Nic",
-            pick: "Round 4 · Pick 9"
-        },
-        {
-            rank: 2,
-            player: "Josh Allen",
-            manager: "Christian",
-            pick: "Round 4 · Pick 3"
-        },
-        {
-            rank: 3,
-            player: "Jalen Hurts",
-            manager: "Jonah",
-            pick: "Round 6 · Pick 5"
-        },
-        {
-            rank: 4,
-            player: "Austin Ekeler",
-            manager: "Mike H.",
-            pick: "Round 1 · Pick 3"
-        },
-        {
-            rank: 5,
-            player: "Justin Jefferson",
-            manager: "Michael",
-            pick: "Round 1 · Pick 4"
-        }
-    ],
-
-    2021: [
-        {
-            rank: 1,
-            player: "Cooper Kupp",
-            manager: "Ryan",
-            pick: "Round 5 · Pick 3"
-        },
-        {
-            rank: 2,
-            player: "Josh Allen",
-            manager: "Tommy",
-            pick: "Round 3 · Pick 7"
-        },
-        {
-            rank: 3,
-            player: "Justin Herbert",
-            manager: "William",
-            pick: "Round 5 · Pick 4"
-        },
-        {
-            rank: 4,
-            player: "Tom Brady",
-            manager: "Joey",
-            pick: "Round 6 · Pick 6"
-        },
-        {
-            rank: 5,
-            player: "Jonathan Taylor",
-            manager: "Nic",
-            pick: "Round 2 · Pick 3"
-        }
-    ],
-
-    2020: [
-        {
-            rank: 1,
-            player: "Josh Allen",
-            manager: "Mike H.",
-            pick: "Round 15 · Pick 4"
-        },
-        {
-            rank: 2,
-            player: "Aaron Rodgers",
-            manager: "Michael",
-            pick: "Round 17 · Pick 7"
-        },
-        {
-            rank: 3,
-            player: "Kyler Murray",
-            manager: "Christian",
-            pick: "Round 8 · Pick 1"
-        },
-        {
-            rank: 4,
-            player: "Alvin Kamara",
-            manager: "Mike H.",
-            pick: "Round 1 · Pick 4"
-        },
-        {
-            rank: 5,
-            player: "Patrick Mahomes",
-            manager: "Ryan",
-            pick: "Round 2 · Pick 7"
-        }
-    ],
-
-    2019: [
-        {
-            rank: 1,
-            player: "Christian McCaffrey",
-            manager: "Tommy",
-            pick: "Round 1 · Pick 3"
-        },
-        {
-            rank: 2,
-            player: "Lamar Jackson",
-            manager: "Tommy",
-            pick: "Free Agency"
-        },
-        {
-            rank: 3,
-            player: "Michael Thomas",
-            manager: "Nic",
-            pick: "Round 2 · Pick 1"
-        },
-        {
-            rank: 4,
-            player: "Dak Prescott",
-            manager: "Taz",
-            pick: "Free Agency"
-        },
-        {
-            rank: 5,
-            player: "Russell Wilson",
-            manager: "Ryan",
-            pick: "Free Agency"
-        }
-    ],
-
-    2018: [
-        {
-            rank: 1,
-            player: "Patrick Mahomes",
-            manager: "Christian",
-            pick: null
-        },
-        {
-            rank: 2,
-            player: "Saquon Barkley",
-            manager: "Tommy",
-            pick: null
-        },
-        {
-            rank: 3,
-            player: "Christian McCaffrey",
-            manager: "Taz",
-            pick: null
-        },
-        {
-            rank: 4,
-            player: "Todd Gurley",
-            manager: "Nic",
-            pick: null
-        },
-        {
-            rank: 5,
-            player: "Matt Ryan",
-            manager: "Taz",
-            pick: null
-        }
-    ],
-
-    2017: [
-        {
-            rank: 1,
-            player: "Todd Gurley",
-            manager: "Nic",
-            pick: null
-        },
-        {
-            rank: 2,
-            player: "Russell Wilson",
-            manager: "Michael",
-            pick: null
-        },
-        {
-            rank: 3,
-            player: "Le'Veon Bell",
-            manager: "Bailey",
-            pick: null
-        },
-        {
-            rank: 4,
-            player: "Alvin Kamara",
-            manager: "Christian",
-            pick: null
-        },
-        {
-            rank: 5,
-            player: "Antonio Brown",
-            manager: "Taz",
-            pick: null
-        }
-    ],
-
-    2016: [
-        {
-            rank: 1,
-            player: "David Johnson",
-            manager: "Nic",
-            pick: null
-        },
-        {
-            rank: 2,
-            player: "Aaron Rodgers",
-            manager: "Taz",
-            pick: null
-        },
-        {
-            rank: 3,
-            player: "Matt Ryan",
-            manager: "Ryan",
-            pick: null
-        },
-        {
-            rank: 4,
-            player: "Drew Brees",
-            manager: "Nic",
-            pick: null
-        },
-        {
-            rank: 5,
-            player: "Ezekiel Elliott",
-            manager: "Ryan",
-            pick: null
-        }
-    ],
-
-    2015: [
-        {
-            rank: 1,
-            player: "Cam Newton",
-            manager: "Ryan",
-            pick: null
-        },
-        {
-            rank: 2,
-            player: "Antonio Brown",
-            manager: "Christian",
-            pick: null
-        },
-        {
-            rank: 3,
-            player: "Julio Jones",
-            manager: "Tommy",
-            pick: null
-        },
-        {
-            rank: 4,
-            player: "Tom Brady",
-            manager: "Christian",
-            pick: null
-        },
-        {
-            rank: 5,
-            player: "Brandon Marshall",
-            manager: "Nic",
-            pick: null
-        }
-    ],
-
-    2014: [
-        {
-            rank: 1,
-            player: "Antonio Brown",
-            manager: "Nic",
-            pick: null
-        },
-        {
-            rank: 2,
-            player: "Le'Veon Bell",
-            manager: "Bailey",
-            pick: null
-        },
-        {
-            rank: 3,
-            player: "Aaron Rodgers",
-            manager: "Jonah",
-            pick: null
-        },
-        {
-            rank: 4,
-            player: "DeMarco Murray",
-            manager: "Bailey",
-            pick: null
-        },
-        {
-            rank: 5,
-            player: "Andrew Luck",
-            manager: "Nic",
-            pick: null
-        }
-    ],
-
-    2013: [
-        {
-            rank: 1,
-            player: "Peyton Manning",
-            manager: "Bailey",
-            pick: null
-        },
-        {
-            rank: 2,
-            player: "Jamaal Charles",
-            manager: "Ryan",
-            pick: null
-        },
-        {
-            rank: 3,
-            player: "Drew Brees",
-            manager: "Ryan",
-            pick: null
-        },
-        {
-            rank: 4,
-            player: "Matt Forte",
-            manager: "Nic",
-            pick: null
-        },
-        {
-            rank: 5,
-            player: "LeSean McCoy",
-            manager: "Ryan",
-            pick: null
-        }
-    ]
-
-};
-
-
-/* ==========================================================
-   HEADSHOT DATA
-
-   Replace the empty strings below with your image URLs later.
-   The rest of the page does not need to change.
-========================================================== */
-
-const headshots = {
-
-    "Christian McCaffrey": "",
-    "Puka Nacua": "",
-    "Bijan Robinson": "",
-    "Jahmyr Gibbs": "",
-    "Josh Allen": "",
-    "Lamar Jackson": "",
-    "Ja'Marr Chase": "",
-    "Joe Burrow": "",
-    "Baker Mayfield": "",
-    "CeeDee Lamb": "",
-    "Tyreek Hill": "",
-    "Jalen Hurts": "",
-    "Patrick Mahomes": "",
-    "Austin Ekeler": "",
-    "Justin Jefferson": "",
-    "Cooper Kupp": "",
-    "Justin Herbert": "",
-    "Tom Brady": "",
-    "Jonathan Taylor": "",
-    "Aaron Rodgers": "",
-    "Kyler Murray": "",
-    "Alvin Kamara": "",
-    "Saquon Barkley": "",
-    "Todd Gurley": "",
-    "Matt Ryan": "",
-    "Russell Wilson": "",
-    "Le'Veon Bell": "",
-    "Antonio Brown": "",
-    "David Johnson": "",
-    "Ezekiel Elliott": "",
-    "Cam Newton": "",
-    "Julio Jones": "",
-    "Brandon Marshall": "",
-    "DeMarco Murray": "",
-    "Andrew Luck": "",
-    "Peyton Manning": "",
-    "Jamaal Charles": "",
-    "Matt Forte": "",
-    "LeSean McCoy": ""
-};
-
-
-/* ==========================================================
-   RENDER DRAFTING EXCELLENCE
-========================================================== */
-
-function updateExcellence() {
-
-    const season = document.getElementById("excellenceSeason").value;
-
-    const players = excellenceData[season];
-
-    const container = document.getElementById("topFive");
-
-    container.innerHTML = players.map(player => {
-
-        const image = headshots[player.player];
-
-        const imageHTML = image
-            ? `<img class="player-headshot" src="${image}" alt="${player.player}">`
-            : `<div class="player-headshot placeholder">Add<br>Headshot</div>`;
-
-        return `
-
-            <div class="player-card">
-
-                <div>
-
-                    <div class="player-rank">
-                        Fantasy Rank #${player.rank}
-                    </div>
-
-                    <div class="player-headshot-wrap">
-                        ${imageHTML}
-                    </div>
-
-                    <div class="player-name">
-                        ${player.player}
-                    </div>
-
-                </div>
-
-
-                <div class="draft-info">
-
-                    <div class="draft-manager">
-                        ${player.manager}
-                    </div>
-
-                    ${
-                        player.pick
-                        ? `<div class="draft-pick">${player.pick}</div>`
-                        : ``
-                    }
-
-                </div>
-
-            </div>
-
-        `;
-
-    }).join("");
-
-}
-
-
-/* ==========================================================
-   DRAFT HISTORY
-========================================================== */
-
-function updateHistory() {
-
-    const season = document.getElementById("historySeason").value;
-
-    document.getElementById("historyTitle").textContent =
-        `${season} Draft`;
-
-    document.getElementById("historyMessage").textContent =
-        `The ${season} draft board will appear here when the historical draft selections are entered.`;
-
-}
-
-
-/* ==========================================================
-   INITIAL LOAD
-========================================================== */
-
-updateExcellence();
-updateHistory();
-
-</script>
-
 </body>
 </html>
+```
