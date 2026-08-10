@@ -112,41 +112,6 @@
             margin: 50px 0 20px;
         }
 
-        /* TOP RECORDS */
-
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 15px;
-        }
-
-        .stat-card {
-            background: #151c24;
-            border: 1px solid #27313b;
-            border-radius: 12px;
-            padding: 25px;
-        }
-
-        .stat-label {
-            color: #8f9aa4;
-            font-size: 11px;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            font-weight: 700;
-        }
-
-        .stat-number {
-            font-size: 30px;
-            font-weight: 800;
-            margin-top: 8px;
-        }
-
-        .stat-description {
-            color: #8f9aa4;
-            font-size: 13px;
-            margin-top: 4px;
-        }
-
         /* MANAGER GRID */
 
         .manager-grid {
@@ -313,10 +278,6 @@
 
         @media (max-width: 950px) {
 
-            .stats {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
             .manager-grid {
                 grid-template-columns: 1fr;
             }
@@ -366,26 +327,25 @@
 
         @media (max-width: 450px) {
 
-            .stats {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .stat-card {
-                padding: 18px;
-            }
-
-            .stat-number {
-                font-size: 25px;
-            }
-
             .former-manager-grid {
                 grid-template-columns: 1fr;
             }
 
+            /*
+             * Keep Championships and Appearances
+             * on the same horizontal line on mobile.
+             */
+
             .championships-header {
-                align-items: flex-start;
-                flex-direction: column;
-                gap: 2px;
+                display: flex;
+                justify-content: space-between;
+                align-items: baseline;
+                flex-direction: row;
+                gap: 10px;
+            }
+
+            .championship-appearances {
+                white-space: nowrap;
             }
         }
     </style>
@@ -432,57 +392,6 @@
 
 
 <main class="container">
-
-
-    <!-- LEAGUE LEADERS -->
-
-    <h2 class="section-title">League Leaders</h2>
-
-    <div class="stats">
-
-        <div class="stat-card">
-            <div class="stat-label">Most Titles</div>
-            <div class="stat-number">5</div>
-            <div class="stat-description">Ryan Herbst</div>
-        </div>
-
-        <div class="stat-card">
-            <div class="stat-label">Most Championship Appearances</div>
-            <div class="stat-number">7</div>
-            <div class="stat-description">Ryan Herbst</div>
-        </div>
-
-        <div class="stat-card">
-            <div class="stat-label">Most Playoff Wins</div>
-            <div class="stat-number">15</div>
-            <div class="stat-description">Ryan Herbst</div>
-        </div>
-
-        <div class="stat-card">
-            <div class="stat-label">Most Wins</div>
-            <div class="stat-number">91</div>
-            <div class="stat-description">Nic Maiorano</div>
-        </div>
-
-        <div class="stat-card">
-            <div class="stat-label">Highest Winning %</div>
-            <div class="stat-number">58%</div>
-            <div class="stat-description">Julia Wheeler</div>
-        </div>
-
-        <div class="stat-card">
-            <div class="stat-label">Most #1 Seeds</div>
-            <div class="stat-number">3</div>
-            <div class="stat-description">Jonah &amp; Tommy</div>
-        </div>
-
-        <div class="stat-card">
-            <div class="stat-label">Most Winning Seasons</div>
-            <div class="stat-number">7</div>
-            <div class="stat-description">Jonah Wheeler</div>
-        </div>
-
-    </div>
 
 
     <!-- CURRENT MANAGERS -->
