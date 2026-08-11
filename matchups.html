@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -117,10 +115,10 @@
 
         /* MATCHUP FACTS */
 
-        .stats {
+        .stats-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 18px;
+            gap: 15px;
         }
 
         .stat-card {
@@ -132,24 +130,24 @@
         }
 
         .stat-label {
-            color: #7f8a94;
-            font-size: 10px;
+            color: #8f9aa4;
+            font-size: 11px;
             text-transform: uppercase;
             letter-spacing: 1.5px;
             font-weight: 700;
         }
 
         .stat-number {
-            font-size: 25px;
+            font-size: 24px;
             font-weight: 800;
-            line-height: 1.15;
             margin-top: 10px;
+            line-height: 1.2;
         }
 
         .stat-description {
             color: #aeb8c1;
             font-size: 13px;
-            margin-top: 8px;
+            margin-top: 7px;
         }
 
         /* PANELS */
@@ -159,6 +157,7 @@
             border: 1px solid #27313b;
             border-radius: 12px;
             overflow: hidden;
+            margin-top: 18px;
         }
 
         .panel-header {
@@ -185,64 +184,61 @@
         /* MATRIX */
 
         .matrix-wrapper {
-            width: 100%;
             overflow-x: auto;
+            width: 100%;
         }
 
         .matrix {
             width: 100%;
-            min-width: 950px;
+            min-width: 900px;
             border-collapse: collapse;
         }
 
         .matrix th,
         .matrix td {
-            padding: 12px 10px;
+            padding: 13px 12px;
             border-bottom: 1px solid #222b34;
             text-align: center;
-            white-space: nowrap;
             font-size: 12px;
+            white-space: nowrap;
         }
 
         .matrix th {
-            color: #8f9aa4;
-            background: #111820;
-            font-size: 10px;
+            color: #7f8a94;
             text-transform: uppercase;
             letter-spacing: 1px;
+            font-size: 10px;
             font-weight: 700;
+            background: #111820;
         }
 
         .matrix th:first-child,
         .matrix td:first-child {
             text-align: left;
-            padding-left: 18px;
+            padding-left: 22px;
+            font-weight: 700;
+            color: #f5f5f5;
             position: sticky;
             left: 0;
+            background: #151c24;
             z-index: 2;
         }
 
         .matrix th:first-child {
             background: #111820;
-        }
-
-        .matrix td:first-child {
-            background: #151c24;
-            color: #f5f5f5;
-            font-weight: 700;
-        }
-
-        .matrix tr:last-child td {
-            border-bottom: none;
+            z-index: 3;
         }
 
         .matrix td {
             color: #cbd2d8;
         }
 
+        .matrix tr:last-child td {
+            border-bottom: none;
+        }
+
         .matrix .diagonal {
             color: #68747e;
-            background: #111820;
         }
 
         .matrix-note {
@@ -252,10 +248,9 @@
             border-top: 1px solid #222b34;
         }
 
-        /* LEADERS */
+        /* LEADERS TABLE */
 
         .leaders-table-wrapper {
-            width: 100%;
             overflow-x: auto;
         }
 
@@ -266,23 +261,24 @@
 
         .leaders-table th,
         .leaders-table td {
-            padding: 13px 18px;
+            padding: 14px 22px;
             border-bottom: 1px solid #222b34;
             text-align: left;
             font-size: 13px;
         }
 
         .leaders-table th {
-            color: #8f9aa4;
-            background: #111820;
-            font-size: 10px;
+            color: #7f8a94;
             text-transform: uppercase;
-            letter-spacing: 1.5px;
+            letter-spacing: 1px;
+            font-size: 10px;
             font-weight: 700;
+            background: #111820;
         }
 
         .leaders-table td:first-child {
             font-weight: 700;
+            color: #f5f5f5;
             white-space: nowrap;
         }
 
@@ -308,22 +304,21 @@
             align-items: center;
             justify-content: center;
             gap: 15px;
-            border-bottom: 1px solid #27313b;
         }
 
         .selector select {
-            width: 260px;
+            width: 250px;
             padding: 12px 14px;
             background: #111820;
-            color: #f5f5f5;
             border: 1px solid #39444f;
             border-radius: 7px;
-            font-size: 14px;
-            font-family: inherit;
+            color: #f5f5f5;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 13px;
+            outline: none;
         }
 
         .selector select:focus {
-            outline: none;
             border-color: #68747e;
         }
 
@@ -331,44 +326,30 @@
             color: #7f8a94;
             font-size: 11px;
             font-weight: 800;
-            letter-spacing: 1.5px;
+            letter-spacing: 1px;
         }
 
         .rivalry-result {
-            min-height: 120px;
-            padding: 22px;
+            padding: 0 22px 22px;
         }
 
         .rivalry-empty {
+            border: 1px dashed #39444f;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
             color: #68747e;
             font-size: 13px;
-            text-align: center;
-            padding: 22px 10px;
-        }
-
-        .rivalry-card {
-            text-align: center;
-        }
-
-        .rivalry-names {
-            font-size: 20px;
-            font-weight: 800;
-        }
-
-        .rivalry-record {
-            margin-top: 8px;
-            color: #aeb8c1;
-            font-size: 14px;
         }
 
         /* CHAMPIONSHIP MATCHUPS */
 
         .matchup {
             display: grid;
-            grid-template-columns: 1fr 130px 1fr;
+            grid-template-columns: 1fr auto 1fr;
             align-items: center;
-            gap: 20px;
-            padding: 18px 22px;
+            gap: 25px;
+            padding: 20px 22px;
             border-bottom: 1px solid #222b34;
         }
 
@@ -394,7 +375,6 @@
         }
 
         .year-label {
-            display: block;
             color: #7f8a94;
             font-size: 10px;
             text-transform: uppercase;
@@ -404,15 +384,15 @@
         }
 
         .score {
-            text-align: center;
-            font-size: 15px;
+            color: #f5f5f5;
+            font-size: 17px;
             font-weight: 800;
-            color: #cbd2d8;
+            white-space: nowrap;
         }
 
         /* NOTABLE MATCHUPS */
 
-        .record-grid {
+        .records-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 18px;
@@ -431,31 +411,19 @@
             text-transform: uppercase;
             letter-spacing: 1.5px;
             font-weight: 700;
-            margin-bottom: 9px;
+            margin-bottom: 8px;
         }
 
         .record-card strong {
             display: block;
             font-size: 16px;
-            line-height: 1.35;
+            line-height: 1.3;
         }
 
         .record-card p {
             color: #7f8a94;
             font-size: 12px;
             margin-top: 5px;
-        }
-
-        /* HISTORICAL DATA */
-
-        .history-note {
-            padding: 22px;
-            color: #aeb8c1;
-            font-size: 13px;
-        }
-
-        .history-note strong {
-            color: #f5f5f5;
         }
 
         /* FOOTER */
@@ -472,21 +440,14 @@
 
         @media (max-width: 950px) {
 
-            .stats {
-                grid-template-columns: 1fr;
+            .stats-grid {
+                grid-template-columns: repeat(3, 1fr);
             }
 
-            .record-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .selector {
-                flex-wrap: wrap;
-            }
-
-            .selector select {
-                flex: 1;
-                min-width: 200px;
+            .leaders-table th,
+            .leaders-table td {
+                padding-left: 15px;
+                padding-right: 15px;
             }
 
         }
@@ -524,39 +485,41 @@
                 padding: 0 20px 50px;
             }
 
-            .section-title {
-                margin: 40px 0 18px;
+            .stats-grid {
+                grid-template-columns: 1fr;
             }
 
-            .panel-header {
-                padding: 18px;
+            .stat-card {
+                min-height: 0;
             }
 
-            .matrix th,
-            .matrix td {
-                padding: 11px 9px;
+            .selector {
+                flex-direction: column;
             }
 
-            .leaders-table th,
-            .leaders-table td {
-                padding: 12px 14px;
+            .selector select {
+                width: 100%;
+            }
+
+            .vs {
+                margin: -3px 0;
             }
 
             .matchup {
-                grid-template-columns: 1fr 90px 1fr;
-                gap: 10px;
-                padding: 16px 18px;
+                grid-template-columns: 1fr;
+                gap: 8px;
+                text-align: left;
             }
 
-            .team {
-                font-size: 14px;
+            .team.right {
+                text-align: left;
             }
 
             .score {
-                font-size: 13px;
+                order: 2;
             }
 
-            .record-grid {
+            .records-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -568,43 +531,39 @@
                 padding: 18px;
             }
 
-            .selector {
-                flex-direction: column;
-                gap: 10px;
+            .stat-number {
+                font-size: 21px;
             }
 
-            .selector select {
-                width: 100%;
-                min-width: 0;
+            .panel-header {
+                padding: 18px;
             }
 
-            .vs {
-                padding: 2px 0;
+            .matrix th,
+            .matrix td {
+                padding: 11px 10px;
             }
 
-            .matchup {
-                grid-template-columns: 1fr;
-                gap: 7px;
+            .matrix th:first-child,
+            .matrix td:first-child {
+                padding-left: 18px;
             }
 
-            .team,
-            .team.right {
-                text-align: center;
+            .leaders-table th,
+            .leaders-table td {
+                padding: 12px 15px;
             }
 
-            .score {
-                order: -1;
+            .record-card {
+                padding: 18px;
             }
 
         }
 
     </style>
-
 </head>
 
-
 <body>
-
 
 <header>
 
@@ -632,9 +591,6 @@
 
 <main>
 
-
-    <!-- HERO -->
-
     <section class="hero">
 
         <div class="eyebrow">League Matchups · 2013–2026</div>
@@ -642,8 +598,7 @@
         <h1>Matchups.</h1>
 
         <p>
-            Every rivalry, playoff battle and head-to-head matchup in
-            Kevin Durant League history.
+            Every rivalry, playoff battle and head-to-head matchup in Kevin Durant League history.
         </p>
 
     </section>
@@ -656,56 +611,30 @@
 
         <h2 class="section-title">Matchup Facts</h2>
 
-        <div class="stats">
+        <div class="stats-grid">
 
             <div class="stat-card">
-
-                <div class="stat-label">
-                    Most Even Matchup
-                </div>
-
-                <div class="stat-number">
-                    Tommy 8–8 Michael
-                </div>
-
+                <div class="stat-label">Most Even Matchup</div>
+                <div class="stat-number">Michael vs. Tommy</div>
                 <div class="stat-description">
-                    50%–50% over 16 meetings
+                    8–8 all-time record
                 </div>
-
             </div>
 
-
             <div class="stat-card">
-
-                <div class="stat-label">
-                    Most Lopsided Matchup
-                </div>
-
-                <div class="stat-number">
-                    Mike H. 2–0 Nick
-                </div>
-
+                <div class="stat-label">Most Lopsided Matchup</div>
+                <div class="stat-number">Mike H. vs. Nick</div>
                 <div class="stat-description">
-                    100% head-to-head winning percentage gap
+                    Mike H. leads 2–0 · 100% winning percentage
                 </div>
-
             </div>
 
-
             <div class="stat-card">
-
-                <div class="stat-label">
-                    Most Head-to-Head Wins
-                </div>
-
-                <div class="stat-number">
-                    Jonah · 16 wins
-                </div>
-
+                <div class="stat-label">Most Head-to-Head Wins</div>
+                <div class="stat-number">Jonah vs. Nic</div>
                 <div class="stat-description">
-                    Against Nic Maiorano
+                    Jonah has 16 wins against Nic
                 </div>
-
             </div>
 
         </div>
@@ -718,20 +647,15 @@
         <div class="panel">
 
             <div class="panel-header">
-
                 <h3>Manager Rivalries</h3>
-
                 <span>All-Time</span>
-
             </div>
-
 
             <div class="matrix-wrapper">
 
                 <table class="matrix">
 
                     <thead>
-
                         <tr>
                             <th>Manager</th>
                             <th>Christian</th>
@@ -747,9 +671,7 @@
                             <th>Mike D.</th>
                             <th>Nick</th>
                         </tr>
-
                     </thead>
-
 
                     <tbody>
 
@@ -951,7 +873,6 @@
 
             </div>
 
-
             <div class="matrix-note">
                 Each cell displays the all-time head-to-head record between the two
                 managers. Records are shown as wins–losses, with ties included as a
@@ -961,186 +882,101 @@
         </div>
 
 
-        <!-- HEAD-TO-HEAD LEADERS -->
+        <!-- ALL-TIME LEADERS -->
 
         <h2 class="section-title">All-Time Head-to-Head Leaders</h2>
 
         <div class="panel">
 
             <div class="panel-header">
-
                 <h3>All-Time Head-to-Head Leaders</h3>
-
                 <span>By Manager</span>
-
             </div>
-
 
             <div class="leaders-table-wrapper">
 
                 <table class="leaders-table">
 
                     <thead>
-
                         <tr>
                             <th>Manager</th>
                             <th>Most Wins Against</th>
                             <th>Most Losses Against</th>
                         </tr>
-
                     </thead>
-
 
                     <tbody>
 
                         <tr>
                             <td>Christian Abert</td>
-                            <td>
-                                <span class="leader-opponent">Ryan Herbst</span>
-                                <span class="leader-record">· 13 wins</span>
-                            </td>
-                            <td>
-                                <span class="leader-opponent">Ryan Herbst &amp; Nic Maiorano</span>
-                                <span class="leader-record">· 15 losses</span>
-                            </td>
+                            <td><span class="leader-opponent">Ryan Herbst</span> <span class="leader-record">· 13 wins</span></td>
+                            <td><span class="leader-opponent">Ryan Herbst &amp; Nic Maiorano</span> <span class="leader-record">· 15 losses</span></td>
                         </tr>
 
                         <tr>
                             <td>Ryan Herbst</td>
-                            <td>
-                                <span class="leader-opponent">Christian Abert</span>
-                                <span class="leader-record">· 15 wins</span>
-                            </td>
-                            <td>
-                                <span class="leader-opponent">Nic Maiorano</span>
-                                <span class="leader-record">· 14 losses</span>
-                            </td>
+                            <td><span class="leader-opponent">Christian Abert</span> <span class="leader-record">· 15 wins</span></td>
+                            <td><span class="leader-opponent">Nic Maiorano</span> <span class="leader-record">· 14 losses</span></td>
                         </tr>
 
                         <tr>
                             <td>Nic Maiorano</td>
-                            <td>
-                                <span class="leader-opponent">Christian Abert</span>
-                                <span class="leader-record">· 15 wins</span>
-                            </td>
-                            <td>
-                                <span class="leader-opponent">Jonah Wheeler</span>
-                                <span class="leader-record">· 16 losses</span>
-                            </td>
+                            <td><span class="leader-opponent">Christian Abert</span> <span class="leader-record">· 15 wins</span></td>
+                            <td><span class="leader-opponent">Jonah Wheeler</span> <span class="leader-record">· 16 losses</span></td>
                         </tr>
 
                         <tr>
                             <td>Bailey Martin</td>
-                            <td>
-                                <span class="leader-opponent">Jonah Wheeler</span>
-                                <span class="leader-record">· 9 wins</span>
-                            </td>
-                            <td>
-                                <span class="leader-opponent">Ryan Herbst</span>
-                                <span class="leader-record">· 10 losses</span>
-                            </td>
+                            <td><span class="leader-opponent">Jonah Wheeler</span> <span class="leader-record">· 9 wins</span></td>
+                            <td><span class="leader-opponent">Ryan Herbst</span> <span class="leader-record">· 10 losses</span></td>
                         </tr>
 
                         <tr>
                             <td>Jonah Wheeler</td>
-                            <td>
-                                <span class="leader-opponent">Nic Maiorano</span>
-                                <span class="leader-record">· 16 wins</span>
-                            </td>
-                            <td>
-                                <span class="leader-opponent">Christian Abert</span>
-                                <span class="leader-record">· 12 losses</span>
-                            </td>
+                            <td><span class="leader-opponent">Nic Maiorano</span> <span class="leader-record">· 16 wins</span></td>
+                            <td><span class="leader-opponent">Christian Abert</span> <span class="leader-record">· 12 losses</span></td>
                         </tr>
 
                         <tr>
                             <td>Tommy Herbst</td>
-                            <td>
-                                <span class="leader-opponent">Christian Abert</span>
-                                <span class="leader-record">· 14 wins</span>
-                            </td>
-                            <td>
-                                <span class="leader-opponent">Nic Maiorano &amp; Bailey Martin</span>
-                                <span class="leader-record">· 13 losses</span>
-                            </td>
+                            <td><span class="leader-opponent">Christian Abert</span> <span class="leader-record">· 14 wins</span></td>
+                            <td><span class="leader-opponent">Nic Maiorano &amp; Bailey Martin</span> <span class="leader-record">· 13 losses</span></td>
                         </tr>
 
                         <tr>
                             <td>Michael Gravante</td>
-                            <td>
-                                <span class="leader-opponent">Mike Herbst</span>
-                                <span class="leader-record">· 9 wins</span>
-                            </td>
-                            <td>
-                                <span class="leader-opponent">Ryan Herbst &amp; Nic Maiorano</span>
-                                <span class="leader-record">· 10 losses</span>
-                            </td>
+                            <td><span class="leader-opponent">Mike Herbst</span> <span class="leader-record">· 9 wins</span></td>
+                            <td><span class="leader-opponent">Ryan Herbst &amp; Nic Maiorano</span> <span class="leader-record">· 10 losses</span></td>
                         </tr>
 
                         <tr>
                             <td>Mike Herbst</td>
-                            <td>
-                                <span class="leader-opponent">Christian Abert</span>
-                                <span class="leader-record">· 8 wins</span>
-                            </td>
-                            <td>
-                                <span class="leader-opponent">Michael Gravante</span>
-                                <span class="leader-record">· 9 losses</span>
-                            </td>
+                            <td><span class="leader-opponent">Christian Abert</span> <span class="leader-record">· 8 wins</span></td>
+                            <td><span class="leader-opponent">Michael Gravante</span> <span class="leader-record">· 9 losses</span></td>
                         </tr>
 
                         <tr>
                             <td>William Darrow</td>
-                            <td>
-                                <span class="leader-opponent">
-                                    Christian Abert, Ryan Herbst, Nic Maiorano &amp; Mike Herbst
-                                </span>
-                                <span class="leader-record">· 4 wins</span>
-                            </td>
-                            <td>
-                                <span class="leader-opponent">Michael Gravante</span>
-                                <span class="leader-record">· 6 losses</span>
-                            </td>
+                            <td><span class="leader-opponent">Christian Abert, Ryan Herbst, Nic Maiorano &amp; Mike Herbst</span> <span class="leader-record">· 4 wins</span></td>
+                            <td><span class="leader-opponent">Michael Gravante</span> <span class="leader-record">· 6 losses</span></td>
                         </tr>
 
                         <tr>
                             <td>Julia Wheeler</td>
-                            <td>
-                                <span class="leader-opponent">
-                                    Christian Abert, Nic Maiorano, Tommy Herbst &amp; William Darrow
-                                </span>
-                                <span class="leader-record">· 4 wins</span>
-                            </td>
-                            <td>
-                                <span class="leader-opponent">Michael Gravante</span>
-                                <span class="leader-record">· 4 losses</span>
-                            </td>
+                            <td><span class="leader-opponent">Christian Abert, Nic Maiorano, Tommy Herbst &amp; William Darrow</span> <span class="leader-record">· 4 wins</span></td>
+                            <td><span class="leader-opponent">Michael Gravante</span> <span class="leader-record">· 4 losses</span></td>
                         </tr>
 
                         <tr>
                             <td>Mike Darrow</td>
-                            <td>
-                                <span class="leader-opponent">
-                                    Ryan Herbst, Nic Maiorano, Tommy Herbst, Michael Gravante &amp; Nick Femano
-                                </span>
-                                <span class="leader-record">· 2 wins</span>
-                            </td>
-                            <td>
-                                <span class="leader-opponent">William Darrow &amp; Julia Wheeler</span>
-                                <span class="leader-record">· 3 losses</span>
-                            </td>
+                            <td><span class="leader-opponent">Ryan Herbst, Nic Maiorano, Tommy Herbst, Michael Gravante &amp; Nick Femano</span> <span class="leader-record">· 2 wins</span></td>
+                            <td><span class="leader-opponent">William Darrow &amp; Julia Wheeler</span> <span class="leader-record">· 3 losses</span></td>
                         </tr>
 
                         <tr>
                             <td>Nick Femano</td>
-                            <td>
-                                <span class="leader-opponent">Nic Maiorano</span>
-                                <span class="leader-record">· 2 wins</span>
-                            </td>
-                            <td>
-                                <span class="leader-opponent">Jonah Wheeler</span>
-                                <span class="leader-record">· 3 losses</span>
-                            </td>
+                            <td><span class="leader-opponent">Nic Maiorano</span> <span class="leader-record">· 2 wins</span></td>
+                            <td><span class="leader-opponent">Jonah Wheeler</span> <span class="leader-record">· 3 losses</span></td>
                         </tr>
 
                     </tbody>
@@ -1161,9 +997,7 @@
             <div class="selector">
 
                 <select id="managerOne">
-
                     <option value="">Select Manager</option>
-
                     <option value="Christian">Christian Abert</option>
                     <option value="Ryan">Ryan Herbst</option>
                     <option value="Nic">Nic Maiorano</option>
@@ -1176,17 +1010,12 @@
                     <option value="Julia">Julia Wheeler</option>
                     <option value="Mike D.">Mike Darrow</option>
                     <option value="Nick">Nick Femano</option>
-
                 </select>
-
 
                 <div class="vs">VS</div>
 
-
                 <select id="managerTwo">
-
                     <option value="">Select Manager</option>
-
                     <option value="Christian">Christian Abert</option>
                     <option value="Ryan">Ryan Herbst</option>
                     <option value="Nic">Nic Maiorano</option>
@@ -1199,11 +1028,9 @@
                     <option value="Julia">Julia Wheeler</option>
                     <option value="Mike D.">Mike Darrow</option>
                     <option value="Nick">Nick Femano</option>
-
                 </select>
 
             </div>
-
 
             <div class="rivalry-result" id="rivalryResult">
 
@@ -1223,232 +1050,177 @@
         <div class="panel">
 
             <div class="panel-header">
-
                 <h3>League Championship Games</h3>
-
                 <span>2013–2025</span>
-
             </div>
 
 
             <div class="matchup">
-
                 <div class="team winner">
                     <div class="year-label">2013 Champion</div>
                     Ryan Herbst
                 </div>
-
                 <div class="score">144–124</div>
-
                 <div class="team right loser">
                     <div class="year-label">Runner-Up</div>
                     Nic Maiorano
                 </div>
-
             </div>
 
 
             <div class="matchup">
-
                 <div class="team winner">
                     <div class="year-label">2014 Champion</div>
                     Ryan Herbst
                 </div>
-
                 <div class="score">177–125</div>
-
                 <div class="team right loser">
                     <div class="year-label">Runner-Up</div>
                     Bailey Martin
                 </div>
-
             </div>
 
 
             <div class="matchup">
-
                 <div class="team winner">
                     <div class="year-label">2015 Champion</div>
                     Bailey Martin
                 </div>
-
                 <div class="score">105–104</div>
-
                 <div class="team right loser">
                     <div class="year-label">Runner-Up</div>
                     Ryan Herbst
                 </div>
-
             </div>
 
 
             <div class="matchup">
-
                 <div class="team winner">
                     <div class="year-label">2016 Champion</div>
                     Ryan Herbst
                 </div>
-
                 <div class="score">141–138</div>
-
                 <div class="team right loser">
                     <div class="year-label">Runner-Up</div>
                     Jonah Wheeler
                 </div>
-
             </div>
 
 
             <div class="matchup">
-
                 <div class="team winner">
                     <div class="year-label">2017 Champion</div>
                     Christian Abert
                 </div>
-
                 <div class="score">101–94</div>
-
                 <div class="team right loser">
                     <div class="year-label">Runner-Up</div>
                     Bailey Martin
                 </div>
-
             </div>
 
 
             <div class="matchup">
-
                 <div class="team winner">
                     <div class="year-label">2018 Champion</div>
                     Christian Abert
                 </div>
-
                 <div class="score">163–156</div>
-
                 <div class="team right loser">
                     <div class="year-label">Runner-Up</div>
                     Ryan Herbst
                 </div>
-
             </div>
 
 
             <div class="matchup">
-
                 <div class="team winner">
                     <div class="year-label">2019 Champion</div>
                     Ryan Herbst
                 </div>
-
                 <div class="score">163–149</div>
-
                 <div class="team right loser">
                     <div class="year-label">Runner-Up</div>
                     Tommy Herbst
                 </div>
-
             </div>
 
 
             <div class="matchup">
-
                 <div class="team winner">
                     <div class="year-label">2020 Champion</div>
                     Nic Maiorano
                 </div>
-
                 <div class="score">173–129</div>
-
                 <div class="team right loser">
                     <div class="year-label">Runner-Up</div>
                     Jonah Wheeler
                 </div>
-
             </div>
 
 
             <div class="matchup">
-
                 <div class="team winner">
                     <div class="year-label">2021 Champion</div>
                     Michael Gravante
                 </div>
-
                 <div class="score">121–102</div>
-
                 <div class="team right loser">
                     <div class="year-label">Runner-Up</div>
                     Jonah Wheeler
                 </div>
-
             </div>
 
 
             <div class="matchup">
-
                 <div class="team winner">
                     <div class="year-label">2022 Co-Champions</div>
                     Julia Wheeler &amp; Ryan Herbst
                 </div>
-
                 <div class="score">116–97*</div>
-
                 <div class="team right loser">
                     <div class="year-label">Championship Result</div>
                     Tie
                 </div>
-
             </div>
 
 
             <div class="matchup">
-
                 <div class="team winner">
                     <div class="year-label">2023 Champion</div>
                     Tommy Herbst
                 </div>
-
                 <div class="score">134–97</div>
-
                 <div class="team right loser">
                     <div class="year-label">Runner-Up</div>
                     William Darrow
                 </div>
-
             </div>
 
 
             <div class="matchup">
-
                 <div class="team winner">
                     <div class="year-label">2024 Champion</div>
                     Jonah Wheeler
                 </div>
-
                 <div class="score">176–136</div>
-
                 <div class="team right loser">
                     <div class="year-label">Runner-Up</div>
                     Julia Wheeler
                 </div>
-
             </div>
 
 
             <div class="matchup">
-
                 <div class="team winner">
                     <div class="year-label">2025 Champion</div>
                     William Darrow
                 </div>
-
                 <div class="score">151–114</div>
-
                 <div class="team right loser">
                     <div class="year-label">Runner-Up</div>
                     Julia Wheeler
                 </div>
-
             </div>
 
         </div>
@@ -1458,97 +1230,33 @@
 
         <h2 class="section-title">Notable Matchups</h2>
 
-        <div class="record-grid">
-
+        <div class="records-grid">
 
             <div class="record-card">
-
                 <h3>Closest Championship</h3>
-
-                <strong>
-                    Bailey Martin 105–104 Ryan Herbst
-                </strong>
-
-                <p>
-                    2015 · 1-point margin
-                </p>
-
+                <strong>Bailey Martin 105–104 Ryan Herbst</strong>
+                <p>2015 · 1-point margin</p>
             </div>
 
-
             <div class="record-card">
-
                 <h3>Highest Championship Score</h3>
-
-                <strong>
-                    Ryan Herbst 177–125 Bailey Martin
-                </strong>
-
-                <p>
-                    2014 · 302 combined points
-                </p>
-
+                <strong>Ryan Herbst 177–125 Bailey Martin</strong>
+                <p>2014 · 302 combined points</p>
             </div>
 
-
             <div class="record-card">
-
                 <h3>Highest Individual Score</h3>
-
-                <strong>
-                    Mike H. · 236 points
-                </strong>
-
-                <p>
-                    2020 regular season
-                </p>
-
+                <strong>Mike H. · 236 points</strong>
+                <p>2020 regular season</p>
             </div>
-
 
             <div class="record-card">
-
                 <h3>Largest Championship Margin</h3>
-
-                <strong>
-                    Nic Maiorano 173–129
-                </strong>
-
-                <p>
-                    2020 · 44-point margin
-                </p>
-
-            </div>
-
-
-        </div>
-
-
-        <!-- HISTORICAL DATA -->
-
-        <h2 class="section-title">Historical Data</h2>
-
-        <div class="panel">
-
-            <div class="panel-header">
-
-                <h3>Matchup Database</h3>
-
-                <span>Current Records</span>
-
-            </div>
-
-            <div class="history-note">
-
-                The head-to-head matrix above reflects the league's current
-                historical matchup records. Future additions to the historical
-                database can be incorporated here as additional matchup,
-                point-total, margin and streak data becomes available.
-
+                <strong>Nic Maiorano 173–129</strong>
+                <p>2020 · 44-point margin</p>
             </div>
 
         </div>
-
 
     </div>
 
@@ -1556,251 +1264,155 @@
 
 
 <footer>
-
     Kevin Durant League · Fantasy Football History · Est. 2013
-
 </footer>
 
 
 <script>
 
-    const matchupData = {
+    const records = {
 
-        "Christian": {
-            "Ryan": "13-15",
-            "Nic": "12-15",
-            "Bailey": "8-7",
-            "Jonah": "12-9",
-            "Tommy": "7-14",
-            "Michael": "9-8",
-            "Mike H.": "3-8",
-            "William": "2-4",
-            "Julia": "3-4",
-            "Mike D.": "2-1",
-            "Nick": "2-1"
-        },
+        "Christian|Ryan": "13–15",
+        "Christian|Nic": "12–15",
+        "Christian|Bailey": "8–7",
+        "Christian|Jonah": "12–9",
+        "Christian|Tommy": "7–14",
+        "Christian|Michael": "9–8",
+        "Christian|Mike H.": "3–8",
+        "Christian|William": "2–4",
+        "Christian|Julia": "3–4",
+        "Christian|Mike D.": "2–1",
+        "Christian|Nick": "2–1",
 
-        "Ryan": {
-            "Christian": "15-13",
-            "Nic": "11-14",
-            "Bailey": "10-7",
-            "Jonah": "10-12",
-            "Tommy": "10-11",
-            "Michael": "10-7",
-            "Mike H.": "5-6",
-            "William": "3-4",
-            "Julia": "1-3",
-            "Mike D.": "2-2",
-            "Nick": "1-1"
-        },
+        "Ryan|Nic": "11–14",
+        "Ryan|Bailey": "10–7",
+        "Ryan|Jonah": "10–12",
+        "Ryan|Tommy": "10–11",
+        "Ryan|Michael": "10–7",
+        "Ryan|Mike H.": "5–6",
+        "Ryan|William": "3–4",
+        "Ryan|Julia": "1–3",
+        "Ryan|Mike D.": "2–2",
+        "Ryan|Nick": "1–1",
 
-        "Nic": {
-            "Christian": "15-12",
-            "Ryan": "14-11",
-            "Bailey": "9-6",
-            "Jonah": "8-16",
-            "Tommy": "13-8-2",
-            "Michael": "9-6",
-            "Mike H.": "6-5",
-            "William": "4-4",
-            "Julia": "2-4",
-            "Mike D.": "2-2",
-            "Nick": "0-2"
-        },
+        "Nic|Bailey": "9–6",
+        "Nic|Jonah": "8–16",
+        "Nic|Tommy": "13–8–2",
+        "Nic|Michael": "9–6",
+        "Nic|Mike H.": "6–5",
+        "Nic|William": "4–4",
+        "Nic|Julia": "2–4",
+        "Nic|Mike D.": "2–2",
+        "Nic|Nick": "0–2",
 
-        "Bailey": {
-            "Christian": "7-8",
-            "Ryan": "7-10",
-            "Nic": "6-9",
-            "Jonah": "9-3",
-            "Tommy": "7-5",
-            "Michael": "2-2",
-            "Mike H.": "0-0",
-            "William": "0-0",
-            "Julia": "0-0",
-            "Mike D.": "0-0",
-            "Nick": "0-0"
-        },
+        "Bailey|Jonah": "9–3",
+        "Bailey|Tommy": "7–5",
+        "Bailey|Michael": "2–2",
 
-        "Jonah": {
-            "Christian": "9-12",
-            "Ryan": "12-10",
-            "Nic": "16-8",
-            "Bailey": "3-9",
-            "Tommy": "13-9",
-            "Michael": "8-6-1",
-            "Mike H.": "4-5",
-            "William": "5-2",
-            "Julia": "3-1",
-            "Mike D.": "2-1",
-            "Nick": "3-1"
-        },
+        "Jonah|Tommy": "13–9",
+        "Jonah|Michael": "8–6–1",
+        "Jonah|Mike H.": "4–5",
+        "Jonah|William": "5–2",
+        "Jonah|Julia": "3–1",
+        "Jonah|Mike D.": "2–1",
+        "Jonah|Nick": "3–1",
 
-        "Tommy": {
-            "Christian": "14-7",
-            "Ryan": "11-10",
-            "Nic": "8-13-2",
-            "Bailey": "5-7",
-            "Jonah": "9-13",
-            "Michael": "8-8",
-            "Mike H.": "7-4",
-            "William": "4-3",
-            "Julia": "1-4",
-            "Mike D.": "2-2",
-            "Nick": "1-1"
-        },
+        "Tommy|Michael": "8–8",
+        "Tommy|Mike H.": "7–4",
+        "Tommy|William": "4–3",
+        "Tommy|Julia": "1–4",
+        "Tommy|Mike D.": "2–2",
+        "Tommy|Nick": "1–1",
 
-        "Michael": {
-            "Christian": "8-9",
-            "Ryan": "7-10",
-            "Nic": "6-9",
-            "Bailey": "2-2",
-            "Jonah": "6-8-1",
-            "Tommy": "8-8",
-            "Mike H.": "9-2",
-            "William": "6-1",
-            "Julia": "4-3",
-            "Mike D.": "2-2",
-            "Nick": "2-1"
-        },
+        "Michael|Mike H.": "9–2",
+        "Michael|William": "6–1",
+        "Michael|Julia": "4–3",
+        "Michael|Mike D.": "2–2",
+        "Michael|Nick": "2–1",
 
-        "Mike H.": {
-            "Christian": "8-3",
-            "Ryan": "6-5",
-            "Nic": "5-6",
-            "Bailey": "0-0",
-            "Jonah": "5-4",
-            "Tommy": "4-7",
-            "Michael": "2-9",
-            "William": "3-4",
-            "Julia": "3-2",
-            "Mike D.": "1-1-1",
-            "Nick": "2-0"
-        },
+        "Mike H.|William": "3–4",
+        "Mike H.|Julia": "3–2",
+        "Mike H.|Mike D.": "1–1–1",
+        "Mike H.|Nick": "2–0",
 
-        "William": {
-            "Christian": "4-2",
-            "Ryan": "4-3",
-            "Nic": "4-4",
-            "Bailey": "0-0",
-            "Jonah": "2-5",
-            "Tommy": "3-4",
-            "Michael": "1-6",
-            "Mike H.": "4-3",
-            "Julia": "2-4",
-            "Mike D.": "3-1",
-            "Nick": "1-1"
-        },
+        "William|Julia": "2–4",
+        "William|Mike D.": "3–1",
+        "William|Nick": "1–1",
 
-        "Julia": {
-            "Christian": "4-3",
-            "Ryan": "3-1",
-            "Nic": "4-2",
-            "Bailey": "0-0",
-            "Jonah": "1-3",
-            "Tommy": "4-1",
-            "Michael": "3-4",
-            "Mike H.": "2-3",
-            "William": "4-2",
-            "Mike D.": "3-1",
-            "Nick": "2-0"
-        },
+        "Julia|Mike D.": "3–1",
+        "Julia|Nick": "2–0",
 
-        "Mike D.": {
-            "Christian": "1-2",
-            "Ryan": "2-2",
-            "Nic": "2-2",
-            "Bailey": "0-0",
-            "Jonah": "1-2",
-            "Tommy": "2-2",
-            "Michael": "2-2",
-            "Mike H.": "1-1-1",
-            "William": "1-3",
-            "Julia": "1-3",
-            "Nick": "2-1"
-        },
-
-        "Nick": {
-            "Christian": "1-2",
-            "Ryan": "1-1",
-            "Nic": "2-0",
-            "Bailey": "0-0",
-            "Jonah": "1-3",
-            "Tommy": "1-1",
-            "Michael": "1-2",
-            "Mike H.": "0-2",
-            "William": "1-1",
-            "Julia": "0-2",
-            "Mike D.": "1-2"
-        }
+        "Mike D.|Nick": "2–1"
 
     };
 
 
-    const managerNames = {
+    function getRecord(one, two) {
 
-        "Christian": "Christian Abert",
-        "Ryan": "Ryan Herbst",
-        "Nic": "Nic Maiorano",
-        "Bailey": "Bailey Martin",
-        "Jonah": "Jonah Wheeler",
-        "Tommy": "Tommy Herbst",
-        "Michael": "Michael Gravante",
-        "Mike H.": "Mike Herbst",
-        "William": "William Darrow",
-        "Julia": "Julia Wheeler",
-        "Mike D.": "Mike Darrow",
-        "Nick": "Nick Femano"
-
-    };
-
-
-    function getRecord(managerOne, managerTwo) {
-
-        if (
-            matchupData[managerOne] &&
-            matchupData[managerOne][managerTwo]
-        ) {
-            return matchupData[managerOne][managerTwo];
+        if (!one || !two || one === two) {
+            return null;
         }
 
-        if (
-            matchupData[managerTwo] &&
-            matchupData[managerTwo][managerOne]
-        ) {
+        const direct = one + "|" + two;
+        const reverse = two + "|" + one;
 
-            const record = matchupData[managerTwo][managerOne];
+        if (records[direct]) {
+            return {
+                manager: one,
+                opponent: two,
+                record: records[direct]
+            };
+        }
 
-            const parts = record.split("-");
+        if (records[reverse]) {
 
-            if (parts.length === 2) {
-                return parts[1] + "-" + parts[0];
-            }
+            const parts = records[reverse].split("–");
+
+            let reversed = parts[1] + "–" + parts[0];
 
             if (parts.length === 3) {
-                return parts[1] + "-" + parts[0] + "-" + parts[2];
+                reversed += "–" + parts[2];
             }
 
+            return {
+                manager: one,
+                opponent: two,
+                record: reversed
+            };
         }
 
         return null;
-
     }
 
 
-    function updateRivalry() {
+    function fullName(shortName) {
 
-        const managerOne =
-            document.getElementById("managerOne").value;
+        const names = {
+            "Christian": "Christian Abert",
+            "Ryan": "Ryan Herbst",
+            "Nic": "Nic Maiorano",
+            "Bailey": "Bailey Martin",
+            "Jonah": "Jonah Wheeler",
+            "Tommy": "Tommy Herbst",
+            "Michael": "Michael Gravante",
+            "Mike H.": "Mike Herbst",
+            "William": "William Darrow",
+            "Julia": "Julia Wheeler",
+            "Mike D.": "Mike Darrow",
+            "Nick": "Nick Femano"
+        };
 
-        const managerTwo =
-            document.getElementById("managerTwo").value;
-
-        const result =
-            document.getElementById("rivalryResult");
+        return names[shortName] || shortName;
+    }
 
 
-        if (!managerOne || !managerTwo) {
+    function showRivalry() {
+
+        const one = document.getElementById("managerOne").value;
+        const two = document.getElementById("managerTwo").value;
+        const result = document.getElementById("rivalryResult");
+
+        if (!one || !two) {
 
             result.innerHTML = `
                 <div class="rivalry-empty">
@@ -1809,85 +1421,51 @@
             `;
 
             return;
-
         }
 
-
-        if (managerOne === managerTwo) {
+        if (one === two) {
 
             result.innerHTML = `
                 <div class="rivalry-empty">
-                    Select two different managers to view a rivalry.
+                    Please select two different managers.
                 </div>
             `;
 
             return;
-
         }
 
+        const data = getRecord(one, two);
 
-        const record =
-            getRecord(managerOne, managerTwo);
-
-
-        if (!record) {
+        if (!data) {
 
             result.innerHTML = `
                 <div class="rivalry-empty">
-                    No historical matchup data is available for these managers.
+                    No head-to-head record is available for this matchup.
                 </div>
             `;
 
             return;
-
         }
-
-
-        const parts = record.split("-");
-
-        let recordText =
-            `${parts[0]}–${parts[1]}`;
-
-        if (parts.length === 3) {
-            recordText += `–${parts[2]}`;
-        }
-
 
         result.innerHTML = `
-
-            <div class="rivalry-card">
-
-                <div class="rivalry-names">
-                    ${managerNames[managerOne]}
-                    vs.
-                    ${managerNames[managerTwo]}
-                </div>
-
-                <div class="rivalry-record">
-                    ${recordText}
-                    ·
-                    ${managerNames[managerOne]} record
-                </div>
-
+            <div class="rivalry-empty">
+                <strong>${fullName(one)} vs. ${fullName(two)}</strong>
+                <br>
+                ${data.record} all-time
             </div>
-
         `;
-
     }
 
 
     document
         .getElementById("managerOne")
-        .addEventListener("change", updateRivalry);
-
+        .addEventListener("change", showRivalry);
 
     document
         .getElementById("managerTwo")
-        .addEventListener("change", updateRivalry);
+        .addEventListener("change", showRivalry);
 
 </script>
 
-
 </body>
-
 </html>
