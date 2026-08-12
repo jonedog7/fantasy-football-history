@@ -292,8 +292,8 @@ nav a:hover {
 }
 
 .best-draft-player {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 100px 55px;
     align-items: center;
     padding: 7px 0;
     border-bottom: 1px solid #222b34;
@@ -308,9 +308,16 @@ nav a:hover {
     font-weight: 700;
 }
 
+.best-draft-player-pick {
+    color: #aeb8c1;
+    font-size: 11px;
+    text-align: right;
+}
+
 .best-draft-player-rank {
     color: #68747e;
     font-size: 11px;
+    text-align: right;
 }
 
 
@@ -333,6 +340,21 @@ nav a:hover {
 
 .manager-card h3 {
     font-size: 17px;
+}
+
+.manager-since {
+    display: inline-block;
+    color: #68747e;
+    background: #111820;
+    border: 1px solid #27313b;
+    border-radius: 5px;
+    padding: 2px 6px;
+    margin-left: 6px;
+    font-size: 9px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    vertical-align: middle;
 }
 
 .manager-stats {
@@ -469,56 +491,6 @@ nav a:hover {
 
 
 /* =========================================
-   DRAFT HISTORY
-========================================= */
-
-.history-selector {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 15px;
-}
-
-.history-selector select {
-    background: #111820;
-    color: white;
-    border: 1px solid #27313b;
-    border-radius: 8px;
-    padding: 10px 14px;
-    font-size: 13px;
-}
-
-.history-panel {
-    display: none;
-}
-
-.history-panel.active {
-    display: block;
-}
-
-.history-header {
-    padding: 22px;
-    border-bottom: 1px solid #27313b;
-}
-
-.history-header h3 {
-    font-size: 19px;
-}
-
-.history-header p {
-    color: #7f8a94;
-    font-size: 12px;
-    margin-top: 4px;
-}
-
-.history-note {
-    padding: 22px;
-    color: #8f9aa4;
-    font-size: 13px;
-}
-
-
-/* =========================================
    FOOTER
 ========================================= */
 
@@ -612,8 +584,7 @@ footer {
         text-align: left;
     }
 
-    .season-selector,
-    .history-selector {
+    .season-selector {
         align-items: flex-start;
         gap: 15px;
         flex-direction: column;
@@ -790,18 +761,22 @@ footer {
         <div class="best-draft-players">
             <div class="best-draft-player">
                 <span class="best-draft-player-name">Christian McCaffrey</span>
+                <span class="best-draft-player-pick">2.03</span>
                 <span class="best-draft-player-rank">1st</span>
             </div>
             <div class="best-draft-player">
                 <span class="best-draft-player-name">De'Von Achance</span>
+                <span class="best-draft-player-pick">—</span>
                 <span class="best-draft-player-rank">12th</span>
             </div>
             <div class="best-draft-player">
                 <span class="best-draft-player-name">Caleb Williams</span>
+                <span class="best-draft-player-pick">—</span>
                 <span class="best-draft-player-rank">13th</span>
             </div>
             <div class="best-draft-player">
                 <span class="best-draft-player-name">George Pickens</span>
+                <span class="best-draft-player-pick">—</span>
                 <span class="best-draft-player-rank">21st</span>
             </div>
         </div>
@@ -816,18 +791,22 @@ footer {
         <div class="best-draft-players">
             <div class="best-draft-player">
                 <span class="best-draft-player-name">Ja'Marr Chase</span>
+                <span class="best-draft-player-pick">1.08</span>
                 <span class="best-draft-player-rank">2nd</span>
             </div>
             <div class="best-draft-player">
                 <span class="best-draft-player-name">Joe Burrow</span>
+                <span class="best-draft-player-pick">5.08</span>
                 <span class="best-draft-player-rank">4th</span>
             </div>
             <div class="best-draft-player">
                 <span class="best-draft-player-name">Derrick Henry</span>
+                <span class="best-draft-player-pick">—</span>
                 <span class="best-draft-player-rank">10th</span>
             </div>
             <div class="best-draft-player">
                 <span class="best-draft-player-name">Justin Herbert</span>
+                <span class="best-draft-player-pick">—</span>
                 <span class="best-draft-player-rank">20th</span>
             </div>
         </div>
@@ -842,14 +821,17 @@ footer {
         <div class="best-draft-players">
             <div class="best-draft-player">
                 <span class="best-draft-player-name">Christian McCaffrey</span>
+                <span class="best-draft-player-pick">1.03</span>
                 <span class="best-draft-player-rank">3rd</span>
             </div>
             <div class="best-draft-player">
                 <span class="best-draft-player-name">A.J. Brown</span>
+                <span class="best-draft-player-pick">—</span>
                 <span class="best-draft-player-rank">13th</span>
             </div>
             <div class="best-draft-player">
                 <span class="best-draft-player-name">Mike Evans</span>
+                <span class="best-draft-player-pick">—</span>
                 <span class="best-draft-player-rank">16th</span>
             </div>
         </div>
@@ -864,18 +846,22 @@ footer {
         <div class="best-draft-players">
             <div class="best-draft-player">
                 <span class="best-draft-player-name">Austin Ekeler</span>
+                <span class="best-draft-player-pick">1.03</span>
                 <span class="best-draft-player-rank">4th</span>
             </div>
             <div class="best-draft-player">
                 <span class="best-draft-player-name">Joe Burrow</span>
+                <span class="best-draft-player-pick">—</span>
                 <span class="best-draft-player-rank">7th</span>
             </div>
             <div class="best-draft-player">
                 <span class="best-draft-player-name">Davante Adams</span>
+                <span class="best-draft-player-pick">—</span>
                 <span class="best-draft-player-rank">9th</span>
             </div>
             <div class="best-draft-player">
                 <span class="best-draft-player-name">Tom Brady</span>
+                <span class="best-draft-player-pick">—</span>
                 <span class="best-draft-player-rank">25th</span>
             </div>
         </div>
@@ -890,18 +876,22 @@ footer {
         <div class="best-draft-players">
             <div class="best-draft-player">
                 <span class="best-draft-player-name">Austin Ekeler</span>
+                <span class="best-draft-player-pick">—</span>
                 <span class="best-draft-player-rank">8th</span>
             </div>
             <div class="best-draft-player">
                 <span class="best-draft-player-name">Deebo Samuel Sr.</span>
+                <span class="best-draft-player-pick">—</span>
                 <span class="best-draft-player-rank">9th</span>
             </div>
             <div class="best-draft-player">
                 <span class="best-draft-player-name">Mark Andrews</span>
+                <span class="best-draft-player-pick">—</span>
                 <span class="best-draft-player-rank">17th</span>
             </div>
             <div class="best-draft-player">
                 <span class="best-draft-player-name">Kyler Murray</span>
+                <span class="best-draft-player-pick">—</span>
                 <span class="best-draft-player-rank">19th</span>
             </div>
         </div>
@@ -926,7 +916,7 @@ footer {
 <!-- Christian Abert -->
 
 <div class="manager-card">
-    <h3>Christian Abert</h3>
+    <h3>Christian Abert <span class="manager-since">since 2013</span></h3>
 
     <div class="manager-stats">
 
@@ -967,7 +957,7 @@ footer {
 <!-- Ryan Herbst -->
 
 <div class="manager-card">
-    <h3>Ryan Herbst</h3>
+    <h3>Ryan Herbst <span class="manager-since">since 2013</span></h3>
 
     <div class="manager-stats">
 
@@ -1008,7 +998,7 @@ footer {
 <!-- Nic Maiorano -->
 
 <div class="manager-card">
-    <h3>Nic Maiorano</h3>
+    <h3>Nic Maiorano <span class="manager-since">since 2013</span></h3>
 
     <div class="manager-stats">
 
@@ -1049,7 +1039,7 @@ footer {
 <!-- Bailey Martin -->
 
 <div class="manager-card">
-    <h3>Bailey Martin</h3>
+    <h3>Bailey Martin <span class="manager-since">since 2013</span></h3>
 
     <div class="manager-stats">
 
@@ -1090,7 +1080,7 @@ footer {
 <!-- Jonah Wheeler -->
 
 <div class="manager-card">
-    <h3>Jonah Wheeler</h3>
+    <h3>Jonah Wheeler <span class="manager-since">since 2014</span></h3>
 
     <div class="manager-stats">
 
@@ -1131,7 +1121,7 @@ footer {
 <!-- Tommy Herbst -->
 
 <div class="manager-card">
-    <h3>Tommy Herbst</h3>
+    <h3>Tommy Herbst <span class="manager-since">since 2014</span></h3>
 
     <div class="manager-stats">
 
@@ -1172,7 +1162,7 @@ footer {
 <!-- Michael Gravante -->
 
 <div class="manager-card">
-    <h3>Michael Gravante</h3>
+    <h3>Michael Gravante <span class="manager-since">since 2016</span></h3>
 
     <div class="manager-stats">
 
@@ -1213,7 +1203,7 @@ footer {
 <!-- Mike Herbst -->
 
 <div class="manager-card">
-    <h3>Mike Herbst</h3>
+    <h3>Mike Herbst <span class="manager-since">since 2019</span></h3>
 
     <div class="manager-stats">
 
@@ -1254,7 +1244,7 @@ footer {
 <!-- William Darrow -->
 
 <div class="manager-card">
-    <h3>William Darrow</h3>
+    <h3>William Darrow <span class="manager-since">since 2021</span></h3>
 
     <div class="manager-stats">
 
@@ -1295,7 +1285,7 @@ footer {
 <!-- Julia Wheeler -->
 
 <div class="manager-card">
-    <h3>Julia Wheeler</h3>
+    <h3>Julia Wheeler <span class="manager-since">since 2022</span></h3>
 
     <div class="manager-stats">
 
@@ -1336,7 +1326,7 @@ footer {
 <!-- Mike Darrow -->
 
 <div class="manager-card">
-    <h3>Mike Darrow</h3>
+    <h3>Mike Darrow <span class="manager-since">since 2023</span></h3>
 
     <div class="manager-stats">
 
@@ -1377,7 +1367,7 @@ footer {
 <!-- Nick Femano -->
 
 <div class="manager-card">
-    <h3>Nick Femano</h3>
+    <h3>Nick Femano <span class="manager-since">since 2024</span></h3>
 
     <div class="manager-stats">
 
@@ -1536,248 +1526,6 @@ footer {
     </div>
 
 </div>
-
-</div>
-
-
-<!-- =========================================
-     7. DRAFT HISTORY
-========================================= -->
-
-<h2 class="section-title">Draft History</h2>
-
-<p class="section-intro">
-    Select a season to view the historical draft board.
-</p>
-
-<div class="history-selector">
-
-    <div style="color:#8f9aa4; font-size:13px;">
-        Historical draft records
-    </div>
-
-    <select id="historySeason" onchange="updateHistory()">
-
-        <option value="2026">2026 Draft</option>
-        <option value="2025">2025 Draft</option>
-        <option value="2024">2024 Draft</option>
-        <option value="2023">2023 Draft</option>
-        <option value="2022">2022 Draft</option>
-        <option value="2021">2021 Draft</option>
-        <option value="2020">2020 Draft</option>
-        <option value="2019">2019 Draft</option>
-        <option value="2018">2018 Draft</option>
-        <option value="2017">2017 Draft</option>
-        <option value="2016">2016 Draft</option>
-        <option value="2015">2015 Draft</option>
-        <option value="2014">2014 Draft</option>
-        <option value="2013">2013 Draft</option>
-
-    </select>
-
-</div>
-
-
-<div class="panel history-panel active" id="history-2026">
-
-    <div class="history-header">
-        <h3>2026 Draft</h3>
-        <p>Complete draft board</p>
-    </div>
-
-    <div class="history-note">
-        Complete draft selections will be displayed here once the
-        historical draft board has been imported and verified.
-    </div>
-
-</div>
-
-
-<div class="panel history-panel" id="history-2025">
-
-    <div class="history-header">
-        <h3>2025 Draft</h3>
-        <p>Complete draft board</p>
-    </div>
-
-    <div class="history-note">
-        Complete draft selections will be displayed here once the
-        historical draft board has been imported and verified.
-    </div>
-
-</div>
-
-
-<div class="panel history-panel" id="history-2024">
-
-    <div class="history-header">
-        <h3>2024 Draft</h3>
-        <p>Complete draft board</p>
-    </div>
-
-    <div class="history-note">
-        Complete draft selections will be displayed here once the
-        historical draft board has been imported and verified.
-    </div>
-
-</div>
-
-
-<div class="panel history-panel" id="history-2023">
-
-    <div class="history-header">
-        <h3>2023 Draft</h3>
-        <p>Complete draft board</p>
-    </div>
-
-    <div class="history-note">
-        Complete draft selections will be displayed here once the
-        historical draft board has been imported and verified.
-    </div>
-
-</div>
-
-
-<div class="panel history-panel" id="history-2022">
-
-    <div class="history-header">
-        <h3>2022 Draft</h3>
-        <p>Complete draft board</p>
-    </div>
-
-    <div class="history-note">
-        Complete draft selections will be displayed here once the
-        historical draft board has been imported and verified.
-    </div>
-
-</div>
-
-
-<div class="panel history-panel" id="history-2021">
-
-    <div class="history-header">
-        <h3>2021 Draft</h3>
-        <p>Complete draft board</p>
-    </div>
-
-    <div class="history-note">
-        Complete draft selections will be displayed here once the
-        historical draft board has been imported and verified.
-    </div>
-
-</div>
-
-
-<div class="panel history-panel" id="history-2020">
-
-    <div class="history-header">
-        <h3>2020 Draft</h3>
-        <p>Complete draft board</p>
-    </div>
-
-    <div class="history-note">
-        Complete draft selections will be displayed here once the
-        historical draft board has been imported and verified.
-    </div>
-
-</div>
-
-
-<div class="panel history-panel" id="history-2019">
-
-    <div class="history-header">
-        <h3>2019 Draft</h3>
-        <p>Complete draft board</p>
-    </div>
-
-    <div class="history-note">
-        Complete draft selections will be displayed here once the
-        historical draft board has been imported and verified.
-    </div>
-
-</div>
-
-
-<div class="panel history-panel" id="history-2018">
-
-    <div class="history-header">
-        <h3>2018 Draft</h3>
-        <p>Complete draft board</p>
-    </div>
-
-    <div class="history-note">
-        Historical manager draft selections are being compiled.
-    </div>
-
-</div>
-
-
-<div class="panel history-panel" id="history-2017">
-
-    <div class="history-header">
-        <h3>2017 Draft</h3>
-        <p>Complete draft board</p>
-    </div>
-
-    <div class="history-note">
-        Historical manager draft selections are being compiled.
-    </div>
-
-</div>
-
-
-<div class="panel history-panel" id="history-2016">
-
-    <div class="history-header">
-        <h3>2016 Draft</h3>
-        <p>Complete draft board</p>
-    </div>
-
-    <div class="history-note">
-        Historical manager draft selections are being compiled.
-    </div>
-
-</div>
-
-
-<div class="panel history-panel" id="history-2015">
-
-    <div class="history-header">
-        <h3>2015 Draft</h3>
-        <p>Complete draft board</p>
-    </div>
-
-    <div class="history-note">
-        Historical manager draft selections are being compiled.
-    </div>
-
-</div>
-
-
-<div class="panel history-panel" id="history-2014">
-
-    <div class="history-header">
-        <h3>2014 Draft</h3>
-        <p>Complete draft board</p>
-    </div>
-
-    <div class="history-note">
-        Historical manager draft selections are being compiled.
-    </div>
-
-</div>
-
-
-<div class="panel history-panel" id="history-2013">
-
-    <div class="history-header">
-        <h3>2013 Draft</h3>
-        <p>Complete draft board</p>
-    </div>
-
-    <div class="history-note">
-        Historical manager draft selections are being compiled.
-    </div>
 
 </div>
 
@@ -1977,34 +1725,6 @@ function updateExcellence() {
         container.appendChild(card);
 
     });
-
-}
-
-
-/* =========================================
-   DRAFT HISTORY DROPDOWN
-========================================= */
-
-function updateHistory() {
-
-    const season =
-        document.getElementById("historySeason").value;
-
-    const panels =
-        document.querySelectorAll(".history-panel");
-
-    panels.forEach(panel => {
-
-        panel.classList.remove("active");
-
-    });
-
-    const selected =
-        document.getElementById("history-" + season);
-
-    if (selected) {
-        selected.classList.add("active");
-    }
 
 }
 
