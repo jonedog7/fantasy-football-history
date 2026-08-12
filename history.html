@@ -289,13 +289,9 @@
         /*
          * HEADSHOT
          *
-         * The MVP box itself remains exactly 145px tall.
-         *
-         * The headshot bottom is locked to the bottom of the
-         * MVP box with bottom: 0.
-         *
-         * The image is slightly taller, which raises the top
-         * of the player without moving the bottom edge.
+         * Default headshots receive a very slight downward
+         * adjustment to reduce the appearance of empty space
+         * beneath the player.
          */
 
         .mvp-image {
@@ -303,10 +299,43 @@
             width: 145px;
             height: 145px;
             object-fit: cover;
-            object-position: bottom center;
+            object-position: center 105%;
             right: -5px;
             bottom: 0;
             z-index: 1;
+        }
+
+        /*
+         * Individual headshot adjustments
+         *
+         * These players already sit correctly against the
+         * bottom of the box, so they retain the original
+         * bottom positioning.
+         */
+
+        .headshot-odell {
+            object-position: center bottom;
+        }
+
+        .headshot-kyler {
+            object-position: center bottom;
+        }
+
+        .headshot-kyren {
+            object-position: center bottom;
+        }
+
+        /*
+         * Christian McCaffrey and Brandon Aiyuk need a
+         * little more of their shoulders visible.
+         */
+
+        .headshot-christian {
+            object-position: center 96%;
+        }
+
+        .headshot-brandon {
+            object-position: center 96%;
         }
 
         .mvp-placeholder {
@@ -405,6 +434,7 @@
                 height: 125px;
                 right: -3px;
                 bottom: 0;
+                object-position: center 105%;
             }
 
             .mvp-info {
@@ -593,7 +623,7 @@
                     </div>
 
                     <img
-                        class="mvp-image"
+                        class="mvp-image headshot-odell"
                         src="images/odell-beckham-2014.png"
                         alt="Odell Beckham Jr. 2014"
                     >
@@ -698,7 +728,7 @@
                     </div>
 
                     <img
-                        class="mvp-image"
+                        class="mvp-image headshot-odell"
                         src="images/obj-2016.png"
                         alt="Odell Beckham Jr. 2016"
                     >
@@ -956,7 +986,7 @@
                     </div>
 
                     <img
-                        class="mvp-image"
+                        class="mvp-image headshot-kyler"
                         src="images/kyler-murray-2021.png"
                         alt="Kyler Murray 2021"
                     >
@@ -1007,7 +1037,7 @@
                     </div>
 
                     <img
-                        class="mvp-image"
+                        class="mvp-image headshot-brandon"
                         src="images/brandon-aiyuk-2022.png"
                         alt="Brandon Aiyuk 2022"
                     >
@@ -1061,7 +1091,7 @@
                     </div>
 
                     <img
-                        class="mvp-image"
+                        class="mvp-image headshot-kyren"
                         src="images/kyren-williams-2023.png"
                         alt="Kyren Williams 2023"
                     >
@@ -1163,7 +1193,7 @@
                     </div>
 
                     <img
-                        class="mvp-image"
+                        class="mvp-image headshot-christian"
                         src="images/cmc-2025.png"
                         alt="Christian McCaffrey 2025"
                     >
