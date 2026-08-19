@@ -134,25 +134,26 @@ nav a:hover {
     padding: 23px;
 }
 
-.record-rank {
+.record-label {
     color: #68747e;
     font-size: 11px;
     text-transform: uppercase;
-    letter-spacing: 1.5px;
+    letter-spacing: 1.2px;
     font-weight: 700;
+    margin-bottom: 7px;
 }
 
 .record-value {
     font-size: 38px;
     font-weight: 800;
-    margin-top: 8px;
+    line-height: 1;
 }
 
 .record-holder {
     color: #aeb8c1;
     font-size: 15px;
     font-weight: 700;
-    margin-top: 4px;
+    margin-top: 7px;
 }
 
 .record-detail {
@@ -273,62 +274,101 @@ nav a:hover {
 
 .trade-managers {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 100px 1fr;
+    align-items: stretch;
+    background: #111820;
     border-bottom: 1px solid #27313b;
 }
 
 .trade-manager {
-    padding: 18px 22px;
-    font-size: 17px;
+    padding: 17px 22px;
+    font-size: 16px;
     font-weight: 800;
 }
 
 .trade-manager:first-child {
-    border-right: 1px solid #27313b;
+    text-align: right;
+}
+
+.trade-manager:last-child {
+    text-align: left;
+}
+
+.trade-exchange {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #aeb8c1;
+    font-size: 26px;
+    font-weight: 800;
 }
 
 .trade-sides {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 100px 1fr;
 }
 
 .trade-side {
-    padding: 16px 22px;
+    padding: 15px 22px;
 }
 
 .trade-side:first-child {
     border-right: 1px solid #27313b;
 }
 
+.trade-side:last-child {
+    border-left: 1px solid #27313b;
+}
+
 .trade-player {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr auto;
     align-items: center;
     gap: 15px;
-    padding: 9px 0;
+    min-height: 48px;
+    padding: 8px 0;
     border-bottom: 1px solid #222b34;
-    font-size: 13px;
 }
 
 .trade-player:last-child {
     border-bottom: none;
 }
 
+.trade-side:first-child .trade-player {
+    text-align: right;
+}
+
 .trade-player-name {
+    font-size: 14px;
     font-weight: 700;
 }
 
 .trade-player-rank {
-    color: #aeb8c1;
+    color: #68747e;
     font-size: 11px;
+    font-weight: 700;
     white-space: nowrap;
+    min-width: 38px;
+}
+
+.trade-arrow-column {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.trade-arrow {
+    color: #8f9aa4;
+    font-size: 24px;
+    font-weight: 800;
 }
 
 .trade-date {
     border-top: 1px solid #27313b;
-    padding: 11px 22px;
+    padding: 10px 22px;
     color: #68747e;
     font-size: 11px;
+    text-align: center;
 }
 
 
@@ -346,8 +386,8 @@ nav a:hover {
     background: #151c24;
     border: 1px solid #27313b;
     border-radius: 12px;
-    padding: 18px;
-    min-height: 225px;
+    padding: 16px;
+    min-height: 250px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -364,30 +404,34 @@ nav a:hover {
 
 .player-heading {
     display: flex;
+    flex-direction: column;
     align-items: center;
     gap: 12px;
-    min-height: 72px;
+    min-height: 145px;
+    text-align: center;
 }
 
 .player-headshot {
-    width: 100px;
-    height: 100px;
+    width: 110px;
+    height: 110px;
     object-fit: cover;
-    object-position: center bottom;
-    flex-shrink: 0;
+    object-position: center top;
+    border-radius: 8px;
     display: block;
+    background: #111820;
+    border: 1px solid #27313b;
 }
 
 .player-name {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 800;
     line-height: 1.1;
 }
 
 .move-info {
     border-top: 1px solid #27313b;
-    padding-top: 12px;
-    margin-top: 15px;
+    padding-top: 11px;
+    margin-top: 12px;
 }
 
 .move-manager {
@@ -562,15 +606,38 @@ footer {
         flex-direction: column;
     }
 
-    .trade-managers,
-    .trade-sides {
+    .trade-managers {
         grid-template-columns: 1fr;
     }
 
     .trade-manager:first-child,
+    .trade-manager:last-child {
+        text-align: left;
+    }
+
+    .trade-exchange {
+        display: none;
+    }
+
+    .trade-sides {
+        grid-template-columns: 1fr;
+    }
+
     .trade-side:first-child {
         border-right: none;
         border-bottom: 1px solid #27313b;
+    }
+
+    .trade-side:last-child {
+        border-left: none;
+    }
+
+    .trade-arrow-column {
+        display: none;
+    }
+
+    .trade-side:first-child .trade-player {
+        text-align: left;
     }
 
 }
@@ -648,45 +715,39 @@ footer {
 <div class="record-grid">
 
     <div class="record-card">
-        <div class="record-rank">01</div>
+        <div class="record-label">Most career trades</div>
         <div class="record-value">178</div>
         <div class="record-holder">Ryan Herbst</div>
-        <div class="record-detail">Most career trades</div>
     </div>
 
     <div class="record-card">
-        <div class="record-rank">02</div>
+        <div class="record-label">Most trades in a season</div>
         <div class="record-value">23</div>
         <div class="record-holder">Ryan Herbst</div>
-        <div class="record-detail">Most trades in a season</div>
     </div>
 
     <div class="record-card">
-        <div class="record-rank">03</div>
+        <div class="record-label">Most league trades in a season</div>
         <div class="record-value">42</div>
         <div class="record-holder">2021 Season</div>
-        <div class="record-detail">Most league trades in a season</div>
     </div>
 
     <div class="record-card">
-        <div class="record-rank">04</div>
+        <div class="record-label">Most career Top-10 players acquired</div>
         <div class="record-value">17</div>
         <div class="record-holder">Ryan Herbst</div>
-        <div class="record-detail">Most career Top-10 players acquired</div>
     </div>
 
     <div class="record-card">
-        <div class="record-rank">05</div>
+        <div class="record-label">Most career transactions</div>
         <div class="record-value">—</div>
         <div class="record-holder">Data not provided</div>
-        <div class="record-detail">Most career transactions</div>
     </div>
 
     <div class="record-card">
-        <div class="record-rank">06</div>
+        <div class="record-label">Most transactions in a season</div>
         <div class="record-value">128</div>
         <div class="record-holder">Ryan Herbst · 2020</div>
-        <div class="record-detail">Most transactions in a season</div>
     </div>
 
 </div>
@@ -864,7 +925,7 @@ footer {
 <h2 class="section-title">Diamonds in the Rough</h2>
 
 <p class="section-intro">
-    The five best skill-position players acquired off the waiver wire
+    The ten best skill-position players acquired off the waiver wire
     in league history. Historical waiver-wire rankings have not yet been
     provided in the current Moves data.
 </p>
@@ -875,6 +936,7 @@ footer {
         <div>
             <div class="player-rank">01</div>
             <div class="player-heading">
+                <img src="images/diamond-01.jpg" class="player-headshot" alt="Diamond in the Rough #1">
                 <div class="player-name">Data Pending</div>
             </div>
         </div>
@@ -888,6 +950,7 @@ footer {
         <div>
             <div class="player-rank">02</div>
             <div class="player-heading">
+                <img src="images/diamond-02.jpg" class="player-headshot" alt="Diamond in the Rough #2">
                 <div class="player-name">Data Pending</div>
             </div>
         </div>
@@ -901,6 +964,7 @@ footer {
         <div>
             <div class="player-rank">03</div>
             <div class="player-heading">
+                <img src="images/diamond-03.jpg" class="player-headshot" alt="Diamond in the Rough #3">
                 <div class="player-name">Data Pending</div>
             </div>
         </div>
@@ -914,6 +978,7 @@ footer {
         <div>
             <div class="player-rank">04</div>
             <div class="player-heading">
+                <img src="images/diamond-04.jpg" class="player-headshot" alt="Diamond in the Rough #4">
                 <div class="player-name">Data Pending</div>
             </div>
         </div>
@@ -927,6 +992,77 @@ footer {
         <div>
             <div class="player-rank">05</div>
             <div class="player-heading">
+                <img src="images/diamond-05.jpg" class="player-headshot" alt="Diamond in the Rough #5">
+                <div class="player-name">Data Pending</div>
+            </div>
+        </div>
+        <div class="move-info">
+            <div class="move-manager data-pending">Waiver-wire data not provided</div>
+            <div class="move-type">Diamond in the Rough</div>
+        </div>
+    </div>
+
+    <div class="player-card">
+        <div>
+            <div class="player-rank">06</div>
+            <div class="player-heading">
+                <img src="images/diamond-06.jpg" class="player-headshot" alt="Diamond in the Rough #6">
+                <div class="player-name">Data Pending</div>
+            </div>
+        </div>
+        <div class="move-info">
+            <div class="move-manager data-pending">Waiver-wire data not provided</div>
+            <div class="move-type">Diamond in the Rough</div>
+        </div>
+    </div>
+
+    <div class="player-card">
+        <div>
+            <div class="player-rank">07</div>
+            <div class="player-heading">
+                <img src="images/diamond-07.jpg" class="player-headshot" alt="Diamond in the Rough #7">
+                <div class="player-name">Data Pending</div>
+            </div>
+        </div>
+        <div class="move-info">
+            <div class="move-manager data-pending">Waiver-wire data not provided</div>
+            <div class="move-type">Diamond in the Rough</div>
+        </div>
+    </div>
+
+    <div class="player-card">
+        <div>
+            <div class="player-rank">08</div>
+            <div class="player-heading">
+                <img src="images/diamond-08.jpg" class="player-headshot" alt="Diamond in the Rough #8">
+                <div class="player-name">Data Pending</div>
+            </div>
+        </div>
+        <div class="move-info">
+            <div class="move-manager data-pending">Waiver-wire data not provided</div>
+            <div class="move-type">Diamond in the Rough</div>
+        </div>
+    </div>
+
+    <div class="player-card">
+        <div>
+            <div class="player-rank">09</div>
+            <div class="player-heading">
+                <img src="images/diamond-09.jpg" class="player-headshot" alt="Diamond in the Rough #9">
+                <div class="player-name">Data Pending</div>
+            </div>
+        </div>
+        <div class="move-info">
+            <div class="move-manager data-pending">Waiver-wire data not provided</div>
+            <div class="move-type">Diamond in the Rough</div>
+        </div>
+    </div>
+
+    <div class="player-card">
+        <div>
+            <div class="player-rank">10</div>
+            <div class="player-heading">
+                <img src="images/diamond-10.jpg" class="player-headshot" alt="Diamond in the Rough #10">
                 <div class="player-name">Data Pending</div>
             </div>
         </div>
@@ -2078,13 +2214,15 @@ function updateTrades() {
 
             sideOne += `
                 <div class="trade-player">
+
                     <span class="trade-player-name">
                         ${player[0]}
                     </span>
 
                     <span class="trade-player-rank">
-                        ${player[1]}
+                        ${player[1] || "—"}
                     </span>
+
                 </div>
             `;
 
@@ -2094,13 +2232,15 @@ function updateTrades() {
 
             sideTwo += `
                 <div class="trade-player">
+
                     <span class="trade-player-name">
                         ${player[0]}
                     </span>
 
                     <span class="trade-player-rank">
-                        ${player[1]}
+                        ${player[1] || "—"}
                     </span>
+
                 </div>
             `;
 
@@ -2114,6 +2254,10 @@ function updateTrades() {
                     ${trade.managers[0]}
                 </div>
 
+                <div class="trade-exchange">
+                    ⇄
+                </div>
+
                 <div class="trade-manager">
                     ${trade.managers[1]}
                 </div>
@@ -2124,6 +2268,10 @@ function updateTrades() {
 
                 <div class="trade-side">
                     ${sideOne}
+                </div>
+
+                <div class="trade-arrow-column">
+                    <div class="trade-arrow">⇄</div>
                 </div>
 
                 <div class="trade-side">
