@@ -374,59 +374,87 @@ nav a:hover {
 
 /* =========================================
    DIAMONDS IN THE ROUGH
+   MATCHES DRAFTING EXCELLENCE FORMAT
 ========================================= */
 
-.diamond-list {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
+.diamond-five {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
 }
 
 .diamond-card {
     background: #151c24;
     border: 1px solid #27313b;
     border-radius: 12px;
-    padding: 16px 20px;
-    display: grid;
-    grid-template-columns: 50px 90px 1fr auto;
+    padding: 20px;
+    min-height: 205px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.diamond-top {
+    display: flex;
     align-items: center;
-    gap: 18px;
+    gap: 15px;
+}
+
+.diamond-headshot {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.diamond-name-wrap {
+    min-width: 0;
 }
 
 .diamond-rank {
     color: #68747e;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 700;
+}
+
+.diamond-name {
+    font-size: 19px;
+    font-weight: 800;
+    line-height: 1.15;
+    margin-top: 5px;
+}
+
+.diamond-finish {
+    color: #9aa5af;
     font-size: 12px;
-    font-weight: 800;
-    letter-spacing: 1px;
+    margin-top: 5px;
 }
 
-.diamond-headshot {
-    width: 72px;
-    height: 72px;
-    object-fit: cover;
-    object-position: center top;
-    border-radius: 8px;
-    display: block;
-    background: #111820;
-    border: 1px solid #27313b;
+.diamond-info {
+    border-top: 1px solid #27313b;
+    padding-top: 12px;
+    margin-top: 18px;
 }
 
-.diamond-player {
-    font-size: 17px;
-    font-weight: 800;
+.diamond-manager {
+    font-size: 13px;
+    font-weight: 700;
 }
 
-.diamond-meta {
-    color: #68747e;
+.diamond-type {
+    color: #8f9aa4;
     font-size: 12px;
     margin-top: 3px;
 }
 
-.diamond-manager {
-    color: #aeb8c1;
-    font-size: 13px;
-    font-weight: 700;
-    text-align: right;
+.diamond-pending {
+    color: #68747e;
+    font-style: italic;
+    font-weight: 400;
 }
 
 
@@ -914,287 +942,439 @@ footer {
     in league history.
 </p>
 
-<div class="diamond-list">
-
-
-    <!-- #1 -->
+<div class="diamond-five" id="diamondPlayers">
 
     <div class="diamond-card">
 
-        <div class="diamond-rank">
-            01
-        </div>
+        <div class="diamond-top">
 
-        <img
-            src="aaron-rodgers-2018.png"
-            class="diamond-headshot"
-            alt="Aaron Rodgers"
-        >
+            <img
+                class="diamond-headshot"
+                src="diamond-01.jpg"
+                alt="Waiver Find #1"
+            >
 
-        <div>
-            <div class="diamond-player">
-                Aaron Rodgers
+            <div class="diamond-name-wrap">
+
+                <div class="diamond-rank">
+                    Waiver Find #1
+                </div>
+
+                <div class="diamond-name">
+                    Data Pending
+                </div>
+
+                <div class="diamond-finish">
+                    Historical waiver data not provided
+                </div>
+
             </div>
 
-            <div class="diamond-meta">
-                2018 Season
-            </div>
         </div>
 
-        <div class="diamond-manager">
-            Waiver Find #1
+        <div class="diamond-info">
+
+            <div class="diamond-manager diamond-pending">
+                Data Pending
+            </div>
+
+            <div class="diamond-type">
+                Waiver Wire
+            </div>
+
         </div>
 
     </div>
 
 
-    <!-- #2 -->
-
     <div class="diamond-card">
 
-        <div class="diamond-rank">
-            02
-        </div>
+        <div class="diamond-top">
 
-        <img
-            src="davante-adams-2020.png"
-            class="diamond-headshot"
-            alt="Davante Adams"
-        >
+            <img
+                class="diamond-headshot"
+                src="diamond-02.jpg"
+                alt="Waiver Find #2"
+            >
 
-        <div>
-            <div class="diamond-player">
-                Davante Adams
+            <div class="diamond-name-wrap">
+
+                <div class="diamond-rank">
+                    Waiver Find #2
+                </div>
+
+                <div class="diamond-name">
+                    Data Pending
+                </div>
+
+                <div class="diamond-finish">
+                    Historical waiver data not provided
+                </div>
+
             </div>
 
-            <div class="diamond-meta">
-                2020 Season
-            </div>
         </div>
 
-        <div class="diamond-manager">
-            Waiver Find #2
+        <div class="diamond-info">
+
+            <div class="diamond-manager diamond-pending">
+                Data Pending
+            </div>
+
+            <div class="diamond-type">
+                Waiver Wire
+            </div>
+
         </div>
 
     </div>
 
 
-    <!-- #3 — BLANK -->
-
     <div class="diamond-card">
 
-        <div class="diamond-rank">
-            03
-        </div>
+        <div class="diamond-top">
 
-        <div class="diamond-headshot"></div>
+            <img
+                class="diamond-headshot"
+                src="diamond-03.jpg"
+                alt="Waiver Find #3"
+            >
 
-        <div>
-            <div class="diamond-player">
-                —
+            <div class="diamond-name-wrap">
+
+                <div class="diamond-rank">
+                    Waiver Find #3
+                </div>
+
+                <div class="diamond-name">
+                    Data Pending
+                </div>
+
+                <div class="diamond-finish">
+                    Historical waiver data not provided
+                </div>
+
             </div>
 
-            <div class="diamond-meta">
-                —
-            </div>
         </div>
 
-        <div class="diamond-manager">
-            —
+        <div class="diamond-info">
+
+            <div class="diamond-manager diamond-pending">
+                Data Pending
+            </div>
+
+            <div class="diamond-type">
+                Waiver Wire
+            </div>
+
         </div>
 
     </div>
 
 
-    <!-- #4 — BLANK -->
-
     <div class="diamond-card">
 
-        <div class="diamond-rank">
-            04
-        </div>
+        <div class="diamond-top">
 
-        <div class="diamond-headshot"></div>
+            <img
+                class="diamond-headshot"
+                src="diamond-04.jpg"
+                alt="Waiver Find #4"
+            >
 
-        <div>
-            <div class="diamond-player">
-                —
+            <div class="diamond-name-wrap">
+
+                <div class="diamond-rank">
+                    Waiver Find #4
+                </div>
+
+                <div class="diamond-name">
+                    Data Pending
+                </div>
+
+                <div class="diamond-finish">
+                    Historical waiver data not provided
+                </div>
+
             </div>
 
-            <div class="diamond-meta">
-                —
-            </div>
         </div>
 
-        <div class="diamond-manager">
-            —
+        <div class="diamond-info">
+
+            <div class="diamond-manager diamond-pending">
+                Data Pending
+            </div>
+
+            <div class="diamond-type">
+                Waiver Wire
+            </div>
+
         </div>
 
     </div>
 
 
-    <!-- #5 — BLANK -->
-
     <div class="diamond-card">
 
-        <div class="diamond-rank">
-            05
-        </div>
+        <div class="diamond-top">
 
-        <div class="diamond-headshot"></div>
+            <img
+                class="diamond-headshot"
+                src="diamond-05.jpg"
+                alt="Waiver Find #5"
+            >
 
-        <div>
-            <div class="diamond-player">
-                —
+            <div class="diamond-name-wrap">
+
+                <div class="diamond-rank">
+                    Waiver Find #5
+                </div>
+
+                <div class="diamond-name">
+                    Data Pending
+                </div>
+
+                <div class="diamond-finish">
+                    Historical waiver data not provided
+                </div>
+
             </div>
 
-            <div class="diamond-meta">
-                —
-            </div>
         </div>
 
-        <div class="diamond-manager">
-            —
+        <div class="diamond-info">
+
+            <div class="diamond-manager diamond-pending">
+                Data Pending
+            </div>
+
+            <div class="diamond-type">
+                Waiver Wire
+            </div>
+
         </div>
 
     </div>
 
 
-    <!-- #6 — BLANK -->
-
     <div class="diamond-card">
 
-        <div class="diamond-rank">
-            06
-        </div>
+        <div class="diamond-top">
 
-        <div class="diamond-headshot"></div>
+            <img
+                class="diamond-headshot"
+                src="diamond-06.jpg"
+                alt="Waiver Find #6"
+            >
 
-        <div>
-            <div class="diamond-player">
-                —
+            <div class="diamond-name-wrap">
+
+                <div class="diamond-rank">
+                    Waiver Find #6
+                </div>
+
+                <div class="diamond-name">
+                    Data Pending
+                </div>
+
+                <div class="diamond-finish">
+                    Historical waiver data not provided
+                </div>
+
             </div>
 
-            <div class="diamond-meta">
-                —
-            </div>
         </div>
 
-        <div class="diamond-manager">
-            —
+        <div class="diamond-info">
+
+            <div class="diamond-manager diamond-pending">
+                Data Pending
+            </div>
+
+            <div class="diamond-type">
+                Waiver Wire
+            </div>
+
         </div>
 
     </div>
 
 
-    <!-- #7 — BLANK -->
-
     <div class="diamond-card">
 
-        <div class="diamond-rank">
-            07
-        </div>
+        <div class="diamond-top">
 
-        <div class="diamond-headshot"></div>
+            <img
+                class="diamond-headshot"
+                src="diamond-07.jpg"
+                alt="Waiver Find #7"
+            >
 
-        <div>
-            <div class="diamond-player">
-                —
+            <div class="diamond-name-wrap">
+
+                <div class="diamond-rank">
+                    Waiver Find #7
+                </div>
+
+                <div class="diamond-name">
+                    Data Pending
+                </div>
+
+                <div class="diamond-finish">
+                    Historical waiver data not provided
+                </div>
+
             </div>
 
-            <div class="diamond-meta">
-                —
-            </div>
         </div>
 
-        <div class="diamond-manager">
-            —
+        <div class="diamond-info">
+
+            <div class="diamond-manager diamond-pending">
+                Data Pending
+            </div>
+
+            <div class="diamond-type">
+                Waiver Wire
+            </div>
+
         </div>
 
     </div>
 
 
-    <!-- #8 — BLANK -->
-
     <div class="diamond-card">
 
-        <div class="diamond-rank">
-            08
-        </div>
+        <div class="diamond-top">
 
-        <div class="diamond-headshot"></div>
+            <img
+                class="diamond-headshot"
+                src="diamond-08.jpg"
+                alt="Waiver Find #8"
+            >
 
-        <div>
-            <div class="diamond-player">
-                —
+            <div class="diamond-name-wrap">
+
+                <div class="diamond-rank">
+                    Waiver Find #8
+                </div>
+
+                <div class="diamond-name">
+                    Data Pending
+                </div>
+
+                <div class="diamond-finish">
+                    Historical waiver data not provided
+                </div>
+
             </div>
 
-            <div class="diamond-meta">
-                —
-            </div>
         </div>
 
-        <div class="diamond-manager">
-            —
+        <div class="diamond-info">
+
+            <div class="diamond-manager diamond-pending">
+                Data Pending
+            </div>
+
+            <div class="diamond-type">
+                Waiver Wire
+            </div>
+
         </div>
 
     </div>
 
 
-    <!-- #9 — BLANK -->
-
     <div class="diamond-card">
 
-        <div class="diamond-rank">
-            09
-        </div>
+        <div class="diamond-top">
 
-        <div class="diamond-headshot"></div>
+            <img
+                class="diamond-headshot"
+                src="diamond-09.jpg"
+                alt="Waiver Find #9"
+            >
 
-        <div>
-            <div class="diamond-player">
-                —
+            <div class="diamond-name-wrap">
+
+                <div class="diamond-rank">
+                    Waiver Find #9
+                </div>
+
+                <div class="diamond-name">
+                    Data Pending
+                </div>
+
+                <div class="diamond-finish">
+                    Historical waiver data not provided
+                </div>
+
             </div>
 
-            <div class="diamond-meta">
-                —
-            </div>
         </div>
 
-        <div class="diamond-manager">
-            —
+        <div class="diamond-info">
+
+            <div class="diamond-manager diamond-pending">
+                Data Pending
+            </div>
+
+            <div class="diamond-type">
+                Waiver Wire
+            </div>
+
         </div>
 
     </div>
 
 
-    <!-- #10 — BLANK -->
-
     <div class="diamond-card">
 
-        <div class="diamond-rank">
-            10
-        </div>
+        <div class="diamond-top">
 
-        <div class="diamond-headshot"></div>
+            <img
+                class="diamond-headshot"
+                src="diamond-10.jpg"
+                alt="Waiver Find #10"
+            >
 
-        <div>
-            <div class="diamond-player">
-                —
+            <div class="diamond-name-wrap">
+
+                <div class="diamond-rank">
+                    Waiver Find #10
+                </div>
+
+                <div class="diamond-name">
+                    Data Pending
+                </div>
+
+                <div class="diamond-finish">
+                    Historical waiver data not provided
+                </div>
+
             </div>
 
-            <div class="diamond-meta">
-                —
-            </div>
         </div>
 
-        <div class="diamond-manager">
-            —
+        <div class="diamond-info">
+
+            <div class="diamond-manager diamond-pending">
+                Data Pending
+            </div>
+
+            <div class="diamond-type">
+                Waiver Wire
+            </div>
+
         </div>
 
     </div>
 
 </div>
+
 
 
 <!-- =========================================
