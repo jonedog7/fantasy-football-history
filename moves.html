@@ -124,7 +124,7 @@ nav a:hover {
 
 .record-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     gap: 15px;
 }
 
@@ -167,65 +167,65 @@ nav a:hover {
    TRADE RECORD BY YEAR
 ========================================= */
 
-.trade-year-table {
+.trade-record-wrapper {
     background: #151c24;
     border: 1px solid #27313b;
     border-radius: 12px;
-    overflow: hidden;
+    overflow-x: auto;
 }
 
-.trade-year-header,
-.trade-year-row {
-    display: grid;
-    grid-template-columns: 100px 1fr 120px;
-    align-items: center;
+.trade-record-table {
+    width: 100%;
+    min-width: 900px;
+    border-collapse: collapse;
 }
 
-.trade-year-header {
-    padding: 15px 22px;
-    border-bottom: 1px solid #27313b;
-    color: #68747e;
+.trade-record-table th,
+.trade-record-table td {
+    padding: 13px 12px;
+    border-bottom: 1px solid #222b34;
+    text-align: center;
+    font-size: 12px;
+}
+
+.trade-record-table th {
+    color: #8f9aa4;
     font-size: 11px;
     text-transform: uppercase;
-    letter-spacing: 1.2px;
+    letter-spacing: .7px;
     font-weight: 700;
+    background: #111820;
 }
 
-.trade-year-row {
-    padding: 13px 22px;
-    border-bottom: 1px solid #222b34;
+.trade-record-table th:first-child,
+.trade-record-table td:first-child {
+    text-align: left;
+    padding-left: 20px;
+    position: sticky;
+    left: 0;
 }
 
-.trade-year-row:last-child {
+.trade-record-table th:first-child {
+    background: #111820;
+}
+
+.trade-record-table td:first-child {
+    background: #151c24;
+    font-weight: 700;
+    color: #f5f5f5;
+}
+
+.trade-record-table td {
+    color: #cbd2d8;
+}
+
+.trade-record-table tr:last-child td {
     border-bottom: none;
-}
-
-.trade-year {
-    font-weight: 700;
-}
-
-.trade-year-bar-container {
-    height: 10px;
-    background: #0f141a;
-    border-radius: 20px;
-    overflow: hidden;
-    margin-right: 20px;
-}
-
-.trade-year-bar {
-    height: 100%;
-    background: #68747e;
-    border-radius: 20px;
-}
-
-.trade-year-total {
-    text-align: right;
-    font-weight: 800;
 }
 
 
 /* =========================================
-   TOP-10 TRADES
+   TOP-10 PLAYER TRADES
 ========================================= */
 
 .trade-selector {
@@ -263,7 +263,13 @@ nav a:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 20px;
+}
+
+.trade-managers {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    text-align: center;
 }
 
 .trade-manager {
@@ -271,32 +277,31 @@ nav a:hover {
     font-weight: 800;
 }
 
-.trade-arrow {
+.trade-date {
     color: #68747e;
-    font-size: 12px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-weight: 700;
+    font-size: 11px;
+    white-space: nowrap;
+    margin-left: 20px;
 }
 
 .trade-body {
     display: grid;
-    grid-template-columns: 1fr 70px 1fr;
+    grid-template-columns: 1fr 1fr;
 }
 
 .trade-side {
     padding: 18px 22px;
 }
 
-.trade-side:first-child {
-    border-right: 1px solid #27313b;
+.trade-side + .trade-side {
+    border-left: 1px solid #27313b;
 }
 
 .trade-side-title {
-    color: #68747e;
+    color: #8f9aa4;
     font-size: 10px;
     text-transform: uppercase;
-    letter-spacing: 1.2px;
+    letter-spacing: 1px;
     font-weight: 700;
     margin-bottom: 10px;
 }
@@ -305,9 +310,9 @@ nav a:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 15px;
-    padding: 9px 0;
+    padding: 8px 0;
     border-bottom: 1px solid #222b34;
+    font-size: 13px;
 }
 
 .trade-player:last-child {
@@ -315,29 +320,12 @@ nav a:hover {
 }
 
 .trade-player-name {
-    font-size: 13px;
     font-weight: 700;
 }
 
 .trade-player-rank {
     color: #aeb8c1;
     font-size: 11px;
-    white-space: nowrap;
-}
-
-.trade-middle {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #68747e;
-    font-size: 18px;
-}
-
-.trade-date {
-    padding: 10px 22px 14px;
-    color: #68747e;
-    font-size: 11px;
-    border-top: 1px solid #222b34;
 }
 
 
@@ -518,7 +506,6 @@ footer {
     .manager-grid {
         grid-template-columns: repeat(2, 1fr);
     }
-
 }
 
 @media (max-width: 800px) {
@@ -567,38 +554,28 @@ footer {
         flex-direction: column;
     }
 
-    .trade-body {
-        grid-template-columns: 1fr;
-    }
-
-    .trade-side:first-child {
-        border-right: none;
-        border-bottom: 1px solid #27313b;
-    }
-
-    .trade-middle {
-        display: none;
-    }
-
-    .trade-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 5px;
-    }
-
-    .trade-year-header,
-    .trade-year-row {
-        grid-template-columns: 70px 1fr 70px;
-    }
-
-    .trade-year-bar-container {
-        margin-right: 10px;
-    }
-
     .season-selector {
         align-items: flex-start;
         gap: 15px;
         flex-direction: column;
+    }
+
+    .trade-header {
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .trade-managers {
+        text-align: left;
+    }
+
+    .trade-body {
+        grid-template-columns: 1fr;
+    }
+
+    .trade-side + .trade-side {
+        border-left: none;
+        border-top: 1px solid #27313b;
     }
 
 }
@@ -646,15 +623,14 @@ footer {
 <section class="hero">
 
     <div class="eyebrow">
-        League Transaction Book · 2013–2025
+        League Transactions · 2013–2025
     </div>
 
     <h1>Moves.</h1>
 
     <p>
-        The trades, transactions, and acquisitions that shaped the
-        Kevin Durant League — from blockbuster deals to the players
-        who changed seasons.
+        The trades, acquisitions, and transactions that shaped the
+        Kevin Durant League.
     </p>
 
 </section>
@@ -670,52 +646,47 @@ footer {
 <h2 class="section-title">All-Time Acquisition Leaders</h2>
 
 <p class="section-intro">
-    The managers and seasons that have defined the league's trade and
-    transaction history.
+    The managers and seasons that have defined the league's transaction history.
 </p>
 
 <div class="record-grid">
 
     <div class="record-card">
-        <div class="record-rank">01</div>
+        <div class="record-rank">Most career trades</div>
         <div class="record-value">178</div>
         <div class="record-holder">Ryan Herbst</div>
-        <div class="record-detail">Most career trades by a manager</div>
     </div>
 
     <div class="record-card">
-        <div class="record-rank">02</div>
+        <div class="record-rank">Most trades in a season</div>
         <div class="record-value">23</div>
         <div class="record-holder">Ryan Herbst</div>
-        <div class="record-detail">Most trades in a season · 2020</div>
+        <div class="record-detail">2020 season · Manager</div>
     </div>
 
     <div class="record-card">
-        <div class="record-rank">03</div>
+        <div class="record-rank">Most league trades in a season</div>
         <div class="record-value">42</div>
-        <div class="record-holder">2021 Season</div>
-        <div class="record-detail">Most trades in a season · League</div>
+        <div class="record-holder">2021 season</div>
     </div>
 
     <div class="record-card">
-        <div class="record-rank">04</div>
+        <div class="record-rank">Most career Top-10 players acquired</div>
         <div class="record-value">17</div>
         <div class="record-holder">Ryan Herbst</div>
-        <div class="record-detail">Career Top-10 players traded for</div>
     </div>
 
     <div class="record-card">
-        <div class="record-rank">05</div>
-        <div class="record-value">4</div>
-        <div class="record-holder">Ryan Herbst</div>
-        <div class="record-detail">Top-10 players traded for · 2013</div>
+        <div class="record-rank">Most career transactions</div>
+        <div class="record-value">—</div>
+        <div class="record-holder">To be added</div>
     </div>
 
     <div class="record-card">
-        <div class="record-rank">06</div>
+        <div class="record-rank">Most transactions in a season</div>
         <div class="record-value">128</div>
         <div class="record-holder">Ryan Herbst</div>
-        <div class="record-detail">Most total transactions · 2020</div>
+        <div class="record-detail">2020 season</div>
     </div>
 
 </div>
@@ -728,114 +699,132 @@ footer {
 <h2 class="section-title">Trade Record by Year</h2>
 
 <p class="section-intro">
-    Total trades completed across the league each season.
+    Total trades completed by each manager in every season.
 </p>
 
-<div class="trade-year-table">
+<div class="trade-record-wrapper">
 
-    <div class="trade-year-header">
-        <div>Season</div>
-        <div>Trade Activity</div>
-        <div>Total Trades</div>
-    </div>
+<table class="trade-record-table">
 
-    <div class="trade-year-row">
-        <div class="trade-year">2013</div>
-        <div class="trade-year-bar-container"><div class="trade-year-bar" style="width:19%;"></div></div>
-        <div class="trade-year-total">8</div>
-    </div>
+<thead>
+<tr>
+    <th>Manager</th>
+    <th>2013</th>
+    <th>2014</th>
+    <th>2015</th>
+    <th>2016</th>
+    <th>2017</th>
+    <th>2018</th>
+    <th>2019</th>
+    <th>2020</th>
+    <th>2021</th>
+    <th>2022</th>
+    <th>2023</th>
+    <th>2024</th>
+    <th>2025</th>
+</tr>
+</thead>
 
-    <div class="trade-year-row">
-        <div class="trade-year">2014</div>
-        <div class="trade-year-bar-container"><div class="trade-year-bar" style="width:24%;"></div></div>
-        <div class="trade-year-total">10</div>
-    </div>
+<tbody>
 
-    <div class="trade-year-row">
-        <div class="trade-year">2015</div>
-        <div class="trade-year-bar-container"><div class="trade-year-bar" style="width:14%;"></div></div>
-        <div class="trade-year-total">6</div>
-    </div>
+<tr>
+    <td>Christian Abert</td>
+    <td>2</td><td>4</td><td>3</td><td>1</td><td>5</td><td>3</td><td>7</td><td>11</td><td>13</td><td>9</td><td>5</td><td>4</td><td>1</td>
+</tr>
 
-    <div class="trade-year-row">
-        <div class="trade-year">2016</div>
-        <div class="trade-year-bar-container"><div class="trade-year-bar" style="width:26%;"></div></div>
-        <div class="trade-year-total">11</div>
-    </div>
+<tr>
+    <td>Ryan Herbst</td>
+    <td>5</td><td>6</td><td>5</td><td>9</td><td>17</td><td>15</td><td>20</td><td>23</td><td>21</td><td>18</td><td>15</td><td>14</td><td>10</td>
+</tr>
 
-    <div class="trade-year-row">
-        <div class="trade-year">2017</div>
-        <div class="trade-year-bar-container"><div class="trade-year-bar" style="width:50%;"></div></div>
-        <div class="trade-year-total">21</div>
-    </div>
+<tr>
+    <td>Nic Maiorano</td>
+    <td>7</td><td>5</td><td>1</td><td>1</td><td>4</td><td>6</td><td>5</td><td>11</td><td>6</td><td>7</td><td>5</td><td>2</td><td>4</td>
+</tr>
 
-    <div class="trade-year-row">
-        <div class="trade-year">2018</div>
-        <div class="trade-year-bar-container"><div class="trade-year-bar" style="width:38%;"></div></div>
-        <div class="trade-year-total">16</div>
-    </div>
+<tr>
+    <td>Bailey Martin</td>
+    <td>2</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td>
+</tr>
 
-    <div class="trade-year-row">
-        <div class="trade-year">2019</div>
-        <div class="trade-year-bar-container"><div class="trade-year-bar" style="width:57%;"></div></div>
-        <div class="trade-year-total">24</div>
-    </div>
+<tr>
+    <td>Jonah Wheeler</td>
+    <td>—</td><td>0</td><td>1</td><td>0</td><td>3</td><td>10</td><td>8</td><td>6</td><td>7</td><td>10</td><td>8</td><td>4</td><td>6</td>
+</tr>
 
-    <div class="trade-year-row">
-        <div class="trade-year">2020</div>
-        <div class="trade-year-bar-container"><div class="trade-year-bar" style="width:95%;"></div></div>
-        <div class="trade-year-total">40</div>
-    </div>
+<tr>
+    <td>Tommy Herbst</td>
+    <td>—</td><td>4</td><td>2</td><td>7</td><td>5</td><td>6</td><td>8</td><td>12</td><td>15</td><td>4</td><td>4</td><td>3</td><td>8</td>
+</tr>
 
-    <div class="trade-year-row">
-        <div class="trade-year">2021</div>
-        <div class="trade-year-bar-container"><div class="trade-year-bar" style="width:100%;"></div></div>
-        <div class="trade-year-total">42</div>
-    </div>
+<tr>
+    <td>Michael Gravante</td>
+    <td>—</td><td>—</td><td>—</td><td>4</td><td>4</td><td>4</td><td>4</td><td>4</td><td>2</td><td>7</td><td>1</td><td>1</td><td>3</td>
+</tr>
 
-    <div class="trade-year-row">
-        <div class="trade-year">2022</div>
-        <div class="trade-year-bar-container"><div class="trade-year-bar" style="width:83%;"></div></div>
-        <div class="trade-year-total">35</div>
-    </div>
+<tr>
+    <td>Mike Herbst</td>
+    <td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>9</td><td>8</td><td>15</td><td>5</td><td>7</td><td>2</td><td>8</td>
+</tr>
 
-    <div class="trade-year-row">
-        <div class="trade-year">2023</div>
-        <div class="trade-year-bar-container"><div class="trade-year-bar" style="width:71%;"></div></div>
-        <div class="trade-year-total">30</div>
-    </div>
+<tr>
+    <td>William Darrow</td>
+    <td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>4</td><td>2</td><td>3</td><td>2</td><td>0</td>
+</tr>
 
-    <div class="trade-year-row">
-        <div class="trade-year">2024</div>
-        <div class="trade-year-bar-container"><div class="trade-year-bar" style="width:48%;"></div></div>
-        <div class="trade-year-total">20</div>
-    </div>
+<tr>
+    <td>Julia Wheeler</td>
+    <td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>4</td><td>0</td><td>0</td><td>2</td>
+</tr>
 
-    <div class="trade-year-row">
-        <div class="trade-year">2025</div>
-        <div class="trade-year-bar-container"><div class="trade-year-bar" style="width:57%;"></div></div>
-        <div class="trade-year-total">24</div>
-    </div>
+<tr>
+    <td>Mike Darrow</td>
+    <td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>0</td><td>1</td><td>0</td>
+</tr>
+
+<tr>
+    <td>Nick Femano</td>
+    <td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>3</td><td>6</td>
+</tr>
+
+<tr>
+    <td><strong>League Total</strong></td>
+    <td><strong>8</strong></td>
+    <td><strong>10</strong></td>
+    <td><strong>6</strong></td>
+    <td><strong>11</strong></td>
+    <td><strong>21</strong></td>
+    <td><strong>16</strong></td>
+    <td><strong>24</strong></td>
+    <td><strong>40</strong></td>
+    <td><strong>42</strong></td>
+    <td><strong>35</strong></td>
+    <td><strong>30</strong></td>
+    <td><strong>20</strong></td>
+    <td><strong>24</strong></td>
+</tr>
+
+</tbody>
+</table>
 
 </div>
 
 
 <!-- =========================================
-     3. BLOCKBUSTER TRADES
+     3. TOP-10 PLAYER TRADES
 ========================================= -->
 
-<h2 class="section-title">Blockbuster Trades</h2>
+<h2 class="section-title">Trades Involving Top-10 Players</h2>
 
 <p class="section-intro">
-    Trades featuring at least one player who finished the season among
-    the league's top 10 fantasy players. Select a season to explore
-    the deals that moved elite talent.
+    A season-by-season look at trades involving players who finished among
+    the top 10 fantasy players that year.
 </p>
 
 <div class="trade-selector">
 
     <div style="color:#8f9aa4; font-size:13px;">
-        Top-10 players traded for by season
+        Select a season to explore
     </div>
 
     <select id="tradeSeason" onchange="updateTrades()">
@@ -905,8 +894,7 @@ footer {
 <h2 class="section-title">Manager Acquisition Profiles</h2>
 
 <p class="section-intro">
-    An all-time look at how each manager has approached trades and
-    transactions throughout the history of the league.
+    An all-time look at how each manager has approached trades and roster moves.
 </p>
 
 <div class="manager-grid">
@@ -930,12 +918,12 @@ footer {
         </div>
 
         <div class="mini-stat">
-            <strong>TBD</strong>
+            <strong>—</strong>
             <span>Career Moves</span>
         </div>
 
         <div class="mini-stat">
-            <strong>TBD</strong>
+            <strong>—</strong>
             <span>Most Moves in a Season</span>
         </div>
 
@@ -945,7 +933,7 @@ footer {
         </div>
 
         <div class="mini-stat">
-            <strong>TBD</strong>
+            <strong>—</strong>
             <span>Average Moves/Yr</span>
         </div>
 
@@ -971,12 +959,12 @@ footer {
         </div>
 
         <div class="mini-stat">
-            <strong>TBD</strong>
+            <strong>—</strong>
             <span>Career Moves</span>
         </div>
 
         <div class="mini-stat">
-            <strong>TBD</strong>
+            <strong>—</strong>
             <span>Most Moves in a Season</span>
         </div>
 
@@ -986,7 +974,7 @@ footer {
         </div>
 
         <div class="mini-stat">
-            <strong>TBD</strong>
+            <strong>—</strong>
             <span>Average Moves/Yr</span>
         </div>
 
@@ -1012,12 +1000,12 @@ footer {
         </div>
 
         <div class="mini-stat">
-            <strong>TBD</strong>
+            <strong>—</strong>
             <span>Career Moves</span>
         </div>
 
         <div class="mini-stat">
-            <strong>TBD</strong>
+            <strong>—</strong>
             <span>Most Moves in a Season</span>
         </div>
 
@@ -1027,7 +1015,7 @@ footer {
         </div>
 
         <div class="mini-stat">
-            <strong>TBD</strong>
+            <strong>—</strong>
             <span>Average Moves/Yr</span>
         </div>
 
@@ -1053,12 +1041,12 @@ footer {
         </div>
 
         <div class="mini-stat">
-            <strong>TBD</strong>
+            <strong>—</strong>
             <span>Career Moves</span>
         </div>
 
         <div class="mini-stat">
-            <strong>TBD</strong>
+            <strong>—</strong>
             <span>Most Moves in a Season</span>
         </div>
 
@@ -1068,7 +1056,7 @@ footer {
         </div>
 
         <div class="mini-stat">
-            <strong>TBD</strong>
+            <strong>—</strong>
             <span>Average Moves/Yr</span>
         </div>
 
@@ -1094,12 +1082,12 @@ footer {
         </div>
 
         <div class="mini-stat">
-            <strong>TBD</strong>
+            <strong>—</strong>
             <span>Career Moves</span>
         </div>
 
         <div class="mini-stat">
-            <strong>TBD</strong>
+            <strong>—</strong>
             <span>Most Moves in a Season</span>
         </div>
 
@@ -1109,7 +1097,7 @@ footer {
         </div>
 
         <div class="mini-stat">
-            <strong>TBD</strong>
+            <strong>—</strong>
             <span>Average Moves/Yr</span>
         </div>
 
@@ -1135,12 +1123,12 @@ footer {
         </div>
 
         <div class="mini-stat">
-            <strong>TBD</strong>
+            <strong>—</strong>
             <span>Career Moves</span>
         </div>
 
         <div class="mini-stat">
-            <strong>TBD</strong>
+            <strong>—</strong>
             <span>Most Moves in a Season</span>
         </div>
 
@@ -1150,7 +1138,7 @@ footer {
         </div>
 
         <div class="mini-stat">
-            <strong>TBD</strong>
+            <strong>—</strong>
             <span>Average Moves/Yr</span>
         </div>
 
@@ -1176,12 +1164,12 @@ footer {
         </div>
 
         <div class="mini-stat">
-            <strong>TBD</strong>
+            <strong>—</strong>
             <span>Career Moves</span>
         </div>
 
         <div class="mini-stat">
-            <strong>TBD</strong>
+            <strong>—</strong>
             <span>Most Moves in a Season</span>
         </div>
 
@@ -1191,7 +1179,7 @@ footer {
         </div>
 
         <div class="mini-stat">
-            <strong>TBD</strong>
+            <strong>—</strong>
             <span>Average Moves/Yr</span>
         </div>
 
@@ -1217,12 +1205,12 @@ footer {
         </div>
 
         <div class="mini-stat">
-            <strong>TBD</strong>
+            <strong>—</strong>
             <span>Career Moves</span>
         </div>
 
         <div class="mini-stat">
-            <strong>TBD</strong>
+            <strong>—</strong>
             <span>Most Moves in a Season</span>
         </div>
 
@@ -1232,7 +1220,7 @@ footer {
         </div>
 
         <div class="mini-stat">
-            <strong>TBD</strong>
+            <strong>—</strong>
             <span>Average Moves/Yr</span>
         </div>
 
@@ -1258,12 +1246,12 @@ footer {
         </div>
 
         <div class="mini-stat">
-            <strong>TBD</strong>
+            <strong>—</strong>
             <span>Career Moves</span>
         </div>
 
         <div class="mini-stat">
-            <strong>TBD</strong>
+            <strong>—</strong>
             <span>Most Moves in a Season</span>
         </div>
 
@@ -1273,7 +1261,7 @@ footer {
         </div>
 
         <div class="mini-stat">
-            <strong>TBD</strong>
+            <strong>—</strong>
             <span>Average Moves/Yr</span>
         </div>
 
@@ -1299,12 +1287,12 @@ footer {
         </div>
 
         <div class="mini-stat">
-            <strong>TBD</strong>
+            <strong>—</strong>
             <span>Career Moves</span>
         </div>
 
         <div class="mini-stat">
-            <strong>TBD</strong>
+            <strong>—</strong>
             <span>Most Moves in a Season</span>
         </div>
 
@@ -1314,7 +1302,7 @@ footer {
         </div>
 
         <div class="mini-stat">
-            <strong>TBD</strong>
+            <strong>—</strong>
             <span>Average Moves/Yr</span>
         </div>
 
@@ -1340,12 +1328,12 @@ footer {
         </div>
 
         <div class="mini-stat">
-            <strong>TBD</strong>
+            <strong>—</strong>
             <span>Career Moves</span>
         </div>
 
         <div class="mini-stat">
-            <strong>TBD</strong>
+            <strong>—</strong>
             <span>Most Moves in a Season</span>
         </div>
 
@@ -1355,7 +1343,7 @@ footer {
         </div>
 
         <div class="mini-stat">
-            <strong>TBD</strong>
+            <strong>—</strong>
             <span>Average Moves/Yr</span>
         </div>
 
@@ -1381,12 +1369,12 @@ footer {
         </div>
 
         <div class="mini-stat">
-            <strong>TBD</strong>
+            <strong>—</strong>
             <span>Career Moves</span>
         </div>
 
         <div class="mini-stat">
-            <strong>TBD</strong>
+            <strong>—</strong>
             <span>Most Moves in a Season</span>
         </div>
 
@@ -1396,7 +1384,7 @@ footer {
         </div>
 
         <div class="mini-stat">
-            <strong>TBD</strong>
+            <strong>—</strong>
             <span>Average Moves/Yr</span>
         </div>
 
@@ -1428,575 +1416,548 @@ footer {
 
 
 /* =========================================
-   TOP-10 TRADE DATA
+   TOP-10 PLAYER TRADE DATA
 ========================================= */
 
 const tradeData = {
 
     2025: [
         {
+            date: "Date not recorded",
             manager1: "Jonah Wheeler",
             manager2: "Ryan Herbst",
-            players1: [
+            side1: [
                 ["Jaxon Smith-Njigba", "#7"],
                 ["Davante Adams", "—"],
                 ["Drake London", "—"]
             ],
-            players2: [
+            side2: [
                 ["Justin Jefferson", "—"],
                 ["Christian Kirk", "—"],
                 ["Dylan Sampson", "—"]
-            ],
-            date: "Trade date not recorded"
+            ]
         }
     ],
 
     2024: [
         {
+            date: "Date not recorded",
             manager1: "Logan",
             manager2: "Ryan Herbst",
-            players1: [
+            side1: [
                 ["Josh Allen", "#3"],
                 ["Dalton Kincaid", "—"]
             ],
-            players2: [
+            side2: [
                 ["Dak Prescott", "—"],
                 ["Travis Kelce", "—"],
                 ["Amari Cooper", "—"],
                 ["Baker Mayfield", "#5"]
-            ],
-            date: "Trade date not recorded"
+            ]
         },
-
         {
+            date: "Date not recorded",
             manager1: "Mike Darrow",
             manager2: "Ryan Herbst",
-            players1: [
+            side1: [
                 ["Baker Mayfield", "#5"]
             ],
-            players2: [
+            side2: [
                 ["Patrick Mahomes", "—"]
-            ],
-            date: "Trade date not recorded"
+            ]
         },
-
         {
+            date: "Date not recorded",
             manager1: "Jonah Wheeler",
             manager2: "Michael Gravante",
-            players1: [
+            side1: [
                 ["Jahmyr Gibbs", "#6"]
             ],
-            players2: [
+            side2: [
                 ["James Cook", "—"],
                 ["Calvin Ridley", "—"],
                 ["Ray Davis", "—"]
-            ],
-            date: "Trade date not recorded"
+            ]
         },
-
         {
+            date: "Date not recorded",
             manager1: "Nick Femano",
             manager2: "Christian Abert",
-            players1: [
+            side1: [
                 ["Bijan Robinson", "#9"],
                 ["Tyler Allgeier", "—"],
                 ["D.J. Moore", "—"]
             ],
-            players2: [
+            side2: [
                 ["Tyreek Hill", "—"],
                 ["Michael Pittman Jr.", "—"],
                 ["Tyjae Spears", "—"],
                 ["Isaiah Likely", "—"]
-            ],
-            date: "Trade date not recorded"
+            ]
         }
     ],
 
     2023: [
         {
+            date: "Date not recorded",
             manager1: "Ryan Herbst",
             manager2: "Mike Herbst",
-            players1: [
+            side1: [
                 ["Amon-Ra St. Brown", "#8"]
             ],
-            players2: [
+            side2: [
                 ["Garrett Wilson", "—"],
                 ["Javonte Williams", "—"]
-            ],
-            date: "Trade date not recorded"
+            ]
         }
     ],
 
     2022: [
         {
+            date: "Date not recorded",
             manager1: "Jonah Wheeler",
             manager2: "Nic Maiorano",
-            players1: [
+            side1: [
                 ["Christian McCaffrey", "#6"],
                 ["Allen Robinson", "—"]
             ],
-            players2: [
+            side2: [
                 ["Dalvin Cook", "—"],
                 ["Travis Etienne", "—"],
                 ["Chris Godwin Jr.", "—"]
-            ],
-            date: "Trade date not recorded"
+            ]
         },
-
         {
+            date: "Date not recorded",
             manager1: "Ryan Herbst",
             manager2: "Michael Gravante",
-            players1: [
+            side1: [
                 ["Justin Jefferson", "#5"],
                 ["Tony Pollard", "—"]
             ],
-            players2: [
+            side2: [
                 ["Amon-Ra St. Brown", "—"],
                 ["D'Andre Swift", "—"],
                 ["Jamaal Williams", "—"]
-            ],
-            date: "Trade date not recorded"
+            ]
         },
-
         {
+            date: "Date not recorded",
             manager1: "Julia Wheeler",
             manager2: "Christian Abert",
-            players1: [
+            side1: [
                 ["Josh Allen", "#2"],
                 ["Brandon Aiyuk", "—"],
                 ["Rhamondre Stevenson", "—"]
             ],
-            players2: [
+            side2: [
                 ["Dak Prescott", "—"],
                 ["Derek Carr", "—"],
                 ["Tee Higgins", "—"],
                 ["Hollywood Brown", "—"]
-            ],
-            date: "Trade date not recorded"
+            ]
         }
     ],
 
     2021: [
         {
+            date: "Date not recorded",
             manager1: "Jonah Wheeler",
             manager2: "Tommy Herbst",
-            players1: [
+            side1: [
                 ["Patrick Mahomes", "#6"]
             ],
-            players2: [
+            side2: [
                 ["Matthew Stafford", "—"],
                 ["Elijah Mitchell", "—"]
-            ],
-            date: "Trade date not recorded"
+            ]
         },
-
         {
+            date: "Date not recorded",
             manager1: "Nic Maiorano",
             manager2: "Mike Herbst",
-            players1: [
+            side1: [
                 ["Aaron Rodgers", "#10"],
                 ["Emmanuel Sanders", "—"]
             ],
-            players2: [
+            side2: [
                 ["Jalen Hurts", "—"]
-            ],
-            date: "Trade date not recorded"
+            ]
         },
-
         {
+            date: "Date not recorded",
             manager1: "Tommy Herbst",
             manager2: "Ryan Herbst",
-            players1: [
+            side1: [
                 ["Patrick Mahomes", "#6"]
             ],
-            players2: [
+            side2: [
                 ["Josh Allen", "#2"],
                 ["Hollywood Brown", "—"]
-            ],
-            date: "Trade date not recorded"
+            ]
         },
-
         {
+            date: "Date not recorded",
             manager1: "Dylan",
             manager2: "Ryan Herbst",
-            players1: [
+            side1: [
                 ["Josh Allen", "#2"],
                 ["Mike Davis", "—"],
                 ["Zack Moss", "—"]
             ],
-            players2: [
+            side2: [
                 ["Lamar Jackson", "—"],
                 ["Clyde Edwards-Helaire", "—"]
-            ],
-            date: "Trade date not recorded"
+            ]
         },
-
         {
-            manager1: "Joey Russo",
+            date: "Date not recorded",
+            manager1: "Joey",
             manager2: "Ryan Herbst",
-            players1: [
+            side1: [
                 ["Cooper Kupp", "#1"],
                 ["Miles Sanders", "—"]
             ],
-            players2: [
+            side2: [
                 ["Saquon Barkley", "—"]
-            ],
-            date: "Trade date not recorded"
+            ]
         }
     ],
 
     2020: [
         {
+            date: "Date not recorded",
             manager1: "Mike Herbst",
             manager2: "Ryan Herbst",
-            players1: [
+            side1: [
                 ["Josh Allen", "#1"],
                 ["Allen Robinson", "—"],
                 ["Stefon Diggs", "—"]
             ],
-            players2: [
+            side2: [
                 ["Tyreek Hill", "—"],
                 ["Patrick Mahomes", "#5"]
-            ],
-            date: "Trade date not recorded"
+            ]
         },
-
         {
+            date: "Date not recorded",
             manager1: "Mike Herbst",
             manager2: "Michael Gravante",
-            players1: [
+            side1: [
                 ["Aaron Rodgers", "#2"]
             ],
-            players2: [
+            side2: [
                 ["Hollywood Brown", "—"]
-            ],
-            date: "Trade date not recorded"
+            ]
         },
-
         {
+            date: "Date not recorded",
             manager1: "Nic Maiorano",
             manager2: "Mike Herbst",
-            players1: [
+            side1: [
                 ["Aaron Rodgers", "#2"],
                 ["Melvin Gordon III", "—"]
             ],
-            players2: [
+            side2: [
                 ["Kenyan Drake", "—"],
                 ["Will Fuller", "—"]
-            ],
-            date: "Trade date not recorded"
+            ]
         },
-
         {
+            date: "Date not recorded",
             manager1: "Christian Abert",
-            manager2: "Taz Josh",
-            players1: [
+            manager2: "Taz",
+            side1: [
                 ["Deshaun Watson", "#6"],
                 ["Ezekiel Elliott", "—"],
                 ["Michael Gallup", "—"]
             ],
-            players2: [
+            side2: [
                 ["Kyler Murray", "#3"],
                 ["Odell Beckham Jr.", "—"],
                 ["Josh Jacobs", "—"]
-            ],
-            date: "Trade date not recorded"
+            ]
         },
-
         {
+            date: "Date not recorded",
             manager1: "Mike Herbst",
             manager2: "Ryan Herbst",
-            players1: [
+            side1: [
                 ["Patrick Mahomes", "#5"]
             ],
-            players2: [
+            side2: [
                 ["Josh Allen", "#1"],
                 ["Kenyan Drake", "—"]
-            ],
-            date: "Trade date not recorded"
+            ]
         }
     ],
 
     2019: [
         {
+            date: "Date not recorded",
             manager1: "Ryan Herbst",
             manager2: "Jonah Wheeler",
-            players1: [
+            side1: [
                 ["Russell Wilson", "#5"],
                 ["Travis Kelce", "—"],
                 ["Todd Gurley", "—"],
                 ["D.J. Chark", "—"]
             ],
-            players2: [
+            side2: [
                 ["Drew Brees", "—"],
                 ["George Kittle", "—"],
                 ["Ezekiel Elliott", "#8"],
                 ["Tony Pollard", "—"]
-            ],
-            date: "Trade date not recorded"
+            ]
         },
-
         {
+            date: "Date not recorded",
             manager1: "Ryan Herbst",
             manager2: "Mike Herbst",
-            players1: [
+            side1: [
                 ["Ezekiel Elliott", "#8"],
                 ["Michael Gallup", "—"]
             ],
-            players2: [
+            side2: [
                 ["Alvin Kamara", "—"],
                 ["Mark Ingram II", "—"],
                 ["Latavius Murray", "—"]
-            ],
-            date: "Trade date not recorded"
+            ]
         },
-
         {
-            manager1: "Taz Josh",
+            date: "Date not recorded",
+            manager1: "Taz",
             manager2: "Michael Gravante",
-            players1: [
+            side1: [
                 ["Austin Ekeler", "#9"],
                 ["Gerald Everett", "—"]
             ],
-            players2: [
+            side2: [
                 ["Marlon Mack", "—"],
                 ["Zach Ertz", "—"]
-            ],
-            date: "Trade date not recorded"
+            ]
         },
-
         {
+            date: "Date not recorded",
             manager1: "Mike Herbst",
-            manager2: "JuJu Smith-Schuster / Leonard Fournette / Kerryon Johnson / Calvin Ridley",
-            players1: [
+            manager2: "JuJu Smith-Schuster",
+            side1: [
                 ["Ezekiel Elliott", "#8"],
                 ["James White", "—"]
             ],
-            players2: [
+            side2: [
                 ["JuJu Smith-Schuster", "—"],
                 ["Leonard Fournette", "—"],
                 ["Kerryon Johnson", "—"],
                 ["Calvin Ridley", "—"]
-            ],
-            date: "Trade date not recorded"
+            ]
         },
-
         {
-            manager1: "Taz Josh",
+            date: "Date not recorded",
+            manager1: "Taz",
             manager2: "Jonah Wheeler",
-            players1: [
+            side1: [
                 ["Aaron Jones Sr.", "#7"],
                 ["Jarvis Landry", "—"]
             ],
-            players2: [
+            side2: [
                 ["JuJu Smith-Schuster", "—"],
                 ["Stefon Diggs", "—"]
-            ],
-            date: "Trade date not recorded"
+            ]
         },
-
         {
+            date: "Date not recorded",
             manager1: "Tommy Herbst",
             manager2: "Ryan Herbst",
-            players1: [
+            side1: [
                 ["Lamar Jackson", "#2"],
                 ["Phillip Lindsay", "—"]
             ],
-            players2: [
+            side2: [
                 ["Cooper Kupp", "—"],
                 ["Allen Robinson", "—"]
-            ],
-            date: "Trade date not recorded"
+            ]
         }
     ],
 
     2018: [
         {
+            date: "Date not recorded",
             manager1: "Ryan Herbst",
             manager2: "Michael Gravante",
-            players1: [
+            side1: [
                 ["DeAndre Hopkins", "#8"]
             ],
-            players2: [
+            side2: [
                 ["Jarvis Landry", "—"],
                 ["Mark Ingram II", "—"],
                 ["Carlos Hyde", "—"],
                 ["Calvin Ridley", "—"]
-            ],
-            date: "Trade date not recorded"
+            ]
         },
-
         {
+            date: "Date not recorded",
             manager1: "Christian Abert",
             manager2: "Ryan Herbst",
-            players1: [
+            side1: [
                 ["Davante Adams", "#10"],
                 ["Quincy Enunwa", "—"],
                 ["Randall Cobb", "—"]
             ],
-            players2: [
+            side2: [
                 ["Jarvis Landry", "—"],
                 ["Jay Ajayi", "—"],
                 ["Carlos Hyde", "—"],
                 ["Corey Clement", "—"]
-            ],
-            date: "Trade date not recorded"
+            ]
         }
     ],
 
     2017: [
         {
+            date: "Date not recorded",
             manager1: "Ryan Herbst",
             manager2: "Nic Maiorano",
-            players1: [
+            side1: [
                 ["Todd Gurley", "#1"]
             ],
-            players2: [
+            side2: [
                 ["Lamar Miller", "—"],
                 ["Devonta Freeman", "—"],
                 ["Delanie Walker", "—"]
-            ],
-            date: "Trade date not recorded"
+            ]
         },
-
         {
+            date: "Date not recorded",
             manager1: "Ryan Herbst",
             manager2: "Tommy Herbst",
-            players1: [
+            side1: [
                 ["DeAndre Hopkins", "#6"],
                 ["Carlos Hyde", "—"]
             ],
-            players2: [
+            side2: [
                 ["Jay Ajayi", "—"],
                 ["Jarvis Landry", "—"],
                 ["Golden Tate", "—"]
-            ],
-            date: "Trade date not recorded"
+            ]
         }
     ],
 
     2016: [
         {
+            date: "Date not recorded",
             manager1: "Tommy Herbst",
             manager2: "Ryan Herbst",
-            players1: [
+            side1: [
                 ["Jordy Nelson", "#9"],
                 ["Amari Cooper", "—"]
             ],
-            players2: [
+            side2: [
                 ["Odell Beckham Jr.", "—"],
                 ["Michael Floyd", "—"]
-            ],
-            date: "Trade date not recorded"
+            ]
         }
     ],
 
     2015: [
         {
+            date: "Date not recorded",
             manager1: "Ryan Herbst",
             manager2: "Tommy Herbst",
-            players1: [
+            side1: [
                 ["Julio Jones", "#3"],
                 ["Kendall Wright", "—"]
             ],
-            players2: [
+            side2: [
                 ["Eddie Lacy", "—"],
                 ["Dez Bryant", "—"]
-            ],
-            date: "Trade date not recorded"
+            ]
         }
     ],
 
     2014: [
         {
+            date: "Date not recorded",
             manager1: "Ryan Herbst",
             manager2: "Nic Maiorano",
-            players1: [
+            side1: [
                 ["Antonio Brown", "#1"],
                 ["Jordan Cameron", "—"]
             ],
-            players2: [
+            side2: [
                 ["Brandon Marshall", "—"],
                 ["Delanie Walker", "—"]
-            ],
-            date: "Trade date not recorded"
+            ]
         }
     ],
 
     2013: [
         {
+            date: "Date not recorded",
             manager1: "Nic Maiorano",
             manager2: "Ryan Herbst",
-            players1: [
+            side1: [
                 ["Jamaal Charles", "#2"],
                 ["Dez Bryant", "—"],
                 ["Victor Cruz", "—"]
             ],
-            players2: [
+            side2: [
                 ["Calvin Johnson", "—"],
                 ["Larry Fitzgerald", "—"],
                 ["Steven Jackson", "—"]
-            ],
-            date: "Trade date not recorded"
+            ]
         },
-
         {
+            date: "Date not recorded",
             manager1: "Ryan Herbst",
             manager2: "Nic Maiorano",
-            players1: [
+            side1: [
                 ["Jamaal Charles", "#2"],
                 ["Matt Forte", "#4"],
                 ["Demaryius Thomas", "#6"],
                 ["Brandon Marshall", "#10"]
             ],
-            players2: [
+            side2: [
                 ["Dez Bryant", "—"],
                 ["Calvin Johnson", "—"],
                 ["Adrian Peterson", "—"],
                 ["Victor Cruz", "—"]
-            ],
-            date: "Trade date not recorded"
+            ]
         },
-
         {
+            date: "Date not recorded",
             manager1: "Nic Maiorano",
             manager2: "Ryan Herbst",
-            players1: [
+            side1: [
                 ["Demaryius Thomas", "#6"],
                 ["Ray Rice", "—"],
                 ["Larry Fitzgerald", "—"]
             ],
-            players2: [
+            side2: [
                 ["Victor Cruz", "—"],
                 ["Dez Bryant", "—"],
                 ["Marques Colston", "—"]
-            ],
-            date: "Trade date not recorded"
+            ]
         },
-
         {
+            date: "Date not recorded",
             manager1: "Nic Maiorano",
             manager2: "Christian Abert",
-            players1: [
+            side1: [
                 ["A.J. Green", "#9"],
                 ["Eddie Lacy", "—"],
                 ["Marshawn Lynch", "—"]
             ],
-            players2: [
+            side2: [
                 ["Calvin Johnson", "—"],
                 ["Adrian Peterson", "—"],
                 ["Eric Decker", "—"]
-            ],
-            date: "Trade date not recorded"
+            ]
         }
     ]
 
 };
 
-
-/* =========================================
-   UPDATE TOP-10 TRADES
-========================================= */
 
 function updateTrades() {
 
@@ -2011,36 +1972,26 @@ function updateTrades() {
 
     container.innerHTML = "";
 
-    trades.forEach((trade, index) => {
+    trades.forEach((trade) => {
 
         const card =
             document.createElement("div");
 
         card.className = "trade-card";
 
-        const sideOne =
-            trade.players1.map(player => `
+        const side1Players =
+            trade.side1.map(player => `
                 <div class="trade-player">
-                    <span class="trade-player-name">
-                        ${player[0]}
-                    </span>
-
-                    <span class="trade-player-rank">
-                        ${player[1]}
-                    </span>
+                    <span class="trade-player-name">${player[0]}</span>
+                    <span class="trade-player-rank">${player[1]}</span>
                 </div>
             `).join("");
 
-        const sideTwo =
-            trade.players2.map(player => `
+        const side2Players =
+            trade.side2.map(player => `
                 <div class="trade-player">
-                    <span class="trade-player-name">
-                        ${player[0]}
-                    </span>
-
-                    <span class="trade-player-rank">
-                        ${player[1]}
-                    </span>
+                    <span class="trade-player-name">${player[0]}</span>
+                    <span class="trade-player-rank">${player[1]}</span>
                 </div>
             `).join("");
 
@@ -2048,16 +1999,20 @@ function updateTrades() {
 
             <div class="trade-header">
 
-                <div class="trade-manager">
-                    ${trade.manager1}
+                <div class="trade-managers">
+
+                    <div class="trade-manager">
+                        ${trade.manager1}
+                    </div>
+
+                    <div class="trade-manager">
+                        ${trade.manager2}
+                    </div>
+
                 </div>
 
-                <div class="trade-arrow">
-                    Trade
-                </div>
-
-                <div class="trade-manager">
-                    ${trade.manager2}
+                <div class="trade-date">
+                    ${trade.date}
                 </div>
 
             </div>
@@ -2067,33 +2022,24 @@ function updateTrades() {
                 <div class="trade-side">
 
                     <div class="trade-side-title">
-                        Receives
+                        ${trade.manager1} receives
                     </div>
 
-                    ${sideOne}
+                    ${side1Players}
 
-                </div>
-
-                <div class="trade-middle">
-                    ⇄
                 </div>
 
                 <div class="trade-side">
 
                     <div class="trade-side-title">
-                        Receives
+                        ${trade.manager2} receives
                     </div>
 
-                    ${sideTwo}
+                    ${side2Players}
 
                 </div>
 
             </div>
-
-            <div class="trade-date">
-                ${trade.date}
-            </div>
-
         `;
 
         container.appendChild(card);
@@ -2210,7 +2156,7 @@ const excellenceData = {
         ["Jamaal Charles", "Ryan Herbst", "Draft position not recorded", "images/jamaal-charles-2014.png"],
         ["Drew Brees", "Ryan Herbst", "Draft position not recorded", "images/drew-brees-2016.png"],
         ["Matt Forte", "Nic Maiorano", "Draft position not recorded", "images/matt-forte-2013.png"],
-        ["LeSean McCoy", "Ryan Herbst", "Draft position not recorded", "images/lesean-mccoy-2013.png"]
+        ["LeSean McCoy", "Ryan Herbst", "Draft position not recorded", "lesean-mccoy-2013.png"]
     ]
 
 };
