@@ -55,7 +55,7 @@ header {
 
 nav {
     display: flex;
-    gap: 24px;
+    gap: 20px;
 }
 
 nav a {
@@ -134,26 +134,25 @@ nav a:hover {
     padding: 23px;
 }
 
-.record-label {
+.record-rank {
     color: #68747e;
     font-size: 11px;
     text-transform: uppercase;
-    letter-spacing: 1.2px;
+    letter-spacing: 1.5px;
     font-weight: 700;
-    margin-bottom: 7px;
 }
 
 .record-value {
     font-size: 38px;
     font-weight: 800;
-    line-height: 1;
+    margin-top: 8px;
 }
 
 .record-holder {
     color: #aeb8c1;
     font-size: 15px;
     font-weight: 700;
-    margin-top: 7px;
+    margin-top: 4px;
 }
 
 .record-detail {
@@ -274,123 +273,68 @@ nav a:hover {
 
 .trade-managers {
     display: grid;
-    grid-template-columns: 1fr 100px 1fr;
-    align-items: stretch;
-    background: #111820;
+    grid-template-columns: 1fr 1fr;
     border-bottom: 1px solid #27313b;
 }
 
 .trade-manager {
-    padding: 17px 22px;
-    font-size: 16px;
+    padding: 18px 22px;
+    font-size: 17px;
     font-weight: 800;
 }
 
 .trade-manager:first-child {
-    text-align: right;
-}
-
-.trade-manager:last-child {
-    text-align: left;
-}
-
-.trade-exchange {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #aeb8c1;
-    font-size: 26px;
-    font-weight: 800;
+    border-right: 1px solid #27313b;
 }
 
 .trade-sides {
     display: grid;
-    grid-template-columns: 1fr 100px 1fr;
+    grid-template-columns: 1fr 1fr;
 }
 
 .trade-side {
-    padding: 15px 22px;
+    padding: 16px 22px;
 }
 
 .trade-side:first-child {
     border-right: 1px solid #27313b;
 }
 
-.trade-side:last-child {
-    border-left: 1px solid #27313b;
-}
-
 .trade-player {
-    display: grid;
-    grid-template-columns: 1fr auto;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
     gap: 15px;
-    min-height: 48px;
-    padding: 8px 0;
+    padding: 9px 0;
     border-bottom: 1px solid #222b34;
+    font-size: 13px;
 }
 
 .trade-player:last-child {
     border-bottom: none;
 }
 
-.trade-side:first-child .trade-player {
-    text-align: right;
-}
-
 .trade-player-name {
-    font-size: 14px;
     font-weight: 700;
 }
 
 .trade-player-rank {
-    color: #68747e;
+    color: #aeb8c1;
     font-size: 11px;
-    font-weight: 700;
     white-space: nowrap;
-    min-width: 38px;
-}
-
-.trade-arrow-column {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.trade-arrow {
-    color: #8f9aa4;
-    font-size: 24px;
-    font-weight: 800;
 }
 
 .trade-date {
     border-top: 1px solid #27313b;
-    padding: 10px 22px;
+    padding: 11px 22px;
     color: #68747e;
     font-size: 11px;
-    text-align: center;
 }
 
 
 /* =========================================
-   DRAFTING EXCELLENCE
+   DIAMONDS IN THE ROUGH
 ========================================= */
-
-.season-selector {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 15px;
-}
-
-.season-selector select {
-    background: #111820;
-    color: white;
-    border: 1px solid #27313b;
-    border-radius: 8px;
-    padding: 10px 14px;
-    font-size: 13px;
-}
 
 .top-five {
     display: grid;
@@ -440,64 +384,19 @@ nav a:hover {
     line-height: 1.1;
 }
 
-.draft-info {
+.move-info {
     border-top: 1px solid #27313b;
     padding-top: 12px;
     margin-top: 15px;
 }
 
-.draft-manager {
+.move-manager {
     font-size: 13px;
     font-weight: 700;
 }
 
-.draft-pick {
+.move-type {
     color: #8f9aa4;
-    font-size: 12px;
-    margin-top: 3px;
-}
-
-
-/* =========================================
-   ALL-TIME DRAFTING LEADERS
-========================================= */
-
-.record-grid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 15px;
-}
-
-.record-card {
-    background: #151c24;
-    border: 1px solid #27313b;
-    border-radius: 12px;
-    padding: 23px;
-}
-
-.record-rank {
-    color: #68747e;
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    font-weight: 700;
-}
-
-.record-value {
-    font-size: 38px;
-    font-weight: 800;
-    margin-top: 8px;
-}
-
-.record-holder {
-    color: #aeb8c1;
-    font-size: 15px;
-    font-weight: 700;
-    margin-top: 4px;
-}
-
-.record-detail {
-    color: #68747e;
     font-size: 12px;
     margin-top: 3px;
 }
@@ -603,6 +502,10 @@ footer {
 
 @media (max-width: 1000px) {
 
+    .top-five {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
     .record-grid {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -644,6 +547,10 @@ footer {
         padding: 0 20px 60px;
     }
 
+    .top-five {
+        grid-template-columns: 1fr;
+    }
+
     .record-grid,
     .manager-grid {
         grid-template-columns: 1fr;
@@ -655,49 +562,15 @@ footer {
         flex-direction: column;
     }
 
-    .trade-managers {
-        grid-template-columns: 1fr;
-    }
-
-    .trade-manager:first-child,
-    .trade-manager:last-child {
-        text-align: left;
-    }
-
-    .trade-exchange {
-        display: none;
-    }
-
+    .trade-managers,
     .trade-sides {
         grid-template-columns: 1fr;
     }
 
+    .trade-manager:first-child,
     .trade-side:first-child {
         border-right: none;
         border-bottom: 1px solid #27313b;
-    }
-
-    .trade-side:last-child {
-        border-left: none;
-    }
-
-    .trade-arrow-column {
-        display: none;
-    }
-
-    .trade-side:first-child .trade-player {
-        text-align: left;
-    }
-
-    .diamond-card {
-        grid-template-columns: 40px 72px 1fr;
-        gap: 14px;
-    }
-
-    .diamond-manager {
-        grid-column: 3;
-        text-align: left;
-        margin-top: -8px;
     }
 
 }
@@ -726,11 +599,11 @@ footer {
             <a href="index.html">Home</a>
             <a href="history.html">History</a>
             <a href="teams.html">Teams</a>
-            <a href="seasons.html">Seasons</a>
-            <a href="matchups.html">Matchups</a>
             <a href="records.html">Records</a>
+            <a href="matchups.html">Matchups</a>
             <a href="drafts.html">Drafts</a>
             <a href="moves.html">Moves</a>
+            <a href="seasons.html">Seasons</a>
         </nav>
 
     </div>
@@ -775,39 +648,45 @@ footer {
 <div class="record-grid">
 
     <div class="record-card">
-        <div class="record-label">Most career trades</div>
+        <div class="record-rank">01</div>
         <div class="record-value">178</div>
         <div class="record-holder">Ryan Herbst</div>
+        <div class="record-detail">Most career trades</div>
     </div>
 
     <div class="record-card">
-        <div class="record-label">Most trades in a season</div>
+        <div class="record-rank">02</div>
         <div class="record-value">23</div>
         <div class="record-holder">Ryan Herbst</div>
+        <div class="record-detail">Most trades in a season</div>
     </div>
 
     <div class="record-card">
-        <div class="record-label">Most league trades in a season</div>
+        <div class="record-rank">03</div>
         <div class="record-value">42</div>
         <div class="record-holder">2021 Season</div>
+        <div class="record-detail">Most league trades in a season</div>
     </div>
 
     <div class="record-card">
-        <div class="record-label">Most career Top-10 players acquired</div>
+        <div class="record-rank">04</div>
         <div class="record-value">17</div>
         <div class="record-holder">Ryan Herbst</div>
+        <div class="record-detail">Most career Top-10 players acquired</div>
     </div>
 
     <div class="record-card">
-        <div class="record-label">Most career transactions</div>
+        <div class="record-rank">05</div>
         <div class="record-value">—</div>
         <div class="record-holder">Data not provided</div>
+        <div class="record-detail">Most career transactions</div>
     </div>
 
     <div class="record-card">
-        <div class="record-label">Most transactions in a season</div>
+        <div class="record-rank">06</div>
         <div class="record-value">128</div>
         <div class="record-holder">Ryan Herbst · 2020</div>
+        <div class="record-detail">Most transactions in a season</div>
     </div>
 
 </div>
@@ -842,6 +721,7 @@ footer {
         <div>2024</div>
         <div>2025</div>
     </div>
+
 
     <div class="trade-year-row">
         <div>Christian Abert</div>
@@ -927,6 +807,7 @@ footer {
         <div>—</div><div>3</div><div>6</div>
     </div>
 
+
     <div class="trade-year-row trade-year-league">
         <div>League Total</div>
         <div>8</div><div>10</div><div>6</div><div>11</div><div>21</div>
@@ -983,443 +864,79 @@ footer {
 <h2 class="section-title">Diamonds in the Rough</h2>
 
 <p class="section-intro">
-    The ten best skill-position players acquired off the waiver wire
-    in league history.
+    The five best skill-position players acquired off the waiver wire
+    in league history. Historical waiver-wire rankings have not yet been
+    provided in the current Moves data.
 </p>
 
-<div class="diamond-five" id="diamondPlayers">
+<div class="top-five">
 
-    <div class="diamond-card">
-
-        <div class="diamond-top">
-
-            <img
-                class="diamond-headshot"
-                src="diamond-01.jpg"
-                alt="Waiver Find #1"
-            >
-
-            <div class="diamond-name-wrap">
-
-                <div class="diamond-rank">
-                    Waiver Find #1
-                </div>
-
-                <div class="diamond-name">
-                    Data Pending
-                </div>
-
-                <div class="diamond-finish">
-                    Historical waiver data not provided
-                </div>
-
+    <div class="player-card">
+        <div>
+            <div class="player-rank">01</div>
+            <div class="player-heading">
+                <div class="player-name">Data Pending</div>
             </div>
-
         </div>
-
-        <div class="diamond-info">
-
-            <div class="diamond-manager diamond-pending">
-                Data Pending
-            </div>
-
-            <div class="diamond-type">
-                Waiver Wire
-            </div>
-
+        <div class="move-info">
+            <div class="move-manager data-pending">Waiver-wire data not provided</div>
+            <div class="move-type">Diamond in the Rough</div>
         </div>
-
     </div>
 
-
-    <div class="diamond-card">
-
-        <div class="diamond-top">
-
-            <img
-                class="diamond-headshot"
-                src="diamond-02.jpg"
-                alt="Waiver Find #2"
-            >
-
-            <div class="diamond-name-wrap">
-
-                <div class="diamond-rank">
-                    Waiver Find #2
-                </div>
-
-                <div class="diamond-name">
-                    Data Pending
-                </div>
-
-                <div class="diamond-finish">
-                    Historical waiver data not provided
-                </div>
-
+    <div class="player-card">
+        <div>
+            <div class="player-rank">02</div>
+            <div class="player-heading">
+                <div class="player-name">Data Pending</div>
             </div>
-
         </div>
-
-        <div class="diamond-info">
-
-            <div class="diamond-manager diamond-pending">
-                Data Pending
-            </div>
-
-            <div class="diamond-type">
-                Waiver Wire
-            </div>
-
+        <div class="move-info">
+            <div class="move-manager data-pending">Waiver-wire data not provided</div>
+            <div class="move-type">Diamond in the Rough</div>
         </div>
-
     </div>
 
-
-    <div class="diamond-card">
-
-        <div class="diamond-top">
-
-            <img
-                class="diamond-headshot"
-                src="diamond-03.jpg"
-                alt="Waiver Find #3"
-            >
-
-            <div class="diamond-name-wrap">
-
-                <div class="diamond-rank">
-                    Waiver Find #3
-                </div>
-
-                <div class="diamond-name">
-                    Data Pending
-                </div>
-
-                <div class="diamond-finish">
-                    Historical waiver data not provided
-                </div>
-
+    <div class="player-card">
+        <div>
+            <div class="player-rank">03</div>
+            <div class="player-heading">
+                <div class="player-name">Data Pending</div>
             </div>
-
         </div>
-
-        <div class="diamond-info">
-
-            <div class="diamond-manager diamond-pending">
-                Data Pending
-            </div>
-
-            <div class="diamond-type">
-                Waiver Wire
-            </div>
-
+        <div class="move-info">
+            <div class="move-manager data-pending">Waiver-wire data not provided</div>
+            <div class="move-type">Diamond in the Rough</div>
         </div>
-
     </div>
 
-
-    <div class="diamond-card">
-
-        <div class="diamond-top">
-
-            <img
-                class="diamond-headshot"
-                src="diamond-04.jpg"
-                alt="Waiver Find #4"
-            >
-
-            <div class="diamond-name-wrap">
-
-                <div class="diamond-rank">
-                    Waiver Find #4
-                </div>
-
-                <div class="diamond-name">
-                    Data Pending
-                </div>
-
-                <div class="diamond-finish">
-                    Historical waiver data not provided
-                </div>
-
+    <div class="player-card">
+        <div>
+            <div class="player-rank">04</div>
+            <div class="player-heading">
+                <div class="player-name">Data Pending</div>
             </div>
-
         </div>
-
-        <div class="diamond-info">
-
-            <div class="diamond-manager diamond-pending">
-                Data Pending
-            </div>
-
-            <div class="diamond-type">
-                Waiver Wire
-            </div>
-
+        <div class="move-info">
+            <div class="move-manager data-pending">Waiver-wire data not provided</div>
+            <div class="move-type">Diamond in the Rough</div>
         </div>
-
     </div>
 
-
-    <div class="diamond-card">
-
-        <div class="diamond-top">
-
-            <img
-                class="diamond-headshot"
-                src="diamond-05.jpg"
-                alt="Waiver Find #5"
-            >
-
-            <div class="diamond-name-wrap">
-
-                <div class="diamond-rank">
-                    Waiver Find #5
-                </div>
-
-                <div class="diamond-name">
-                    Data Pending
-                </div>
-
-                <div class="diamond-finish">
-                    Historical waiver data not provided
-                </div>
-
+    <div class="player-card">
+        <div>
+            <div class="player-rank">05</div>
+            <div class="player-heading">
+                <div class="player-name">Data Pending</div>
             </div>
-
         </div>
-
-        <div class="diamond-info">
-
-            <div class="diamond-manager diamond-pending">
-                Data Pending
-            </div>
-
-            <div class="diamond-type">
-                Waiver Wire
-            </div>
-
+        <div class="move-info">
+            <div class="move-manager data-pending">Waiver-wire data not provided</div>
+            <div class="move-type">Diamond in the Rough</div>
         </div>
-
-    </div>
-
-
-    <div class="diamond-card">
-
-        <div class="diamond-top">
-
-            <img
-                class="diamond-headshot"
-                src="diamond-06.jpg"
-                alt="Waiver Find #6"
-            >
-
-            <div class="diamond-name-wrap">
-
-                <div class="diamond-rank">
-                    Waiver Find #6
-                </div>
-
-                <div class="diamond-name">
-                    Data Pending
-                </div>
-
-                <div class="diamond-finish">
-                    Historical waiver data not provided
-                </div>
-
-            </div>
-
-        </div>
-
-        <div class="diamond-info">
-
-            <div class="diamond-manager diamond-pending">
-                Data Pending
-            </div>
-
-            <div class="diamond-type">
-                Waiver Wire
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <div class="diamond-card">
-
-        <div class="diamond-top">
-
-            <img
-                class="diamond-headshot"
-                src="diamond-07.jpg"
-                alt="Waiver Find #7"
-            >
-
-            <div class="diamond-name-wrap">
-
-                <div class="diamond-rank">
-                    Waiver Find #7
-                </div>
-
-                <div class="diamond-name">
-                    Data Pending
-                </div>
-
-                <div class="diamond-finish">
-                    Historical waiver data not provided
-                </div>
-
-            </div>
-
-        </div>
-
-        <div class="diamond-info">
-
-            <div class="diamond-manager diamond-pending">
-                Data Pending
-            </div>
-
-            <div class="diamond-type">
-                Waiver Wire
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <div class="diamond-card">
-
-        <div class="diamond-top">
-
-            <img
-                class="diamond-headshot"
-                src="diamond-08.jpg"
-                alt="Waiver Find #8"
-            >
-
-            <div class="diamond-name-wrap">
-
-                <div class="diamond-rank">
-                    Waiver Find #8
-                </div>
-
-                <div class="diamond-name">
-                    Data Pending
-                </div>
-
-                <div class="diamond-finish">
-                    Historical waiver data not provided
-                </div>
-
-            </div>
-
-        </div>
-
-        <div class="diamond-info">
-
-            <div class="diamond-manager diamond-pending">
-                Data Pending
-            </div>
-
-            <div class="diamond-type">
-                Waiver Wire
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <div class="diamond-card">
-
-        <div class="diamond-top">
-
-            <img
-                class="diamond-headshot"
-                src="diamond-09.jpg"
-                alt="Waiver Find #9"
-            >
-
-            <div class="diamond-name-wrap">
-
-                <div class="diamond-rank">
-                    Waiver Find #9
-                </div>
-
-                <div class="diamond-name">
-                    Data Pending
-                </div>
-
-                <div class="diamond-finish">
-                    Historical waiver data not provided
-                </div>
-
-            </div>
-
-        </div>
-
-        <div class="diamond-info">
-
-            <div class="diamond-manager diamond-pending">
-                Data Pending
-            </div>
-
-            <div class="diamond-type">
-                Waiver Wire
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <div class="diamond-card">
-
-        <div class="diamond-top">
-
-            <img
-                class="diamond-headshot"
-                src="diamond-10.jpg"
-                alt="Waiver Find #10"
-            >
-
-            <div class="diamond-name-wrap">
-
-                <div class="diamond-rank">
-                    Waiver Find #10
-                </div>
-
-                <div class="diamond-name">
-                    Data Pending
-                </div>
-
-                <div class="diamond-finish">
-                    Historical waiver data not provided
-                </div>
-
-            </div>
-
-        </div>
-
-        <div class="diamond-info">
-
-            <div class="diamond-manager diamond-pending">
-                Data Pending
-            </div>
-
-            <div class="diamond-type">
-                Waiver Wire
-            </div>
-
-        </div>
-
     </div>
 
 </div>
-
 
 
 <!-- =========================================
@@ -1436,162 +953,499 @@ footer {
 <div class="manager-grid">
 
 
+<!-- Christian Abert -->
+
 <div class="manager-card">
     <h3>Christian Abert <span class="manager-since">since 2013</span></h3>
+
     <div class="manager-stats">
-        <div class="mini-stat"><strong>68</strong><span>Career Trades</span></div>
-        <div class="mini-stat"><strong>13</strong><span>Most Trades in a Season</span></div>
-        <div class="mini-stat"><strong>—</strong><span>Career Moves</span></div>
-        <div class="mini-stat"><strong>—</strong><span>Most Moves in a Season</span></div>
-        <div class="mini-stat"><strong>5.2</strong><span>Average Trades/yr</span></div>
-        <div class="mini-stat"><strong>—</strong><span>Average Moves/yr</span></div>
+
+        <div class="mini-stat">
+            <strong>68</strong>
+            <span>Career Trades</span>
+        </div>
+
+        <div class="mini-stat">
+            <strong>13</strong>
+            <span>Most Trades in a Season</span>
+        </div>
+
+        <div class="mini-stat">
+            <strong>—</strong>
+            <span>Career Moves</span>
+        </div>
+
+        <div class="mini-stat">
+            <strong>—</strong>
+            <span>Most Moves in a Season</span>
+        </div>
+
+        <div class="mini-stat">
+            <strong>5.2</strong>
+            <span>Average Trades/yr</span>
+        </div>
+
+        <div class="mini-stat">
+            <strong>—</strong>
+            <span>Average Moves/yr</span>
+        </div>
+
     </div>
 </div>
 
+
+<!-- Ryan Herbst -->
 
 <div class="manager-card">
     <h3>Ryan Herbst <span class="manager-since">since 2013</span></h3>
+
     <div class="manager-stats">
-        <div class="mini-stat"><strong>178</strong><span>Career Trades</span></div>
-        <div class="mini-stat"><strong>23</strong><span>Most Trades in a Season</span></div>
-        <div class="mini-stat"><strong>—</strong><span>Career Moves</span></div>
-        <div class="mini-stat"><strong>—</strong><span>Most Moves in a Season</span></div>
-        <div class="mini-stat"><strong>13.7</strong><span>Average Trades/yr</span></div>
-        <div class="mini-stat"><strong>—</strong><span>Average Moves/yr</span></div>
+
+        <div class="mini-stat">
+            <strong>178</strong>
+            <span>Career Trades</span>
+        </div>
+
+        <div class="mini-stat">
+            <strong>23</strong>
+            <span>Most Trades in a Season</span>
+        </div>
+
+        <div class="mini-stat">
+            <strong>—</strong>
+            <span>Career Moves</span>
+        </div>
+
+        <div class="mini-stat">
+            <strong>—</strong>
+            <span>Most Moves in a Season</span>
+        </div>
+
+        <div class="mini-stat">
+            <strong>13.7</strong>
+            <span>Average Trades/yr</span>
+        </div>
+
+        <div class="mini-stat">
+            <strong>—</strong>
+            <span>Average Moves/yr</span>
+        </div>
+
     </div>
 </div>
 
+
+<!-- Nic Maiorano -->
 
 <div class="manager-card">
     <h3>Nic Maiorano <span class="manager-since">since 2013</span></h3>
+
     <div class="manager-stats">
-        <div class="mini-stat"><strong>64</strong><span>Career Trades</span></div>
-        <div class="mini-stat"><strong>11</strong><span>Most Trades in a Season</span></div>
-        <div class="mini-stat"><strong>—</strong><span>Career Moves</span></div>
-        <div class="mini-stat"><strong>—</strong><span>Most Moves in a Season</span></div>
-        <div class="mini-stat"><strong>4.9</strong><span>Average Trades/yr</span></div>
-        <div class="mini-stat"><strong>—</strong><span>Average Moves/yr</span></div>
+
+        <div class="mini-stat">
+            <strong>64</strong>
+            <span>Career Trades</span>
+        </div>
+
+        <div class="mini-stat">
+            <strong>11</strong>
+            <span>Most Trades in a Season</span>
+        </div>
+
+        <div class="mini-stat">
+            <strong>—</strong>
+            <span>Career Moves</span>
+        </div>
+
+        <div class="mini-stat">
+            <strong>—</strong>
+            <span>Most Moves in a Season</span>
+        </div>
+
+        <div class="mini-stat">
+            <strong>4.9</strong>
+            <span>Average Trades/yr</span>
+        </div>
+
+        <div class="mini-stat">
+            <strong>—</strong>
+            <span>Average Moves/yr</span>
+        </div>
+
     </div>
 </div>
 
+
+<!-- Bailey Martin -->
 
 <div class="manager-card">
     <h3>Bailey Martin <span class="manager-since">since 2013</span></h3>
+
     <div class="manager-stats">
-        <div class="mini-stat"><strong>4</strong><span>Career Trades</span></div>
-        <div class="mini-stat"><strong>2</strong><span>Most Trades in a Season</span></div>
-        <div class="mini-stat"><strong>—</strong><span>Career Moves</span></div>
-        <div class="mini-stat"><strong>—</strong><span>Most Moves in a Season</span></div>
-        <div class="mini-stat"><strong>0.7</strong><span>Average Trades/yr</span></div>
-        <div class="mini-stat"><strong>—</strong><span>Average Moves/yr</span></div>
+
+        <div class="mini-stat">
+            <strong>4</strong>
+            <span>Career Trades</span>
+        </div>
+
+        <div class="mini-stat">
+            <strong>2</strong>
+            <span>Most Trades in a Season</span>
+        </div>
+
+        <div class="mini-stat">
+            <strong>—</strong>
+            <span>Career Moves</span>
+        </div>
+
+        <div class="mini-stat">
+            <strong>—</strong>
+            <span>Most Moves in a Season</span>
+        </div>
+
+        <div class="mini-stat">
+            <strong>0.7</strong>
+            <span>Average Trades/yr</span>
+        </div>
+
+        <div class="mini-stat">
+            <strong>—</strong>
+            <span>Average Moves/yr</span>
+        </div>
+
     </div>
 </div>
 
+
+<!-- Jonah Wheeler -->
 
 <div class="manager-card">
     <h3>Jonah Wheeler <span class="manager-since">since 2014</span></h3>
+
     <div class="manager-stats">
-        <div class="mini-stat"><strong>63</strong><span>Career Trades</span></div>
-        <div class="mini-stat"><strong>10</strong><span>Most Trades in a Season</span></div>
-        <div class="mini-stat"><strong>—</strong><span>Career Moves</span></div>
-        <div class="mini-stat"><strong>—</strong><span>Most Moves in a Season</span></div>
-        <div class="mini-stat"><strong>5.3</strong><span>Average Trades/yr</span></div>
-        <div class="mini-stat"><strong>—</strong><span>Average Moves/yr</span></div>
+
+        <div class="mini-stat">
+            <strong>63</strong>
+            <span>Career Trades</span>
+        </div>
+
+        <div class="mini-stat">
+            <strong>10</strong>
+            <span>Most Trades in a Season</span>
+        </div>
+
+        <div class="mini-stat">
+            <strong>—</strong>
+            <span>Career Moves</span>
+        </div>
+
+        <div class="mini-stat">
+            <strong>—</strong>
+            <span>Most Moves in a Season</span>
+        </div>
+
+        <div class="mini-stat">
+            <strong>5.3</strong>
+            <span>Average Trades/yr</span>
+        </div>
+
+        <div class="mini-stat">
+            <strong>—</strong>
+            <span>Average Moves/yr</span>
+        </div>
+
     </div>
 </div>
 
+
+<!-- Tommy Herbst -->
 
 <div class="manager-card">
     <h3>Tommy Herbst <span class="manager-since">since 2014</span></h3>
+
     <div class="manager-stats">
-        <div class="mini-stat"><strong>96</strong><span>Career Trades</span></div>
-        <div class="mini-stat"><strong>15</strong><span>Most Trades in a Season</span></div>
-        <div class="mini-stat"><strong>—</strong><span>Career Moves</span></div>
-        <div class="mini-stat"><strong>—</strong><span>Most Moves in a Season</span></div>
-        <div class="mini-stat"><strong>8.0</strong><span>Average Trades/yr</span></div>
-        <div class="mini-stat"><strong>—</strong><span>Average Moves/yr</span></div>
+
+        <div class="mini-stat">
+            <strong>96</strong>
+            <span>Career Trades</span>
+        </div>
+
+        <div class="mini-stat">
+            <strong>15</strong>
+            <span>Most Trades in a Season</span>
+        </div>
+
+        <div class="mini-stat">
+            <strong>—</strong>
+            <span>Career Moves</span>
+        </div>
+
+        <div class="mini-stat">
+            <strong>—</strong>
+            <span>Most Moves in a Season</span>
+        </div>
+
+        <div class="mini-stat">
+            <strong>8.0</strong>
+            <span>Average Trades/yr</span>
+        </div>
+
+        <div class="mini-stat">
+            <strong>—</strong>
+            <span>Average Moves/yr</span>
+        </div>
+
     </div>
 </div>
 
+
+<!-- Michael Gravante -->
 
 <div class="manager-card">
     <h3>Michael Gravante <span class="manager-since">since 2016</span></h3>
+
     <div class="manager-stats">
-        <div class="mini-stat"><strong>34</strong><span>Career Trades</span></div>
-        <div class="mini-stat"><strong>4</strong><span>Most Trades in a Season</span></div>
-        <div class="mini-stat"><strong>—</strong><span>Career Moves</span></div>
-        <div class="mini-stat"><strong>—</strong><span>Most Moves in a Season</span></div>
-        <div class="mini-stat"><strong>3.4</strong><span>Average Trades/yr</span></div>
-        <div class="mini-stat"><strong>—</strong><span>Average Moves/yr</span></div>
+
+        <div class="mini-stat">
+            <strong>34</strong>
+            <span>Career Trades</span>
+        </div>
+
+        <div class="mini-stat">
+            <strong>4</strong>
+            <span>Most Trades in a Season</span>
+        </div>
+
+        <div class="mini-stat">
+            <strong>—</strong>
+            <span>Career Moves</span>
+        </div>
+
+        <div class="mini-stat">
+            <strong>—</strong>
+            <span>Most Moves in a Season</span>
+        </div>
+
+        <div class="mini-stat">
+            <strong>3.4</strong>
+            <span>Average Trades/yr</span>
+        </div>
+
+        <div class="mini-stat">
+            <strong>—</strong>
+            <span>Average Moves/yr</span>
+        </div>
+
     </div>
 </div>
 
+
+<!-- Mike Herbst -->
 
 <div class="manager-card">
     <h3>Mike Herbst <span class="manager-since">since 2019</span></h3>
+
     <div class="manager-stats">
-        <div class="mini-stat"><strong>54</strong><span>Career Trades</span></div>
-        <div class="mini-stat"><strong>15</strong><span>Most Trades in a Season</span></div>
-        <div class="mini-stat"><strong>—</strong><span>Career Moves</span></div>
-        <div class="mini-stat"><strong>—</strong><span>Most Moves in a Season</span></div>
-        <div class="mini-stat"><strong>7.7</strong><span>Average Trades/yr</span></div>
-        <div class="mini-stat"><strong>—</strong><span>Average Moves/yr</span></div>
+
+        <div class="mini-stat">
+            <strong>54</strong>
+            <span>Career Trades</span>
+        </div>
+
+        <div class="mini-stat">
+            <strong>15</strong>
+            <span>Most Trades in a Season</span>
+        </div>
+
+        <div class="mini-stat">
+            <strong>—</strong>
+            <span>Career Moves</span>
+        </div>
+
+        <div class="mini-stat">
+            <strong>—</strong>
+            <span>Most Moves in a Season</span>
+        </div>
+
+        <div class="mini-stat">
+            <strong>7.7</strong>
+            <span>Average Trades/yr</span>
+        </div>
+
+        <div class="mini-stat">
+            <strong>—</strong>
+            <span>Average Moves/yr</span>
+        </div>
+
     </div>
 </div>
 
+
+<!-- William Darrow -->
 
 <div class="manager-card">
     <h3>William Darrow <span class="manager-since">since 2021</span></h3>
+
     <div class="manager-stats">
-        <div class="mini-stat"><strong>11</strong><span>Career Trades</span></div>
-        <div class="mini-stat"><strong>4</strong><span>Most Trades in a Season</span></div>
-        <div class="mini-stat"><strong>—</strong><span>Career Moves</span></div>
-        <div class="mini-stat"><strong>—</strong><span>Most Moves in a Season</span></div>
-        <div class="mini-stat"><strong>2.2</strong><span>Average Trades/yr</span></div>
-        <div class="mini-stat"><strong>—</strong><span>Average Moves/yr</span></div>
+
+        <div class="mini-stat">
+            <strong>11</strong>
+            <span>Career Trades</span>
+        </div>
+
+        <div class="mini-stat">
+            <strong>4</strong>
+            <span>Most Trades in a Season</span>
+        </div>
+
+        <div class="mini-stat">
+            <strong>—</strong>
+            <span>Career Moves</span>
+        </div>
+
+        <div class="mini-stat">
+            <strong>—</strong>
+            <span>Most Moves in a Season</span>
+        </div>
+
+        <div class="mini-stat">
+            <strong>2.2</strong>
+            <span>Average Trades/yr</span>
+        </div>
+
+        <div class="mini-stat">
+            <strong>—</strong>
+            <span>Average Moves/yr</span>
+        </div>
+
     </div>
 </div>
 
+
+<!-- Julia Wheeler -->
 
 <div class="manager-card">
     <h3>Julia Wheeler <span class="manager-since">since 2022</span></h3>
+
     <div class="manager-stats">
-        <div class="mini-stat"><strong>6</strong><span>Career Trades</span></div>
-        <div class="mini-stat"><strong>4</strong><span>Most Trades in a Season</span></div>
-        <div class="mini-stat"><strong>—</strong><span>Career Moves</span></div>
-        <div class="mini-stat"><strong>—</strong><span>Most Moves in a Season</span></div>
-        <div class="mini-stat"><strong>1.5</strong><span>Average Trades/yr</span></div>
-        <div class="mini-stat"><strong>—</strong><span>Average Moves/yr</span></div>
+
+        <div class="mini-stat">
+            <strong>6</strong>
+            <span>Career Trades</span>
+        </div>
+
+        <div class="mini-stat">
+            <strong>4</strong>
+            <span>Most Trades in a Season</span>
+        </div>
+
+        <div class="mini-stat">
+            <strong>—</strong>
+            <span>Career Moves</span>
+        </div>
+
+        <div class="mini-stat">
+            <strong>—</strong>
+            <span>Most Moves in a Season</span>
+        </div>
+
+        <div class="mini-stat">
+            <strong>1.5</strong>
+            <span>Average Trades/yr</span>
+        </div>
+
+        <div class="mini-stat">
+            <strong>—</strong>
+            <span>Average Moves/yr</span>
+        </div>
+
     </div>
 </div>
 
+
+<!-- Mike Darrow -->
 
 <div class="manager-card">
     <h3>Mike Darrow <span class="manager-since">since 2023</span></h3>
+
     <div class="manager-stats">
-        <div class="mini-stat"><strong>1</strong><span>Career Trades</span></div>
-        <div class="mini-stat"><strong>1</strong><span>Most Trades in a Season</span></div>
-        <div class="mini-stat"><strong>—</strong><span>Career Moves</span></div>
-        <div class="mini-stat"><strong>—</strong><span>Most Moves in a Season</span></div>
-        <div class="mini-stat"><strong>0.3</strong><span>Average Trades/yr</span></div>
-        <div class="mini-stat"><strong>—</strong><span>Average Moves/yr</span></div>
+
+        <div class="mini-stat">
+            <strong>1</strong>
+            <span>Career Trades</span>
+        </div>
+
+        <div class="mini-stat">
+            <strong>1</strong>
+            <span>Most Trades in a Season</span>
+        </div>
+
+        <div class="mini-stat">
+            <strong>—</strong>
+            <span>Career Moves</span>
+        </div>
+
+        <div class="mini-stat">
+            <strong>—</strong>
+            <span>Most Moves in a Season</span>
+        </div>
+
+        <div class="mini-stat">
+            <strong>0.3</strong>
+            <span>Average Trades/yr</span>
+        </div>
+
+        <div class="mini-stat">
+            <strong>—</strong>
+            <span>Average Moves/yr</span>
+        </div>
+
     </div>
 </div>
 
+
+<!-- Nick Femano -->
 
 <div class="manager-card">
     <h3>Nick Femano <span class="manager-since">since 2024</span></h3>
+
     <div class="manager-stats">
-        <div class="mini-stat"><strong>9</strong><span>Career Trades</span></div>
-        <div class="mini-stat"><strong>6</strong><span>Most Trades in a Season</span></div>
-        <div class="mini-stat"><strong>—</strong><span>Career Moves</span></div>
-        <div class="mini-stat"><strong>—</strong><span>Most Moves in a Season</span></div>
-        <div class="mini-stat"><strong>4.5</strong><span>Average Trades/yr</span></div>
-        <div class="mini-stat"><strong>—</strong><span>Average Moves/yr</span></div>
+
+        <div class="mini-stat">
+            <strong>9</strong>
+            <span>Career Trades</span>
+        </div>
+
+        <div class="mini-stat">
+            <strong>6</strong>
+            <span>Most Trades in a Season</span>
+        </div>
+
+        <div class="mini-stat">
+            <strong>—</strong>
+            <span>Career Moves</span>
+        </div>
+
+        <div class="mini-stat">
+            <strong>—</strong>
+            <span>Most Moves in a Season</span>
+        </div>
+
+        <div class="mini-stat">
+            <strong>4.5</strong>
+            <span>Average Trades/yr</span>
+        </div>
+
+        <div class="mini-stat">
+            <strong>—</strong>
+            <span>Average Moves/yr</span>
+        </div>
+
     </div>
 </div>
 
 </div>
+
 
 </div>
 
@@ -1601,7 +1455,9 @@ footer {
 ========================================= -->
 
 <footer>
+
     Kevin Durant League · Fantasy Football · Est. 2013
+
 </footer>
 
 
@@ -1613,197 +1469,8 @@ footer {
 
 
 /* =========================================
-   DRAFTING EXCELLENCE DATA
+   TOP-10 PLAYER TRADE DATA
 ========================================= */
-
-const excellenceData = {
-
-    2025: [
-        ["Christian McCaffrey", "William Darrow", "Round 2 · Pick 3", "images/christian-mccaffrey-2025.png"],
-        ["Puka Nacua", "Michael Gravante", "Round 2 · Pick 5", "images/puka-nacua-2025.png"],
-        ["Bijan Robinson", "Nic Maiorano", "Round 1 · Pick 2", "images/bijan-robinson-2025.png"],
-        ["Jahmyr Gibbs", "Julia Wheeler", "Round 1 · Pick 3", "images/jahmyr-gibbs-2025.png"],
-        ["Josh Allen", "Christian Abert", "Round 3 · Pick 4", "images/josh-allen-2025.png"]
-    ],
-
-    2024: [
-        ["Lamar Jackson", "Julia Wheeler", "Round 5 · Pick 1", "images/lamar-jackson-2024.webp"],
-        ["Ja'Marr Chase", "Jonah Wheeler", "Round 1 · Pick 8", "images/jamarr-chase-2024.png"],
-        ["Josh Allen", "Ryan Herbst", "Round 3 · Pick 10", "images/josh-allen-2025.png"],
-        ["Joe Burrow", "Jonah Wheeler", "Round 5 · Pick 8", "images/joe-burrow-2024.png"],
-        ["Baker Mayfield", "Mike Darrow", "Free Agency", "images/baker-mayfield-2024.webp"]
-    ],
-
-    2023: [
-        ["CeeDee Lamb", "Mike Darrow", "Round 1 · Pick 7", "images/ceedee-lamb-2023.webp"],
-        ["Josh Allen", "Jonah Wheeler", "Round 3 · Pick 10", "images/josh-allen-2025.png"],
-        ["Christian McCaffrey", "Tommy Herbst", "Round 1 · Pick 3", "images/christian-mccaffrey-2025.png"],
-        ["Tyreek Hill", "William Darrow", "Round 1 · Pick 4", "images/tyreek-hill-2023.webp"],
-        ["Jalen Hurts", "Taz Josh", "Round 3 · Pick 1", "images/jalen-hurts.png"]
-    ],
-
-    2022: [
-        ["Patrick Mahomes", "Nic Maiorano", "Round 4 · Pick 9", "images/patrick-mahomes-2022.webp"],
-        ["Josh Allen", "Christian Abert", "Round 4 · Pick 3", "images/josh-allen-2025.png"],
-        ["Jalen Hurts", "Jonah Wheeler", "Round 6 · Pick 5", "images/jalen-hurts.png"],
-        ["Austin Ekeler", "Mike Herbst", "Round 1 · Pick 3", "images/Austin-Ekeler-2023.png"],
-        ["Justin Jefferson", "Michael Gravante", "Round 1 · Pick 4", "images/justin-jefferson-2022.png"]
-    ],
-
-    2021: [
-        ["Cooper Kupp", "Ryan Herbst", "Round 5 · Pick 3", "images/cooper-kupp-2021.webp"],
-        ["Josh Allen", "Tommy Herbst", "Round 3 · Pick 7", "images/josh-allen-2025.png"],
-        ["Justin Herbert", "William Darrow", "Round 5 · Pick 4", "images/justin-herbert-2021.png"],
-        ["Tom Brady", "Joey", "Round 6 · Pick 6", "images/tom-brady-2021.png"],
-        ["Jonathan Taylor", "Nic Maiorano", "Round 2 · Pick 3", "images/Jonathan-Taylor-2021.png"]
-    ],
-
-    2020: [
-        ["Josh Allen", "Mike Herbst", "Round 15 · Pick 4", "images/josh-allen-2025.png"],
-        ["Aaron Rodgers", "Michael Gravante", "Round 17 · Pick 7", "images/aaron-rodgers-2020.png"],
-        ["Kyler Murray", "Christian Abert", "Round 8 · Pick 1", "images/kyler-murray-2020.avif"],
-        ["Alvin Kamara", "Mike Herbst", "Round 1 · Pick 4", "images/alvin-kamara-2020.webp"],
-        ["Patrick Mahomes", "Ryan Herbst", "Round 2 · Pick 7", "images/patrick-mahomes-2020.png.webp"]
-    ],
-
-    2019: [
-        ["Christian McCaffrey", "Tommy Herbst", "Round 1 · Pick 3", "images/christian-mccaffrey-2019.png"],
-        ["Lamar Jackson", "Tommy Herbst", "Free Agency", "images/lamar-jackson-2019.png"],
-        ["Michael Thomas", "Nic Maiorano", "Round 2 · Pick 1", "images/michael-thomas-2019.png"],
-        ["Dak Prescott", "Taz Josh", "Free Agency", "images/dak-prescott-2019.png"],
-        ["Russell Wilson", "Ryan Herbst", "Free Agency", "images/russell-wilson-2019.png"]
-    ],
-
-    2018: [
-        ["Patrick Mahomes", "Christian Abert", "Draft position not recorded", "images/patrick-mahomes-2020.png.webp"],
-        ["Saquon Barkley", "Tommy Herbst", "Draft position not recorded", "images/saquon-barkley-2018.png"],
-        ["Christian McCaffrey", "Taz Josh", "Draft position not recorded", "images/christian-mccaffrey-2019.png"],
-        ["Todd Gurley", "Nic Maiorano", "Draft position not recorded", "images/todd-gurley-2018.png"],
-        ["Matt Ryan", "Taz Josh", "Draft position not recorded", "images/matt-ryan-2018.png"]
-    ],
-
-    2017: [
-        ["Todd Gurley", "Nic Maiorano", "Draft position not recorded", "images/todd-gurley-2018.png"],
-        ["Russell Wilson", "Michael Gravante", "Draft position not recorded", "images/russell-wilson-2019.png"],
-        ["Le'Veon Bell", "Bailey Martin", "Draft position not recorded", "images/leveon-bell.png"],
-        ["Alvin Kamara", "Christian Abert", "Draft position not recorded", "images/alvin-kamara-2020.webp"],
-        ["Antonio Brown", "Taz Josh", "Draft position not recorded", "images/antonio-brown.png"]
-    ],
-
-    2016: [
-        ["David Johnson", "Nic Maiorano", "Draft position not recorded", "images/david-johnson-2016.png.webp"],
-        ["Aaron Rodgers", "Taz Josh", "Draft position not recorded", "images/aaron-rodgers-2016.png"],
-        ["Matt Ryan", "Ryan Herbst", "Draft position not recorded", "images/matt-ryan-2018.png"],
-        ["Drew Brees", "Nic Maiorano", "Draft position not recorded", "images/drew-brees-2016.png"],
-        ["Ezekiel Elliott", "Ryan Herbst", "Draft position not recorded", "images/ezekiel-elliott-2016.webp"]
-    ],
-
-    2015: [
-        ["Cam Newton", "Ryan Herbst", "Draft position not recorded", "images/cam-newton-2015.png"],
-        ["Antonio Brown", "Christian Abert", "Draft position not recorded", "images/antonio-brown.png"],
-        ["Julio Jones", "Tommy Herbst", "Draft position not recorded", "images/Julio-Jones-2015.png"],
-        ["Tom Brady", "Christian Abert", "Draft position not recorded", "images/Tom-Brady-2015.png"],
-        ["Brandon Marshall", "Nic Maiorano", "Draft position not recorded", "images/brandon-marshall-2015.webp"]
-    ],
-
-    2014: [
-        ["Antonio Brown", "Nic Maiorano", "Draft position not recorded", "images/antonio-brown-2014.png.webp"],
-        ["Le'Veon Bell", "Bailey Martin", "Draft position not recorded", "images/leveon-bell.png"],
-        ["Aaron Rodgers", "Jonah Wheeler", "Draft position not recorded", "images/aaron-rodgers-2016.png"],
-        ["DeMarco Murray", "Bailey Martin", "Draft position not recorded", "images/demarco-murray-2014.avif"],
-        ["Andrew Luck", "Nic Maiorano", "Draft position not recorded", "images/andrew-luck-2014.png"]
-    ],
-
-    2013: [
-        ["Peyton Manning", "Bailey Martin", "Draft position not recorded", "images/peyton-manning-2013.png"],
-        ["Jamaal Charles", "Ryan Herbst", "Draft position not recorded", "images/jamaal-charles-2014.png"],
-        ["Drew Brees", "Ryan Herbst", "Draft position not recorded", "images/drew-brees-2016.png"],
-        ["Matt Forte", "Nic Maiorano", "Draft position not recorded", "images/matt-forte-2013.png"],
-        ["LeSean McCoy", "Ryan Herbst", "Draft position not recorded", "lesean-mccoy-2013.png"]
-    ]
-
-};
-
-
-function updateExcellence() {
-
-    const season =
-        document.getElementById("excellenceSeason").value;
-
-    const players =
-        excellenceData[season];
-
-    const container =
-        document.getElementById("topFive");
-
-    container.innerHTML = "";
-
-    players.forEach((player, index) => {
-
-        const card =
-            document.createElement("div");
-
-        card.className = "player-card";
-
-        card.innerHTML = `
-
-            <div>
-
-                <div class="player-rank">
-                    Fantasy Rank #${index + 1}
-                </div>
-
-                <div class="player-heading">
-
-                    <img
-                        class="player-headshot"
-                        src="${player[3]}"
-                        alt="${player[0]}"
-                        onerror="this.style.visibility='hidden';"
-                    >
-
-                    <div class="player-name">
-                        ${player[0]}
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div class="draft-info">
-
-                <div class="draft-manager">
-                    ${player[1]}
-                </div>
-
-                <div class="draft-pick">
-                    ${player[2]}
-                </div>
-
-            </div>
-        `;
-
-        container.appendChild(card);
-
-    });
-
-}
-
-
-/* =========================================
-   INITIALIZE
-========================================= */
-
-updateExcellence();
-
-</script>
-
-
-</body>
-</html>
-
-
-<script>
 
 const tradeData = {
 
@@ -2368,6 +2035,10 @@ const tradeData = {
 };
 
 
+/* =========================================
+   UPDATE TOP-10 TRADES
+========================================= */
+
 function updateTrades() {
 
     const season =
@@ -2410,8 +2081,9 @@ function updateTrades() {
                     <span class="trade-player-name">
                         ${player[0]}
                     </span>
+
                     <span class="trade-player-rank">
-                        ${player[1] || "—"}
+                        ${player[1]}
                     </span>
                 </div>
             `;
@@ -2425,8 +2097,9 @@ function updateTrades() {
                     <span class="trade-player-name">
                         ${player[0]}
                     </span>
+
                     <span class="trade-player-rank">
-                        ${player[1] || "—"}
+                        ${player[1]}
                     </span>
                 </div>
             `;
@@ -2441,10 +2114,6 @@ function updateTrades() {
                     ${trade.managers[0]}
                 </div>
 
-                <div class="trade-exchange">
-                    ⇄
-                </div>
-
                 <div class="trade-manager">
                     ${trade.managers[1]}
                 </div>
@@ -2455,10 +2124,6 @@ function updateTrades() {
 
                 <div class="trade-side">
                     ${sideOne}
-                </div>
-
-                <div class="trade-arrow-column">
-                    <div class="trade-arrow">⇄</div>
                 </div>
 
                 <div class="trade-side">
@@ -2480,9 +2145,14 @@ function updateTrades() {
 }
 
 
+/* =========================================
+   INITIALIZE
+========================================= */
+
 updateTrades();
 
 </script>
+
 
 </body>
 </html>
