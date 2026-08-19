@@ -20,6 +20,7 @@ body {
     background: #0b0f14;
     color: #f5f5f5;
     line-height: 1.5;
+    overflow-y: scroll;
 }
 
 header {
@@ -722,7 +723,6 @@ footer {
         <div>2025</div>
     </div>
 
-
     <div class="trade-year-row">
         <div>Christian Abert</div>
         <div>2</div><div>4</div><div>3</div><div>1</div><div>5</div>
@@ -806,7 +806,6 @@ footer {
         <div>—</div><div>—</div><div>—</div><div>—</div><div>—</div>
         <div>—</div><div>3</div><div>6</div>
     </div>
-
 
     <div class="trade-year-row trade-year-league">
         <div>League Total</div>
@@ -1469,187 +1468,90 @@ footer {
 
 
 /* =========================================
-   BLOCKBUSTER TRADES DATA
+   BLOCKBUSTER TRADE DATA
 ========================================= */
 
 const tradeData = {
 
-    2013: [
+    2025: [
         {
-            managers: ["Nic Maiorano", "Ryan Herbst"],
+            managers: ["William Darrow", "Jonah Wheeler"],
             sides: [
                 [
-                    ["Jamaal Charles", "#2"],
-                    ["Dez Bryant", ""],
-                    ["Victor Cruz", ""]
+                    ["Christian McCaffrey", "#1"]
                 ],
                 [
-                    ["Calvin Johnson", ""],
-                    ["Larry Fitzgerald", ""],
-                    ["Steven Jackson", ""]
+                    ["Josh Allen", "#4"]
                 ]
             ]
-        },
+        }
+    ],
 
+    2024: [
+        {
+            managers: ["Jonah Wheeler", "Julia Wheeler"],
+            sides: [
+                [
+                    ["Ja'Marr Chase", "#2"]
+                ],
+                [
+                    ["Lamar Jackson", "#1"]
+                ]
+            ]
+        }
+    ],
+
+    2023: [
+        {
+            managers: ["Tommy Herbst", "William Darrow"],
+            sides: [
+                [
+                    ["Christian McCaffrey", "#3"]
+                ],
+                [
+                    ["Tyreek Hill", "#4"]
+                ]
+            ]
+        }
+    ],
+
+    2022: [
+        {
+            managers: ["Ryan Herbst", "Jonah Wheeler"],
+            sides: [
+                [
+                    ["Justin Jefferson", "#1"]
+                ],
+                [
+                    ["Josh Allen", "#2"]
+                ]
+            ]
+        }
+    ],
+
+    2021: [
         {
             managers: ["Ryan Herbst", "Nic Maiorano"],
             sides: [
                 [
-                    ["Jamaal Charles", "#2"],
-                    ["Matt Forte", "#4"],
-                    ["Demaryius Thomas", "#6"],
-                    ["Brandon Marshall", "#10"]
+                    ["Cooper Kupp", "#1"]
                 ],
                 [
-                    ["Dez Bryant", ""],
-                    ["Calvin Johnson", ""],
-                    ["Adrian Peterson", ""],
-                    ["Victor Cruz", ""]
-                ]
-            ]
-        },
-
-        {
-            managers: ["Nic Maiorano", "Ryan Herbst"],
-            sides: [
-                [
-                    ["Demaryius Thomas", "#6"],
-                    ["Ray Rice", ""],
-                    ["Larry Fitzgerald", ""]
-                ],
-                [
-                    ["Victor Cruz", ""],
-                    ["Dez Bryant", ""],
-                    ["Marques Colston", ""]
-                ]
-            ]
-        },
-
-        {
-            managers: ["Nic Maiorano", "Christian Abert"],
-            sides: [
-                [
-                    ["A.J. Green", "#9"],
-                    ["Eddie Lacy", ""],
-                    ["Marshawn Lynch", ""]
-                ],
-                [
-                    ["Calvin Johnson", ""],
-                    ["Adrian Peterson", ""],
-                    ["Eric Decker", ""]
+                    ["Jonathan Taylor", "#2"]
                 ]
             ]
         }
     ],
 
-    2014: [
+    2020: [
         {
-            managers: ["Ryan Herbst", "Nic Maiorano"],
+            managers: ["Mike Herbst", "Ryan Herbst"],
             sides: [
                 [
-                    ["Antonio Brown", "#1"],
-                    ["Jordan Cameron", ""]
+                    ["Josh Allen", "#1"]
                 ],
                 [
-                    ["Brandon Marshall", ""],
-                    ["Delanie Walker", ""]
-                ]
-            ]
-        }
-    ],
-
-    2015: [
-        {
-            managers: ["Ryan Herbst", "Tommy Herbst"],
-            sides: [
-                [
-                    ["Julio Jones", "#3"],
-                    ["Kendall Wright", ""]
-                ],
-                [
-                    ["Eddie Lacy", ""],
-                    ["Dez Bryant", ""]
-                ]
-            ]
-        }
-    ],
-
-    2016: [
-        {
-            managers: ["Tommy Herbst", "Ryan Herbst"],
-            sides: [
-                [
-                    ["Jordy Nelson", "#9"],
-                    ["Amari Cooper", ""]
-                ],
-                [
-                    ["Odell Beckham Jr.", ""],
-                    ["Michael Floyd", ""]
-                ]
-            ]
-        }
-    ],
-
-    2017: [
-        {
-            managers: ["Ryan Herbst", "Nic Maiorano"],
-            sides: [
-                [
-                    ["Todd Gurley", "#1"]
-                ],
-                [
-                    ["Lamar Miller", ""],
-                    ["Devonta Freeman", ""],
-                    ["Delanie Walker", ""]
-                ]
-            ]
-        },
-
-        {
-            managers: ["Ryan Herbst", "Tommy Herbst"],
-            sides: [
-                [
-                    ["DeAndre Hopkins", "#6"],
-                    ["Carlos Hyde", ""]
-                ],
-                [
-                    ["Jay Ajayi", ""],
-                    ["Jarvis Landry", ""],
-                    ["Golden Tate", ""]
-                ]
-            ]
-        }
-    ],
-
-    2018: [
-        {
-            managers: ["Ryan Herbst", "Michael Gravante"],
-            sides: [
-                [
-                    ["DeAndre Hopkins", "#8"]
-                ],
-                [
-                    ["Jarvis Landry", ""],
-                    ["Mark Ingram II", ""],
-                    ["Carlos Hyde", ""],
-                    ["Calvin Ridley", ""]
-                ]
-            ]
-        },
-
-        {
-            managers: ["Christian Abert", "Ryan Herbst"],
-            sides: [
-                [
-                    ["Davante Adams", "#10"],
-                    ["Quincy Enunwa", ""],
-                    ["Randall Cobb", ""]
-                ],
-                [
-                    ["Jarvis Landry", ""],
-                    ["Jay Ajayi", ""],
-                    ["Carlos Hyde", ""],
-                    ["Corey Clement", ""]
+                    ["Patrick Mahomes", "#5"]
                 ]
             ]
         }
@@ -1673,7 +1575,6 @@ const tradeData = {
                 ]
             ]
         },
-
         {
             managers: ["Ryan Herbst", "Mike Herbst"],
             sides: [
@@ -1688,7 +1589,6 @@ const tradeData = {
                 ]
             ]
         },
-
         {
             managers: ["Taz", "Michael Gravante"],
             sides: [
@@ -1702,7 +1602,6 @@ const tradeData = {
                 ]
             ]
         },
-
         {
             managers: ["Mike Herbst", "Unknown"],
             sides: [
@@ -1718,7 +1617,6 @@ const tradeData = {
                 ]
             ]
         },
-
         {
             managers: ["Taz", "Jonah Wheeler"],
             sides: [
@@ -1732,7 +1630,6 @@ const tradeData = {
                 ]
             ]
         },
-
         {
             managers: ["Tommy Herbst", "Ryan Herbst"],
             sides: [
@@ -1748,285 +1645,162 @@ const tradeData = {
         }
     ],
 
-    2020: [
-        {
-            managers: ["Mike Herbst", "Ryan Herbst"],
-            sides: [
-                [
-                    ["Josh Allen", "#1"],
-                    ["Allen Robinson", ""],
-                    ["Stefon Diggs", ""]
-                ],
-                [
-                    ["Tyreek Hill", ""],
-                    ["Patrick Mahomes", "#5"]
-                ]
-            ]
-        },
-
-        {
-            managers: ["Mike Herbst", "Michael Gravante"],
-            sides: [
-                [
-                    ["Aaron Rodgers", "#2"]
-                ],
-                [
-                    ["Hollywood Brown", ""]
-                ]
-            ]
-        },
-
-        {
-            managers: ["Nic Maiorano", "Mike Herbst"],
-            sides: [
-                [
-                    ["Aaron Rodgers", "#2"],
-                    ["Melvin Gordon III", ""]
-                ],
-                [
-                    ["Kenyan Drake", ""],
-                    ["Will Fuller", ""]
-                ]
-            ]
-        },
-
-        {
-            managers: ["Christian Abert", "Taz"],
-            sides: [
-                [
-                    ["Deshaun Watson", "#6"],
-                    ["Ezekiel Elliott", ""],
-                    ["Michael Gallup", ""]
-                ],
-                [
-                    ["Kyler Murray", "#3"],
-                    ["Odell Beckham Jr.", ""],
-                    ["Josh Jacobs", ""]
-                ]
-            ]
-        },
-
-        {
-            managers: ["Mike Herbst", "Ryan Herbst"],
-            sides: [
-                [
-                    ["Patrick Mahomes", "#5"]
-                ],
-                [
-                    ["Josh Allen", "#1"],
-                    ["Kenyan Drake", ""]
-                ]
-            ]
-        }
-    ],
-
-    2021: [
-        {
-            managers: ["Jonah Wheeler", "Tommy Herbst"],
-            sides: [
-                [
-                    ["Patrick Mahomes", "#6"]
-                ],
-                [
-                    ["Matthew Stafford", ""],
-                    ["Elijah Mitchell", ""]
-                ]
-            ]
-        },
-
-        {
-            managers: ["Nic Maiorano", "Mike Herbst"],
-            sides: [
-                [
-                    ["Aaron Rodgers", "#10"],
-                    ["Emmanuel Sanders", ""]
-                ],
-                [
-                    ["Jalen Hurts", ""]
-                ]
-            ]
-        },
-
-        {
-            managers: ["Tommy Herbst", "Ryan Herbst"],
-            sides: [
-                [
-                    ["Patrick Mahomes", "#6"]
-                ],
-                [
-                    ["Josh Allen", "#2"],
-                    ["Hollywood Brown", ""]
-                ]
-            ]
-        },
-
-        {
-            managers: ["Dylan", "Ryan Herbst"],
-            sides: [
-                [
-                    ["Josh Allen", "#2"],
-                    ["Mike Davis", ""],
-                    ["Zack Moss", ""]
-                ],
-                [
-                    ["Lamar Jackson", ""],
-                    ["Clyde Edwards-Helaire", ""]
-                ]
-            ]
-        },
-
-        {
-            managers: ["Joey", "Ryan Herbst"],
-            sides: [
-                [
-                    ["Cooper Kupp", "#1"],
-                    ["Miles Sanders", ""]
-                ],
-                [
-                    ["Saquon Barkley", ""]
-                ]
-            ]
-        }
-    ],
-
-    2022: [
-        {
-            managers: ["Jonah Wheeler", "Nic Maiorano"],
-            sides: [
-                [
-                    ["Christian McCaffrey", "#6"],
-                    ["Allen Robinson", ""]
-                ],
-                [
-                    ["Dalvin Cook", ""],
-                    ["Travis Etienne", ""],
-                    ["Chris Godwin Jr.", ""]
-                ]
-            ]
-        },
-
+    2018: [
         {
             managers: ["Ryan Herbst", "Michael Gravante"],
             sides: [
                 [
-                    ["Justin Jefferson", "#5"],
-                    ["Tony Pollard", ""]
+                    ["DeAndre Hopkins", "#8"]
                 ],
                 [
-                    ["Amon-Ra St. Brown", ""],
-                    ["D'Andre Swift", ""],
-                    ["Jamaal Williams", ""]
+                    ["Jarvis Landry", ""],
+                    ["Mark Ingram II", ""],
+                    ["Carlos Hyde", ""],
+                    ["Calvin Ridley", ""]
                 ]
             ]
         },
-
         {
-            managers: ["Julia Wheeler", "Christian Abert"],
+            managers: ["Christian Abert", "Ryan Herbst"],
             sides: [
                 [
-                    ["Josh Allen", "#2"],
-                    ["Brandon Aiyuk", ""],
-                    ["Rhamondre Stevenson", ""]
+                    ["Davante Adams", "#10"],
+                    ["Quincy Enunwa", ""],
+                    ["Randall Cobb", ""]
                 ],
                 [
-                    ["Dak Prescott", ""],
-                    ["Derek Carr", ""],
-                    ["Tee Higgins", ""],
-                    ["Hollywood Brown", ""]
+                    ["Jarvis Landry", ""],
+                    ["Jay Ajayi", ""],
+                    ["Carlos Hyde", ""],
+                    ["Corey Clement", ""]
                 ]
             ]
         }
     ],
 
-    2023: [
+    2017: [
         {
-            managers: ["Ryan Herbst", "Mike Herbst"],
+            managers: ["Ryan Herbst", "Nic Maiorano"],
             sides: [
                 [
-                    ["Amon-Ra St. Brown", "#8"]
+                    ["Todd Gurley", "#1"]
                 ],
                 [
-                    ["Garrett Wilson", ""],
-                    ["Javonte Williams", ""]
+                    ["Lamar Miller", ""],
+                    ["Devonta Freeman", ""],
+                    ["Delanie Walker", ""]
+                ]
+            ]
+        },
+        {
+            managers: ["Ryan Herbst", "Tommy Herbst"],
+            sides: [
+                [
+                    ["DeAndre Hopkins", "#6"],
+                    ["Carlos Hyde", ""]
+                ],
+                [
+                    ["Jay Ajayi", ""],
+                    ["Jarvis Landry", ""],
+                    ["Golden Tate", ""]
                 ]
             ]
         }
     ],
 
-    2024: [
+    2016: [
         {
-            managers: ["Logan", "Ryan Herbst"],
+            managers: ["Tommy Herbst", "Ryan Herbst"],
             sides: [
                 [
-                    ["Josh Allen", "#3"],
-                    ["Dalton Kincaid", ""]
+                    ["Jordy Nelson", "#9"],
+                    ["Amari Cooper", ""]
                 ],
                 [
-                    ["Dak Prescott", ""],
-                    ["Travis Kelce", ""],
-                    ["Amari Cooper", ""],
-                    ["Baker Mayfield", "#5"]
-                ]
-            ]
-        },
-
-        {
-            managers: ["Mike Darrow", "Ryan Herbst"],
-            sides: [
-                [
-                    ["Baker Mayfield", "#5"]
-                ],
-                [
-                    ["Patrick Mahomes", ""]
-                ]
-            ]
-        },
-
-        {
-            managers: ["Jonah Wheeler", "Michael Gravante"],
-            sides: [
-                [
-                    ["Jahmyr Gibbs", "#6"]
-                ],
-                [
-                    ["James Cook", ""],
-                    ["Calvin Ridley", ""],
-                    ["Ray Davis", ""]
-                ]
-            ]
-        },
-
-        {
-            managers: ["Nick Femano", "Christian Abert"],
-            sides: [
-                [
-                    ["Bijan Robinson", "#9"],
-                    ["Tyler Allgeier", ""],
-                    ["D.J. Moore", ""]
-                ],
-                [
-                    ["Tyreek Hill", ""],
-                    ["Michael Pittman Jr.", ""],
-                    ["Tyjae Spears", ""],
-                    ["Isaiah Likely", ""]
+                    ["Odell Beckham Jr.", ""],
+                    ["Michael Floyd", ""]
                 ]
             ]
         }
     ],
 
-    2025: [
+    2015: [
         {
-            managers: ["Jonah Wheeler", "Ryan Herbst"],
+            managers: ["Ryan Herbst", "Tommy Herbst"],
             sides: [
                 [
-                    ["Jaxon Smith-Njigba", "#7"],
-                    ["Davante Adams", ""],
-                    ["Drake London", ""]
+                    ["Julio Jones", "#3"],
+                    ["Kendall Wright", ""]
                 ],
                 [
-                    ["Justin Jefferson", ""],
-                    ["Christian Kirk", ""],
-                    ["Dylan Sampson", ""]
+                    ["Eddie Lacy", ""],
+                    ["Dez Bryant", ""]
+                ]
+            ]
+        }
+    ],
+
+    2014: [
+        {
+            managers: ["Ryan Herbst", "Nic Maiorano"],
+            sides: [
+                [
+                    ["Antonio Brown", "#1"],
+                    ["Jordan Cameron", ""]
+                ],
+                [
+                    ["Brandon Marshall", ""],
+                    ["Delanie Walker", ""]
+                ]
+            ]
+        }
+    ],
+
+    2013: [
+        {
+            managers: ["Ryan Herbst", "Nic Maiorano"],
+            sides: [
+                [
+                    ["Jamaal Charles", "#2"],
+                    ["Matt Forte", "#4"],
+                    ["Demaryius Thomas", "#6"],
+                    ["Brandon Marshall", "#10"]
+                ],
+                [
+                    ["Dez Bryant", ""],
+                    ["Calvin Johnson", ""],
+                    ["Adrian Peterson", ""],
+                    ["Victor Cruz", ""]
+                ]
+            ]
+        },
+        {
+            managers: ["Nic Maiorano", "Ryan Herbst"],
+            sides: [
+                [
+                    ["Demaryius Thomas", "#6"],
+                    ["Ray Rice", ""],
+                    ["Larry Fitzgerald", ""]
+                ],
+                [
+                    ["Victor Cruz", ""],
+                    ["Dez Bryant", ""],
+                    ["Marques Colston", ""]
+                ]
+            ]
+        },
+        {
+            managers: ["Nic Maiorano", "Christian Abert"],
+            sides: [
+                [
+                    ["A.J. Green", "#9"],
+                    ["Eddie Lacy", ""],
+                    ["Marshawn Lynch", ""]
+                ],
+                [
+                    ["Calvin Johnson", ""],
+                    ["Adrian Peterson", ""],
+                    ["Eric Decker", ""]
                 ]
             ]
         }
@@ -2034,10 +1808,6 @@ const tradeData = {
 
 };
 
-
-/* =========================================
-   UPDATE BLOCKBUSTER TRADES
-========================================= */
 
 function updateTrades() {
 
@@ -2052,32 +1822,64 @@ function updateTrades() {
 
     container.innerHTML = "";
 
-    if (trades.length === 0) {
+    if (!trades.length) {
 
         container.innerHTML = `
             <div class="no-trades">
-                No qualifying blockbuster trades are currently recorded
-                for this season.
+                No blockbuster trades have been recorded for this season.
             </div>
         `;
 
         return;
     }
 
-    trades.forEach((trade) => {
+    trades.forEach(trade => {
 
         const card =
             document.createElement("div");
 
         card.className = "trade-card";
 
-        let sideOne = "";
-        let sideTwo = "";
+        const managers =
+            document.createElement("div");
 
-        trade.sides[0].forEach(player => {
+        managers.className = "trade-managers";
 
-            sideOne += `
-                <div class="trade-player">
+        trade.managers.forEach(manager => {
+
+            const managerElement =
+                document.createElement("div");
+
+            managerElement.className = "trade-manager";
+            managerElement.textContent = manager;
+
+            managers.appendChild(managerElement);
+
+        });
+
+        card.appendChild(managers);
+
+        const sides =
+            document.createElement("div");
+
+        sides.className = "trade-sides";
+
+        trade.sides.forEach(side => {
+
+            const sideElement =
+                document.createElement("div");
+
+            sideElement.className = "trade-side";
+
+            side.forEach(player => {
+
+                const playerElement =
+                    document.createElement("div");
+
+                playerElement.className = "trade-player";
+
+                playerElement.innerHTML = `
+
                     <span class="trade-player-name">
                         ${player[0]}
                     </span>
@@ -2085,58 +1887,27 @@ function updateTrades() {
                     <span class="trade-player-rank">
                         ${player[1]}
                     </span>
-                </div>
-            `;
+
+                `;
+
+                sideElement.appendChild(playerElement);
+
+            });
+
+            sides.appendChild(sideElement);
 
         });
 
-        trade.sides[1].forEach(player => {
+        card.appendChild(sides);
 
-            sideTwo += `
-                <div class="trade-player">
-                    <span class="trade-player-name">
-                        ${player[0]}
-                    </span>
+        const date =
+            document.createElement("div");
 
-                    <span class="trade-player-rank">
-                        ${player[1]}
-                    </span>
-                </div>
-            `;
+        date.className = "trade-date";
+        date.textContent =
+            `${season} Season`;
 
-        });
-
-        card.innerHTML = `
-
-            <div class="trade-managers">
-
-                <div class="trade-manager">
-                    ${trade.managers[0]}
-                </div>
-
-                <div class="trade-manager">
-                    ${trade.managers[1]}
-                </div>
-
-            </div>
-
-            <div class="trade-sides">
-
-                <div class="trade-side">
-                    ${sideOne}
-                </div>
-
-                <div class="trade-side">
-                    ${sideTwo}
-                </div>
-
-            </div>
-
-            <div class="trade-date">
-                Trade date not provided in historical records
-            </div>
-
-        `;
+        card.appendChild(date);
 
         container.appendChild(card);
 
