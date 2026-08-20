@@ -330,7 +330,7 @@ nav a:hover {
 
 
 /* =========================================
-   DRAFTING EXCELLENCE
+   DIAMONDS IN THE ROUGH
 ========================================= */
 
 .season-selector {
@@ -849,21 +849,20 @@ footer {
 
 
 <!-- =========================================
-     4. DRAFTING EXCELLENCE
+     4. DIAMONDS IN THE ROUGH
 ========================================= -->
 
-<h2 class="section-title">Drafting Excellence</h2>
+<h2 class="section-title">Diamonds in the Rough</h2>
 
 <p class="section-intro">
-    Who found the best fantasy players, and where did they find them?
-    Each season's top fantasy performers can be matched against the
-    historical draft board to measure both player quality and draft value.
+    Who found the best fantasy players on the waiver wire?
+    Each season's top undrafted fantasy performers can be matched to the manager that first added them.
 </p>
 
 <div class="season-selector">
 
     <div style="color:#8f9aa4; font-size:13px;">
-        Top 5 fantasy players by season
+        Top 5 waiver wire adds by season (FLEX players only)
     </div>
 
     <select id="excellenceSeason" onchange="updateExcellence()">
@@ -2050,17 +2049,17 @@ function updateTrades() {
 
 
 /* =========================================
-   DRAFTING EXCELLENCE DATA
+   DIAMONDS IN THE ROUGH DATA
 ========================================= */
 
 const excellenceData = {
 
     2025: [
-        ["Christian McCaffrey", "William Darrow", "Round 2 · Pick 3", "images/christian-mccaffrey-2025.png"],
-        ["Puka Nacua", "Michael Gravante", "Round 2 · Pick 5", "images/puka-nacua-2025.png"],
-        ["Bijan Robinson", "Nic Maiorano", "Round 1 · Pick 2", "images/bijan-robinson-2025.png"],
-        ["Jahmyr Gibbs", "Julia Wheeler", "Round 1 · Pick 3", "images/jahmyr-gibbs-2025.png"],
-        ["Josh Allen", "Christian Abert", "Round 3 · Pick 4", "images/josh-allen-2025.png"]
+        ["Kenneth Gainwell", "William Darrow", "Ranked 26th Overall", "images/christian-mccaffrey-2025.png"],
+        ["Michael Wilson", "Julia Wheeler", "Ranked 27th Overall", "images/puka-nacua-2025.png"],
+        ["Wan'Dale Robinson", "Nic Maiorano", "Ranked 31st Overall", "images/bijan-robinson-2025.png"],
+        ["Rico Dowdle", "Jonah Wheeler", "Ranked 33rd Overall", "images/jahmyr-gibbs-2025.png"],
+        ["Jake Ferguson", "William Darrow", "Ranked 52nd Overall", "images/josh-allen-2025.png"]
     ],
 
     2024: [
@@ -2187,7 +2186,7 @@ function updateExcellence() {
             <div>
 
                 <div class="player-rank">
-                    Fantasy Rank #${index + 1}
+                    Waiver Add Rank #${index + 1}
                 </div>
 
                 <div class="player-heading">
