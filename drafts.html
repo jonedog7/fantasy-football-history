@@ -253,6 +253,22 @@ nav a:hover {
    BEST DRAFTS
 ========================================= */
 
+.best-drafts-selector {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.best-drafts-selector select {
+    background: #111820;
+    color: white;
+    border: 1px solid #27313b;
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 13px;
+}
+
 .best-drafts-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -264,6 +280,7 @@ nav a:hover {
     border: 1px solid #27313b;
     border-radius: 12px;
     padding: 23px;
+    min-height: 330px;
 }
 
 .best-draft-year {
@@ -340,6 +357,185 @@ nav a:hover {
 .best-draft-column-label-pick {
     grid-column: 3;
     text-align: center;
+}
+
+
+/* =========================================
+   BEST DRAFT TOP-25 CARD
+========================================= */
+
+.best-draft-top25 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.best-draft-top25-player {
+    display: grid;
+    grid-template-columns: 42px 72px 1fr;
+    align-items: center;
+    gap: 12px;
+    min-height: 65px;
+    padding: 7px 0;
+    border-bottom: 1px solid #222b34;
+}
+
+.best-draft-top25-player:last-child {
+    border-bottom: none;
+}
+
+.best-draft-top25-rank {
+    color: #68747e;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+}
+
+.best-draft-top25-headshot {
+    width: 62px;
+    height: 62px;
+    object-fit: cover;
+    object-position: center bottom;
+}
+
+.best-draft-top25-name {
+    font-size: 15px;
+    font-weight: 800;
+    line-height: 1.15;
+}
+
+.best-draft-top25-info {
+    color: #8f9aa4;
+    font-size: 11px;
+    margin-top: 4px;
+}
+
+
+/* =========================================
+   DRAFT VALUE CARD
+========================================= */
+
+.draft-value-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.draft-value-players {
+    border-top: 1px solid #27313b;
+    margin-top: 17px;
+    padding-top: 14px;
+}
+
+.draft-value-header {
+    display: grid;
+    grid-template-columns: 1fr 85px 75px 55px;
+    align-items: center;
+    margin-bottom: 7px;
+    font-size: 10px;
+    color: #68747e;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+}
+
+.draft-value-header span:not(:first-child) {
+    text-align: center;
+}
+
+.draft-value-row {
+    display: grid;
+    grid-template-columns: 1fr 85px 75px 55px;
+    align-items: center;
+    min-height: 53px;
+    border-bottom: 1px solid #222b34;
+    font-size: 12px;
+}
+
+.draft-value-row:last-child {
+    border-bottom: none;
+}
+
+.draft-value-player {
+    font-weight: 700;
+}
+
+.draft-value-pick,
+.draft-value-rank,
+.draft-value-delta {
+    text-align: center;
+    color: #aeb8c1;
+    font-size: 11px;
+}
+
+.draft-value-delta {
+    font-weight: 800;
+    color: #f5f5f5;
+}
+
+
+/* =========================================
+   DRAFT PICK MATRIX
+========================================= */
+
+.draft-matrix-wrapper {
+    background: #151c24;
+    border: 1px solid #27313b;
+    border-radius: 12px;
+    overflow-x: auto;
+}
+
+.draft-matrix {
+    width: 100%;
+    min-width: 1050px;
+    border-collapse: collapse;
+}
+
+.draft-matrix th,
+.draft-matrix td {
+    border-bottom: 1px solid #27313b;
+    border-right: 1px solid #222b34;
+    padding: 11px 8px;
+    text-align: center;
+    font-size: 11px;
+    white-space: nowrap;
+}
+
+.draft-matrix th {
+    background: #111820;
+    color: #8f9aa4;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: .7px;
+    font-weight: 700;
+}
+
+.draft-matrix th:first-child,
+.draft-matrix td:first-child {
+    position: sticky;
+    left: 0;
+    text-align: left;
+    min-width: 150px;
+    font-weight: 700;
+    background: #151c24;
+    z-index: 2;
+}
+
+.draft-matrix th:first-child {
+    background: #111820;
+}
+
+.draft-matrix td {
+    color: #aeb8c1;
+}
+
+.draft-matrix tr:last-child td {
+    border-bottom: none;
+}
+
+.draft-matrix th:last-child,
+.draft-matrix td:last-child {
+    border-right: none;
 }
 
 
@@ -606,10 +802,20 @@ footer {
         text-align: left;
     }
 
-    .season-selector {
+    .season-selector,
+    .best-drafts-selector {
         align-items: flex-start;
         gap: 15px;
         flex-direction: column;
+    }
+
+    .best-draft-top25-player {
+        grid-template-columns: 35px 62px 1fr;
+    }
+
+    .draft-value-header,
+    .draft-value-row {
+        grid-template-columns: 1fr 70px 65px 50px;
     }
 
 }
@@ -774,211 +980,352 @@ footer {
     how many top-25 fantasy players each manager selected.
 </p>
 
+<div class="best-drafts-selector">
+
+    <div style="color:#8f9aa4; font-size:13px;">
+        Top-25 players selected by season
+    </div>
+
+    <select id="bestDraftSeason" onchange="updateBestDraft()">
+        <option value="2025">2025 Draft</option>
+        <option value="2024">2024 Draft</option>
+        <option value="2023">2023 Draft</option>
+        <option value="2022">2022 Draft</option>
+        <option value="2021">2021 Draft</option>
+    </select>
+
+</div>
+
+
 <div class="best-drafts-grid">
 
-    <div class="best-draft-card">
-        <div class="best-draft-year">2025 Draft</div>
-        <div class="best-draft-manager">William Darrow</div>
-        <div class="best-draft-count">4 Top-25 players drafted</div>
+    <!-- LEFT: TOP 25 PLAYER CARD -->
 
-        <div class="best-draft-players">
+    <div class="best-draft-card best-draft-top25">
 
-            <div class="best-draft-column-labels">
-                <div></div>
-                <div class="best-draft-column-label-rank">Top 25 Rank</div>
-                <div class="best-draft-column-label-pick">Pick</div>
+        <div>
+
+            <div class="best-draft-year" id="bestDraftTop25Year">
+                2025 Draft
             </div>
 
-            <div class="best-draft-player">
-                <span class="best-draft-player-name">Christian McCaffrey</span>
-                <span class="best-draft-player-rank">1st</span>
-                <span class="best-draft-player-pick">2.03</span>
+            <div class="best-draft-manager" id="bestDraftTop25Manager">
+                William Darrow
             </div>
 
-            <div class="best-draft-player">
-                <span class="best-draft-player-name">De'Von Achance</span>
-                <span class="best-draft-player-rank">12th</span>
-                <span class="best-draft-player-pick">1.12</span>
+            <div class="best-draft-count" id="bestDraftTop25Count">
+                4 Top-25 players drafted
             </div>
 
-            <div class="best-draft-player">
-                <span class="best-draft-player-name">Caleb Williams</span>
-                <span class="best-draft-player-rank">13th</span>
-                <span class="best-draft-player-pick">11.10</span>
-            </div>
-
-            <div class="best-draft-player">
-                <span class="best-draft-player-name">George Pickens</span>
-                <span class="best-draft-player-rank">21st</span>
-                <span class="best-draft-player-pick">6.03</span>
-            </div>
+            <div class="best-draft-players" id="bestDraftTop25Players"></div>
 
         </div>
+
     </div>
 
 
-    <div class="best-draft-card">
-        <div class="best-draft-year">2024 Draft</div>
-        <div class="best-draft-manager">Jonah Wheeler</div>
-        <div class="best-draft-count">4 Top-25 players drafted</div>
+    <!-- RIGHT: DRAFT VALUE CARD -->
 
-        <div class="best-draft-players">
+    <div class="best-draft-card draft-value-card">
 
-            <div class="best-draft-column-labels">
-                <div></div>
-                <div class="best-draft-column-label-rank">Top 25 Rank</div>
-                <div class="best-draft-column-label-pick">Pick</div>
+        <div>
+
+            <div class="best-draft-year" id="draftValueYear">
+                2025 Draft
             </div>
 
-            <div class="best-draft-player">
-                <span class="best-draft-player-name">Ja'Marr Chase</span>
-                <span class="best-draft-player-rank">2nd</span>
-                <span class="best-draft-player-pick">1.08</span>
+            <div class="best-draft-manager" id="draftValueManager">
+                William Darrow
             </div>
 
-            <div class="best-draft-player">
-                <span class="best-draft-player-name">Joe Burrow</span>
-                <span class="best-draft-player-rank">4th</span>
-                <span class="best-draft-player-pick">5.08</span>
+            <div class="best-draft-count">
+                Draft Value
             </div>
 
-            <div class="best-draft-player">
-                <span class="best-draft-player-name">Derrick Henry</span>
-                <span class="best-draft-player-rank">10th</span>
-                <span class="best-draft-player-pick">2.05</span>
-            </div>
+            <div class="draft-value-players">
 
-            <div class="best-draft-player">
-                <span class="best-draft-player-name">Justin Herbert</span>
-                <span class="best-draft-player-rank">20th</span>
-                <span class="best-draft-player-pick">15.08</span>
+                <div class="draft-value-header">
+                    <span>Player</span>
+                    <span>Original Pick</span>
+                    <span>Final Rank</span>
+                    <span>+/−</span>
+                </div>
+
+                <div id="draftValuePlayers"></div>
+
             </div>
 
         </div>
-    </div>
 
-
-    <div class="best-draft-card">
-        <div class="best-draft-year">2023 Draft</div>
-        <div class="best-draft-manager">Tommy Herbst</div>
-        <div class="best-draft-count">3 Top-25 players drafted</div>
-
-        <div class="best-draft-players">
-
-            <div class="best-draft-column-labels">
-                <div></div>
-                <div class="best-draft-column-label-rank">Top 25 Rank</div>
-                <div class="best-draft-column-label-pick">Pick</div>
-            </div>
-
-            <div class="best-draft-player">
-                <span class="best-draft-player-name">Christian McCaffrey</span>
-                <span class="best-draft-player-rank">3rd</span>
-                <span class="best-draft-player-pick">1.03</span>
-            </div>
-
-            <div class="best-draft-player">
-                <span class="best-draft-player-name">A.J. Brown</span>
-                <span class="best-draft-player-rank">13th</span>
-                <span class="best-draft-player-pick">2.10</span>
-            </div>
-
-            <div class="best-draft-player">
-                <span class="best-draft-player-name">Mike Evans</span>
-                <span class="best-draft-player-rank">16th</span>
-                <span class="best-draft-player-pick">6.10</span>
-            </div>
-
-        </div>
-    </div>
-
-
-    <div class="best-draft-card">
-        <div class="best-draft-year">2022 Draft</div>
-        <div class="best-draft-manager">Mike Herbst</div>
-        <div class="best-draft-count">4 Top-25 players drafted</div>
-
-        <div class="best-draft-players">
-
-            <div class="best-draft-column-labels">
-                <div></div>
-                <div class="best-draft-column-label-rank">Top 25 Rank</div>
-                <div class="best-draft-column-label-pick">Pick</div>
-            </div>
-
-            <div class="best-draft-player">
-                <span class="best-draft-player-name">Austin Ekeler</span>
-                <span class="best-draft-player-rank">4th</span>
-                <span class="best-draft-player-pick">1.03</span>
-            </div>
-
-            <div class="best-draft-player">
-                <span class="best-draft-player-name">Joe Burrow</span>
-                <span class="best-draft-player-rank">7th</span>
-                <span class="best-draft-player-pick">7.03</span>
-            </div>
-
-            <div class="best-draft-player">
-                <span class="best-draft-player-name">Davante Adams</span>
-                <span class="best-draft-player-rank">9th</span>
-                <span class="best-draft-player-pick">2.08</span>
-            </div>
-
-            <div class="best-draft-player">
-                <span class="best-draft-player-name">Tom Brady</span>
-                <span class="best-draft-player-rank">25th</span>
-                <span class="best-draft-player-pick">11.03</span>
-            </div>
-
-        </div>
-    </div>
-
-
-    <div class="best-draft-card">
-        <div class="best-draft-year">2021 Draft</div>
-        <div class="best-draft-manager">Michael Gravante</div>
-        <div class="best-draft-count">4 Top-25 players drafted</div>
-
-        <div class="best-draft-players">
-
-            <div class="best-draft-column-labels">
-                <div></div>
-                <div class="best-draft-column-label-rank">Top 25 Rank</div>
-                <div class="best-draft-column-label-pick">Pick</div>
-            </div>
-
-            <div class="best-draft-player">
-                <span class="best-draft-player-name">Austin Ekeler</span>
-                <span class="best-draft-player-rank">8th</span>
-                <span class="best-draft-player-pick">2.05</span>
-            </div>
-
-            <div class="best-draft-player">
-                <span class="best-draft-player-name">Deebo Samuel Sr.</span>
-                <span class="best-draft-player-rank">9th</span>
-                <span class="best-draft-player-pick">9.06</span>
-            </div>
-
-            <div class="best-draft-player">
-                <span class="best-draft-player-name">Mark Andrews</span>
-                <span class="best-draft-player-rank">17th</span>
-                <span class="best-draft-player-pick">7.06</span>
-            </div>
-
-            <div class="best-draft-player">
-                <span class="best-draft-player-name">Kyler Murray</span>
-                <span class="best-draft-player-rank">19th</span>
-                <span class="best-draft-player-pick">4.05</span>
-            </div>
-
-        </div>
     </div>
 
 </div>
 
 
 <!-- =========================================
-     4. MANAGER DRAFTING PROFILES
+     4. DRAFT PICK MATRIX
+========================================= -->
+
+<h2 class="section-title">Draft Pick Matrix</h2>
+
+<p class="section-intro">
+    Every manager's draft position by season. Draft slots are shown by
+    overall pick number for each year's draft.
+</p>
+
+<div class="draft-matrix-wrapper">
+
+<table class="draft-matrix">
+
+<thead>
+
+<tr>
+    <th>Manager</th>
+    <th>2013</th>
+    <th>2014</th>
+    <th>2015</th>
+    <th>2016</th>
+    <th>2017</th>
+    <th>2018</th>
+    <th>2019</th>
+    <th>2020</th>
+    <th>2021</th>
+    <th>2022</th>
+    <th>2023</th>
+    <th>2024</th>
+    <th>2025</th>
+    <th>2026</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+    <td>Christian Abert</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+</tr>
+
+<tr>
+    <td>Ryan Herbst</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+</tr>
+
+<tr>
+    <td>Nic Maiorano</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+</tr>
+
+<tr>
+    <td>Bailey Martin</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+</tr>
+
+<tr>
+    <td>Jonah Wheeler</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+</tr>
+
+<tr>
+    <td>Tommy Herbst</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+</tr>
+
+<tr>
+    <td>Michael Gravante</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+</tr>
+
+<tr>
+    <td>Mike Herbst</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+</tr>
+
+<tr>
+    <td>William Darrow</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+</tr>
+
+<tr>
+    <td>Julia Wheeler</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+</tr>
+
+<tr>
+    <td>Mike Darrow</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+</tr>
+
+<tr>
+    <td>Nick Femano</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+
+<!-- =========================================
+     5. MANAGER DRAFTING PROFILES
 ========================================= -->
 
 <h2 class="section-title">Manager Drafting Profiles</h2>
@@ -1485,7 +1832,7 @@ footer {
 
 
 <!-- =========================================
-     5. DRAFT SLOT KINGS
+     6. DRAFT SLOT KINGS
 ========================================= -->
 
 <h2 class="section-title">Draft Slot Kings</h2>
@@ -1529,7 +1876,7 @@ footer {
 
 
 <!-- =========================================
-     6. DRAFT SLOT PERFORMANCE
+     7. DRAFT SLOT PERFORMANCE
 ========================================= -->
 
 <h2 class="section-title">Draft Slot Performance</h2>
@@ -1630,6 +1977,7 @@ footer {
 
 /* =========================================
    DRAFTING EXCELLENCE DATA
+   UNCHANGED
 ========================================= */
 
 const excellenceData = {
@@ -1807,10 +2155,333 @@ function updateExcellence() {
 
 
 /* =========================================
+   BEST DRAFTS DATA
+========================================= */
+
+const bestDraftData = {
+
+    2025: {
+        manager: "William Darrow",
+        count: "4 Top-25 players drafted",
+        players: [
+            {
+                name: "Christian McCaffrey",
+                rank: 1,
+                pick: "2.03",
+                image: "images/christian-mccaffrey-2025.png"
+            },
+            {
+                name: "De'Von Achane",
+                rank: 12,
+                pick: "1.12",
+                image: "images/devon-achane-2025.png"
+            },
+            {
+                name: "Caleb Williams",
+                rank: 13,
+                pick: "11.10",
+                image: "images/caleb-williams-2025.png"
+            },
+            {
+                name: "George Pickens",
+                rank: 21,
+                pick: "6.03",
+                image: "images/george-pickens-2025.png"
+            }
+        ]
+    },
+
+    2024: {
+        manager: "Jonah Wheeler",
+        count: "4 Top-25 players drafted",
+        players: [
+            {
+                name: "Ja'Marr Chase",
+                rank: 2,
+                pick: "1.08",
+                image: "images/jamarr-chase-2024.png"
+            },
+            {
+                name: "Joe Burrow",
+                rank: 4,
+                pick: "5.08",
+                image: "images/joe-burrow-2024.png"
+            },
+            {
+                name: "Derrick Henry",
+                rank: 10,
+                pick: "2.05",
+                image: "images/derrick-henry-2024.png"
+            },
+            {
+                name: "Justin Herbert",
+                rank: 20,
+                pick: "15.08",
+                image: "images/justin-herbert-2021.png"
+            }
+        ]
+    },
+
+    2023: {
+        manager: "Tommy Herbst",
+        count: "3 Top-25 players drafted",
+        players: [
+            {
+                name: "Christian McCaffrey",
+                rank: 3,
+                pick: "1.03",
+                image: "images/christian-mccaffrey-2025.png"
+            },
+            {
+                name: "A.J. Brown",
+                rank: 13,
+                pick: "2.10",
+                image: "images/aj-brown-2023.png"
+            },
+            {
+                name: "Mike Evans",
+                rank: 16,
+                pick: "6.10",
+                image: "images/mike-evans-2023.png"
+            }
+        ]
+    },
+
+    2022: {
+        manager: "Mike Herbst",
+        count: "4 Top-25 players drafted",
+        players: [
+            {
+                name: "Austin Ekeler",
+                rank: 4,
+                pick: "1.03",
+                image: "images/Austin-Ekeler-2023.png"
+            },
+            {
+                name: "Joe Burrow",
+                rank: 7,
+                pick: "7.03",
+                image: "images/joe-burrow-2024.png"
+            },
+            {
+                name: "Davante Adams",
+                rank: 9,
+                pick: "2.08",
+                image: "images/davante-adams-2022.png"
+            },
+            {
+                name: "Tom Brady",
+                rank: 25,
+                pick: "11.03",
+                image: "images/tom-brady-2021.png"
+            }
+        ]
+    },
+
+    2021: {
+        manager: "Michael Gravante",
+        count: "4 Top-25 players drafted",
+        players: [
+            {
+                name: "Austin Ekeler",
+                rank: 8,
+                pick: "2.05",
+                image: "images/Austin-Ekeler-2023.png"
+            },
+            {
+                name: "Deebo Samuel Sr.",
+                rank: 9,
+                pick: "9.06",
+                image: "images/deebo-samuel-2021.png"
+            },
+            {
+                name: "Mark Andrews",
+                rank: 17,
+                pick: "7.06",
+                image: "images/mark-andrews-2021.png"
+            },
+            {
+                name: "Kyler Murray",
+                rank: 19,
+                pick: "4.05",
+                image: "images/kyler-murray-2020.avif"
+            }
+        ]
+    }
+
+};
+
+
+/* =========================================
+   DRAFT PICK VALUE CALCULATION
+========================================= */
+
+function getOverallPick(pick) {
+
+    if (!pick || !pick.includes(".")) {
+        return null;
+    }
+
+    const parts = pick.split(".");
+
+    const round = parseInt(parts[0]);
+    const selection = parseInt(parts[1]);
+
+    if (isNaN(round) || isNaN(selection)) {
+        return null;
+    }
+
+    /*
+       All Best Draft seasons are from the 12-team era.
+       Overall pick = (round - 1) * 12 + selection.
+    */
+
+    return ((round - 1) * 12) + selection;
+}
+
+
+function getDraftValue(pick, rank) {
+
+    const overallPick = getOverallPick(pick);
+
+    if (overallPick === null) {
+        return "—";
+    }
+
+    return overallPick - rank;
+
+}
+
+
+/* =========================================
+   UPDATE BEST DRAFT
+========================================= */
+
+function updateBestDraft() {
+
+    const season =
+        document.getElementById("bestDraftSeason").value;
+
+    const data =
+        bestDraftData[season];
+
+    document.getElementById("bestDraftTop25Year").textContent =
+        season + " Draft";
+
+    document.getElementById("bestDraftTop25Manager").textContent =
+        data.manager;
+
+    document.getElementById("bestDraftTop25Count").textContent =
+        data.count;
+
+    document.getElementById("draftValueYear").textContent =
+        season + " Draft";
+
+    document.getElementById("draftValueManager").textContent =
+        data.manager;
+
+
+    const top25Container =
+        document.getElementById("bestDraftTop25Players");
+
+    top25Container.innerHTML = "";
+
+
+    data.players.forEach((player) => {
+
+        const row =
+            document.createElement("div");
+
+        row.className =
+            "best-draft-top25-player";
+
+        row.innerHTML = `
+
+            <div class="best-draft-top25-rank">
+                #${player.rank}
+            </div>
+
+            <img
+                class="best-draft-top25-headshot"
+                src="${player.image}"
+                alt="${player.name}"
+                onerror="this.style.visibility='hidden';"
+            >
+
+            <div>
+
+                <div class="best-draft-top25-name">
+                    ${player.name}
+                </div>
+
+                <div class="best-draft-top25-info">
+                    Finished #${player.rank} overall
+                </div>
+
+            </div>
+
+        `;
+
+        top25Container.appendChild(row);
+
+    });
+
+
+    const valueContainer =
+        document.getElementById("draftValuePlayers");
+
+    valueContainer.innerHTML = "";
+
+
+    data.players.forEach((player) => {
+
+        const value =
+            getDraftValue(player.pick, player.rank);
+
+        const displayValue =
+            value === "—"
+                ? "—"
+                : (value > 0 ? "+" + value : value);
+
+        const row =
+            document.createElement("div");
+
+        row.className =
+            "draft-value-row";
+
+        row.innerHTML = `
+
+            <span class="draft-value-player">
+                ${player.name}
+            </span>
+
+            <span class="draft-value-pick">
+                ${player.pick}
+            </span>
+
+            <span class="draft-value-rank">
+                #${player.rank}
+            </span>
+
+            <span class="draft-value-delta">
+                ${displayValue}
+            </span>
+
+        `;
+
+        valueContainer.appendChild(row);
+
+    });
+
+}
+
+
+/* =========================================
    INITIALIZE
 ========================================= */
 
 updateExcellence();
+updateBestDraft();
 
 </script>
 
