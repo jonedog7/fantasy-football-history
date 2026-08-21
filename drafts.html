@@ -283,7 +283,23 @@ nav a:hover {
     min-height: 330px;
 }
 
-.best-draft-year {
+.best-draft-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.best-draft-header-left {
+    min-width: 0;
+}
+
+.best-draft-header-right {
+    text-align: right;
+    flex-shrink: 0;
+}
+
+.best-draft-label {
     color: #68747e;
     text-transform: uppercase;
     letter-spacing: 1.5px;
@@ -297,178 +313,225 @@ nav a:hover {
     margin-top: 6px;
 }
 
-.best-draft-count {
-    color: #aeb8c1;
-    font-size: 13px;
-    margin-top: 4px;
+.best-draft-metric-label {
+    color: #68747e;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.best-draft-metric {
+    font-size: 24px;
+    font-weight: 800;
+    margin-top: 5px;
 }
 
 .best-draft-players {
     border-top: 1px solid #27313b;
     margin-top: 17px;
-    padding-top: 14px;
+    padding-top: 10px;
+}
+
+.best-draft-column-labels {
+    display: grid;
+    grid-template-columns: 62px 1fr 85px 75px 55px;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 4px;
+    font-size: 10px;
+    font-weight: 700;
+    color: #68747e;
+    text-transform: uppercase;
+    letter-spacing: .8px;
+}
+
+.best-draft-column-labels span:not(:first-child) {
+    text-align: center;
 }
 
 .best-draft-player {
     display: grid;
-    grid-template-columns: 1fr 100px 55px;
+    grid-template-columns: 62px 1fr 85px 75px 55px;
     align-items: center;
+    gap: 10px;
+    min-height: 63px;
     padding: 7px 0;
     border-bottom: 1px solid #222b34;
-    font-size: 13px;
 }
 
 .best-draft-player:last-child {
     border-bottom: none;
 }
 
-.best-draft-player-name {
-    font-weight: 700;
-}
-
-.best-draft-player-pick {
-    color: #aeb8c1;
-    font-size: 11px;
-    text-align: center;
-}
-
-.best-draft-player-rank {
-    color: #aeb8c1;
-    font-size: 11px;
-    text-align: center;
-}
-
-.best-draft-column-labels {
-    display: grid;
-    grid-template-columns: 1fr 100px 55px;
-    align-items: center;
-    margin-top: -34px;
-    margin-bottom: 7px;
-    font-size: 11px;
-    font-weight: 700;
-    color: #aeb8c1;
-}
-
-.best-draft-column-label-rank {
-    grid-column: 2;
-    text-align: center;
-}
-
-.best-draft-column-label-pick {
-    grid-column: 3;
-    text-align: center;
-}
-
-
-/* =========================================
-   BEST DRAFT TOP-25 CARD
-========================================= */
-
-.best-draft-top25 {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.best-draft-top25-player {
-    display: grid;
-    grid-template-columns: 42px 72px 1fr;
-    align-items: center;
-    gap: 12px;
-    min-height: 65px;
-    padding: 7px 0;
-    border-bottom: 1px solid #222b34;
-}
-
-.best-draft-top25-player:last-child {
-    border-bottom: none;
-}
-
-.best-draft-top25-rank {
-    color: #68747e;
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-weight: 700;
-}
-
-.best-draft-top25-headshot {
-    width: 62px;
-    height: 62px;
+.best-draft-headshot {
+    width: 56px;
+    height: 56px;
     object-fit: cover;
     object-position: center bottom;
 }
 
-.best-draft-top25-name {
-    font-size: 15px;
+.best-draft-player-name {
+    font-size: 14px;
     font-weight: 800;
     line-height: 1.15;
 }
 
-.best-draft-top25-info {
+.best-draft-player-info {
+    color: #68747e;
+    font-size: 10px;
+    margin-top: 3px;
+}
+
+.best-draft-player-pick,
+.best-draft-player-rank,
+.best-draft-player-delta {
+    text-align: center;
+    color: #aeb8c1;
+    font-size: 11px;
+}
+
+.best-draft-player-delta {
+    font-weight: 800;
+    color: #f5f5f5;
+}
+
+
+/* =========================================
+   BIGGEST HITS AND MISSES
+========================================= */
+
+.hits-misses-selector {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.hits-misses-selector select {
+    background: #111820;
+    color: white;
+    border: 1px solid #27313b;
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 13px;
+}
+
+.hits-misses-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.hits-misses-card {
+    background: #151c24;
+    border: 1px solid #27313b;
+    border-radius: 12px;
+    padding: 23px;
+    min-height: 430px;
+}
+
+.hits-misses-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.hits-misses-header-left {
+    min-width: 0;
+}
+
+.hits-misses-header-right {
+    text-align: right;
+    flex-shrink: 0;
+}
+
+.hits-misses-label {
+    color: #68747e;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.hits-misses-title {
+    font-size: 24px;
+    font-weight: 800;
+    margin-top: 6px;
+}
+
+.hits-misses-year {
     color: #8f9aa4;
     font-size: 11px;
     margin-top: 4px;
 }
 
-
-/* =========================================
-   DRAFT VALUE CARD
-========================================= */
-
-.draft-value-card {
-    display: flex;
-    flex-direction: column;
-}
-
-.draft-value-players {
+.hits-misses-players {
     border-top: 1px solid #27313b;
     margin-top: 17px;
-    padding-top: 14px;
+    padding-top: 10px;
 }
 
-.draft-value-header {
+.hits-misses-column-labels {
     display: grid;
-    grid-template-columns: 1fr 85px 75px 55px;
+    grid-template-columns: 62px 1fr 85px 75px 55px;
     align-items: center;
-    margin-bottom: 7px;
+    gap: 10px;
+    margin-bottom: 4px;
     font-size: 10px;
+    font-weight: 700;
     color: #68747e;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    font-weight: 700;
+    letter-spacing: .8px;
 }
 
-.draft-value-header span:not(:first-child) {
+.hits-misses-column-labels span:not(:first-child) {
     text-align: center;
 }
 
-.draft-value-row {
+.hits-misses-player {
     display: grid;
-    grid-template-columns: 1fr 85px 75px 55px;
+    grid-template-columns: 62px 1fr 85px 75px 55px;
     align-items: center;
-    min-height: 53px;
+    gap: 10px;
+    min-height: 67px;
+    padding: 7px 0;
     border-bottom: 1px solid #222b34;
-    font-size: 12px;
 }
 
-.draft-value-row:last-child {
+.hits-misses-player:last-child {
     border-bottom: none;
 }
 
-.draft-value-player {
-    font-weight: 700;
+.hits-misses-headshot {
+    width: 56px;
+    height: 56px;
+    object-fit: cover;
+    object-position: center bottom;
 }
 
-.draft-value-pick,
-.draft-value-rank,
-.draft-value-delta {
+.hits-misses-player-name {
+    font-size: 14px;
+    font-weight: 800;
+    line-height: 1.15;
+}
+
+.hits-misses-manager {
+    color: #8f9aa4;
+    font-size: 10px;
+    margin-top: 4px;
+}
+
+.hits-misses-pick,
+.hits-misses-rank,
+.hits-misses-delta {
     text-align: center;
     color: #aeb8c1;
     font-size: 11px;
 }
 
-.draft-value-delta {
+.hits-misses-delta {
     font-weight: 800;
     color: #f5f5f5;
 }
@@ -743,7 +806,8 @@ footer {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .best-drafts-grid {
+    .best-drafts-grid,
+    .hits-misses-grid {
         grid-template-columns: 1fr;
     }
 }
@@ -787,7 +851,8 @@ footer {
     .slot-grid,
     .manager-grid,
     .two-column,
-    .best-drafts-grid {
+    .best-drafts-grid,
+    .hits-misses-grid {
         grid-template-columns: 1fr;
     }
 
@@ -803,19 +868,35 @@ footer {
     }
 
     .season-selector,
-    .best-drafts-selector {
+    .best-drafts-selector,
+    .hits-misses-selector {
         align-items: flex-start;
         gap: 15px;
         flex-direction: column;
     }
 
-    .best-draft-top25-player {
-        grid-template-columns: 35px 62px 1fr;
+    .best-draft-header,
+    .hits-misses-header {
+        flex-direction: column;
     }
 
-    .draft-value-header,
-    .draft-value-row {
-        grid-template-columns: 1fr 70px 65px 50px;
+    .best-draft-header-right,
+    .hits-misses-header-right {
+        text-align: left;
+    }
+
+    .best-draft-column-labels,
+    .best-draft-player,
+    .hits-misses-column-labels,
+    .hits-misses-player {
+        grid-template-columns: 50px 1fr 65px 60px 45px;
+        gap: 6px;
+    }
+
+    .best-draft-headshot,
+    .hits-misses-headshot {
+        width: 48px;
+        height: 48px;
     }
 
 }
@@ -999,61 +1080,101 @@ footer {
 
 <div class="best-drafts-grid">
 
-    <!-- LEFT: TOP 25 PLAYER CARD -->
 
-    <div class="best-draft-card best-draft-top25">
+    <!-- LEFT: MOST TOP-25 SELECTIONS -->
 
-        <div>
+    <div class="best-draft-card">
 
-            <div class="best-draft-year" id="bestDraftTop25Year">
-                2025 Draft
+        <div class="best-draft-header">
+
+            <div class="best-draft-header-left">
+
+                <div class="best-draft-label">
+                    Most Top 25 Selections
+                </div>
+
+                <div class="best-draft-manager" id="bestDraftTop25Manager">
+                    William Darrow
+                </div>
+
             </div>
 
-            <div class="best-draft-manager" id="bestDraftTop25Manager">
-                William Darrow
+            <div class="best-draft-header-right">
+
+                <div class="best-draft-metric-label">
+                    Top 25 Ranked Picks
+                </div>
+
+                <div class="best-draft-metric" id="bestDraftTop25CountNumber">
+                    4
+                </div>
+
             </div>
 
-            <div class="best-draft-count" id="bestDraftTop25Count">
-                4 Top-25 players drafted
+        </div>
+
+
+        <div class="best-draft-players">
+
+            <div class="best-draft-column-labels">
+                <span></span>
+                <span>Player</span>
+                <span>Original Pick</span>
+                <span>Final Rank</span>
+                <span>+/-</span>
             </div>
 
-            <div class="best-draft-players" id="bestDraftTop25Players"></div>
+            <div id="bestDraftTop25Players"></div>
 
         </div>
 
     </div>
 
 
-    <!-- RIGHT: DRAFT VALUE CARD -->
+    <!-- RIGHT: HIGHEST NET +/- -->
 
-    <div class="best-draft-card draft-value-card">
+    <div class="best-draft-card">
 
-        <div>
+        <div class="best-draft-header">
 
-            <div class="best-draft-year" id="draftValueYear">
-                2025 Draft
-            </div>
+            <div class="best-draft-header-left">
 
-            <div class="best-draft-manager" id="draftValueManager">
-                William Darrow
-            </div>
-
-            <div class="best-draft-count">
-                Draft Value
-            </div>
-
-            <div class="draft-value-players">
-
-                <div class="draft-value-header">
-                    <span>Player</span>
-                    <span>Original Pick</span>
-                    <span>Final Rank</span>
-                    <span>+/−</span>
+                <div class="best-draft-label">
+                    Highest net +/-
                 </div>
 
-                <div id="draftValuePlayers"></div>
+                <div class="best-draft-manager" id="draftValueManager">
+                    William Darrow
+                </div>
 
             </div>
+
+            <div class="best-draft-header-right">
+
+                <div class="best-draft-metric-label">
+                    Net +/-
+                </div>
+
+                <div class="best-draft-metric" id="draftValueTotal">
+                    TBD
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="best-draft-players">
+
+            <div class="best-draft-column-labels">
+                <span></span>
+                <span>Player</span>
+                <span>Original Pick</span>
+                <span>Final Rank</span>
+                <span>+/-</span>
+            </div>
+
+            <div id="draftValuePlayers"></div>
 
         </div>
 
@@ -1063,7 +1184,125 @@ footer {
 
 
 <!-- =========================================
-     4. DRAFT PICK MATRIX
+     4. BIGGEST HITS AND MISSES
+========================================= -->
+
+<h2 class="section-title">Biggest Hits and Misses</h2>
+
+<p class="section-intro">
+    The biggest draft hits and misses of each season, measured by the
+    difference between where a player was selected and where they ultimately
+    finished. Each player is shown with the manager who made the pick.
+</p>
+
+<div class="hits-misses-selector">
+
+    <div style="color:#8f9aa4; font-size:13px;">
+        Biggest draft hits and busts by season
+    </div>
+
+    <select id="hitsMissesSeason" onchange="updateHitsMisses()">
+        <option value="2025">2025 Draft</option>
+        <option value="2024">2024 Draft</option>
+        <option value="2023">2023 Draft</option>
+        <option value="2022">2022 Draft</option>
+        <option value="2021">2021 Draft</option>
+    </select>
+
+</div>
+
+
+<div class="hits-misses-grid">
+
+
+    <!-- LEFT: BIGGEST HITS -->
+
+    <div class="hits-misses-card">
+
+        <div class="hits-misses-header">
+
+            <div class="hits-misses-header-left">
+
+                <div class="hits-misses-label">
+                    Biggest Hits
+                </div>
+
+                <div class="hits-misses-title">
+                    Biggest Draft Hits
+                </div>
+
+                <div class="hits-misses-year" id="hitsYear">
+                    2025 Draft
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="hits-misses-players">
+
+            <div class="hits-misses-column-labels">
+                <span></span>
+                <span>Player / Manager</span>
+                <span>Original Pick</span>
+                <span>Final Rank</span>
+                <span>+/-</span>
+            </div>
+
+            <div id="biggestHitsPlayers"></div>
+
+        </div>
+
+    </div>
+
+
+    <!-- RIGHT: BIGGEST BUSTS -->
+
+    <div class="hits-misses-card">
+
+        <div class="hits-misses-header">
+
+            <div class="hits-misses-header-left">
+
+                <div class="hits-misses-label">
+                    Biggest Busts
+                </div>
+
+                <div class="hits-misses-title">
+                    Biggest Draft Busts
+                </div>
+
+                <div class="hits-misses-year" id="bustsYear">
+                    2025 Draft
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="hits-misses-players">
+
+            <div class="hits-misses-column-labels">
+                <span></span>
+                <span>Player / Manager</span>
+                <span>Original Pick</span>
+                <span>Final Rank</span>
+                <span>+/-</span>
+            </div>
+
+            <div id="biggestBustsPlayers"></div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================
+     5. DRAFT PICK MATRIX
 ========================================= -->
 
 <h2 class="section-title">Draft Pick Matrix</h2>
@@ -1103,218 +1342,74 @@ footer {
 
 <tr>
     <td>Christian Abert</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
+    <td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td>
+    <td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td>
 </tr>
 
 <tr>
     <td>Ryan Herbst</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
+    <td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td>
+    <td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td>
 </tr>
 
 <tr>
     <td>Nic Maiorano</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
+    <td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td>
+    <td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td>
 </tr>
 
 <tr>
     <td>Bailey Martin</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
+    <td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td>
+    <td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td>
 </tr>
 
 <tr>
     <td>Jonah Wheeler</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
+    <td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td>
+    <td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td>
 </tr>
 
 <tr>
     <td>Tommy Herbst</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
+    <td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td>
+    <td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td>
 </tr>
 
 <tr>
     <td>Michael Gravante</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
+    <td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td>
+    <td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td>
 </tr>
 
 <tr>
     <td>Mike Herbst</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
+    <td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td>
+    <td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td>
 </tr>
 
 <tr>
     <td>William Darrow</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
+    <td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td>
+    <td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td>
 </tr>
 
 <tr>
     <td>Julia Wheeler</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
+    <td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td>
+    <td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td>
 </tr>
 
 <tr>
     <td>Mike Darrow</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
+    <td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td>
+    <td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td>
 </tr>
 
 <tr>
     <td>Nick Femano</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
-    <td>—</td>
+    <td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td>
+    <td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td>
 </tr>
 
 </tbody>
@@ -1325,7 +1420,7 @@ footer {
 
 
 <!-- =========================================
-     5. MANAGER DRAFTING PROFILES
+     6. MANAGER DRAFTING PROFILES
 ========================================= -->
 
 <h2 class="section-title">Manager Drafting Profiles</h2>
@@ -1343,37 +1438,12 @@ footer {
     <h3>Christian Abert <span class="manager-since">since 2013</span></h3>
 
     <div class="manager-stats">
-
-        <div class="mini-stat">
-            <strong>5.9</strong>
-            <span>Average Pick</span>
-        </div>
-
-        <div class="mini-stat">
-            <strong>10</strong>
-            <span>Top 10 Players</span>
-        </div>
-
-        <div class="mini-stat">
-            <strong>1</strong>
-            <span>Top 3 Picks</span>
-        </div>
-
-        <div class="mini-stat">
-            <strong>25</strong>
-            <span>Top 25 Players</span>
-        </div>
-
-        <div class="mini-stat">
-            <strong>8</strong>
-            <span>Bottom 3 Picks</span>
-        </div>
-
-        <div class="mini-stat">
-            <strong>2018</strong>
-            <span>Best Draft</span>
-        </div>
-
+        <div class="mini-stat"><strong>5.9</strong><span>Average Pick</span></div>
+        <div class="mini-stat"><strong>10</strong><span>Top 10 Players</span></div>
+        <div class="mini-stat"><strong>1</strong><span>Top 3 Picks</span></div>
+        <div class="mini-stat"><strong>25</strong><span>Top 25 Players</span></div>
+        <div class="mini-stat"><strong>8</strong><span>Bottom 3 Picks</span></div>
+        <div class="mini-stat"><strong>2018</strong><span>Best Draft</span></div>
     </div>
 </div>
 
@@ -1384,37 +1454,12 @@ footer {
     <h3>Ryan Herbst <span class="manager-since">since 2013</span></h3>
 
     <div class="manager-stats">
-
-        <div class="mini-stat">
-            <strong>4.9</strong>
-            <span>Average Pick</span>
-        </div>
-
-        <div class="mini-stat">
-            <strong>19</strong>
-            <span>Top 10 Players</span>
-        </div>
-
-        <div class="mini-stat">
-            <strong>5</strong>
-            <span>Top 3 Picks</span>
-        </div>
-
-        <div class="mini-stat">
-            <strong>33</strong>
-            <span>Top 25 Players</span>
-        </div>
-
-        <div class="mini-stat">
-            <strong>3</strong>
-            <span>Bottom 3 Picks</span>
-        </div>
-
-        <div class="mini-stat">
-            <strong>2018</strong>
-            <span>Best Draft</span>
-        </div>
-
+        <div class="mini-stat"><strong>4.9</strong><span>Average Pick</span></div>
+        <div class="mini-stat"><strong>19</strong><span>Top 10 Players</span></div>
+        <div class="mini-stat"><strong>5</strong><span>Top 3 Picks</span></div>
+        <div class="mini-stat"><strong>33</strong><span>Top 25 Players</span></div>
+        <div class="mini-stat"><strong>3</strong><span>Bottom 3 Picks</span></div>
+        <div class="mini-stat"><strong>2018</strong><span>Best Draft</span></div>
     </div>
 </div>
 
@@ -1425,37 +1470,12 @@ footer {
     <h3>Nic Maiorano <span class="manager-since">since 2013</span></h3>
 
     <div class="manager-stats">
-
-        <div class="mini-stat">
-            <strong>4.0</strong>
-            <span>Average Pick</span>
-        </div>
-
-        <div class="mini-stat">
-            <strong>18</strong>
-            <span>Top 10 Players</span>
-        </div>
-
-        <div class="mini-stat">
-            <strong>7</strong>
-            <span>Top 3 Picks</span>
-        </div>
-
-        <div class="mini-stat">
-            <strong>32</strong>
-            <span>Top 25 Players</span>
-        </div>
-
-        <div class="mini-stat">
-            <strong>5</strong>
-            <span>Bottom 3 Picks</span>
-        </div>
-
-        <div class="mini-stat">
-            <strong>2017</strong>
-            <span>Best Draft</span>
-        </div>
-
+        <div class="mini-stat"><strong>4.0</strong><span>Average Pick</span></div>
+        <div class="mini-stat"><strong>18</strong><span>Top 10 Players</span></div>
+        <div class="mini-stat"><strong>7</strong><span>Top 3 Picks</span></div>
+        <div class="mini-stat"><strong>32</strong><span>Top 25 Players</span></div>
+        <div class="mini-stat"><strong>5</strong><span>Bottom 3 Picks</span></div>
+        <div class="mini-stat"><strong>2017</strong><span>Best Draft</span></div>
     </div>
 </div>
 
@@ -1466,37 +1486,12 @@ footer {
     <h3>Bailey Martin <span class="manager-since">since 2013</span></h3>
 
     <div class="manager-stats">
-
-        <div class="mini-stat">
-            <strong>3.8</strong>
-            <span>Average Pick</span>
-        </div>
-
-        <div class="mini-stat">
-            <strong>7</strong>
-            <span>Top 10 Players</span>
-        </div>
-
-        <div class="mini-stat">
-            <strong>3</strong>
-            <span>Top 3 Picks</span>
-        </div>
-
-        <div class="mini-stat">
-            <strong>13</strong>
-            <span>Top 25 Players</span>
-        </div>
-
-        <div class="mini-stat">
-            <strong>3</strong>
-            <span>Bottom 3 Picks</span>
-        </div>
-
-        <div class="mini-stat">
-            <strong>2014</strong>
-            <span>Best Draft</span>
-        </div>
-
+        <div class="mini-stat"><strong>3.8</strong><span>Average Pick</span></div>
+        <div class="mini-stat"><strong>7</strong><span>Top 10 Players</span></div>
+        <div class="mini-stat"><strong>3</strong><span>Top 3 Picks</span></div>
+        <div class="mini-stat"><strong>13</strong><span>Top 25 Players</span></div>
+        <div class="mini-stat"><strong>3</strong><span>Bottom 3 Picks</span></div>
+        <div class="mini-stat"><strong>2014</strong><span>Best Draft</span></div>
     </div>
 </div>
 
@@ -1507,37 +1502,12 @@ footer {
     <h3>Jonah Wheeler <span class="manager-since">since 2014</span></h3>
 
     <div class="manager-stats">
-
-        <div class="mini-stat">
-            <strong>5.7</strong>
-            <span>Average Pick</span>
-        </div>
-
-        <div class="mini-stat">
-            <strong>9</strong>
-            <span>Top 10 Players</span>
-        </div>
-
-        <div class="mini-stat">
-            <strong>3</strong>
-            <span>Top 3 Picks</span>
-        </div>
-
-        <div class="mini-stat">
-            <strong>25</strong>
-            <span>Top 25 Players</span>
-        </div>
-
-        <div class="mini-stat">
-            <strong>5</strong>
-            <span>Bottom 3 Picks</span>
-        </div>
-
-        <div class="mini-stat">
-            <strong>2024</strong>
-            <span>Best Draft</span>
-        </div>
-
+        <div class="mini-stat"><strong>5.7</strong><span>Average Pick</span></div>
+        <div class="mini-stat"><strong>9</strong><span>Top 10 Players</span></div>
+        <div class="mini-stat"><strong>3</strong><span>Top 3 Picks</span></div>
+        <div class="mini-stat"><strong>25</strong><span>Top 25 Players</span></div>
+        <div class="mini-stat"><strong>5</strong><span>Bottom 3 Picks</span></div>
+        <div class="mini-stat"><strong>2024</strong><span>Best Draft</span></div>
     </div>
 </div>
 
@@ -1548,37 +1518,12 @@ footer {
     <h3>Tommy Herbst <span class="manager-since">since 2014</span></h3>
 
     <div class="manager-stats">
-
-        <div class="mini-stat">
-            <strong>4.7</strong>
-            <span>Average Pick</span>
-        </div>
-
-        <div class="mini-stat">
-            <strong>10</strong>
-            <span>Top 10 Players</span>
-        </div>
-
-        <div class="mini-stat">
-            <strong>6</strong>
-            <span>Top 3 Picks</span>
-        </div>
-
-        <div class="mini-stat">
-            <strong>27</strong>
-            <span>Top 25 Players</span>
-        </div>
-
-        <div class="mini-stat">
-            <strong>3</strong>
-            <span>Bottom 3 Picks</span>
-        </div>
-
-        <div class="mini-stat">
-            <strong>2023</strong>
-            <span>Best Draft</span>
-        </div>
-
+        <div class="mini-stat"><strong>4.7</strong><span>Average Pick</span></div>
+        <div class="mini-stat"><strong>10</strong><span>Top 10 Players</span></div>
+        <div class="mini-stat"><strong>6</strong><span>Top 3 Picks</span></div>
+        <div class="mini-stat"><strong>27</strong><span>Top 25 Players</span></div>
+        <div class="mini-stat"><strong>3</strong><span>Bottom 3 Picks</span></div>
+        <div class="mini-stat"><strong>2023</strong><span>Best Draft</span></div>
     </div>
 </div>
 
@@ -1589,37 +1534,12 @@ footer {
     <h3>Michael Gravante <span class="manager-since">since 2016</span></h3>
 
     <div class="manager-stats">
-
-        <div class="mini-stat">
-            <strong>6.7</strong>
-            <span>Average Pick</span>
-        </div>
-
-        <div class="mini-stat">
-            <strong>10</strong>
-            <span>Top 10 Players</span>
-        </div>
-
-        <div class="mini-stat">
-            <strong>1</strong>
-            <span>Top 3 Picks</span>
-        </div>
-
-        <div class="mini-stat">
-            <strong>26</strong>
-            <span>Top 25 Players</span>
-        </div>
-
-        <div class="mini-stat">
-            <strong>5</strong>
-            <span>Bottom 3 Picks</span>
-        </div>
-
-        <div class="mini-stat">
-            <strong>2021</strong>
-            <span>Best Draft</span>
-        </div>
-
+        <div class="mini-stat"><strong>6.7</strong><span>Average Pick</span></div>
+        <div class="mini-stat"><strong>10</strong><span>Top 10 Players</span></div>
+        <div class="mini-stat"><strong>1</strong><span>Top 3 Picks</span></div>
+        <div class="mini-stat"><strong>26</strong><span>Top 25 Players</span></div>
+        <div class="mini-stat"><strong>5</strong><span>Bottom 3 Picks</span></div>
+        <div class="mini-stat"><strong>2021</strong><span>Best Draft</span></div>
     </div>
 </div>
 
@@ -1630,37 +1550,12 @@ footer {
     <h3>Mike Herbst <span class="manager-since">since 2019</span></h3>
 
     <div class="manager-stats">
-
-        <div class="mini-stat">
-            <strong>4.7</strong>
-            <span>Average Pick</span>
-        </div>
-
-        <div class="mini-stat">
-            <strong>8</strong>
-            <span>Top 10 Players</span>
-        </div>
-
-        <div class="mini-stat">
-            <strong>3</strong>
-            <span>Top 3 Picks</span>
-        </div>
-
-        <div class="mini-stat">
-            <strong>16</strong>
-            <span>Top 25 Players</span>
-        </div>
-
-        <div class="mini-stat">
-            <strong>0</strong>
-            <span>Bottom 3 Picks</span>
-        </div>
-
-        <div class="mini-stat">
-            <strong>2020</strong>
-            <span>Best Draft</span>
-        </div>
-
+        <div class="mini-stat"><strong>4.7</strong><span>Average Pick</span></div>
+        <div class="mini-stat"><strong>8</strong><span>Top 10 Players</span></div>
+        <div class="mini-stat"><strong>3</strong><span>Top 3 Picks</span></div>
+        <div class="mini-stat"><strong>16</strong><span>Top 25 Players</span></div>
+        <div class="mini-stat"><strong>0</strong><span>Bottom 3 Picks</span></div>
+        <div class="mini-stat"><strong>2020</strong><span>Best Draft</span></div>
     </div>
 </div>
 
@@ -1671,37 +1566,12 @@ footer {
     <h3>William Darrow <span class="manager-since">since 2021</span></h3>
 
     <div class="manager-stats">
-
-        <div class="mini-stat">
-            <strong>6.6</strong>
-            <span>Average Pick</span>
-        </div>
-
-        <div class="mini-stat">
-            <strong>4</strong>
-            <span>Top 10 Players</span>
-        </div>
-
-        <div class="mini-stat">
-            <strong>0</strong>
-            <span>Top 3 Picks</span>
-        </div>
-
-        <div class="mini-stat">
-            <strong>11</strong>
-            <span>Top 25 Players</span>
-        </div>
-
-        <div class="mini-stat">
-            <strong>2</strong>
-            <span>Bottom 3 Picks</span>
-        </div>
-
-        <div class="mini-stat">
-            <strong>2025</strong>
-            <span>Best Draft</span>
-        </div>
-
+        <div class="mini-stat"><strong>6.6</strong><span>Average Pick</span></div>
+        <div class="mini-stat"><strong>4</strong><span>Top 10 Players</span></div>
+        <div class="mini-stat"><strong>0</strong><span>Top 3 Picks</span></div>
+        <div class="mini-stat"><strong>11</strong><span>Top 25 Players</span></div>
+        <div class="mini-stat"><strong>2</strong><span>Bottom 3 Picks</span></div>
+        <div class="mini-stat"><strong>2025</strong><span>Best Draft</span></div>
     </div>
 </div>
 
@@ -1712,37 +1582,12 @@ footer {
     <h3>Julia Wheeler <span class="manager-since">since 2022</span></h3>
 
     <div class="manager-stats">
-
-        <div class="mini-stat">
-            <strong>4.0</strong>
-            <span>Average Pick</span>
-        </div>
-
-        <div class="mini-stat">
-            <strong>2</strong>
-            <span>Top 10 Players</span>
-        </div>
-
-        <div class="mini-stat">
-            <strong>3</strong>
-            <span>Top 3 Picks</span>
-        </div>
-
-        <div class="mini-stat">
-            <strong>6</strong>
-            <span>Top 25 Players</span>
-        </div>
-
-        <div class="mini-stat">
-            <strong>1</strong>
-            <span>Bottom 3 Picks</span>
-        </div>
-
-        <div class="mini-stat">
-            <strong>2024</strong>
-            <span>Best Draft</span>
-        </div>
-
+        <div class="mini-stat"><strong>4.0</strong><span>Average Pick</span></div>
+        <div class="mini-stat"><strong>2</strong><span>Top 10 Players</span></div>
+        <div class="mini-stat"><strong>3</strong><span>Top 3 Picks</span></div>
+        <div class="mini-stat"><strong>6</strong><span>Top 25 Players</span></div>
+        <div class="mini-stat"><strong>1</strong><span>Bottom 3 Picks</span></div>
+        <div class="mini-stat"><strong>2024</strong><span>Best Draft</span></div>
     </div>
 </div>
 
@@ -1753,37 +1598,12 @@ footer {
     <h3>Mike Darrow <span class="manager-since">since 2023</span></h3>
 
     <div class="manager-stats">
-
-        <div class="mini-stat">
-            <strong>4.7</strong>
-            <span>Average Pick</span>
-        </div>
-
-        <div class="mini-stat">
-            <strong>2</strong>
-            <span>Top 10 Players</span>
-        </div>
-
-        <div class="mini-stat">
-            <strong>1</strong>
-            <span>Top 3 Picks</span>
-        </div>
-
-        <div class="mini-stat">
-            <strong>8</strong>
-            <span>Top 25 Players</span>
-        </div>
-
-        <div class="mini-stat">
-            <strong>0</strong>
-            <span>Bottom 3 Picks</span>
-        </div>
-
-        <div class="mini-stat">
-            <strong>2025</strong>
-            <span>Best Draft</span>
-        </div>
-
+        <div class="mini-stat"><strong>4.7</strong><span>Average Pick</span></div>
+        <div class="mini-stat"><strong>2</strong><span>Top 10 Players</span></div>
+        <div class="mini-stat"><strong>1</strong><span>Top 3 Picks</span></div>
+        <div class="mini-stat"><strong>8</strong><span>Top 25 Players</span></div>
+        <div class="mini-stat"><strong>0</strong><span>Bottom 3 Picks</span></div>
+        <div class="mini-stat"><strong>2025</strong><span>Best Draft</span></div>
     </div>
 </div>
 
@@ -1794,37 +1614,12 @@ footer {
     <h3>Nick Femano <span class="manager-since">since 2024</span></h3>
 
     <div class="manager-stats">
-
-        <div class="mini-stat">
-            <strong>7.0</strong>
-            <span>Average Pick</span>
-        </div>
-
-        <div class="mini-stat">
-            <strong>1</strong>
-            <span>Top 10 Players</span>
-        </div>
-
-        <div class="mini-stat">
-            <strong>1</strong>
-            <span>Top 3 Picks</span>
-        </div>
-
-        <div class="mini-stat">
-            <strong>3</strong>
-            <span>Top 25 Players</span>
-        </div>
-
-        <div class="mini-stat">
-            <strong>1</strong>
-            <span>Bottom 3 Picks</span>
-        </div>
-
-        <div class="mini-stat">
-            <strong>2025</strong>
-            <span>Best Draft</span>
-        </div>
-
+        <div class="mini-stat"><strong>7.0</strong><span>Average Pick</span></div>
+        <div class="mini-stat"><strong>1</strong><span>Top 10 Players</span></div>
+        <div class="mini-stat"><strong>1</strong><span>Top 3 Picks</span></div>
+        <div class="mini-stat"><strong>3</strong><span>Top 25 Players</span></div>
+        <div class="mini-stat"><strong>1</strong><span>Bottom 3 Picks</span></div>
+        <div class="mini-stat"><strong>2025</strong><span>Best Draft</span></div>
     </div>
 </div>
 
@@ -2313,6 +2108,100 @@ const bestDraftData = {
 
 
 /* =========================================
+   BIGGEST HITS AND MISSES DATA
+========================================= */
+
+const hitsMissesData = {
+
+    2025: {
+        hits: [
+            { name: "TBD", manager: "TBD", pick: "—", rank: "—", delta: "—", image: "" },
+            { name: "TBD", manager: "TBD", pick: "—", rank: "—", delta: "—", image: "" },
+            { name: "TBD", manager: "TBD", pick: "—", rank: "—", delta: "—", image: "" },
+            { name: "TBD", manager: "TBD", pick: "—", rank: "—", delta: "—", image: "" },
+            { name: "TBD", manager: "TBD", pick: "—", rank: "—", delta: "—", image: "" }
+        ],
+        busts: [
+            { name: "TBD", manager: "TBD", pick: "—", rank: "—", delta: "—", image: "" },
+            { name: "TBD", manager: "TBD", pick: "—", rank: "—", delta: "—", image: "" },
+            { name: "TBD", manager: "TBD", pick: "—", rank: "—", delta: "—", image: "" },
+            { name: "TBD", manager: "TBD", pick: "—", rank: "—", delta: "—", image: "" },
+            { name: "TBD", manager: "TBD", pick: "—", rank: "—", delta: "—", image: "" }
+        ]
+    },
+
+    2024: {
+        hits: [
+            { name: "TBD", manager: "TBD", pick: "—", rank: "—", delta: "—", image: "" },
+            { name: "TBD", manager: "TBD", pick: "—", rank: "—", delta: "—", image: "" },
+            { name: "TBD", manager: "TBD", pick: "—", rank: "—", delta: "—", image: "" },
+            { name: "TBD", manager: "TBD", pick: "—", rank: "—", delta: "—", image: "" },
+            { name: "TBD", manager: "TBD", pick: "—", rank: "—", delta: "—", image: "" }
+        ],
+        busts: [
+            { name: "TBD", manager: "TBD", pick: "—", rank: "—", delta: "—", image: "" },
+            { name: "TBD", manager: "TBD", pick: "—", rank: "—", delta: "—", image: "" },
+            { name: "TBD", manager: "TBD", pick: "—", rank: "—", delta: "—", image: "" },
+            { name: "TBD", manager: "TBD", pick: "—", rank: "—", delta: "—", image: "" },
+            { name: "TBD", manager: "TBD", pick: "—", rank: "—", delta: "—", image: "" }
+        ]
+    },
+
+    2023: {
+        hits: [
+            { name: "TBD", manager: "TBD", pick: "—", rank: "—", delta: "—", image: "" },
+            { name: "TBD", manager: "TBD", pick: "—", rank: "—", delta: "—", image: "" },
+            { name: "TBD", manager: "TBD", pick: "—", rank: "—", delta: "—", image: "" },
+            { name: "TBD", manager: "TBD", pick: "—", rank: "—", delta: "—", image: "" },
+            { name: "TBD", manager: "TBD", pick: "—", rank: "—", delta: "—", image: "" }
+        ],
+        busts: [
+            { name: "TBD", manager: "TBD", pick: "—", rank: "—", delta: "—", image: "" },
+            { name: "TBD", manager: "TBD", pick: "—", rank: "—", delta: "—", image: "" },
+            { name: "TBD", manager: "TBD", pick: "—", rank: "—", delta: "—", image: "" },
+            { name: "TBD", manager: "TBD", pick: "—", rank: "—", delta: "—", image: "" },
+            { name: "TBD", manager: "TBD", pick: "—", rank: "—", delta: "—", image: "" }
+        ]
+    },
+
+    2022: {
+        hits: [
+            { name: "TBD", manager: "TBD", pick: "—", rank: "—", delta: "—", image: "" },
+            { name: "TBD", manager: "TBD", pick: "—", rank: "—", delta: "—", image: "" },
+            { name: "TBD", manager: "TBD", pick: "—", rank: "—", delta: "—", image: "" },
+            { name: "TBD", manager: "TBD", pick: "—", rank: "—", delta: "—", image: "" },
+            { name: "TBD", manager: "TBD", pick: "—", rank: "—", delta: "—", image: "" }
+        ],
+        busts: [
+            { name: "TBD", manager: "TBD", pick: "—", rank: "—", delta: "—", image: "" },
+            { name: "TBD", manager: "TBD", pick: "—", rank: "—", delta: "—", image: "" },
+            { name: "TBD", manager: "TBD", pick: "—", rank: "—", delta: "—", image: "" },
+            { name: "TBD", manager: "TBD", pick: "—", rank: "—", delta: "—", image: "" },
+            { name: "TBD", manager: "TBD", pick: "—", rank: "—", delta: "—", image: "" }
+        ]
+    },
+
+    2021: {
+        hits: [
+            { name: "TBD", manager: "TBD", pick: "—", rank: "—", delta: "—", image: "" },
+            { name: "TBD", manager: "TBD", pick: "—", rank: "—", delta: "—", image: "" },
+            { name: "TBD", manager: "TBD", pick: "—", rank: "—", delta: "—", image: "" },
+            { name: "TBD", manager: "TBD", pick: "—", rank: "—", delta: "—", image: "" },
+            { name: "TBD", manager: "TBD", pick: "—", rank: "—", delta: "—", image: "" }
+        ],
+        busts: [
+            { name: "TBD", manager: "TBD", pick: "—", rank: "—", delta: "—", image: "" },
+            { name: "TBD", manager: "TBD", pick: "—", rank: "—", delta: "—", image: "" },
+            { name: "TBD", manager: "TBD", pick: "—", rank: "—", delta: "—", image: "" },
+            { name: "TBD", manager: "TBD", pick: "—", rank: "—", delta: "—", image: "" },
+            { name: "TBD", manager: "TBD", pick: "—", rank: "—", delta: "—", image: "" }
+        ]
+    }
+
+};
+
+
+/* =========================================
    DRAFT PICK VALUE CALCULATION
 ========================================= */
 
@@ -2330,11 +2219,6 @@ function getOverallPick(pick) {
     if (isNaN(round) || isNaN(selection)) {
         return null;
     }
-
-    /*
-       All Best Draft seasons are from the 12-team era.
-       Overall pick = (round - 1) * 12 + selection.
-    */
 
     return ((round - 1) * 12) + selection;
 }
@@ -2365,17 +2249,13 @@ function updateBestDraft() {
     const data =
         bestDraftData[season];
 
-    document.getElementById("bestDraftTop25Year").textContent =
-        season + " Draft";
 
     document.getElementById("bestDraftTop25Manager").textContent =
         data.manager;
 
-    document.getElementById("bestDraftTop25Count").textContent =
-        data.count;
+    document.getElementById("bestDraftTop25CountNumber").textContent =
+        data.players.length;
 
-    document.getElementById("draftValueYear").textContent =
-        season + " Draft";
 
     document.getElementById("draftValueManager").textContent =
         data.manager;
@@ -2387,22 +2267,37 @@ function updateBestDraft() {
     top25Container.innerHTML = "";
 
 
+    let totalValue = 0;
+    let hasValue = false;
+
+
     data.players.forEach((player) => {
+
+        const value =
+            getDraftValue(player.pick, player.rank);
+
+        if (value !== "—") {
+            totalValue += value;
+            hasValue = true;
+        }
+
+
+        const displayValue =
+            value === "—"
+                ? "—"
+                : (value > 0 ? "+" + value : value);
+
 
         const row =
             document.createElement("div");
 
         row.className =
-            "best-draft-top25-player";
+            "best-draft-player";
 
         row.innerHTML = `
 
-            <div class="best-draft-top25-rank">
-                #${player.rank}
-            </div>
-
             <img
-                class="best-draft-top25-headshot"
+                class="best-draft-headshot"
                 src="${player.image}"
                 alt="${player.name}"
                 onerror="this.style.visibility='hidden';"
@@ -2410,14 +2305,22 @@ function updateBestDraft() {
 
             <div>
 
-                <div class="best-draft-top25-name">
+                <div class="best-draft-player-name">
                     ${player.name}
                 </div>
 
-                <div class="best-draft-top25-info">
-                    Finished #${player.rank} overall
-                </div>
+            </div>
 
+            <div class="best-draft-player-pick">
+                ${player.pick}
+            </div>
+
+            <div class="best-draft-player-rank">
+                #${player.rank}
+            </div>
+
+            <div class="best-draft-player-delta">
+                ${displayValue}
             </div>
 
         `;
@@ -2443,33 +2346,180 @@ function updateBestDraft() {
                 ? "—"
                 : (value > 0 ? "+" + value : value);
 
+
         const row =
             document.createElement("div");
 
         row.className =
-            "draft-value-row";
+            "best-draft-player";
 
         row.innerHTML = `
 
-            <span class="draft-value-player">
-                ${player.name}
-            </span>
+            <img
+                class="best-draft-headshot"
+                src="${player.image}"
+                alt="${player.name}"
+                onerror="this.style.visibility='hidden';"
+            >
 
-            <span class="draft-value-pick">
+            <div>
+
+                <div class="best-draft-player-name">
+                    ${player.name}
+                </div>
+
+            </div>
+
+            <div class="best-draft-player-pick">
                 ${player.pick}
-            </span>
+            </div>
 
-            <span class="draft-value-rank">
+            <div class="best-draft-player-rank">
                 #${player.rank}
-            </span>
+            </div>
 
-            <span class="draft-value-delta">
+            <div class="best-draft-player-delta">
                 ${displayValue}
-            </span>
+            </div>
 
         `;
 
         valueContainer.appendChild(row);
+
+    });
+
+
+    document.getElementById("draftValueTotal").textContent =
+        hasValue ? (totalValue > 0 ? "+" + totalValue : totalValue) : "TBD";
+
+}
+
+
+/* =========================================
+   UPDATE BIGGEST HITS AND MISSES
+========================================= */
+
+function updateHitsMisses() {
+
+    const season =
+        document.getElementById("hitsMissesSeason").value;
+
+    const data =
+        hitsMissesData[season];
+
+
+    document.getElementById("hitsYear").textContent =
+        season + " Draft";
+
+    document.getElementById("bustsYear").textContent =
+        season + " Draft";
+
+
+    const hitsContainer =
+        document.getElementById("biggestHitsPlayers");
+
+    const bustsContainer =
+        document.getElementById("biggestBustsPlayers");
+
+
+    hitsContainer.innerHTML = "";
+    bustsContainer.innerHTML = "";
+
+
+    data.hits.forEach((player) => {
+
+        const row =
+            document.createElement("div");
+
+        row.className =
+            "hits-misses-player";
+
+
+        row.innerHTML = `
+
+            <img
+                class="hits-misses-headshot"
+                src="${player.image}"
+                alt="${player.name}"
+                onerror="this.style.visibility='hidden';"
+            >
+
+            <div>
+
+                <div class="hits-misses-player-name">
+                    ${player.name}
+                </div>
+
+                <div class="hits-misses-manager">
+                    ${player.manager}
+                </div>
+
+            </div>
+
+            <div class="hits-misses-pick">
+                ${player.pick}
+            </div>
+
+            <div class="hits-misses-rank">
+                ${player.rank === "—" ? "—" : "#" + player.rank}
+            </div>
+
+            <div class="hits-misses-delta">
+                ${player.delta}
+            </div>
+
+        `;
+
+        hitsContainer.appendChild(row);
+
+    });
+
+
+    data.busts.forEach((player) => {
+
+        const row =
+            document.createElement("div");
+
+        row.className =
+            "hits-misses-player";
+
+
+        row.innerHTML = `
+
+            <img
+                class="hits-misses-headshot"
+                src="${player.image}"
+                alt="${player.name}"
+                onerror="this.style.visibility='hidden';"
+            >
+
+            <div>
+
+                <div class="hits-misses-player-name">
+                    ${player.name}
+                </div>
+
+                <div class="hits-misses-manager">
+                    ${player.manager}
+                </div>
+
+            </div>
+
+            <div class="hits-misses-pick">
+                ${player.pick}
+            </div>
+
+            <div class="hits-misses-rank">
+                ${player.rank === "—" ? "—" : "#" + player.rank}
+            </div>
+
+            <div class="hits-misses-delta">
+                ${player.delta}
+            </div>
+
+        `;
+
+        bustsContainer.appendChild(row);
 
     });
 
@@ -2482,6 +2532,7 @@ function updateBestDraft() {
 
 updateExcellence();
 updateBestDraft();
+updateHitsMisses();
 
 </script>
 
