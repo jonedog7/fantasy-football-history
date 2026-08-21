@@ -255,6 +255,10 @@
             font-weight: 700;
         }
 
+        .team-name {
+            color: #aeb8c1;
+        }
+
         .record {
             color: #aeb8c1;
         }
@@ -461,6 +465,12 @@
                 padding: 9px 6px;
             }
 
+            /* Team column is desktop-only */
+            .standings th.team-column,
+            .standings td.team-column {
+                display: none;
+            }
+
             .record-matrix-section {
                 margin-top: 45px;
             }
@@ -593,19 +603,19 @@
                 <div class="section-label">Final Standings</div>
 
                 <table class="standings">
-                    <tr><th>Rank</th><th>Manager</th><th>Record</th></tr>
-                    <tr><td class="place">1</td><td class="manager">Jonah</td><td class="record">12-2</td></tr>
-                    <tr><td class="place">2</td><td class="manager">William</td><td class="record">10-4</td></tr>
-                    <tr><td class="place">3</td><td class="manager">Mike H.</td><td class="record">7-6-1</td></tr>
-                    <tr><td class="place">4</td><td class="manager">Logan</td><td class="record">7-7</td></tr>
-                    <tr><td class="place">5</td><td class="manager">Julia</td><td class="record">7-7</td></tr>
-                    <tr><td class="place">6</td><td class="manager">Nic</td><td class="record">7-7</td></tr>
-                    <tr><td class="place">7</td><td class="manager">Christian</td><td class="record">7-7</td></tr>
-                    <tr><td class="place">8</td><td class="manager">Michael G.</td><td class="record">7-7</td></tr>
-                    <tr><td class="place">9</td><td class="manager">Mike D.</td><td class="record">5-8-1</td></tr>
-                    <tr><td class="place">10</td><td class="manager">Ryan</td><td class="record">5-9</td></tr>
-                    <tr><td class="place">11</td><td class="manager">Nick</td><td class="record">5-9</td></tr>
-                    <tr><td class="place">12</td><td class="manager">Tommy</td><td class="record">4-8</td></tr>
+                    <tr><th>Rank</th><th>Manager</th><th class="team-column">Team</th><th>Record</th></tr>
+                    <tr><td class="place">1</td><td class="manager">Jonah</td><td class="team-column team-name">TBD</td><td class="record">12-2</td></tr>
+                    <tr><td class="place">2</td><td class="manager">William</td><td class="team-column team-name">TBD</td><td class="record">10-4</td></tr>
+                    <tr><td class="place">3</td><td class="manager">Mike H.</td><td class="team-column team-name">TBD</td><td class="record">7-6-1</td></tr>
+                    <tr><td class="place">4</td><td class="manager">Logan</td><td class="team-column team-name">TBD</td><td class="record">7-7</td></tr>
+                    <tr><td class="place">5</td><td class="manager">Julia</td><td class="team-column team-name">TBD</td><td class="record">7-7</td></tr>
+                    <tr><td class="place">6</td><td class="manager">Nic</td><td class="team-column team-name">TBD</td><td class="record">7-7</td></tr>
+                    <tr><td class="place">7</td><td class="manager">Christian</td><td class="team-column team-name">TBD</td><td class="record">7-7</td></tr>
+                    <tr><td class="place">8</td><td class="manager">Michael G.</td><td class="team-column team-name">TBD</td><td class="record">7-7</td></tr>
+                    <tr><td class="place">9</td><td class="manager">Mike D.</td><td class="team-column team-name">TBD</td><td class="record">5-8-1</td></tr>
+                    <tr><td class="place">10</td><td class="manager">Ryan</td><td class="team-column team-name">TBD</td><td class="record">5-9</td></tr>
+                    <tr><td class="place">11</td><td class="manager">Nick</td><td class="team-column team-name">TBD</td><td class="record">5-9</td></tr>
+                    <tr><td class="place">12</td><td class="manager">Tommy</td><td class="team-column team-name">TBD</td><td class="record">4-8</td></tr>
                 </table>
 
                 <div class="section-label">Playoffs</div>
@@ -644,19 +654,19 @@
                 <div class="section-label">Final Standings</div>
 
                 <table class="standings">
-                    <tr><th>Rank</th><th>Manager</th><th>Record</th></tr>
-                    <tr><td class="place">1</td><td class="manager">Jonah</td><td class="record">10-4</td></tr>
-                    <tr><td class="place">2</td><td class="manager">Julia</td><td class="record">9-5</td></tr>
-                    <tr><td class="place">3</td><td class="manager">Ryan</td><td class="record">9-5</td></tr>
-                    <tr><td class="place">4</td><td class="manager">Tommy</td><td class="record">8-6</td></tr>
-                    <tr><td class="place">5</td><td class="manager">Mike D.</td><td class="record">8-6</td></tr>
-                    <tr><td class="place">6</td><td class="manager">Christian</td><td class="record">7-7</td></tr>
-                    <tr><td class="place">7</td><td class="manager">Logan</td><td class="record">7-7</td></tr>
-                    <tr><td class="place">8</td><td class="manager">Mike H.</td><td class="record">6-8</td></tr>
-                    <tr><td class="place">9</td><td class="manager">Michael G.</td><td class="record">6-8</td></tr>
-                    <tr><td class="place">10</td><td class="manager">Nick</td><td class="record">6-8</td></tr>
-                    <tr><td class="place">11</td><td class="manager">Nic</td><td class="record">6-8</td></tr>
-                    <tr><td class="place">12</td><td class="manager">William</td><td class="record">2-12</td></tr>
+                    <tr><th>Rank</th><th>Manager</th><th class="team-column">Team</th><th>Record</th></tr>
+                    <tr><td class="place">1</td><td class="manager">Jonah</td><td class="team-column team-name">TBD</td><td class="record">10-4</td></tr>
+                    <tr><td class="place">2</td><td class="manager">Julia</td><td class="team-column team-name">TBD</td><td class="record">9-5</td></tr>
+                    <tr><td class="place">3</td><td class="manager">Ryan</td><td class="team-column team-name">TBD</td><td class="record">9-5</td></tr>
+                    <tr><td class="place">4</td><td class="manager">Tommy</td><td class="team-column team-name">TBD</td><td class="record">8-6</td></tr>
+                    <tr><td class="place">5</td><td class="manager">Mike D.</td><td class="team-column team-name">TBD</td><td class="record">8-6</td></tr>
+                    <tr><td class="place">6</td><td class="manager">Christian</td><td class="team-column team-name">TBD</td><td class="record">7-7</td></tr>
+                    <tr><td class="place">7</td><td class="manager">Logan</td><td class="team-column team-name">TBD</td><td class="record">7-7</td></tr>
+                    <tr><td class="place">8</td><td class="manager">Mike H.</td><td class="team-column team-name">TBD</td><td class="record">6-8</td></tr>
+                    <tr><td class="place">9</td><td class="manager">Michael G.</td><td class="team-column team-name">TBD</td><td class="record">6-8</td></tr>
+                    <tr><td class="place">10</td><td class="manager">Nick</td><td class="team-column team-name">TBD</td><td class="record">6-8</td></tr>
+                    <tr><td class="place">11</td><td class="manager">Nic</td><td class="team-column team-name">TBD</td><td class="record">6-8</td></tr>
+                    <tr><td class="place">12</td><td class="manager">William</td><td class="team-column team-name">TBD</td><td class="record">2-12</td></tr>
                 </table>
 
                 <div class="section-label">Playoffs</div>
@@ -695,19 +705,19 @@
                 <div class="section-label">Final Standings</div>
 
                 <table class="standings">
-                    <tr><th>Rank</th><th>Manager</th><th>Record</th></tr>
-                    <tr><td class="place">1</td><td class="manager">Tommy</td><td class="record">12-2</td></tr>
-                    <tr><td class="place">2</td><td class="manager">William</td><td class="record">10-4</td></tr>
-                    <tr><td class="place">3</td><td class="manager">Logan</td><td class="record">8-6</td></tr>
-                    <tr><td class="place">4</td><td class="manager">Nic</td><td class="record">8-6</td></tr>
-                    <tr><td class="place">5</td><td class="manager">Julia</td><td class="record">7-7</td></tr>
-                    <tr><td class="place">6</td><td class="manager">Ryan</td><td class="record">7-7</td></tr>
-                    <tr><td class="place">7</td><td class="manager">Mike D.</td><td class="record">6-8</td></tr>
-                    <tr><td class="place">8</td><td class="manager">Mike H.</td><td class="record">6-8</td></tr>
-                    <tr><td class="place">9</td><td class="manager">Christian</td><td class="record">6-8</td></tr>
-                    <tr><td class="place">10</td><td class="manager">Michael G.</td><td class="record">5-9</td></tr>
-                    <tr><td class="place">11</td><td class="manager">Jonah</td><td class="record">5-9</td></tr>
-                    <tr><td class="place">12</td><td class="manager">Taz</td><td class="record">4-10</td></tr>
+                    <tr><th>Rank</th><th>Manager</th><th class="team-column">Team</th><th>Record</th></tr>
+                    <tr><td class="place">1</td><td class="manager">Tommy</td><td class="team-column team-name">TBD</td><td class="record">12-2</td></tr>
+                    <tr><td class="place">2</td><td class="manager">William</td><td class="team-column team-name">TBD</td><td class="record">10-4</td></tr>
+                    <tr><td class="place">3</td><td class="manager">Logan</td><td class="team-column team-name">TBD</td><td class="record">8-6</td></tr>
+                    <tr><td class="place">4</td><td class="manager">Nic</td><td class="team-column team-name">TBD</td><td class="record">8-6</td></tr>
+                    <tr><td class="place">5</td><td class="manager">Julia</td><td class="team-column team-name">TBD</td><td class="record">7-7</td></tr>
+                    <tr><td class="place">6</td><td class="manager">Ryan</td><td class="team-column team-name">TBD</td><td class="record">7-7</td></tr>
+                    <tr><td class="place">7</td><td class="manager">Mike D.</td><td class="team-column team-name">TBD</td><td class="record">6-8</td></tr>
+                    <tr><td class="place">8</td><td class="manager">Mike H.</td><td class="team-column team-name">TBD</td><td class="record">6-8</td></tr>
+                    <tr><td class="place">9</td><td class="manager">Christian</td><td class="team-column team-name">TBD</td><td class="record">6-8</td></tr>
+                    <tr><td class="place">10</td><td class="manager">Michael G.</td><td class="team-column team-name">TBD</td><td class="record">5-9</td></tr>
+                    <tr><td class="place">11</td><td class="manager">Jonah</td><td class="team-column team-name">TBD</td><td class="record">5-9</td></tr>
+                    <tr><td class="place">12</td><td class="manager">Taz</td><td class="team-column team-name">TBD</td><td class="record">4-10</td></tr>
                 </table>
 
                 <div class="section-label">Playoffs</div>
@@ -746,17 +756,17 @@
                 <div class="section-label">Final Standings</div>
 
                 <table class="standings">
-                    <tr><th>Rank</th><th>Manager</th><th>Record</th></tr>
-                    <tr><td class="place">1</td><td class="manager">Julia</td><td class="record">10-4</td></tr>
-                    <tr><td class="place">2</td><td class="manager">Ryan</td><td class="record">9-5</td></tr>
-                    <tr><td class="place">3</td><td class="manager">Jonah</td><td class="record">9-5</td></tr>
-                    <tr><td class="place">4</td><td class="manager">Michael G.</td><td class="record">8-6</td></tr>
-                    <tr><td class="place">5</td><td class="manager">Nic</td><td class="record">7-7</td></tr>
-                    <tr><td class="place">6</td><td class="manager">Mike H.</td><td class="record">6-8</td></tr>
-                    <tr><td class="place">7</td><td class="manager">William</td><td class="record">6-8</td></tr>
-                    <tr><td class="place">8</td><td class="manager">Christian</td><td class="record">6-8</td></tr>
-                    <tr><td class="place">9</td><td class="manager">Tommy</td><td class="record">5-9</td></tr>
-                    <tr><td class="place">10</td><td class="manager">Joey</td><td class="record">4-10</td></tr>
+                    <tr><th>Rank</th><th>Manager</th><th class="team-column">Team</th><th>Record</th></tr>
+                    <tr><td class="place">1</td><td class="manager">Julia</td><td class="team-column team-name">TBD</td><td class="record">10-4</td></tr>
+                    <tr><td class="place">2</td><td class="manager">Ryan</td><td class="team-column team-name">TBD</td><td class="record">9-5</td></tr>
+                    <tr><td class="place">3</td><td class="manager">Jonah</td><td class="team-column team-name">TBD</td><td class="record">9-5</td></tr>
+                    <tr><td class="place">4</td><td class="manager">Michael G.</td><td class="team-column team-name">TBD</td><td class="record">8-6</td></tr>
+                    <tr><td class="place">5</td><td class="manager">Nic</td><td class="team-column team-name">TBD</td><td class="record">7-7</td></tr>
+                    <tr><td class="place">6</td><td class="manager">Mike H.</td><td class="team-column team-name">TBD</td><td class="record">6-8</td></tr>
+                    <tr><td class="place">7</td><td class="manager">William</td><td class="team-column team-name">TBD</td><td class="record">6-8</td></tr>
+                    <tr><td class="place">8</td><td class="manager">Christian</td><td class="team-column team-name">TBD</td><td class="record">6-8</td></tr>
+                    <tr><td class="place">9</td><td class="manager">Tommy</td><td class="team-column team-name">TBD</td><td class="record">5-9</td></tr>
+                    <tr><td class="place">10</td><td class="manager">Joey</td><td class="team-column team-name">TBD</td><td class="record">4-10</td></tr>
                 </table>
 
                 <div class="section-label">Playoffs</div>
@@ -795,17 +805,17 @@
                 <div class="section-label">Final Standings</div>
 
                 <table class="standings">
-                    <tr><th>Rank</th><th>Manager</th><th>Record</th></tr>
-                    <tr><td class="place">1</td><td class="manager">Joey</td><td class="record">9-5</td></tr>
-                    <tr><td class="place">2</td><td class="manager">Nic</td><td class="record">9-5</td></tr>
-                    <tr><td class="place">3</td><td class="manager">Michael G.</td><td class="record">9-5</td></tr>
-                    <tr><td class="place">4</td><td class="manager">Jonah</td><td class="record">7-7</td></tr>
-                    <tr><td class="place">5</td><td class="manager">Christian</td><td class="record">7-7</td></tr>
-                    <tr><td class="place">6</td><td class="manager">Dylan</td><td class="record">7-7</td></tr>
-                    <tr><td class="place">7</td><td class="manager">William</td><td class="record">6-8</td></tr>
-                    <tr><td class="place">8</td><td class="manager">Ryan</td><td class="record">6-8</td></tr>
-                    <tr><td class="place">9</td><td class="manager">Tommy</td><td class="record">5-9</td></tr>
-                    <tr><td class="place">10</td><td class="manager">Mike H.</td><td class="record">5-9</td></tr>
+                    <tr><th>Rank</th><th>Manager</th><th class="team-column">Team</th><th>Record</th></tr>
+                    <tr><td class="place">1</td><td class="manager">Joey</td><td class="team-column team-name">TBD</td><td class="record">9-5</td></tr>
+                    <tr><td class="place">2</td><td class="manager">Nic</td><td class="team-column team-name">TBD</td><td class="record">9-5</td></tr>
+                    <tr><td class="place">3</td><td class="manager">Michael G.</td><td class="team-column team-name">TBD</td><td class="record">9-5</td></tr>
+                    <tr><td class="place">4</td><td class="manager">Jonah</td><td class="team-column team-name">TBD</td><td class="record">7-7</td></tr>
+                    <tr><td class="place">5</td><td class="manager">Christian</td><td class="team-column team-name">TBD</td><td class="record">7-7</td></tr>
+                    <tr><td class="place">6</td><td class="manager">Dylan</td><td class="team-column team-name">TBD</td><td class="record">7-7</td></tr>
+                    <tr><td class="place">7</td><td class="manager">William</td><td class="team-column team-name">TBD</td><td class="record">6-8</td></tr>
+                    <tr><td class="place">8</td><td class="manager">Ryan</td><td class="team-column team-name">TBD</td><td class="record">6-8</td></tr>
+                    <tr><td class="place">9</td><td class="manager">Tommy</td><td class="team-column team-name">TBD</td><td class="record">5-9</td></tr>
+                    <tr><td class="place">10</td><td class="manager">Mike H.</td><td class="team-column team-name">TBD</td><td class="record">5-9</td></tr>
                 </table>
 
                 <div class="section-label">Playoffs</div>
@@ -844,15 +854,15 @@
                 <div class="section-label">Final Standings</div>
 
                 <table class="standings">
-                    <tr><th>Rank</th><th>Manager</th><th>Record</th></tr>
-                    <tr><td class="place">1</td><td class="manager">Mike H.</td><td class="record">10-3</td></tr>
-                    <tr><td class="place">2</td><td class="manager">Jonah</td><td class="record">9-4</td></tr>
-                    <tr><td class="place">3</td><td class="manager">Michael G.</td><td class="record">8-5</td></tr>
-                    <tr><td class="place">4</td><td class="manager">Taz</td><td class="record">6-6-1</td></tr>
-                    <tr><td class="place">5</td><td class="manager">Nic</td><td class="record">6-6-1</td></tr>
-                    <tr><td class="place">6</td><td class="manager">Christian</td><td class="record">5-8</td></tr>
-                    <tr><td class="place">7</td><td class="manager">Tommy</td><td class="record">4-9</td></tr>
-                    <tr><td class="place">8</td><td class="manager">Ryan</td><td class="record">3-10</td></tr>
+                    <tr><th>Rank</th><th>Manager</th><th class="team-column">Team</th><th>Record</th></tr>
+                    <tr><td class="place">1</td><td class="manager">Mike H.</td><td class="team-column team-name">TBD</td><td class="record">10-3</td></tr>
+                    <tr><td class="place">2</td><td class="manager">Jonah</td><td class="team-column team-name">TBD</td><td class="record">9-4</td></tr>
+                    <tr><td class="place">3</td><td class="manager">Michael G.</td><td class="team-column team-name">TBD</td><td class="record">8-5</td></tr>
+                    <tr><td class="place">4</td><td class="manager">Taz</td><td class="team-column team-name">TBD</td><td class="record">6-6-1</td></tr>
+                    <tr><td class="place">5</td><td class="manager">Nic</td><td class="team-column team-name">TBD</td><td class="record">6-6-1</td></tr>
+                    <tr><td class="place">6</td><td class="manager">Christian</td><td class="team-column team-name">TBD</td><td class="record">5-8</td></tr>
+                    <tr><td class="place">7</td><td class="manager">Tommy</td><td class="team-column team-name">TBD</td><td class="record">4-9</td></tr>
+                    <tr><td class="place">8</td><td class="manager">Ryan</td><td class="team-column team-name">TBD</td><td class="record">3-10</td></tr>
                 </table>
 
                 <div class="section-label">Playoffs</div>
@@ -891,15 +901,15 @@
                 <div class="section-label">Final Standings</div>
 
                 <table class="standings">
-                    <tr><th>Rank</th><th>Manager</th><th>Record</th></tr>
-                    <tr><td class="place">1</td><td class="manager">Tommy</td><td class="record">9-4</td></tr>
-                    <tr><td class="place">2</td><td class="manager">Mike H.</td><td class="record">8-5</td></tr>
-                    <tr><td class="place">3</td><td class="manager">Michael G.</td><td class="record">8-5</td></tr>
-                    <tr><td class="place">4</td><td class="manager">Ryan</td><td class="record">7-6</td></tr>
-                    <tr><td class="place">5</td><td class="manager">Nic</td><td class="record">6-7</td></tr>
-                    <tr><td class="place">6</td><td class="manager">Taz</td><td class="record">5-7-1</td></tr>
-                    <tr><td class="place">7</td><td class="manager">Jonah</td><td class="record">5-8</td></tr>
-                    <tr><td class="place">8</td><td class="manager">Christian</td><td class="record">3-9-1</td></tr>
+                    <tr><th>Rank</th><th>Manager</th><th class="team-column">Team</th><th>Record</th></tr>
+                    <tr><td class="place">1</td><td class="manager">Tommy</td><td class="team-column team-name">TBD</td><td class="record">9-4</td></tr>
+                    <tr><td class="place">2</td><td class="manager">Mike H.</td><td class="team-column team-name">TBD</td><td class="record">8-5</td></tr>
+                    <tr><td class="place">3</td><td class="manager">Michael G.</td><td class="team-column team-name">TBD</td><td class="record">8-5</td></tr>
+                    <tr><td class="place">4</td><td class="manager">Ryan</td><td class="team-column team-name">TBD</td><td class="record">7-6</td></tr>
+                    <tr><td class="place">5</td><td class="manager">Nic</td><td class="team-column team-name">TBD</td><td class="record">6-7</td></tr>
+                    <tr><td class="place">6</td><td class="manager">Taz</td><td class="team-column team-name">TBD</td><td class="record">5-7-1</td></tr>
+                    <tr><td class="place">7</td><td class="manager">Jonah</td><td class="team-column team-name">TBD</td><td class="record">5-8</td></tr>
+                    <tr><td class="place">8</td><td class="manager">Christian</td><td class="team-column team-name">TBD</td><td class="record">3-9-1</td></tr>
                 </table>
 
                 <div class="section-label">Playoffs</div>
@@ -938,15 +948,15 @@
                 <div class="section-label">Final Standings</div>
 
                 <table class="standings">
-                    <tr><th>Rank</th><th>Manager</th><th>Record</th></tr>
-                    <tr><td class="place">1</td><td class="manager">Tommy</td><td class="record">11-2</td></tr>
-                    <tr><td class="place">2</td><td class="manager">Christian</td><td class="record">8-5</td></tr>
-                    <tr><td class="place">3</td><td class="manager">Taz</td><td class="record">8-5</td></tr>
-                    <tr><td class="place">4</td><td class="manager">Nic</td><td class="record">7-6</td></tr>
-                    <tr><td class="place">5</td><td class="manager">Ryan</td><td class="record">6-7</td></tr>
-                    <tr><td class="place">6</td><td class="manager">Michael G.</td><td class="record">5-7-1</td></tr>
-                    <tr><td class="place">7</td><td class="manager">Jonah</td><td class="record">3-9-1</td></tr>
-                    <tr><td class="place">8</td><td class="manager">Bailey</td><td class="record">3-10</td></tr>
+                    <tr><th>Rank</th><th>Manager</th><th class="team-column">Team</th><th>Record</th></tr>
+                    <tr><td class="place">1</td><td class="manager">Tommy</td><td class="team-column team-name">TBD</td><td class="record">11-2</td></tr>
+                    <tr><td class="place">2</td><td class="manager">Christian</td><td class="team-column team-name">TBD</td><td class="record">8-5</td></tr>
+                    <tr><td class="place">3</td><td class="manager">Taz</td><td class="team-column team-name">TBD</td><td class="record">8-5</td></tr>
+                    <tr><td class="place">4</td><td class="manager">Nic</td><td class="team-column team-name">TBD</td><td class="record">7-6</td></tr>
+                    <tr><td class="place">5</td><td class="manager">Ryan</td><td class="team-column team-name">TBD</td><td class="record">6-7</td></tr>
+                    <tr><td class="place">6</td><td class="manager">Michael G.</td><td class="team-column team-name">TBD</td><td class="record">5-7-1</td></tr>
+                    <tr><td class="place">7</td><td class="manager">Jonah</td><td class="team-column team-name">TBD</td><td class="record">3-9-1</td></tr>
+                    <tr><td class="place">8</td><td class="manager">Bailey</td><td class="team-column team-name">TBD</td><td class="record">3-10</td></tr>
                 </table>
 
                 <div class="section-label">Playoffs</div>
@@ -985,15 +995,15 @@
                 <div class="section-label">Final Standings</div>
 
                 <table class="standings">
-                    <tr><th>Rank</th><th>Manager</th><th>Record</th></tr>
-                    <tr><td class="place">1</td><td class="manager">Christian</td><td class="record">9-4</td></tr>
-                    <tr><td class="place">2</td><td class="manager">Bailey</td><td class="record">9-4</td></tr>
-                    <tr><td class="place">3</td><td class="manager">Jonah</td><td class="record">7-6</td></tr>
-                    <tr><td class="place">4</td><td class="manager">Taz</td><td class="record">7-6</td></tr>
-                    <tr><td class="place">5</td><td class="manager">Ryan</td><td class="record">7-6</td></tr>
-                    <tr><td class="place">6</td><td class="manager">Nic</td><td class="record">6-8-1</td></tr>
-                    <tr><td class="place">7</td><td class="manager">Michael G.</td><td class="record">4-9</td></tr>
-                    <tr><td class="place">8</td><td class="manager">Tommy</td><td class="record">2-10-1</td></tr>
+                    <tr><th>Rank</th><th>Manager</th><th class="team-column">Team</th><th>Record</th></tr>
+                    <tr><td class="place">1</td><td class="manager">Christian</td><td class="team-column team-name">TBD</td><td class="record">9-4</td></tr>
+                    <tr><td class="place">2</td><td class="manager">Bailey</td><td class="team-column team-name">TBD</td><td class="record">9-4</td></tr>
+                    <tr><td class="place">3</td><td class="manager">Jonah</td><td class="team-column team-name">TBD</td><td class="record">7-6</td></tr>
+                    <tr><td class="place">4</td><td class="manager">Taz</td><td class="team-column team-name">TBD</td><td class="record">7-6</td></tr>
+                    <tr><td class="place">5</td><td class="manager">Ryan</td><td class="team-column team-name">TBD</td><td class="record">7-6</td></tr>
+                    <tr><td class="place">6</td><td class="manager">Nic</td><td class="team-column team-name">TBD</td><td class="record">6-8-1</td></tr>
+                    <tr><td class="place">7</td><td class="manager">Michael G.</td><td class="team-column team-name">TBD</td><td class="record">4-9</td></tr>
+                    <tr><td class="place">8</td><td class="manager">Tommy</td><td class="team-column team-name">TBD</td><td class="record">2-10-1</td></tr>
                 </table>
 
                 <div class="section-label">Playoffs</div>
@@ -1032,15 +1042,15 @@
                 <div class="section-label">Final Standings</div>
 
                 <table class="standings">
-                    <tr><th>Rank</th><th>Manager</th><th>Record</th></tr>
-                    <tr><td class="place">1</td><td class="manager">Jonah</td><td class="record">9-5</td></tr>
-                    <tr><td class="place">2</td><td class="manager">Taz</td><td class="record">9-5</td></tr>
-                    <tr><td class="place">3</td><td class="manager">Ryan</td><td class="record">9-5</td></tr>
-                    <tr><td class="place">4</td><td class="manager">Bailey</td><td class="record">7-7</td></tr>
-                    <tr><td class="place">5</td><td class="manager">Michael G.</td><td class="record">7-7</td></tr>
-                    <tr><td class="place">6</td><td class="manager">Tommy</td><td class="record">6-8</td></tr>
-                    <tr><td class="place">7</td><td class="manager">Nic</td><td class="record">5-9</td></tr>
-                    <tr><td class="place">8</td><td class="manager">Christian</td><td class="record">4-10</td></tr>
+                    <tr><th>Rank</th><th>Manager</th><th class="team-column">Team</th><th>Record</th></tr>
+                    <tr><td class="place">1</td><td class="manager">Jonah</td><td class="team-column team-name">TBD</td><td class="record">9-5</td></tr>
+                    <tr><td class="place">2</td><td class="manager">Taz</td><td class="team-column team-name">TBD</td><td class="record">9-5</td></tr>
+                    <tr><td class="place">3</td><td class="manager">Ryan</td><td class="team-column team-name">TBD</td><td class="record">9-5</td></tr>
+                    <tr><td class="place">4</td><td class="manager">Bailey</td><td class="team-column team-name">TBD</td><td class="record">7-7</td></tr>
+                    <tr><td class="place">5</td><td class="manager">Michael G.</td><td class="team-column team-name">TBD</td><td class="record">7-7</td></tr>
+                    <tr><td class="place">6</td><td class="manager">Tommy</td><td class="team-column team-name">TBD</td><td class="record">6-8</td></tr>
+                    <tr><td class="place">7</td><td class="manager">Nic</td><td class="team-column team-name">TBD</td><td class="record">5-9</td></tr>
+                    <tr><td class="place">8</td><td class="manager">Christian</td><td class="team-column team-name">TBD</td><td class="record">4-10</td></tr>
                 </table>
 
                 <div class="section-label">Playoffs</div>
@@ -1077,13 +1087,13 @@
                 <div class="section-label">Final Standings</div>
 
                 <table class="standings">
-                    <tr><th>Rank</th><th>Manager</th><th>Record</th></tr>
-                    <tr><td class="place">1</td><td class="manager">Christian</td><td class="record">9-6</td></tr>
-                    <tr><td class="place">2</td><td class="manager">Nic</td><td class="record">8-6-1</td></tr>
-                    <tr><td class="place">3</td><td class="manager">Bailey</td><td class="record">8-7</td></tr>
-                    <tr><td class="place">4</td><td class="manager">Ryan</td><td class="record">7-8</td></tr>
-                    <tr><td class="place">5</td><td class="manager">Tommy</td><td class="record">6-8-1</td></tr>
-                    <tr><td class="place">6</td><td class="manager">Jonah</td><td class="record">6-9</td></tr>
+                    <tr><th>Rank</th><th>Manager</th><th class="team-column">Team</th><th>Record</th></tr>
+                    <tr><td class="place">1</td><td class="manager">Christian</td><td class="team-column team-name">TBD</td><td class="record">9-6</td></tr>
+                    <tr><td class="place">2</td><td class="manager">Nic</td><td class="team-column team-name">TBD</td><td class="record">8-6-1</td></tr>
+                    <tr><td class="place">3</td><td class="manager">Bailey</td><td class="team-column team-name">TBD</td><td class="record">8-7</td></tr>
+                    <tr><td class="place">4</td><td class="manager">Ryan</td><td class="team-column team-name">TBD</td><td class="record">7-8</td></tr>
+                    <tr><td class="place">5</td><td class="manager">Tommy</td><td class="team-column team-name">TBD</td><td class="record">6-8-1</td></tr>
+                    <tr><td class="place">6</td><td class="manager">Jonah</td><td class="team-column team-name">TBD</td><td class="record">6-9</td></tr>
                 </table>
 
                 <div class="section-label">Playoffs</div>
@@ -1120,13 +1130,13 @@
                 <div class="section-label">Final Standings</div>
 
                 <table class="standings">
-                    <tr><th>Rank</th><th>Manager</th><th>Record</th></tr>
-                    <tr><td class="place">1</td><td class="manager">Nic</td><td class="record">10-3</td></tr>
-                    <tr><td class="place">2</td><td class="manager">Bailey</td><td class="record">8-5</td></tr>
-                    <tr><td class="place">3</td><td class="manager">Jonah</td><td class="record">8-5</td></tr>
-                    <tr><td class="place">4</td><td class="manager">Tommy</td><td class="record">6-7</td></tr>
-                    <tr><td class="place">5</td><td class="manager">Ryan</td><td class="record">4-9</td></tr>
-                    <tr><td class="place">6</td><td class="manager">Christian</td><td class="record">3-10</td></tr>
+                    <tr><th>Rank</th><th>Manager</th><th class="team-column">Team</th><th>Record</th></tr>
+                    <tr><td class="place">1</td><td class="manager">Nic</td><td class="team-column team-name">TBD</td><td class="record">10-3</td></tr>
+                    <tr><td class="place">2</td><td class="manager">Bailey</td><td class="team-column team-name">TBD</td><td class="record">8-5</td></tr>
+                    <tr><td class="place">3</td><td class="manager">Jonah</td><td class="team-column team-name">TBD</td><td class="record">8-5</td></tr>
+                    <tr><td class="place">4</td><td class="manager">Tommy</td><td class="team-column team-name">TBD</td><td class="record">6-7</td></tr>
+                    <tr><td class="place">5</td><td class="manager">Ryan</td><td class="team-column team-name">TBD</td><td class="record">4-9</td></tr>
+                    <tr><td class="place">6</td><td class="manager">Christian</td><td class="team-column team-name">TBD</td><td class="record">3-10</td></tr>
                 </table>
 
                 <div class="section-label">Playoffs</div>
@@ -1165,11 +1175,11 @@
                 <div class="section-label">Final Standings</div>
 
                 <table class="standings">
-                    <tr><th>Rank</th><th>Manager</th><th>Record</th></tr>
-                    <tr><td class="place">1</td><td class="manager">Ryan</td><td class="record">9-4</td></tr>
-                    <tr><td class="place">2</td><td class="manager">Christian</td><td class="record">7-6</td></tr>
-                    <tr><td class="place">3</td><td class="manager">Nic</td><td class="record">6-7</td></tr>
-                    <tr><td class="place">4</td><td class="manager">Bailey</td><td class="record">4-9</td></tr>
+                    <tr><th>Rank</th><th>Manager</th><th class="team-column">Team</th><th>Record</th></tr>
+                    <tr><td class="place">1</td><td class="manager">Ryan</td><td class="team-column team-name">TBD</td><td class="record">9-4</td></tr>
+                    <tr><td class="place">2</td><td class="manager">Christian</td><td class="team-column team-name">TBD</td><td class="record">7-6</td></tr>
+                    <tr><td class="place">3</td><td class="manager">Nic</td><td class="team-column team-name">TBD</td><td class="record">6-7</td></tr>
+                    <tr><td class="place">4</td><td class="manager">Bailey</td><td class="team-column team-name">TBD</td><td class="record">4-9</td></tr>
                 </table>
 
                 <div class="section-label">Playoffs</div>
@@ -1441,6 +1451,530 @@
                         <td class="inactive">—</td>
                         <td>6-8</td>
                         <td>5-9</td>
+                        <td class="current-record">TBD</td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+
+    <!-- POINTS FOR MATRIX -->
+
+    <section class="record-matrix-section">
+
+        <div class="record-matrix-header">
+            <div class="record-matrix-title">Points For</div>
+            <div class="record-matrix-subtitle">
+                Each manager's total points scored by year
+            </div>
+        </div>
+
+        <div class="record-matrix-wrapper">
+
+            <table class="record-matrix">
+
+                <thead>
+                    <tr>
+                        <th>Manager</th>
+                        <th>2013</th>
+                        <th>2014</th>
+                        <th>2015</th>
+                        <th>2016</th>
+                        <th>2017</th>
+                        <th>2018</th>
+                        <th>2019</th>
+                        <th>2020</th>
+                        <th>2021</th>
+                        <th>2022</th>
+                        <th>2023</th>
+                        <th>2024</th>
+                        <th>2025</th>
+                        <th>2026</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td>Christian</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td class="current-record">TBD</td>
+                    </tr>
+
+                    <tr>
+                        <td>Ryan</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td class="current-record">TBD</td>
+                    </tr>
+
+                    <tr>
+                        <td>Nic</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td class="current-record">TBD</td>
+                    </tr>
+
+                    <tr>
+                        <td>Bailey</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td class="inactive">—</td>
+                        <td class="inactive">—</td>
+                        <td class="inactive">—</td>
+                        <td class="inactive">—</td>
+                        <td class="inactive">—</td>
+                        <td class="inactive">—</td>
+                        <td class="inactive">—</td>
+                        <td class="current-record">TBD</td>
+                    </tr>
+
+                    <tr>
+                        <td>Jonah</td>
+                        <td class="inactive">—</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td class="current-record">TBD</td>
+                    </tr>
+
+                    <tr>
+                        <td>Tommy</td>
+                        <td class="inactive">—</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td class="current-record">TBD</td>
+                    </tr>
+
+                    <tr>
+                        <td>Michael G.</td>
+                        <td class="inactive">—</td>
+                        <td class="inactive">—</td>
+                        <td class="inactive">—</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td class="current-record">TBD</td>
+                    </tr>
+
+                    <tr>
+                        <td>Mike H.</td>
+                        <td class="inactive">—</td>
+                        <td class="inactive">—</td>
+                        <td class="inactive">—</td>
+                        <td class="inactive">—</td>
+                        <td class="inactive">—</td>
+                        <td class="inactive">—</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td class="current-record">TBD</td>
+                    </tr>
+
+                    <tr>
+                        <td>William</td>
+                        <td class="inactive">—</td>
+                        <td class="inactive">—</td>
+                        <td class="inactive">—</td>
+                        <td class="inactive">—</td>
+                        <td class="inactive">—</td>
+                        <td class="inactive">—</td>
+                        <td class="inactive">—</td>
+                        <td class="inactive">—</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td class="current-record">TBD</td>
+                    </tr>
+
+                    <tr>
+                        <td>Julia</td>
+                        <td class="inactive">—</td>
+                        <td class="inactive">—</td>
+                        <td class="inactive">—</td>
+                        <td class="inactive">—</td>
+                        <td class="inactive">—</td>
+                        <td class="inactive">—</td>
+                        <td class="inactive">—</td>
+                        <td class="inactive">—</td>
+                        <td class="inactive">—</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td class="current-record">TBD</td>
+                    </tr>
+
+                    <tr>
+                        <td>Mike D.</td>
+                        <td class="inactive">—</td>
+                        <td class="inactive">—</td>
+                        <td class="inactive">—</td>
+                        <td class="inactive">—</td>
+                        <td class="inactive">—</td>
+                        <td class="inactive">—</td>
+                        <td class="inactive">—</td>
+                        <td class="inactive">—</td>
+                        <td class="inactive">—</td>
+                        <td class="inactive">—</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td class="current-record">TBD</td>
+                    </tr>
+
+                    <tr>
+                        <td>Nick</td>
+                        <td class="inactive">—</td>
+                        <td class="inactive">—</td>
+                        <td class="inactive">—</td>
+                        <td class="inactive">—</td>
+                        <td class="inactive">—</td>
+                        <td class="inactive">—</td>
+                        <td class="inactive">—</td>
+                        <td class="inactive">—</td>
+                        <td class="inactive">—</td>
+                        <td class="inactive">—</td>
+                        <td class="inactive">—</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td class="current-record">TBD</td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+
+    <!-- POINTS AGAINST MATRIX -->
+
+    <section class="record-matrix-section">
+
+        <div class="record-matrix-header">
+            <div class="record-matrix-title">Points Against</div>
+            <div class="record-matrix-subtitle">
+                Each manager's total points allowed by year
+            </div>
+        </div>
+
+        <div class="record-matrix-wrapper">
+
+            <table class="record-matrix">
+
+                <thead>
+                    <tr>
+                        <th>Manager</th>
+                        <th>2013</th>
+                        <th>2014</th>
+                        <th>2015</th>
+                        <th>2016</th>
+                        <th>2017</th>
+                        <th>2018</th>
+                        <th>2019</th>
+                        <th>2020</th>
+                        <th>2021</th>
+                        <th>2022</th>
+                        <th>2023</th>
+                        <th>2024</th>
+                        <th>2025</th>
+                        <th>2026</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td>Christian</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td class="current-record">TBD</td>
+                    </tr>
+
+                    <tr>
+                        <td>Ryan</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td class="current-record">TBD</td>
+                    </tr>
+
+                    <tr>
+                        <td>Nic</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td class="current-record">TBD</td>
+                    </tr>
+
+                    <tr>
+                        <td>Bailey</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td class="inactive">—</td>
+                        <td class="inactive">—</td>
+                        <td class="inactive">—</td>
+                        <td class="inactive">—</td>
+                        <td class="inactive">—</td>
+                        <td class="inactive">—</td>
+                        <td class="inactive">—</td>
+                        <td class="current-record">TBD</td>
+                    </tr>
+
+                    <tr>
+                        <td>Jonah</td>
+                        <td class="inactive">—</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td class="current-record">TBD</td>
+                    </tr>
+
+                    <tr>
+                        <td>Tommy</td>
+                        <td class="inactive">—</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td class="current-record">TBD</td>
+                    </tr>
+
+                    <tr>
+                        <td>Michael G.</td>
+                        <td class="inactive">—</td>
+                        <td class="inactive">—</td>
+                        <td class="inactive">—</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td class="current-record">TBD</td>
+                    </tr>
+
+                    <tr>
+                        <td>Mike H.</td>
+                        <td class="inactive">—</td>
+                        <td class="inactive">—</td>
+                        <td class="inactive">—</td>
+                        <td class="inactive">—</td>
+                        <td class="inactive">—</td>
+                        <td class="inactive">—</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td class="current-record">TBD</td>
+                    </tr>
+
+                    <tr>
+                        <td>William</td>
+                        <td class="inactive">—</td>
+                        <td class="inactive">—</td>
+                        <td class="inactive">—</td>
+                        <td class="inactive">—</td>
+                        <td class="inactive">—</td>
+                        <td class="inactive">—</td>
+                        <td class="inactive">—</td>
+                        <td class="inactive">—</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td class="current-record">TBD</td>
+                    </tr>
+
+                    <tr>
+                        <td>Julia</td>
+                        <td class="inactive">—</td>
+                        <td class="inactive">—</td>
+                        <td class="inactive">—</td>
+                        <td class="inactive">—</td>
+                        <td class="inactive">—</td>
+                        <td class="inactive">—</td>
+                        <td class="inactive">—</td>
+                        <td class="inactive">—</td>
+                        <td class="inactive">—</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td class="current-record">TBD</td>
+                    </tr>
+
+                    <tr>
+                        <td>Mike D.</td>
+                        <td class="inactive">—</td>
+                        <td class="inactive">—</td>
+                        <td class="inactive">—</td>
+                        <td class="inactive">—</td>
+                        <td class="inactive">—</td>
+                        <td class="inactive">—</td>
+                        <td class="inactive">—</td>
+                        <td class="inactive">—</td>
+                        <td class="inactive">—</td>
+                        <td class="inactive">—</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
+                        <td class="current-record">TBD</td>
+                    </tr>
+
+                    <tr>
+                        <td>Nick</td>
+                        <td class="inactive">—</td>
+                        <td class="inactive">—</td>
+                        <td class="inactive">—</td>
+                        <td class="inactive">—</td>
+                        <td class="inactive">—</td>
+                        <td class="inactive">—</td>
+                        <td class="inactive">—</td>
+                        <td class="inactive">—</td>
+                        <td class="inactive">—</td>
+                        <td class="inactive">—</td>
+                        <td class="inactive">—</td>
+                        <td>TBD</td>
+                        <td>TBD</td>
                         <td class="current-record">TBD</td>
                     </tr>
 
