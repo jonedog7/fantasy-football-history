@@ -778,8 +778,6 @@ nav a:hover {
 }
 
 
-
-
 /* =========================================
    DRAFT HISTORY
 ========================================= */
@@ -824,6 +822,13 @@ nav a:hover {
     line-height: 1.2;
 }
 
+.draft-history-manager {
+    color: #8f9aa4;
+    font-size: 11px;
+    font-weight: 600;
+    margin-top: 2px;
+}
+
 .draft-history-picks {
     padding: 4px 0;
 }
@@ -853,6 +858,8 @@ nav a:hover {
     font-size: 13px;
     font-weight: 700;
     min-width: 0;
+    text-align: center;
+    padding-left: 10px;
 }
 
 .draft-history-overall {
@@ -1870,11 +1877,23 @@ footer {
 <div class="draft-history-selector">
 
     <div style="color:#8f9aa4; font-size:13px;">
-        Complete draft class by team
+        Complete draft class by team (picks prior to 2019 are not official by round)
     </div>
 
     <select id="draftHistorySeason" onchange="updateDraftHistory()">
         <option value="2025">2025 Draft</option>
+        <option value="2024">2024 Draft</option>
+        <option value="2023">2023 Draft</option>
+        <option value="2022">2022 Draft</option>
+        <option value="2021">2021 Draft</option>
+        <option value="2020">2020 Draft</option>
+        <option value="2019">2019 Draft</option>
+        <option value="2018">2018 Draft</option>
+        <option value="2017">2017 Draft</option>
+        <option value="2016">2016 Draft</option>
+        <option value="2015">2015 Draft</option>
+        <option value="2014">2014 Draft</option>
+        <option value="2013">2013 Draft</option>
     </select>
 
 </div>
@@ -2083,7 +2102,8 @@ function updateExcellence() {
 
 
 /* =========================================
-   BEST DRAFTS DATA
+   BEST DRAFTS — LEFT CARD DATA
+   MOST TOP-25 SELECTIONS
 ========================================= */
 
 const bestDraftData = {
@@ -2102,13 +2122,13 @@ const bestDraftData = {
                 name: "De'Von Achane",
                 rank: 12,
                 pick: "1.12",
-                image: "images/devon-achane-2025.png"
+                image: "images/devon-achane.png"
             },
             {
                 name: "Caleb Williams",
                 rank: 13,
                 pick: "11.10",
-                image: "images/caleb-williams-2025.png"
+                image: "images/caleb-williams.webp"
             },
             {
                 name: "George Pickens",
@@ -2116,33 +2136,6 @@ const bestDraftData = {
                 pick: "6.03",
                 image: "images/george-pickens-2025.png"
             }
-        ],
-        valuePlayers: [
-            {
-                name: "Christian McCaffrey",
-                rank: 1,
-                pick: "2.03",
-                image: "images/christian-mccaffrey-2025.png"
-            },
-            {
-                name: "De'Von Achane",
-                rank: 12,
-                pick: "1.12",
-                image: "images/devon-achane-2025.png"
-            },
-            {
-                name: "Caleb Williams",
-                rank: 13,
-                pick: "11.10",
-                image: "images/caleb-williams-2025.png"
-            },
-            {
-                name: "George Pickens",
-                rank: 21,
-                pick: "6.03",
-                image: "images/george-pickens-2025.png"
-            }
-        
         ]
     },
 
@@ -2166,7 +2159,7 @@ const bestDraftData = {
                 name: "Derrick Henry",
                 rank: 10,
                 pick: "2.05",
-                image: "images/derrick-henry-2024.png"
+                image: "images/derrick-henry-2024.png.webp"
             },
             {
                 name: "Justin Herbert",
@@ -2174,33 +2167,6 @@ const bestDraftData = {
                 pick: "15.08",
                 image: "images/justin-herbert-2021.png"
             }
-        ],
-        valuePlayers: [
-            {
-                name: "Ja'Marr Chase",
-                rank: 2,
-                pick: "1.08",
-                image: "images/jamarr-chase-2024.png"
-            },
-            {
-                name: "Joe Burrow",
-                rank: 4,
-                pick: "5.08",
-                image: "images/joe-burrow-2024.png"
-            },
-            {
-                name: "Derrick Henry",
-                rank: 10,
-                pick: "2.05",
-                image: "images/derrick-henry-2024.png"
-            },
-            {
-                name: "Justin Herbert",
-                rank: 20,
-                pick: "15.08",
-                image: "images/justin-herbert-2021.png"
-            }
-        
         ]
     },
 
@@ -2218,7 +2184,7 @@ const bestDraftData = {
                 name: "A.J. Brown",
                 rank: 13,
                 pick: "2.10",
-                image: "images/aj-brown-2023.png"
+                image: "images/aj-brown.png"
             },
             {
                 name: "Mike Evans",
@@ -2226,27 +2192,6 @@ const bestDraftData = {
                 pick: "6.10",
                 image: "images/mike-evans-2023.png"
             }
-        ],
-        valuePlayers: [
-            {
-                name: "Christian McCaffrey",
-                rank: 3,
-                pick: "1.03",
-                image: "images/christian-mccaffrey-2025.png"
-            },
-            {
-                name: "A.J. Brown",
-                rank: 13,
-                pick: "2.10",
-                image: "images/aj-brown-2023.png"
-            },
-            {
-                name: "Mike Evans",
-                rank: 16,
-                pick: "6.10",
-                image: "images/mike-evans-2023.png"
-            }
-        
         ]
     },
 
@@ -2270,7 +2215,7 @@ const bestDraftData = {
                 name: "Davante Adams",
                 rank: 9,
                 pick: "2.08",
-                image: "images/davante-adams-2022.png"
+                image: "images/davante-adams-2020.png"
             },
             {
                 name: "Tom Brady",
@@ -2278,33 +2223,6 @@ const bestDraftData = {
                 pick: "11.03",
                 image: "images/tom-brady-2021.png"
             }
-        ],
-        valuePlayers: [
-            {
-                name: "Austin Ekeler",
-                rank: 4,
-                pick: "1.03",
-                image: "images/Austin-Ekeler-2023.png"
-            },
-            {
-                name: "Joe Burrow",
-                rank: 7,
-                pick: "7.03",
-                image: "images/joe-burrow-2024.png"
-            },
-            {
-                name: "Davante Adams",
-                rank: 9,
-                pick: "2.08",
-                image: "images/davante-adams-2022.png"
-            },
-            {
-                name: "Tom Brady",
-                rank: 25,
-                pick: "11.03",
-                image: "images/tom-brady-2021.png"
-            }
-        
         ]
     },
 
@@ -2322,47 +2240,212 @@ const bestDraftData = {
                 name: "Deebo Samuel Sr.",
                 rank: 9,
                 pick: "9.06",
-                image: "images/deebo-samuel-2021.png"
+                image: "images/deebo-samuel.png.webp"
             },
             {
                 name: "Mark Andrews",
                 rank: 17,
                 pick: "7.06",
-                image: "images/mark-andrews-2021.png"
+                image: "images/mark-andrews.png.webp"
             },
             {
                 name: "Kyler Murray",
                 rank: 19,
                 pick: "4.05",
-                image: "images/kyler-murray-2020.avif"
+                image: "images/kyler-murray-2021.png"
             }
-        ],
-        valuePlayers: [
+        ]
+    }
+
+};
+
+
+/* =========================================
+   BEST DRAFTS — RIGHT CARD DATA
+   HIGHEST NET +/-
+   
+   EDIT THIS SECTION INDEPENDENTLY FROM
+   bestDraftData ABOVE.
+
+   The manager, total, player names, ranks,
+   picks, and headshots here are completely
+   separate from the left Top-25 card.
+========================================= */
+
+const draftValueData = {
+
+    2025: {
+        manager: "William Darrow",
+        total: "TBD",
+        players: [
+            {
+                name: "Christian McCaffrey",
+                rank: 1,
+                pick: "2.03",
+                delta: "TBD",
+                image: "images/christian-mccaffrey-2025.png"
+            },
+            {
+                name: "De'Von Achane",
+                rank: 12,
+                pick: "1.12",
+                delta: "TBD",
+                image: "images/devon-achane.png"
+            },
+            {
+                name: "Caleb Williams",
+                rank: 13,
+                pick: "11.10",
+                delta: "TBD",
+                image: "images/caleb-williams.webp"
+            },
+            {
+                name: "George Pickens",
+                rank: 21,
+                pick: "6.03",
+                delta: "TBD",
+                image: "images/george-pickens-2025.png"
+            }
+        ]
+    },
+
+    2024: {
+        manager: "Jonah Wheeler",
+        total: "TBD",
+        players: [
+            {
+                name: "Ja'Marr Chase",
+                rank: 2,
+                pick: "1.08",
+                delta: "TBD",
+                image: "images/jamarr-chase-2024.png"
+            },
+            {
+                name: "Joe Burrow",
+                rank: 4,
+                pick: "5.08",
+                delta: "TBD",
+                image: "images/joe-burrow-2024.png"
+            },
+            {
+                name: "Derrick Henry",
+                rank: 10,
+                pick: "2.05",
+                delta: "TBD",
+                image: "images/derrick-henry-2024.png.webp"
+            },
+            {
+                name: "Justin Herbert",
+                rank: 20,
+                pick: "15.08",
+                delta: "TBD",
+                image: "images/justin-herbert-2021.png"
+            }
+        ]
+    },
+
+    2023: {
+        manager: "Tommy Herbst",
+        total: "TBD",
+        players: [
+            {
+                name: "Christian McCaffrey",
+                rank: 3,
+                pick: "1.03",
+                delta: "TBD",
+                image: "images/christian-mccaffrey-2025.png"
+            },
+            {
+                name: "A.J. Brown",
+                rank: 13,
+                pick: "2.10",
+                delta: "TBD",
+                image: "images/aj-brown.png"
+            },
+            {
+                name: "Mike Evans",
+                rank: 16,
+                pick: "6.10",
+                delta: "TBD",
+                image: "images/mike-evans-2023.png"
+            },
+            {
+                name: "TBD",
+                rank: "TBD",
+                pick: "TBD",
+                delta: "TBD",
+                image: ""
+            }
+        ]
+    },
+
+    2022: {
+        manager: "Mike Herbst",
+        total: "TBD",
+        players: [
+            {
+                name: "Austin Ekeler",
+                rank: 4,
+                pick: "1.03",
+                delta: "TBD",
+                image: "images/Austin-Ekeler-2023.png"
+            },
+            {
+                name: "Joe Burrow",
+                rank: 7,
+                pick: "7.03",
+                delta: "TBD",
+                image: "images/joe-burrow-2024.png"
+            },
+            {
+                name: "Davante Adams",
+                rank: 9,
+                pick: "2.08",
+                delta: "TBD",
+                image: "images/davante-adams-2020.png"
+            },
+            {
+                name: "Tom Brady",
+                rank: 25,
+                pick: "11.03",
+                delta: "TBD",
+                image: "images/tom-brady-2021.png"
+            }
+        ]
+    },
+
+    2021: {
+        manager: "Michael Gravante",
+        total: "TBD",
+        players: [
             {
                 name: "Austin Ekeler",
                 rank: 8,
                 pick: "2.05",
+                delta: "TBD",
                 image: "images/Austin-Ekeler-2023.png"
             },
             {
                 name: "Deebo Samuel Sr.",
                 rank: 9,
                 pick: "9.06",
-                image: "images/deebo-samuel-2021.png"
+                delta: "TBD",
+                image: "images/deebo-samuel.png.webp"
             },
             {
                 name: "Mark Andrews",
                 rank: 17,
                 pick: "7.06",
-                image: "images/mark-andrews-2021.png"
+                delta: "TBD",
+                image: "images/mark-andrews.png.webp"
             },
             {
                 name: "Kyler Murray",
                 rank: 19,
                 pick: "4.05",
-                image: "images/kyler-murray-2020.avif"
+                delta: "TBD",
+                image: "images/kyler-murray-2021.png"
             }
-        
         ]
     }
 
@@ -2490,11 +2573,17 @@ function getDraftValue(pick, rank) {
 
     const overallPick = getOverallPick(pick);
 
-    if (overallPick === null) {
+    if (overallPick === null || rank === "TBD" || rank === "—") {
         return "—";
     }
 
-    return overallPick - rank;
+    const numericRank = parseInt(rank);
+
+    if (isNaN(numericRank)) {
+        return "—";
+    }
+
+    return overallPick - numericRank;
 
 }
 
@@ -2508,19 +2597,20 @@ function updateBestDraft() {
     const season =
         document.getElementById("bestDraftSeason").value;
 
-    const data =
+    const top25Data =
         bestDraftData[season];
 
+    const valueData =
+        draftValueData[season];
+
+
+    /* LEFT CARD — MOST TOP-25 SELECTIONS */
 
     document.getElementById("bestDraftTop25Manager").textContent =
-        data.manager;
+        top25Data.manager;
 
     document.getElementById("bestDraftTop25CountNumber").textContent =
-        data.players.length;
-
-
-    document.getElementById("draftValueManager").textContent =
-        data.manager;
+        top25Data.players.length;
 
 
     const top25Container =
@@ -2529,16 +2619,10 @@ function updateBestDraft() {
     top25Container.innerHTML = "";
 
 
-    data.players.forEach((player) => {
+    top25Data.players.forEach((player) => {
 
         const value =
             getDraftValue(player.pick, player.rank);
-
-        if (value !== "—") {
-            totalValue += value;
-            hasValue = true;
-        }
-
 
         const displayValue =
             value === "—"
@@ -2588,8 +2672,13 @@ function updateBestDraft() {
     });
 
 
-    let totalValue = 0;
-    let hasValue = false;
+    /* RIGHT CARD — HIGHEST NET +/- */
+
+    document.getElementById("draftValueManager").textContent =
+        valueData.manager;
+
+    document.getElementById("draftValueTotal").textContent =
+        valueData.total;
 
 
     const valueContainer =
@@ -2598,15 +2687,24 @@ function updateBestDraft() {
     valueContainer.innerHTML = "";
 
 
-    data.valuePlayers.forEach((player) => {
+    valueData.players.forEach((player) => {
 
-        const value =
-            getDraftValue(player.pick, player.rank);
+        let displayValue = player.delta;
 
-        const displayValue =
-            value === "—"
-                ? "—"
-                : (value > 0 ? "+" + value : value);
+        /*
+         * If delta is explicitly supplied as TBD, —, or any text,
+         * use it exactly as entered.
+         *
+         * If a numeric delta is supplied, automatically display
+         * the + sign for positive values.
+         */
+
+        if (typeof player.delta === "number") {
+            displayValue =
+                player.delta > 0
+                    ? "+" + player.delta
+                    : player.delta;
+        }
 
 
         const row =
@@ -2637,7 +2735,9 @@ function updateBestDraft() {
             </div>
 
             <div class="best-draft-player-rank">
-                #${player.rank}
+                ${player.rank === "TBD" || player.rank === "—"
+                    ? player.rank
+                    : "#" + player.rank}
             </div>
 
             <div class="best-draft-player-delta">
@@ -2649,10 +2749,6 @@ function updateBestDraft() {
         valueContainer.appendChild(row);
 
     });
-
-
-    document.getElementById("draftValueTotal").textContent =
-        hasValue ? (totalValue > 0 ? "+" + totalValue : totalValue) : "TBD";
 
 }
 
@@ -2793,8 +2889,9 @@ function updateHitsMisses() {
 ========================================= */
 
 const draftHistoryData = {
+
     2025: [
-        { team: "Deuce’s Uce’s", picks: [
+        { team: "Deuce’s Uce’s", manager: "Tommy", picks: [
             ["1st Round", "Ja'Marr Chase", 1],
             ["2nd Round", "Kyren Williams", 24],
             ["3rd Round", "Tyreek Hill", 25],
@@ -2811,68 +2908,344 @@ const draftHistoryData = {
             ["14th Round", "Chase McLaughlin", 168],
             ["15th Round", "Jaguars", 169]
         ]},
-        { team: "Maye the Force Be With You", picks: [
-            ["1st Round", "Bijan Robinson", 2], ["2nd Round", "Bucky Irving", 23], ["3rd Round", "Garrett Wilson", 26], ["4th Round", "Xavier Worthy", 47], ["5th Round", "T.J. Hockenson", 50], ["6th Round", "Travis Hunter", 71], ["7th Round", "Jaylen Warren", 74], ["8th Round", "Ricky Pearsall", 95], ["9th Round", "Joe Mixon", 98], ["10th Round", "Justin Fields", 119], ["11th Round", "Najee Harris", 122], ["12th Round", "Rashid Shaheed", 143], ["13th Round", "Drake Maye", 146], ["14th Round", "Tyler Allgeier", 167], ["15th Round", "Commanders", 170]
+
+        { team: "Maye the Force Be With You", manager: "Nic", picks: [
+            ["1st Round", "Bijan Robinson", 2],
+            ["2nd Round", "Bucky Irving", 23],
+            ["3rd Round", "Garrett Wilson", 26],
+            ["4th Round", "Xavier Worthy", 47],
+            ["5th Round", "T.J. Hockenson", 50],
+            ["6th Round", "Travis Hunter", 71],
+            ["7th Round", "Jaylen Warren", 74],
+            ["8th Round", "Ricky Pearsall", 95],
+            ["9th Round", "Joe Mixon", 98],
+            ["10th Round", "Justin Fields", 119],
+            ["11th Round", "Najee Harris", 122],
+            ["12th Round", "Rashid Shaheed", 143],
+            ["13th Round", "Drake Maye", 146],
+            ["14th Round", "Tyler Allgeier", 167],
+            ["15th Round", "Commanders", 170]
         ]},
-        { team: "The Summer I Turned Purdy", picks: [
-            ["1st Round", "Jahmyr Gibbs", 3], ["2nd Round", "Tee Higgins", 22], ["3rd Round", "Omarion Hampton", 27], ["4th Round", "TreVeyon Henderson", 46], ["5th Round", "DJ Moore", 51], ["6th Round", "Sam LaPorta", 70], ["7th Round", "Matthew Golden", 75], ["8th Round", "Michael Pittman Jr.", 94], ["9th Round", "Kaleb Johnson", 99], ["10th Round", "Brock Purdy", 118], ["11th Round", "Kyler Murray", 123], ["12th Round", "Cameron Dicker", 142], ["13th Round", "Steelers", 147], ["14th Round", "Cedric Tillman", 166], ["15th Round", "Scotty Miller", 171]
+
+        { team: "The Summer I Turned Purdy", manager: "Julia", picks: [
+            ["1st Round", "Jahmyr Gibbs", 3],
+            ["2nd Round", "Tee Higgins", 22],
+            ["3rd Round", "Omarion Hampton", 27],
+            ["4th Round", "TreVeyon Henderson", 46],
+            ["5th Round", "DJ Moore", 51],
+            ["6th Round", "Sam LaPorta", 70],
+            ["7th Round", "Matthew Golden", 75],
+            ["8th Round", "Michael Pittman Jr.", 94],
+            ["9th Round", "Kaleb Johnson", 99],
+            ["10th Round", "Brock Purdy", 118],
+            ["11th Round", "Kyler Murray", 123],
+            ["12th Round", "Cameron Dicker", 142],
+            ["13th Round", "Steelers", 147],
+            ["14th Round", "Cedric Tillman", 166],
+            ["15th Round", "Scotty Miller", 171]
         ]},
-        { team: "Premature Ejeantylation", picks: [
-            ["1st Round", "Ashton Jeanty", 4], ["2nd Round", "Brock Bowers", 21], ["3rd Round", "Josh Allen", 28], ["4th Round", "Jaylen Waddle", 45], ["5th Round", "DeVonta Smith", 52], ["6th Round", "Jacory Croskey-Merritt", 69], ["7th Round", "Emeka Egbuka", 76], ["8th Round", "Cooper Kupp", 93], ["9th Round", "J.K. Dobbins", 100], ["10th Round", "Brian Robinson", 117], ["11th Round", "Brandon Aiyuk", 124], ["12th Round", "Dalton Kincaid", 141], ["13th Round", "Raheem Mostert", 148], ["14th Round", "Dolphins", 165], ["15th Round", "Cam Little", 172]
+
+        { team: "Premature Ejeantylation", manager: "Christian", picks: [
+            ["1st Round", "Ashton Jeanty", 4],
+            ["2nd Round", "Brock Bowers", 21],
+            ["3rd Round", "Josh Allen", 28],
+            ["4th Round", "Jaylen Waddle", 45],
+            ["5th Round", "DeVonta Smith", 52],
+            ["6th Round", "Jacory Croskey-Merritt", 69],
+            ["7th Round", "Emeka Egbuka", 76],
+            ["8th Round", "Cooper Kupp", 93],
+            ["9th Round", "J.K. Dobbins", 100],
+            ["10th Round", "Brian Robinson", 117],
+            ["11th Round", "Brandon Aiyuk", 124],
+            ["12th Round", "Dalton Kincaid", 141],
+            ["13th Round", "Raheem Mostert", 148],
+            ["14th Round", "Dolphins", 165],
+            ["15th Round", "Cam Little", 172]
         ]},
-        { team: "Cee Deez Nutz", picks: [
-            ["1st Round", "CeeDee Lamb", 5], ["2nd Round", "Chase Brown", 20], ["3rd Round", "Trey McBride", 29], ["4th Round", "Chuba Hubbard", 44], ["5th Round", "Kenneth Walker III", 53], ["6th Round", "Patrick Mahomes", 68], ["7th Round", "Chris Godwin Jr.", 77], ["8th Round", "Baker Mayfield", 92], ["9th Round", "Jayden Reed", 101], ["10th Round", "Keenan Allen", 116], ["11th Round", "Brandon Aubrey", 125], ["12th Round", "Texans", 140], ["13th Round", "Xavier Legette", 149], ["14th Round", "Seahawks", 164], ["15th Round", "Jared Goff", 173]
+
+        { team: "Cee Deez Nutz", manager: "Mike D.", picks: [
+            ["1st Round", "CeeDee Lamb", 5],
+            ["2nd Round", "Chase Brown", 20],
+            ["3rd Round", "Trey McBride", 29],
+            ["4th Round", "Chuba Hubbard", 44],
+            ["5th Round", "Kenneth Walker III", 53],
+            ["6th Round", "Patrick Mahomes", 68],
+            ["7th Round", "Chris Godwin Jr.", 77],
+            ["8th Round", "Baker Mayfield", 92],
+            ["9th Round", "Jayden Reed", 101],
+            ["10th Round", "Keenan Allen", 116],
+            ["11th Round", "Brandon Aubrey", 125],
+            ["12th Round", "Texans", 140],
+            ["13th Round", "Xavier Legette", 149],
+            ["14th Round", "Seahawks", 164],
+            ["15th Round", "Jared Goff", 173]
         ]},
-        { team: "The King", picks: [
-            ["1st Round", "Malik Nabers", 6], ["2nd Round", "Drake London", 19], ["3rd Round", "Jaxon Smith-Njigba", 30], ["4th Round", "Davante Adams", 43], ["5th Round", "Breece Hall", 54], ["6th Round", "Zay Flowers", 67], ["7th Round", "Travis Etienne Jr.", 78], ["8th Round", "Tank Bigsby", 91], ["9th Round", "Braelon Allen", 102], ["10th Round", "Russell Wilson", 115], ["11th Round", "Elijah Arroyo", 126], ["12th Round", "Giants", 139], ["13th Round", "Jaxson Dart", 150], ["14th Round", "Brenton Strange", 163], ["15th Round", "Graham Gano", 174]
+
+        { team: "The King", manager: "Ryan", picks: [
+            ["1st Round", "Malik Nabers", 6],
+            ["2nd Round", "Drake London", 19],
+            ["3rd Round", "Jaxon Smith-Njigba", 30],
+            ["4th Round", "Davante Adams", 43],
+            ["5th Round", "Breece Hall", 54],
+            ["6th Round", "Zay Flowers", 67],
+            ["7th Round", "Travis Etienne Jr.", 78],
+            ["8th Round", "Tank Bigsby", 91],
+            ["9th Round", "Braelon Allen", 102],
+            ["10th Round", "Russell Wilson", 115],
+            ["11th Round", "Elijah Arroyo", 126],
+            ["12th Round", "Giants", 139],
+            ["13th Round", "Jaxson Dart", 150],
+            ["14th Round", "Brenton Strange", 163],
+            ["15th Round", "Graham Gano", 174]
         ]},
-        { team: "CinnAmon Toast Crunch", picks: [
-            ["1st Round", "Justin Jefferson", 7], ["2nd Round", "Josh Jacobs", 18], ["3rd Round", "Lamar Jackson", 31], ["4th Round", "Alvin Kamara", 42], ["5th Round", "Courtland Sutton", 55], ["6th Round", "David Montgomery", 66], ["7th Round", "Travis Kelce", 79], ["8th Round", "Khalil Shakir", 90], ["9th Round", "Javonte Williams", 103], ["10th Round", "Austin Ekeler", 114], ["11th Round", "Dylan Sampson", 127], ["12th Round", "Colston Loveland", 138], ["13th Round", "Christian Kirk", 151], ["14th Round", "Harrison Butker", 162], ["15th Round", "49ers", 175]
+
+        { team: "CinnAmon Toast Crunch", manager: "Jonah", picks: [
+            ["1st Round", "Justin Jefferson", 7],
+            ["2nd Round", "Josh Jacobs", 18],
+            ["3rd Round", "Lamar Jackson", 31],
+            ["4th Round", "Alvin Kamara", 42],
+            ["5th Round", "Courtland Sutton", 55],
+            ["6th Round", "David Montgomery", 66],
+            ["7th Round", "Travis Kelce", 79],
+            ["8th Round", "Khalil Shakir", 90],
+            ["9th Round", "Javonte Williams", 103],
+            ["10th Round", "Austin Ekeler", 114],
+            ["11th Round", "Dylan Sampson", 127],
+            ["12th Round", "Colston Loveland", 138],
+            ["13th Round", "Christian Kirk", 151],
+            ["14th Round", "Harrison Butker", 162],
+            ["15th Round", "49ers", 175]
         ]},
-        { team: "Deshaun Sanders", picks: [
-            ["1st Round", "Saquon Barkley", 8], ["2nd Round", "Puka Nacua", 17], ["3rd Round", "Ladd McConkey", 32], ["4th Round", "Mike Evans", 41], ["5th Round", "RJ Harvey", 56], ["6th Round", "Tony Pollard", 65], ["7th Round", "Jakobi Meyers", 80], ["8th Round", "Bo Nix", 89], ["9th Round", "Jauan Jennings", 104], ["10th Round", "Tucker Kraft", 113], ["11th Round", "Jerome Ford", 128], ["12th Round", "Justin Herbert", 137], ["13th Round", "Eagles", 152], ["14th Round", "Jaydon Blue", 161], ["15th Round", "Matt Gay", 176]
+
+        { team: "Deshaun Sanders", manager: "Michael", picks: [
+            ["1st Round", "Saquon Barkley", 8],
+            ["2nd Round", "Puka Nacua", 17],
+            ["3rd Round", "Ladd McConkey", 32],
+            ["4th Round", "Mike Evans", 41],
+            ["5th Round", "RJ Harvey", 56],
+            ["6th Round", "Tony Pollard", 65],
+            ["7th Round", "Jakobi Meyers", 80],
+            ["8th Round", "Bo Nix", 89],
+            ["9th Round", "Jauan Jennings", 104],
+            ["10th Round", "Tucker Kraft", 113],
+            ["11th Round", "Jerome Ford", 128],
+            ["12th Round", "Justin Herbert", 137],
+            ["13th Round", "Eagles", 152],
+            ["14th Round", "Jaydon Blue", 161],
+            ["15th Round", "Matt Gay", 176]
         ]},
-        { team: "Wooooo!", picks: [
-            ["1st Round", "Amon-Ra St. Brown", 9], ["2nd Round", "Nico Collins", 16], ["3rd Round", "George Kittle", 33], ["4th Round", "Rashee Rice", 40], ["5th Round", "D'Andre Swift", 57], ["6th Round", "Aaron Jones Sr.", 64], ["7th Round", "Jordan Mason", 81], ["8th Round", "Zach Charbonnet", 88], ["9th Round", "Dak Prescott", 105], ["10th Round", "Josh Downs", 112], ["11th Round", "Jayden Higgins", 129], ["12th Round", "Roschon Johnson", 136], ["13th Round", "Tre' Harris", 153], ["14th Round", "Jake Elliott", 160], ["15th Round", "Jets", 177]
+
+        { team: "Wooooo!", manager: "Mike H.", picks: [
+            ["1st Round", "Amon-Ra St. Brown", 9],
+            ["2nd Round", "Nico Collins", 16],
+            ["3rd Round", "George Kittle", 33],
+            ["4th Round", "Rashee Rice", 40],
+            ["5th Round", "D'Andre Swift", 57],
+            ["6th Round", "Aaron Jones Sr.", 64],
+            ["7th Round", "Jordan Mason", 81],
+            ["8th Round", "Zach Charbonnet", 88],
+            ["9th Round", "Dak Prescott", 105],
+            ["10th Round", "Josh Downs", 112],
+            ["11th Round", "Jayden Higgins", 129],
+            ["12th Round", "Roschon Johnson", 136],
+            ["13th Round", "Tre' Harris", 153],
+            ["14th Round", "Jake Elliott", 160],
+            ["15th Round", "Jets", 177]
         ]},
-        { team: "Olave Garden", picks: [
-            ["1st Round", "De'Von Achane", 10], ["2nd Round", "Christian McCaffrey", 15], ["3rd Round", "Jayden Daniels", 34], ["4th Round", "Terry McLaurin", 39], ["5th Round", "Calvin Ridley", 58], ["6th Round", "George Pickens", 63], ["7th Round", "Chris Olave", 82], ["8th Round", "David Njoku", 87], ["9th Round", "Cam Skattebo", 106], ["10th Round", "Tyjae Spears", 111], ["11th Round", "Caleb Williams", 130], ["12th Round", "Jake Bates", 135], ["13th Round", "Vikings", 154], ["14th Round", "Ollie Gordon II", 159], ["15th Round", "Darren Waller", 178]
+
+        { team: "Olave Garden", manager: "William", picks: [
+            ["1st Round", "De'Von Achane", 10],
+            ["2nd Round", "Christian McCaffrey", 15],
+            ["3rd Round", "Jayden Daniels", 34],
+            ["4th Round", "Terry McLaurin", 39],
+            ["5th Round", "Calvin Ridley", 58],
+            ["6th Round", "George Pickens", 63],
+            ["7th Round", "Chris Olave", 82],
+            ["8th Round", "David Njoku", 87],
+            ["9th Round", "Cam Skattebo", 106],
+            ["10th Round", "Tyjae Spears", 111],
+            ["11th Round", "Caleb Williams", 130],
+            ["12th Round", "Jake Bates", 135],
+            ["13th Round", "Vikings", 154],
+            ["14th Round", "Ollie Gordon II", 159],
+            ["15th Round", "Darren Waller", 178]
         ]},
-        { team: "MaseratiMarv", picks: [
-            ["1st Round", "Brian Thomas Jr.", 11], ["2nd Round", "Derrick Henry", 14], ["3rd Round", "Joe Burrow", 35], ["4th Round", "Marvin Harrison Jr.", 38], ["5th Round", "Isiah Pacheco", 59], ["6th Round", "Rome Odunze", 62], ["7th Round", "Stefon Diggs", 83], ["8th Round", "Tyler Warren", 86], ["9th Round", "Quinshon Judkins", 107], ["10th Round", "Keon Coleman", 110], ["11th Round", "Trey Benson", 131], ["12th Round", "Broncos", 134], ["13th Round", "Trevor Lawrence", 155], ["14th Round", "Isaiah Bond", 158], ["15th Round", "Wil Lutz", 179]
+
+        { team: "MaseratiMarv", manager: "Nick", picks: [
+            ["1st Round", "Brian Thomas Jr.", 11],
+            ["2nd Round", "Derrick Henry", 14],
+            ["3rd Round", "Joe Burrow", 35],
+            ["4th Round", "Marvin Harrison Jr.", 38],
+            ["5th Round", "Isiah Pacheco", 59],
+            ["6th Round", "Rome Odunze", 62],
+            ["7th Round", "Stefon Diggs", 83],
+            ["8th Round", "Tyler Warren", 86],
+            ["9th Round", "Quinshon Judkins", 107],
+            ["10th Round", "Keon Coleman", 110],
+            ["11th Round", "Trey Benson", 131],
+            ["12th Round", "Broncos", 134],
+            ["13th Round", "Trevor Lawrence", 155],
+            ["14th Round", "Isaiah Bond", 158],
+            ["15th Round", "Wil Lutz", 179]
         ]},
-        { team: "Cook's Kitchen", picks: [
-            ["1st Round", "A.J. Brown", 12], ["2nd Round", "Jonathan Taylor", 13], ["3rd Round", "Jalen Hurts", 36], ["4th Round", "James Cook III", 37], ["5th Round", "Jameson Williams", 60], ["6th Round", "Tetairoa McMillan", 61], ["7th Round", "Mark Andrews", 84], ["8th Round", "Deebo Samuel Sr.", 85], ["9th Round", "Rhamondre Stevenson", 108], ["10th Round", "Nick Chubb", 109], ["11th Round", "Kyle Pitts Sr.", 132], ["12th Round", "DeMario Douglas", 133], ["13th Round", "Ravens", 156], ["14th Round", "Darius Slayton", 157], ["15th Round", "Jason Sanders", 180]
+
+        { team: "Cook's Kitchen", manager: "Logan", picks: [
+            ["1st Round", "A.J. Brown", 12],
+            ["2nd Round", "Jonathan Taylor", 13],
+            ["3rd Round", "Jalen Hurts", 36],
+            ["4th Round", "James Cook III", 37],
+            ["5th Round", "Jameson Williams", 60],
+            ["6th Round", "Tetairoa McMillan", 61],
+            ["7th Round", "Mark Andrews", 84],
+            ["8th Round", "Deebo Samuel Sr.", 85],
+            ["9th Round", "Rhamondre Stevenson", 108],
+            ["10th Round", "Nick Chubb", 109],
+            ["11th Round", "Kyle Pitts Sr.", 132],
+            ["12th Round", "DeMario Douglas", 133],
+            ["13th Round", "Ravens", 156],
+            ["14th Round", "Darius Slayton", 157],
+            ["15th Round", "Jason Sanders", 180]
         ]}
     ]
+
 };
 
+
+/* Copy the 2025 draft history into each additional season for now. */
+
+draftHistoryData[2024] = draftHistoryData[2025].map(team => ({
+    team: team.team,
+    manager: team.manager,
+    picks: team.picks.map(pick => [...pick])
+}));
+
+draftHistoryData[2023] = draftHistoryData[2025].map(team => ({
+    team: team.team,
+    manager: team.manager,
+    picks: team.picks.map(pick => [...pick])
+}));
+
+draftHistoryData[2022] = draftHistoryData[2025].map(team => ({
+    team: team.team,
+    manager: team.manager,
+    picks: team.picks.map(pick => [...pick])
+}));
+
+draftHistoryData[2021] = draftHistoryData[2025].map(team => ({
+    team: team.team,
+    manager: team.manager,
+    picks: team.picks.map(pick => [...pick])
+}));
+
+draftHistoryData[2020] = draftHistoryData[2025].map(team => ({
+    team: team.team,
+    manager: team.manager,
+    picks: team.picks.map(pick => [...pick])
+}));
+
+draftHistoryData[2019] = draftHistoryData[2025].map(team => ({
+    team: team.team,
+    manager: team.manager,
+    picks: team.picks.map(pick => [...pick])
+}));
+
+draftHistoryData[2018] = draftHistoryData[2025].map(team => ({
+    team: team.team,
+    manager: team.manager,
+    picks: team.picks.map(pick => [...pick])
+}));
+
+draftHistoryData[2017] = draftHistoryData[2025].map(team => ({
+    team: team.team,
+    manager: team.manager,
+    picks: team.picks.map(pick => [...pick])
+}));
+
+draftHistoryData[2016] = draftHistoryData[2025].map(team => ({
+    team: team.team,
+    manager: team.manager,
+    picks: team.picks.map(pick => [...pick])
+}));
+
+draftHistoryData[2015] = draftHistoryData[2025].map(team => ({
+    team: team.team,
+    manager: team.manager,
+    picks: team.picks.map(pick => [...pick])
+}));
+
+draftHistoryData[2014] = draftHistoryData[2025].map(team => ({
+    team: team.team,
+    manager: team.manager,
+    picks: team.picks.map(pick => [...pick])
+}));
+
+draftHistoryData[2013] = draftHistoryData[2025].map(team => ({
+    team: team.team,
+    manager: team.manager,
+    picks: team.picks.map(pick => [...pick])
+}));
+
+
 function updateDraftHistory() {
-    const season = document.getElementById("draftHistorySeason").value;
-    const teams = draftHistoryData[season] || [];
-    const container = document.getElementById("draftHistoryGrid");
+
+    const season =
+        document.getElementById("draftHistorySeason").value;
+
+    const teams =
+        draftHistoryData[season] || [];
+
+    const container =
+        document.getElementById("draftHistoryGrid");
+
     container.innerHTML = "";
 
     teams.forEach((team) => {
-        const card = document.createElement("div");
-        card.className = "draft-history-card";
+
+        const card =
+            document.createElement("div");
+
+        card.className =
+            "draft-history-card";
 
         card.innerHTML = `
+
             <div class="draft-history-card-header">
+
                 <h3>${team.team}</h3>
+
+                <div class="draft-history-manager">
+                    ${team.manager}
+                </div>
+
             </div>
+
             <div class="draft-history-picks">
+
                 ${team.picks.map((pick) => `
+
                     <div class="draft-history-pick">
-                        <div class="draft-history-round">${pick[0]}</div>
-                        <div class="draft-history-player">${pick[1]}</div>
-                        <div class="draft-history-overall">(${pick[2]})</div>
+
+                        <div class="draft-history-round">
+                            ${pick[0]}
+                        </div>
+
+                        <div class="draft-history-player">
+                            ${pick[1]}
+                        </div>
+
+                        <div class="draft-history-overall">
+                            (${pick[2]})
+                        </div>
+
                     </div>
+
                 `).join("")}
+
             </div>
         `;
 
         container.appendChild(card);
+
     });
 }
 
