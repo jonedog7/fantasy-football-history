@@ -335,7 +335,7 @@ nav a:hover {
 
 .best-draft-column-labels {
     display: grid;
-    grid-template-columns: 112px 1fr 85px 75px 55px;
+    grid-template-columns: 72px 1fr 85px 75px 55px;
     align-items: center;
     gap: 10px;
     margin-bottom: 4px;
@@ -346,7 +346,11 @@ nav a:hover {
     letter-spacing: .8px;
 }
 
-.best-draft-column-labels span:not(:first-child) {
+.best-draft-column-labels span:nth-child(2) {
+    text-align: center;
+}
+
+.best-draft-column-labels span:not(:first-child):not(:nth-child(2)) {
     text-align: center;
 }
 
@@ -375,7 +379,7 @@ nav a:hover {
     font-size: 14px;
     font-weight: 800;
     line-height: 1.15;
-    text-align: center;
+    text-align: left;
 }
 
 .best-draft-player-info {
