@@ -335,7 +335,7 @@ nav a:hover {
 
 .best-draft-column-labels {
     display: grid;
-    grid-template-columns: 72px 1fr 85px 75px 55px;
+    grid-template-columns: 112px 1fr 85px 75px 55px;
     align-items: center;
     gap: 10px;
     margin-bottom: 4px;
@@ -346,14 +346,7 @@ nav a:hover {
     letter-spacing: .8px;
 }
 
-.best-draft-column-labels span:nth-child(2) {
-    text-align: center;
-    transform: translateX(18px);
-}
-
-.best-draft-column-labels span:nth-child(3),
-.best-draft-column-labels span:nth-child(4),
-.best-draft-column-labels span:nth-child(5) {
+.best-draft-column-labels span:not(:first-child) {
     text-align: center;
 }
 
@@ -382,8 +375,7 @@ nav a:hover {
     font-size: 14px;
     font-weight: 800;
     line-height: 1.15;
-    text-align: left;
-    transform: translateX(18px);
+    text-align: center;
 }
 
 .best-draft-player-info {
@@ -495,8 +487,8 @@ nav a:hover {
     letter-spacing: .8px;
 }
 
-.hits-misses-column-labels span:nth-child(2) {
-    transform: translateX(14px);
+.hits-misses-column-labels span:not(:first-child) {
+    text-align: center;
 }
 
 .hits-misses-player {
@@ -514,25 +506,22 @@ nav a:hover {
 }
 
 .hits-misses-headshot {
-    width: 62px;
-    height: 62px;
+    width: 56px;
+    height: 56px;
     object-fit: cover;
     object-position: center bottom;
-    transform: translateX(6px);
 }
 
 .hits-misses-player-name {
     font-size: 14px;
     font-weight: 800;
     line-height: 1.15;
-    transform: translateX(14px);
 }
 
 .hits-misses-manager {
     color: #8f9aa4;
     font-size: 10px;
     margin-top: 4px;
-    transform: translateX(14px);
 }
 
 .hits-misses-pick,
