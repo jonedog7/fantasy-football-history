@@ -215,6 +215,22 @@
             font-size: 13px;
         }
 
+/* Freeze first column in career records table */
+
+        .table-wrap th:first-child {
+            position: sticky;
+            left: 0;
+            background: #111820;
+            z-index: 2;
+        }
+
+        .table-wrap td:first-child {
+            position: sticky;
+            left: 0;
+            background: #151c24;
+            z-index: 1;
+        }
+
         tr:last-child td {
             border-bottom: none;
         }
