@@ -1885,6 +1885,7 @@ footer {
     </div>
 
     <select id="draftHistorySeason" onchange="updateDraftHistory()">
+        <option value="2026">2026 Draft</option>
         <option value="2025">2025 Draft</option>
         <option value="2024">2024 Draft</option>
         <option value="2023">2023 Draft</option>
@@ -2914,6 +2915,230 @@ function draftTeam(team, picks, manager = "") {
 
 const draftHistoryData = {
 
+    /* =========================================
+       2026
+    ========================================= */
+
+    2026: [
+
+        draftTeam("The King", [
+            ["Jahmyr Gibbs", 1],
+            ["Nico Collins", 24],
+            ["A.J. Brown", 25],
+            ["Bhayshul Tuten", 48],
+            ["Jadarian Price", 49],
+            ["Mike Evans", 72],
+            ["Parker Washington", 73],
+            ["Patrick Mahomes", 96],
+            ["Travis Kelce", 97],
+            ["Zach Charbonnet", 120],
+            ["Isiah Pacheco", 121],
+            ["Jaxson Dart", 144],
+            ["Isaiah Likely", 145],
+            ["Jake Bates", 168],
+            ["Jaguars", 169]
+        ], ""),
+
+        draftTeam("Chubbs Chubb", [
+            ["Bijan Robinson", 2],
+            ["Derrick Henry", 23],
+            ["George Pickens", 26],
+            ["David Montgomery", 47],
+            ["Tee Higgins", 50],
+            ["Carnell Tate", 71],
+            ["Joe Burrow", 74],
+            ["Tucker Kraft", 95],
+            ["RJ Harvey", 98],
+            ["KC Concepcion", 119],
+            ["Brandon Aubrey", 122],
+            ["Eagles", 143],
+            ["Justice Hill", 146],
+            ["Jerry Jeudy", 167],
+            ["T.J. Hockenson", 170]
+        ], ""),
+
+        draftTeam("Breece Lightning", [
+            ["Ja'Marr Chase", 3],
+            ["Breece Hall", 22],
+            ["Travis Etienne Jr.", 27],
+            ["Tetairoa McMillan", 46],
+            ["Emeka Egbuka", 51],
+            ["Harold Fannin Jr.", 70],
+            ["Michael Pittman Jr.", 75],
+            ["Rachaad White", 94],
+            ["Trevor Lawrence", 99],
+            ["Woody Marks", 118],
+            ["Xavier Worthy", 123],
+            ["Steelers", 142],
+            ["Tyjae Spears", 147],
+            ["Chris Boswell", 166],
+            ["Isaiah Davis", 171]
+        ], ""),
+
+        draftTeam("Won’t You Be My Nabers", [
+            ["Amon-Ra St. Brown", 4],
+            ["Malik Nabers", 21],
+            ["Kyren Williams", 28],
+            ["Rome Odunze", 45],
+            ["DJ Moore", 52],
+            ["Tony Pollard", 69],
+            ["Kenny Gainwell", 76],
+            ["Caleb Williams", 93],
+            ["Wan'Dale Robinson", 100],
+            ["Jordan Mason", 117],
+            ["Dalton Kincaid", 124],
+            ["Ravens", 141],
+            ["Cam Little", 148],
+            ["Jaylen Wright", 165],
+            ["Ted Hurst III", 172]
+        ], ""),
+
+        draftTeam("Miami Rice", [
+            ["Christian McCaffrey", 5],
+            ["Chase Brown", 20],
+            ["Rashee Rice", 29],
+            ["Cam Skattebo", 44],
+            ["Ladd McConkey", 53],
+            ["Jaylen Warren", 68],
+            ["Sam LaPorta", 77],
+            ["Alec Pierce", 92],
+            ["Stefon Diggs", 101],
+            ["Justin Herbert", 116],
+            ["Makai Lemon", 125],
+            ["Brock Purdy", 140],
+            ["Kaelon Black", 149],
+            ["Chargers", 164],
+            ["Eddy Pineiro", 173]
+        ], ""),
+
+        draftTeam("Maye the Force Be With You", [
+            ["Jaxon Smith-Njigba", 6],
+            ["Omarion Hampton", 19],
+            ["Garrett Wilson", 30],
+            ["Bucky Irving", 43],
+            ["Drake Maye", 54],
+            ["Tyler Warren", 67],
+            ["Jonathon Brooks", 78],
+            ["Khalil Shakir", 91],
+            ["Deebo Samuel Sr.", 102],
+            ["Brian Robinson", 115],
+            ["Josh Downs", 126],
+            ["Ka'imi Fairbairn", 139],
+            ["Kimani Vidal", 150],
+            ["Adonai Mitchell", 163],
+            ["Alvin Kamara", 174]
+        ], ""),
+
+        draftTeam("TEAM EZRA", [
+            ["Puka Nacua", 7],
+            ["Ashton Jeanty", 18],
+            ["Josh Allen", 31],
+            ["Zay Flowers", 42],
+            ["Colston Loveland", 55],
+            ["Christian Watson", 66],
+            ["TreVeyon Henderson", 79],
+            ["Chris Godwin Jr.", 90],
+            ["Blake Corum", 103],
+            ["Chris Rodriguez Jr.", 114],
+            ["Rams", 127],
+            ["Rashid Shaheed", 138],
+            ["Caleb Douglas", 151],
+            ["Riley Patterson", 162],
+            ["Keaton Mitchell", 175]
+        ], ""),
+
+        draftTeam("Drake 'N' Ball Z", [
+            ["Jonathan Taylor", 8],
+            ["Drake London", 17],
+            ["Javonte Williams", 32],
+            ["DeVonta Smith", 41],
+            ["Davante Adams", 56],
+            ["Rhamondre Stevenson", 65],
+            ["Jalen Hurts", 80],
+            ["Jakobi Meyers", 89],
+            ["George Kittle", 104],
+            ["Jacory Croskey-Merritt", 113],
+            ["Cameron Dicker", 128],
+            ["Seahawks", 137],
+            ["Mark Andrews", 152],
+            ["Matthew Stafford", 161],
+            ["Ja'Kobi Lane", 176]
+        ], ""),
+
+        draftTeam("Nixflix & Chill", [
+            ["James Cook III", 9],
+            ["Chris Olave", 16],
+            ["D'Andre Swift", 33],
+            ["Kyle Pitts Sr.", 40],
+            ["Jameson Williams", 57],
+            ["Luther Burden III", 64],
+            ["Michael Wilson", 81],
+            ["J.K. Dobbins", 88],
+            ["Romeo Doubs", 105],
+            ["Bo Nix", 112],
+            ["Jason Myers", 129],
+            ["Broncos", 136],
+            ["Dylan Sampson", 153],
+            ["Darius Slayton", 160],
+            ["Keenan Allen", 177]
+        ], ""),
+
+        draftTeam("De'Von & The Penguin", [
+            ["De'Von Achane", 10],
+            ["Kenneth Walker III", 15],
+            ["Lamar Jackson", 34],
+            ["Jaylen Waddle", 39],
+            ["Terry McLaurin", 58],
+            ["Rico Dowdle", 63],
+            ["Matthew Golden", 82],
+            ["Jordan Addison", 87],
+            ["Dallas Goedert", 106],
+            ["Mike Washington Jr.", 111],
+            ["MarShawn Lloyd", 130],
+            ["Kyler Murray", 135],
+            ["Tre Tucker", 154],
+            ["Evan McPherson", 159],
+            ["Vikings", 178]
+        ], ""),
+
+        draftTeam("MaseratiMarv", [
+            ["CeeDee Lamb", 11],
+            ["Jeremiyah Love", 14],
+            ["Brock Bowers", 35],
+            ["Quinshon Judkins", 38],
+            ["Marvin Harrison Jr.", 59],
+            ["Dak Prescott", 62],
+            ["Brian Thomas Jr.", 83],
+            ["Kyle Monangai", 86],
+            ["Jayden Reed", 107],
+            ["Tyler Allgeier", 110],
+            ["Texans", 131],
+            ["Harrison Butker", 134],
+            ["Dontayvion Wicks", 155],
+            ["Denzel Boston", 158],
+            ["Carson Beck", 179]
+        ], ""),
+
+        draftTeam("Deuce’s Uce’s", [
+            ["Saquon Barkley", 12],
+            ["Justin Jefferson", 13],
+            ["Josh Jacobs", 36],
+            ["Trey McBride", 37],
+            ["Courtland Sutton", 60],
+            ["Jayden Daniels", 61],
+            ["Chuba Hubbard", 84],
+            ["DK Metcalf", 85],
+            ["Aaron Jones Sr.", 108],
+            ["De'Zhaun Stribling", 109],
+            ["Quentin Johnston", 132],
+            ["Jalen Coker", 133],
+            ["Jordyn Tyson", 156],
+            ["Harrison Mevis", 157],
+            ["Browns", 180]
+        ], "")
+    ],
+
+    
     /* =========================================
        2025
     ========================================= */
