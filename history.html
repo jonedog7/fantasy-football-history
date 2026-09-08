@@ -318,33 +318,66 @@
         }
 
         /*
-         * HEADSHOT
+         * MVP HEADSHOTS
          *
-         * Default headshots receive a very slight downward
-         * adjustment to reduce the appearance of empty space
-         * beneath the player.
+         * Every headshot uses the same image box and is
+         * anchored to the bottom of the MVP section.
+         *
+         * Individual players are adjusted with bottom values
+         * because the source PNGs contain different amounts
+         * of transparent space around the player.
          */
 
         .mvp-image {
             position: absolute;
             width: 145px;
             height: 145px;
-            object-fit: cover;
-            object-position: center;
             right: -5px;
             bottom: 0;
+            object-fit: cover;
+            object-position: center;
             z-index: 1;
         }
 
-        .headshot-juju {
-            height: 155px;
+        /* Players that already sit correctly */
+        .headshot-odell {
+            bottom: 0;
+        }
+
+        .headshot-kyler {
+            bottom: 0;
+        }
+
+        .headshot-kyren {
+            bottom: 0;
+        }
+
+        /* Players that need to sit slightly lower */
+        .mvp-image[src*="juju-smith"] {
             bottom: -10px;
         }
 
-        .headshot-rodgers {
-            transform: translateY(5px);
+        .mvp-image[src*="aaron-rodgers"] {
+            bottom: -15px;
         }
-        
+
+        /* Brandon Aiyuk */
+        .headshot-brandon {
+            bottom: 0;
+        }
+
+        /* Christian McCaffrey */
+        .headshot-christian {
+            bottom: 0;
+        }
+
+        .mvp-placeholder {
+            color: #68747e;
+            font-size: 12px;
+            font-style: italic;
+            margin-top: 8px;
+        }
+
         /* FOOTER */
 
         footer {
@@ -434,7 +467,15 @@
                 height: 125px;
                 right: -3px;
                 bottom: 0;
-                object-position: center 105%;
+                object-position: center;
+            }
+
+            .mvp-image[src*="juju-smith"] {
+                bottom: -8px;
+            }
+
+            .mvp-image[src*="aaron-rodgers"] {
+                bottom: -12px;
             }
 
             .mvp-info {
@@ -850,7 +891,7 @@
                     </div>
 
                     <img
-                        class="mvp-image headshot-juju"
+                        class="mvp-image"
                         src="images/juju-smith-2017.png"
                         alt="JuJu Smith-Schuster 2017"
                     >
@@ -901,7 +942,7 @@
                     </div>
 
                     <img
-                        class="mvp-image headshot-aaron"
+                        class="mvp-image"
                         src="images/aaron-rodgers-2016.png"
                         alt="Aaron Rodgers 2018"
                     >
