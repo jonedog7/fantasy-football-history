@@ -285,6 +285,7 @@
 
     .leaders-table {
         width: 100%;
+        min-width: 1000px;
         border-collapse: collapse;
     }
 
@@ -301,6 +302,20 @@
         font-size: 11px;
         text-transform: uppercase;
         letter-spacing: .5px;
+    }
+
+    .leaders-table th:first-child {
+        position: sticky;
+        left: 0;
+        z-index: 3;
+        background: #111820;
+    }
+
+    .leaders-table td:first-child {
+        position: sticky;
+        left: 0;
+        z-index: 2;
+        background: #151c24;
     }
 
     .leaders-table td {
@@ -854,6 +869,246 @@
         </div>
 
 
+        <!-- HEAD-TO-HEAD POINTS MATRIX -->
+
+        <h2 class="section-title">Head-to-Head Points Matrix</h2>
+
+        <div class="panel">
+
+            <div class="panel-header">
+                <h3>Manager Points Per Game</h3>
+                <span>All-Time</span>
+            </div>
+
+            <div class="matrix-wrapper">
+
+                <table class="matrix">
+
+                    <thead>
+                        <tr>
+                            <th>Manager</th>
+                            <th>Christian</th>
+                            <th>Ryan</th>
+                            <th>Nic</th>
+                            <th>Bailey</th>
+                            <th>Jonah</th>
+                            <th>Tommy</th>
+                            <th>Michael G.</th>
+                            <th>Mike H.</th>
+                            <th>William</th>
+                            <th>Julia</th>
+                            <th>Mike D.</th>
+                            <th>Nick</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+                            <td>Christian</td>
+                            <td class="diagonal">—</td>
+                            <td>129.04</td>
+                            <td>136.33</td>
+                            <td>132.76</td>
+                            <td>127.10</td>
+                            <td>126.82</td>
+                            <td>119.00</td>
+                            <td>132.50</td>
+                            <td>137.29</td>
+                            <td>113.67</td>
+                            <td>131.00</td>
+                        </tr>
+
+                        <tr>
+                            <td>Ryan</td>
+                            <td>133.36</td>
+                            <td class="diagonal">—</td>
+                            <td>130.96</td>
+                            <td>136.12</td>
+                            <td>125.33</td>
+                            <td>125.76</td>
+                            <td>131.18</td>
+                            <td>124.55</td>
+                            <td>124.43</td>
+                            <td>115.50</td>
+                            <td>133.75</td>
+                            <td>127.00</td>
+                        </tr>
+
+                        <tr>
+                            <td>Nic</td>
+                            <td>129.41</td>
+                            <td>135.12</td>
+                            <td class="diagonal">—</td>
+                            <td>121.40</td>
+                            <td>119.00</td>
+                            <td>132.52</td>
+                            <td>139.60</td>
+                            <td>130.82</td>
+                            <td>113.25</td>
+                            <td>118.17</td>
+                            <td>138.50</td>
+                            <td>116.50</td>
+                        </tr>
+
+                        <tr>
+                            <td>Bailey</td>
+                            <td>128.27</td>
+                            <td>130.59</td>
+                            <td>114.93</td>
+                            <td class="diagonal">—</td>
+                            <td>134.67</td>
+                            <td>133.33</td>
+                            <td>124.00</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>—</td>
+                        </tr>
+
+                        <tr>
+                            <td>Jonah</td>
+                            <td>130.67</td>
+                            <td>127.95</td>
+                            <td>128.79</td>
+                            <td>116.00</td>
+                            <td class="diagonal">—</td>
+                            <td>136.50</td>
+                            <td>136.60</td>
+                            <td>139.78</td>
+                            <td>153.29</td>
+                            <td>165.50</td>
+                            <td>139.00</td>
+                            <td>132.75</td>
+                        </tr>
+
+                        <tr>
+                            <td>Tommy</td>
+                            <td>140.10</td>
+                            <td>132.57</td>
+                            <td>120.26</td>
+                            <td>135.17</td>
+                            <td>129.73</td>
+                            <td class="diagonal">—</td>
+                            <td>124.75</td>
+                            <td>128.45</td>
+                            <td>133.14</td>
+                            <td>119.00</td>
+                            <td>136.50</td>
+                            <td>133.00</td>
+                        </tr>
+
+                        <tr>
+                            <td>Michael G.</td>
+                            <td>122.24</td>
+                            <td>123.47</td>
+                            <td>131.33</td>
+                            <td>108.00</td>
+                            <td>119.00</td>
+                            <td>122.50</td>
+                            <td class="diagonal">—</td>
+                            <td>134.55</td>
+                            <td>129.00</td>
+                            <td>132.43</td>
+                            <td>141.75</td>
+                            <td>114.67</td>
+                        </tr>
+
+                        <tr>
+                            <td>Mike H.</td>
+                            <td>137.27</td>
+                            <td>147.30</td>
+                            <td>126.18</td>
+                            <td>—</td>
+                            <td>130.89</td>
+                            <td>126.73</td>
+                            <td>122.18</td>
+                            <td class="diagonal">—</td>
+                            <td>127.14</td>
+                            <td>143.60</td>
+                            <td>125.00</td>
+                            <td>128.50</td>
+                        </tr>
+
+                        <tr>
+                            <td>William</td>
+                            <td>138.67</td>
+                            <td>136.43</td>
+                            <td>130.75</td>
+                            <td>—</td>
+                            <td>143.43</td>
+                            <td>130.57</td>
+                            <td>118.43</td>
+                            <td>127.29</td>
+                            <td class="diagonal">—</td>
+                            <td>127.50</td>
+                            <td>147.00</td>
+                            <td>141.50</td>
+                        </tr>
+
+                        <tr>
+                            <td>Julia</td>
+                            <td>150.86</td>
+                            <td>134.67</td>
+                            <td>126.17</td>
+                            <td>—</td>
+                            <td>135.00</td>
+                            <td>151.00</td>
+                            <td>113.14</td>
+                            <td>131.80</td>
+                            <td>127.67</td>
+                            <td class="diagonal">—</td>
+                            <td>144.75</td>
+                            <td>134.50</td>
+                        </tr>
+
+                        <tr>
+                            <td>Mike D.</td>
+                            <td>118.33</td>
+                            <td>137.25</td>
+                            <td>140.00</td>
+                            <td>—</td>
+                            <td>122.67</td>
+                            <td>129.00</td>
+                            <td>136.00</td>
+                            <td>126.33</td>
+                            <td>116.75</td>
+                            <td>116.25</td>
+                            <td class="diagonal">—</td>
+                            <td>148.67</td>
+                        </tr>
+
+                        <tr>
+                            <td>Nick</td>
+                            <td>124.00</td>
+                            <td>124.00</td>
+                            <td>146.50</td>
+                            <td>—</td>
+                            <td>113.50</td>
+                            <td>107.50</td>
+                            <td>113.33</td>
+                            <td>122.00</td>
+                            <td>118.50</td>
+                            <td>89.50</td>
+                            <td>100.67</td>
+                            <td class="diagonal">—</td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+            <div class="matrix-note">
+                Each cell displays the average points scored by the row manager against the
+                column manager. A dash indicates no recorded matchups.
+            </div>
+
+        </div>
+
+
         <!-- MANAGER HEAD-TO-HEAD LEADERS -->
 
         <h2 class="section-title">Manager Head-to-Head Leaders</h2>
@@ -874,6 +1129,8 @@
                             <th>Manager</th>
                             <th>Most Wins Against</th>
                             <th>Most Losses Against</th>
+                            <th>Most Points Against</th>
+                            <th>Least Points Against</th>
                         </tr>
                     </thead>
 
@@ -883,72 +1140,96 @@
                             <td>Christian</td>
                             <td><span class="leader-opponent">Ryan</span> <span class="leader-record">· 13 wins</span></td>
                             <td><span class="leader-opponent">Ryan & Nic</span> <span class="leader-record">· 15 losses</span></td>
+                            <td><span class="leader-opponent">Julia</span> <span class="leader-record">· 150.86 PPG</span></td>
+                            <td><span class="leader-opponent">Mike D.</span> <span class="leader-record">· 118.33 PPG</span></td>
                         </tr>
 
                         <tr>
                             <td>Ryan</td>
                             <td><span class="leader-opponent">Christian</span> <span class="leader-record">· 15 wins</span></td>
                             <td><span class="leader-opponent">Nic</span> <span class="leader-record">· 14 losses</span></td>
+                            <td><span class="leader-opponent">Mike H.</span> <span class="leader-record">· 147.30 PPG</span></td>
+                            <td><span class="leader-opponent">Michael G.</span> <span class="leader-record">· 123.47 PPG</span></td>
                         </tr>
 
                         <tr>
                             <td>Nic</td>
                             <td><span class="leader-opponent">Christian</span> <span class="leader-record">· 15 wins</span></td>
                             <td><span class="leader-opponent">Jonah</span> <span class="leader-record">· 16 losses</span></td>
+                            <td><span class="leader-opponent">Nick</span> <span class="leader-record">· 146.50 PPG</span></td>
+                            <td><span class="leader-opponent">Bailey</span> <span class="leader-record">· 114.93 PPG</span></td>
                         </tr>
 
                         <tr>
                             <td>Bailey</td>
                             <td><span class="leader-opponent">Jonah</span> <span class="leader-record">· 9 wins</span></td>
                             <td><span class="leader-opponent">Ryan</span> <span class="leader-record">· 10 losses</span></td>
+                            <td><span class="leader-opponent">Christian</span> <span class="leader-record">· 136.33 PPG</span></td>
+                            <td><span class="leader-opponent">Michael G.</span> <span class="leader-record">· 108.00 PPG</span></td>
                         </tr>
 
                         <tr>
                             <td>Jonah</td>
                             <td><span class="leader-opponent">Nic</span> <span class="leader-record">· 16 wins</span></td>
                             <td><span class="leader-opponent">Christian</span> <span class="leader-record">· 12 losses</span></td>
+                            <td><span class="leader-opponent">William</span> <span class="leader-record">· 153.29 PPG</span></td>
+                            <td><span class="leader-opponent">Nick</span> <span class="leader-record">· 113.50 PPG</span></td>
                         </tr>
 
                         <tr>
                             <td>Tommy</td>
                             <td><span class="leader-opponent">Christian</span> <span class="leader-record">· 14 wins</span></td>
                             <td><span class="leader-opponent">Nic & Bailey</span> <span class="leader-record">· 13 losses</span></td>
+                            <td><span class="leader-opponent">Julia</span> <span class="leader-record">· 151.00 PPG</span></td>
+                            <td><span class="leader-opponent">Nick</span> <span class="leader-record">· 107.50 PPG</span></td>
                         </tr>
 
                         <tr>
                             <td>Michael G.</td>
                             <td><span class="leader-opponent">Mike H.</span> <span class="leader-record">· 9 wins</span></td>
                             <td><span class="leader-opponent">Ryan & Nic</span> <span class="leader-record">· 10 losses</span></td>
+                            <td><span class="leader-opponent">Nic</span> <span class="leader-record">· 139.60 PPG</span></td>
+                            <td><span class="leader-opponent">Julia</span> <span class="leader-record">· 113.14 PPG</span></td>
                         </tr>
 
                         <tr>
                             <td>Mike H.</td>
                             <td><span class="leader-opponent">Christian</span> <span class="leader-record">· 8 wins</span></td>
                             <td><span class="leader-opponent">Michael G.</span> <span class="leader-record">· 9 losses</span></td>
+                            <td><span class="leader-opponent">Jonah</span> <span class="leader-record">· 139.78 PPG</span></td>
+                            <td><span class="leader-opponent">Christian</span> <span class="leader-record">· 119.00 PPG</span></td>
                         </tr>
 
                         <tr>
                             <td>William</td>
                             <td><span class="leader-opponent">Christian, Ryan, Nic & Mike H.</span> <span class="leader-record">· 4 wins</span></td>
                             <td><span class="leader-opponent">Michael G.</span> <span class="leader-record">· 6 losses</span></td>
+                            <td><span class="leader-opponent">Jonah</span> <span class="leader-record">· 153.29 PPG</span></td>
+                            <td><span class="leader-opponent">Nic</span> <span class="leader-record">· 113.25 PPG</span></td>
                         </tr>
 
                         <tr>
                             <td>Julia</td>
                             <td><span class="leader-opponent">Christian, Nic, Tommy & William</span> <span class="leader-record">· 4 wins</span></td>
                             <td><span class="leader-opponent">Michael G.</span> <span class="leader-record">· 4 losses</span></td>
+                            <td><span class="leader-opponent">Jonah</span> <span class="leader-record">· 165.50 PPG</span></td>
+                            <td><span class="leader-opponent">Nick</span> <span class="leader-record">· 89.50 PPG</span></td>
                         </tr>
 
                         <tr>
                             <td>Mike D.</td>
                             <td><span class="leader-opponent">Ryan, Nic, Tommy, Michael G. & Nick</span> <span class="leader-record">· 2 wins</span></td>
                             <td><span class="leader-opponent">William & Julia</span> <span class="leader-record">· 3 losses</span></td>
+                            <td><span class="leader-opponent">William</span> <span class="leader-record">· 147.00 PPG</span></td>
+                            <td><span class="leader-opponent">Nick</span> <span class="leader-record">· 100.67 PPG</span></td>
                         </tr>
 
                         <tr>
                             <td>Nick</td>
                             <td><span class="leader-opponent">Nic</span> <span class="leader-record">· 2 wins</span></td>
                             <td><span class="leader-opponent">Jonah</span> <span class="leader-record">· 3 losses</span></td>
+                            <td><span class="leader-opponent">Mike D.</span> <span class="leader-record">· 148.67 PPG</span></td>
+                            <td><span class="leader-opponent">Michael G.</span> <span class="leader-record">· 114.67 PPG</span></td>
                         </tr>
 
                     </tbody>
