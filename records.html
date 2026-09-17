@@ -185,6 +185,7 @@
 
         .table-wrap {
             overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
         }
 
         table {
@@ -197,6 +198,11 @@
         .two-column table {
             min-width: 0;
             width: 100%;
+        }
+
+        /* Top Scoring Regular-Season Games table */
+        .top-scoring-table {
+            min-width: 850px;
         }
 
         th {
@@ -804,7 +810,7 @@
 
         <div class="table-wrap">
 
-            <table>
+            <table class="top-scoring-table">
 
                 <thead>
                     <tr>
