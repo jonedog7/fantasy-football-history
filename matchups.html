@@ -402,7 +402,7 @@
 
     .rivalry-record {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(4, 1fr);
         gap: 15px;
     }
 
@@ -1831,6 +1831,37 @@ function updateRivalry() {
             : "0.0";
 
 
+    function getAveragePointsAgainst(manager, opponent) {
+
+        const pointsMatrix = document.querySelectorAll(".matrix")[1];
+        const headers = pointsMatrix.querySelectorAll("thead th");
+        const rows = pointsMatrix.querySelectorAll("tbody tr");
+
+        let opponentColumn = -1;
+
+        headers.forEach((header, index) => {
+            if (header.textContent.trim() === opponent) {
+                opponentColumn = index;
+            }
+        });
+
+        for (const row of rows) {
+            const cells = row.querySelectorAll("td");
+
+            if (cells[0] && cells[0].textContent.trim() === manager) {
+                if (opponentColumn >= 0 && cells[opponentColumn]) {
+                    const value = cells[opponentColumn].textContent.trim();
+                    return value === "—" ? null : value;
+                }
+            }
+        }
+
+        return null;
+    }
+
+    const averagePointsAgainst = getAveragePointsAgainst(managerA, managerB);
+
+
     let resultText;
 
     if (parsed.wins > parsed.losses) {
@@ -1894,6 +1925,17 @@ function updateRivalry() {
 
                 <div class="rivalry-stat-value">
                     ${winPercentage}%
+                </div>
+            </div>
+
+
+            <div class="rivalry-stat">
+                <div class="rivalry-stat-label">
+                    Average Points Against
+                </div>
+
+                <div class="rivalry-stat-value">
+                    ${averagePointsAgainst !== null ? averagePointsAgainst : "—"}
                 </div>
             </div>
 
